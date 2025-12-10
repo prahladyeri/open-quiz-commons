@@ -23,8 +23,8 @@ The goal is to build an open, high-quality bank of questions across a variety of
 ## 📁 Repository Structure
 
 ```
-/datasets
-    core_python.json
+/dataset
+    python
     <more topics coming soon>
 
 /LICENSE     (CC-BY-SA 4.0)
