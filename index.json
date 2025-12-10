@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "subjects": [
+    {
+      "name": "Python",
+      "slug": "python",
+      "category": "Computer Science",
+      "tags": ["python", "programming", "software"],
+      "modules": [
+        {
+          "name": "Core Python",
+          "slug": "core",
+        },
+        {
+          "name": "Classes & OOP",
+          "slug": "classes_and_oop",
+        },
+        {
+          "name": "Modules & Packages",
+          "slug": "modules_and_packages",
+        }
+      ]
+    }
+  ]
+}
