@@ -12,12 +12,16 @@
           "slug": "core",
         },
         {
-          "name": "Classes & OOP",
+          "name": "Classes and OOP",
           "slug": "classes_and_oop",
         },
         {
-          "name": "Modules & Packages",
+          "name": "Modules and Packages",
           "slug": "modules_and_packages",
+        },
+        {
+          "name": "Data Types and Expressions",
+          "slug": "data_types_and_expressions",
         }
       ]
     }
