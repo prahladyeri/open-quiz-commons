@@ -1,0 +1,135 @@
+{
+    "data": [
+        {
+            "q": "Multi-line block comments are enclosed with:",
+            "o": [
+				"\"\"\" (triple quotes)",
+				"# (hash)",
+				"// (double slash)",
+				"\"\" (double quotes)"
+            ], "a": 0
+        },
+        {
+            "q": "How to print the current date and time in UTC format?",
+            "o": [
+				"print(datetime.datetime.utcnow())",
+				"print(datetime.datetime.now())",
+				"print(datetime.datetime.today())",
+				"None of the above"
+            ], "a": 0
+        },
+        {
+            "q": "Which command is used to install Python packages on your Windows/Mac/Linux machines?",
+            "o": [
+				"pip",
+				"yum",
+				"dnf",
+				"apt-get"
+            ], "a": 0
+        },
+        {
+            "q": "How will you install the official MySQL database driver package for Python?",
+            "o": [
+				"pip install mysql-connector-python",
+				"pip install pymysql",
+				"pip install mysqlclient",
+				"pip install sqlalchemy"
+            ], "a": 0
+        },
+        {
+            "q": "Which is a reserved word in Python 3.x?",
+            "o": [
+				"class",
+				"def",
+				"from",
+				"All of the above"
+            ], "a": 3
+        },
+        {
+            "q": "Right way to start http.server module from command line:",
+            "o": [
+				"startmodule http.server",
+				"pymodule http.server",
+				"python -m http.server",
+				"pymodule -m http.server"
+            ], "a": 2
+        },
+        {
+            "q": "Which built-in function is used to open and access files?",
+            "o": [
+			"fetch()",
+            "explode()",
+            "open()",
+            "access()"
+            ], 
+			"a": 2
+        },
+        {
+            "q": "What kind of language is Python?",
+            "o": [
+			"Compiled",
+            "Interpreted",
+            "Parsed",
+            "Elaborated"
+            ], 
+			"a": 1
+        },
+        {
+            "q": "Who invented Python?",
+            "o": [
+			"Rasmus Lerdorf",
+            "Guido van Rossum",
+            "Bill Gates",
+            "Linus Torvalds"
+            ], "a": 1
+        },
+        {
+            "q": "Which of the following are Python web frameworks?",
+            "o": ["Flask",
+            "Bottle",
+            "Django",
+            "All of the above"
+            ], "a": 3
+        },
+        {
+            "q": "Which of the following are Python GUI frameworks?",
+            "o": ["Tkinter",
+            "PySide",
+            "Kivy",
+            "All of the above"
+            ], "a": 3
+        },
+        {
+            "q": "Who maintains the cpython reference implementation?",
+            "o": ["Snake Software Foundation",
+            "Python Software Foundation",
+            "Azgar Software Foundation",
+            "Shesha Software Foundation"
+            ], "a": 1
+        },
+        {
+            "q": "In context of computer programming, the word 'Python' refers to:",
+            "o": ["British comedy group, Monty Python",
+            "Ferocious creature of the Amazon jungles",
+            "All of the above",
+            "None of the above"
+            ], "a": 0
+        },
+        {
+            "q": "Python is meant to be",
+            "o": ["Cluttered and confusing language",
+            "System programming language",
+            "Easy and readable language",
+            "Doctorate student's language"
+            ], "a": 2
+        },
+        {
+            "q": "Which library is often used to make HTTP requests?",
+            "o": ["pleadings",
+            "postulations",
+            "requests",
+            "petitions"
+            ], "a": 2
+        }
+    ]
+}
