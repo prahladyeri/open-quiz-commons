@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "q": "How will you subclass from a super class?",
+            "o": [
+				"class Sub(Super):",
+				"class Super(Sub):",
+				"class Sub implements Super:",
+				"class Super derives Sub:"
+            ], "a": 0
+        },
+        {
+            "q": "The constructor method which is automatically called each time an instance is created is defined as _____ in a class:",
+            "o": [
+				"__init__",
+				"__begin__",
+				"__start__",
+				"__here__"
+            ], "a": 0
+        },
+        {
+            "q": "The first argument a class method receives is the instance object and is called _____ by convention:",
+            "o": [
+				"self",
+				"this",
+				"$this",
+				"$that"
+            ], "a": 0
+        },
+        {
+            "q": "In effect, classes are considered _____ for generating multiple instances.",
+            "o": [
+				"factories",
+				"sheds",
+				"lounges",
+				"motels"
+            ], "a": 0
+        }
+	]
+}
