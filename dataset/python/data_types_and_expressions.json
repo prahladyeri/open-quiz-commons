@@ -1,0 +1,164 @@
+{
+    "data": [
+        {
+            "q": "The modern way of formatting strings introduced in Python 3.6 is called:",
+            "o": [
+				"F-string",
+				"S-string",
+				"T-string",
+				"FMT-string"
+            ], "a": 0
+        },
+        {
+            "q": "A module's built-in special attribute __name__ is set to _____ when run as a script or program?",
+            "o": [
+				"__main__",
+				"__script__",
+				"__prog__",
+				"__current__"
+            ], "a": 0
+        },
+        {
+            "q": "Which format is used to declare special variables?",
+            "o": [
+				"__special__",
+				"%%special%%",
+				"$$special$$",
+				"^^specia^^"
+            ], "a": 0
+        },
+        {
+            "q": "Which built-in function is used to return the data type of an object or variable?",
+            "o": [
+				"type()",
+				"dbtype()",
+				"vtype()",
+				"stype()"
+            ], "a": 0
+        },
+        {
+            "q": "Which statement allows global variables to be created or changed within a function?",
+            "o": [
+				"global",
+				"local",
+				"vocal",
+				"focal"
+            ], "a": 0
+        },
+        {
+            "q": "What is the output of following code?{@block:block1.txt}",
+            "o": [
+				"Error",
+				"Unpredictable result",
+				"[4,3,2,1]",
+				"[1,2,3,4]"
+            ], "a": 1
+        },
+        {
+            "q": "Which method is used to serialize an object into a JSON string?",
+            "o": [
+				"json.loads()",
+				"json.load()",
+				"json.dumps()",
+				"json.dump()"
+            ], "a": 2
+        },
+        {
+            "q": "Which method is used to parse JSON string and load it into an object?",
+            "o": [
+				"json.loads()",
+				"json.load()",
+				"json.dumps()",
+				"json.dump()"
+            ], "a": 0
+        },
+        {
+            "q": "Which function is used to return a Unicode string from the ordinal?",
+            "o": [
+				"chr()",
+				"char_code()",
+				"ord()",
+				"None of the above"
+            ], "a": 0
+        },
+        {
+            "q": "Valid declaration for a numeric data type?",
+            "o": [
+				"n = 12",
+				"n = 4E210",
+				"n = 0x9ff",
+				"All of the above"
+            ], "a": 3
+        },
+        {
+            "q": "What is the output of following code?\n\n{@block:block0.txt}",
+            "o": [
+				"0",
+				"2",
+				"1",
+				"3"
+            ], "a": 2
+        },
+        {
+            "q": "Which function is used to dynamically evaluate code during runtime:",
+            "o": [
+				"eval()",
+				"test()",
+				"dynamic()",
+				"run()"
+            ], "a": 0
+        },
+        {
+            "q": "The false placeholder object in python is called:",
+            "o": [
+				"Null",
+				"None",
+				"Void",
+				"Nada"
+            ], "a": 1
+        },
+        {
+            "q": "How do we encode a Python string to raw bytes?",
+            "o": [
+				"\"Foo\".raw(\"utf-8\")",
+				"\"Foo\".translate(\"utf-8\")",
+				"\"Foo\".encode(\"utf-8\")",
+				"\"Foo\".rawstr(\"utf-8\")"
+            ], "a": 2
+        },
+        {
+            "q": "Which is the comparison operator in Python?",
+            "o": ["a = b",
+            "a :: b",
+            "a + b",
+            "a == b"
+            ], "a": 3
+        },
+        {
+            "q": "_____ are immutable sequences of object references accessed by their offset position.",
+            "o": [
+			"Tuples",
+            "Pebbles",
+            "Cubicles",
+            "Dimples"
+            ], 
+			"a": 0
+        },
+        {
+            "q": "What is the syntax for creating a dict?",
+            "o": ["my_keys = []",
+            "my_keys = ''",
+            "my_keys = {}",
+            "my_keys = (1, 2)"
+            ], "a": 2
+        },
+        {
+            "q": "What is the syntax for creating a list?",
+            "o": ["lol = {}",
+            "lol = []",
+            "lol = 20",
+            "lol = (1, 2)"
+            ], "a": 1
+        }
+	]
+}
