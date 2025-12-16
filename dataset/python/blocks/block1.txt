@@ -1,0 +1,5 @@
+import random
+
+lol = [1, 2, 3, 4]
+random.shuffle(lol)
+print(lol)
