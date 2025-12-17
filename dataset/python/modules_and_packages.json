@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "q": "Which method from imp module is used to reload already imported modules?",
+            "o": [
+				"reload",
+				"reincarnate",
+				"refresh",
+				"render"
+            ], "a": 0
+        },
+        {
+            "q": "Which module is used to work with date/time data?",
+            "o": [
+				"datetime",
+				"time",
+				"All of the above",
+				"None of the above"
+            ], "a": 2
+        },        
+		{
+            "q": "Which special statement prints a bunch of motivational quotes called 'Zen of Python'?",
+            "o": [
+				"import this",
+				"import zen",
+				"print the zen",
+				"print the kaizen"
+            ], "a": 0
+        },
+        {
+            "q": "Package hierarchy in Python is defined by:",
+            "o": [
+				"Directory paths",
+				"'package' declaration at start of module",
+				"'namespace' declaration at start of module",
+				"The PSR-4 specification"
+            ], "a": 0
+        },
+        {
+            "q": "Statement to import particular name from a module:",
+            "o": [
+				"from <module> import <name>",
+				"import <package>.<name>",
+				"from <module> fetch <name>",
+				"from <module> grab <name>"
+            ], "a": 0
+        },
+        {
+            "q": "Statement to import a module as a whole in your code:",
+            "o": [
+				"import <module>",
+				"fetch <module>",
+				"grab <module>",
+				"None of the above"
+            ], "a": 0
+        }
+	]
+}
