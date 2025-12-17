@@ -1,4 +1,4 @@
-# 📚 Open MCQ Bank
+# 📚 Open Quiz Commons
 
 A growing, community-driven collection of multiple-choice questions (MCQs) for use in quiz apps, educational tools, and learning platforms.
 All content in this repository is licensed under **CC-BY-SA 4.0**, allowing anyone to use, modify, and share the dataset as long as proper attribution is given and derivative works remain open under the same license.
