@@ -1,0 +1,124 @@
+{
+    "data": [
+        {
+            "q": "Which keyword is used to make a conditional decision in Python?",
+            "o": [
+                "if",
+                "when",
+                "switch",
+                "decide"
+            ],
+            "a": 0
+        },
+        {
+            "q": "Which keyword is used to check multiple conditions if the previous ones fail?",
+            "o": [
+                "elseif",
+                "elif",
+                "else if",
+                "otherwise"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which block is executed when none of the conditions in an if-elif chain are true?",
+            "o": [
+                "default",
+                "finally",
+                "else",
+                "none"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which loop is commonly used to iterate over a sequence like a list or string?",
+            "o": [
+                "for",
+                "while",
+                "loop",
+                "repeat"
+            ],
+            "a": 0
+        },
+        {
+            "q": "Which loop continues executing as long as a condition remains true?",
+            "o": [
+                "for",
+                "repeat",
+                "while",
+                "do-while"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which keyword is used to exit a loop prematurely?",
+            "o": [
+                "stop",
+                "exit",
+                "break",
+                "return"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which keyword skips the current iteration of a loop and moves to the next one?",
+            "o": [
+                "skip",
+                "pass",
+                "continue",
+                "next"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which keyword is used as a placeholder where a statement is syntactically required but no action is needed?",
+            "o": [
+                "skip",
+                "noop",
+                "continue",
+                "pass"
+            ],
+            "a": 3
+        },
+        {
+            "q": "Which statement allows executing code when a loop completes without encountering a break?",
+            "o": [
+                "finally",
+                "else",
+                "end",
+                "after"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which keyword was introduced in Python 3.10 to support structural pattern matching?",
+            "o": [
+                "switch",
+                "select",
+                "match",
+                "case"
+            ],
+            "a": 2
+        },
+        {
+            "q": "In Python's match-case statement, which keyword defines an individual pattern?",
+            "o": [
+                "when",
+                "pattern",
+                "case",
+                "if"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which statement immediately terminates a function, regardless of loops?",
+            "o": [
+                "break",
+                "continue",
+                "exit",
+                "return"
+            ],
+            "a": 3
+        }
+    ]
+}
