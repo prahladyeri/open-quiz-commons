@@ -11,19 +11,19 @@
           "name": "Core Python", "slug": "core", "version": 1.0
         },
         {
-          "name": "Data Types and Expressions", "slug": "data_types_and_expressions"
+          "name": "Data Types and Expressions", "slug": "data_types_and_expressions", "version": 1.0
         },
         {
           "name": "Control Flow", "slug": "control_flow", "version": 1.0
         },
         {
-          "name": "Functions", "slug": "functions"
+          "name": "Functions", "slug": "functions", "version": 1.0
         },
         {
           "name": "Classes and OOP", "slug": "classes_and_oop", "version": 1.0
         },
         {
-          "name": "Exceptions and Errors", "slug": "exceptions_and_errors"
+          "name": "Exceptions and Errors", "slug": "exceptions_and_errors", "version": 1.0
         },
         {
           "name": "File I/O", "slug": "file_io", "version": 1.0
