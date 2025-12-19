@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "schema_version": "1.0",
   "subjects": [
     {
       "name": "Python",
@@ -8,37 +8,37 @@
       "tags": ["python", "programming", "software"],
       "modules": [
         {
-          "name": "Core Python", "slug": "core"
+          "name": "Core Python", "slug": "core", "version": 1.0
         },
         {
           "name": "Data Types and Expressions", "slug": "data_types_and_expressions"
         },
         {
-          "name": "Control Flow", "slug": "control_flow"
+          "name": "Control Flow", "slug": "control_flow", "version": 1.0
         },
         {
           "name": "Functions", "slug": "functions"
         },
         {
-          "name": "Classes and OOP", "slug": "classes_and_oop"
+          "name": "Classes and OOP", "slug": "classes_and_oop", "version": 1.0
         },
         {
           "name": "Exceptions and Errors", "slug": "exceptions_and_errors"
         },
         {
-          "name": "File I/O", "slug": "file_io"
+          "name": "File I/O", "slug": "file_io", "version": 1.0
         },
         {
-          "name": "Modules and Packages", "slug": "modules_and_packages"
+          "name": "Modules and Packages", "slug": "modules_and_packages", "version": 1.0
         },
         {
-          "name": "Standard Library", "slug": "standard_library"
+          "name": "Standard Library", "slug": "standard_library", "version": 1.0
         },
         {
-          "name": "Iterators and Generators", "slug": "iterators_and_generators"
+          "name": "Iterators and Generators", "slug": "iterators_and_generators", "version": 1.0
         },
         {
-          "name": "Testing and Debugging", "slug": "testing_and_debugging"
+          "name": "Testing and Debugging", "slug": "testing_and_debugging", "version": 1.0
         }
       ]
     }
