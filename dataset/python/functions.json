@@ -1,0 +1,124 @@
+{
+    "data": [
+        {
+            "q": "Which keyword is used to define a function in Python?",
+            "o": [
+                "function",
+                "def",
+                "func",
+                "define"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which symbol is used to end the function header line in Python?",
+            "o": [
+                ".",
+                ";",
+                ":",
+                "{}"
+            ],
+            "a": 2
+        },
+        {
+            "q": "What is the correct way to call a function named greet?",
+            "o": [
+                "call greet()",
+                "greet",
+                "greet()",
+                "call(greet)"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which statement is used to send a value back from a function?",
+            "o": [
+                "send",
+                "yield",
+                "return",
+                "output"
+            ],
+            "a": 2
+        },
+        {
+            "q": "What value is returned by a function if no return statement is specified?",
+            "o": [
+                "0",
+                "False",
+                "None",
+                "Undefined"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which type of argument is passed by matching the parameter name?",
+            "o": [
+                "Positional argument",
+                "Keyword argument",
+                "Default argument",
+                "Variable argument"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which symbol is used to collect variable positional arguments in a function?",
+            "o": [
+                "&args",
+                "*args",
+                "**args",
+                "@args"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which symbol is used to collect variable keyword arguments in a function?",
+            "o": [
+                "*kwargs",
+                "&kwargs",
+                "**kwargs",
+                "@kwargs"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which type of function is defined using the lambda keyword?",
+            "o": [
+                "Recursive function",
+                "Generator function",
+                "Anonymous function",
+                "Static function"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which of the following correctly defines a lambda function?",
+            "o": [
+                "lambda x = x + 1",
+                "lambda(x): x + 1",
+                "lambda x: x + 1",
+                "def lambda x: x + 1"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which scope refers to variables defined inside a function?",
+            "o": [
+                "Global scope",
+                "Local scope",
+                "Built-in scope",
+                "Module scope"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which keyword is used to modify a global variable inside a function?",
+            "o": [
+                "extern",
+                "global",
+                "static",
+                "public"
+            ],
+            "a": 1
+        }
+    ]
+}
