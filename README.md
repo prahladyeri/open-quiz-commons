@@ -18,6 +18,8 @@ It is designed to support:
 
 The goal is to build an open, high-quality bank of questions across a variety of topics.
 
+Canonical Implementation: <https://prahladyeri.github.io/open-quiz-commons/index.json>
+
 ---
 
 ## 📁 Repository Structure
