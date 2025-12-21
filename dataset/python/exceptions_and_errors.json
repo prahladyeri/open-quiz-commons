@@ -1,0 +1,104 @@
+{
+    "data": [
+        {
+            "q": "Which keyword is used to handle exceptions in Python?",
+            "o": [
+                "catch",
+                "handle",
+                "try",
+                "except"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which block is used to catch and handle an exception?",
+            "o": [
+                "try",
+                "finally",
+                "except",
+                "raise"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which block will always execute whether an exception occurs or not?",
+            "o": [
+                "try",
+                "except",
+                "else",
+                "finally"
+            ],
+            "a": 3
+        },
+        {
+            "q": "What happens if an exception is not handled in a Python program?",
+            "o": [
+                "The program continues normally",
+                "The exception is ignored",
+                "The program terminates with a traceback",
+                "The exception is logged automatically"
+            ],
+            "a": 2
+        },
+        {
+            "q": "Which keyword is used to explicitly raise an exception?",
+            "o": [
+                "throw",
+                "raise",
+                "error",
+                "assert"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which of the following is a built-in Python exception?",
+            "o": [
+                "IndexError",
+                "DivideError",
+                "OverflowException",
+                "NullPointerError"
+            ],
+            "a": 0
+        },
+        {
+            "q": "What exception is raised when dividing by zero?",
+            "o": [
+                "ZeroDivisionError",
+                "ArithmeticError",
+                "ValueError",
+                "RuntimeError"
+            ],
+            "a": 0
+        },
+        {
+            "q": "Which block executes only if no exception occurs?",
+            "o": [
+                "try",
+                "except",
+                "else",
+                "finally"
+            ],
+            "a": 2
+        },
+        {
+            "q": "How can you catch multiple exceptions in a single except block?",
+            "o": [
+                "Using multiple except blocks",
+                "Using a tuple of exceptions",
+                "Using nested try blocks",
+                "Using the else block"
+            ],
+            "a": 1
+        },
+        {
+            "q": "Which statement is commonly used for debugging and raises an exception if a condition is false?",
+            "o": [
+                "check",
+                "validate",
+                "assert",
+                "raise"
+            ],
+            "a": 2
+        }
+    ]
+}
