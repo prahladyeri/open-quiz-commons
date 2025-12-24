@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is an iterator in Python?",
+            "o": [
+                "A function that returns multiple values",
+                "An object that represents a stream of data",
+                "A loop construct",
+                "A data type for collections"
+            ],
+            "a": 1,
+            "explanation": "An iterator is an object that represents a stream of data and implements the __iter__() and __next__() methods."
+        },
+        {
+            "q": "Which method is used to get the next item from an iterator?",
+            "o": [
+                "__iter__()",
+                "__next__()",
+                "next()",
+                "advance()"
+            ],
+            "a": 2,
+            "explanation": "The built-in next() function calls the iterator’s __next__() method to retrieve the next item."
+        },
+        {
+            "q": "What happens when an iterator is exhausted?",
+            "o": [
+                "It restarts automatically",
+                "It returns None",
+                "It raises StopIteration",
+                "It raises IndexError"
+            ],
+            "a": 2,
+            "explanation": "When an iterator has no more items to return, it raises a StopIteration exception."
+        },
+        {
+            "q": "Which keyword is used to create a generator in Python?",
+            "o": [
+                "return",
+                "yield",
+                "generate",
+                "next"
+            ],
+            "a": 1,
+            "explanation": "The yield keyword turns a function into a generator, producing values one at a time while preserving state."
+        },
+        {
+            "q": "What does calling a generator function return?",
+            "o": [
+                "A list",
+                "A tuple",
+                "An iterator object",
+                "The first yielded value"
+            ],
+            "a": 2,
+            "explanation": "Calling a generator function returns a generator object, which is a type of iterator."
+        },
+        {
+            "q": "Which of the following is a generator expression?",
+            "o": [
+                "[x * 2 for x in range(5)]",
+                "{x * 2 for x in range(5)}",
+                "(x * 2 for x in range(5))",
+                "x * 2 for x in range(5)"
+            ],
+            "a": 2,
+            "explanation": "A generator expression uses parentheses and creates a generator that yields values lazily."
+        },
+        {
+            "q": "Why are generators considered memory-efficient?",
+            "o": [
+                "They store all values in memory",
+                "They execute faster than loops",
+                "They produce values on demand",
+                "They use compiled code internally"
+            ],
+            "a": 2,
+            "explanation": "Generators yield values one at a time and do not store the entire sequence in memory."
+        },
+        {
+            "q": "Which built-in function can be used to manually iterate over an iterator?",
+            "o": [
+                "iter()",
+                "range()",
+                "next()",
+                "enumerate()"
+            ],
+            "a": 2,
+            "explanation": "The next() function retrieves the next value from an iterator until StopIteration is raised."
+        },
+        {
+            "q": "Which statement about iterators is TRUE?",
+            "o": [
+                "Iterators can be reused indefinitely",
+                "Iterators always support indexing",
+                "Iterators maintain state between iterations",
+                "Iterators must be lists"
+            ],
+            "a": 2,
+            "explanation": "Iterators maintain internal state and remember where they are during iteration."
+        },
+        {
+            "q": "Which of the following can be iterated over using a for loop?",
+            "o": [
+                "Only lists",
+                "Only generators",
+                "Only iterators",
+                "Any iterable object"
+            ],
+            "a": 3,
+            "explanation": "Any iterable object (such as lists, tuples, strings, and generators) can be used in a for loop."
+        }
+    ]
+}
