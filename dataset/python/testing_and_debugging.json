@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "Which built-in statement is commonly used for debugging by printing variable values?",
+            "o": [
+                "log()",
+                "print()",
+                "debug()",
+                "trace()"
+            ],
+            "a": 1,
+            "explanation": "The print() function is often used as a simple debugging technique to inspect variable values and program flow."
+        },
+        {
+            "q": "Which Python module is specifically designed for writing unit tests?",
+            "o": [
+                "doctest",
+                "unittest",
+                "pytest",
+                "testcase"
+            ],
+            "a": 1,
+            "explanation": "unittest is Python’s built-in framework for writing and running unit tests. pytest is a popular third-party alternative."
+        },
+        {
+            "q": "Which statement is used to verify that a condition is true during testing?",
+            "o": [
+                "check",
+                "assert",
+                "verify",
+                "ensure"
+            ],
+            "a": 1,
+            "explanation": "The assert statement is used to test assumptions in code and raise an AssertionError if the condition is false."
+        },
+        {
+            "q": "What happens when an assert statement fails?",
+            "o": [
+                "The program continues silently",
+                "A warning is logged",
+                "An AssertionError is raised",
+                "The program exits immediately"
+            ],
+            "a": 2,
+            "explanation": "When an assert condition evaluates to False, Python raises an AssertionError."
+        },
+        {
+            "q": "Which module can be used to test small pieces of code embedded in documentation strings?",
+            "o": [
+                "unittest",
+                "doctest",
+                "pdb",
+                "inspect"
+            ],
+            "a": 1,
+            "explanation": "The doctest module searches for examples in docstrings and verifies that they produce the expected output."
+        },
+        {
+            "q": "Which module provides an interactive source-level debugger for Python?",
+            "o": [
+                "trace",
+                "inspect",
+                "pdb",
+                "logging"
+            ],
+            "a": 2,
+            "explanation": "The pdb module is Python’s built-in debugger, allowing step-by-step execution and inspection of variables."
+        },
+        {
+            "q": "Which function is commonly used to start a debugging session using pdb?",
+            "o": [
+                "pdb.run()",
+                "pdb.debug()",
+                "pdb.set_trace()",
+                "pdb.start()"
+            ],
+            "a": 2,
+            "explanation": "pdb.set_trace() inserts a breakpoint and starts an interactive debugging session at that point in the code."
+        },
+        {
+            "q": "Which module is used for recording events, errors, and informational messages instead of using print()?",
+            "o": [
+                "trace",
+                "debug",
+                "logging",
+                "syslog"
+            ],
+            "a": 2,
+            "explanation": "The logging module provides a flexible framework for emitting log messages with different severity levels."
+        },
+        {
+            "q": "Which logging level indicates a serious error that may prevent the program from continuing?",
+            "o": [
+                "INFO",
+                "WARNING",
+                "ERROR",
+                "CRITICAL"
+            ],
+            "a": 3,
+            "explanation": "CRITICAL represents very serious errors that may cause the program to stop running."
+        },
+        {
+            "q": "Which tool helps measure which parts of the code are executed during tests?",
+            "o": [
+                "timeit",
+                "profile",
+                "coverage",
+                "traceback"
+            ],
+            "a": 2,
+            "explanation": "Coverage tools measure which lines of code are executed during tests, helping identify untested code paths."
+        }
+    ]
+}
