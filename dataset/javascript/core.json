@@ -1,79 +1,69 @@
 {
-  "schema_version": "1.0",
-  "subjects": [
+  "data": [
     {
-      "name": "Python",
-      "slug": "python",
-      "category": "Programming",
-      "tags": ["python", "programming", "software"],
-      "modules": [
-        {
-          "name": "Core Python", "slug": "core", "version": "1.0"
-        },
-        {
-          "name": "Data Types and Expressions", "slug": "data_types_and_expressions", "version": "1.0"
-        },
-        {
-          "name": "Control Flow", "slug": "control_flow", "version": "1.0"
-        },
-        {
-          "name": "Functions", "slug": "functions", "version": "1.0"
-        },
-        {
-          "name": "Classes and OOP", "slug": "classes_and_oop", "version": "1.0"
-        },
-        {
-          "name": "Exceptions and Errors", "slug": "exceptions_and_errors", "version": "1.0"
-        },
-        {
-          "name": "File I/O", "slug": "file_io", "version": "1.0"
-        },
-        {
-          "name": "Modules and Packages", "slug": "modules_and_packages", "version": "1.0"
-        },
-        {
-          "name": "Standard Library", "slug": "standard_library", "version": "1.0"
-        },
-        {
-          "name": "Iterators and Generators", "slug": "iterators_and_generators", "version": "1.0"
-        },
-        {
-          "name": "Testing and Debugging", "slug": "testing_and_debugging", "version": "1.0"
-        }
-      ]
+      "q": "Which keyword is used to declare a block-scoped variable in JavaScript?",
+      "o": ["var", "let", "const", "static"],
+      "a": 1,
+      "explanation": "`let` declares a block-scoped variable, unlike `var` which is function-scoped."
     },
     {
-      "name": "JavaScript",
-      "slug": "javascript",
-      "category": "Programming",
-      "tags": ["javascript", "web", "programming"],
-
-      "modules": [
-        { "name": "Core JavaScript", "slug": "core", "version": "1.0" },
-        { "name": "Functions & Scope", "slug": "functions_and_scope", "version": "1.0" },
-        { "name": "Async & Promises", "slug": "async_and_promises", "version": "1.0" }
+      "q": "Which of the following declares a constant that cannot be reassigned?",
+      "o": ["var", "let", "const", "define"],
+      "a": 2,
+      "explanation": "`const` prevents reassignment of the variable reference, though object contents may still be mutable."
+    },
+    {
+      "q": "What is the output of: typeof null ?",
+      "o": ["null", "object", "undefined", "number"],
+      "a": 1,
+      "explanation": "Due to a long-standing bug in JavaScript, `typeof null` returns `object`."
+    },
+    {
+      "q": "Which value is considered falsy in JavaScript?",
+      "o": ["\"0\"", "[]", "{}", "0"],
+      "a": 3,
+      "explanation": "`0` is a falsy value, while non-empty strings and objects are truthy."
+    },
+    {
+      "q": "Which operator is used to compare both value and type?",
+      "o": ["==", "=", "===", "!="],
+      "a": 2,
+      "explanation": "`===` checks for strict equality, meaning both value and type must match."
+    },
+    {
+      "q": "Which of the following is NOT a primitive data type in JavaScript?",
+      "o": ["string", "number", "object", "boolean"],
+      "a": 2,
+      "explanation": "`object` is a reference type, while the others are primitives."
+    },
+    {
+      "q": "How do you write a single-line comment in JavaScript?",
+      "o": ["<!-- comment -->", "# comment", "// comment", "/* comment */"],
+      "a": 2,
+      "explanation": "`//` is used for single-line comments in JavaScript."
+    },
+    {
+      "q": "What will be the result of: Boolean('') ?",
+      "o": ["true", "false", "null", "undefined"],
+      "a": 1,
+      "explanation": "An empty string is a falsy value, so it evaluates to `false`."
+    },
+    {
+      "q": "Which method converts a JSON string into a JavaScript object?",
+      "o": ["JSON.stringify()", "JSON.parse()", "Object.parse()", "JSON.convert()"],
+      "a": 1,
+      "explanation": "`JSON.parse()` converts a JSON-formatted string into a JavaScript object."
+    },
+    {
+      "q": "Which of the following best describes JavaScript?",
+      "o": [
+        "A compiled, statically typed language",
+        "A markup language",
+        "An interpreted, dynamically typed language",
+        "A purely functional language"
       ],
-
-      "subtopics": [
-        {
-          "name": "Browser",
-          "slug": "browser",
-          "tags": ["dom", "web", "frontend"],
-          "modules": [
-            { "name": "DOM & Events", "slug": "dom_and_events", "version": "1.0" },
-            { "name": "Fetch & AJAX", "slug": "fetch_and_ajax", "version": "1.0" }
-          ]
-        },
-        {
-          "name": "Node.js",
-          "slug": "node",
-          "tags": ["nodejs", "backend"],
-          "modules": [
-            { "name": "Node Core Modules", "slug": "node_core_modules", "version": "1.0" },
-            { "name": "File System & Process", "slug": "filesystem_and_process", "version": "1.0" }
-          ]
-        }
-      ]
+      "a": 2,
+      "explanation": "JavaScript is primarily interpreted and dynamically typed, though modern engines perform JIT compilation."
     }
   ]
 }
