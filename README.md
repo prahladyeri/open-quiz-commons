@@ -27,6 +27,7 @@ Canonical Implementation: <https://prahladyeri.github.io/open-quiz-commons/index
 ```
 /dataset
     python
+    javascript
     <more topics coming soon>
 
 /LICENSE     (CC-BY-SA 4.0)
