@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "subjects": [
+    {
+      "name": "Python",
+      "slug": "python",
+      "category": "Programming",
+      "tags": ["python", "programming", "software"],
+      "modules": [
+        {
+          "name": "Core Python", "slug": "core", "version": "1.0"
+        },
+        {
+          "name": "Data Types and Expressions", "slug": "data_types_and_expressions", "version": "1.0"
+        },
+        {
+          "name": "Control Flow", "slug": "control_flow", "version": "1.0"
+        },
+        {
+          "name": "Functions", "slug": "functions", "version": "1.0"
+        },
+        {
+          "name": "Classes and OOP", "slug": "classes_and_oop", "version": "1.0"
+        },
+        {
+          "name": "Exceptions and Errors", "slug": "exceptions_and_errors", "version": "1.0"
+        },
+        {
+          "name": "File I/O", "slug": "file_io", "version": "1.0"
+        },
+        {
+          "name": "Modules and Packages", "slug": "modules_and_packages", "version": "1.0"
+        },
+        {
+          "name": "Standard Library", "slug": "standard_library", "version": "1.0"
+        },
+        {
+          "name": "Iterators and Generators", "slug": "iterators_and_generators", "version": "1.0"
+        },
+        {
+          "name": "Testing and Debugging", "slug": "testing_and_debugging", "version": "1.0"
+        }
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "slug": "javascript",
+      "category": "Programming",
+      "tags": ["javascript", "web", "programming"],
+
+      "modules": [
+        { "name": "Core JavaScript", "slug": "core", "version": "1.0" },
+        { "name": "Functions & Scope", "slug": "functions_and_scope", "version": "1.0" },
+        { "name": "Async & Promises", "slug": "async_and_promises", "version": "1.0" }
+      ],
+
+      "subtopics": [
+        {
+          "name": "Browser",
+          "slug": "browser",
+          "tags": ["dom", "web", "frontend"],
+          "modules": [
+            { "name": "DOM & Events", "slug": "dom_and_events", "version": "1.0" },
+            { "name": "Fetch & AJAX", "slug": "fetch_and_ajax", "version": "1.0" }
+          ]
+        },
+        {
+          "name": "Node.js",
+          "slug": "node",
+          "tags": ["nodejs", "backend"],
+          "modules": [
+            { "name": "Node Core Modules", "slug": "node_core_modules", "version": "1.0" },
+            { "name": "File System & Process", "slug": "filesystem_and_process", "version": "1.0" }
+          ]
+        }
+      ]
+    }
+  ]
+}
