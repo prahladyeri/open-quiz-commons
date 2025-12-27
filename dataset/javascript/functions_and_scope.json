@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "q": "Which keyword is used to define a function in JavaScript?",
+      "o": ["function", "def", "fn", "lambda"],
+      "a": 0,
+      "explanation": "`function` is the standard keyword used to define a function in JavaScript."
+    },
+    {
+      "q": "Which of the following creates a function expression?",
+      "o": [
+        "function add(a, b) { return a + b; }",
+        "const add = function(a, b) { return a + b; }",
+        "add(a, b) => a + b",
+        "define add(a, b) { return a + b; }"
+      ],
+      "a": 1,
+      "explanation": "Assigning an anonymous function to a variable creates a function expression."
+    },
+    {
+      "q": "What is the scope of variables declared with `let`?",
+      "o": ["Global scope", "Function scope", "Block scope", "Module scope only"],
+      "a": 2,
+      "explanation": "`let` variables are limited to the block in which they are declared."
+    },
+    {
+      "q": "What happens when a function declaration is hoisted?",
+      "o": [
+        "Only the function name is hoisted",
+        "Only the function body is hoisted",
+        "Both name and body are hoisted",
+        "Nothing is hoisted"
+      ],
+      "a": 2,
+      "explanation": "Function declarations are fully hoisted, allowing them to be called before definition."
+    },
+    {
+      "q": "Which statement about arrow functions is TRUE?",
+      "o": [
+        "They have their own `this` value",
+        "They inherit `this` from the surrounding scope",
+        "They can be used as constructors",
+        "They require the `function` keyword"
+      ],
+      "a": 1,
+      "explanation": "Arrow functions do not have their own `this`; they inherit it from the enclosing scope."
+    },
+    {
+      "q": "What is a closure in JavaScript?",
+      "o": [
+        "A function bundled with its lexical environment",
+        "A function that closes a program",
+        "A block that prevents variable access",
+        "A way to destroy unused variables"
+      ],
+      "a": 0,
+      "explanation": "A closure allows a function to access variables from its outer scope even after that scope has finished executing."
+    },
+    {
+      "q": "Which variable will be accessible inside an inner function?",
+      "o": [
+        "Only local variables",
+        "Only global variables",
+        "Variables from both inner and outer functions",
+        "Only function parameters"
+      ],
+      "a": 2,
+      "explanation": "Inner functions can access variables from their own scope as well as enclosing scopes."
+    },
+    {
+      "q": "What is the value of `this` in a regular function called in the global scope (non-strict mode)?",
+      "o": ["undefined", "null", "window", "function itself"],
+      "a": 2,
+      "explanation": "In non-strict mode, `this` refers to the global object (`window` in browsers)."
+    },
+    {
+      "q": "Which keyword prevents access to a variable outside its block?",
+      "o": ["var", "let", "global", "static"],
+      "a": 1,
+      "explanation": "`let` restricts variable access to the block where it is defined."
+    },
+    {
+      "q": "Which concept allows functions to be passed as arguments in JavaScript?",
+      "o": [
+        "Inheritance",
+        "Encapsulation",
+        "First-class functions",
+        "Prototyping"
+      ],
+      "a": 2,
+      "explanation": "JavaScript treats functions as first-class citizens, allowing them to be passed and returned like any other value."
+    }
+  ]
+}
