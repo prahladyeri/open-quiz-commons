@@ -47,13 +47,17 @@
       "slug": "javascript",
       "category": "Programming",
       "tags": ["javascript", "web", "programming"],
-
       "modules": [
         { "name": "Core JavaScript", "slug": "core", "version": "1.0" },
+        { "name": "Data Types & Operators", "slug": "data_types_and_operators", "version": "1.0" },
+        { "name": "Control Flow", "slug": "control_flow", "version": "1.0" },
         { "name": "Functions & Scope", "slug": "functions_and_scope", "version": "1.0" },
-        { "name": "Async & Promises", "slug": "async_and_promises", "version": "1.0" }
+        { "name": "Objects & Prototypes", "slug": "objects_and_prototypes", "version": "1.0" },
+        { "name": "Arrays & Collections", "slug": "arrays_and_collections", "version": "1.0" },
+        { "name": "Async & Promises", "slug": "async_and_promises", "version": "1.0" },
+        { "name": "Errors & Debugging", "slug": "errors_and_debugging", "version": "1.0" },
+        { "name": "ES6+ Features", "slug": "es6_and_beyond", "version": "1.0" }
       ],
-
       "subtopics": [
         {
           "name": "Browser",
