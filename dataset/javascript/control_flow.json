@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which statement is used to execute code when a condition is true?",
+      "o": [
+        "for",
+        "if",
+        "switch",
+        "break"
+      ],
+      "a": 1,
+      "explanation": "`if` executes a block of code only when the specified condition evaluates to true."
+    },
+    {
+      "q": "Which loop is guaranteed to run at least once?",
+      "o": [
+        "for",
+        "while",
+        "do...while",
+        "foreach"
+      ],
+      "a": 2,
+      "explanation": "`do...while` executes the loop body once before checking the condition."
+    },
+    {
+      "q": "What keyword is used to exit a loop prematurely?",
+      "o": [
+        "stop",
+        "exit",
+        "break",
+        "return"
+      ],
+      "a": 2,
+      "explanation": "`break` immediately exits the nearest enclosing loop or switch statement."
+    },
+    {
+      "q": "Which keyword skips the current iteration of a loop and moves to the next one?",
+      "o": [
+        "skip",
+        "pass",
+        "continue",
+        "next"
+      ],
+      "a": 2,
+      "explanation": "`continue` skips the remaining code in the current iteration and proceeds with the next iteration."
+    },
+    {
+      "q": "Which statement is best suited for handling multiple discrete values of a variable?",
+      "o": [
+        "if...else",
+        "switch",
+        "while",
+        "try...catch"
+      ],
+      "a": 1,
+      "explanation": "`switch` is useful when comparing a single value against multiple possible cases."
+    },
+    {
+      "q": "What happens if a `break` statement is omitted inside a `switch` case?",
+      "o": [
+        "An error is thrown",
+        "The switch stops automatically",
+        "Execution falls through to the next case",
+        "The default case runs immediately"
+      ],
+      "a": 2,
+      "explanation": "Without `break`, execution continues into the next case (fall-through behavior)."
+    },
+    {
+      "q": "Which loop is commonly used to iterate over object properties?",
+      "o": [
+        "for",
+        "for...in",
+        "for...of",
+        "while"
+      ],
+      "a": 1,
+      "explanation": "`for...in` iterates over enumerable property names of an object."
+    },
+    {
+      "q": "Which loop is best suited for iterating over iterable values like arrays?",
+      "o": [
+        "for...in",
+        "for...of",
+        "while",
+        "do...while"
+      ],
+      "a": 1,
+      "explanation": "`for...of` iterates directly over the values of an iterable."
+    },
+    {
+      "q": "What does the conditional (ternary) operator return?",
+      "o": [
+        "A boolean value only",
+        "One of two expressions based on a condition",
+        "Always undefined",
+        "Only numeric values"
+      ],
+      "a": 1,
+      "explanation": "The ternary operator returns one of two expressions depending on whether the condition is true or false."
+    },
+    {
+      "q": "Which keyword is used to stop further execution inside a function?",
+      "o": [
+        "break",
+        "continue",
+        "return",
+        "exit"
+      ],
+      "a": 2,
+      "explanation": "`return` exits the function and optionally returns a value."
+    }
+  ]
+}
