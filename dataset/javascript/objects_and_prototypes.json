@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which of the following is the correct way to create an object in JavaScript?",
+      "o": [
+        "var obj = Object[];",
+        "var obj = {};",
+        "var obj = new Array();",
+        "var obj = () => {};"
+      ],
+      "a": 1,
+      "explanation": "Using object literal `{}` is the most common and correct way to create an object."
+    },
+    {
+      "q": "How do you access the property `name` of an object `user`?",
+      "o": [
+        "user->name",
+        "user[name]",
+        "user.name",
+        "user::name"
+      ],
+      "a": 2,
+      "explanation": "Dot notation (`user.name`) is the standard way to access object properties."
+    },
+    {
+      "q": "Which statement about JavaScript objects is TRUE?",
+      "o": [
+        "Objects are immutable",
+        "Objects are passed by value",
+        "Objects are passed by reference",
+        "Objects cannot contain functions"
+      ],
+      "a": 2,
+      "explanation": "Objects are reference types, so variables store references to them."
+    },
+    {
+      "q": "What does the `this` keyword refer to inside an object method?",
+      "o": [
+        "The global object",
+        "The function itself",
+        "The object that owns the method",
+        "The prototype object"
+      ],
+      "a": 2,
+      "explanation": "`this` refers to the object on which the method is called."
+    },
+    {
+      "q": "Which method is used to add a property to an object's prototype?",
+      "o": [
+        "Object.extend()",
+        "Object.prototype.add()",
+        "Constructor.prototype.propertyName",
+        "Object.addPrototype()"
+      ],
+      "a": 2,
+      "explanation": "Properties are added to a prototype via `Constructor.prototype.propertyName`."
+    },
+    {
+      "q": "What is a prototype in JavaScript?",
+      "o": [
+        "A blueprint class",
+        "An object from which other objects inherit properties",
+        "A copy of an object",
+        "A function wrapper"
+      ],
+      "a": 1,
+      "explanation": "A prototype is an object that provides shared properties and methods via inheritance."
+    },
+    {
+      "q": "Which operator is used to check if an object inherits a property?",
+      "o": [
+        "hasOwn",
+        "exists",
+        "in",
+        "instanceof"
+      ],
+      "a": 2,
+      "explanation": "The `in` operator checks both own and inherited properties."
+    },
+    {
+      "q": "What does the `instanceof` operator do?",
+      "o": [
+        "Checks if an object has a property",
+        "Checks if an object is an instance of a constructor",
+        "Checks if two objects are equal",
+        "Checks if an object is iterable"
+      ],
+      "a": 1,
+      "explanation": "`instanceof` checks whether an object exists in a constructor's prototype chain."
+    },
+    {
+      "q": "Which built-in method returns an object's prototype?",
+      "o": [
+        "Object.getPrototypeOf()",
+        "Object.prototypeOf()",
+        "Object.getParent()",
+        "Object.__proto__()"
+      ],
+      "a": 0,
+      "explanation": "`Object.getPrototypeOf()` safely returns the prototype of an object."
+    },
+    {
+      "q": "What happens when a property is not found on an object?",
+      "o": [
+        "An error is thrown",
+        "The program stops",
+        "JavaScript looks up the prototype chain",
+        "The property is automatically created"
+      ],
+      "a": 2,
+      "explanation": "JavaScript searches for the property up the prototype chain until it is found or ends."
+    }
+  ]
+}
