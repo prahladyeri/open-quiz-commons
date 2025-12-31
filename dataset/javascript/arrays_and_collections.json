@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which of the following is the correct way to create an array in JavaScript?",
+      "o": [
+        "var arr = Array();",
+        "var arr = {};",
+        "var arr = [];",
+        "var arr = () => [];"
+      ],
+      "a": 2,
+      "explanation": "Using square brackets `[]` is the most common and preferred way to create an array."
+    },
+    {
+      "q": "How do you access the first element of an array `arr`?",
+      "o": [
+        "arr(0)",
+        "arr[1]",
+        "arr[0]",
+        "arr.first()"
+      ],
+      "a": 2,
+      "explanation": "Array indices start at 0, so the first element is accessed with `arr[0]`."
+    },
+    {
+      "q": "Which method adds one or more elements to the end of an array?",
+      "o": [
+        "push()",
+        "pop()",
+        "shift()",
+        "unshift()"
+      ],
+      "a": 0,
+      "explanation": "`push()` appends elements to the end of an array."
+    },
+    {
+      "q": "Which method removes the last element from an array?",
+      "o": [
+        "shift()",
+        "pop()",
+        "splice()",
+        "slice()"
+      ],
+      "a": 1,
+      "explanation": "`pop()` removes and returns the last element of an array."
+    },
+    {
+      "q": "Which method creates a new array without modifying the original?",
+      "o": [
+        "splice()",
+        "sort()",
+        "reverse()",
+        "slice()"
+      ],
+      "a": 3,
+      "explanation": "`slice()` returns a shallow copy of a portion of an array without mutating it."
+    },
+    {
+      "q": "Which array method is used to transform each element and return a new array?",
+      "o": [
+        "forEach()",
+        "map()",
+        "filter()",
+        "reduce()"
+      ],
+      "a": 1,
+      "explanation": "`map()` applies a function to each element and returns a new array."
+    },
+    {
+      "q": "Which array method is used to filter elements based on a condition?",
+      "o": [
+        "map()",
+        "filter()",
+        "reduce()",
+        "some()"
+      ],
+      "a": 1,
+      "explanation": "`filter()` returns a new array containing only elements that satisfy the condition."
+    },
+    {
+      "q": "Which array method reduces an array to a single value?",
+      "o": [
+        "map()",
+        "filter()",
+        "reduce()",
+        "every()"
+      ],
+      "a": 2,
+      "explanation": "`reduce()` accumulates array values into a single result."
+    },
+    {
+      "q": "Which JavaScript collection allows unique values only?",
+      "o": [
+        "Array",
+        "Object",
+        "Set",
+        "Map"
+      ],
+      "a": 2,
+      "explanation": "`Set` stores only unique values and automatically removes duplicates."
+    },
+    {
+      "q": "Which collection stores key-value pairs and preserves insertion order?",
+      "o": [
+        "Object",
+        "Array",
+        "Set",
+        "Map"
+      ],
+      "a": 3,
+      "explanation": "`Map` stores key-value pairs and remembers the original insertion order of keys."
+    }
+  ]
+}
