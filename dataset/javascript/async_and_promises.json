@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What does asynchronous code allow JavaScript to do?",
+      "o": [
+        "Run multiple threads in parallel",
+        "Execute long-running tasks without blocking the main thread",
+        "Execute code faster",
+        "Skip error handling"
+      ],
+      "a": 1,
+      "explanation": "Asynchronous code allows long-running operations to run without blocking the main execution thread."
+    },
+    {
+      "q": "Which pattern was commonly used for async operations before Promises?",
+      "o": [
+        "Generators",
+        "Callbacks",
+        "Threads",
+        "Modules"
+      ],
+      "a": 1,
+      "explanation": "Callbacks were the primary way to handle asynchronous operations before Promises were introduced."
+    },
+    {
+      "q": "What problem is commonly associated with deeply nested callbacks?",
+      "o": [
+        "Memory leaks",
+        "Callback hell",
+        "Race conditions",
+        "Deadlocks"
+      ],
+      "a": 1,
+      "explanation": "Deeply nested callbacks reduce readability and maintainability, a problem known as callback hell."
+    },
+    {
+      "q": "What does a Promise represent?",
+      "o": [
+        "A value available immediately",
+        "A value that may be available in the future",
+        "A thread running in parallel",
+        "A synchronous function call"
+      ],
+      "a": 1,
+      "explanation": "A Promise represents a value that will be fulfilled or rejected at some point in the future."
+    },
+    {
+      "q": "Which method is used to handle a fulfilled Promise?",
+      "o": [
+        "catch()",
+        "resolve()",
+        "then()",
+        "finally()"
+      ],
+      "a": 2,
+      "explanation": "`then()` is used to handle the resolved value of a Promise."
+    },
+    {
+      "q": "Which method is used to handle errors in a Promise chain?",
+      "o": [
+        "throw()",
+        "error()",
+        "reject()",
+        "catch()"
+      ],
+      "a": 3,
+      "explanation": "`catch()` handles rejected Promises or errors thrown in the chain."
+    },
+    {
+      "q": "What keyword is used to pause execution until a Promise resolves?",
+      "o": [
+        "wait",
+        "pause",
+        "await",
+        "yield"
+      ],
+      "a": 2,
+      "explanation": "`await` pauses execution of an async function until the Promise settles."
+    },
+    {
+      "q": "Where can the `await` keyword be used?",
+      "o": [
+        "Anywhere in the program",
+        "Only inside async functions",
+        "Only in global scope",
+        "Only inside Promises"
+      ],
+      "a": 1,
+      "explanation": "`await` can only be used inside functions declared with the `async` keyword."
+    },
+    {
+      "q": "What does an async function always return?",
+      "o": [
+        "A value",
+        "Undefined",
+        "A Promise",
+        "A callback"
+      ],
+      "a": 2,
+      "explanation": "An async function always returns a Promise, even if it returns a plain value."
+    },
+    {
+      "q": "Which construct is commonly used to handle errors with async/await?",
+      "o": [
+        "if...else",
+        "switch",
+        "try...catch",
+        "finally"
+      ],
+      "a": 2,
+      "explanation": "`try...catch` is used to handle errors in async/await code."
+    }
+  ]
+}
