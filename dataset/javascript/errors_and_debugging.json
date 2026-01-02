@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "subject": "javascript",
+  "module": "errors_and_debugging",
+  "version": "1.0",
+  "questions": [
+    {
+      "q": "Which statement is used to handle runtime errors in JavaScript?",
+      "o": ["catch", "try...catch", "throw", "error"],
+      "a": 1,
+      "explanation": "JavaScript handles runtime errors using the try...catch statement."
+    },
+    {
+      "q": "What type of error occurs when JavaScript code has invalid syntax?",
+      "o": ["RuntimeError", "TypeError", "ReferenceError", "SyntaxError"],
+      "a": 3,
+      "explanation": "SyntaxError occurs when the JavaScript engine encounters invalid syntax."
+    },
+    {
+      "q": "Which error is thrown when accessing a variable that has not been declared?",
+      "o": ["TypeError", "ReferenceError", "SyntaxError", "RangeError"],
+      "a": 1,
+      "explanation": "ReferenceError occurs when a variable is not defined in the current scope."
+    },
+    {
+      "q": "What does the finally block do in try...catch...finally?",
+      "o": [
+        "Runs only if an error occurs",
+        "Runs only if no error occurs",
+        "Always runs regardless of error",
+        "Stops error propagation"
+      ],
+      "a": 2,
+      "explanation": "The finally block always executes, whether an error occurs or not."
+    },
+    {
+      "q": "Which keyword is used to manually raise an error in JavaScript?",
+      "o": ["raise", "error", "throw", "catch"],
+      "a": 2,
+      "explanation": "The throw keyword is used to create custom errors in JavaScript."
+    },
+    {
+      "q": "What type of error occurs when calling a method on null or undefined?",
+      "o": ["ReferenceError", "SyntaxError", "TypeError", "RangeError"],
+      "a": 2,
+      "explanation": "TypeError occurs when an operation is performed on an incompatible value like null or undefined."
+    },
+    {
+      "q": "Which built-in object is commonly used for debugging output?",
+      "o": ["alert", "debug", "console", "log"],
+      "a": 2,
+      "explanation": "The console object is used for debugging via methods like console.log()."
+    },
+    {
+      "q": "Which console method is best suited for printing error messages?",
+      "o": ["console.log", "console.warn", "console.error", "console.debug"],
+      "a": 2,
+      "explanation": "console.error() is specifically intended for error messages."
+    },
+    {
+      "q": "What happens if an exception is thrown and not caught?",
+      "o": [
+        "The program continues normally",
+        "The error is ignored",
+        "The program execution stops",
+        "The error is logged automatically"
+      ],
+      "a": 2,
+      "explanation": "An uncaught exception stops JavaScript execution and may crash the script."
+    },
+    {
+      "q": "Which statement is commonly used to inspect program flow during debugging?",
+      "o": ["console.log()", "alert()", "prompt()", "throw"],
+      "a": 0,
+      "explanation": "console.log() is widely used to inspect values and program flow during debugging."
+    }
+  ]
+}
