@@ -1,0 +1,89 @@
+{
+  "data": [
+    {
+      "q": "Which keyword is used to declare a block-scoped variable in ES6?",
+      "o": ["var", "let", "const", "static"],
+      "a": 1,
+      "explanation": "let introduces block-scoped variables, unlike var which is function-scoped."
+    },
+    {
+      "q": "What is a key difference between let and const?",
+      "o": [
+        "const is function-scoped",
+        "let cannot be reassigned",
+        "const cannot be reassigned",
+        "let is hoisted but const is not"
+      ],
+      "a": 2,
+      "explanation": "Variables declared with const cannot be reassigned after initialization."
+    },
+    {
+      "q": "Which syntax is used to define arrow functions?",
+      "o": [
+        "function => ()",
+        "() => {}",
+        "=> function()",
+        "function() -> {}"
+      ],
+      "a": 1,
+      "explanation": "Arrow functions use the () => {} syntax introduced in ES6."
+    },
+    {
+      "q": "How does 'this' behave inside arrow functions?",
+      "o": [
+        "It refers to the global object",
+        "It is dynamically bound",
+        "It is lexically scoped",
+        "It is undefined"
+      ],
+      "a": 2,
+      "explanation": "Arrow functions inherit 'this' from the surrounding lexical scope."
+    },
+    {
+      "q": "Which feature allows extracting values from arrays or objects?",
+      "o": ["Spreading", "Mapping", "Destructuring", "Cloning"],
+      "a": 2,
+      "explanation": "Destructuring assignment allows unpacking values from arrays or objects."
+    },
+    {
+      "q": "What does the spread operator (...) do?",
+      "o": [
+        "Combines multiple functions",
+        "Expands iterable elements",
+        "Stops execution",
+        "Creates closures"
+      ],
+      "a": 1,
+      "explanation": "The spread operator expands elements of an iterable like arrays or objects."
+    },
+    {
+      "q": "Which feature introduced default values for function parameters?",
+      "o": ["Arrow functions", "Rest parameters", "Default parameters", "Destructuring"],
+      "a": 2,
+      "explanation": "ES6 allows function parameters to have default values."
+    },
+    {
+      "q": "Which keyword is used to define a class in ES6?",
+      "o": ["object", "prototype", "class", "constructor"],
+      "a": 2,
+      "explanation": "The class keyword provides syntactic sugar over JavaScript's prototype system."
+    },
+    {
+      "q": "Which method is used to import a default export from a module?",
+      "o": [
+        "import { name } from 'module'",
+        "require('module')",
+        "import name from 'module'",
+        "include name from 'module'"
+      ],
+      "a": 2,
+      "explanation": "Default exports are imported without curly braces."
+    },
+    {
+      "q": "Which ES feature allows handling asynchronous code more cleanly?",
+      "o": ["Callbacks", "Promises", "async/await", "setTimeout"],
+      "a": 2,
+      "explanation": "async/await simplifies asynchronous code by making it look synchronous."
+    }
+  ]
+}
