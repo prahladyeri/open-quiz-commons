@@ -6,6 +6,7 @@
       "slug": "python",
       "category": "Programming",
       "tags": ["python", "programming", "software"],
+      "icon": "fa-brands fa-python",
       "modules": [
         {"name": "Core Python", "slug": "core", "version": "1.0"},
         {"name": "Data Types and Expressions", "slug": "data_types_and_expressions", "version": "1.0"},
@@ -25,6 +26,7 @@
       "slug": "javascript",
       "category": "Programming",
       "tags": ["javascript", "web", "programming"],
+      "icon": "fa-brands fa-node-js",
       "modules": [
         { "name": "Core JavaScript", "slug": "core", "version": "1.0" },
         { "name": "Data Types & Operators", "slug": "data_types_and_operators", "version": "1.0" },
