@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What does DOM stand for?",
+      "o": [
+        "Document Object Model",
+        "Data Object Model",
+        "Document Oriented Method",
+        "Dynamic Object Mapping"
+      ],
+      "a": 0,
+      "explanation": "DOM stands for Document Object Model, which represents the HTML document as a tree of objects."
+    },
+    {
+      "q": "Which method is commonly used to select an element by its ID?",
+      "o": [
+        "document.querySelectorAll()",
+        "document.getElementById()",
+        "document.getElementsByClassName()",
+        "document.findElement()"
+      ],
+      "a": 1,
+      "explanation": "document.getElementById() selects a single element with the specified ID."
+    },
+    {
+      "q": "Which method allows selecting the first element matching a CSS selector?",
+      "o": [
+        "document.getElementById()",
+        "document.querySelector()",
+        "document.querySelectorAll()",
+        "document.matchSelector()"
+      ],
+      "a": 1,
+      "explanation": "querySelector() returns the first element that matches the given CSS selector."
+    },
+    {
+      "q": "What does addEventListener() do?",
+      "o": [
+        "Executes an event immediately",
+        "Attaches an event handler to an element",
+        "Removes an existing event",
+        "Stops event propagation"
+      ],
+      "a": 1,
+      "explanation": "addEventListener() attaches an event handler without overwriting existing handlers."
+    },
+    {
+      "q": "Which event is triggered when a user clicks on an element?",
+      "o": [
+        "mouseover",
+        "change",
+        "submit",
+        "click"
+      ],
+      "a": 3,
+      "explanation": "The click event fires when a pointing device button is pressed and released on an element."
+    },
+    {
+      "q": "What does event.preventDefault() do?",
+      "o": [
+        "Stops event bubbling",
+        "Prevents the default browser action",
+        "Removes the event listener",
+        "Cancels all events on the page"
+      ],
+      "a": 1,
+      "explanation": "preventDefault() stops the browser’s default behavior, such as form submission or link navigation."
+    },
+    {
+      "q": "What is event bubbling?",
+      "o": [
+        "Events moving from parent to child",
+        "Events moving from child to parent",
+        "Events executing in parallel",
+        "Events stopping automatically"
+      ],
+      "a": 1,
+      "explanation": "Event bubbling means an event propagates from the target element up through its ancestors."
+    },
+    {
+      "q": "Which property refers to the element that triggered the event?",
+      "o": [
+        "event.currentTarget",
+        "event.this",
+        "event.target",
+        "event.source"
+      ],
+      "a": 2,
+      "explanation": "event.target refers to the actual element on which the event occurred."
+    },
+    {
+      "q": "Which method removes an existing event listener?",
+      "o": [
+        "removeListener()",
+        "detachEvent()",
+        "removeEventListener()",
+        "stopEvent()"
+      ],
+      "a": 2,
+      "explanation": "removeEventListener() removes a previously added event listener."
+    },
+    {
+      "q": "Which DOM property is used to change the text inside an element?",
+      "o": [
+        "innerHTML",
+        "innerText",
+        "textContent",
+        "All of the above"
+      ],
+      "a": 3,
+      "explanation": "innerHTML, innerText, and textContent can all change displayed text, with different behaviors and use cases."
+    }
+  ]
+}
