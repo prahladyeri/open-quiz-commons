@@ -45,8 +45,14 @@
             { "name": "DOM & Events", "slug": "dom_and_events", "version": "1.0" },
             { "name": "Fetch & AJAX", "slug": "fetch_and_ajax", "version": "1.0" },
             { "name": "Web APIs", "slug": "web_apis", "version": "1.0" },
+            { "name": "Browser Storage", "slug": "browser_storage", "version": "1.0" },
             { "name": "Browser Security", "slug": "browser_security", "version": "1.0" },
-            { "name": "Performance and Rendering", "slug": "performance_and_rendering", "version": "1.0" }
+            { "name": "Performance and Rendering", "slug": "performance_and_rendering", "version": "1.0" },
+            { "name": "Forms & User Input", "slug": "forms_and_input", "version": "1.0" },
+            { "name": "Browser Modules", "slug": "browser_modules", "version": "1.0" },
+            { "name": "Service Workers & PWA", "slug": "service_workers_and_pwa", "version": "1.0" },
+            { "name": "Web Workers", "slug": "web_workers", "version": "1.0" },
+            { "name": "Media & Graphics", "slug": "media_and_graphics", "version": "1.0" }
           ]
         },
         {
@@ -55,7 +61,15 @@
           "tags": ["nodejs", "backend"],
           "modules": [
             { "name": "Node Core Modules", "slug": "node_core_modules", "version": "1.0" },
-            { "name": "File System & Process", "slug": "filesystem_and_process", "version": "1.0" }
+            { "name": "File System & Process", "slug": "filesystem_and_process", "version": "1.0" },
+            { "name": "Event Loop & Async Model", "slug": "event_loop_and_async", "version": "1.0" },
+            { "name": "Modules & Packages", "slug": "modules_and_packages", "version": "1.0" },
+            { "name": "Networking & HTTP", "slug": "networking_and_http", "version": "1.0" },
+            { "name": "Streams & Buffers", "slug": "streams_and_buffers", "version": "1.0" },
+            { "name": "Errors & Debugging", "slug": "errors_and_debugging", "version": "1.0" },
+            { "name": "Environment & Configuration", "slug": "environment_and_config", "version": "1.0" },
+            { "name": "Child Processes & Workers", "slug": "child_processes_and_workers", "version": "1.0" },
+            { "name": "Node Security", "slug": "node_security", "version": "1.0" }
           ]
         }
       ]
