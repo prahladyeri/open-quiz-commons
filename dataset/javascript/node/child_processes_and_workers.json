@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "Which Node.js module is used to spawn child processes?",
+      "o": ["child_process", "process", "cluster", "worker_threads"],
+      "a": 0,
+      "explanation": "The child_process module provides functions to spawn and manage child processes."
+    },
+    {
+      "q": "Which method is used to execute a shell command in Node.js?",
+      "o": ["spawn()", "exec()", "fork()", "run()"],
+      "a": 1,
+      "explanation": "exec() runs a shell command and buffers the output."
+    },
+    {
+      "q": "What is the difference between spawn() and exec() in Node.js?",
+      "o": ["spawn buffers output, exec streams output", "spawn streams output, exec buffers output", "Both stream output", "Both buffer output"],
+      "a": 1,
+      "explanation": "spawn() streams output as data events, while exec() buffers the entire output before returning."
+    },
+    {
+      "q": "Which method is used to create a new Node.js process that runs a module?",
+      "o": ["exec()", "spawn()", "fork()", "runModule()"],
+      "a": 2,
+      "explanation": "fork() creates a new Node.js process specifically to run a module."
+    },
+    {
+      "q": "Which module enables multithreading in Node.js?",
+      "o": ["child_process", "worker_threads", "cluster", "os"],
+      "a": 1,
+      "explanation": "The worker_threads module allows running JavaScript in parallel threads."
+    },
+    {
+      "q": "What is the purpose of the 'message' event in child processes?",
+      "o": ["To send signals to the OS", "To communicate between parent and child processes", "To log errors", "To terminate the process"],
+      "a": 1,
+      "explanation": "The 'message' event is used for IPC (inter-process communication) between parent and child processes."
+    },
+    {
+      "q": "Which method is used to send a message from a parent process to a child process?",
+      "o": ["send()", "postMessage()", "emit()", "write()"],
+      "a": 0,
+      "explanation": "The send() method is used to send messages from parent to child processes."
+    },
+    {
+      "q": "What is the main difference between cluster and worker_threads?",
+      "o": ["cluster uses multiple processes, worker_threads use multiple threads", "cluster uses threads, worker_threads use processes", "Both use threads", "Both use processes"],
+      "a": 0,
+      "explanation": "Cluster creates multiple Node.js processes, while worker_threads create multiple threads within a single process."
+    },
+    {
+      "q": "Which property of a child process object gives access to its standard output?",
+      "o": ["child.stdout", "child.output", "child.stream", "child.console"],
+      "a": 0,
+      "explanation": "child.stdout provides access to the standard output stream of the child process."
+    },
+    {
+      "q": "What happens if a child process is not properly handled?",
+      "o": ["It is automatically terminated", "It may remain running and cause resource leaks", "It logs an error", "It restarts automatically"],
+      "a": 1,
+      "explanation": "Unmanaged child processes may remain running, consuming system resources and causing leaks."
+    }
+  ]
+}
