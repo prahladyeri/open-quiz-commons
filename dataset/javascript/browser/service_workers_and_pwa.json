@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of a service worker in a web application?",
+      "o": ["To manage DOM updates", "To enable offline capabilities and caching", "To handle CSS styling", "To improve SEO"],
+      "a": 1,
+      "explanation": "Service workers run in the background and provide offline support by caching resources."
+    },
+    {
+      "q": "Where does a service worker run in the browser?",
+      "o": ["Main thread", "Rendering engine", "Background thread", "JavaScript heap"],
+      "a": 2,
+      "explanation": "Service workers run in a separate background thread, independent of the main UI thread."
+    },
+    {
+      "q": "Which lifecycle event of a service worker is triggered when it is first installed?",
+      "o": ["activate", "install", "fetch", "update"],
+      "a": 1,
+      "explanation": "The 'install' event is fired when a service worker is first installed."
+    },
+    {
+      "q": "What does the 'fetch' event in a service worker allow developers to do?",
+      "o": ["Intercept network requests", "Modify HTML DOM", "Update CSS styles", "Manage cookies"],
+      "a": 0,
+      "explanation": "The 'fetch' event lets service workers intercept and handle network requests, often serving cached responses."
+    },
+    {
+      "q": "Which API is commonly used with service workers to store cached resources?",
+      "o": ["localStorage", "sessionStorage", "Cache API", "IndexedDB"],
+      "a": 2,
+      "explanation": "The Cache API is used to store and retrieve network responses for offline use."
+    },
+    {
+      "q": "What is a key requirement for registering a service worker?",
+      "o": ["It must be served over HTTPS", "It must be inside the HTML file", "It must be named sw.js", "It must be registered in CSS"],
+      "a": 0,
+      "explanation": "Service workers require a secure context, so they must be served over HTTPS."
+    },
+    {
+      "q": "What does the 'activate' event in a service worker signify?",
+      "o": ["The worker is ready to control pages", "The worker is fetching resources", "The worker is updating cache", "The worker is shutting down"],
+      "a": 0,
+      "explanation": "The 'activate' event occurs when the service worker takes control and is ready to manage pages."
+    },
+    {
+      "q": "What is the main purpose of a Progressive Web App (PWA)?",
+      "o": ["To replace native apps completely", "To provide app-like experiences on the web", "To improve SEO ranking", "To manage server-side rendering"],
+      "a": 1,
+      "explanation": "PWAs combine the reach of the web with app-like features such as offline support and push notifications."
+    },
+    {
+      "q": "Which file defines the metadata and configuration of a PWA?",
+      "o": ["manifest.json", "config.json", "pwa.json", "settings.json"],
+      "a": 0,
+      "explanation": "The manifest.json file defines app metadata like icons, theme colors, and display mode."
+    },
+    {
+      "q": "Which feature allows PWAs to be installed on a user's device like native apps?",
+      "o": ["Service workers", "Web manifest", "Push API", "IndexedDB"],
+      "a": 1,
+      "explanation": "The web manifest enables PWAs to be installed on devices and launched like native apps."
+    }
+  ]
+}
