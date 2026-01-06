@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which Node.js core module is used to interact with the file system?",
+      "o": [
+        "path",
+        "fs",
+        "stream",
+        "os"
+      ],
+      "a": 1,
+      "explanation": "The fs module provides APIs for reading, writing, and managing files and directories."
+    },
+    {
+      "q": "Which fs method is used to read a file asynchronously?",
+      "o": [
+        "fs.read",
+        "fs.readFile",
+        "fs.openFile",
+        "fs.getFile"
+      ],
+      "a": 1,
+      "explanation": "fs.readFile reads the entire contents of a file asynchronously."
+    },
+    {
+      "q": "What is the key advantage of using asynchronous fs methods?",
+      "o": [
+        "They are easier to debug",
+        "They block the event loop",
+        "They improve performance and scalability",
+        "They use less memory"
+      ],
+      "a": 2,
+      "explanation": "Asynchronous methods do not block the event loop, allowing Node.js to handle multiple operations efficiently."
+    },
+    {
+      "q": "Which fs method is used to write data to a file?",
+      "o": [
+        "fs.saveFile",
+        "fs.append",
+        "fs.writeFile",
+        "fs.store"
+      ],
+      "a": 2,
+      "explanation": "fs.writeFile writes data to a file, replacing the file if it already exists."
+    },
+    {
+      "q": "Which object provides access to command-line arguments passed to a Node.js script?",
+      "o": [
+        "process.env",
+        "process.argv",
+        "process.args",
+        "process.input"
+      ],
+      "a": 1,
+      "explanation": "process.argv contains an array of command-line arguments passed to the Node.js process."
+    },
+    {
+      "q": "What does process.env contain?",
+      "o": [
+        "System processes",
+        "Runtime errors",
+        "Environment variables",
+        "Node.js modules"
+      ],
+      "a": 2,
+      "explanation": "process.env stores the environment variables available to the Node.js process."
+    },
+    {
+      "q": "Which method terminates the Node.js process?",
+      "o": [
+        "process.stop()",
+        "process.kill()",
+        "process.exit()",
+        "process.end()"
+      ],
+      "a": 2,
+      "explanation": "process.exit() immediately ends the Node.js process with an optional exit code."
+    },
+    {
+      "q": "What does an exit code of 0 indicate?",
+      "o": [
+        "Process failed",
+        "Process completed successfully",
+        "Unknown error occurred",
+        "Process was interrupted"
+      ],
+      "a": 1,
+      "explanation": "An exit code of 0 conventionally means the process exited successfully."
+    },
+    {
+      "q": "Which fs method adds data to the end of a file?",
+      "o": [
+        "fs.writeFile",
+        "fs.appendFile",
+        "fs.extendFile",
+        "fs.concat"
+      ],
+      "a": 1,
+      "explanation": "fs.appendFile appends data to a file without overwriting existing content."
+    },
+    {
+      "q": "Why should process.exit() be used carefully?",
+      "o": [
+        "It consumes extra memory",
+        "It blocks the event loop",
+        "It may terminate pending asynchronous operations",
+        "It logs sensitive information"
+      ],
+      "a": 2,
+      "explanation": "Calling process.exit() can stop the event loop immediately, preventing pending async tasks from completing."
+    }
+  ]
+}
