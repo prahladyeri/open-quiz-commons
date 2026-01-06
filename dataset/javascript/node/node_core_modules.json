@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What are Node.js core modules?",
+      "o": [
+        "Modules installed from npm",
+        "Modules written by the user",
+        "Built-in modules provided by Node.js",
+        "Browser-based JavaScript libraries"
+      ],
+      "a": 2,
+      "explanation": "Core modules are built into Node.js and can be used without installing them via npm."
+    },
+    {
+      "q": "Which core module is used to create an HTTP server?",
+      "o": [
+        "fs",
+        "http",
+        "net",
+        "url"
+      ],
+      "a": 1,
+      "explanation": "The http module allows creating HTTP servers and handling requests and responses."
+    },
+    {
+      "q": "Which module provides utilities for working with file paths?",
+      "o": [
+        "fs",
+        "os",
+        "path",
+        "url"
+      ],
+      "a": 2,
+      "explanation": "The path module provides utilities for handling and transforming file paths."
+    },
+    {
+      "q": "Which core module allows reading and writing files?",
+      "o": [
+        "stream",
+        "buffer",
+        "fs",
+        "crypto"
+      ],
+      "a": 2,
+      "explanation": "The fs module provides APIs for interacting with the file system."
+    },
+    {
+      "q": "Which module is used to work with operating system information?",
+      "o": [
+        "process",
+        "os",
+        "system",
+        "env"
+      ],
+      "a": 1,
+      "explanation": "The os module provides information about the operating system, CPU, memory, and more."
+    },
+    {
+      "q": "Which object provides information about the current Node.js process?",
+      "o": [
+        "global",
+        "process",
+        "module",
+        "runtime"
+      ],
+      "a": 1,
+      "explanation": "The process object exposes information and control over the current Node.js process."
+    },
+    {
+      "q": "Which module is commonly used for handling streams of data?",
+      "o": [
+        "buffer",
+        "stream",
+        "fs",
+        "events"
+      ],
+      "a": 1,
+      "explanation": "The stream module provides an API for handling streaming data efficiently."
+    },
+    {
+      "q": "Which core module enables event-driven programming?",
+      "o": [
+        "events",
+        "timers",
+        "async_hooks",
+        "net"
+      ],
+      "a": 0,
+      "explanation": "The events module provides the EventEmitter class for event-driven architecture."
+    },
+    {
+      "q": "Which module is used for cryptographic operations like hashing?",
+      "o": [
+        "tls",
+        "buffer",
+        "crypto",
+        "secure"
+      ],
+      "a": 2,
+      "explanation": "The crypto module provides cryptographic functionality such as hashing and encryption."
+    },
+    {
+      "q": "How are Node.js core modules imported?",
+      "o": [
+        "They must be installed using npm",
+        "Using import only",
+        "Using require or import without a path",
+        "They are globally available"
+      ],
+      "a": 2,
+      "explanation": "Core modules are imported by name using require() or import without specifying a file path."
+    }
+  ]
+}
