@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "q": "What does ES Modules support in modern browsers?",
+      "o": [
+        "Only synchronous script loading",
+        "Built-in dependency management",
+        "Global variable sharing",
+        "Inline script execution only"
+      ],
+      "a": 1,
+      "explanation": "ES Modules provide native support for dependency management using import and export."
+    },
+    {
+      "q": "Which attribute enables ES module support in browsers?",
+      "o": [
+        "type=\"javascript\"",
+        "type=\"module\"",
+        "module=\"true\"",
+        "async=\"module\""
+      ],
+      "a": 1,
+      "explanation": "Scripts with type=\"module\" enable ES module syntax in browsers."
+    },
+    {
+      "q": "Which statement is used to export a value from a module?",
+      "o": [
+        "send",
+        "expose",
+        "export",
+        "publish"
+      ],
+      "a": 2,
+      "explanation": "The export keyword makes variables or functions available to other modules."
+    },
+    {
+      "q": "How are ES modules loaded by default in browsers?",
+      "o": [
+        "Synchronously",
+        "Deferred",
+        "Blocking",
+        "After DOMContentLoaded"
+      ],
+      "a": 1,
+      "explanation": "ES modules are deferred by default, similar to scripts with the defer attribute."
+    },
+    {
+      "q": "Which keyword imports a default export?",
+      "o": [
+        "import { name }",
+        "require()",
+        "import name",
+        "include"
+      ],
+      "a": 2,
+      "explanation": "Default exports are imported without curly braces."
+    },
+    {
+      "q": "Which feature helps avoid global namespace pollution?",
+      "o": [
+        "IIFE",
+        "ES Modules",
+        "Inline scripts",
+        "Global variables"
+      ],
+      "a": 1,
+      "explanation": "ES Modules encapsulate code and prevent leaking variables into the global scope."
+    },
+    {
+      "q": "Which statement about ES modules is true?",
+      "o": [
+        "They require a build step to work in browsers",
+        "They support circular dependencies",
+        "They execute in the global scope",
+        "They cannot be cached"
+      ],
+      "a": 1,
+      "explanation": "ES Modules support circular dependencies and have well-defined loading behavior."
+    }
+  ]
+}
