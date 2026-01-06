@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What does AJAX stand for?",
+      "o": [
+        "Asynchronous JavaScript And XML",
+        "Advanced JavaScript And XHTML",
+        "Asynchronous JSON And XML",
+        "Automated JavaScript And XML"
+      ],
+      "a": 0,
+      "explanation": "AJAX stands for Asynchronous JavaScript And XML, enabling background HTTP requests without reloading the page."
+    },
+    {
+      "q": "Which object was traditionally used to make AJAX requests before Fetch API?",
+      "o": [
+        "HTTPClient",
+        "XMLHttpRequest",
+        "Request",
+        "AjaxHandler"
+      ],
+      "a": 1,
+      "explanation": "XMLHttpRequest was the traditional way to make asynchronous HTTP requests in browsers."
+    },
+    {
+      "q": "Which API provides a modern promise-based way to make HTTP requests?",
+      "o": [
+        "XMLHttpRequest",
+        "axios",
+        "fetch",
+        "request"
+      ],
+      "a": 2,
+      "explanation": "The Fetch API provides a modern, promise-based interface for making HTTP requests."
+    },
+    {
+      "q": "What does fetch() return?",
+      "o": [
+        "The response body directly",
+        "A Promise resolving to a Response object",
+        "A JSON object",
+        "An HTTP status code"
+      ],
+      "a": 1,
+      "explanation": "fetch() returns a Promise that resolves to a Response object."
+    },
+    {
+      "q": "Which method is used to parse a JSON response from fetch?",
+      "o": [
+        "response.parse()",
+        "response.text()",
+        "response.json()",
+        "response.body()"
+      ],
+      "a": 2,
+      "explanation": "response.json() parses the response body as JSON and returns a Promise."
+    },
+    {
+      "q": "Which HTTP method is typically used to retrieve data?",
+      "o": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE"
+      ],
+      "a": 2,
+      "explanation": "GET is the standard HTTP method used to retrieve data from a server."
+    },
+    {
+      "q": "How are headers passed in a fetch request?",
+      "o": [
+        "As query parameters",
+        "Inside the request body",
+        "Using the headers option",
+        "They cannot be customized"
+      ],
+      "a": 2,
+      "explanation": "Custom headers are passed using the headers option in the fetch configuration object."
+    },
+    {
+      "q": "Which option is used to send JSON data in a POST request using fetch?",
+      "o": [
+        "data",
+        "payload",
+        "body",
+        "params"
+      ],
+      "a": 2,
+      "explanation": "The body option is used to send data, often JSON-stringified, in a fetch request."
+    },
+    {
+      "q": "What does fetch NOT reject the Promise for?",
+      "o": [
+        "Network failure",
+        "CORS error",
+        "HTTP 404 or 500 status",
+        "Invalid URL"
+      ],
+      "a": 2,
+      "explanation": "fetch does not reject the Promise for HTTP error status codes; these must be checked manually via response.ok."
+    },
+    {
+      "q": "Which property is commonly used to check if a fetch response was successful?",
+      "o": [
+        "response.statusText",
+        "response.ok",
+        "response.success",
+        "response.valid"
+      ],
+      "a": 1,
+      "explanation": "response.ok is a boolean indicating whether the HTTP status code is in the 200–299 range."
+    }
+  ]
+}
