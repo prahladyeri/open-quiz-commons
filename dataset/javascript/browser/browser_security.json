@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "q": "What does the Same-Origin Policy restrict?",
+      "o": [
+        "File system access",
+        "Cross-origin JavaScript access",
+        "Browser storage size",
+        "Network speed"
+      ],
+      "a": 1,
+      "explanation": "The Same-Origin Policy prevents scripts from accessing data across different origins."
+    },
+    {
+      "q": "What does CORS stand for?",
+      "o": [
+        "Cross-Origin Resource Sharing",
+        "Client-Origin Resource System",
+        "Cross-Object Request Service",
+        "Controlled Origin Request Standard"
+      ],
+      "a": 0,
+      "explanation": "CORS allows controlled access to resources across different origins."
+    },
+    {
+      "q": "Which HTTP header enables CORS?",
+      "o": [
+        "Access-Control-Allow-Origin",
+        "Content-Security-Policy",
+        "X-Frame-Options",
+        "Authorization"
+      ],
+      "a": 0,
+      "explanation": "Access-Control-Allow-Origin specifies which origins are allowed to access a resource."
+    },
+    {
+      "q": "What is XSS (Cross-Site Scripting)?",
+      "o": [
+        "Injecting malicious SQL queries",
+        "Executing malicious scripts in a user's browser",
+        "Stealing cookies via network sniffing",
+        "Redirecting traffic to fake websites"
+      ],
+      "a": 1,
+      "explanation": "XSS occurs when attackers inject malicious scripts into trusted websites."
+    },
+    {
+      "q": "Which practice helps prevent XSS attacks?",
+      "o": [
+        "Disabling JavaScript",
+        "Escaping user input",
+        "Using inline scripts",
+        "Allowing all origins"
+      ],
+      "a": 1,
+      "explanation": "Escaping and sanitizing user input helps prevent malicious script injection."
+    },
+    {
+      "q": "Which header helps prevent loading unauthorized scripts?",
+      "o": [
+        "CORS",
+        "Content-Security-Policy",
+        "Cache-Control",
+        "Referrer-Policy"
+      ],
+      "a": 1,
+      "explanation": "Content Security Policy (CSP) restricts the sources from which scripts can be loaded."
+    }
+  ]
+}
