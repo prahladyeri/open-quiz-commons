@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "Which module in Node.js is commonly used to implement cryptographic functionality?",
+      "o": ["crypto", "security", "cipher", "hash"],
+      "a": 0,
+      "explanation": "The crypto module provides cryptographic functionality including hashing, encryption, and decryption."
+    },
+    {
+      "q": "What is the purpose of using environment variables for secrets in Node.js?",
+      "o": ["To store them in code", "To keep sensitive data out of source code", "To encrypt files automatically", "To improve performance"],
+      "a": 1,
+      "explanation": "Environment variables prevent hardcoding sensitive information like API keys in source code."
+    },
+    {
+      "q": "Which function in the crypto module is used to create a hash?",
+      "o": ["crypto.createHash()", "crypto.hash()", "crypto.makeHash()", "crypto.generateHash()"],
+      "a": 0,
+      "explanation": "crypto.createHash() is used to generate hash digests of data."
+    },
+    {
+      "q": "Why should user input always be validated in Node.js applications?",
+      "o": ["To improve performance", "To prevent injection attacks and unexpected behavior", "To reduce memory usage", "To simplify debugging"],
+      "a": 1,
+      "explanation": "Validating input helps prevent security vulnerabilities like SQL injection and XSS."
+    },
+    {
+      "q": "Which HTTP header is commonly used to protect against cross-site scripting (XSS)?",
+      "o": ["X-Frame-Options", "Content-Security-Policy", "Strict-Transport-Security", "X-Powered-By"],
+      "a": 1,
+      "explanation": "Content-Security-Policy (CSP) helps mitigate XSS by controlling resources the browser can load."
+    },
+    {
+      "q": "What is the recommended way to store passwords in Node.js applications?",
+      "o": ["Plain text", "Base64 encoding", "Hashed with a strong algorithm and salted", "Encrypted with a symmetric key"],
+      "a": 2,
+      "explanation": "Passwords should be hashed with algorithms like bcrypt or scrypt and salted for security."
+    },
+    {
+      "q": "Which module can be used to run code in a secure sandboxed environment?",
+      "o": ["vm", "crypto", "sandbox", "secure"],
+      "a": 0,
+      "explanation": "The vm module allows running code within a virtual machine context, providing isolation."
+    },
+    {
+      "q": "What is the purpose of HTTPS in Node.js applications?",
+      "o": ["To compress data", "To encrypt communication between client and server", "To improve performance", "To manage cookies"],
+      "a": 1,
+      "explanation": "HTTPS ensures secure communication by encrypting data transmitted between client and server."
+    },
+    {
+      "q": "Which Node.js function can be used to generate random bytes for cryptographic purposes?",
+      "o": ["crypto.randomBytes()", "crypto.generateRandom()", "crypto.secureBytes()", "crypto.random()"],
+      "a": 0,
+      "explanation": "crypto.randomBytes() generates cryptographically strong pseudo-random data."
+    },
+    {
+      "q": "Why should dependencies be kept updated in Node.js projects?",
+      "o": ["To reduce file size", "To fix bugs and patch security vulnerabilities", "To improve logging", "To simplify configuration"],
+      "a": 1,
+      "explanation": "Updating dependencies ensures that known security vulnerabilities are patched and bugs are fixed."
+    }
+  ]
+}
