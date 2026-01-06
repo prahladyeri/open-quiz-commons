@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of Node.js streams?",
+      "o": ["To handle binary data only", "To process data piece by piece efficiently", "To store large files in memory", "To convert buffers into strings"],
+      "a": 1,
+      "explanation": "Streams allow processing data chunk by chunk, making it efficient for large datasets without loading everything into memory."
+    },
+    {
+      "q": "Which of the following is NOT a type of Node.js stream?",
+      "o": ["Readable", "Writable", "Transform", "Executable"],
+      "a": 3,
+      "explanation": "Node.js provides Readable, Writable, Duplex, and Transform streams. 'Executable' is not a stream type."
+    },
+    {
+      "q": "What does the 'buffer' module in Node.js primarily deal with?",
+      "o": ["Handling JSON objects", "Manipulating binary data", "Managing HTTP requests", "Creating child processes"],
+      "a": 1,
+      "explanation": "The buffer module is used to handle raw binary data directly in Node.js."
+    },
+    {
+      "q": "Which method is used to create a new Buffer from a string in Node.js?",
+      "o": ["Buffer.from()", "Buffer.create()", "Buffer.new()", "Buffer.allocString()"],
+      "a": 0,
+      "explanation": "Buffer.from() creates a new buffer containing the specified string or array of bytes."
+    },
+    {
+      "q": "What event is emitted by a readable stream when there is no more data to consume?",
+      "o": ["end", "finish", "close", "drain"],
+      "a": 0,
+      "explanation": "The 'end' event is emitted by a readable stream when all data has been consumed."
+    },
+    {
+      "q": "Which stream method is used to push data into a writable stream?",
+      "o": ["push()", "write()", "send()", "append()"],
+      "a": 1,
+      "explanation": "The write() method is used to send data to a writable stream."
+    },
+    {
+      "q": "What is the default encoding for Node.js Buffers?",
+      "o": ["ASCII", "UTF-8", "Base64", "Hex"],
+      "a": 1,
+      "explanation": "By default, Node.js Buffers use UTF-8 encoding when dealing with strings."
+    },
+    {
+      "q": "Which stream type can be both readable and writable?",
+      "o": ["Duplex", "Transform", "Writable", "Readable"],
+      "a": 0,
+      "explanation": "Duplex streams are both readable and writable, allowing bidirectional data flow."
+    },
+    {
+      "q": "What is the purpose of the 'pipe()' method in streams?",
+      "o": ["To connect a readable stream to a writable stream", "To convert buffers into streams", "To close a stream", "To allocate memory for buffers"],
+      "a": 0,
+      "explanation": "The pipe() method connects a readable stream to a writable stream, enabling data flow between them."
+    },
+    {
+      "q": "Which of the following is true about Buffer objects?",
+      "o": ["They are resizable", "They are fixed in size once created", "They can only store strings", "They are automatically garbage collected after use"],
+      "a": 1,
+      "explanation": "Buffer objects are allocated with a fixed size and cannot be resized after creation."
+    }
+  ]
+}
