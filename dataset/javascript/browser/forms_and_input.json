@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "q": "Which HTML element is primarily used to collect user input?",
+      "o": [
+        "<form>",
+        "<input>",
+        "<label>",
+        "<fieldset>"
+      ],
+      "a": 1,
+      "explanation": "The <input> element is commonly used to collect user input."
+    },
+    {
+      "q": "Which event is triggered when a form is submitted?",
+      "o": [
+        "click",
+        "change",
+        "submit",
+        "input"
+      ],
+      "a": 2,
+      "explanation": "The submit event fires when a form is submitted."
+    },
+    {
+      "q": "What does event.preventDefault() do during form submission?",
+      "o": [
+        "Clears the form fields",
+        "Stops form validation",
+        "Prevents default browser submission behavior",
+        "Removes the form element"
+      ],
+      "a": 2,
+      "explanation": "preventDefault() stops the browser’s default form submission behavior."
+    },
+    {
+      "q": "Which attribute makes an input field mandatory?",
+      "o": [
+        "validate",
+        "required",
+        "mandatory",
+        "checked"
+      ],
+      "a": 1,
+      "explanation": "The required attribute ensures the field must be filled before submission."
+    },
+    {
+      "q": "Which event fires when the value of an input changes?",
+      "o": [
+        "submit",
+        "keydown",
+        "change",
+        "blur"
+      ],
+      "a": 2,
+      "explanation": "The change event fires when the input value is committed."
+    },
+    {
+      "q": "Which property is used to access the value of an input field?",
+      "o": [
+        "text",
+        "content",
+        "value",
+        "innerHTML"
+      ],
+      "a": 2,
+      "explanation": "The value property retrieves or sets the current value of an input element."
+    },
+    {
+      "q": "Which practice improves form accessibility?",
+      "o": [
+        "Using inline styles",
+        "Removing labels",
+        "Associating labels with inputs",
+        "Disabling keyboard navigation"
+      ],
+      "a": 2,
+      "explanation": "Associating labels with inputs improves accessibility and usability."
+    }
+  ]
+}
