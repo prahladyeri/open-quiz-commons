@@ -8,17 +8,17 @@
       "tags": ["python", "programming", "software"],
       "icon": "fa-brands fa-python",
       "modules": [
-        {"name": "Core Python", "slug": "core", "version": "1.0"},
-        {"name": "Data Types and Expressions", "slug": "data_types_and_expressions", "version": "1.0"},
-        {"name": "Control Flow", "slug": "control_flow", "version": "1.0"},
-        {"name": "Functions", "slug": "functions", "version": "1.0"},
-        {"name": "Classes and OOP", "slug": "classes_and_oop", "version": "1.0"},
-        {"name": "Exceptions and Errors", "slug": "exceptions_and_errors", "version": "1.0"},
-        {"name": "File I/O", "slug": "file_io", "version": "1.0"},
-        {"name": "Modules and Packages", "slug": "modules_and_packages", "version": "1.0"},
-        {"name": "Standard Library", "slug": "standard_library", "version": "1.0"},
-        {"name": "Iterators and Generators", "slug": "iterators_and_generators", "version": "1.0"},
-        {"name": "Testing and Debugging", "slug": "testing_and_debugging", "version": "1.0"}
+        {"name": "Core Python", "slug": "core"},
+        {"name": "Data Types and Expressions", "slug": "data_types_and_expressions"},
+        {"name": "Control Flow", "slug": "control_flow"},
+        {"name": "Functions", "slug": "functions"},
+        {"name": "Classes and OOP", "slug": "classes_and_oop"},
+        {"name": "Exceptions and Errors", "slug": "exceptions_and_errors"},
+        {"name": "File I/O", "slug": "file_io"},
+        {"name": "Modules and Packages", "slug": "modules_and_packages"},
+        {"name": "Standard Library", "slug": "standard_library"},
+        {"name": "Iterators and Generators", "slug": "iterators_and_generators"},
+        {"name": "Testing and Debugging", "slug": "testing_and_debugging"}
       ]
     },
     {
@@ -28,15 +28,15 @@
       "tags": ["javascript", "web", "programming"],
       "icon": "fa-brands fa-node-js",
       "modules": [
-        { "name": "Core JavaScript", "slug": "core", "version": "1.0" },
-        { "name": "Data Types & Operators", "slug": "data_types_and_operators", "version": "1.0" },
-        { "name": "Control Flow", "slug": "control_flow", "version": "1.0" },
-        { "name": "Functions & Scope", "slug": "functions_and_scope", "version": "1.0" },
-        { "name": "Objects & Prototypes", "slug": "objects_and_prototypes", "version": "1.0" },
-        { "name": "Arrays & Collections", "slug": "arrays_and_collections", "version": "1.0" },
-        { "name": "Async & Promises", "slug": "async_and_promises", "version": "1.0" },
-        { "name": "Errors & Debugging", "slug": "errors_and_debugging", "version": "1.0" },
-        { "name": "ES6+ Features", "slug": "es6_and_beyond", "version": "1.0" }
+        { "name": "Core JavaScript", "slug": "core"},
+        { "name": "Data Types & Operators", "slug": "data_types_and_operators"},
+        { "name": "Control Flow", "slug": "control_flow"},
+        { "name": "Functions & Scope", "slug": "functions_and_scope"},
+        { "name": "Objects & Prototypes", "slug": "objects_and_prototypes"},
+        { "name": "Arrays & Collections", "slug": "arrays_and_collections"},
+        { "name": "Async & Promises", "slug": "async_and_promises"},
+        { "name": "Errors & Debugging", "slug": "errors_and_debugging"},
+        { "name": "ES6+ Features", "slug": "es6_and_beyond"}
       ],
       "subtopics": [
         {
@@ -44,17 +44,17 @@
           "slug": "browser",
           "tags": ["dom", "web", "frontend"],
           "modules": [
-            { "name": "DOM & Events", "slug": "dom_and_events", "version": "1.0" },
-            { "name": "Fetch & AJAX", "slug": "fetch_and_ajax", "version": "1.0" },
-            { "name": "Web APIs", "slug": "web_apis", "version": "1.0" },
-            { "name": "Browser Storage", "slug": "browser_storage", "version": "1.0" },
-            { "name": "Browser Security", "slug": "browser_security", "version": "1.0" },
-            { "name": "Performance and Rendering", "slug": "performance_and_rendering", "version": "1.0" },
-            { "name": "Forms & User Input", "slug": "forms_and_input", "version": "1.0" },
-            { "name": "Browser Modules", "slug": "browser_modules", "version": "1.0" },
-            { "name": "Service Workers & PWA", "slug": "service_workers_and_pwa", "version": "1.0" },
-            { "name": "Web Workers", "slug": "web_workers", "version": "1.0" },
-            { "name": "Media & Graphics", "slug": "media_and_graphics", "version": "1.0" }
+            { "name": "DOM & Events", "slug": "dom_and_events"},
+            { "name": "Fetch & AJAX", "slug": "fetch_and_ajax"},
+            { "name": "Web APIs", "slug": "web_apis"},
+            { "name": "Browser Storage", "slug": "browser_storage"},
+            { "name": "Browser Security", "slug": "browser_security" },
+            { "name": "Performance and Rendering", "slug": "performance_and_rendering" },
+            { "name": "Forms & User Input", "slug": "forms_and_input"},
+            { "name": "Browser Modules", "slug": "browser_modules"},
+            { "name": "Service Workers & PWA", "slug": "service_workers_and_pwa"},
+            { "name": "Web Workers", "slug": "web_workers"},
+            { "name": "Media & Graphics", "slug": "media_and_graphics"}
           ]
         },
         {
@@ -62,16 +62,16 @@
           "slug": "node",
           "tags": ["nodejs", "backend"],
           "modules": [
-            { "name": "Node Core Modules", "slug": "node_core_modules", "version": "1.0" },
-            { "name": "File System & Process", "slug": "filesystem_and_process", "version": "1.0" },
-            { "name": "Event Loop & Async Model", "slug": "event_loop_and_async", "version": "1.0" },
-            { "name": "Modules & Packages", "slug": "modules_and_packages", "version": "1.0" },
-            { "name": "Networking & HTTP", "slug": "networking_and_http", "version": "1.0" },
-            { "name": "Streams & Buffers", "slug": "streams_and_buffers", "version": "1.0" },
-            { "name": "Errors & Debugging", "slug": "errors_and_debugging", "version": "1.0" },
-            { "name": "Environment & Configuration", "slug": "environment_and_config", "version": "1.0" },
-            { "name": "Child Processes & Workers", "slug": "child_processes_and_workers", "version": "1.0" },
-            { "name": "Node Security", "slug": "node_security", "version": "1.0" }
+            { "name": "Node Core Modules", "slug": "node_core_modules"},
+            { "name": "File System & Process", "slug": "filesystem_and_process" },
+            { "name": "Event Loop & Async Model", "slug": "event_loop_and_async" },
+            { "name": "Modules & Packages", "slug": "modules_and_packages" },
+            { "name": "Networking & HTTP", "slug": "networking_and_http" },
+            { "name": "Streams & Buffers", "slug": "streams_and_buffers" },
+            { "name": "Errors & Debugging", "slug": "errors_and_debugging" },
+            { "name": "Environment & Configuration", "slug": "environment_and_config" },
+            { "name": "Child Processes & Workers", "slug": "child_processes_and_workers"},
+            { "name": "Node Security", "slug": "node_security" }
           ]
         }
       ]
