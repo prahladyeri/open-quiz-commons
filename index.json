@@ -22,6 +22,7 @@
       ],
       "subtopics": [
         {
+          "hidden": true,
           "name": "Database",
           "slug": "database",
           "tags": ["mysql-connector-python", "psycopg"],
