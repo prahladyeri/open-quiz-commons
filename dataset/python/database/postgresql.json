@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which Python library is most commonly used to connect to PostgreSQL?",
+      "o": [
+        "mysql.connector",
+        "sqlite3",
+        "psycopg",
+        "pg8000"
+      ],
+      "a": 2,
+      "explanation": "psycopg (psycopg2/psycopg3) is the most widely used and mature PostgreSQL adapter for Python."
+    },
+    {
+      "q": "Which command is used to install psycopg2 using pip?",
+      "o": [
+        "pip install postgres",
+        "pip install psycopg2",
+        "pip install pgsql",
+        "pip install postgresql"
+      ],
+      "a": 1,
+      "explanation": "psycopg2 can be installed using pip install psycopg2 (or psycopg2-binary for quick setups)."
+    },
+    {
+      "q": "Which PostgreSQL feature is NOT available in SQLite?",
+      "o": [
+        "ACID transactions",
+        "Foreign keys",
+        "JSONB data type",
+        "Basic indexing"
+      ],
+      "a": 2,
+      "explanation": "PostgreSQL supports advanced data types like JSONB, which SQLite does not fully implement."
+    },
+    {
+      "q": "How do you create a connection using psycopg?",
+      "o": [
+        "psycopg.open(db)",
+        "psycopg.connect(...)",
+        "psycopg.start(...)",
+        "psycopg.init(...)"
+      ],
+      "a": 1,
+      "explanation": "psycopg.connect() establishes a connection to a PostgreSQL database."
+    },
+    {
+      "q": "Which placeholder syntax does psycopg use for parameterized queries?",
+      "o": [
+        "?",
+        "%s",
+        ":param",
+        "$1"
+      ],
+      "a": 1,
+      "explanation": "psycopg uses %s placeholders regardless of the underlying data type."
+    },
+    {
+      "q": "Why are parameterized queries important in PostgreSQL applications?",
+      "o": [
+        "They improve index usage",
+        "They automatically optimize queries",
+        "They prevent SQL injection",
+        "They reduce server load"
+      ],
+      "a": 2,
+      "explanation": "Parameterized queries protect applications from SQL injection by separating SQL logic from data."
+    },
+    {
+      "q": "Which method is used to retrieve a cursor from a PostgreSQL connection?",
+      "o": [
+        "get_cursor()",
+        "cursor()",
+        "createCursor()",
+        "openCursor()"
+      ],
+      "a": 1,
+      "explanation": "cursor() creates a cursor object used to execute SQL statements."
+    },
+    {
+      "q": "What is the default transaction behavior in PostgreSQL connections?",
+      "o": [
+        "Auto-commit is enabled",
+        "Each statement is atomic",
+        "Auto-commit is disabled",
+        "Transactions are unsupported"
+      ],
+      "a": 2,
+      "explanation": "By default, PostgreSQL connections require an explicit commit() to persist changes."
+    },
+    {
+      "q": "Which PostgreSQL feature helps ensure data consistency under concurrent access?",
+      "o": [
+        "Table locking",
+        "MVCC (Multi-Version Concurrency Control)",
+        "Serialized queries",
+        "Row duplication"
+      ],
+      "a": 1,
+      "explanation": "PostgreSQL uses MVCC to allow concurrent reads and writes without blocking."
+    },
+    {
+      "q": "Which command safely closes a PostgreSQL database connection in Python?",
+      "o": [
+        "disconnect()",
+        "shutdown()",
+        "close()",
+        "terminate()"
+      ],
+      "a": 2,
+      "explanation": "close() releases the database connection and associated resources."
+    }
+  ]
+}
