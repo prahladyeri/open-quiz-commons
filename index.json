@@ -28,13 +28,102 @@
           "tags": ["mysql-connector-python", "psycopg"],
           "modules": [
             { "name": "SQLite & MySQL", "slug": "sqlite_and_mysql"},
-            { "name": "PostgreSQL", "slug": "pgsql"},
+            { "name": "PostgreSQL", "slug": "postgresql"},
             { "name": "SQLAlchemy ORM", "slug": "sqlalchemy"},
             { "name": "Raw SQL & Cursors", "slug": "raw_sql_cursors"},
             { "name": "Database Migrations", "slug": "migrations"},
-            { "name": "Transactions & Isolation", "slug": "transactions_isolations"}
+            { "name": "Transactions & Isolation", "slug": "transactions_and_isolations"}
           ]
-        }        
+        },
+        {
+          "hidden": true,
+          "name": "Web",
+          "slug": "web",
+          "tags": ["flask", "django"],
+          "modules": [
+            { "name": "Flask Basics", "slug": "flask"},
+            { "name": "Django Basics", "slug": "django"},
+            { "name": "REST APIs and FastAPI", "slug": "rest_api_fastapi"},
+            { "name": "Jinja2 Templating", "slug": "jinja2_templating"},
+            { "name": "Authentication & Sessions", "slug": "auth_sessions"}
+          ]
+        },
+        {
+          "hidden": true,
+          "name": "Data Science",
+          "slug": "data_science",
+          "tags": ["pandas", "numpy"],
+          "modules": [
+            { "name": "NumPy", "slug": "numpy"},
+            { "name": "Pandas", "slug": "pandas"},
+            { "name": "Data Visualization", "slug": "data_visualization"},
+            { "name": "Statistics Basics", "slug": "statistics"},
+            { "name": "Jupyter Notebooks", "slug": "jupyter_notebooks"}
+          ]
+        },
+        {
+          "hidden": true,
+          "name": "AI & ML",
+          "slug": "ai_ml",
+          "tags": ["ai", "ml"],
+          "modules": [
+            { "name": "Machine Learning Basics", "slug": "ml_basics"},
+            { "name": "scikit-learn", "slug": "scikit_learn"},
+            { "name": "Neural Networks Concepts", "slug": "neural_networks"},
+            { "name": "TensorFlow / PyTorch", "slug": "tensorflow_pytorch"},
+            { "name": "Model Evaluation", "slug": "model_evaluation"}
+          ]
+        },
+        {
+          "hidden": true,
+          "name": "System & OS",
+          "slug": "system_and_os",
+          "tags": ["operating-system"],
+          "modules": [
+            { "name": "os & sys Modules", "slug": "os_and_sys"},
+            { "name": "Subprocess", "slug": "subprocess"},
+            { "name": "Environment Variables", "slug": "environment_vars"},
+            { "name": "File System Operations", "slug": "file_system"},
+            { "name": "Automation Scripts", "slug": "automation"}
+          ]
+        },
+        {
+          "hidden": true,
+          "name": "Testing & Quality",
+          "slug": "testing_qa",
+          "tags": ["testing", "qa"],
+          "modules": [
+            { "name": "unittest", "slug": "unittest"},
+            { "name": "pytest", "slug": "pytest"},
+            { "name": "Mocking", "slug": "mocking"},
+            { "name": "Code Coverage", "slug": "code_coverage"},
+            { "name": "Linting & Formatting", "slug": "linting"}
+          ]
+        },
+        {
+          "hidden": true,
+          "name": "Networking",
+          "slug": "networking",
+          "tags": ["networking"],
+          "modules": [
+            { "name": "Sockets", "slug": "sockets"},
+            { "name": "HTTP Clients", "slug": "http"},
+            { "name": "Async Networking", "slug": "async"},
+            { "name": "Requests vs aiohttp", "slug": "requests_aiohttp"}
+          ]
+        },
+        {
+          "hidden": true,
+          "name": "Packaging & Distribution",
+          "slug": "packaging_and_distribution",
+          "tags": ["packaging"],
+          "modules": [
+            { "name": "venv & virtualenv", "slug": "venv"},
+            { "name": "pip & pipx", "slug": "pip"},
+            { "name": "setup.py & pyproject.toml", "slug": "setuppy"},
+            { "name": "Wheels & Publishing", "slug": "wheels"}
+          ]
+        }
       ]
     },
     {
