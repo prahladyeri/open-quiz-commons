@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of database migrations in Python projects?",
+      "o": ["To manage schema changes", "To insert sample data", "To optimize queries", "To backup databases"],
+      "a": 0,
+      "explanation": "Migrations are used to apply and track schema changes over time in a controlled manner."
+    },
+    {
+      "q": "Which popular Python library provides migration support alongside ORM features?",
+      "o": ["SQLAlchemy", "Alembic", "Django ORM", "PyMySQL"],
+      "a": 1,
+      "explanation": "Alembic is the migration tool commonly used with SQLAlchemy for schema evolution."
+    },
+    {
+      "q": "In Django, which command is used to generate new migration files?",
+      "o": ["python manage.py migrate", "python manage.py makemigrations", "python manage.py create_migration", "python manage.py update"],
+      "a": 1,
+      "explanation": "The makemigrations command generates migration files based on model changes."
+    },
+    {
+      "q": "Which command in Django applies migrations to the database?",
+      "o": ["python manage.py migrate", "python manage.py apply", "python manage.py run", "python manage.py sync"],
+      "a": 0,
+      "explanation": "The migrate command applies migration files to update the database schema."
+    },
+    {
+      "q": "In Alembic, which command is used to create a new migration script?",
+      "o": ["alembic revision --autogenerate", "alembic migrate", "alembic new", "alembic update"],
+      "a": 0,
+      "explanation": "The alembic revision --autogenerate command generates a new migration script based on model changes."
+    },
+    {
+      "q": "Which file in an Alembic project stores the migration history?",
+      "o": ["versions/", "history/", "migrations/", "schema/"],
+      "a": 0,
+      "explanation": "Alembic stores migration scripts in the versions/ directory to track schema changes."
+    },
+    {
+      "q": "What is the purpose of the 'downgrade' function in Alembic migration scripts?",
+      "o": ["To revert schema changes", "To optimize queries", "To backup data", "To reset the database"],
+      "a": 0,
+      "explanation": "The downgrade function reverts the schema to a previous state, undoing applied changes."
+    },
+    {
+      "q": "In Django migrations, what does the 'dependencies' attribute specify?",
+      "o": ["Required Python packages", "Order of migration execution", "Database engine type", "Foreign key constraints"],
+      "a": 1,
+      "explanation": "Dependencies specify which migrations must be applied before the current one."
+    },
+    {
+      "q": "Which Alembic command is used to apply all pending migrations?",
+      "o": ["alembic upgrade head", "alembic migrate all", "alembic apply", "alembic run"],
+      "a": 0,
+      "explanation": "The alembic upgrade head command applies all pending migrations up to the latest revision."
+    },
+    {
+      "q": "Why are migrations important in collaborative projects?",
+      "o": ["They allow consistent schema changes across environments", "They improve query speed", "They reduce code duplication", "They prevent SQL injection"],
+      "a": 0,
+      "explanation": "Migrations ensure that all developers and environments share the same database schema evolution."
+    }
+  ]
+}
