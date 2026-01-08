@@ -19,6 +19,21 @@
         {"name": "Standard Library", "slug": "standard_library"},
         {"name": "Iterators and Generators", "slug": "iterators_and_generators"},
         {"name": "Testing and Debugging", "slug": "testing_and_debugging"}
+      ],
+      "subtopics": [
+        {
+          "name": "Database",
+          "slug": "database",
+          "tags": ["mysql-connector-python", "psycopg"],
+          "modules": [
+            { "name": "SQLite & MySQL", "slug": "sqlite_and_mysql"},
+            { "name": "PostgreSQL", "slug": "pgsql"},
+            { "name": "SQLAlchemy ORM", "slug": "sqlalchemy"},
+            { "name": "Raw SQL & Cursors", "slug": "raw_sql_cursors"},
+            { "name": "Database Migrations", "slug": "migrations"},
+            { "name": "Transactions & Isolation", "slug": "transactions_isolations"}
+          ]
+        }        
       ]
     },
     {
