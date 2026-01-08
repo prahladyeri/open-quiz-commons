@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "What is the main purpose of database transactions?",
+      "o": ["To group operations into a single unit of work", "To improve query speed", "To backup data", "To enforce foreign keys"],
+      "a": 0,
+      "explanation": "Transactions ensure that multiple operations are executed as a single atomic unit of work."
+    },
+    {
+      "q": "Which SQL command is used to permanently save changes made in a transaction?",
+      "o": ["SAVE", "COMMIT", "APPLY", "FINALIZE"],
+      "a": 1,
+      "explanation": "The COMMIT command saves all changes made during the transaction."
+    },
+    {
+      "q": "Which SQL command is used to undo changes made in a transaction?",
+      "o": ["ROLLBACK", "UNDO", "CANCEL", "RESET"],
+      "a": 0,
+      "explanation": "ROLLBACK undoes all changes made during the current transaction."
+    },
+    {
+      "q": "Which isolation level allows dirty reads?",
+      "o": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"],
+      "a": 0,
+      "explanation": "READ UNCOMMITTED allows dirty reads, meaning uncommitted changes can be read."
+    },
+    {
+      "q": "Which isolation level prevents dirty reads but allows non-repeatable reads?",
+      "o": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"],
+      "a": 1,
+      "explanation": "READ COMMITTED prevents dirty reads but does not prevent non-repeatable reads."
+    },
+    {
+      "q": "Which isolation level prevents both dirty reads and non-repeatable reads but allows phantom reads?",
+      "o": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"],
+      "a": 2,
+      "explanation": "REPEATABLE READ prevents dirty and non-repeatable reads but phantom reads may still occur."
+    },
+    {
+      "q": "Which isolation level provides the strictest consistency guarantees?",
+      "o": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"],
+      "a": 3,
+      "explanation": "SERIALIZABLE provides the highest isolation, ensuring transactions behave as if executed sequentially."
+    },
+    {
+      "q": "In Python's sqlite3 module, which method begins a transaction implicitly?",
+      "o": ["execute()", "begin()", "start()", "open()"],
+      "a": 0,
+      "explanation": "Executing any SQL statement implicitly begins a transaction unless autocommit mode is enabled."
+    },
+    {
+      "q": "Which phenomenon occurs when a transaction reads the same row twice and gets different values?",
+      "o": ["Dirty read", "Non-repeatable read", "Phantom read", "Lost update"],
+      "a": 1,
+      "explanation": "A non-repeatable read happens when a row is modified by another transaction between reads."
+    },
+    {
+      "q": "Which phenomenon occurs when new rows appear in a query result during repeated reads?",
+      "o": ["Dirty read", "Non-repeatable read", "Phantom read", "Lost update"],
+      "a": 2,
+      "explanation": "Phantom reads occur when new rows are inserted by another transaction during repeated queries."
+    }
+  ]
+}
