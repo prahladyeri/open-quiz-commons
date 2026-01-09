@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "Which function in NumPy is used to calculate the mean of an array?",
+      "o": ["np.average()", "np.mean()", "np.median()", "np.mode()"],
+      "a": 1,
+      "explanation": "`np.mean()` computes the arithmetic mean of array elements."
+    },
+    {
+      "q": "Which function in NumPy is used to calculate the median of an array?",
+      "o": ["np.mean()", "np.median()", "np.mode()", "np.average()"],
+      "a": 1,
+      "explanation": "`np.median()` returns the median value of the array elements."
+    },
+    {
+      "q": "Which function in SciPy is used to perform a t-test?",
+      "o": ["scipy.stats.ttest_ind()", "scipy.stats.t_test()", "scipy.stats.test_t()", "scipy.stats.ttest()"],
+      "a": 0,
+      "explanation": "`scipy.stats.ttest_ind()` performs a two-sample t-test to compare means of two independent groups."
+    },
+    {
+      "q": "Which measure of central tendency is most affected by outliers?",
+      "o": ["Mean", "Median", "Mode", "All equally"],
+      "a": 0,
+      "explanation": "The mean is sensitive to extreme values, while median and mode are more robust."
+    },
+    {
+      "q": "Which function in NumPy is used to calculate the standard deviation?",
+      "o": ["np.std()", "np.var()", "np.deviation()", "np.stdev()"],
+      "a": 0,
+      "explanation": "`np.std()` computes the standard deviation of array elements."
+    },
+    {
+      "q": "Which distribution is commonly used to model the probability of a binary outcome?",
+      "o": ["Normal distribution", "Binomial distribution", "Poisson distribution", "Uniform distribution"],
+      "a": 1,
+      "explanation": "The binomial distribution models the probability of success/failure outcomes."
+    },
+    {
+      "q": "Which function in SciPy is used to calculate the Pearson correlation coefficient?",
+      "o": ["scipy.stats.pearsonr()", "scipy.stats.corr()", "scipy.stats.correlation()", "scipy.stats.p_corr()"],
+      "a": 0,
+      "explanation": "`scipy.stats.pearsonr()` computes the Pearson correlation coefficient and p-value."
+    },
+    {
+      "q": "Which statistical test is used to compare observed frequencies with expected frequencies?",
+      "o": ["t-test", "ANOVA", "Chi-square test", "Z-test"],
+      "a": 2,
+      "explanation": "The Chi-square test is used to compare observed and expected categorical frequencies."
+    },
+    {
+      "q": "Which function in NumPy is used to calculate variance?",
+      "o": ["np.var()", "np.std()", "np.variance()", "np.dev()"],
+      "a": 0,
+      "explanation": "`np.var()` computes the variance of array elements."
+    },
+    {
+      "q": "Which statistical test is used to compare means across more than two groups?",
+      "o": ["t-test", "ANOVA", "Chi-square test", "Regression"],
+      "a": 1,
+      "explanation": "ANOVA (Analysis of Variance) is used to compare means across multiple groups."
+    }
+  ]
+}
