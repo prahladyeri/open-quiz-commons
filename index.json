@@ -48,7 +48,6 @@
           ]
         },
         {
-          "hidden": true,
           "name": "Data Science",
           "slug": "data_science",
           "tags": ["pandas", "numpy"],
