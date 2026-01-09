@@ -1,10 +1,10 @@
 {
   "data": [
     {
-      "q": "Which keyword is used to declare a block-scoped variable in JavaScript?",
+      "q": "Which keyword is used to declare a block-scoped variable that can be reassigned in JavaScript?",
       "o": ["var", "let", "const", "static"],
       "a": 1,
-      "explanation": "`let` declares a block-scoped variable, unlike `var` which is function-scoped."
+      "explanation": "`let` declares a block-scoped variable that can be reassigned, unlike `const`."
     },
     {
       "q": "Which of the following declares a constant that cannot be reassigned?",
