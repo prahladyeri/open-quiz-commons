@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "Which function is used to create a `DataFrame` in pandas?",
+      "o": ["DataFrame()", "create()", "new_frame()", "make()"],
+      "a": 0,
+      "explanation": "The `DataFrame()` constructor is used to create a pandas DataFrame from dictionaries, lists, or arrays."
+    },
+    {
+      "q": "Which function is used to read CSV files into a pandas `DataFrame`?",
+      "o": ["read_csv()", "load_csv()", "import_csv()", "csv_reader()"],
+      "a": 0,
+      "explanation": "The `read_csv()` function loads data from a CSV file into a pandas DataFrame."
+    },
+    {
+      "q": "Which attribute of a `DataFrame` gives the column labels?",
+      "o": ["columns", "index", "labels", "keys"],
+      "a": 0,
+      "explanation": "The `columns` attribute returns the labels of all columns in the DataFrame."
+    },
+    {
+      "q": "Which method is used to select the first `n` rows of a DataFrame?",
+      "o": ["head()", "top()", "first()", "rows()"],
+      "a": 0,
+      "explanation": "The `head(n)` method returns the first `n` rows of the DataFrame."
+    },
+    {
+      "q": "Which method is used to select the last `n` rows of a DataFrame?",
+      "o": ["tail()", "bottom()", "last()", "rows()"],
+      "a": 0,
+      "explanation": "The `tail(n)` method returns the last `n` rows of the DataFrame."
+    },
+    {
+      "q": "Which property of a DataFrame gives the number of rows and columns?",
+      "o": ["shape", "size", "ndim", "count"],
+      "a": 0,
+      "explanation": "The `shape` property returns a tuple `(rows, columns)` representing the DataFrame dimensions."
+    },
+    {
+      "q": "Which method is used to compute basic statistics like mean and standard deviation?",
+      "o": ["stats()", "describe()", "summary()", "info()"],
+      "a": 1,
+      "explanation": "The `describe()` method generates descriptive statistics such as mean, std, min, and max."
+    },
+    {
+      "q": "Which method is used to merge two DataFrames by columns or indexes?",
+      "o": ["concat()", "merge()", "join()", "append()"],
+      "a": 1,
+      "explanation": "The `merge()` method combines DataFrames using common columns or indexes."
+    },
+    {
+      "q": "Which method is used to concatenate DataFrames along a particular axis?",
+      "o": ["merge()", "concat()", "join()", "append()"],
+      "a": 1,
+      "explanation": "The `concat()` method concatenates DataFrames along rows or columns."
+    },
+    {
+      "q": "Which method provides information about the DataFrame including column types and non-null counts?",
+      "o": ["info()", "describe()", "summary()", "details()"],
+      "a": 0,
+      "explanation": "The `info()` method prints a concise summary of the DataFrame, including column dtypes and non-null values."
+    }
+  ]
+}
