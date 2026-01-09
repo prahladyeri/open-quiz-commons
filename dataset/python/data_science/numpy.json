@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "q": "Which function is used to create a NumPy array?",
+      "o": ["array()", "create()", "new_array()", "make()"],
+      "a": 0,
+      "explanation": "The array() function is used to create a NumPy array from lists or other sequences."
+    },
+    {
+      "q": "Which attribute of a NumPy array gives the number of dimensions?",
+      "o": ["ndim", "shape", "size", "dtype"],
+      "a": 0,
+      "explanation": "The ndim attribute returns the number of dimensions of the array."
+    },
+    {
+      "q": "Which attribute of a NumPy array gives the total number of elements?",
+      "o": ["ndim", "shape", "size", "len"],
+      "a": 2,
+      "explanation": "The size attribute returns the total number of elements in the array."
+    },
+    {
+      "q": "Which function is used to generate evenly spaced values within a given interval?",
+      "o": ["linspace()", "range()", "arange()", "meshgrid()"],
+      "a": 0,
+      "explanation": "linspace(start, stop, num) generates evenly spaced values over a specified interval."
+    },
+    {
+      "q": "Which function is used to generate values with a specified step size?",
+      "o": ["linspace()", "arange()", "range()", "step()"],
+      "a": 1,
+      "explanation": "arange(start, stop, step) generates values with a specified step size."
+    },
+    {
+      "q": "Which attribute of a NumPy array gives its shape as a tuple?",
+      "o": ["ndim", "shape", "size", "dtype"],
+      "a": 1,
+      "explanation": "The shape attribute returns the dimensions of the array as a tuple."
+    },
+    {
+      "q": "Which function is used to perform element-wise mathematical operations on arrays?",
+      "o": ["apply()", "map()", "ufuncs", "math()"],
+      "a": 2,
+      "explanation": "Universal functions (ufuncs) in NumPy perform element-wise operations efficiently."
+    },
+    {
+      "q": "Which function is used to compute the mean of array elements?",
+      "o": ["average()", "mean()", "sum()", "median()"],
+      "a": 1,
+      "explanation": "The mean() function computes the arithmetic mean of array elements."
+    },
+    {
+      "q": "Which function stacks arrays vertically (row-wise)?",
+      "o": ["hstack()", "vstack()", "stack()", "append()"],
+      "a": 1,
+      "explanation": "The vstack() function stacks arrays vertically, adding rows."
+    },
+    {
+      "q": "Which attribute of a NumPy array specifies the data type of its elements?",
+      "o": ["ndim", "shape", "dtype", "type"],
+      "a": 2,
+      "explanation": "The dtype attribute specifies the data type of the array elements, such as int32 or float64."
+    }
+  ]
+}
