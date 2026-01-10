@@ -1,7 +1,0 @@
-vals = [1, 2, 3, 4]
-x = 1
-for v in vals:
-    if v >= 2: break
-else:
-    x = 2
-print (x)
