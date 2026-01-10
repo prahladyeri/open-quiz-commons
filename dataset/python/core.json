@@ -68,7 +68,7 @@
     },
     {
       "q": "Who maintains the cpython reference implementation?",
-      "o": ["Snake Software Foundation", "Python Software Foundation", "Azgar Software Foundation", "Shesha Software Foundation"],
+      "o": ["Apache Software Foundation", "Python Software Foundation", "Mozilla Foundation", "Linux Foundation"],
       "a": 1,
       "explanation": "The Python Software Foundation (PSF) maintains CPython, the reference implementation of Python."
     },
@@ -86,9 +86,9 @@
     },
     {
       "q": "Which library is often used to make HTTP requests?",
-      "o": ["pleadings", "postulations", "requests", "petitions"],
+      "o": ["urllib", "http.client", "requests", "httplib2"],
       "a": 2,
-      "explanation": "The requests library is the standard way to make HTTP requests in Python."
+      "explanation": "The requests library is the most popular and user-friendly way to make HTTP requests in Python. urllib and http.client are part of the standard library but less convenient."
     }
   ]
 }
