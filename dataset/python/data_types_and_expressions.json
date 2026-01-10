@@ -94,7 +94,7 @@
     },
     {
       "q": "_____ are immutable sequences of object references accessed by their offset position.",
-      "o": ["Tuples", "Pebbles", "Cubicles", "Dimples"],
+      "o": ["Tuples", "Lists", "Sets", "Dictionaries"],
       "a": 0,
       "explanation": "Tuples are immutable ordered collections in Python."
     },
