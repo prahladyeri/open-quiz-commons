@@ -61,10 +61,10 @@
       "explanation": "Python supports integers, floats (scientific notation), and hex literals. All are valid."
     },
     {
-      "q": "What is the output of following code?\n\n{@block:block0.txt}",
+      "q": "What is the output of following code?\n\nvals = [1, 2, 3, 4]\nx = 1\nfor v in vals:\n    if v >= 2: break\nelse:\n    x = 2\nprint (x)",
       "o": ["0", "2", "1", "3"],
       "a": 2,
-      "explanation": "The code likely evaluates a boolean/int expression resulting in 1."
+      "explanation": "The loop breaks when v == 2, so the else clause is skipped. x remains 1 and is printed."
     },
     {
       "q": "Which function is used to dynamically evaluate code during runtime:",
