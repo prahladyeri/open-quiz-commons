@@ -31,7 +31,8 @@
       "explanation": "The global keyword allows modifying global variables inside a function."
     },
     {
-      "q": "What is the output of following code?\n\n`import random\n\nlol = [1, 2, 3, 4]\nrandom.shuffle(lol)\nprint(lol)`",
+      "q": "What is the output of following code?",
+      "code": "import random\n\nlol = [1, 2, 3, 4]\nrandom.shuffle(lol)\nprint(lol)",
       "o": ["Error", "Unpredictable result", "[4,3,2,1]", "[1,2,3,4]"],
       "a": 1,
       "explanation": "'Unpredictable result' is the right choice because the shuffled list could be any permutation of [1,2,3,4]"
@@ -61,7 +62,8 @@
       "explanation": "Python supports integers, floats (scientific notation), and hex literals. All are valid."
     },
     {
-      "q": "What is the output of following code?\n\n\`nvals = [1, 2, 3, 4]\nx = 1\nfor v in vals:\n    if v >= 2: break\nelse:\n    x = 2\nprint (x)`",
+      "q": "What is the output of following code?",
+      "code": "nvals = [1, 2, 3, 4]\nx = 1\nfor v in vals:\n    if v >= 2: break\nelse:\n    x = 2\nprint (x)",
       "o": ["0", "2", "1", "3"],
       "a": 2,
       "explanation": "The loop breaks when v == 2, so the else clause is skipped. x remains 1 and is printed."
