@@ -35,7 +35,6 @@
           ]
         },
         {
-          "hidden": true,
           "name": "Web",
           "slug": "web",
           "tags": ["flask", "django"],
