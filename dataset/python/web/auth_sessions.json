@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What is authentication in a web application?",
+      "o": [
+        "Granting permissions to users",
+        "Verifying the identity of a user",
+        "Encrypting user data",
+        "Storing user preferences"
+      ],
+      "a": 1,
+      "explanation": "Authentication is the process of verifying who the user is, typically using credentials like username and password."
+    },
+    {
+      "q": "What is authorization?",
+      "o": [
+        "Identifying the user",
+        "Encrypting sessions",
+        "Determining what actions a user can perform",
+        "Managing cookies"
+      ],
+      "a": 2,
+      "explanation": "Authorization decides what an authenticated user is allowed to access or perform."
+    },
+    {
+      "q": "Which Flask extension is commonly used for user authentication?",
+      "o": [
+        "Flask-Login",
+        "Flask-WTF",
+        "Flask-Migrate",
+        "Flask-SQLAlchemy"
+      ],
+      "a": 0,
+      "explanation": "Flask-Login provides session management, login, logout, and user handling utilities."
+    },
+    {
+      "q": "What is a session in a web application?",
+      "o": [
+        "A database connection",
+        "Temporary data stored between HTTP requests",
+        "A browser cache",
+        "A REST API endpoint"
+      ],
+      "a": 1,
+      "explanation": "Sessions store user-specific data across multiple HTTP requests, since HTTP itself is stateless."
+    },
+    {
+      "q": "Where are session identifiers typically stored on the client?",
+      "o": [
+        "Local storage",
+        "Session storage",
+        "Cookies",
+        "HTML meta tags"
+      ],
+      "a": 2,
+      "explanation": "Session IDs are usually stored in cookies and sent automatically with each request."
+    },
+    {
+      "q": "Which HTTP method is most appropriate for a login form submission?",
+      "o": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "a": 1,
+      "explanation": "POST is preferred because it sends credentials in the request body rather than the URL."
+    },
+    {
+      "q": "Why should passwords never be stored in plain text?",
+      "o": [
+        "They consume more space",
+        "They are slow to compare",
+        "They can be easily compromised if leaked",
+        "They cannot be indexed"
+      ],
+      "a": 2,
+      "explanation": "Storing passwords in plain text is insecure; hashing protects users even if the database is compromised."
+    },
+    {
+      "q": "Which function is commonly used to hash passwords in Python web apps?",
+      "o": [
+        "hash()",
+        "bcrypt.hashpw()",
+        "md5()",
+        "sha1()"
+      ],
+      "a": 1,
+      "explanation": "bcrypt provides a secure, salted hashing mechanism suitable for passwords."
+    },
+    {
+      "q": "What is the purpose of CSRF protection?",
+      "o": [
+        "Prevent SQL injection",
+        "Prevent cross-site scripting",
+        "Prevent unauthorized actions from authenticated users",
+        "Encrypt cookies"
+      ],
+      "a": 2,
+      "explanation": "CSRF protection ensures that requests come from trusted sources and not from malicious third-party sites."
+    },
+    {
+      "q": "What happens when a user logs out of a session-based application?",
+      "o": [
+        "The browser cache is cleared",
+        "The session data is invalidated or destroyed",
+        "The user account is deleted",
+        "Cookies are permanently removed"
+      ],
+      "a": 1,
+      "explanation": "Logging out invalidates the session so it can no longer be used for authenticated access."
+    }
+  ]
+}
