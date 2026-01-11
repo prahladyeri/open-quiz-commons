@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "q": "What does REST stand for?",
+      "o": [
+        "Remote Execution Standard Transfer",
+        "Representational State Transfer",
+        "Reactive State Transport",
+        "Request Encoded Service Technique"
+      ],
+      "a": 1,
+      "explanation": "REST stands for Representational State Transfer and defines architectural principles for web APIs."
+    },
+    {
+      "q": "Which HTTP method is typically used to retrieve data in a REST API?",
+      "o": ["POST", "PUT", "GET", "DELETE"],
+      "a": 2,
+      "explanation": "GET requests are used to retrieve data without modifying server state."
+    },
+    {
+      "q": "Which HTTP status code represents a successful request?",
+      "o": ["200", "301", "404", "500"],
+      "a": 0,
+      "explanation": "HTTP 200 indicates that the request was successfully processed."
+    },
+    {
+      "q": "What is FastAPI primarily known for?",
+      "o": [
+        "Template rendering",
+        "High performance and type hints",
+        "Built-in ORM",
+        "Synchronous-only execution"
+      ],
+      "a": 1,
+      "explanation": "FastAPI leverages Python type hints for validation and delivers very high performance."
+    },
+    {
+      "q": "Which feature allows FastAPI to auto-generate API documentation?",
+      "o": [
+        "Jinja2",
+        "Swagger / OpenAPI",
+        "GraphQL",
+        "SQLAlchemy"
+      ],
+      "a": 1,
+      "explanation": "FastAPI automatically generates OpenAPI-based documentation using Swagger UI."
+    },
+    {
+      "q": "Which keyword is commonly used to define request models in FastAPI?",
+      "o": ["dataclass", "schema", "pydantic", "model"],
+      "a": 2,
+      "explanation": "FastAPI uses Pydantic models for request validation and data parsing."
+    },
+    {
+      "q": "How does FastAPI handle asynchronous endpoints?",
+      "o": [
+        "Using threads only",
+        "Using async and await",
+        "Using callbacks",
+        "Using greenlets"
+      ],
+      "a": 1,
+      "explanation": "FastAPI natively supports async endpoints using Python's async/await syntax."
+    },
+    {
+      "q": "Which object is used to define a FastAPI application?",
+      "o": [
+        "Flask()",
+        "FastAPI()",
+        "API()",
+        "Application()"
+      ],
+      "a": 1,
+      "explanation": "A FastAPI application is created using the FastAPI() class."
+    },
+    {
+      "q": "Which HTTP method is typically used to create a new resource?",
+      "o": ["GET", "POST", "PATCH", "HEAD"],
+      "a": 1,
+      "explanation": "POST requests are commonly used to create new resources in REST APIs."
+    },
+    {
+      "q": "How does FastAPI differ from Flask by default?",
+      "o": [
+        "Flask enforces async usage",
+        "FastAPI includes automatic data validation",
+        "Flask has built-in OpenAPI support",
+        "FastAPI requires templates"
+      ],
+      "a": 1,
+      "explanation": "FastAPI provides automatic validation and serialization using type hints and Pydantic."
+    }
+  ]
+}
