@@ -1,5 +1,5 @@
 {
-  "questions": [
+  "data": [
     {
       "q": "Which statement is used to handle runtime errors in JavaScript?",
       "o": ["catch", "try...catch", "throw", "error"],
