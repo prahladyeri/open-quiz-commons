@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What is Jinja2 primarily used for in Python web frameworks?",
+      "o": [
+        "Database ORM",
+        "Template rendering",
+        "HTTP routing",
+        "Session management"
+      ],
+      "a": 1,
+      "explanation": "Jinja2 is a templating engine used to generate dynamic HTML from templates."
+    },
+    {
+      "q": "Which syntax is used in Jinja2 to output a variable?",
+      "o": [
+        "{{ variable }}",
+        "{% variable %}",
+        "<% variable %>",
+        "${ variable }"
+      ],
+      "a": 0,
+      "explanation": "Double curly braces {{ }} are used to print variables in Jinja2 templates."
+    },
+    {
+      "q": "Which Jinja2 construct is used for control flow like loops and conditionals?",
+      "o": [
+        "{{ ... }}",
+        "{# ... #}",
+        "{% ... %}",
+        "<!-- ... -->"
+      ],
+      "a": 2,
+      "explanation": "Statements such as loops and conditionals are written using {% %} blocks."
+    },
+    {
+      "q": "How do you write a for-loop in Jinja2?",
+      "o": [
+        "{% for item in items %}",
+        "{{ for item in items }}",
+        "{% foreach item in items %}",
+        "{{ foreach item in items }}"
+      ],
+      "a": 0,
+      "explanation": "Jinja2 uses Python-like syntax for loops inside {% %} blocks."
+    },
+    {
+      "q": "Which statement is used to end a for-loop block in Jinja2?",
+      "o": [
+        "{% stopfor %}",
+        "{% endfor %}",
+        "{% endforeach %}",
+        "{% break %}"
+      ],
+      "a": 1,
+      "explanation": "The {% endfor %} statement closes a for-loop block."
+    },
+    {
+      "q": "How are comments written in Jinja2 templates?",
+      "o": [
+        "// comment",
+        "<!-- comment -->",
+        "{# comment #}",
+        "# comment"
+      ],
+      "a": 2,
+      "explanation": "Jinja2 comments are enclosed within {# and #} and are not rendered in output."
+    },
+    {
+      "q": "Which feature allows one template to reuse another?",
+      "o": [
+        "include",
+        "extend",
+        "inherit",
+        "compose"
+      ],
+      "a": 1,
+      "explanation": "Template inheritance is achieved using the {% extends %} keyword."
+    },
+    {
+      "q": "Which Jinja2 concept defines replaceable sections in a base template?",
+      "o": [
+        "slots",
+        "macros",
+        "blocks",
+        "partials"
+      ],
+      "a": 2,
+      "explanation": "Blocks define sections in a base template that child templates can override."
+    },
+    {
+      "q": "How do you safely escape HTML output in Jinja2?",
+      "o": [
+        "Using escape() function",
+        "By default autoescaping",
+        "Using raw keyword",
+        "Using sanitize filter"
+      ],
+      "a": 1,
+      "explanation": "Jinja2 enables autoescaping by default in most web frameworks to prevent XSS."
+    },
+    {
+      "q": "Which filter converts text to uppercase in Jinja2?",
+      "o": [
+        "upper",
+        "capitalize",
+        "toupper",
+        "uppercase"
+      ],
+      "a": 0,
+      "explanation": "The upper filter transforms text to uppercase in Jinja2 templates."
+    }
+  ]
+}
