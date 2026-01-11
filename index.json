@@ -4,40 +4,40 @@
     {
       "name": "Python",
       "slug": "python",
-      "category": "Programming",
-      "tags": ["python", "programming", "software"],
       "icon": "fa-brands fa-python",
-      "modules": [
-        {"name": "Core Python", "slug": "core"},
-        {"name": "Data Types and Expressions", "slug": "data_types_and_expressions"},
-        {"name": "Control Flow", "slug": "control_flow"},
-        {"name": "Functions", "slug": "functions"},
-        {"name": "Classes and OOP", "slug": "classes_and_oop"},
-        {"name": "Exceptions and Errors", "slug": "exceptions_and_errors"},
-        {"name": "File I/O", "slug": "file_io"},
-        {"name": "Modules and Packages", "slug": "modules_and_packages"},
-        {"name": "Standard Library", "slug": "standard_library"},
-        {"name": "Iterators and Generators", "slug": "iterators_and_generators"},
-        {"name": "Testing and Debugging", "slug": "testing_and_debugging"}
-      ],
       "subtopics": [
+        {
+          "name": "Core Python",
+          "slug": "core",
+          "modules": [
+            {"name": "Basics", "slug": "basics"},
+            {"name": "Data Types and Expressions", "slug": "data_types_and_expressions"},
+            {"name": "Control Flow", "slug": "control_flow"},
+            {"name": "Functions", "slug": "functions"},
+            {"name": "Classes and OOP", "slug": "classes_and_oop"},
+            {"name": "Exceptions and Errors", "slug": "exceptions_and_errors"},
+            {"name": "File I/O", "slug": "file_io"},
+            {"name": "Modules and Packages", "slug": "modules_and_packages"},
+            {"name": "Standard Library", "slug": "standard_library"},
+            {"name": "Iterators and Generators", "slug": "iterators_and_generators"},
+            {"name": "Testing and Debugging", "slug": "testing_and_debugging"}
+          ]
+        },
         {
           "name": "Database",
           "slug": "database",
-          "tags": ["mysql-connector-python", "psycopg"],
           "modules": [
             { "name": "SQLite & MySQL", "slug": "sqlite_and_mysql"},
             { "name": "PostgreSQL", "slug": "postgresql"},
             { "name": "SQLAlchemy ORM", "slug": "sqlalchemy"},
             { "name": "Raw SQL & Cursors", "slug": "raw_sql_cursors"},
             { "name": "Database Migrations", "slug": "migrations"},
-            { "name": "Transactions & Isolation", "slug": "transactions_and_isolations"}
+            { "name": "Transactions and Isolation", "slug": "transactions_and_isolation"}
           ]
         },
         {
           "name": "Web",
           "slug": "web",
-          "tags": ["flask", "django"],
           "modules": [
             { "name": "Flask Basics", "slug": "flask"},
             { "name": "Django Basics", "slug": "django"},
@@ -49,7 +49,6 @@
         {
           "name": "Data Science",
           "slug": "data_science",
-          "tags": ["pandas", "numpy"],
           "modules": [
             { "name": "NumPy", "slug": "numpy"},
             { "name": "Pandas", "slug": "pandas"},
@@ -62,7 +61,6 @@
           "hidden": true,
           "name": "AI & ML",
           "slug": "ai_ml",
-          "tags": ["ai", "ml"],
           "modules": [
             { "name": "Machine Learning Basics", "slug": "ml_basics"},
             { "name": "scikit-learn", "slug": "scikit_learn"},
@@ -75,7 +73,6 @@
           "hidden": true,
           "name": "System & OS",
           "slug": "system_and_os",
-          "tags": ["operating-system"],
           "modules": [
             { "name": "os & sys Modules", "slug": "os_and_sys"},
             { "name": "Subprocess", "slug": "subprocess"},
@@ -88,7 +85,6 @@
           "hidden": true,
           "name": "Testing & Quality",
           "slug": "testing_qa",
-          "tags": ["testing", "qa"],
           "modules": [
             { "name": "unittest", "slug": "unittest"},
             { "name": "pytest", "slug": "pytest"},
@@ -101,7 +97,6 @@
           "hidden": true,
           "name": "Networking",
           "slug": "networking",
-          "tags": ["networking"],
           "modules": [
             { "name": "Sockets", "slug": "sockets"},
             { "name": "HTTP Clients", "slug": "http"},
@@ -113,7 +108,6 @@
           "hidden": true,
           "name": "Packaging & Distribution",
           "slug": "packaging_and_distribution",
-          "tags": ["packaging"],
           "modules": [
             { "name": "venv & virtualenv", "slug": "venv"},
             { "name": "pip & pipx", "slug": "pip"},
@@ -126,25 +120,26 @@
     {
       "name": "JavaScript",
       "slug": "javascript",
-      "category": "Programming",
-      "tags": ["javascript", "web", "programming"],
       "icon": "fa-brands fa-node-js",
-      "modules": [
-        { "name": "Core JavaScript", "slug": "core"},
-        { "name": "Data Types & Operators", "slug": "data_types_and_operators"},
-        { "name": "Control Flow", "slug": "control_flow"},
-        { "name": "Functions & Scope", "slug": "functions_and_scope"},
-        { "name": "Objects & Prototypes", "slug": "objects_and_prototypes"},
-        { "name": "Arrays & Collections", "slug": "arrays_and_collections"},
-        { "name": "Async & Promises", "slug": "async_and_promises"},
-        { "name": "Errors & Debugging", "slug": "errors_and_debugging"},
-        { "name": "ES6+ Features", "slug": "es6_and_beyond"}
-      ],
       "subtopics": [
+        {
+          "name": "Core JS",
+          "slug": "core",
+          "modules": [
+            { "name": "Basics", "slug": "basics"},
+            { "name": "Data Types & Operators", "slug": "data_types_and_operators"},
+            { "name": "Control Flow", "slug": "control_flow"},
+            { "name": "Functions & Scope", "slug": "functions_and_scope"},
+            { "name": "Objects & Prototypes", "slug": "objects_and_prototypes"},
+            { "name": "Arrays & Collections", "slug": "arrays_and_collections"},
+            { "name": "Async & Promises", "slug": "async_and_promises"},
+            { "name": "Errors & Debugging", "slug": "errors_and_debugging"},
+            { "name": "ES6+ Features", "slug": "es6_and_beyond"}
+          ]
+        },
         {
           "name": "Browser",
           "slug": "browser",
-          "tags": ["dom", "web", "frontend"],
           "modules": [
             { "name": "DOM & Events", "slug": "dom_and_events"},
             { "name": "Fetch & AJAX", "slug": "fetch_and_ajax"},
@@ -162,7 +157,6 @@
         {
           "name": "Node.js",
           "slug": "node",
-          "tags": ["nodejs", "backend"],
           "modules": [
             { "name": "Node Core Modules", "slug": "node_core_modules"},
             { "name": "File System & Process", "slug": "filesystem_and_process" },
