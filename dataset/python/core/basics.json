@@ -73,7 +73,7 @@
       "explanation": "The Python Software Foundation (PSF) maintains CPython, the reference implementation of Python."
     },
     {
-      "q": "In context of computer programming, the word 'Python' refers to:",
+      "q": "The programming language Python gets its name from:",
       "o": ["British comedy group, Monty Python", "Ferocious creature of the Amazon jungles", "All of the above", "None of the above"],
       "a": 0,
       "explanation": "Python was named after Monty Python's Flying Circus, not the snake."
