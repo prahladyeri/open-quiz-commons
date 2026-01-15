@@ -9,7 +9,7 @@
         "Node.js built-in modules"
       ],
       "a": 1,
-      "explanation": "Web APIs are provided by the browser to extend JavaScript capabilities beyond the core language."
+      "e": "Web APIs are provided by the browser to extend JavaScript capabilities beyond the core language."
     },
     {
       "q": "Which Web API is used to store key-value data persistently in the browser?",
@@ -20,7 +20,7 @@
         "cacheStorage"
       ],
       "a": 1,
-      "explanation": "localStorage stores key-value pairs persistently until explicitly cleared."
+      "e": "localStorage stores key-value pairs persistently until explicitly cleared."
     },
     {
       "q": "What is the key difference between localStorage and sessionStorage?",
@@ -31,7 +31,7 @@
         "sessionStorage supports objects"
       ],
       "a": 2,
-      "explanation": "localStorage persists even after closing the browser, while sessionStorage is cleared when the tab closes."
+      "e": "localStorage persists even after closing the browser, while sessionStorage is cleared when the tab closes."
     },
     {
       "q": "Which API is used to make HTTP requests in modern browsers?",
@@ -42,7 +42,7 @@
         "request"
       ],
       "a": 1,
-      "explanation": "The Fetch API provides a modern promise-based interface for making HTTP requests."
+      "e": "The Fetch API provides a modern promise-based interface for making HTTP requests."
     },
     {
       "q": "Which Web API allows scheduling code execution after a delay?",
@@ -53,7 +53,7 @@
         "All of the above"
       ],
       "a": 3,
-      "explanation": "setTimeout, setInterval, and requestAnimationFrame all schedule code execution in different ways."
+      "e": "setTimeout, setInterval, and requestAnimationFrame all schedule code execution in different ways."
     },
     {
       "q": "Which API provides information about the current page URL?",
@@ -64,7 +64,7 @@
         "document.locationBar"
       ],
       "a": 1,
-      "explanation": "window.location provides information about the current URL and allows navigation."
+      "e": "window.location provides information about the current URL and allows navigation."
     },
     {
       "q": "Which Web API allows navigation through the browser history?",
@@ -75,7 +75,7 @@
         "session"
       ],
       "a": 1,
-      "explanation": "The History API allows navigation backward and forward through the session history."
+      "e": "The History API allows navigation backward and forward through the session history."
     },
     {
       "q": "Which API provides information about the user's browser and device?",
@@ -86,7 +86,7 @@
         "clientInfo"
       ],
       "a": 2,
-      "explanation": "The Navigator API provides information such as user agent, platform, and online status."
+      "e": "The Navigator API provides information such as user agent, platform, and online status."
     },
     {
       "q": "Which Web API is commonly used to store structured data and large objects?",
@@ -97,7 +97,7 @@
         "sessionStorage"
       ],
       "a": 2,
-      "explanation": "IndexedDB is designed for storing large amounts of structured data on the client side."
+      "e": "IndexedDB is designed for storing large amounts of structured data on the client side."
     },
     {
       "q": "Which Web API is primarily used for detecting user location?",
@@ -108,7 +108,7 @@
         "Maps API"
       ],
       "a": 1,
-      "explanation": "The Geolocation API allows access to the user's geographic location with permission."
+      "e": "The Geolocation API allows access to the user's geographic location with permission."
     }
   ]
 }

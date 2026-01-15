@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "Which Python library is most commonly used for 2D plotting?",
-      "o": ["matplotlib", "seaborn", "plotly", "bokeh"],
+      "o": [
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "bokeh"
+      ],
       "a": 0,
-      "explanation": "`matplotlib` is the most widely used library for creating static 2D plots in Python."
+      "e": "`matplotlib` is the most widely used library for creating static 2D plots in Python."
     },
     {
       "q": "Which function in `matplotlib.pyplot` is used to plot line graphs?",
-      "o": ["line()", "plot()", "draw()", "graph()"],
+      "o": [
+        "line()",
+        "plot()",
+        "draw()",
+        "graph()"
+      ],
       "a": 1,
-      "explanation": "The `plot()` function is used to create line graphs in `matplotlib`."
+      "e": "The `plot()` function is used to create line graphs in `matplotlib`."
     },
     {
       "q": "Which library is built on top of `matplotlib` and provides high-level statistical graphics?",
-      "o": ["plotly", "seaborn", "bokeh", "dash"],
+      "o": [
+        "plotly",
+        "seaborn",
+        "bokeh",
+        "dash"
+      ],
       "a": 1,
-      "explanation": "`seaborn` is built on top of `matplotlib` and specializes in statistical data visualization."
+      "e": "`seaborn` is built on top of `matplotlib` and specializes in statistical data visualization."
     },
     {
       "q": "Which method in pandas is used to quickly plot data from a `DataFrame`?",
-      "o": ["df.show()", "df.plot()", "df.graph()", "df.visualize()"],
+      "o": [
+        "df.show()",
+        "df.plot()",
+        "df.graph()",
+        "df.visualize()"
+      ],
       "a": 1,
-      "explanation": "The `df.plot()` method allows quick visualization of data directly from a pandas DataFrame."
+      "e": "The `df.plot()` method allows quick visualization of data directly from a pandas DataFrame."
     },
     {
       "q": "Which visualization library is known for interactive plots and dashboards?",
-      "o": ["matplotlib", "seaborn", "plotly", "numpy"],
+      "o": [
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "numpy"
+      ],
       "a": 2,
-      "explanation": "`plotly` is widely used for creating interactive plots and dashboards."
+      "e": "`plotly` is widely used for creating interactive plots and dashboards."
     },
     {
       "q": "Which `matplotlib` function is used to display the plot window?",
-      "o": ["show()", "display()", "render()", "open()"],
+      "o": [
+        "show()",
+        "display()",
+        "render()",
+        "open()"
+      ],
       "a": 0,
-      "explanation": "The `show()` function displays the plot window with the rendered visualization."
+      "e": "The `show()` function displays the plot window with the rendered visualization."
     },
     {
       "q": "Which library provides interactive visualizations in notebooks using JavaScript under the hood?",
-      "o": ["plotly", "bokeh", "dash", "altair"],
+      "o": [
+        "plotly",
+        "bokeh",
+        "dash",
+        "altair"
+      ],
       "a": 1,
-      "explanation": "`bokeh` provides interactive visualizations and integrates well with Jupyter notebooks."
+      "e": "`bokeh` provides interactive visualizations and integrates well with Jupyter notebooks."
     },
     {
       "q": "Which seaborn function is used to create heatmaps?",
-      "o": ["heatmap()", "map()", "imshow()", "matrixplot()"],
+      "o": [
+        "heatmap()",
+        "map()",
+        "imshow()",
+        "matrixplot()"
+      ],
       "a": 0,
-      "explanation": "The `heatmap()` function in seaborn is used to visualize data in a matrix form with colors."
+      "e": "The `heatmap()` function in seaborn is used to visualize data in a matrix form with colors."
     },
     {
       "q": "Which matplotlib function is used to add labels to the x-axis?",
-      "o": ["xlabel()", "xtext()", "set_xlabel()", "axislabel()"],
+      "o": [
+        "xlabel()",
+        "xtext()",
+        "set_xlabel()",
+        "axislabel()"
+      ],
       "a": 0,
-      "explanation": "The `xlabel()` function sets the label for the x-axis in a matplotlib plot."
+      "e": "The `xlabel()` function sets the label for the x-axis in a matplotlib plot."
     },
     {
       "q": "Which library uses a declarative style for creating visualizations and is based on Vega-Lite?",
-      "o": ["altair", "plotly", "dash", "bokeh"],
+      "o": [
+        "altair",
+        "plotly",
+        "dash",
+        "bokeh"
+      ],
       "a": 0,
-      "explanation": "`altair` is a declarative statistical visualization library built on top of Vega-Lite."
+      "e": "`altair` is a declarative statistical visualization library built on top of Vega-Lite."
     }
   ]
 }

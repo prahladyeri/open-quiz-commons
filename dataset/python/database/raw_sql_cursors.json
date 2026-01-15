@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "Which Python module is commonly used to work with raw SQL cursors?",
-      "o": ["sqlite3", "sqlalchemy", "pymongo", "redis"],
+      "o": [
+        "sqlite3",
+        "sqlalchemy",
+        "pymongo",
+        "redis"
+      ],
       "a": 0,
-      "explanation": "The sqlite3 module in Python provides a DB-API interface with raw SQL cursor support."
+      "e": "The sqlite3 module in Python provides a DB-API interface with raw SQL cursor support."
     },
     {
       "q": "Which method of a cursor object is used to execute SQL statements?",
-      "o": ["run()", "execute()", "query()", "call()"],
+      "o": [
+        "run()",
+        "execute()",
+        "query()",
+        "call()"
+      ],
       "a": 1,
-      "explanation": "The execute() method runs SQL statements using the cursor object."
+      "e": "The execute() method runs SQL statements using the cursor object."
     },
     {
       "q": "Which method retrieves all rows of a query result?",
-      "o": ["fetch()", "fetchall()", "get_all()", "rows()"],
+      "o": [
+        "fetch()",
+        "fetchall()",
+        "get_all()",
+        "rows()"
+      ],
       "a": 1,
-      "explanation": "The fetchall() method returns all remaining rows of a query result."
+      "e": "The fetchall() method returns all remaining rows of a query result."
     },
     {
       "q": "Which method retrieves the next row of a query result?",
-      "o": ["next()", "fetchone()", "row()", "get()"],
+      "o": [
+        "next()",
+        "fetchone()",
+        "row()",
+        "get()"
+      ],
       "a": 1,
-      "explanation": "The fetchone() method returns the next row of the result set."
+      "e": "The fetchone() method returns the next row of the result set."
     },
     {
       "q": "Which method retrieves the next set of rows of a query result?",
-      "o": ["fetchmany()", "fetchset()", "nextrows()", "getmany()"],
+      "o": [
+        "fetchmany()",
+        "fetchset()",
+        "nextrows()",
+        "getmany()"
+      ],
       "a": 0,
-      "explanation": "The fetchmany(size) method retrieves the next set of rows, limited by the size parameter."
+      "e": "The fetchmany(size) method retrieves the next set of rows, limited by the size parameter."
     },
     {
       "q": "Which method of the connection object is used to commit a transaction?",
-      "o": ["save()", "commit()", "apply()", "finalize()"],
+      "o": [
+        "save()",
+        "commit()",
+        "apply()",
+        "finalize()"
+      ],
       "a": 1,
-      "explanation": "The commit() method saves all changes made during the current transaction."
+      "e": "The commit() method saves all changes made during the current transaction."
     },
     {
       "q": "Which method of the connection object is used to undo changes in a transaction?",
-      "o": ["rollback()", "undo()", "cancel()", "reset()"],
+      "o": [
+        "rollback()",
+        "undo()",
+        "cancel()",
+        "reset()"
+      ],
       "a": 0,
-      "explanation": "The rollback() method undoes all changes made during the current transaction."
+      "e": "The rollback() method undoes all changes made during the current transaction."
     },
     {
       "q": "Which attribute of a cursor contains metadata about the columns in a result set?",
-      "o": ["description", "columns", "metadata", "info"],
+      "o": [
+        "description",
+        "columns",
+        "metadata",
+        "info"
+      ],
       "a": 0,
-      "explanation": "The description attribute provides metadata about the columns returned by a query."
+      "e": "The description attribute provides metadata about the columns returned by a query."
     },
     {
       "q": "Which SQL statement is used to create a new table via raw SQL?",
-      "o": ["INSERT", "CREATE TABLE", "ALTER TABLE", "NEW TABLE"],
+      "o": [
+        "INSERT",
+        "CREATE TABLE",
+        "ALTER TABLE",
+        "NEW TABLE"
+      ],
       "a": 1,
-      "explanation": "The CREATE TABLE statement defines a new table in the database."
+      "e": "The CREATE TABLE statement defines a new table in the database."
     },
     {
       "q": "Which Python context manager is commonly used to ensure cursors and connections are closed?",
-      "o": ["with", "try-finally", "context()", "close()"],
+      "o": [
+        "with",
+        "try-finally",
+        "context()",
+        "close()"
+      ],
       "a": 0,
-      "explanation": "Using the with statement ensures that cursors and connections are properly closed after use."
+      "e": "Using the with statement ensures that cursors and connections are properly closed after use."
     }
   ]
 }

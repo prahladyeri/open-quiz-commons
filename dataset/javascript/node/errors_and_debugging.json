@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "Which object is used in Node.js to represent runtime errors?",
-      "o": ["Error", "Exception", "RuntimeError", "Issue"],
+      "o": [
+        "Error",
+        "Exception",
+        "RuntimeError",
+        "Issue"
+      ],
       "a": 0,
-      "explanation": "Node.js uses the built-in Error object to represent runtime errors."
+      "e": "Node.js uses the built-in Error object to represent runtime errors."
     },
     {
       "q": "What does 'throw' do in Node.js?",
-      "o": ["Logs an error", "Terminates the process immediately", "Raises an exception", "Ignores the error"],
+      "o": [
+        "Logs an error",
+        "Terminates the process immediately",
+        "Raises an exception",
+        "Ignores the error"
+      ],
       "a": 2,
-      "explanation": "The 'throw' statement raises an exception that can be caught using try/catch."
+      "e": "The 'throw' statement raises an exception that can be caught using try/catch."
     },
     {
       "q": "Which method is commonly used to output debugging information to the console?",
-      "o": ["console.debug()", "console.log()", "console.error()", "All of the above"],
+      "o": [
+        "console.debug()",
+        "console.log()",
+        "console.error()",
+        "All of the above"
+      ],
       "a": 3,
-      "explanation": "Node.js provides console.log(), console.error(), and console.debug() for debugging output."
+      "e": "Node.js provides console.log(), console.error(), and console.debug() for debugging output."
     },
     {
       "q": "What is the purpose of 'process.on(\"uncaughtException\")'?",
-      "o": ["To catch syntax errors", "To handle exceptions not caught elsewhere", "To restart the Node.js process", "To log warnings"],
+      "o": [
+        "To catch syntax errors",
+        "To handle exceptions not caught elsewhere",
+        "To restart the Node.js process",
+        "To log warnings"
+      ],
       "a": 1,
-      "explanation": "It allows handling of exceptions that were not caught by try/catch blocks."
+      "e": "It allows handling of exceptions that were not caught by try/catch blocks."
     },
     {
       "q": "Which flag enables the Node.js inspector for debugging?",
-      "o": ["--inspect", "--debug", "--trace", "--profile"],
+      "o": [
+        "--inspect",
+        "--debug",
+        "--trace",
+        "--profile"
+      ],
       "a": 0,
-      "explanation": "The --inspect flag starts the Node.js inspector for debugging with Chrome DevTools."
+      "e": "The --inspect flag starts the Node.js inspector for debugging with Chrome DevTools."
     },
     {
       "q": "What does 'console.trace()' output?",
-      "o": ["The current variable values", "A stack trace", "The error message only", "Nothing"],
+      "o": [
+        "The current variable values",
+        "A stack trace",
+        "The error message only",
+        "Nothing"
+      ],
       "a": 1,
-      "explanation": "console.trace() prints a stack trace showing the function call path."
+      "e": "console.trace() prints a stack trace showing the function call path."
     },
     {
       "q": "Which module provides utilities for debugging and logging in Node.js?",
-      "o": ["util", "fs", "events", "http"],
+      "o": [
+        "util",
+        "fs",
+        "events",
+        "http"
+      ],
       "a": 0,
-      "explanation": "The util module provides debugging utilities like util.debuglog()."
+      "e": "The util module provides debugging utilities like util.debuglog()."
     },
     {
       "q": "What is the difference between 'console.error()' and 'console.warn()'?",
-      "o": ["error logs to stderr, warn logs to stdout", "warn logs to stderr, error logs to stdout", "Both log to stderr but with different severity", "They are identical"],
+      "o": [
+        "error logs to stderr, warn logs to stdout",
+        "warn logs to stderr, error logs to stdout",
+        "Both log to stderr but with different severity",
+        "They are identical"
+      ],
       "a": 2,
-      "explanation": "Both log to stderr, but console.error() indicates errors while console.warn() indicates warnings."
+      "e": "Both log to stderr, but console.error() indicates errors while console.warn() indicates warnings."
     },
     {
       "q": "Which Node.js global function is used to assert conditions during debugging?",
-      "o": ["assert()", "check()", "verify()", "test()"],
+      "o": [
+        "assert()",
+        "check()",
+        "verify()",
+        "test()"
+      ],
       "a": 0,
-      "explanation": "The assert() function throws an error if the provided condition is false."
+      "e": "The assert() function throws an error if the provided condition is false."
     },
     {
       "q": "What happens if an error is not handled in a Node.js application?",
-      "o": ["It is ignored", "The process crashes", "It is logged automatically", "It retries the operation"],
+      "o": [
+        "It is ignored",
+        "The process crashes",
+        "It is logged automatically",
+        "It retries the operation"
+      ],
       "a": 1,
-      "explanation": "Uncaught errors cause the Node.js process to crash unless handled."
+      "e": "Uncaught errors cause the Node.js process to crash unless handled."
     }
   ]
 }

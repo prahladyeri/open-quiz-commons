@@ -9,7 +9,7 @@
         "sqlalchemy"
       ],
       "a": 1,
-      "explanation": "sqlite3 is included in Python’s standard library and provides built-in SQLite support."
+      "e": "sqlite3 is included in Python’s standard library and provides built-in SQLite support."
     },
     {
       "q": "Which statement is true about SQLite?",
@@ -20,7 +20,7 @@
         "It supports only read-only operations"
       ],
       "a": 2,
-      "explanation": "SQLite stores the entire database in a single file and does not require a server."
+      "e": "SQLite stores the entire database in a single file and does not require a server."
     },
     {
       "q": "Which Python package is commonly used to connect to MySQL?",
@@ -31,7 +31,7 @@
         "cx_Oracle"
       ],
       "a": 1,
-      "explanation": "mysql.connector is an official MySQL driver provided for Python."
+      "e": "mysql.connector is an official MySQL driver provided for Python."
     },
     {
       "q": "How do you establish a database connection using sqlite3?",
@@ -42,7 +42,7 @@
         "sqlite3.load('db.sqlite')"
       ],
       "a": 1,
-      "explanation": "sqlite3.connect() opens a connection to the specified SQLite database file."
+      "e": "sqlite3.connect() opens a connection to the specified SQLite database file."
     },
     {
       "q": "Which method is used to execute SQL statements in Python DB-API?",
@@ -53,7 +53,7 @@
         "call()"
       ],
       "a": 2,
-      "explanation": "The execute() method is used to run SQL queries through a cursor."
+      "e": "The execute() method is used to run SQL queries through a cursor."
     },
     {
       "q": "Why should parameterized queries be used?",
@@ -64,7 +64,7 @@
         "They reduce memory usage"
       ],
       "a": 2,
-      "explanation": "Parameterized queries protect against SQL injection attacks by separating data from SQL logic."
+      "e": "Parameterized queries protect against SQL injection attacks by separating data from SQL logic."
     },
     {
       "q": "Which placeholder style is used by sqlite3 in Python?",
@@ -75,7 +75,7 @@
         "$1"
       ],
       "a": 1,
-      "explanation": "sqlite3 uses question mark (?) placeholders for parameter substitution."
+      "e": "sqlite3 uses question mark (?) placeholders for parameter substitution."
     },
     {
       "q": "Which command is used to commit changes to the database?",
@@ -86,7 +86,7 @@
         "apply()"
       ],
       "a": 2,
-      "explanation": "commit() saves all pending transactions to the database."
+      "e": "commit() saves all pending transactions to the database."
     },
     {
       "q": "What happens if commit() is not called after INSERT or UPDATE?",
@@ -97,7 +97,7 @@
         "The database becomes read-only"
       ],
       "a": 1,
-      "explanation": "Without commit(), changes are not persisted and may be rolled back."
+      "e": "Without commit(), changes are not persisted and may be rolled back."
     },
     {
       "q": "Which method is used to fetch all rows from a query result?",
@@ -108,7 +108,7 @@
         "fetchall()"
       ],
       "a": 3,
-      "explanation": "fetchall() retrieves all remaining rows from the result set."
+      "e": "fetchall() retrieves all remaining rows from the result set."
     }
   ]
 }

@@ -9,7 +9,7 @@
         "An ORM library"
       ],
       "a": 1,
-      "explanation": "Flask is called a micro framework because it provides core web features without enforcing project structure or bundled components."
+      "e": "Flask is called a micro framework because it provides core web features without enforcing project structure or bundled components."
     },
     {
       "q": "Which object represents a Flask application instance?",
@@ -20,7 +20,7 @@
         "server"
       ],
       "a": 2,
-      "explanation": "By convention, the Flask application instance is named 'app'."
+      "e": "By convention, the Flask application instance is named 'app'."
     },
     {
       "q": "How do you create a Flask application?",
@@ -31,7 +31,7 @@
         "app = Flask.create()"
       ],
       "a": 1,
-      "explanation": "Flask(__name__) helps Flask locate resources such as templates and static files."
+      "e": "Flask(__name__) helps Flask locate resources such as templates and static files."
     },
     {
       "q": "Which decorator is used to define a route in Flask?",
@@ -42,7 +42,7 @@
         "@app.url()"
       ],
       "a": 0,
-      "explanation": "@app.route() maps a URL path to a view function."
+      "e": "@app.route() maps a URL path to a view function."
     },
     {
       "q": "What does a Flask view function typically return?",
@@ -53,7 +53,7 @@
         "Only HTML templates"
       ],
       "a": 2,
-      "explanation": "Flask view functions can return strings, tuples, Response objects, or rendered templates."
+      "e": "Flask view functions can return strings, tuples, Response objects, or rendered templates."
     },
     {
       "q": "Which function is used to render HTML templates in Flask?",
@@ -64,7 +64,7 @@
         "template_render()"
       ],
       "a": 2,
-      "explanation": "render_template() renders Jinja2 templates located in the templates directory."
+      "e": "render_template() renders Jinja2 templates located in the templates directory."
     },
     {
       "q": "Where should static files like CSS and JavaScript be placed by default?",
@@ -75,7 +75,7 @@
         "resources/"
       ],
       "a": 2,
-      "explanation": "Flask serves static files from the 'static' directory by default."
+      "e": "Flask serves static files from the 'static' directory by default."
     },
     {
       "q": "How do you access query parameters in a Flask request?",
@@ -86,7 +86,7 @@
         "request.get()"
       ],
       "a": 1,
-      "explanation": "request.args provides access to query string parameters."
+      "e": "request.args provides access to query string parameters."
     },
     {
       "q": "Which HTTP methods does Flask support for routing?",
@@ -97,7 +97,7 @@
         "Only REST-specific methods"
       ],
       "a": 2,
-      "explanation": "Flask supports standard HTTP methods such as GET, POST, PUT, DELETE, PATCH, etc."
+      "e": "Flask supports standard HTTP methods such as GET, POST, PUT, DELETE, PATCH, etc."
     },
     {
       "q": "How do you enable debug mode in Flask?",
@@ -108,7 +108,7 @@
         "Debug mode is always enabled"
       ],
       "a": 2,
-      "explanation": "Debug mode can be enabled via code or command-line flags during development."
+      "e": "Debug mode can be enabled via code or command-line flags during development."
     }
   ]
 }

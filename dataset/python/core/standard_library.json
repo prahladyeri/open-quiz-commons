@@ -1,136 +1,136 @@
 {
-    "data": [
-        {
-            "q": "Which module in the Python standard library is used to work with dates and times?",
-            "o": [
-                "timeit",
-                "calendar",
-                "datetime",
-                "dateutil"
-            ],
-            "a": 2,
-            "explanation": "The datetime module provides classes for working with dates, times, and date-time combinations. dateutil is a third-party library, not part of the standard library."
-        },
-        {
-            "q": "Which standard library module allows you to generate random numbers?",
-            "o": [
-                "math",
-                "random",
-                "secrets",
-                "numbers"
-            ],
-            "a": 1,
-            "explanation": "The random module provides functions for generating pseudo-random numbers and making random selections."
-        },
-        {
-            "q": "Which module is commonly used to interact with the operating system, such as reading environment variables or working with file paths?",
-            "o": [
-                "sys",
-                "platform",
-                "os",
-                "pathlib"
-            ],
-            "a": 2,
-            "explanation": "The os module provides a portable way to interact with the operating system, including environment variables, directory handling, and process management."
-        },
-        {
-            "q": "Which module provides access to command-line arguments passed to a Python script?",
-            "o": [
-                "argparse",
-                "sys",
-                "getopt",
-                "os"
-            ],
-            "a": 1,
-            "explanation": "The sys module exposes sys.argv, which contains the list of command-line arguments passed to the script."
-        },
-        {
-            "q": "Which standard library module is best suited for parsing command-line arguments in a user-friendly way?",
-            "o": [
-                "sys",
-                "getopt",
-                "argparse",
-                "click"
-            ],
-            "a": 2,
-            "explanation": "argparse is the recommended standard library module for parsing command-line arguments and generating help messages."
-        },
-        {
-            "q": "Which module is used for working with regular expressions in Python?",
-            "o": [
-                "regex",
-                "re",
-                "string",
-                "pattern"
-            ],
-            "a": 1,
-            "explanation": "The re module provides support for regular expressions. regex is a third-party alternative."
-        },
-        {
-            "q": "Which standard library module allows serialization and deserialization of Python objects?",
-            "o": [
-                "marshal",
-                "json",
-                "pickle",
-                "struct"
-            ],
-            "a": 2,
-            "explanation": "The pickle module is used to serialize and deserialize Python objects, allowing them to be saved to or loaded from files."
-        },
-        {
-            "q": "Which module should be used to safely handle passwords, tokens, or cryptographic secrets?",
-            "o": [
-                "hashlib",
-                "random",
-                "uuid",
-                "secrets"
-            ],
-            "a": 3,
-            "explanation": "The secrets module is designed for generating cryptographically strong random numbers suitable for managing passwords and security tokens."
-        },
-        {
-            "q": "Which standard library module provides mathematical functions such as sin(), cos(), and sqrt()?",
-            "o": [
-                "statistics",
-                "math",
-                "cmath",
-                "numbers"
-            ],
-            "a": 1,
-            "explanation": "The math module provides access to mathematical functions for real numbers, including trigonometry and square roots."
-        },
-        {
-            "q": "Which module helps measure the execution time of small bits of Python code?",
-            "o": [
-                "profile",
-                "time",
-                "timeit",
-                "benchmark"
-            ],
-            "a": 2,
-            "explanation": "The timeit module is specifically designed to measure the execution time of small code snippets accurately."
-        },
-        {
-            "q": "Which standard library module provides tools for working with JSON data?",
-            "o": [
-                "pickle",
-                "marshal",
-                "json",
-                "yaml"
-            ],
-            "a": 2,
-            "explanation": "The json module allows encoding Python objects to JSON format and decoding JSON back into Python objects."
-        },
-        {
-            "q": "Which module provides utilities for copying files and directory trees?",
-            "o": [
-                "os",
-                "pathlib",
-                "shutil",
-                "glob"
-            ],
-            "a": 2,
-            "explanation": "The shutil module offers high-level file operations such as copying, moving, and deleting files and directories."
-        }
-    ]
+  "data": [
+    {
+      "q": "Which module in the Python standard library is used to work with dates and times?",
+      "o": [
+        "timeit",
+        "calendar",
+        "datetime",
+        "dateutil"
+      ],
+      "a": 2,
+      "e": "The datetime module provides classes for working with dates, times, and date-time combinations. dateutil is a third-party library, not part of the standard library."
+    },
+    {
+      "q": "Which standard library module allows you to generate random numbers?",
+      "o": [
+        "math",
+        "random",
+        "secrets",
+        "numbers"
+      ],
+      "a": 1,
+      "e": "The random module provides functions for generating pseudo-random numbers and making random selections."
+    },
+    {
+      "q": "Which module is commonly used to interact with the operating system, such as reading environment variables or working with file paths?",
+      "o": [
+        "sys",
+        "platform",
+        "os",
+        "pathlib"
+      ],
+      "a": 2,
+      "e": "The os module provides a portable way to interact with the operating system, including environment variables, directory handling, and process management."
+    },
+    {
+      "q": "Which module provides access to command-line arguments passed to a Python script?",
+      "o": [
+        "argparse",
+        "sys",
+        "getopt",
+        "os"
+      ],
+      "a": 1,
+      "e": "The sys module exposes sys.argv, which contains the list of command-line arguments passed to the script."
+    },
+    {
+      "q": "Which standard library module is best suited for parsing command-line arguments in a user-friendly way?",
+      "o": [
+        "sys",
+        "getopt",
+        "argparse",
+        "click"
+      ],
+      "a": 2,
+      "e": "argparse is the recommended standard library module for parsing command-line arguments and generating help messages."
+    },
+    {
+      "q": "Which module is used for working with regular expressions in Python?",
+      "o": [
+        "regex",
+        "re",
+        "string",
+        "pattern"
+      ],
+      "a": 1,
+      "e": "The re module provides support for regular expressions. regex is a third-party alternative."
+    },
+    {
+      "q": "Which standard library module allows serialization and deserialization of Python objects?",
+      "o": [
+        "marshal",
+        "json",
+        "pickle",
+        "struct"
+      ],
+      "a": 2,
+      "e": "The pickle module is used to serialize and deserialize Python objects, allowing them to be saved to or loaded from files."
+    },
+    {
+      "q": "Which module should be used to safely handle passwords, tokens, or cryptographic secrets?",
+      "o": [
+        "hashlib",
+        "random",
+        "uuid",
+        "secrets"
+      ],
+      "a": 3,
+      "e": "The secrets module is designed for generating cryptographically strong random numbers suitable for managing passwords and security tokens."
+    },
+    {
+      "q": "Which standard library module provides mathematical functions such as sin(), cos(), and sqrt()?",
+      "o": [
+        "statistics",
+        "math",
+        "cmath",
+        "numbers"
+      ],
+      "a": 1,
+      "e": "The math module provides access to mathematical functions for real numbers, including trigonometry and square roots."
+    },
+    {
+      "q": "Which module helps measure the execution time of small bits of Python code?",
+      "o": [
+        "profile",
+        "time",
+        "timeit",
+        "benchmark"
+      ],
+      "a": 2,
+      "e": "The timeit module is specifically designed to measure the execution time of small code snippets accurately."
+    },
+    {
+      "q": "Which standard library module provides tools for working with JSON data?",
+      "o": [
+        "pickle",
+        "marshal",
+        "json",
+        "yaml"
+      ],
+      "a": 2,
+      "e": "The json module allows encoding Python objects to JSON format and decoding JSON back into Python objects."
+    },
+    {
+      "q": "Which module provides utilities for copying files and directory trees?",
+      "o": [
+        "os",
+        "pathlib",
+        "shutil",
+        "glob"
+      ],
+      "a": 2,
+      "e": "The shutil module offers high-level file operations such as copying, moving, and deleting files and directories."
+    }
+  ]
 }

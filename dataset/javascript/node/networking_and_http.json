@@ -1,63 +1,114 @@
-{"data": [
-  {
-    "q": "Which Node.js module is primarily used to create HTTP servers?",
-    "o": ["http", "net", "url", "fs"],
-    "a": 0,
-    "explanation": "The 'http' module in Node.js provides the functionality to create HTTP servers and clients."
-  },
-  {
-    "q": "What is the default port number for HTTP servers?",
-    "o": ["3000", "8080", "80", "443"],
-    "a": 2,
-    "explanation": "Port 80 is the default port for HTTP servers, while 443 is the default for HTTPS."
-  },
-  {
-    "q": "Which method of the http.ServerResponse object is used to send data back to the client?",
-    "o": ["write()", "end()", "send()", "respond()"],
-    "a": 0,
-    "explanation": "The 'write()' method is used to send data chunks to the client before ending the response."
-  },
-  {
-    "q": "What does the 'end()' method of http.ServerResponse do?",
-    "o": ["Terminates the server", "Ends the response process", "Closes the TCP connection immediately", "Flushes the buffer without ending"],
-    "a": 1,
-    "explanation": "The 'end()' method signals that the response is complete and no more data will be sent."
-  },
-  {
-    "q": "Which property of the IncomingMessage object contains the HTTP request headers?",
-    "o": ["req.body", "req.headers", "req.params", "req.data"],
-    "a": 1,
-    "explanation": "The 'headers' property of IncomingMessage stores all the HTTP request headers."
-  },
-  {
-    "q": "How can you parse the URL of an incoming HTTP request in Node.js?",
-    "o": ["Using fs.parse()", "Using url.parse()", "Using net.parse()", "Using http.parse()"],
-    "a": 1,
-    "explanation": "The 'url' module provides the 'url.parse()' method to parse request URLs."
-  },
-  {
-    "q": "Which status code represents 'Not Found' in HTTP?",
-    "o": ["200", "301", "404", "500"],
-    "a": 2,
-    "explanation": "HTTP status code 404 indicates that the requested resource could not be found."
-  },
-  {
-    "q": "What is the purpose of the 'Content-Type' header in HTTP responses?",
-    "o": ["Specifies the size of the content", "Specifies the type of the content being sent", "Specifies the encoding of the connection", "Specifies the server name"],
-    "a": 1,
-    "explanation": "The 'Content-Type' header tells the client the media type of the resource, such as text/html or application/json."
-  },
-  {
-    "q": "Which Node.js module is used to handle secure HTTPS connections?",
-    "o": ["http", "https", "tls", "crypto"],
-    "a": 1,
-    "explanation": "The 'https' module is a variant of the 'http' module that supports SSL/TLS for secure communication."
-  },
-  {
-    "q": "What does the HTTP status code 500 represent?",
-    "o": ["Bad Request", "Internal Server Error", "Unauthorized", "Service Unavailable"],
-    "a": 1,
-    "explanation": "Status code 500 indicates an Internal Server Error, meaning something went wrong on the server side."
-  }
-]
+{
+  "data": [
+    {
+      "q": "Which Node.js module is primarily used to create HTTP servers?",
+      "o": [
+        "http",
+        "net",
+        "url",
+        "fs"
+      ],
+      "a": 0,
+      "e": "The 'http' module in Node.js provides the functionality to create HTTP servers and clients."
+    },
+    {
+      "q": "What is the default port number for HTTP servers?",
+      "o": [
+        "3000",
+        "8080",
+        "80",
+        "443"
+      ],
+      "a": 2,
+      "e": "Port 80 is the default port for HTTP servers, while 443 is the default for HTTPS."
+    },
+    {
+      "q": "Which method of the http.ServerResponse object is used to send data back to the client?",
+      "o": [
+        "write()",
+        "end()",
+        "send()",
+        "respond()"
+      ],
+      "a": 0,
+      "e": "The 'write()' method is used to send data chunks to the client before ending the response."
+    },
+    {
+      "q": "What does the 'end()' method of http.ServerResponse do?",
+      "o": [
+        "Terminates the server",
+        "Ends the response process",
+        "Closes the TCP connection immediately",
+        "Flushes the buffer without ending"
+      ],
+      "a": 1,
+      "e": "The 'end()' method signals that the response is complete and no more data will be sent."
+    },
+    {
+      "q": "Which property of the IncomingMessage object contains the HTTP request headers?",
+      "o": [
+        "req.body",
+        "req.headers",
+        "req.params",
+        "req.data"
+      ],
+      "a": 1,
+      "e": "The 'headers' property of IncomingMessage stores all the HTTP request headers."
+    },
+    {
+      "q": "How can you parse the URL of an incoming HTTP request in Node.js?",
+      "o": [
+        "Using fs.parse()",
+        "Using url.parse()",
+        "Using net.parse()",
+        "Using http.parse()"
+      ],
+      "a": 1,
+      "e": "The 'url' module provides the 'url.parse()' method to parse request URLs."
+    },
+    {
+      "q": "Which status code represents 'Not Found' in HTTP?",
+      "o": [
+        "200",
+        "301",
+        "404",
+        "500"
+      ],
+      "a": 2,
+      "e": "HTTP status code 404 indicates that the requested resource could not be found."
+    },
+    {
+      "q": "What is the purpose of the 'Content-Type' header in HTTP responses?",
+      "o": [
+        "Specifies the size of the content",
+        "Specifies the type of the content being sent",
+        "Specifies the encoding of the connection",
+        "Specifies the server name"
+      ],
+      "a": 1,
+      "e": "The 'Content-Type' header tells the client the media type of the resource, such as text/html or application/json."
+    },
+    {
+      "q": "Which Node.js module is used to handle secure HTTPS connections?",
+      "o": [
+        "http",
+        "https",
+        "tls",
+        "crypto"
+      ],
+      "a": 1,
+      "e": "The 'https' module is a variant of the 'http' module that supports SSL/TLS for secure communication."
+    },
+    {
+      "q": "What does the HTTP status code 500 represent?",
+      "o": [
+        "Bad Request",
+        "Internal Server Error",
+        "Unauthorized",
+        "Service Unavailable"
+      ],
+      "a": 1,
+      "e": "Status code 500 indicates an Internal Server Error, meaning something went wrong on the server side."
+    }
+  ]
 }

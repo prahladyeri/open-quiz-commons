@@ -9,7 +9,7 @@
         "Dynamic Object Mapping"
       ],
       "a": 0,
-      "explanation": "DOM stands for Document Object Model, which represents the HTML document as a tree of objects."
+      "e": "DOM stands for Document Object Model, which represents the HTML document as a tree of objects."
     },
     {
       "q": "Which method is commonly used to select an element by its ID?",
@@ -20,7 +20,7 @@
         "document.findElement()"
       ],
       "a": 1,
-      "explanation": "document.getElementById() selects a single element with the specified ID."
+      "e": "document.getElementById() selects a single element with the specified ID."
     },
     {
       "q": "Which method allows selecting the first element matching a CSS selector?",
@@ -31,7 +31,7 @@
         "document.matchSelector()"
       ],
       "a": 1,
-      "explanation": "querySelector() returns the first element that matches the given CSS selector."
+      "e": "querySelector() returns the first element that matches the given CSS selector."
     },
     {
       "q": "What does addEventListener() do?",
@@ -42,7 +42,7 @@
         "Stops event propagation"
       ],
       "a": 1,
-      "explanation": "addEventListener() attaches an event handler without overwriting existing handlers."
+      "e": "addEventListener() attaches an event handler without overwriting existing handlers."
     },
     {
       "q": "Which event is triggered when a user clicks on an element?",
@@ -53,7 +53,7 @@
         "click"
       ],
       "a": 3,
-      "explanation": "The click event fires when a pointing device button is pressed and released on an element."
+      "e": "The click event fires when a pointing device button is pressed and released on an element."
     },
     {
       "q": "What does event.preventDefault() do?",
@@ -64,7 +64,7 @@
         "Cancels all events on the page"
       ],
       "a": 1,
-      "explanation": "preventDefault() stops the browser’s default behavior, such as form submission or link navigation."
+      "e": "preventDefault() stops the browser’s default behavior, such as form submission or link navigation."
     },
     {
       "q": "What is event bubbling?",
@@ -75,7 +75,7 @@
         "Events stopping automatically"
       ],
       "a": 1,
-      "explanation": "Event bubbling means an event propagates from the target element up through its ancestors."
+      "e": "Event bubbling means an event propagates from the target element up through its ancestors."
     },
     {
       "q": "Which property refers to the element that triggered the event?",
@@ -86,7 +86,7 @@
         "event.source"
       ],
       "a": 2,
-      "explanation": "event.target refers to the actual element on which the event occurred."
+      "e": "event.target refers to the actual element on which the event occurred."
     },
     {
       "q": "Which method removes an existing event listener?",
@@ -97,7 +97,7 @@
         "stopEvent()"
       ],
       "a": 2,
-      "explanation": "removeEventListener() removes a previously added event listener."
+      "e": "removeEventListener() removes a previously added event listener."
     },
     {
       "q": "Which DOM property is used to change the text inside an element?",
@@ -108,7 +108,7 @@
         "All of the above"
       ],
       "a": 3,
-      "explanation": "innerHTML, innerText, and textContent can all change displayed text, with different behaviors and use cases."
+      "e": "innerHTML, innerText, and textContent can all change displayed text, with different behaviors and use cases."
     }
   ]
 }

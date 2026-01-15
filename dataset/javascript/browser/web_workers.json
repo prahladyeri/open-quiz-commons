@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "What is the main purpose of Web Workers in the browser?",
-      "o": ["To manipulate the DOM directly", "To run JavaScript in background threads", "To improve CSS rendering", "To manage cookies"],
+      "o": [
+        "To manipulate the DOM directly",
+        "To run JavaScript in background threads",
+        "To improve CSS rendering",
+        "To manage cookies"
+      ],
       "a": 1,
-      "explanation": "Web Workers allow JavaScript to run in background threads, preventing blocking of the main UI thread."
+      "e": "Web Workers allow JavaScript to run in background threads, preventing blocking of the main UI thread."
     },
     {
       "q": "Which method is used to create a new Web Worker?",
-      "o": ["new Worker()", "Worker.create()", "Worker.start()", "spawnWorker()"],
+      "o": [
+        "new Worker()",
+        "Worker.create()",
+        "Worker.start()",
+        "spawnWorker()"
+      ],
       "a": 0,
-      "explanation": "A new Web Worker is created using the constructor new Worker('script.js')."
+      "e": "A new Web Worker is created using the constructor new Worker('script.js')."
     },
     {
       "q": "How do Web Workers communicate with the main thread?",
-      "o": ["Shared memory", "Events and messages", "Direct DOM access", "Cookies"],
+      "o": [
+        "Shared memory",
+        "Events and messages",
+        "Direct DOM access",
+        "Cookies"
+      ],
       "a": 1,
-      "explanation": "Web Workers communicate with the main thread using postMessage() and the 'message' event."
+      "e": "Web Workers communicate with the main thread using postMessage() and the 'message' event."
     },
     {
       "q": "Which global object is available inside a Web Worker?",
-      "o": ["window", "self", "document", "navigator.window"],
+      "o": [
+        "window",
+        "self",
+        "document",
+        "navigator.window"
+      ],
       "a": 1,
-      "explanation": "Inside a Web Worker, 'self' refers to the global scope of the worker."
+      "e": "Inside a Web Worker, 'self' refers to the global scope of the worker."
     },
     {
       "q": "Can Web Workers access the DOM directly?",
-      "o": ["Yes", "No", "Only with permissions", "Only in modern browsers"],
+      "o": [
+        "Yes",
+        "No",
+        "Only with permissions",
+        "Only in modern browsers"
+      ],
       "a": 1,
-      "explanation": "Web Workers cannot access the DOM directly; they can only communicate with the main thread."
+      "e": "Web Workers cannot access the DOM directly; they can only communicate with the main thread."
     },
     {
       "q": "Which method is used to terminate a Web Worker from the main thread?",
-      "o": ["worker.stop()", "worker.close()", "worker.terminate()", "worker.kill()"],
+      "o": [
+        "worker.stop()",
+        "worker.close()",
+        "worker.terminate()",
+        "worker.kill()"
+      ],
       "a": 2,
-      "explanation": "The terminate() method stops a Web Worker from the main thread."
+      "e": "The terminate() method stops a Web Worker from the main thread."
     },
     {
       "q": "Which method is used inside a Web Worker to stop itself?",
-      "o": ["self.close()", "self.terminate()", "worker.stop()", "exit()"],
+      "o": [
+        "self.close()",
+        "self.terminate()",
+        "worker.stop()",
+        "exit()"
+      ],
       "a": 0,
-      "explanation": "A worker can stop itself by calling self.close()."
+      "e": "A worker can stop itself by calling self.close()."
     },
     {
       "q": "What type of data can be sent between the main thread and a Web Worker?",
-      "o": ["Only strings", "Only JSON objects", "Any data that can be serialized", "Only numbers"],
+      "o": [
+        "Only strings",
+        "Only JSON objects",
+        "Any data that can be serialized",
+        "Only numbers"
+      ],
       "a": 2,
-      "explanation": "Web Workers use structured cloning, allowing most serializable data types to be sent."
+      "e": "Web Workers use structured cloning, allowing most serializable data types to be sent."
     },
     {
       "q": "Which API allows multiple workers to share memory more efficiently?",
-      "o": ["SharedArrayBuffer", "localStorage", "IndexedDB", "Cache API"],
+      "o": [
+        "SharedArrayBuffer",
+        "localStorage",
+        "IndexedDB",
+        "Cache API"
+      ],
       "a": 0,
-      "explanation": "SharedArrayBuffer enables multiple workers to share memory efficiently."
+      "e": "SharedArrayBuffer enables multiple workers to share memory efficiently."
     },
     {
       "q": "What event is triggered in the main thread when a Web Worker sends a message?",
-      "o": ["onmessage", "ondata", "onreceive", "onworker"],
+      "o": [
+        "onmessage",
+        "ondata",
+        "onreceive",
+        "onworker"
+      ],
       "a": 0,
-      "explanation": "The 'message' event is triggered when a Web Worker sends data back to the main thread."
+      "e": "The 'message' event is triggered when a Web Worker sends data back to the main thread."
     }
   ]
 }

@@ -9,7 +9,7 @@
         "Inline script execution only"
       ],
       "a": 1,
-      "explanation": "ES Modules provide native support for dependency management using import and export."
+      "e": "ES Modules provide native support for dependency management using import and export."
     },
     {
       "q": "Which attribute enables ES module support in browsers?",
@@ -20,7 +20,7 @@
         "async=\"module\""
       ],
       "a": 1,
-      "explanation": "Scripts with type=\"module\" enable ES module syntax in browsers."
+      "e": "Scripts with type=\"module\" enable ES module syntax in browsers."
     },
     {
       "q": "Which statement is used to export a value from a module?",
@@ -31,7 +31,7 @@
         "publish"
       ],
       "a": 2,
-      "explanation": "The export keyword makes variables or functions available to other modules."
+      "e": "The export keyword makes variables or functions available to other modules."
     },
     {
       "q": "How are ES modules loaded by default in browsers?",
@@ -42,7 +42,7 @@
         "After DOMContentLoaded"
       ],
       "a": 1,
-      "explanation": "ES modules are deferred by default, similar to scripts with the defer attribute."
+      "e": "ES modules are deferred by default, similar to scripts with the defer attribute."
     },
     {
       "q": "Which keyword imports a default export?",
@@ -53,7 +53,7 @@
         "include"
       ],
       "a": 2,
-      "explanation": "Default exports are imported without curly braces."
+      "e": "Default exports are imported without curly braces."
     },
     {
       "q": "Which feature helps avoid global namespace pollution?",
@@ -64,7 +64,7 @@
         "Global variables"
       ],
       "a": 1,
-      "explanation": "ES Modules encapsulate code and prevent leaking variables into the global scope."
+      "e": "ES Modules encapsulate code and prevent leaking variables into the global scope."
     },
     {
       "q": "Which statement about ES modules is true?",
@@ -75,7 +75,7 @@
         "They cannot be cached"
       ],
       "a": 1,
-      "explanation": "ES Modules support circular dependencies and have well-defined loading behavior."
+      "e": "ES Modules support circular dependencies and have well-defined loading behavior."
     }
   ]
 }

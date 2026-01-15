@@ -9,7 +9,7 @@
         "Network speed"
       ],
       "a": 1,
-      "explanation": "The Same-Origin Policy prevents scripts from accessing data across different origins."
+      "e": "The Same-Origin Policy prevents scripts from accessing data across different origins."
     },
     {
       "q": "What does CORS stand for?",
@@ -20,7 +20,7 @@
         "Controlled Origin Request Standard"
       ],
       "a": 0,
-      "explanation": "CORS allows controlled access to resources across different origins."
+      "e": "CORS allows controlled access to resources across different origins."
     },
     {
       "q": "Which HTTP header enables CORS?",
@@ -31,7 +31,7 @@
         "Authorization"
       ],
       "a": 0,
-      "explanation": "Access-Control-Allow-Origin specifies which origins are allowed to access a resource."
+      "e": "Access-Control-Allow-Origin specifies which origins are allowed to access a resource."
     },
     {
       "q": "What is XSS (Cross-Site Scripting)?",
@@ -42,7 +42,7 @@
         "Redirecting traffic to fake websites"
       ],
       "a": 1,
-      "explanation": "XSS occurs when attackers inject malicious scripts into trusted websites."
+      "e": "XSS occurs when attackers inject malicious scripts into trusted websites."
     },
     {
       "q": "Which practice helps prevent XSS attacks?",
@@ -53,7 +53,7 @@
         "Allowing all origins"
       ],
       "a": 1,
-      "explanation": "Escaping and sanitizing user input helps prevent malicious script injection."
+      "e": "Escaping and sanitizing user input helps prevent malicious script injection."
     },
     {
       "q": "Which header helps prevent loading unauthorized scripts?",
@@ -64,7 +64,7 @@
         "Referrer-Policy"
       ],
       "a": 1,
-      "explanation": "Content Security Policy (CSP) restricts the sources from which scripts can be loaded."
+      "e": "Content Security Policy (CSP) restricts the sources from which scripts can be loaded."
     }
   ]
 }

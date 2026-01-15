@@ -2,93 +2,168 @@
   "data": [
     {
       "q": "Multi-line block comments are enclosed with:",
-      "o": ["\"\"\" (triple quotes)", "# (hash)", "// (double slash)", "\"\" (double quotes)"],
+      "o": [
+        "\"\"\" (triple quotes)",
+        "# (hash)",
+        "// (double slash)",
+        "\"\" (double quotes)"
+      ],
       "a": 0,
-      "explanation": "Python uses triple quotes (\"\"\" or ''') for multi-line strings, often used as block comments. # is for single-line comments."
+      "e": "Python uses triple quotes (\"\"\" or ''') for multi-line strings, often used as block comments. # is for single-line comments."
     },
     {
       "q": "How to print the current date and time in UTC format?",
-      "o": ["print(datetime.datetime.utcnow())", "print(datetime.datetime.now())", "print(datetime.datetime.today())", "None of the above"],
+      "o": [
+        "print(datetime.datetime.utcnow())",
+        "print(datetime.datetime.now())",
+        "print(datetime.datetime.today())",
+        "None of the above"
+      ],
       "a": 0,
-      "explanation": "utcnow() returns the current UTC time. now() and today() return local time."
+      "e": "utcnow() returns the current UTC time. now() and today() return local time."
     },
     {
       "q": "Which command is used to install Python packages on your Windows/Mac/Linux machines?",
-      "o": ["pip", "yum", "dnf", "apt-get"],
+      "o": [
+        "pip",
+        "yum",
+        "dnf",
+        "apt-get"
+      ],
       "a": 0,
-      "explanation": "pip is Python's package installer. yum, dnf, apt-get are OS-level package managers."
+      "e": "pip is Python's package installer. yum, dnf, apt-get are OS-level package managers."
     },
     {
       "q": "How will you install the official MySQL database driver package for Python?",
-      "o": ["pip install mysql-connector-python", "pip install pymysql", "pip install mysqlclient", "pip install sqlalchemy"],
+      "o": [
+        "pip install mysql-connector-python",
+        "pip install pymysql",
+        "pip install mysqlclient",
+        "pip install sqlalchemy"
+      ],
       "a": 0,
-      "explanation": "mysql-connector-python is the official MySQL driver. Others are third-party libraries."
+      "e": "mysql-connector-python is the official MySQL driver. Others are third-party libraries."
     },
     {
       "q": "Which is a reserved word in Python 3.x?",
-      "o": ["class", "def", "from", "All of the above"],
+      "o": [
+        "class",
+        "def",
+        "from",
+        "All of the above"
+      ],
       "a": 3,
-      "explanation": "class, def, and from are all reserved keywords in Python."
+      "e": "class, def, and from are all reserved keywords in Python."
     },
     {
       "q": "Right way to start http.server module from command line:",
-      "o": ["startmodule http.server", "pymodule http.server", "python -m http.server", "pymodule -m http.server"],
+      "o": [
+        "startmodule http.server",
+        "pymodule http.server",
+        "python -m http.server",
+        "pymodule -m http.server"
+      ],
       "a": 2,
-      "explanation": "The correct syntax is `python -m http.server`. The -m flag runs a module as a script."
+      "e": "The correct syntax is `python -m http.server`. The -m flag runs a module as a script."
     },
     {
       "q": "Which built-in function is used to open and access files?",
-      "o": ["fetch()", "explode()", "open()", "access()"],
+      "o": [
+        "fetch()",
+        "explode()",
+        "open()",
+        "access()"
+      ],
       "a": 2,
-      "explanation": "open() is the built-in function to open files. Others are not valid Python functions."
+      "e": "open() is the built-in function to open files. Others are not valid Python functions."
     },
     {
       "q": "What kind of language is Python?",
-      "o": ["Compiled", "Interpreted", "Parsed", "Elaborated"],
+      "o": [
+        "Compiled",
+        "Interpreted",
+        "Parsed",
+        "Elaborated"
+      ],
       "a": 1,
-      "explanation": "Python is interpreted, meaning code is executed line by line by the interpreter."
+      "e": "Python is interpreted, meaning code is executed line by line by the interpreter."
     },
     {
       "q": "Who invented Python?",
-      "o": ["Rasmus Lerdorf", "Guido van Rossum", "Bill Gates", "Linus Torvalds"],
+      "o": [
+        "Rasmus Lerdorf",
+        "Guido van Rossum",
+        "Bill Gates",
+        "Linus Torvalds"
+      ],
       "a": 1,
-      "explanation": "Guido van Rossum created Python in 1991. Rasmus created PHP, Linus created Linux."
+      "e": "Guido van Rossum created Python in 1991. Rasmus created PHP, Linus created Linux."
     },
     {
       "q": "Which of the following are Python web frameworks?",
-      "o": ["Flask", "Bottle", "Django", "All of the above"],
+      "o": [
+        "Flask",
+        "Bottle",
+        "Django",
+        "All of the above"
+      ],
       "a": 3,
-      "explanation": "Flask, Bottle, and Django are all popular Python web frameworks."
+      "e": "Flask, Bottle, and Django are all popular Python web frameworks."
     },
     {
       "q": "Which of the following are Python GUI frameworks?",
-      "o": ["Tkinter", "PySide", "Kivy", "All of the above"],
+      "o": [
+        "Tkinter",
+        "PySide",
+        "Kivy",
+        "All of the above"
+      ],
       "a": 3,
-      "explanation": "Tkinter, PySide, and Kivy are all used for building GUIs in Python."
+      "e": "Tkinter, PySide, and Kivy are all used for building GUIs in Python."
     },
     {
       "q": "Who maintains the cpython reference implementation?",
-      "o": ["Apache Software Foundation", "Python Software Foundation", "Mozilla Foundation", "Linux Foundation"],
+      "o": [
+        "Apache Software Foundation",
+        "Python Software Foundation",
+        "Mozilla Foundation",
+        "Linux Foundation"
+      ],
       "a": 1,
-      "explanation": "The Python Software Foundation (PSF) maintains CPython, the reference implementation of Python."
+      "e": "The Python Software Foundation (PSF) maintains CPython, the reference implementation of Python."
     },
     {
       "q": "The programming language Python gets its name from:",
-      "o": ["British comedy group, Monty Python", "Ferocious creature of the Amazon jungles", "All of the above", "None of the above"],
+      "o": [
+        "British comedy group, Monty Python",
+        "Ferocious creature of the Amazon jungles",
+        "All of the above",
+        "None of the above"
+      ],
       "a": 0,
-      "explanation": "Python was named after Monty Python's Flying Circus, not the snake."
+      "e": "Python was named after Monty Python's Flying Circus, not the snake."
     },
     {
       "q": "Python is meant to be",
-      "o": ["Cluttered and confusing language", "System programming language", "Easy and readable language", "Doctorate student's language"],
+      "o": [
+        "Cluttered and confusing language",
+        "System programming language",
+        "Easy and readable language",
+        "Doctorate student's language"
+      ],
       "a": 2,
-      "explanation": "Python emphasizes readability and simplicity, following the 'Zen of Python'."
+      "e": "Python emphasizes readability and simplicity, following the 'Zen of Python'."
     },
     {
       "q": "Which library is often used to make HTTP requests?",
-      "o": ["urllib", "http.client", "requests", "httplib2"],
+      "o": [
+        "urllib",
+        "http.client",
+        "requests",
+        "httplib2"
+      ],
       "a": 2,
-      "explanation": "The requests library is the most popular and user-friendly way to make HTTP requests in Python. urllib and http.client are part of the standard library but less convenient."
+      "e": "The requests library is the most popular and user-friendly way to make HTTP requests in Python. urllib and http.client are part of the standard library but less convenient."
     }
   ]
 }

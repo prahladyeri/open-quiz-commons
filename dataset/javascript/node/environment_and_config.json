@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "Which global object provides access to environment variables in Node.js?",
-      "o": ["env", "process.env", "global.env", "config.env"],
+      "o": [
+        "env",
+        "process.env",
+        "global.env",
+        "config.env"
+      ],
       "a": 1,
-      "explanation": "Environment variables are accessed through the process.env object in Node.js."
+      "e": "Environment variables are accessed through the process.env object in Node.js."
     },
     {
       "q": "What is the purpose of NODE_ENV in Node.js applications?",
-      "o": ["To specify the Node.js version", "To define the environment mode like development or production", "To configure buffer size", "To set default encoding"],
+      "o": [
+        "To specify the Node.js version",
+        "To define the environment mode like development or production",
+        "To configure buffer size",
+        "To set default encoding"
+      ],
       "a": 1,
-      "explanation": "NODE_ENV is commonly used to distinguish between development and production environments."
+      "e": "NODE_ENV is commonly used to distinguish between development and production environments."
     },
     {
       "q": "Which method returns the current working directory of a Node.js process?",
-      "o": ["process.cwd()", "process.dir()", "process.path()", "process.location()"],
+      "o": [
+        "process.cwd()",
+        "process.dir()",
+        "process.path()",
+        "process.location()"
+      ],
       "a": 0,
-      "explanation": "process.cwd() returns the current working directory of the Node.js process."
+      "e": "process.cwd() returns the current working directory of the Node.js process."
     },
     {
       "q": "How can you set an environment variable when starting a Node.js application?",
-      "o": ["Using process.setEnv()", "By passing it in the command line before node", "By editing the Node.js source code", "By modifying global.env directly"],
+      "o": [
+        "Using process.setEnv()",
+        "By passing it in the command line before node",
+        "By editing the Node.js source code",
+        "By modifying global.env directly"
+      ],
       "a": 1,
-      "explanation": "Environment variables can be set in the shell before running node, e.g., NODE_ENV=production node app.js."
+      "e": "Environment variables can be set in the shell before running node, e.g., NODE_ENV=production node app.js."
     },
     {
       "q": "Which property of process provides the absolute path of the Node.js executable?",
-      "o": ["process.execPath", "process.path", "process.bin", "process.nodePath"],
+      "o": [
+        "process.execPath",
+        "process.path",
+        "process.bin",
+        "process.nodePath"
+      ],
       "a": 0,
-      "explanation": "process.execPath gives the absolute path of the Node.js executable."
+      "e": "process.execPath gives the absolute path of the Node.js executable."
     },
     {
       "q": "What does process.exit(0) indicate?",
-      "o": ["The process exited with an error", "The process exited successfully", "The process restarted", "The process is paused"],
+      "o": [
+        "The process exited with an error",
+        "The process exited successfully",
+        "The process restarted",
+        "The process is paused"
+      ],
       "a": 1,
-      "explanation": "An exit code of 0 indicates successful termination of the process."
+      "e": "An exit code of 0 indicates successful termination of the process."
     },
     {
       "q": "Which module is often used to manage configuration files in Node.js?",
-      "o": ["fs", "config", "http", "events"],
+      "o": [
+        "fs",
+        "config",
+        "http",
+        "events"
+      ],
       "a": 1,
-      "explanation": "The 'config' module is commonly used to manage configuration files and environment-specific settings."
+      "e": "The 'config' module is commonly used to manage configuration files and environment-specific settings."
     },
     {
       "q": "What does process.env return if an environment variable is not set?",
-      "o": ["null", "undefined", "empty string", "throws an error"],
+      "o": [
+        "null",
+        "undefined",
+        "empty string",
+        "throws an error"
+      ],
       "a": 1,
-      "explanation": "If an environment variable is not set, process.env returns undefined for that key."
+      "e": "If an environment variable is not set, process.env returns undefined for that key."
     },
     {
       "q": "Which property of process provides the current Node.js version?",
-      "o": ["process.version", "process.nodeVersion", "process.versions.node", "process.env.NODE_VERSION"],
+      "o": [
+        "process.version",
+        "process.nodeVersion",
+        "process.versions.node",
+        "process.env.NODE_VERSION"
+      ],
       "a": 0,
-      "explanation": "process.version returns the current Node.js version as a string."
+      "e": "process.version returns the current Node.js version as a string."
     },
     {
       "q": "Which method can be used to change the current working directory of a Node.js process?",
-      "o": ["process.chdir()", "process.changeDir()", "process.setDir()", "process.moveDir()"],
+      "o": [
+        "process.chdir()",
+        "process.changeDir()",
+        "process.setDir()",
+        "process.moveDir()"
+      ],
       "a": 0,
-      "explanation": "process.chdir() changes the current working directory of the Node.js process."
+      "e": "process.chdir() changes the current working directory of the Node.js process."
     }
   ]
 }

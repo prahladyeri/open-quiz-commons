@@ -9,7 +9,7 @@
         "System programming"
       ],
       "a": 2,
-      "explanation": "Django is a high-level Python web framework designed for rapid web application development."
+      "e": "Django is a high-level Python web framework designed for rapid web application development."
     },
     {
       "q": "Which design philosophy does Django strongly follow?",
@@ -20,7 +20,7 @@
         "MVC strictly"
       ],
       "a": 0,
-      "explanation": "Django emphasizes the DRY principle to reduce duplication and improve maintainability."
+      "e": "Django emphasizes the DRY principle to reduce duplication and improve maintainability."
     },
     {
       "q": "What architectural pattern does Django use?",
@@ -31,7 +31,7 @@
         "Layered Architecture"
       ],
       "a": 2,
-      "explanation": "Django uses the MVT (Model-View-Template) pattern, a variation of MVC."
+      "e": "Django uses the MVT (Model-View-Template) pattern, a variation of MVC."
     },
     {
       "q": "Which command is used to create a new Django project?",
@@ -42,7 +42,7 @@
         "pip install django"
       ],
       "a": 1,
-      "explanation": "django-admin startproject initializes a new Django project structure."
+      "e": "django-admin startproject initializes a new Django project structure."
     },
     {
       "q": "What is a Django app?",
@@ -53,7 +53,7 @@
         "A deployment unit"
       ],
       "a": 1,
-      "explanation": "A Django app is a modular, reusable component within a project."
+      "e": "A Django app is a modular, reusable component within a project."
     },
     {
       "q": "Which file is used to define URL routes in a Django app?",
@@ -64,7 +64,7 @@
         "settings.py"
       ],
       "a": 2,
-      "explanation": "urls.py maps URL patterns to view functions or classes."
+      "e": "urls.py maps URL patterns to view functions or classes."
     },
     {
       "q": "What is the primary role of Django models?",
@@ -75,7 +75,7 @@
         "Manage sessions"
       ],
       "a": 1,
-      "explanation": "Models define database structure and handle data-related logic using Django ORM."
+      "e": "Models define database structure and handle data-related logic using Django ORM."
     },
     {
       "q": "Which Django feature automatically generates an admin interface?",
@@ -86,7 +86,7 @@
         "Template Engine"
       ],
       "a": 2,
-      "explanation": "Django Admin provides a built-in web interface for managing models."
+      "e": "Django Admin provides a built-in web interface for managing models."
     },
     {
       "q": "What does Django ORM provide?",
@@ -97,7 +97,7 @@
         "Session handling"
       ],
       "a": 1,
-      "explanation": "Django ORM allows database interaction using Python objects instead of raw SQL."
+      "e": "Django ORM allows database interaction using Python objects instead of raw SQL."
     },
     {
       "q": "Which file contains global configuration for a Django project?",
@@ -108,7 +108,7 @@
         "apps.py"
       ],
       "a": 1,
-      "explanation": "settings.py stores project-wide configuration such as databases, middleware, and installed apps."
+      "e": "settings.py stores project-wide configuration such as databases, middleware, and installed apps."
     }
   ]
 }

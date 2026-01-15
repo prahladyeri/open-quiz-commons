@@ -9,7 +9,7 @@
         "boolean"
       ],
       "a": 2,
-      "explanation": "`object` is a non-primitive (reference) type; primitives include string, number, boolean, null, undefined, symbol, and bigint."
+      "e": "`object` is a non-primitive (reference) type; primitives include string, number, boolean, null, undefined, symbol, and bigint."
     },
     {
       "q": "What is the result of typeof null?",
@@ -20,7 +20,7 @@
         "\"number\""
       ],
       "a": 1,
-      "explanation": "`typeof null` returns \"object\" due to a long-standing bug in JavaScript."
+      "e": "`typeof null` returns \"object\" due to a long-standing bug in JavaScript."
     },
     {
       "q": "Which operator is used for strict equality comparison?",
@@ -31,7 +31,7 @@
         "="
       ],
       "a": 2,
-      "explanation": "`===` compares both value and type without type coercion."
+      "e": "`===` compares both value and type without type coercion."
     },
     {
       "q": "What will be the result of `\"5\" + 2`?",
@@ -42,7 +42,7 @@
         "Error"
       ],
       "a": 1,
-      "explanation": "The `+` operator performs string concatenation when one operand is a string."
+      "e": "The `+` operator performs string concatenation when one operand is a string."
     },
     {
       "q": "Which operator converts a value to a boolean?",
@@ -53,7 +53,7 @@
         "||"
       ],
       "a": 0,
-      "explanation": "Double negation (`!!`) converts a value to its boolean equivalent."
+      "e": "Double negation (`!!`) converts a value to its boolean equivalent."
     },
     {
       "q": "Which of the following values is falsy in JavaScript?",
@@ -64,7 +64,7 @@
         "{}"
       ],
       "a": 1,
-      "explanation": "`0` is falsy, while \"0\", empty arrays, and empty objects are truthy."
+      "e": "`0` is falsy, while \"0\", empty arrays, and empty objects are truthy."
     },
     {
       "q": "What does the `typeof` operator return for an array?",
@@ -75,7 +75,7 @@
         "\"collection\""
       ],
       "a": 1,
-      "explanation": "Arrays are objects in JavaScript, so `typeof []` returns \"object\"."
+      "e": "Arrays are objects in JavaScript, so `typeof []` returns \"object\"."
     },
     {
       "q": "Which operator is used to provide a default value when the left operand is null or undefined?",
@@ -86,7 +86,7 @@
         "?:"
       ],
       "a": 2,
-      "explanation": "The nullish coalescing operator (`??`) only falls back when the value is null or undefined."
+      "e": "The nullish coalescing operator (`??`) only falls back when the value is null or undefined."
     },
     {
       "q": "What is the result of `true + false`?",
@@ -97,7 +97,7 @@
         "NaN"
       ],
       "a": 2,
-      "explanation": "In numeric context, `true` becomes 1 and `false` becomes 0."
+      "e": "In numeric context, `true` becomes 1 and `false` becomes 0."
     },
     {
       "q": "Which operator checks whether a property exists in an object?",
@@ -108,7 +108,7 @@
         "of"
       ],
       "a": 2,
-      "explanation": "The `in` operator checks if a property exists in an object or its prototype chain."
+      "e": "The `in` operator checks if a property exists in an object or its prototype chain."
     }
   ]
 }

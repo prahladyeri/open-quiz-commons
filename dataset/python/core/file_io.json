@@ -1,114 +1,114 @@
 {
-    "data": [
-        {
-            "q": "Which built-in function is used to open a file in Python?",
-            "o": [
-                "file()",
-                "open()",
-                "read()",
-                "load()"
-            ],
-            "a": 1,
-            "explanation": "The open() function is used to open a file and returns a file object."
-        },
-        {
-            "q": "What is the default mode when opening a file using open()?",
-            "o": [
-                "w",
-                "a",
-                "r",
-                "rb"
-            ],
-            "a": 2,
-            "explanation": "If no mode is specified, open() opens the file in read ('r') mode by default."
-        },
-        {
-            "q": "Which mode is used to write to a file and overwrite existing content?",
-            "o": [
-                "r",
-                "a",
-                "w",
-                "x"
-            ],
-            "a": 2,
-            "explanation": "The 'w' mode opens a file for writing and truncates the file if it already exists."
-        },
-        {
-            "q": "Which mode opens a file for appending data?",
-            "o": [
-                "r",
-                "w",
-                "a",
-                "x"
-            ],
-            "a": 2,
-            "explanation": "The 'a' (append) mode adds new content to the end of the file without removing existing data."
-        },
-        {
-            "q": "Which method is used to read the entire contents of a file at once?",
-            "o": [
-                "read()",
-                "readline()",
-                "readlines()",
-                "load()"
-            ],
-            "a": 0,
-            "explanation": "The read() method reads the entire contents of a file as a single string."
-        },
-        {
-            "q": "Which method reads a file line by line and returns a list of lines?",
-            "o": [
-                "read()",
-                "readline()",
-                "readlines()",
-                "lines()"
-            ],
-            "a": 2,
-            "explanation": "The readlines() method reads all lines from a file and returns them as a list."
-        },
-        {
-            "q": "What is the purpose of the 'with' statement when working with files?",
-            "o": [
-                "To speed up file operations",
-                "To prevent syntax errors",
-                "To automatically close the file",
-                "To lock the file"
-            ],
-            "a": 2,
-            "explanation": "The with statement ensures that the file is automatically closed after the block is executed."
-        },
-        {
-            "q": "Which mode should be used to read and write binary files?",
-            "o": [
-                "r",
-                "w",
-                "rb",
-                "rw"
-            ],
-            "a": 2,
-            "explanation": "The 'rb' mode opens a file for reading in binary format, commonly used for images or other binary data."
-        },
-        {
-            "q": "Which exception is commonly raised if a file does not exist when opening it?",
-            "o": [
-                "IOError",
-                "FileNotFoundError",
-                "ValueError",
-                "RuntimeError"
-            ],
-            "a": 1,
-            "explanation": "FileNotFoundError is raised when attempting to open a file that does not exist."
-        },
-        {
-            "q": "Which method is used to close an open file manually?",
-            "o": [
-                "stop()",
-                "end()",
-                "close()",
-                "exit()"
-            ],
-            "a": 2,
-            "explanation": "The close() method closes the file and frees system resources associated with it."
-        }
-    ]
+  "data": [
+    {
+      "q": "Which built-in function is used to open a file in Python?",
+      "o": [
+        "file()",
+        "open()",
+        "read()",
+        "load()"
+      ],
+      "a": 1,
+      "e": "The open() function is used to open a file and returns a file object."
+    },
+    {
+      "q": "What is the default mode when opening a file using open()?",
+      "o": [
+        "w",
+        "a",
+        "r",
+        "rb"
+      ],
+      "a": 2,
+      "e": "If no mode is specified, open() opens the file in read ('r') mode by default."
+    },
+    {
+      "q": "Which mode is used to write to a file and overwrite existing content?",
+      "o": [
+        "r",
+        "a",
+        "w",
+        "x"
+      ],
+      "a": 2,
+      "e": "The 'w' mode opens a file for writing and truncates the file if it already exists."
+    },
+    {
+      "q": "Which mode opens a file for appending data?",
+      "o": [
+        "r",
+        "w",
+        "a",
+        "x"
+      ],
+      "a": 2,
+      "e": "The 'a' (append) mode adds new content to the end of the file without removing existing data."
+    },
+    {
+      "q": "Which method is used to read the entire contents of a file at once?",
+      "o": [
+        "read()",
+        "readline()",
+        "readlines()",
+        "load()"
+      ],
+      "a": 0,
+      "e": "The read() method reads the entire contents of a file as a single string."
+    },
+    {
+      "q": "Which method reads a file line by line and returns a list of lines?",
+      "o": [
+        "read()",
+        "readline()",
+        "readlines()",
+        "lines()"
+      ],
+      "a": 2,
+      "e": "The readlines() method reads all lines from a file and returns them as a list."
+    },
+    {
+      "q": "What is the purpose of the 'with' statement when working with files?",
+      "o": [
+        "To speed up file operations",
+        "To prevent syntax errors",
+        "To automatically close the file",
+        "To lock the file"
+      ],
+      "a": 2,
+      "e": "The with statement ensures that the file is automatically closed after the block is executed."
+    },
+    {
+      "q": "Which mode should be used to read and write binary files?",
+      "o": [
+        "r",
+        "w",
+        "rb",
+        "rw"
+      ],
+      "a": 2,
+      "e": "The 'rb' mode opens a file for reading in binary format, commonly used for images or other binary data."
+    },
+    {
+      "q": "Which exception is commonly raised if a file does not exist when opening it?",
+      "o": [
+        "IOError",
+        "FileNotFoundError",
+        "ValueError",
+        "RuntimeError"
+      ],
+      "a": 1,
+      "e": "FileNotFoundError is raised when attempting to open a file that does not exist."
+    },
+    {
+      "q": "Which method is used to close an open file manually?",
+      "o": [
+        "stop()",
+        "end()",
+        "close()",
+        "exit()"
+      ],
+      "a": 2,
+      "e": "The close() method closes the file and frees system resources associated with it."
+    }
+  ]
 }

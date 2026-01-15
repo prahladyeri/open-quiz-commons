@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "Which file extension is used for Jupyter Notebooks?",
-      "o": [".ipynb", ".py", ".nb", ".jpnb"],
+      "o": [
+        ".ipynb",
+        ".py",
+        ".nb",
+        ".jpnb"
+      ],
       "a": 0,
-      "explanation": "Jupyter Notebooks use the `.ipynb` extension, which stands for Interactive Python Notebook."
+      "e": "Jupyter Notebooks use the `.ipynb` extension, which stands for Interactive Python Notebook."
     },
     {
       "q": "Which command is used to start Jupyter Notebook from the terminal?",
-      "o": ["jupyter run", "jupyter notebook", "python notebook", "start notebook"],
+      "o": [
+        "jupyter run",
+        "jupyter notebook",
+        "python notebook",
+        "start notebook"
+      ],
       "a": 1,
-      "explanation": "Running `jupyter notebook` in the terminal starts the Jupyter Notebook server."
+      "e": "Running `jupyter notebook` in the terminal starts the Jupyter Notebook server."
     },
     {
       "q": "Which type of cell in Jupyter Notebook is used to write and execute Python code?",
-      "o": ["Markdown cell", "Code cell", "Raw cell", "Text cell"],
+      "o": [
+        "Markdown cell",
+        "Code cell",
+        "Raw cell",
+        "Text cell"
+      ],
       "a": 1,
-      "explanation": "A `Code cell` is used to write and execute Python code in Jupyter Notebooks."
+      "e": "A `Code cell` is used to write and execute Python code in Jupyter Notebooks."
     },
     {
       "q": "Which type of cell in Jupyter Notebook is used to write formatted text using Markdown?",
-      "o": ["Markdown cell", "Code cell", "Raw cell", "Text cell"],
+      "o": [
+        "Markdown cell",
+        "Code cell",
+        "Raw cell",
+        "Text cell"
+      ],
       "a": 0,
-      "explanation": "A `Markdown cell` allows writing formatted text using Markdown syntax."
+      "e": "A `Markdown cell` allows writing formatted text using Markdown syntax."
     },
     {
       "q": "Which keyboard shortcut runs the current cell in Jupyter Notebook?",
-      "o": ["Shift + Enter", "Ctrl + Enter", "Alt + Enter", "Enter"],
+      "o": [
+        "Shift + Enter",
+        "Ctrl + Enter",
+        "Alt + Enter",
+        "Enter"
+      ],
       "a": 0,
-      "explanation": "Pressing `Shift + Enter` runs the current cell and moves to the next one."
+      "e": "Pressing `Shift + Enter` runs the current cell and moves to the next one."
     },
     {
       "q": "Which keyboard shortcut runs the current cell and keeps focus on it?",
-      "o": ["Shift + Enter", "Ctrl + Enter", "Alt + Enter", "Enter"],
+      "o": [
+        "Shift + Enter",
+        "Ctrl + Enter",
+        "Alt + Enter",
+        "Enter"
+      ],
       "a": 1,
-      "explanation": "Pressing `Ctrl + Enter` runs the current cell but keeps the cursor in the same cell."
+      "e": "Pressing `Ctrl + Enter` runs the current cell but keeps the cursor in the same cell."
     },
     {
       "q": "Which Jupyter Notebook cell type is used for including unformatted text or data?",
-      "o": ["Markdown cell", "Code cell", "Raw cell", "Text cell"],
+      "o": [
+        "Markdown cell",
+        "Code cell",
+        "Raw cell",
+        "Text cell"
+      ],
       "a": 2,
-      "explanation": "A `Raw cell` is used for including unformatted text or data that is not executed."
+      "e": "A `Raw cell` is used for including unformatted text or data that is not executed."
     },
     {
       "q": "Which command installs Jupyter Notebook using pip?",
-      "o": ["pip install notebook", "pip install jupyter", "pip install ipynb", "pip install lab"],
+      "o": [
+        "pip install notebook",
+        "pip install jupyter",
+        "pip install ipynb",
+        "pip install lab"
+      ],
       "a": 0,
-      "explanation": "Running `pip install notebook` installs Jupyter Notebook via pip."
+      "e": "Running `pip install notebook` installs Jupyter Notebook via pip."
     },
     {
       "q": "Which tool extends Jupyter Notebook with a more advanced interface?",
-      "o": ["JupyterLab", "IPython", "Spyder", "VSCode"],
+      "o": [
+        "JupyterLab",
+        "IPython",
+        "Spyder",
+        "VSCode"
+      ],
       "a": 0,
-      "explanation": "`JupyterLab` is an advanced interface that extends Jupyter Notebook with more features."
+      "e": "`JupyterLab` is an advanced interface that extends Jupyter Notebook with more features."
     },
     {
       "q": "Which kernel is used by default in Jupyter Notebook for executing Python code?",
-      "o": ["IPython kernel", "CPython kernel", "PyPy kernel", "NumPy kernel"],
+      "o": [
+        "IPython kernel",
+        "CPython kernel",
+        "PyPy kernel",
+        "NumPy kernel"
+      ],
       "a": 0,
-      "explanation": "The default kernel in Jupyter Notebook is the `IPython kernel`, which executes Python code."
+      "e": "The default kernel in Jupyter Notebook is the `IPython kernel`, which executes Python code."
     }
   ]
 }

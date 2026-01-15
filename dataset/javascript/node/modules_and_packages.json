@@ -9,7 +9,7 @@
         "SystemJS"
       ],
       "a": 1,
-      "explanation": "Node.js traditionally uses the CommonJS module system with require() and module.exports."
+      "e": "Node.js traditionally uses the CommonJS module system with require() and module.exports."
     },
     {
       "q": "Which keyword is used to export a value in CommonJS?",
@@ -20,7 +20,7 @@
         "expose"
       ],
       "a": 2,
-      "explanation": "module.exports is used to export values from a CommonJS module."
+      "e": "module.exports is used to export values from a CommonJS module."
     },
     {
       "q": "Which syntax is used to import an ES module in Node.js?",
@@ -31,7 +31,7 @@
         "load module('module')"
       ],
       "a": 2,
-      "explanation": "ES modules use the import ... from syntax."
+      "e": "ES modules use the import ... from syntax."
     },
     {
       "q": "How can Node.js treat a project as ES module–based?",
@@ -42,7 +42,7 @@
         "Using strict mode"
       ],
       "a": 1,
-      "explanation": "Setting \"type\": \"module\" in package.json enables ES module syntax by default."
+      "e": "Setting \"type\": \"module\" in package.json enables ES module syntax by default."
     },
     {
       "q": "Which file is used to define a Node.js package?",
@@ -53,7 +53,7 @@
         "modules.json"
       ],
       "a": 2,
-      "explanation": "package.json defines metadata, dependencies, and scripts for a Node.js package."
+      "e": "package.json defines metadata, dependencies, and scripts for a Node.js package."
     },
     {
       "q": "Which field specifies the entry point of a package?",
@@ -64,7 +64,7 @@
         "index"
       ],
       "a": 1,
-      "explanation": "The main field specifies the primary entry file of a Node.js package."
+      "e": "The main field specifies the primary entry file of a Node.js package."
     },
     {
       "q": "What is the purpose of node_modules directory?",
@@ -75,7 +75,7 @@
         "To hold environment variables"
       ],
       "a": 2,
-      "explanation": "node_modules contains all locally installed package dependencies."
+      "e": "node_modules contains all locally installed package dependencies."
     },
     {
       "q": "Which command installs dependencies listed in package.json?",
@@ -86,7 +86,7 @@
         "npm build"
       ],
       "a": 0,
-      "explanation": "npm install installs all dependencies defined in package.json."
+      "e": "npm install installs all dependencies defined in package.json."
     },
     {
       "q": "What does the package-lock.json file ensure?",
@@ -97,7 +97,7 @@
         "Improved security"
       ],
       "a": 1,
-      "explanation": "package-lock.json locks dependency versions to ensure consistent installs."
+      "e": "package-lock.json locks dependency versions to ensure consistent installs."
     },
     {
       "q": "Which tool is commonly used as an alternative to npm?",
@@ -108,7 +108,7 @@
         "gradle"
       ],
       "a": 2,
-      "explanation": "Yarn is a popular alternative JavaScript package manager."
+      "e": "Yarn is a popular alternative JavaScript package manager."
     }
   ]
 }

@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "Which SQLAlchemy class is used to define ORM models?",
-      "o": ["Base", "Model", "DeclarativeBase", "Table"],
+      "o": [
+        "Base",
+        "Model",
+        "DeclarativeBase",
+        "Table"
+      ],
       "a": 0,
-      "explanation": "SQLAlchemy ORM models are typically defined by inheriting from a declarative Base class created using declarative_base()."
+      "e": "SQLAlchemy ORM models are typically defined by inheriting from a declarative Base class created using declarative_base()."
     },
     {
       "q": "Which function is used to create a new SQLAlchemy engine?",
-      "o": ["create_engine()", "Engine()", "new_engine()", "connect_engine()"],
+      "o": [
+        "create_engine()",
+        "Engine()",
+        "new_engine()",
+        "connect_engine()"
+      ],
       "a": 0,
-      "explanation": "The create_engine() function is used to establish a connection to the database."
+      "e": "The create_engine() function is used to establish a connection to the database."
     },
     {
       "q": "Which SQLAlchemy object manages database sessions?",
-      "o": ["Session", "Engine", "Connection", "Transaction"],
+      "o": [
+        "Session",
+        "Engine",
+        "Connection",
+        "Transaction"
+      ],
       "a": 0,
-      "explanation": "The Session object manages conversations with the database and handles transactions."
+      "e": "The Session object manages conversations with the database and handles transactions."
     },
     {
       "q": "Which method of Session is used to add new objects to the database?",
-      "o": ["insert()", "add()", "save()", "commit()"],
+      "o": [
+        "insert()",
+        "add()",
+        "save()",
+        "commit()"
+      ],
       "a": 1,
-      "explanation": "The add() method places an object in the session to be persisted to the database."
+      "e": "The add() method places an object in the session to be persisted to the database."
     },
     {
       "q": "Which SQLAlchemy construct represents a database table?",
-      "o": ["Column", "Table", "Row", "Schema"],
+      "o": [
+        "Column",
+        "Table",
+        "Row",
+        "Schema"
+      ],
       "a": 1,
-      "explanation": "The Table object represents a database table and is defined with metadata and columns."
+      "e": "The Table object represents a database table and is defined with metadata and columns."
     },
     {
       "q": "Which SQLAlchemy function is used to define a column in a table?",
-      "o": ["Column()", "Field()", "Attribute()", "DefineColumn()"],
+      "o": [
+        "Column()",
+        "Field()",
+        "Attribute()",
+        "DefineColumn()"
+      ],
       "a": 0,
-      "explanation": "Column() is used to define columns in a Table or ORM model."
+      "e": "Column() is used to define columns in a Table or ORM model."
     },
     {
       "q": "Which argument of Column specifies the primary key?",
-      "o": ["key=True", "primary=True", "pk=True", "primary_key=True"],
+      "o": [
+        "key=True",
+        "primary=True",
+        "pk=True",
+        "primary_key=True"
+      ],
       "a": 3,
-      "explanation": "The primary_key=True argument marks a column as the primary key."
+      "e": "The primary_key=True argument marks a column as the primary key."
     },
     {
       "q": "Which SQLAlchemy module provides schema and type definitions?",
-      "o": ["sqlalchemy.types", "sqlalchemy.schema", "sqlalchemy.orm", "sqlalchemy.sql"],
+      "o": [
+        "sqlalchemy.types",
+        "sqlalchemy.schema",
+        "sqlalchemy.orm",
+        "sqlalchemy.sql"
+      ],
       "a": 0,
-      "explanation": "sqlalchemy.types provides column type definitions such as Integer, String, DateTime, etc."
+      "e": "sqlalchemy.types provides column type definitions such as Integer, String, DateTime, etc."
     },
     {
       "q": "Which method of Session is used to query objects?",
-      "o": ["select()", "query()", "find()", "get_all()"],
+      "o": [
+        "select()",
+        "query()",
+        "find()",
+        "get_all()"
+      ],
       "a": 1,
-      "explanation": "The query() method is used to retrieve ORM objects from the database."
+      "e": "The query() method is used to retrieve ORM objects from the database."
     },
     {
       "q": "Which SQLAlchemy function is used to define relationships between ORM models?",
-      "o": ["relationship()", "join()", "link()", "connect()"],
+      "o": [
+        "relationship()",
+        "join()",
+        "link()",
+        "connect()"
+      ],
       "a": 0,
-      "explanation": "The relationship() function defines relationships between ORM models, such as one-to-many or many-to-many."
+      "e": "The relationship() function defines relationships between ORM models, such as one-to-many or many-to-many."
     }
   ]
 }

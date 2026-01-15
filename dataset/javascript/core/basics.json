@@ -2,57 +2,102 @@
   "data": [
     {
       "q": "Which keyword is used to declare a block-scoped variable that can be reassigned in JavaScript?",
-      "o": ["var", "let", "const", "static"],
+      "o": [
+        "var",
+        "let",
+        "const",
+        "static"
+      ],
       "a": 1,
-      "explanation": "`let` declares a block-scoped variable that can be reassigned, unlike `const`."
+      "e": "`let` declares a block-scoped variable that can be reassigned, unlike `const`."
     },
     {
       "q": "Which of the following declares a constant that cannot be reassigned?",
-      "o": ["var", "let", "const", "define"],
+      "o": [
+        "var",
+        "let",
+        "const",
+        "define"
+      ],
       "a": 2,
-      "explanation": "`const` prevents reassignment of the variable reference, though object contents may still be mutable."
+      "e": "`const` prevents reassignment of the variable reference, though object contents may still be mutable."
     },
     {
       "q": "What is the output of: typeof null ?",
-      "o": ["null", "object", "undefined", "number"],
+      "o": [
+        "null",
+        "object",
+        "undefined",
+        "number"
+      ],
       "a": 1,
-      "explanation": "Due to a long-standing bug in JavaScript, `typeof null` returns `object`."
+      "e": "Due to a long-standing bug in JavaScript, `typeof null` returns `object`."
     },
     {
       "q": "Which value is considered falsy in JavaScript?",
-      "o": ["\"0\"", "[]", "{}", "0"],
+      "o": [
+        "\"0\"",
+        "[]",
+        "{}",
+        "0"
+      ],
       "a": 3,
-      "explanation": "`0` is a falsy value, while non-empty strings and objects are truthy."
+      "e": "`0` is a falsy value, while non-empty strings and objects are truthy."
     },
     {
       "q": "Which operator is used to compare both value and type?",
-      "o": ["==", "=", "===", "!="],
+      "o": [
+        "==",
+        "=",
+        "===",
+        "!="
+      ],
       "a": 2,
-      "explanation": "`===` checks for strict equality, meaning both value and type must match."
+      "e": "`===` checks for strict equality, meaning both value and type must match."
     },
     {
       "q": "Which of the following is NOT a primitive data type in JavaScript?",
-      "o": ["string", "number", "object", "boolean"],
+      "o": [
+        "string",
+        "number",
+        "object",
+        "boolean"
+      ],
       "a": 2,
-      "explanation": "`object` is a reference type, while the others are primitives."
+      "e": "`object` is a reference type, while the others are primitives."
     },
     {
       "q": "How do you write a single-line comment in JavaScript?",
-      "o": ["<!-- comment -->", "# comment", "// comment", "/* comment */"],
+      "o": [
+        "<!-- comment -->",
+        "# comment",
+        "// comment",
+        "/* comment */"
+      ],
       "a": 2,
-      "explanation": "`//` is used for single-line comments in JavaScript."
+      "e": "`//` is used for single-line comments in JavaScript."
     },
     {
       "q": "What will be the result of: Boolean('') ?",
-      "o": ["true", "false", "null", "undefined"],
+      "o": [
+        "true",
+        "false",
+        "null",
+        "undefined"
+      ],
       "a": 1,
-      "explanation": "An empty string is a falsy value, so it evaluates to `false`."
+      "e": "An empty string is a falsy value, so it evaluates to `false`."
     },
     {
       "q": "Which method converts a JSON string into a JavaScript object?",
-      "o": ["JSON.stringify()", "JSON.parse()", "Object.parse()", "JSON.convert()"],
+      "o": [
+        "JSON.stringify()",
+        "JSON.parse()",
+        "Object.parse()",
+        "JSON.convert()"
+      ],
       "a": 1,
-      "explanation": "`JSON.parse()` converts a JSON-formatted string into a JavaScript object."
+      "e": "`JSON.parse()` converts a JSON-formatted string into a JavaScript object."
     },
     {
       "q": "Which of the following best describes JavaScript?",
@@ -63,7 +108,7 @@
         "A purely functional language"
       ],
       "a": 2,
-      "explanation": "JavaScript is primarily interpreted and dynamically typed, though modern engines perform JIT compilation."
+      "e": "JavaScript is primarily interpreted and dynamically typed, though modern engines perform JIT compilation."
     }
   ]
 }

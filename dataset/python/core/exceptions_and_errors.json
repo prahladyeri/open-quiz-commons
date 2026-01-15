@@ -1,114 +1,114 @@
 {
-    "data": [
-        {
-            "q": "Which keyword is used to handle exceptions in Python?",
-            "o": [
-                "catch",
-                "handle",
-                "try",
-                "except"
-            ],
-            "a": 2,
-            "explanation": "The try keyword is used to wrap code that may raise an exception so it can be handled safely."
-        },
-        {
-            "q": "Which block is used to catch and handle an exception?",
-            "o": [
-                "try",
-                "finally",
-                "except",
-                "raise"
-            ],
-            "a": 2,
-            "explanation": "The except block is executed when an exception occurs in the corresponding try block."
-        },
-        {
-            "q": "Which block will always execute whether an exception occurs or not?",
-            "o": [
-                "try",
-                "except",
-                "else",
-                "finally"
-            ],
-            "a": 3,
-            "explanation": "The finally block always runs, making it useful for cleanup actions like closing files."
-        },
-        {
-            "q": "What happens if an exception is not handled in a Python program?",
-            "o": [
-                "The program continues normally",
-                "The exception is ignored",
-                "The program terminates with a traceback",
-                "The exception is logged automatically"
-            ],
-            "a": 2,
-            "explanation": "If an exception is not handled, Python stops execution and prints a traceback showing the error."
-        },
-        {
-            "q": "Which keyword is used to explicitly raise an exception?",
-            "o": [
-                "throw",
-                "raise",
-                "error",
-                "assert"
-            ],
-            "a": 1,
-            "explanation": "The raise keyword is used to explicitly trigger an exception in Python."
-        },
-        {
-            "q": "Which of the following is a built-in Python exception?",
-            "o": [
-                "IndexError",
-                "DivideError",
-                "OverflowException",
-                "NullPointerError"
-            ],
-            "a": 0,
-            "explanation": "IndexError is a built-in exception raised when accessing a list index out of range."
-        },
-        {
-            "q": "What exception is raised when dividing by zero?",
-            "o": [
-                "ZeroDivisionError",
-                "ArithmeticError",
-                "ValueError",
-                "RuntimeError"
-            ],
-            "a": 0,
-            "explanation": "ZeroDivisionError is raised when a number is divided by zero in Python."
-        },
-        {
-            "q": "Which block executes only if no exception occurs?",
-            "o": [
-                "try",
-                "except",
-                "else",
-                "finally"
-            ],
-            "a": 2,
-            "explanation": "The else block runs only when the try block completes without raising any exceptions."
-        },
-        {
-            "q": "How can you catch multiple exceptions in a single except block?",
-            "o": [
-                "Using multiple except blocks",
-                "Using a tuple of exceptions",
-                "Using nested try blocks",
-                "Using the else block"
-            ],
-            "a": 1,
-            "explanation": "Multiple exceptions can be caught by specifying them as a tuple in a single except clause."
-        },
-        {
-            "q": "Which statement is commonly used for debugging and raises an exception if a condition is false?",
-            "o": [
-                "check",
-                "validate",
-                "assert",
-                "raise"
-            ],
-            "a": 2,
-            "explanation": "The assert statement is used for debugging and raises an AssertionError if the condition is false."
-        }
-    ]
+  "data": [
+    {
+      "q": "Which keyword is used to handle exceptions in Python?",
+      "o": [
+        "catch",
+        "handle",
+        "try",
+        "except"
+      ],
+      "a": 2,
+      "e": "The try keyword is used to wrap code that may raise an exception so it can be handled safely."
+    },
+    {
+      "q": "Which block is used to catch and handle an exception?",
+      "o": [
+        "try",
+        "finally",
+        "except",
+        "raise"
+      ],
+      "a": 2,
+      "e": "The except block is executed when an exception occurs in the corresponding try block."
+    },
+    {
+      "q": "Which block will always execute whether an exception occurs or not?",
+      "o": [
+        "try",
+        "except",
+        "else",
+        "finally"
+      ],
+      "a": 3,
+      "e": "The finally block always runs, making it useful for cleanup actions like closing files."
+    },
+    {
+      "q": "What happens if an exception is not handled in a Python program?",
+      "o": [
+        "The program continues normally",
+        "The exception is ignored",
+        "The program terminates with a traceback",
+        "The exception is logged automatically"
+      ],
+      "a": 2,
+      "e": "If an exception is not handled, Python stops execution and prints a traceback showing the error."
+    },
+    {
+      "q": "Which keyword is used to explicitly raise an exception?",
+      "o": [
+        "throw",
+        "raise",
+        "error",
+        "assert"
+      ],
+      "a": 1,
+      "e": "The raise keyword is used to explicitly trigger an exception in Python."
+    },
+    {
+      "q": "Which of the following is a built-in Python exception?",
+      "o": [
+        "IndexError",
+        "DivideError",
+        "OverflowException",
+        "NullPointerError"
+      ],
+      "a": 0,
+      "e": "IndexError is a built-in exception raised when accessing a list index out of range."
+    },
+    {
+      "q": "What exception is raised when dividing by zero?",
+      "o": [
+        "ZeroDivisionError",
+        "ArithmeticError",
+        "ValueError",
+        "RuntimeError"
+      ],
+      "a": 0,
+      "e": "ZeroDivisionError is raised when a number is divided by zero in Python."
+    },
+    {
+      "q": "Which block executes only if no exception occurs?",
+      "o": [
+        "try",
+        "except",
+        "else",
+        "finally"
+      ],
+      "a": 2,
+      "e": "The else block runs only when the try block completes without raising any exceptions."
+    },
+    {
+      "q": "How can you catch multiple exceptions in a single except block?",
+      "o": [
+        "Using multiple except blocks",
+        "Using a tuple of exceptions",
+        "Using nested try blocks",
+        "Using the else block"
+      ],
+      "a": 1,
+      "e": "Multiple exceptions can be caught by specifying them as a tuple in a single except clause."
+    },
+    {
+      "q": "Which statement is commonly used for debugging and raises an exception if a condition is false?",
+      "o": [
+        "check",
+        "validate",
+        "assert",
+        "raise"
+      ],
+      "a": 2,
+      "e": "The assert statement is used for debugging and raises an AssertionError if the condition is false."
+    }
+  ]
 }

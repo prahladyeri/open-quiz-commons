@@ -9,13 +9,18 @@
         "Managing browser storage"
       ],
       "a": 1,
-      "explanation": "The rendering process converts HTML, CSS, and JavaScript into visual pixels on the screen."
+      "e": "The rendering process converts HTML, CSS, and JavaScript into visual pixels on the screen."
     },
     {
       "q": "Which operation recalculates the layout of elements on a page?",
-      "o": ["Repaint", "Reflow", "Composite", "Parse"],
+      "o": [
+        "Repaint",
+        "Reflow",
+        "Composite",
+        "Parse"
+      ],
       "a": 1,
-      "explanation": "Reflow recalculates element sizes and positions, and is performance-expensive."
+      "e": "Reflow recalculates element sizes and positions, and is performance-expensive."
     },
     {
       "q": "What triggers a repaint but not a reflow?",
@@ -26,7 +31,7 @@
         "Adding a new DOM node"
       ],
       "a": 2,
-      "explanation": "Changing colors affects appearance but not layout, causing a repaint only."
+      "e": "Changing colors affects appearance but not layout, causing a repaint only."
     },
     {
       "q": "Which API is best for smooth animations?",
@@ -37,7 +42,7 @@
         "Promise.then"
       ],
       "a": 2,
-      "explanation": "requestAnimationFrame synchronizes animations with the browser’s refresh rate."
+      "e": "requestAnimationFrame synchronizes animations with the browser’s refresh rate."
     },
     {
       "q": "What is layout thrashing?",
@@ -48,7 +53,7 @@
         "Blocking network requests"
       ],
       "a": 1,
-      "explanation": "Layout thrashing occurs when DOM reads and writes are interleaved inefficiently."
+      "e": "Layout thrashing occurs when DOM reads and writes are interleaved inefficiently."
     },
     {
       "q": "Which technique helps reduce initial page load time?",
@@ -59,7 +64,7 @@
         "Using synchronous scripts"
       ],
       "a": 1,
-      "explanation": "Lazy loading defers loading non-critical resources to improve initial performance."
+      "e": "Lazy loading defers loading non-critical resources to improve initial performance."
     }
   ]
 }

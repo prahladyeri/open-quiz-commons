@@ -9,7 +9,7 @@
         "<fieldset>"
       ],
       "a": 1,
-      "explanation": "The <input> element is commonly used to collect user input."
+      "e": "The <input> element is commonly used to collect user input."
     },
     {
       "q": "Which event is triggered when a form is submitted?",
@@ -20,7 +20,7 @@
         "input"
       ],
       "a": 2,
-      "explanation": "The submit event fires when a form is submitted."
+      "e": "The submit event fires when a form is submitted."
     },
     {
       "q": "What does event.preventDefault() do during form submission?",
@@ -31,7 +31,7 @@
         "Removes the form element"
       ],
       "a": 2,
-      "explanation": "preventDefault() stops the browser’s default form submission behavior."
+      "e": "preventDefault() stops the browser’s default form submission behavior."
     },
     {
       "q": "Which attribute makes an input field mandatory?",
@@ -42,7 +42,7 @@
         "checked"
       ],
       "a": 1,
-      "explanation": "The required attribute ensures the field must be filled before submission."
+      "e": "The required attribute ensures the field must be filled before submission."
     },
     {
       "q": "Which event fires when the value of an input changes?",
@@ -53,7 +53,7 @@
         "blur"
       ],
       "a": 2,
-      "explanation": "The change event fires when the input value is committed."
+      "e": "The change event fires when the input value is committed."
     },
     {
       "q": "Which property is used to access the value of an input field?",
@@ -64,7 +64,7 @@
         "innerHTML"
       ],
       "a": 2,
-      "explanation": "The value property retrieves or sets the current value of an input element."
+      "e": "The value property retrieves or sets the current value of an input element."
     },
     {
       "q": "Which practice improves form accessibility?",
@@ -75,7 +75,7 @@
         "Disabling keyboard navigation"
       ],
       "a": 2,
-      "explanation": "Associating labels with inputs improves accessibility and usability."
+      "e": "Associating labels with inputs improves accessibility and usability."
     }
   ]
 }

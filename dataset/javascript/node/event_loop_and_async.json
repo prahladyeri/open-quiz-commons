@@ -9,7 +9,7 @@
         "To handle HTTP routing"
       ],
       "a": 1,
-      "explanation": "The event loop manages asynchronous operations by executing callbacks when their associated tasks are completed."
+      "e": "The event loop manages asynchronous operations by executing callbacks when their associated tasks are completed."
     },
     {
       "q": "Which of the following best describes Node.js concurrency?",
@@ -20,7 +20,7 @@
         "Multi-process execution by default"
       ],
       "a": 1,
-      "explanation": "Node.js uses a single-threaded event loop with non-blocking I/O to handle many concurrent operations efficiently."
+      "e": "Node.js uses a single-threaded event loop with non-blocking I/O to handle many concurrent operations efficiently."
     },
     {
       "q": "Which operation is handled by the Node.js thread pool rather than the event loop?",
@@ -31,7 +31,7 @@
         "HTTP request routing"
       ],
       "a": 2,
-      "explanation": "File system operations are offloaded to a thread pool managed by libuv."
+      "e": "File system operations are offloaded to a thread pool managed by libuv."
     },
     {
       "q": "Which queue is processed first in the Node.js event loop?",
@@ -42,7 +42,7 @@
         "Check queue"
       ],
       "a": 2,
-      "explanation": "The microtask queue (Promises, process.nextTick) is processed immediately after the current execution context."
+      "e": "The microtask queue (Promises, process.nextTick) is processed immediately after the current execution context."
     },
     {
       "q": "Which API schedules a callback to run before Promises are resolved?",
@@ -53,7 +53,7 @@
         "queueMicrotask"
       ],
       "a": 2,
-      "explanation": "process.nextTick callbacks run before the microtask queue and before Promises are resolved."
+      "e": "process.nextTick callbacks run before the microtask queue and before Promises are resolved."
     },
     {
       "q": "What does setImmediate() do?",
@@ -64,7 +64,7 @@
         "Runs before timers"
       ],
       "a": 1,
-      "explanation": "setImmediate schedules a callback to run after the poll phase, once I/O events are processed."
+      "e": "setImmediate schedules a callback to run after the poll phase, once I/O events are processed."
     },
     {
       "q": "Which of the following can block the Node.js event loop?",
@@ -75,7 +75,7 @@
         "HTTP requests"
       ],
       "a": 1,
-      "explanation": "Heavy synchronous computation blocks the single-threaded event loop and prevents other tasks from executing."
+      "e": "Heavy synchronous computation blocks the single-threaded event loop and prevents other tasks from executing."
     },
     {
       "q": "Why are async/await preferred over callbacks in Node.js?",
@@ -86,7 +86,7 @@
         "They run in parallel"
       ],
       "a": 2,
-      "explanation": "async/await makes asynchronous code easier to read and handle errors using try/catch."
+      "e": "async/await makes asynchronous code easier to read and handle errors using try/catch."
     },
     {
       "q": "Which phase of the event loop executes setTimeout callbacks?",
@@ -97,7 +97,7 @@
         "Close callbacks phase"
       ],
       "a": 2,
-      "explanation": "setTimeout and setInterval callbacks are executed during the timers phase."
+      "e": "setTimeout and setInterval callbacks are executed during the timers phase."
     },
     {
       "q": "What is the risk of excessive use of process.nextTick?",
@@ -108,7 +108,7 @@
         "Thread pool exhaustion"
       ],
       "a": 2,
-      "explanation": "Excessive process.nextTick calls can starve the event loop by preventing it from moving to other phases."
+      "e": "Excessive process.nextTick calls can starve the event loop by preventing it from moving to other phases."
     }
   ]
 }

@@ -2,9 +2,14 @@
   "data": [
     {
       "q": "Which keyword is used to define a function in JavaScript?",
-      "o": ["function", "def", "fn", "lambda"],
+      "o": [
+        "function",
+        "def",
+        "fn",
+        "lambda"
+      ],
       "a": 0,
-      "explanation": "`function` is the standard keyword used to define a function in JavaScript."
+      "e": "`function` is the standard keyword used to define a function in JavaScript."
     },
     {
       "q": "Which of the following creates a function expression?",
@@ -15,13 +20,18 @@
         "define add(a, b) { return a + b; }"
       ],
       "a": 1,
-      "explanation": "Assigning an anonymous function to a variable creates a function expression."
+      "e": "Assigning an anonymous function to a variable creates a function expression."
     },
     {
       "q": "What is the scope of variables declared with `let`?",
-      "o": ["Global scope", "Function scope", "Block scope", "Module scope only"],
+      "o": [
+        "Global scope",
+        "Function scope",
+        "Block scope",
+        "Module scope only"
+      ],
       "a": 2,
-      "explanation": "`let` variables are limited to the block in which they are declared."
+      "e": "`let` variables are limited to the block in which they are declared."
     },
     {
       "q": "What happens when a function declaration is hoisted?",
@@ -32,7 +42,7 @@
         "Nothing is hoisted"
       ],
       "a": 2,
-      "explanation": "Function declarations are fully hoisted, allowing them to be called before definition."
+      "e": "Function declarations are fully hoisted, allowing them to be called before definition."
     },
     {
       "q": "Which statement about arrow functions is TRUE?",
@@ -43,7 +53,7 @@
         "They require the `function` keyword"
       ],
       "a": 1,
-      "explanation": "Arrow functions do not have their own `this`; they inherit it from the enclosing scope."
+      "e": "Arrow functions do not have their own `this`; they inherit it from the enclosing scope."
     },
     {
       "q": "What is a closure in JavaScript?",
@@ -54,7 +64,7 @@
         "A way to destroy unused variables"
       ],
       "a": 0,
-      "explanation": "A closure allows a function to access variables from its outer scope even after that scope has finished executing."
+      "e": "A closure allows a function to access variables from its outer scope even after that scope has finished executing."
     },
     {
       "q": "Which variable will be accessible inside an inner function?",
@@ -65,19 +75,29 @@
         "Only function parameters"
       ],
       "a": 2,
-      "explanation": "Inner functions can access variables from their own scope as well as enclosing scopes."
+      "e": "Inner functions can access variables from their own scope as well as enclosing scopes."
     },
     {
       "q": "What is the value of `this` in a regular function called in the global scope (non-strict mode)?",
-      "o": ["undefined", "null", "window", "function itself"],
+      "o": [
+        "undefined",
+        "null",
+        "window",
+        "function itself"
+      ],
       "a": 2,
-      "explanation": "In non-strict mode, `this` refers to the global object (`window` in browsers)."
+      "e": "In non-strict mode, `this` refers to the global object (`window` in browsers)."
     },
     {
       "q": "Which keyword prevents access to a variable outside its block?",
-      "o": ["var", "let", "global", "static"],
+      "o": [
+        "var",
+        "let",
+        "global",
+        "static"
+      ],
       "a": 1,
-      "explanation": "`let` restricts variable access to the block where it is defined."
+      "e": "`let` restricts variable access to the block where it is defined."
     },
     {
       "q": "Which concept allows functions to be passed as arguments in JavaScript?",
@@ -88,7 +108,7 @@
         "Prototyping"
       ],
       "a": 2,
-      "explanation": "JavaScript treats functions as first-class citizens, allowing them to be passed and returned like any other value."
+      "e": "JavaScript treats functions as first-class citizens, allowing them to be passed and returned like any other value."
     }
   ]
 }

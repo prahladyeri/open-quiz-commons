@@ -2,27 +2,47 @@
   "data": [
     {
       "q": "Which browser storage mechanism persists data even after the browser is closed?",
-      "o": ["sessionStorage", "localStorage", "cookies", "memoryStorage"],
+      "o": [
+        "sessionStorage",
+        "localStorage",
+        "cookies",
+        "memoryStorage"
+      ],
       "a": 1,
-      "explanation": "localStorage persists data until it is explicitly cleared by the user or application."
+      "e": "localStorage persists data until it is explicitly cleared by the user or application."
     },
     {
       "q": "Which storage is scoped to a single browser tab?",
-      "o": ["localStorage", "IndexedDB", "sessionStorage", "cookies"],
+      "o": [
+        "localStorage",
+        "IndexedDB",
+        "sessionStorage",
+        "cookies"
+      ],
       "a": 2,
-      "explanation": "sessionStorage is cleared when the browser tab or window is closed."
+      "e": "sessionStorage is cleared when the browser tab or window is closed."
     },
     {
       "q": "Which storage option is best suited for large structured data?",
-      "o": ["Cookies", "localStorage", "sessionStorage", "IndexedDB"],
+      "o": [
+        "Cookies",
+        "localStorage",
+        "sessionStorage",
+        "IndexedDB"
+      ],
       "a": 3,
-      "explanation": "IndexedDB is designed for storing large amounts of structured data efficiently."
+      "e": "IndexedDB is designed for storing large amounts of structured data efficiently."
     },
     {
       "q": "Which API allows storing data as key-value string pairs?",
-      "o": ["IndexedDB", "Cache API", "localStorage", "File System API"],
+      "o": [
+        "IndexedDB",
+        "Cache API",
+        "localStorage",
+        "File System API"
+      ],
       "a": 2,
-      "explanation": "localStorage stores data as string-based key-value pairs."
+      "e": "localStorage stores data as string-based key-value pairs."
     },
     {
       "q": "What is a key limitation of cookies compared to other storage options?",
@@ -33,13 +53,18 @@
         "They persist forever"
       ],
       "a": 1,
-      "explanation": "Cookies are sent with every HTTP request, impacting performance and security."
+      "e": "Cookies are sent with every HTTP request, impacting performance and security."
     },
     {
       "q": "Which storage mechanism supports transactions?",
-      "o": ["localStorage", "sessionStorage", "IndexedDB", "cookies"],
+      "o": [
+        "localStorage",
+        "sessionStorage",
+        "IndexedDB",
+        "cookies"
+      ],
       "a": 2,
-      "explanation": "IndexedDB supports transactions for reliable data operations."
+      "e": "IndexedDB supports transactions for reliable data operations."
     }
   ]
 }

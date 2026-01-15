@@ -2,63 +2,113 @@
   "data": [
     {
       "q": "Which HTML5 element is used to embed video content in a webpage?",
-      "o": ["<media>", "<video>", "<embed>", "<object>"],
+      "o": [
+        "<media>",
+        "<video>",
+        "<embed>",
+        "<object>"
+      ],
       "a": 1,
-      "explanation": "The <video> element is specifically designed to embed video content in HTML5."
+      "e": "The <video> element is specifically designed to embed video content in HTML5."
     },
     {
       "q": "Which method of the CanvasRenderingContext2D is used to draw rectangles?",
-      "o": ["drawRect()", "fillRect()", "rectFill()", "rectangle()"],
+      "o": [
+        "drawRect()",
+        "fillRect()",
+        "rectFill()",
+        "rectangle()"
+      ],
       "a": 1,
-      "explanation": "The fillRect(x, y, width, height) method draws a filled rectangle on the canvas."
+      "e": "The fillRect(x, y, width, height) method draws a filled rectangle on the canvas."
     },
     {
       "q": "What attribute of the <audio> element allows playback controls to be displayed?",
-      "o": ["controls", "autoplay", "loop", "display"],
+      "o": [
+        "controls",
+        "autoplay",
+        "loop",
+        "display"
+      ],
       "a": 0,
-      "explanation": "The controls attribute adds play, pause, and volume controls to the audio element."
+      "e": "The controls attribute adds play, pause, and volume controls to the audio element."
     },
     {
       "q": "Which JavaScript API is commonly used for 2D graphics rendering in the browser?",
-      "o": ["WebGL", "Canvas API", "SVG API", "Three.js"],
+      "o": [
+        "WebGL",
+        "Canvas API",
+        "SVG API",
+        "Three.js"
+      ],
       "a": 1,
-      "explanation": "The Canvas API provides methods for drawing 2D graphics directly in the browser."
+      "e": "The Canvas API provides methods for drawing 2D graphics directly in the browser."
     },
     {
       "q": "Which property of the HTMLMediaElement indicates whether the media is paused?",
-      "o": ["isStopped", "paused", "ended", "playing"],
+      "o": [
+        "isStopped",
+        "paused",
+        "ended",
+        "playing"
+      ],
       "a": 1,
-      "explanation": "The paused property returns true if the media is currently paused."
+      "e": "The paused property returns true if the media is currently paused."
     },
     {
       "q": "Which method is used to start playback of an HTMLMediaElement?",
-      "o": ["begin()", "start()", "play()", "run()"],
+      "o": [
+        "begin()",
+        "start()",
+        "play()",
+        "run()"
+      ],
       "a": 2,
-      "explanation": "The play() method starts playback of audio or video elements."
+      "e": "The play() method starts playback of audio or video elements."
     },
     {
       "q": "Which Web API provides access to the user's camera and microphone?",
-      "o": ["WebRTC getUserMedia()", "MediaStream API", "Navigator.mediaDevices", "All of the above"],
+      "o": [
+        "WebRTC getUserMedia()",
+        "MediaStream API",
+        "Navigator.mediaDevices",
+        "All of the above"
+      ],
       "a": 3,
-      "explanation": "Accessing camera/microphone typically involves Navigator.mediaDevices.getUserMedia(), part of WebRTC and MediaStream APIs."
+      "e": "Accessing camera/microphone typically involves Navigator.mediaDevices.getUserMedia(), part of WebRTC and MediaStream APIs."
     },
     {
       "q": "Which attribute of the <img> tag specifies alternative text if the image cannot be displayed?",
-      "o": ["title", "alt", "description", "caption"],
+      "o": [
+        "title",
+        "alt",
+        "description",
+        "caption"
+      ],
       "a": 1,
-      "explanation": "The alt attribute provides alternative text for accessibility and when the image fails to load."
+      "e": "The alt attribute provides alternative text for accessibility and when the image fails to load."
     },
     {
       "q": "Which CSS property is commonly used to apply filters like blur or grayscale to images?",
-      "o": ["image-filter", "filter", "effects", "transform"],
+      "o": [
+        "image-filter",
+        "filter",
+        "effects",
+        "transform"
+      ],
       "a": 1,
-      "explanation": "The filter property allows applying visual effects such as blur, brightness, or grayscale."
+      "e": "The filter property allows applying visual effects such as blur, brightness, or grayscale."
     },
     {
       "q": "Which JavaScript object represents an image that can be drawn onto a canvas?",
-      "o": ["Image()", "CanvasImage()", "HTMLImageElement", "Bitmap"],
+      "o": [
+        "Image()",
+        "CanvasImage()",
+        "HTMLImageElement",
+        "Bitmap"
+      ],
       "a": 2,
-      "explanation": "HTMLImageElement objects can be created and drawn onto a canvas using drawImage()."
+      "e": "HTMLImageElement objects can be created and drawn onto a canvas using drawImage()."
     }
   ]
 }
