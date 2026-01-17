@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "q": "Which JavaScript array method is commonly used to transform each element in functional programming?",
+      "o": [
+        "forEach()",
+        "reduce()",
+        "map()",
+        "filter()"
+      ],
+      "a": 2,
+      "e": "The map() method applies a function to each element and returns a new array."
+    },
+    {
+      "q": "What does immutability mean in functional programming?",
+      "o": [
+        "Objects cannot be copied",
+        "Functions cannot return values",
+        "Variables can be reassigned freely",
+        "Data structures cannot be modified after creation"
+      ],
+      "a": 3,
+      "e": "Immutability means once a data structure is created, it cannot be changed directly."
+    },
+    {
+      "q": "Which higher-order function is best suited for accumulating values into a single result?",
+      "o": [
+        "map()",
+        "reduce()",
+        "sort()",
+        "filter()"
+      ],
+      "a": 1,
+      "e": "The reduce() function processes each element and accumulates them into a single result."
+    },
+    {
+      "q": "What is a pure function in JavaScript?",
+      "o": [
+        "A function that modifies global variables",
+        "A function that uses asynchronous operations",
+        "A function that always produces the same output for the same input",
+        "A function that depends on random values"
+      ],
+      "a": 2,
+      "e": "A pure function always returns the same output for the same input and has no side effects."
+    },
+    {
+      "q": "Which concept allows functions to be passed as arguments or returned as values?",
+      "o": [
+        "Higher-order functions",
+        "Currying",
+        "Recursion",
+        "Closures"
+      ],
+      "a": 0,
+      "e": "Higher-order functions take other functions as arguments or return them as results."
+    },
+    {
+      "q": "What is currying in functional programming?",
+      "o": [
+        "Breaking a function into multiple functions that each take a single argument",
+        "Executing a function repeatedly until a condition is met",
+        "Wrapping a function inside another function",
+        "Caching function results for reuse"
+      ],
+      "a": 0,
+      "e": "Currying transforms a function with multiple arguments into a sequence of functions each taking one argument."
+    },
+    {
+      "q": "Which functional programming concept helps avoid side effects?",
+      "o": [
+        "Pure functions",
+        "Global variables",
+        "Mutable state",
+        "Event listeners"
+      ],
+      "a": 0,
+      "e": "Pure functions avoid side effects by not modifying external state."
+    }
+  ]
+}
