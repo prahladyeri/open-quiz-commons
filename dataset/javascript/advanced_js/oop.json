@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "q": "What is the prototype chain in JavaScript used for?",
+      "o": [
+        "To execute asynchronous code",
+        "To resolve property lookups",
+        "To manage DOM events",
+        "To store global variables"
+      ],
+      "a": 1,
+      "e": "The prototype chain allows property and method lookups to traverse up linked objects."
+    },
+    {
+      "q": "Which keyword is used to define a class in modern JavaScript?",
+      "o": [
+        "function",
+        "object",
+        "class",
+        "constructor"
+      ],
+      "a": 2,
+      "e": "The class keyword was introduced in ES6 to define classes more cleanly."
+    },
+    {
+      "q": "What does the 'new' keyword do in JavaScript?",
+      "o": [
+        "Creates a new variable",
+        "Calls a function without arguments",
+        "Instantiates an object from a constructor function or class",
+        "Declares a constant"
+      ],
+      "a": 2,
+      "e": "The new keyword creates an instance of an object using a constructor function or class."
+    },
+    {
+      "q": "Which method is automatically called when creating a new instance of a class?",
+      "o": [
+        "init()",
+        "constructor()",
+        "create()",
+        "setup()"
+      ],
+      "a": 1,
+      "e": "The constructor() method is executed when a new instance of a class is created."
+    },
+    {
+      "q": "How is inheritance implemented in ES6 classes?",
+      "o": [
+        "Using the extends keyword",
+        "Using the inherit keyword",
+        "By copying properties manually",
+        "By using Object.assign()"
+      ],
+      "a": 0,
+      "e": "The extends keyword allows one class to inherit from another in ES6."
+    },
+    {
+      "q": "What does 'this' refer to inside a class method?",
+      "o": [
+        "The global object",
+        "The current instance of the class",
+        "The parent class",
+        "The prototype object"
+      ],
+      "a": 1,
+      "e": "Inside a class method, 'this' refers to the current instance of the class."
+    },
+    {
+      "q": "Which feature allows defining methods that belong to the class itself rather than its instances?",
+      "o": [
+        "Instance methods",
+        "Static methods",
+        "Prototype methods",
+        "Global functions"
+      ],
+      "a": 1,
+      "e": "Static methods are defined with the static keyword and belong to the class itself."
+    }
+  ]
+}

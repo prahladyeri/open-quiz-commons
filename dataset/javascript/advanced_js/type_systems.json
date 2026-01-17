@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which primitive type in JavaScript represents textual data?",
+      "o": [
+        "Number",
+        "Boolean",
+        "String",
+        "Object"
+      ],
+      "a": 2,
+      "e": "Strings represent sequences of characters used for textual data."
+    },
+    {
+      "q": "What is the result of typeof null in JavaScript?",
+      "o": [
+        "null",
+        "object",
+        "undefined",
+        "boolean"
+      ],
+      "a": 1,
+      "e": "Due to a historical bug, typeof null returns 'object'."
+    },
+    {
+      "q": "Which operator is used to check both value and type equality?",
+      "o": [
+        "==",
+        "===",
+        "!=",
+        "!=="
+      ],
+      "a": 1,
+      "e": "The strict equality operator (===) checks both value and type."
+    },
+    {
+      "q": "Which type represents the absence of a value in JavaScript?",
+      "o": [
+        "undefined",
+        "null",
+        "NaN",
+        "void"
+      ],
+      "a": 1,
+      "e": "Null explicitly represents the intentional absence of a value."
+    },
+    {
+      "q": "What does NaN stand for in JavaScript?",
+      "o": [
+        "Not a Null",
+        "Not a Number",
+        "Negative and Null",
+        "New assigned Number"
+      ],
+      "a": 1,
+      "e": "NaN stands for 'Not a Number' and indicates invalid numeric operations."
+    },
+    {
+      "q": "Which type system extension adds static typing to JavaScript?",
+      "o": [
+        "Flow",
+        "TypeScript",
+        "Elm",
+        "CoffeeScript"
+      ],
+      "a": 1,
+      "e": "TypeScript is a superset of JavaScript that adds static typing."
+    },
+    {
+      "q": "Which keyword in TypeScript defines a custom type?",
+      "o": [
+        "interface",
+        "type",
+        "struct",
+        "define"
+      ],
+      "a": 1,
+      "e": "The type keyword allows defining custom type aliases in TypeScript."
+    },
+    {
+      "q": "Which operator can be used to check if a value is of a specific constructor type?",
+      "o": [
+        "typeof",
+        "instanceof",
+        "===",
+        "is"
+      ],
+      "a": 1,
+      "e": "The instanceof operator checks if an object is an instance of a specific constructor."
+    },
+    {
+      "q": "Which TypeScript feature ensures variables are not null or undefined?",
+      "o": [
+        "Strict mode",
+        "Non-null assertion",
+        "Optional chaining",
+        "Type inference"
+      ],
+      "a": 1,
+      "e": "The non-null assertion operator (!) tells TypeScript a value is not null or undefined."
+    },
+    {
+      "q": "Which TypeScript feature automatically deduces the type of a variable?",
+      "o": [
+        "Type inference",
+        "Type casting",
+        "Type declaration",
+        "Type assertion"
+      ],
+      "a": 0,
+      "e": "Type inference allows TypeScript to deduce variable types based on assigned values."
+    }
+  ]
+}

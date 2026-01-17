@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "q": "Which design pattern ensures only one instance of a class is created?",
+      "o": [
+        "Factory Pattern",
+        "Singleton Pattern",
+        "Observer Pattern",
+        "Decorator Pattern"
+      ],
+      "a": 1,
+      "e": "The Singleton Pattern restricts instantiation so only one instance of a class exists."
+    },
+    {
+      "q": "Which design pattern provides a way to create objects without specifying the exact class?",
+      "o": [
+        "Factory Pattern",
+        "Singleton Pattern",
+        "Observer Pattern",
+        "Prototype Pattern"
+      ],
+      "a": 0,
+      "e": "The Factory Pattern abstracts object creation, allowing flexibility in instantiation."
+    },
+    {
+      "q": "Which design pattern allows objects to be notified when another object changes state?",
+      "o": [
+        "Decorator Pattern",
+        "Observer Pattern",
+        "Factory Pattern",
+        "Adapter Pattern"
+      ],
+      "a": 1,
+      "e": "The Observer Pattern establishes a one-to-many dependency so observers are updated automatically."
+    },
+    {
+      "q": "Which design pattern lets you add new behavior to objects dynamically?",
+      "o": [
+        "Decorator Pattern",
+        "Singleton Pattern",
+        "Observer Pattern",
+        "Factory Pattern"
+      ],
+      "a": 0,
+      "e": "The Decorator Pattern attaches additional responsibilities to objects without modifying their structure."
+    },
+    {
+      "q": "Which design pattern allows incompatible interfaces to work together?",
+      "o": [
+        "Adapter Pattern",
+        "Observer Pattern",
+        "Decorator Pattern",
+        "Factory Pattern"
+      ],
+      "a": 0,
+      "e": "The Adapter Pattern translates one interface into another, enabling interoperability."
+    },
+    {
+      "q": "Which design pattern involves cloning existing objects to create new ones?",
+      "o": [
+        "Prototype Pattern",
+        "Factory Pattern",
+        "Decorator Pattern",
+        "Singleton Pattern"
+      ],
+      "a": 0,
+      "e": "The Prototype Pattern creates new objects by copying existing ones, reducing overhead."
+    },
+    {
+      "q": "Which design pattern separates object construction from its representation?",
+      "o": [
+        "Builder Pattern",
+        "Factory Pattern",
+        "Observer Pattern",
+        "Decorator Pattern"
+      ],
+      "a": 0,
+      "e": "The Builder Pattern allows step-by-step construction of complex objects."
+    }
+  ]
+}

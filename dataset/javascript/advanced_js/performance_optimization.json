@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "q": "Which technique reduces the number of times a function is executed during rapid events like scrolling?",
+      "o": [
+        "Memoization",
+        "Debouncing",
+        "Lazy loading",
+        "Minification"
+      ],
+      "a": 1,
+      "e": "Debouncing delays execution until events stop firing, reducing unnecessary function calls."
+    },
+    {
+      "q": "What does memoization help optimize in JavaScript?",
+      "o": [
+        "Network requests",
+        "Repeated function calls with the same inputs",
+        "DOM rendering",
+        "File system operations"
+      ],
+      "a": 1,
+      "e": "Memoization caches results of function calls to avoid recomputation."
+    },
+    {
+      "q": "Which method improves performance by loading resources only when they are needed?",
+      "o": [
+        "Lazy loading",
+        "Debouncing",
+        "Minification",
+        "Caching"
+      ],
+      "a": 0,
+      "e": "Lazy loading defers resource loading until they are required, improving initial load time."
+    },
+    {
+      "q": "Which practice reduces JavaScript file size for faster downloads?",
+      "o": [
+        "Transpiling",
+        "Minification",
+        "Memoization",
+        "Debouncing"
+      ],
+      "a": 1,
+      "e": "Minification removes unnecessary characters like whitespace and comments to reduce file size."
+    },
+    {
+      "q": "Which browser API helps measure performance metrics like load times?",
+      "o": [
+        "Performance API",
+        "Storage API",
+        "Fetch API",
+        "Canvas API"
+      ],
+      "a": 0,
+      "e": "The Performance API provides methods to measure and analyze page performance."
+    },
+    {
+      "q": "Which technique reduces reflows and repaints when updating the DOM?",
+      "o": [
+        "Batching DOM updates",
+        "Lazy loading",
+        "Memoization",
+        "Minification"
+      ],
+      "a": 0,
+      "e": "Batching DOM updates minimizes layout recalculations and improves rendering performance."
+    },
+    {
+      "q": "Which strategy improves performance by serving cached responses instead of recomputing or refetching?",
+      "o": [
+        "Debouncing",
+        "Memoization",
+        "Caching",
+        "Lazy loading"
+      ],
+      "a": 2,
+      "e": "Caching stores frequently used data or responses to avoid repeated computation or network requests."
+    }
+  ]
+}
