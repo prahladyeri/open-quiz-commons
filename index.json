@@ -169,6 +169,18 @@
             { "name": "Child Processes & Workers", "slug": "child_processes_and_workers"},
             { "name": "Node Security", "slug": "node_security" }
           ]
+        },
+        {
+          "name": "Advanced JS",
+          "slug": "advanced_js",
+          "hidden": true,
+          "modules": [
+            { "name": "Functional Programming", "slug": "functional_programming" },
+            { "name": "Object-Oriented JS", "slug": "oop" },
+            { "name": "Design Patterns", "slug": "design_patterns" },
+            { "name": "Performance Optimization", "slug": "performance_optimization" },
+            { "name": "Type Systems", "slug": "type_systems" }
+          ]
         }
       ]
     }
