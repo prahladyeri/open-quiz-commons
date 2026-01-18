@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which function from the os module returns the current working directory?",
+      "o": [
+        "os.getcwd()",
+        "os.getcwdb()",
+        "os.path()",
+        "os.cwd()"
+      ],
+      "a": 0,
+      "e": "os.getcwd() returns the current working directory as a string."
+    },
+    {
+      "q": "Which function from the os module changes the current working directory?",
+      "o": [
+        "os.chdir()",
+        "os.change()",
+        "os.path()",
+        "os.move()"
+      ],
+      "a": 0,
+      "e": "os.chdir(path) changes the current working directory to the specified path."
+    },
+    {
+      "q": "Which attribute of the sys module gives the list of command-line arguments?",
+      "o": [
+        "sys.argv",
+        "sys.args",
+        "sys.arguments",
+        "sys.cmd"
+      ],
+      "a": 0,
+      "e": "sys.argv is a list containing the command-line arguments passed to the script."
+    },
+    {
+      "q": "Which function from the os module is used to remove a file?",
+      "o": [
+        "os.delete()",
+        "os.remove()",
+        "os.unlink()",
+        "os.rmdir()"
+      ],
+      "a": 1,
+      "e": "os.remove(path) deletes the specified file."
+    },
+    {
+      "q": "Which function from the os module removes an empty directory?",
+      "o": [
+        "os.rmdir()",
+        "os.remove()",
+        "os.unlink()",
+        "os.deletedir()"
+      ],
+      "a": 0,
+      "e": "os.rmdir(path) removes an empty directory."
+    },
+    {
+      "q": "Which sys function terminates the program?",
+      "o": [
+        "sys.exit()",
+        "sys.quit()",
+        "sys.stop()",
+        "sys.end()"
+      ],
+      "a": 0,
+      "e": "sys.exit() raises SystemExit and terminates the program."
+    },
+    {
+      "q": "Which attribute of sys gives the version of Python being used?",
+      "o": [
+        "sys.version",
+        "sys.pyversion",
+        "sys.info",
+        "sys.release"
+      ],
+      "a": 0,
+      "e": "sys.version returns a string containing the Python version."
+    },
+    {
+      "q": "Which function from the os module lists files and directories in a given path?",
+      "o": [
+        "os.listdir()",
+        "os.list()",
+        "os.dir()",
+        "os.showdir()"
+      ],
+      "a": 0,
+      "e": "os.listdir(path) returns a list of entries in the given directory."
+    },
+    {
+      "q": "Which sys attribute gives the platform identifier?",
+      "o": [
+        "sys.platform",
+        "sys.os",
+        "sys.system",
+        "sys.env"
+      ],
+      "a": 0,
+      "e": "sys.platform returns a string identifying the operating system platform."
+    },
+    {
+      "q": "Which os function is used to create a new directory?",
+      "o": [
+        "os.mkdir()",
+        "os.makedir()",
+        "os.newdir()",
+        "os.createdir()"
+      ],
+      "a": 0,
+      "e": "os.mkdir(path) creates a new directory at the specified path."
+    }
+  ]
+}
