@@ -70,7 +70,6 @@
           ]
         },
         {
-          "hidden": true,
           "name": "System & OS",
           "slug": "system_and_os",
           "modules": [
