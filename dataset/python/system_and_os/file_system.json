@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which function is used to check if a path exists?",
+      "o": [
+        "os.exists()",
+        "os.path.exists()",
+        "os.path.check()",
+        "os.isfile()"
+      ],
+      "a": 1,
+      "e": "os.path.exists(path) returns True if the path exists, whether it is a file or directory."
+    },
+    {
+      "q": "Which function checks if a path is a directory?",
+      "o": [
+        "os.path.isdir()",
+        "os.path.isfile()",
+        "os.path.exists()",
+        "os.path.ispath()"
+      ],
+      "a": 0,
+      "e": "os.path.isdir(path) returns True if the path is a directory."
+    },
+    {
+      "q": "Which function checks if a path is a file?",
+      "o": [
+        "os.path.isfile()",
+        "os.path.isdir()",
+        "os.path.exists()",
+        "os.path.isfiledir()"
+      ],
+      "a": 0,
+      "e": "os.path.isfile(path) returns True if the path is a regular file."
+    },
+    {
+      "q": "Which function creates a new directory?",
+      "o": [
+        "os.mkdir()",
+        "os.makedir()",
+        "os.newdir()",
+        "os.createdir()"
+      ],
+      "a": 0,
+      "e": "os.mkdir(path) creates a new directory at the specified path."
+    },
+    {
+      "q": "Which function creates intermediate directories if they don’t exist?",
+      "o": [
+        "os.makedirs()",
+        "os.mkdir()",
+        "os.makedir()",
+        "os.newdirs()"
+      ],
+      "a": 0,
+      "e": "os.makedirs(path) creates all intermediate-level directories needed to contain the leaf directory."
+    },
+    {
+      "q": "Which function removes a file?",
+      "o": [
+        "os.remove()",
+        "os.delete()",
+        "os.unlink()",
+        "os.rmdir()"
+      ],
+      "a": 0,
+      "e": "os.remove(path) deletes the specified file."
+    },
+    {
+      "q": "Which function removes an empty directory?",
+      "o": [
+        "os.rmdir()",
+        "os.remove()",
+        "os.unlink()",
+        "os.deletedir()"
+      ],
+      "a": 0,
+      "e": "os.rmdir(path) removes an empty directory."
+    },
+    {
+      "q": "Which function lists all files and directories in a given path?",
+      "o": [
+        "os.listdir()",
+        "os.list()",
+        "os.dir()",
+        "os.showdir()"
+      ],
+      "a": 0,
+      "e": "os.listdir(path) returns a list of entries in the given directory."
+    },
+    {
+      "q": "Which function returns the absolute path of a file?",
+      "o": [
+        "os.path.abspath()",
+        "os.path.realpath()",
+        "os.path.fullpath()",
+        "os.path.complete()"
+      ],
+      "a": 0,
+      "e": "os.path.abspath(path) returns the absolute path of the given file or directory."
+    },
+    {
+      "q": "Which function splits a path into directory and file components?",
+      "o": [
+        "os.path.split()",
+        "os.path.divide()",
+        "os.path.dirname()",
+        "os.path.basename()"
+      ],
+      "a": 0,
+      "e": "os.path.split(path) returns a tuple (head, tail) where head is the directory and tail is the file name."
+    }
+  ]
+}

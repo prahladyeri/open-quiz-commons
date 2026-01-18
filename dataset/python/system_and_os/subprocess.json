@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which function is commonly used to run a command and capture its output?",
+      "o": [
+        "subprocess.run()",
+        "subprocess.call()",
+        "subprocess.Popen()",
+        "subprocess.execute()"
+      ],
+      "a": 0,
+      "e": "subprocess.run() executes a command and can capture output using the capture_output or stdout argument."
+    },
+    {
+      "q": "Which argument of subprocess.run() ensures the command raises an exception if it fails?",
+      "o": [
+        "check=True",
+        "error=True",
+        "raise=True",
+        "assert=True"
+      ],
+      "a": 0,
+      "e": "Using check=True makes subprocess.run() raise CalledProcessError if the command exits with a non-zero status."
+    },
+    {
+      "q": "Which class provides more fine-grained control over process creation and communication?",
+      "o": [
+        "subprocess.Process",
+        "subprocess.Popen",
+        "subprocess.Executor",
+        "subprocess.Command"
+      ],
+      "a": 1,
+      "e": "subprocess.Popen allows advanced control over input, output, and process lifecycle."
+    },
+    {
+      "q": "Which argument of subprocess.run() captures standard output?",
+      "o": [
+        "stdout=subprocess.PIPE",
+        "output=True",
+        "capture=True",
+        "pipe=True"
+      ],
+      "a": 0,
+      "e": "Setting stdout=subprocess.PIPE captures the command’s standard output."
+    },
+    {
+      "q": "Which argument of subprocess.run() captures standard error?",
+      "o": [
+        "stderr=subprocess.PIPE",
+        "error=True",
+        "capture_error=True",
+        "pipe_error=True"
+      ],
+      "a": 0,
+      "e": "stderr=subprocess.PIPE captures the command’s standard error output."
+    },
+    {
+      "q": "Which function is a simpler alternative to run() that only returns the exit code?",
+      "o": [
+        "subprocess.call()",
+        "subprocess.run()",
+        "subprocess.Popen()",
+        "subprocess.execute()"
+      ],
+      "a": 0,
+      "e": "subprocess.call() runs a command and returns its exit code."
+    },
+    {
+      "q": "Which attribute of CompletedProcess stores the exit status of the command?",
+      "o": [
+        "returncode",
+        "exitcode",
+        "status",
+        "code"
+      ],
+      "a": 0,
+      "e": "The returncode attribute indicates the exit status of the executed command."
+    },
+    {
+      "q": "Which method of Popen waits for the process to complete?",
+      "o": [
+        "wait()",
+        "join()",
+        "finish()",
+        "complete()"
+      ],
+      "a": 0,
+      "e": "The wait() method blocks until the process finishes and returns its exit code."
+    },
+    {
+      "q": "Which method of Popen allows sending input and reading output/error streams?",
+      "o": [
+        "communicate()",
+        "interact()",
+        "exchange()",
+        "dialog()"
+      ],
+      "a": 0,
+      "e": "communicate() sends data to stdin and reads data from stdout and stderr."
+    },
+    {
+      "q": "Which argument of subprocess.run() executes the command through the shell?",
+      "o": [
+        "shell=True",
+        "exec=True",
+        "system=True",
+        "command=True"
+      ],
+      "a": 0,
+      "e": "shell=True runs the command through the shell, allowing shell features like pipes and wildcards."
+    }
+  ]
+}

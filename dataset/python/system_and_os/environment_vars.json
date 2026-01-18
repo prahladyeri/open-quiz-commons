@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which function retrieves the value of an environment variable?",
+      "o": [
+        "os.getenv()",
+        "os.environ.get()",
+        "sys.getenv()",
+        "env.get()"
+      ],
+      "a": 0,
+      "e": "os.getenv('VAR_NAME') returns the value of the specified environment variable or None if not set."
+    },
+    {
+      "q": "Which attribute provides direct access to all environment variables as a dictionary?",
+      "o": [
+        "os.environ",
+        "sys.environ",
+        "os.env",
+        "sys.env"
+      ],
+      "a": 0,
+      "e": "os.environ is a dictionary-like object containing the current environment variables."
+    },
+    {
+      "q": "Which method sets a new environment variable in Python?",
+      "o": [
+        "os.environ['VAR'] = 'value'",
+        "os.setenv('VAR','value')",
+        "sys.setenv('VAR','value')",
+        "env.set('VAR','value')"
+      ],
+      "a": 0,
+      "e": "Assigning to os.environ['VAR'] sets or updates an environment variable."
+    },
+    {
+      "q": "Which function removes an environment variable?",
+      "o": [
+        "os.unsetenv()",
+        "os.removeenv()",
+        "del os.environ['VAR']",
+        "sys.unsetenv()"
+      ],
+      "a": 2,
+      "e": "Deleting the key from os.environ removes the environment variable."
+    },
+    {
+      "q": "What does os.putenv() do?",
+      "o": [
+        "Deletes an environment variable",
+        "Sets the value of an environment variable",
+        "Lists all environment variables",
+        "Copies environment variables to a file"
+      ],
+      "a": 1,
+      "e": "os.putenv(key, value) sets the value of an environment variable for the current process."
+    },
+    {
+      "q": "Which environment variable typically stores the system PATH?",
+      "o": [
+        "PYTHONPATH",
+        "PATH",
+        "HOME",
+        "USER"
+      ],
+      "a": 1,
+      "e": "PATH contains directories searched for executable programs."
+    },
+    {
+      "q": "Which environment variable specifies the user’s home directory?",
+      "o": [
+        "HOME",
+        "USER",
+        "PWD",
+        "ROOT"
+      ],
+      "a": 0,
+      "e": "HOME points to the current user’s home directory."
+    },
+    {
+      "q": "Which environment variable can be used to add custom module search paths in Python?",
+      "o": [
+        "PYTHONPATH",
+        "PATH",
+        "PYTHONHOME",
+        "PYTHONENV"
+      ],
+      "a": 0,
+      "e": "PYTHONPATH specifies additional directories to search for Python modules."
+    },
+    {
+      "q": "Which function can be used to copy the current environment variables for subprocesses?",
+      "o": [
+        "os.environ.copy()",
+        "sys.environ.copy()",
+        "os.copyenv()",
+        "env.copy()"
+      ],
+      "a": 0,
+      "e": "os.environ.copy() returns a dictionary copy of the current environment variables."
+    },
+    {
+      "q": "Which environment variable indicates the current working directory?",
+      "o": [
+        "PWD",
+        "HOME",
+        "PATH",
+        "CWD"
+      ],
+      "a": 0,
+      "e": "PWD stores the path of the current working directory in Unix-like systems."
+    }
+  ]
+}

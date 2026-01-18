@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which Python module is commonly used for automating operating system tasks?",
+      "o": [
+        "os",
+        "sys",
+        "subprocess",
+        "automation"
+      ],
+      "a": 0,
+      "e": "The os module provides functions to interact with the operating system for automation tasks."
+    },
+    {
+      "q": "Which module allows automation of running external commands and processes?",
+      "o": [
+        "os",
+        "sys",
+        "subprocess",
+        "threading"
+      ],
+      "a": 2,
+      "e": "The subprocess module enables automation of external commands and process management."
+    },
+    {
+      "q": "Which function from the os module can be used to rename files?",
+      "o": [
+        "os.rename()",
+        "os.move()",
+        "os.change()",
+        "os.replace()"
+      ],
+      "a": 0,
+      "e": "os.rename(old, new) renames a file or directory."
+    },
+    {
+      "q": "Which module is used for scheduling tasks in Python?",
+      "o": [
+        "sched",
+        "time",
+        "threading",
+        "schedule"
+      ],
+      "a": 0,
+      "e": "The sched module provides a general-purpose event scheduler for automation."
+    },
+    {
+      "q": "Which function from the shutil module copies files?",
+      "o": [
+        "shutil.copy()",
+        "shutil.move()",
+        "shutil.copyfile()",
+        "shutil.copytree()"
+      ],
+      "a": 0,
+      "e": "shutil.copy(src, dst) copies the contents of a file to another location."
+    },
+    {
+      "q": "Which function from the shutil module moves files or directories?",
+      "o": [
+        "shutil.move()",
+        "shutil.rename()",
+        "shutil.transfer()",
+        "shutil.shift()"
+      ],
+      "a": 0,
+      "e": "shutil.move(src, dst) moves a file or directory to a new location."
+    },
+    {
+      "q": "Which Python module can be used to automate web interactions?",
+      "o": [
+        "selenium",
+        "requests",
+        "urllib",
+        "http"
+      ],
+      "a": 0,
+      "e": "Selenium is widely used for automating browsers and web interactions."
+    },
+    {
+      "q": "Which function from the os module can be used to remove files?",
+      "o": [
+        "os.remove()",
+        "os.delete()",
+        "os.unlink()",
+        "os.rmdir()"
+      ],
+      "a": 0,
+      "e": "os.remove(path) deletes the specified file."
+    },
+    {
+      "q": "Which Python module provides high-level file operations like copying and archiving?",
+      "o": [
+        "shutil",
+        "os",
+        "sys",
+        "pathlib"
+      ],
+      "a": 0,
+      "e": "The shutil module provides high-level file operations such as copy, move, and archive."
+    },
+    {
+      "q": "Which Python module can be used to automate sending HTTP requests?",
+      "o": [
+        "http",
+        "urllib",
+        "requests",
+        "socket"
+      ],
+      "a": 2,
+      "e": "The requests module simplifies sending HTTP requests for automation tasks."
+    }
+  ]
+}
