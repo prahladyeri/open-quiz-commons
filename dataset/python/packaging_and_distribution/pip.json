@@ -2,134 +2,134 @@
   "data": [
     {
       "q": "Which command is used to install a specific version of a package, such as `requests` version 2.25.1?",
-      "a": [
+      "o": [
         "pip install requests==2.25.1",
         "pip install requests=2.25.1",
         "pip install requests@2.25.1",
         "pip install requests:2.25.1"
       ],
-      "i": 0,
+      "a": 0,
       "e": "Pip uses the double equals operator (`==`) to specify an exact version match during installation."
     },
     {
       "q": "What is the primary difference between `pip list` and `pip freeze`?",
-      "a": [
+      "o": [
         "`pip list` shows global packages, `pip freeze` shows local ones",
         "`pip list` is for humans, `pip freeze` is for requirements files",
         "`pip list` installs packages, `pip freeze` uninstalls them",
         "There is no difference"
       ],
-      "i": 1,
+      "a": 1,
       "e": "`pip list` outputs a tabular format for easy reading, while `pip freeze` outputs the `package==version` format required for a `requirements.txt` file."
     },
     {
       "q": "Which flag is used to install packages from a requirements file?",
-      "a": [
+      "o": [
         "-f",
         "-i",
         "-r",
         "-x"
       ],
-      "i": 2,
+      "a": 2,
       "e": "The `-r` (or `--requirement`) flag tells pip to read and install all packages listed in the specified text file."
     },
     {
       "q": "How do you upgrade an existing package to the latest version using pip?",
-      "a": [
+      "o": [
         "pip update <package>",
         "pip upgrade <package>",
         "pip install --upgrade <package>",
         "pip install --new <package>"
       ],
-      "i": 2,
+      "a": 2,
       "e": "Pip does not have a standalone `upgrade` command; you must use the `--upgrade` (or `-U`) flag with the `install` command."
     },
     {
       "q": "What does the command `pip show <package>` display?",
-      "a": [
+      "o": [
         "The source code of the package",
         "A list of all files installed by the package",
         "Information about an installed package (version, location, dependencies)",
         "The documentation URL only"
       ],
-      "i": 2,
+      "a": 2,
       "e": "`pip show` provides metadata about an installed package, including its version, summary, author, and license."
     },
     {
       "q": "Which command is used to uninstall a package?",
-      "a": [
+      "o": [
         "pip remove <package>",
         "pip delete <package>",
         "pip uninstall <package>",
         "pip drop <package>"
       ],
-      "i": 2,
+      "a": 2,
       "e": "The `uninstall` command removes the specified package and its associated files from the environment."
     },
     {
       "q": "What is the purpose of the `--user` flag in `pip install --user <package>`?",
-      "a": [
+      "o": [
         "To install a package for all users on the system",
         "To install the package in the current user's site-packages directory",
         "To run pip as a superuser",
         "To set the package author name to the current user"
       ],
-      "i": 1,
+      "a": 1,
       "e": "The `--user` flag installs packages into the user's home directory, which is useful when you don't have administrative write access to the system-wide Python directory."
     },
     {
       "q": "Which command checks if installed packages have compatible dependencies?",
-      "a": [
+      "o": [
         "pip verify",
         "pip audit",
         "pip check",
         "pip doctor"
       ],
-      "i": 2,
+      "a": 2,
       "e": "`pip check` verifies that the installed packages in the environment have compatible dependencies and reports any broken links."
     },
     {
       "q": "How do you install a package from a specific URL (e.g., a git repository)?",
-      "a": [
+      "o": [
         "pip install git+https://url/to/repo.git",
         "pip fetch https://url/to/repo.git",
         "pip get https://url/to/repo.git",
         "pip pull https://url/to/repo.git"
       ],
-      "i": 0,
+      "a": 0,
       "e": "Pip can install directly from Version Control Systems using the prefix (e.g., `git+`, `svn+`, `hg+`) followed by the URL."
     },
     {
       "q": "What is the default repository pip uses to find and download packages?",
-      "a": [
+      "o": [
         "GitHub",
         "Conda-Forge",
         "PyPI (Python Package Index)",
         "SourceForge"
       ],
-      "i": 2,
+      "a": 2,
       "e": "PyPI is the official third-party software repository for Python, which pip queries by default."
     },
     {
       "q": "Which command would you use to find out which files were installed by a package named `requests`?",
-      "a": [
+      "o": [
         "pip list --files requests",
         "pip show --files requests",
         "pip check --files requests",
         "pip inspect requests"
       ],
-      "i": 1,
+      "a": 1,
       "e": "Adding the `--files` flag to `pip show` lists all the files that were installed as part of that package."
     },
     {
       "q": "How can you prevent pip from using the cache during an installation?",
-      "a": [
+      "o": [
         "--no-cache-dir",
         "--fresh",
         "--ignore-cache",
         "--clean"
       ],
-      "i": 0,
+      "a": 0,
       "e": "The `--no-cache-dir` flag forces pip to download the package from the index even if a cached version exists locally."
     }
   ]
