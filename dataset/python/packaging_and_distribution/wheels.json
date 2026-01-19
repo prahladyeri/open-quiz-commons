@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is a Python 'Wheel' (.whl)?",
+      "o": [
+        "A source distribution that must be compiled",
+        "A built distribution format that speeds up installation",
+        "A script used to automate virtual environment creation",
+        "A tool for managing multiple Python versions"
+      ],
+      "a": 1,
+      "e": "Wheels are a 'built' distribution format. Unlike source distributions (sdist), they don't require a build/compile step on the user's machine, making installation much faster."
+    },
+    {
+      "q": "Which tool is the standard utility used to upload distribution packages to PyPI?",
+      "o": [
+        "pip",
+        "setuptools",
+        "twine",
+        "wheel"
+      ],
+      "a": 2,
+      "e": "`twine` is the recommended tool for uploading packages to PyPI because it securely handles file uploads and doesn't execute `setup.py` during the process."
+    },
+    {
+      "q": "What does a 'pure Python' wheel mean?",
+      "o": [
+        "It contains no third-party dependencies",
+        "It only works on Linux systems",
+        "It contains only Python code and no C extensions",
+        "It is compatible only with the latest Python version"
+      ],
+      "a": 2,
+      "e": "A pure Python wheel contains only Python code. Because it doesn't have compiled C extensions, the same wheel file can work on any operating system."
+    },
+    {
+      "q": "Which of the following is a 'platform wheel' filename suffix for a 64-bit Windows system?",
+      "o": [
+        "any.whl",
+        "win_amd64.whl",
+        "macosx_x86_64.whl",
+        "manylinux1_x86_64.whl"
+      ],
+      "a": 1,
+      "e": "Platform wheels contain compiled code and are specific to an OS and architecture. `win_amd64` indicates a 64-bit Windows build."
+    },
+    {
+      "q": "What is the standard command to build both a source distribution and a wheel using the `build` module?",
+      "o": [
+        "python -m build",
+        "python setup.py sdist bdist_wheel",
+        "pip wheel .",
+        "twine build ."
+      ],
+      "a": 0,
+      "e": "While the `setup.py` method is older, `python -m build` (from the `build` package) is the modern, PEP 517-consistent way to generate distributions."
+    },
+    {
+      "q": "What is 'TestPyPI' used for?",
+      "o": [
+        "To run unit tests for your project",
+        "A separate instance of PyPI for testing the publishing process",
+        "A repository for beta-version software only",
+        "A tool for checking package security vulnerabilities"
+      ],
+      "a": 1,
+      "e": "TestPyPI allows developers to practice the upload process and verify metadata without affecting the real Python Package Index."
+    },
+    {
+      "q": "What does the `manylinux` tag in a wheel filename refer to?",
+      "o": [
+        "A wheel that requires a specific Linux distribution like Ubuntu",
+        "A wheel compatible across most common Linux distributions",
+        "A wheel that only works on server-side hardware",
+        "A package that supports multiple Python interpreters"
+      ],
+      "a": 1,
+      "e": "The `manylinux` standard (like `manylinux2014`) ensures that binary wheels are compiled against a sufficiently old `glibc` to be compatible with almost all modern Linux distros."
+    },
+    {
+      "q": "Which file provides the metadata used by PyPI to display the project description on its website?",
+      "o": [
+        "MANIFEST.in",
+        "README.md (referenced in setup.py or pyproject.toml)",
+        "CHANGELOG.txt",
+        "metadata.json"
+      ],
+      "a": 1,
+      "e": "PyPI uses the `long_description` field (usually read from the README file) to render the project's home page on the index."
+    },
+    {
+      "q": "Which command allows you to check if your distribution's metadata will render correctly on PyPI?",
+      "o": [
+        "twine check dist/*",
+        "pip verify dist/*",
+        "python -m build --check",
+        "check-manifest"
+      ],
+      "a": 0,
+      "e": "`twine check` validates that your package description is in a valid format (like reStructuredText or Markdown) that PyPI can render."
+    },
+    {
+      "q": "What happens if you try to upload a wheel with the same version number as one already existing on PyPI?",
+      "o": [
+        "The old version is overwritten",
+        "The upload fails with an error",
+        "It creates a sub-version (e.g., 1.0.0-1)",
+        "It creates a 'latest' alias"
+      ],
+      "a": 1,
+      "e": "PyPI does not allow overwriting or reusing version numbers. Once a version is published, you must increment the version number for a new upload."
+    },
+    {
+      "q": "Why are wheels preferred over source distributions (sdist) for packages with C extensions?",
+      "o": [
+        "They take up less disk space",
+        "They don't require the user to have a C compiler installed",
+        "They are more secure",
+        "They support more Python versions"
+      ],
+      "a": 1,
+      "e": "Because wheels are pre-compiled, the user doesn't need a compiler or development headers (like `python-dev`) to install the package."
+    },
+    {
+      "q": "In the wheel filename `cryptography-3.4.8-cp36-abi3-manylinux_2_24_x86_64.whl`, what does `cp36` represent?",
+      "o": [
+        "The version of the package",
+        "The minimum CPython version (3.6) required",
+        "The operating system version",
+        "The encryption algorithm used"
+      ],
+      "a": 1,
+      "e": "The `cp36` tag indicates the Python implementation (CPython) and version (3.6) that the wheel was built for."
+    }
+  ]
+}

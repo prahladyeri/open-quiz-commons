@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which function is the entry point for a traditional `setup.py` script?",
+      "o": [
+        "setuptools.init()",
+        "setuptools.setup()",
+        "distutils.build()",
+        "packaging.install()"
+      ],
+      "a": 1,
+      "e": "The `setup()` function from `setuptools` is the standard way to define metadata and configuration in a `setup.py` file."
+    },
+    {
+      "q": "Which file is currently the recommended standard for defining build system requirements and project metadata in modern Python packaging?",
+      "o": [
+        "requirements.txt",
+        "setup.cfg",
+        "MANIFEST.in",
+        "pyproject.toml"
+      ],
+      "a": 3,
+      "e": "Defined in PEP 518 and PEP 621, `pyproject.toml` is the modern, tool-agnostic standard for Python project configuration."
+    },
+    {
+      "q": "In a `setup.py` file, which argument is used to list other packages that must be installed for your package to work?",
+      "o": [
+        "requires",
+        "install_requires",
+        "dependencies",
+        "setup_requires"
+      ],
+      "a": 1,
+      "e": "`install_requires` specifies the minimum dependencies that pip will automatically install when your package is installed."
+    },
+    {
+      "q": "What is the purpose of the `entry_points` argument in `setup.py`?",
+      "o": [
+        "To define the project's homepage",
+        "To list the supported Python versions",
+        "To create automatic command-line scripts",
+        "To specify the license type"
+      ],
+      "a": 2,
+      "e": "The `console_scripts` inside `entry_points` allow you to map a command name to a specific Python function, creating an executable script upon installation."
+    },
+    {
+      "q": "In `pyproject.toml`, which section is used to specify the build backend (like setuptools, hatch, or flit)?",
+      "o": [
+        "[project]",
+        "[build-system]",
+        "[tool.poetry]",
+        "[metadata]"
+      ],
+      "a": 1,
+      "e": "The `[build-system]` table defines the dependencies and the entry point for the build backend used to create the distribution."
+    },
+    {
+      "q": "Which `setup.py` argument allows you to include non-Python files (like images or data files) that are tracked by version control?",
+      "o": [
+        "include_package_data=True",
+        "package_data={...}",
+        "data_files=[...]",
+        "zip_safe=False"
+      ],
+      "a": 0,
+      "e": "Setting `include_package_data=True` tells setuptools to look at `MANIFEST.in` or version control to include non-code files."
+    },
+    {
+      "q": "What does the `classifiers` list in a setup file help with?",
+      "o": [
+        "It speeds up the installation process",
+        "It provides metadata for searching on PyPI (e.g., license, OS, Python version)",
+        "It defines the directory structure of the project",
+        "It lists the authors and their emails"
+      ],
+      "a": 1,
+      "e": "Classifiers (or 'Trove classifiers') help PyPI categorize your project so users can filter by maturity, license, or supported versions."
+    },
+    {
+      "q": "How do you specify 'extras' (optional dependencies, like `pip install mypkg[pdf]`) in a `setup.py`?",
+      "o": [
+        "optional_requires",
+        "extras_require",
+        "extra_dependencies",
+        "features"
+      ],
+      "a": 1,
+      "e": "The `extras_require` dictionary maps feature names to lists of dependencies that aren't required for the base installation."
+    },
+    {
+      "q": "Which command is used to install a package in 'editable' mode so changes to the source code are reflected immediately?",
+      "o": [
+        "pip install --dev .",
+        "pip install -e .",
+        "python setup.py install",
+        "pip install --link ."
+      ],
+      "a": 1,
+      "e": "The `-e` (editable) flag installs the package using a symlink or path reference to the local source directory."
+    },
+    {
+      "q": "What is the equivalent of `install_requires` in the standard `[project]` table of a `pyproject.toml` file?",
+      "o": [
+        "dependencies",
+        "requires-dist",
+        "requirements",
+        "install-names"
+      ],
+      "a": 0,
+      "e": "According to PEP 621, the `dependencies` key under the `[project]` table is the standard way to list project requirements."
+    },
+    {
+      "q": "What is a 'Source Distribution' (sdist) in Python packaging?",
+      "o": [
+        "A compiled version of the code for a specific OS",
+        "An archive containing the source code and setup files, requiring a build step",
+        "A binary format that can be installed without a compiler",
+        "A folder containing only the documentation"
+      ],
+      "a": 1,
+      "e": "An `sdist` is a distribution format (usually `.tar.gz`) that contains the source code and must be built/installed by the end user."
+    },
+    {
+      "q": "What is the purpose of the `find_packages()` function usually imported from `setuptools`?",
+      "o": [
+        "To find external dependencies on PyPI",
+        "To automatically discover all sub-packages in the project directory",
+        "To locate the Python interpreter on the system",
+        "To search for README and LICENSE files"
+      ],
+      "a": 1,
+      "e": "`find_packages()` automatically generates a list of all packages (directories with `__init__.py`) to be included in the distribution."
+    }
+  ]
+}
