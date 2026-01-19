@@ -1,112 +1,113 @@
-[
-  {
-    "q": "Which standard library module is used to create virtual environments in Python 3?",
-    "a": [
-      "virtualenv",
-      "venv",
-      "pyenv",
-      "pipenv"
-    ],
-    "i": 1,
-    "e": "The `venv` module is included in the Python standard library (since 3.3) for creating lightweight virtual environments."
-  },
-  {
-    "q": "What is the primary purpose of using a virtual environment?",
-    "a": [
-      "To make Python code run faster",
-      "To isolate project-specific dependencies",
-      "To compile Python into machine code",
-      "To encrypt the source code"
-    ],
-    "i": 1,
-    "e": "Virtual environments prevent dependency version conflicts by keeping libraries for different projects in separate silos."
-  },
-  {
-    "q": "Which command creates a new virtual environment named `myenv` on a Unix-based system?",
-    "a": [
-      "python -m venv myenv",
-      "venv create myenv",
-      "python start venv myenv",
-      "make venv myenv"
-    ],
-    "i": 0,
-    "e": "The standard way to initialize an environment is using the `-m` (module) flag followed by the module name `venv` and the directory name."
-  },
-  {
-    "q": "On Windows, which script is typically executed to activate a virtual environment named `env`?",
-    "a": [
-      "env\\bin\\activate",
-      "env\\Scripts\\activate",
-      "source env/activate",
-      "python activate env"
-    ],
-    "i": 1,
-    "e": "On Windows, the activation scripts and the Python executable are located in the `Scripts` folder rather than `bin`."
-  },
-  {
-    "q": "After activating a virtual environment, what command is used to exit it?",
-    "a": [
-      "exit",
-      "stop-venv",
-      "deactivate",
-      "quit()"
-    ],
-    "i": 2,
-    "e": "The `deactivate` function is added to your shell session upon activation; running it reverts the PATH to the system default."
-  },
-  {
-    "q": "When a virtual environment is active, where are new packages installed by default using `pip`?",
-    "a": [
-      "The global site-packages directory",
-      "The project's root folder",
-      "The virtual environment's site-packages directory",
-      "The user's home directory"
-    ],
-    "i": 2,
-    "e": "Pip detects the active environment and installs libraries into that environment's specific internal library directory."
-  },
-  {
-    "q": "What does the `pyvenv.cfg` file inside a virtual environment directory contain?",
-    "a": [
-      "The source code of the project",
-      "A list of all installed packages",
-      "Configuration keys like `home` and `version` identifying the base interpreter",
-      "The environment's environment variables"
-    ],
-    "i": 2,
-    "e": "`pyvenv.cfg` is a metadata file that tells the environment which physical Python installation to use as its base."
-  },
-  {
-    "q": "Which flag allows a virtual environment to access packages installed in the system Python during creation?",
-    "a": [
-      "--system-site-packages",
-      "--include-global",
-      "--with-pip",
-      "--global-access"
-    ],
-    "i": 0,
-    "e": "Using `--system-site-packages` allows the virtual environment to 'see' and use packages installed in the global Python environment."
-  },
-  {
-    "q": "How can you verify if a Python script is running inside a virtual environment using the `sys` module?",
-    "a": [
-      "Check if `sys.prefix != sys.base_prefix` ",
-      "Check if `sys.venv == True` ",
-      "Check if `sys.path[0]` is empty",
-      "Check if `sys.executable` is null"
-    ],
-    "i": 0,
-    "e": "In a virtual environment, `sys.prefix` points to the venv, while `sys.base_prefix` points to the original Python installation."
-  },
-  {
-    "q": "What is the recommended way to share the dependencies of a virtual environment with other developers?",
-    "a": [
-      "Zipping the entire virtual environment folder",
-      "Sharing a `requirements.txt` file",
-      "Copying the `lib` folder",
-      "Uploading the `pyvenv.cfg` file"
-    ],
-    "i": 1,
-    "e": "Since virtual environments contain absolute paths and are not portable, sharing a `requirements.txt` allows others to recreate the environment exactly."
-  }
-]
+{"data": [
+	  {
+		"q": "Which standard library module is used to create virtual environments in Python 3?",
+		"a": [
+		  "virtualenv",
+		  "venv",
+		  "pyenv",
+		  "pipenv"
+		],
+		"i": 1,
+		"e": "The `venv` module is included in the Python standard library (since 3.3) for creating lightweight virtual environments."
+	  },
+	  {
+		"q": "What is the primary purpose of using a virtual environment?",
+		"a": [
+		  "To make Python code run faster",
+		  "To isolate project-specific dependencies",
+		  "To compile Python into machine code",
+		  "To encrypt the source code"
+		],
+		"i": 1,
+		"e": "Virtual environments prevent dependency version conflicts by keeping libraries for different projects in separate silos."
+	  },
+	  {
+		"q": "Which command creates a new virtual environment named `myenv` on a Unix-based system?",
+		"a": [
+		  "python -m venv myenv",
+		  "venv create myenv",
+		  "python start venv myenv",
+		  "make venv myenv"
+		],
+		"i": 0,
+		"e": "The standard way to initialize an environment is using the `-m` (module) flag followed by the module name `venv` and the directory name."
+	  },
+	  {
+		"q": "On Windows, which script is typically executed to activate a virtual environment named `env`?",
+		"a": [
+		  "env\\bin\\activate",
+		  "env\\Scripts\\activate",
+		  "source env/activate",
+		  "python activate env"
+		],
+		"i": 1,
+		"e": "On Windows, the activation scripts and the Python executable are located in the `Scripts` folder rather than `bin`."
+	  },
+	  {
+		"q": "After activating a virtual environment, what command is used to exit it?",
+		"a": [
+		  "exit",
+		  "stop-venv",
+		  "deactivate",
+		  "quit()"
+		],
+		"i": 2,
+		"e": "The `deactivate` function is added to your shell session upon activation; running it reverts the PATH to the system default."
+	  },
+	  {
+		"q": "When a virtual environment is active, where are new packages installed by default using `pip`?",
+		"a": [
+		  "The global site-packages directory",
+		  "The project's root folder",
+		  "The virtual environment's site-packages directory",
+		  "The user's home directory"
+		],
+		"i": 2,
+		"e": "Pip detects the active environment and installs libraries into that environment's specific internal library directory."
+	  },
+	  {
+		"q": "What does the `pyvenv.cfg` file inside a virtual environment directory contain?",
+		"a": [
+		  "The source code of the project",
+		  "A list of all installed packages",
+		  "Configuration keys like `home` and `version` identifying the base interpreter",
+		  "The environment's environment variables"
+		],
+		"i": 2,
+		"e": "`pyvenv.cfg` is a metadata file that tells the environment which physical Python installation to use as its base."
+	  },
+	  {
+		"q": "Which flag allows a virtual environment to access packages installed in the system Python during creation?",
+		"a": [
+		  "--system-site-packages",
+		  "--include-global",
+		  "--with-pip",
+		  "--global-access"
+		],
+		"i": 0,
+		"e": "Using `--system-site-packages` allows the virtual environment to 'see' and use packages installed in the global Python environment."
+	  },
+	  {
+		"q": "How can you verify if a Python script is running inside a virtual environment using the `sys` module?",
+		"a": [
+		  "Check if `sys.prefix != sys.base_prefix` ",
+		  "Check if `sys.venv == True` ",
+		  "Check if `sys.path[0]` is empty",
+		  "Check if `sys.executable` is null"
+		],
+		"i": 0,
+		"e": "In a virtual environment, `sys.prefix` points to the venv, while `sys.base_prefix` points to the original Python installation."
+	  },
+	  {
+		"q": "What is the recommended way to share the dependencies of a virtual environment with other developers?",
+		"a": [
+		  "Zipping the entire virtual environment folder",
+		  "Sharing a `requirements.txt` file",
+		  "Copying the `lib` folder",
+		  "Uploading the `pyvenv.cfg` file"
+		],
+		"i": 1,
+		"e": "Since virtual environments contain absolute paths and are not portable, sharing a `requirements.txt` allows others to recreate the environment exactly."
+	  }
+	]
+}
