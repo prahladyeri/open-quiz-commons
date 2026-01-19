@@ -104,7 +104,6 @@
           ]
         },
         {
-          "hidden": true,
           "name": "Packaging & Distribution",
           "slug": "packaging_and_distribution",
           "modules": [
