@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which module in the Python standard library provides access to the BSD socket interface?",
+      "o": [
+        "http",
+        "requests",
+        "socket",
+        "asyncio"
+      ],
+      "a": 2,
+      "e": "The `socket` module provides the core interface for network communications, allowing for low-level socket operations."
+    },
+    {
+      "q": "What address family is used for IPv4 networking in Python sockets?",
+      "o": [
+        "socket.AF_INET6",
+        "socket.AF_UNIX",
+        "socket.AF_INET",
+        "socket.SOCK_STREAM"
+      ],
+      "a": 2,
+      "e": "`AF_INET` refers to the address family for IPv4. `AF_INET6` is used for IPv6, and `AF_UNIX` is for local inter-process communication."
+    },
+    {
+      "q": "Which socket type is used to create a TCP (connection-oriented) socket?",
+      "o": [
+        "socket.SOCK_DGRAM",
+        "socket.SOCK_STREAM",
+        "socket.SOCK_RAW",
+        "socket.SOCK_TCP"
+      ],
+      "a": 1,
+      "e": "`SOCK_STREAM` is the socket type for TCP, providing sequenced, reliable, two-way, connection-based byte streams."
+    },
+    {
+      "q": "What is the purpose of the `bind()` method in a server-side socket?",
+      "o": [
+        "To connect to a remote host",
+        "To listen for incoming connections",
+        "To associate the socket with a specific network interface and port",
+        "To send data to a client"
+      ],
+      "a": 2,
+      "e": "`bind()` assigns a local IP address and port number to a socket, which is necessary for a server to accept connections on that port."
+    },
+    {
+      "q": "Which method is used by a TCP server to accept an incoming connection request?",
+      "o": [
+        "socket.listen()",
+        "socket.connect()",
+        "socket.accept()",
+        "socket.receive()"
+      ],
+      "a": 2,
+      "e": "`accept()` blocks and waits for an incoming connection. When a client connects, it returns a new socket object representing the connection and the client's address."
+    },
+    {
+      "q": "In a UDP socket, which method is typically used to send data because it does not require a prior connection?",
+      "o": [
+        "send()",
+        "sendall()",
+        "sendto()",
+        "transmit()"
+      ],
+      "a": 2,
+      "e": "`sendto()` is used for UDP (connectionless) sockets to send data to a specific address, as no permanent connection is established."
+    },
+    {
+      "q": "What does the `listen(backlog)` method do in a TCP server?",
+      "o": [
+        "It starts the data transfer",
+        "It sets the maximum number of queued unaccepted connections",
+        "It determines how many seconds to wait for a connection",
+        "It creates a new thread for every client"
+      ],
+      "a": 1,
+      "e": "The `backlog` parameter specifies the number of unaccepted connections that the system will allow to queue up before refusing new ones."
+    },
+    {
+      "q": "What is the difference between `recv()` and `recvfrom()`?",
+      "o": [
+        "There is no difference",
+        "`recv()` is for TCP; `recvfrom()` is for UDP and returns the sender's address",
+        "`recv()` is faster than `recvfrom()`",
+        "`recv()` is for sending and `recvfrom()` is for receiving"
+      ],
+      "a": 1,
+      "e": "`recvfrom()` is typically used with UDP sockets because it returns both the data and the address of the sender, which is necessary to reply."
+    },
+    {
+      "q": "Which method ensures that all data in a buffer is sent before returning, potentially making multiple low-level calls?",
+      "o": [
+        "send()",
+        "sendall()",
+        "write()",
+        "push()"
+      ],
+      "a": 1,
+      "e": "Unlike `send()`, which might send only part of the data, `sendall()` continues to send data until either the entire message is transmitted or an error occurs."
+    },
+    {
+      "q": "What is the standard way to close a socket connection to free up resources?",
+      "o": [
+        "socket.stop()",
+        "socket.close()",
+        "socket.disconnect()",
+        "socket.end()"
+      ],
+      "a": 1,
+      "e": "The `close()` method terminates the socket connection and releases the associated file descriptor and system resources."
+    },
+    {
+      "q": "When using `socket.gethostname()`, what information is retrieved?",
+      "o": [
+        "The IP address of the current machine",
+        "The hostname of the current machine",
+        "The hostnames of all connected clients",
+        "The default gateway"
+      ],
+      "a": 1,
+      "e": "`gethostname()` returns a string containing the hostname of the machine where the Python interpreter is currently executing."
+    },
+    {
+      "q": "Which of the following creates a non-blocking socket?",
+      "o": [
+        "s.setblocking(False)",
+        "s.settimeout(0)",
+        "Both A and B",
+        "s.wait(False)"
+      ],
+      "a": 2,
+      "e": "In Python, `setblocking(False)` is a shorthand for `settimeout(0.0)`. Both make the socket operations return immediately with an error if they cannot complete."
+    }
+  ]
+}
