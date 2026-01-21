@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which module in the Python standard library is the most low-level for handling HTTP client requests?",
+      "o": [
+        "requests",
+        "urllib.request",
+        "http.client",
+        "socket"
+      ],
+      "a": 2,
+      "e": "`http.client` is a low-level HTTP protocol client; `urllib.request` is built on top of it, and `requests` is a third-party library."
+    },
+    {
+      "q": "In `urllib.request`, which function is used to open and fetch a URL?",
+      "o": [
+        "urllib.request.get()",
+        "urllib.request.urlopen()",
+        "urllib.request.fetch()",
+        "urllib.request.open_url()"
+      ],
+      "a": 1,
+      "e": "`urlopen()` is the primary function in `urllib.request` to open URLs, supporting HTTP, HTTPS, and FTP."
+    },
+    {
+      "q": "What is the default HTTP method used by `urllib.request.urlopen()` when the `data` parameter is `None`?",
+      "o": [
+        "POST",
+        "PUT",
+        "GET",
+        "HEAD"
+      ],
+      "a": 2,
+      "e": "By default, `urlopen` performs a GET request. If the `data` argument is provided, it performs a POST request."
+    },
+    {
+      "q": "Which class in the `http.server` module can be used to create a basic web server that serves files from the current directory?",
+      "o": [
+        "SimpleHTTPRequestHandler",
+        "BaseHTTPRequestHandler",
+        "CGIHTTPRequestHandler",
+        "FileServerHandler"
+      ],
+      "a": 0,
+      "e": "`SimpleHTTPRequestHandler` maps HTTP requests to the local directory structure and is often used via `python -m http.server`."
+    },
+    {
+      "q": "How do you access the HTTP status code from a response object returned by `urllib.request.urlopen(url)`?",
+      "o": [
+        "response.status_code",
+        "response.code",
+        "response.status",
+        "response.getcode()"
+      ],
+      "a": 3,
+      "e": "The `getcode()` method (or the `status` attribute in newer Python 3 versions) returns the HTTP status code of the response."
+    },
+    {
+      "q": "Which header must be set to send JSON data in a POST request so the server understands the format?",
+      "o": [
+        "Accept: application/json",
+        "Content-Type: application/json",
+        "Encoding: json",
+        "Type: json"
+      ],
+      "a": 1,
+      "e": "The `Content-Type` header tells the server the media type of the body of the request."
+    },
+    {
+      "q": "When using `urllib.parse`, which function is used to convert a dictionary into a URL-encoded query string?",
+      "o": [
+        "urllib.parse.urlencode()",
+        "urllib.parse.quote()",
+        "urllib.parse.stringify()",
+        "urllib.parse.params()"
+      ],
+      "a": 0,
+      "e": "`urlencode()` takes a mapping or sequence of two-element tuples and converts it into a 'percent-encoded' string."
+    },
+    {
+      "q": "In the `http.client` module, which method must be called to send the actual request to the server after `putrequest` and `putheader`?",
+      "o": [
+        "send()",
+        "endheaders()",
+        "commit()",
+        "finish()"
+      ],
+      "a": 1,
+      "e": "`endheaders()` sends a blank line indicating the end of the HTTP headers, followed by `send()` for the body if necessary."
+    },
+    {
+      "q": "What is the purpose of the `urllib.robotparser` module?",
+      "o": [
+        "To automate browser interactions",
+        "To parse robots.txt files and check if a spider can fetch a URL",
+        "To detect if a client is a bot",
+        "To generate sitemaps"
+      ],
+      "a": 1,
+      "e": "`robotparser` provides a single class, `RobotFileParser`, which answers questions about whether a particular user agent can fetch a URL on a website."
+    },
+    {
+      "q": "What happens if you call `read()` on an HTTP response object in Python without specifying a size?",
+      "o": [
+        "It reads one line",
+        "It reads the entire response body",
+        "It returns an error",
+        "It reads only the headers"
+      ],
+      "a": 1,
+      "e": "The `read()` method reads the entire content of the response body unless a byte count is specified."
+    },
+    {
+      "q": "Which exception is typically raised by `urllib.request` when an HTTP error occurs (like 404 or 500)?",
+      "o": [
+        "urllib.error.HTTPError",
+        "urllib.error.URLError",
+        "ConnectionError",
+        "HTTPException"
+      ],
+      "a": 0,
+      "e": "`HTTPError` is a subclass of `URLError` specifically raised for exotic HTTP errors."
+    },
+    {
+      "q": "How can you pass custom headers (like a User-Agent) using `urllib.request`?",
+      "o": [
+        "Pass a headers dict to urlopen()",
+        "Use the Request object: urllib.request.Request(url, headers=headers)",
+        "Use the set_header() global function",
+        "Headers cannot be customized in urllib"
+      ],
+      "a": 1,
+      "e": "To customize headers, you must instantiate a `urllib.request.Request` object with the headers dictionary and pass that object to `urlopen()`."
+    }
+  ]
+}
