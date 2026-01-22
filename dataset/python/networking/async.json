@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which keyword is used to define a coroutine function in Python for asynchronous programming?",
+      "o": [
+        "coroutine",
+        "async def",
+        "await def",
+        "yield from"
+      ],
+      "a": 1,
+      "e": "The `async def` syntax defines a function as a coroutine, which can then be scheduled and run by an event loop."
+    },
+    {
+      "q": "What is the primary role of the Event Loop in `asyncio`?",
+      "o": [
+        "To speed up CPU-bound calculations",
+        "To manage and schedule the execution of various tasks and IO operations",
+        "To automatically compile Python code to machine language",
+        "To provide a multi-threaded lock for shared memory"
+      ],
+      "a": 1,
+      "e": "The Event Loop is the core of every asyncio application; it schedules coroutines, handles network IO, and manages subprocesses."
+    },
+    {
+      "q": "Which keyword is used to pause the execution of a coroutine until a result is returned from another coroutine or future?",
+      "o": [
+        "pause",
+        "yield",
+        "wait",
+        "await"
+      ],
+      "a": 3,
+      "e": "`await` passes control back to the event loop, suspending the current coroutine until the awaited object yields a result."
+    },
+    {
+      "q": "How do you run the main entry point coroutine in a modern `asyncio` script (Python 3.7+)?",
+      "o": [
+        "asyncio.start()",
+        "asyncio.run(main())",
+        "main().start()",
+        "loop.run_forever(main)"
+      ],
+      "a": 1,
+      "e": "`asyncio.run()` is the high-level entry point that handles creating the event loop, running the coroutine, and closing the loop."
+    },
+    {
+      "q": "What is the benefit of using `asyncio.gather()`?",
+      "o": [
+        "It runs coroutines sequentially in a specific order",
+        "It runs multiple concurrent tasks and waits for them to finish",
+        "It converts synchronous functions into asynchronous ones",
+        "It prevents race conditions in multi-threaded code"
+      ],
+      "a": 1,
+      "e": "`asyncio.gather()` allows multiple awaitables to be scheduled concurrently, returning their results as a list once all are complete."
+    },
+    {
+      "q": "In asynchronous networking, what does a 'Future' object represent?",
+      "o": [
+        "A result that has already been calculated",
+        "An eventual result of an asynchronous operation",
+        "A callback function for error handling",
+        "A historical log of previous IO calls"
+      ],
+      "a": 1,
+      "e": "A `Future` is a low-level object that acts as a placeholder for a result that will be available in the future."
+    },
+    {
+      "q": "Which function is used to create a network server that handles connections asynchronously?",
+      "o": [
+        "asyncio.start_server()",
+        "asyncio.create_connection()",
+        "socket.listen()",
+        "asyncio.bind_server()"
+      ],
+      "a": 0,
+      "e": "`asyncio.start_server()` creates and starts a TCP stream server, calling a specific callback for every new client connection."
+    },
+    {
+      "q": "When writing an async client, what do `asyncio.open_connection()` return?",
+      "o": [
+        "A single socket object",
+        "A tuple of (reader, writer) streams",
+        "A boolean indicating success",
+        "A list of available ports"
+      ],
+      "a": 1,
+      "e": "It returns a pair of `(StreamReader, StreamWriter)` objects, which provide high-level async methods for reading and writing data."
+    },
+    {
+      "q": "What is a 'Task' in the context of `asyncio`?",
+      "o": [
+        "A background process running in a separate CPU core",
+        "An object that wraps a coroutine and schedules its execution",
+        "A synchronous function block",
+        "A thread-safe queue"
+      ],
+      "a": 1,
+      "e": "Tasks are used to schedule coroutines concurrently. When a coroutine is wrapped into a Task with `asyncio.create_task()`, it is automatically scheduled to run soon."
+    },
+    {
+      "q": "What happens if you perform a blocking synchronous operation (like `time.sleep()`) inside an async function?",
+      "o": [
+        "Asyncio automatically converts it to async",
+        "It blocks the entire event loop, stopping all other tasks",
+        "It raises a SynchronousError",
+        "It runs in a separate thread automatically"
+      ],
+      "a": 1,
+      "e": "Blocking the event loop with synchronous calls prevents other coroutines from running. For delays, `await asyncio.sleep()` should be used instead."
+    },
+    {
+      "q": "Which method is used to wrap a blocking synchronous function so it can be run in a separate thread without blocking the event loop?",
+      "o": [
+        "loop.run_in_executor()",
+        "asyncio.thread()",
+        "asyncio.wrap_sync()",
+        "loop.call_later()"
+      ],
+      "a": 0,
+      "e": "`run_in_executor()` allows you to run CPU-bound or blocking IO code in a thread pool (or process pool) so the event loop remains free."
+    },
+    {
+      "q": "What is the purpose of `async with` syntax?",
+      "o": [
+        "To loop through an asynchronous iterator",
+        "To manage resources (like network connections) using an asynchronous context manager",
+        "To speed up file system access",
+        "To define an anonymous coroutine"
+      ],
+      "a": 1,
+      "e": "`async with` is used for asynchronous context managers that need to perform IO when entering or exiting the context (e.g., closing a database connection)."
+    }
+  ]
+}
