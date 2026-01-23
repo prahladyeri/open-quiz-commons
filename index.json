@@ -58,18 +58,6 @@
           ]
         },
         {
-          "hidden": true,
-          "name": "AI & ML",
-          "slug": "ai_ml",
-          "modules": [
-            { "name": "Machine Learning Basics", "slug": "ml_basics"},
-            { "name": "scikit-learn", "slug": "scikit_learn"},
-            { "name": "Neural Networks Concepts", "slug": "neural_networks"},
-            { "name": "TensorFlow / PyTorch", "slug": "tensorflow_pytorch"},
-            { "name": "Model Evaluation", "slug": "model_evaluation"}
-          ]
-        },
-        {
           "name": "System & OS",
           "slug": "system_and_os",
           "modules": [
@@ -78,18 +66,6 @@
             { "name": "Environment Variables", "slug": "environment_vars"},
             { "name": "File System Operations", "slug": "file_system"},
             { "name": "Automation Scripts", "slug": "automation"}
-          ]
-        },
-        {
-          "hidden": true,
-          "name": "Testing & Quality",
-          "slug": "testing_qa",
-          "modules": [
-            { "name": "unittest", "slug": "unittest"},
-            { "name": "pytest", "slug": "pytest"},
-            { "name": "Mocking", "slug": "mocking"},
-            { "name": "Code Coverage", "slug": "code_coverage"},
-            { "name": "Linting & Formatting", "slug": "linting"}
           ]
         },
         {
@@ -111,7 +87,31 @@
             { "name": "setup.py & pyproject.toml", "slug": "setuppy"},
             { "name": "Wheels & Publishing", "slug": "wheels"}
           ]
-        }
+        },
+        {
+          "hidden": true,
+          "name": "Testing & Quality",
+          "slug": "testing_qa",
+          "modules": [
+            { "name": "unittest", "slug": "unittest"},
+            { "name": "pytest", "slug": "pytest"},
+            { "name": "Mocking", "slug": "mocking"},
+            { "name": "Code Coverage", "slug": "code_coverage"},
+            { "name": "Linting & Formatting", "slug": "linting"}
+          ]
+        },
+        {
+          "hidden": true,
+          "name": "AI & ML",
+          "slug": "ai_ml",
+          "modules": [
+            { "name": "Machine Learning Basics", "slug": "ml_basics"},
+            { "name": "scikit-learn", "slug": "scikit_learn"},
+            { "name": "Neural Networks Concepts", "slug": "neural_networks"},
+            { "name": "TensorFlow / PyTorch", "slug": "tensorflow_pytorch"},
+            { "name": "Model Evaluation", "slug": "model_evaluation"}
+          ]
+        }		
       ]
     },
     {
