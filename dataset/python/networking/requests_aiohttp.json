@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the most fundamental difference between the `requests` library and `aiohttp`?",
+      "o": [
+        "Requests is faster for single requests",
+        "Requests is synchronous/blocking, while aiohttp is asynchronous/non-blocking",
+        "Aiohttp only supports HTTPS",
+        "Requests is part of the standard library"
+      ],
+      "a": 1,
+      "e": "`requests` blocks the execution of the program until the server responds, whereas `aiohttp` allows the program to handle other tasks while waiting for the network."
+    },
+    {
+      "q": "Which `aiohttp` object is recommended to be created once and reused for multiple requests to the same host?",
+      "o": [
+        "aiohttp.ClientSession()",
+        "aiohttp.Request()",
+        "aiohttp.ConnectionPool()",
+        "aiohttp.TCPConnector()"
+      ],
+      "a": 0,
+      "e": "Reusing a `ClientSession` allows for connection pooling and provides a significant performance boost compared to creating a new session for every request."
+    },
+    {
+      "q": "In `requests`, how do you perform a POST request with JSON data?",
+      "o": [
+        "requests.post(url, data=json_data)",
+        "requests.post(url, json=dict_object)",
+        "requests.post(url, header={'type': 'json'})",
+        "requests.submit(url, json=dict_object)"
+      ],
+      "a": 1,
+      "e": "The `json` parameter in `requests.post()` automatically encodes a Python dictionary to a JSON string and sets the `Content-Type` header to `application/json`."
+    },
+    {
+      "q": "In `aiohttp`, what is the correct syntax for making a GET request and reading the text response?",
+      "o": [
+        "resp = await session.get(url); text = resp.text()",
+        "async with session.get(url) as resp: text = await resp.text()",
+        "text = await session.get(url).read()",
+        "with session.get(url) as resp: text = resp.text()"
+      ],
+      "a": 1,
+      "e": "`aiohttp` uses asynchronous context managers (`async with`) and requires the `.text()` method to be awaited because reading the body is an IO operation."
+    },
+    {
+      "q": "What happens if you use `requests.get()` inside an `async def` coroutine managed by `asyncio`?",
+      "o": [
+        "It runs asynchronously automatically",
+        "It raises a CompatibilityError",
+        "It blocks the entire event loop, stopping all other concurrent tasks",
+        "It executes in a background thread by default"
+      ],
+      "a": 2,
+      "e": "Because `requests` is synchronous, it will block the thread it is running in, which in an `asyncio` app is the thread running the event loop."
+    },
+    {
+      "q": "Which library is better suited for a script that needs to download 1,000 images simultaneously?",
+      "o": [
+        "requests",
+        "urllib",
+        "aiohttp",
+        "http.client"
+      ],
+      "a": 2,
+      "e": "`aiohttp` is designed for high-concurrency scenarios, allowing many requests to be 'in-flight' at once without the overhead of thousands of threads."
+    },
+    {
+      "q": "How does `requests` handle connection pooling by default?",
+      "o": [
+        "It doesn't support pooling",
+        "Through the `requests.Session()` object",
+        "It creates a pool for every global `get()` call",
+        "It uses the operating system's global pool"
+      ],
+      "a": 1,
+      "e": "A `requests.Session` object provides connection pooling (via urllib3), allowing for the reuse of the underlying TCP connection."
+    },
+    {
+      "q": "Which `aiohttp` method is used to retrieve binary content (like an image) from a response?",
+      "o": [
+        "resp.content()",
+        "resp.read()",
+        "resp.binary()",
+        "resp.body"
+      ],
+      "a": 1,
+      "e": "In `aiohttp`, `await resp.read()` is used to get the response body as bytes, whereas `await resp.text()` is for strings."
+    },
+    {
+      "q": "In `requests`, how do you check if a request failed (e.g., a 404 or 500 error) without checking the status code manually?",
+      "o": [
+        "response.raise_for_status()",
+        "response.assert_success()",
+        "requests.verify(response)",
+        "response.check()"
+      ],
+      "a": 0,
+      "e": "`raise_for_status()` will raise an `HTTPError` if the status code indicates a client or server error (4xx or 5xx)."
+    },
+    {
+      "q": "What is the `aiohttp` equivalent of the `requests` timeout parameter `timeout=5`?",
+      "o": [
+        "session.get(url, timeout=5)",
+        "session.get(url, timeout=aiohttp.ClientTimeout(total=5))",
+        "asyncio.wait_for(session.get(url), 5)",
+        "Both B and C are valid ways to handle timeouts"
+      ],
+      "a": 3,
+      "e": "`aiohttp` uses a `ClientTimeout` object for fine-grained control, but `asyncio.wait_for` is also a common way to wrap any awaitable with a timeout."
+    },
+    {
+      "q": "Which library would be more 'Pythonic' for a simple, linear script that fetches one page and parses it?",
+      "o": [
+        "aiohttp",
+        "asyncio",
+        "requests",
+        "twisted"
+      ],
+      "a": 2,
+      "e": "`requests` is famous for its simple, human-readable API. If concurrency isn't needed, the overhead of setting up an event loop for `aiohttp` is usually unnecessary."
+    },
+    {
+      "q": "In `aiohttp`, why is it important to call `await session.close()` or use a context manager?",
+      "o": [
+        "To delete the temporary cookies",
+        "To properly release the underlying connections in the pool",
+        "To signal the server to shut down",
+        "To save the history to disk"
+      ],
+      "a": 1,
+      "e": "Failing to close an `aiohttp` session can lead to unclosed connection warnings and resource leaks in long-running applications."
+    }
+  ]
+}
