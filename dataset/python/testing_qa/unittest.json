@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which base class must you inherit from to create a new test case in the `unittest` framework?",
+      "o": [
+        "unittest.BaseTest",
+        "unittest.TestCase",
+        "unittest.TestFixture",
+        "unittest.TestSuite"
+      ],
+      "a": 1,
+      "e": "The `unittest.TestCase` class provide the infrastructure for creating individual tests and provides various assert methods to check for failures."
+    },
+    {
+      "q": "What is the naming convention for methods that `unittest` automatically identifies as test cases?",
+      "o": [
+        "They must end with '_test'",
+        "They must be named 'test'",
+        "They must start with 'test'",
+        "They must include 'check' in the name"
+      ],
+      "a": 2,
+      "e": "By default, the `unittest` test loader only picks up methods whose names start with the string 'test'."
+    },
+    {
+      "q": "Which method is called immediately BEFORE each individual test method is executed?",
+      "o": [
+        "setUp()",
+        "tearDown()",
+        "beforeTest()",
+        "initTest()"
+      ],
+      "a": 0,
+      "e": "`setUp()` is a special method used to prepare the 'test fixture' (like creating database connections or initializing objects) before every test run."
+    },
+    {
+      "q": "Which method is called immediately AFTER each individual test method is executed, regardless of whether the test passed or failed?",
+      "o": [
+        "cleanUp()",
+        "tearDown()",
+        "afterTest()",
+        "exit()"
+      ],
+      "a": 1,
+      "e": "`tearDown()` is used to clean up resources after each test to ensure a clean state for the next test case."
+    },
+    {
+      "q": "Which assertion method would you use to verify that a function call raises a specific exception?",
+      "o": [
+        "self.assertError()",
+        "self.assertException()",
+        "self.assertRaises()",
+        "self.verifyError()"
+      ],
+      "a": 2,
+      "e": "`assertRaises()` is used as a context manager (or a direct call) to ensure that the code block inside it triggers the expected exception type."
+    },
+    {
+      "q": "How can you run all tests in a module from the command line using the `unittest` command-line interface?",
+      "o": [
+        "python -m unittest test_module.py",
+        "python unittest test_module.py",
+        "unittest run test_module.py",
+        "python -m unittest test_module"
+      ],
+      "a": 3,
+      "e": "Using the `-m` flag to run the `unittest` module followed by the module name is the standard CLI execution method."
+    },
+    {
+      "q": "What does an 'E' (Error) signify in the `unittest` output, as opposed to an 'F' (Failure)?",
+      "o": [
+        "The test took too long to run",
+        "An assertion failed (e.g., assertEqual)",
+        "An unexpected exception occurred outside of an assertion",
+        "The test file was not found"
+      ],
+      "a": 2,
+      "e": "A Failure ('F') means an assertion didn't match. An Error ('E') means the code crashed or raised an exception that wasn't being explicitly tested."
+    },
+    {
+      "q": "Which decorator is used to skip a test method if a specific condition is not met?",
+      "o": [
+        "@unittest.ignoreIf",
+        "@unittest.skipIf",
+        "@unittest.conditionalSkip",
+        "@unittest.passIf"
+      ],
+      "a": 1,
+      "e": "The `@unittest.skipIf(condition, reason)` decorator allows you to bypass tests based on environmental factors like OS type or Python version."
+    },
+    {
+      "q": "What is a 'Test Suite' in the `unittest` framework?",
+      "o": [
+        "A collection of test cases or other test suites",
+        "A document containing the test results",
+        "A high-level class that runs all tests in the project",
+        "A special folder for test files"
+      ],
+      "a": 0,
+      "e": "A `TestSuite` object is used to aggregate individual tests that should be run together, providing a way to organize complex testing cycles."
+    },
+    {
+      "q": "Which method should you use to compare two floating-point numbers for equality within a certain margin of error?",
+      "o": [
+        "self.assertEqual()",
+        "self.assertAlmostEqual()",
+        "self.assertClose()",
+        "self.assertFloatEqual()"
+      ],
+      "a": 1,
+      "e": "`assertAlmostEqual()` allows for floating-point imprecision by checking if the difference between two values is within a specific number of decimal places."
+    }
+  ]
+}
