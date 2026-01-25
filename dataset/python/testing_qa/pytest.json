@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary advantage of `pytest` assertions over the standard `unittest` library?",
+      "o": [
+        "You must use specific methods like `assertIsInstance`",
+        "You can use the plain Python `assert` keyword",
+        "It requires a special DSL (Domain Specific Language)",
+        "Assertions are disabled by default for speed"
+      ],
+      "a": 1,
+      "e": "Pytest uses 'assertion rewriting' to provide detailed failure messages while allowing developers to use the simple, native Python `assert` keyword."
+    },
+    {
+      "q": "What is a 'fixture' in `pytest`?",
+      "o": [
+        "A permanent bug in the code",
+        "A function that provides a baseline/setup for tests to run reliably",
+        "A plugin used to export results to HTML",
+        "A test that is guaranteed to pass"
+      ],
+      "a": 1,
+      "e": "Fixtures are functions decorated with `@pytest.fixture` that inject dependencies, setup data, or configure state for test functions."
+    },
+    {
+      "q": "How do you request a fixture within a test function?",
+      "o": [
+        "By calling the fixture function inside the test body",
+        "By using the `@pytest.usefixture` decorator",
+        "By including the fixture name as an argument in the test function signature",
+        "By importing it from a global config file"
+      ],
+      "a": 2,
+      "e": "Pytest uses dependency injection; if a test function argument matches a fixture name, pytest automatically runs the fixture and passes the result."
+    },
+    {
+      "q": "Which file is used to share fixtures across multiple test files in a directory without importing them?",
+      "o": [
+        "pytest.ini",
+        "setup.cfg",
+        "conftest.py",
+        "fixtures.py"
+      ],
+      "a": 2,
+      "e": "`conftest.py` is a special file recognized by pytest to provide local plugins and shared fixtures for an entire directory."
+    },
+    {
+      "q": "How can you run tests that are marked with a specific label, such as `@pytest.mark.slow`?",
+      "o": [
+        "pytest --slow",
+        "pytest -m slow",
+        "pytest -l slow",
+        "pytest --mark slow"
+      ],
+      "a": 1,
+      "e": "The `-m` flag stands for 'mark' and allows you to filter and run tests based on custom markers."
+    },
+    {
+      "q": "Which decorator is used to run the same test function multiple times with different input values?",
+      "o": [
+        "@pytest.mark.repeat",
+        "@pytest.mark.loop",
+        "@pytest.mark.parametrize",
+        "@pytest.fixture(params=[...])"
+      ],
+      "a": 2,
+      "e": "`@pytest.mark.parametrize` allows you to define a set of arguments for a test, creating a separate test case for each set of data."
+    },
+    {
+      "q": "How do you check that a specific block of code raises an expected exception in `pytest`?",
+      "o": [
+        "assert raises(Exception): ...",
+        "with pytest.raises(Exception): ...",
+        "@pytest.mark.xfail(raises=Exception)",
+        "pytest.check_exception(Exception, func)"
+      ],
+      "a": 1,
+      "e": "`pytest.raises` is used as a context manager to intercept and verify exceptions raised by the enclosed code."
+    },
+    {
+      "q": "What is the purpose of the `yield` keyword inside a `pytest` fixture?",
+      "o": [
+        "To make the fixture a generator for multiple values",
+        "To provide a value to the test and then execute teardown code afterward",
+        "To pause the test execution until a manual trigger",
+        "To return a list of all tests using that fixture"
+      ],
+      "a": 1,
+      "e": "In a 'yield fixture', the code before `yield` is the setup, the yielded value is the fixture data, and the code after `yield` is the teardown."
+    },
+    {
+      "q": "What does the `-x` flag do when running pytest?",
+      "o": [
+        "Runs only the tests that failed in the last run",
+        "Stops the test execution immediately after the first failure",
+        "Excludes all tests marked as 'experimental'",
+        "Deletes all cache files before running"
+      ],
+      "a": 1,
+      "e": "The `-x` (or `--exitfirst`) flag is useful for debugging when you want to stop as soon as any test fails."
+    },
+    {
+      "q": "Which command-line argument allows you to see the values of local variables in the traceback of a failed test?",
+      "o": [
+        "-v",
+        "--show-capture",
+        "-l (or --showlocals)",
+        "--debug"
+      ],
+      "a": 2,
+      "e": "The `--showlocals` flag is extremely helpful for debugging as it prints the state of all local variables at the point of failure."
+    },
+    {
+      "q": "What is the 'scope' of a fixture if it is set to `scope='module'`?",
+      "o": [
+        "The fixture is created once per test function",
+        "The fixture is created once per test file (module)",
+        "The fixture is created once per directory",
+        "The fixture is created once per test session"
+      ],
+      "a": 1,
+      "e": "Fixtures can be scoped to 'function' (default), 'class', 'module', 'package', or 'session' to control how often the setup/teardown logic runs."
+    },
+    {
+      "q": "What is the difference between `@pytest.mark.skip` and `@pytest.mark.xfail`?",
+      "o": [
+        "There is no difference",
+        "skip bypasses the test; xfail runs it but expects it to fail",
+        "skip is for bugs; xfail is for features",
+        "xfail is only for Windows systems"
+      ],
+      "a": 1,
+      "e": "`skip` completely ignores the test, while `xfail` (expected failure) still executes the test; if the test unexpectedly passes, it is reported as XPASS."
+    }
+  ]
+}
