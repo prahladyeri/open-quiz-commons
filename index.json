@@ -179,6 +179,47 @@
           ]
         }
       ]
-    }
+    },
+	{
+      "name": "Web Development",
+      "slug": "webdev",
+      "icon": "fa fa-laptop",
+	  "subtopics": [
+		{
+			"hidden": true,
+			"name": "Fundamentals & Styling",
+			"slug": "fundas",
+			"modules": [
+				{"name": "Semantic HTML", "slug": "semantic_html", "descn": "Focused on accessibility (ARIA), SEO impact, and using the right tags for the right jobs (beyond just div)."},
+				{"name": "DOM API", "slug": "dom_api", "descn": "Core browser interaction: Event bubbling, selectors, localStorage, and the Critical Rendering Path."},
+				{"name": "CSS Layout", "slug": "css_layout", "descn": "A deep dive into Flexbox and CSS Grid logic (alignment, spanning, and responsiveness)."},
+				{"name": "Tailwind CSS", "slug": "tailwind", "descn": "Utility-first CSS framework: Utility classes, responsive design, configuration, and JIT engine."},
+				{"name": "CSS Architecture", "slug": "css_architecture", "descn": "CSS Variables, BEM naming conventions, preprocessors (SASS/PostCSS), and Cascade Layers."}
+			]
+		}, 
+		{
+			"hidden": true,
+			"name": "Frontend Frameworks & State",
+			"slug": "frameworks_state",
+			"modules": [
+				{"name": "React Basics", "slug": "react", "descn": "Component lifecycle, Hooks (useState, useEffect), Props, and Virtual DOM reconciliation."},
+				{"name": "State Mgmt", "slug": "state_management", "descn": "Redux, Context API, signals, and server-state management."},
+				{"name": "Forms Validation", "slug": "forms_validation", "descn": "Controlled vs. uncontrolled components, FormData API, and client-side validation logic."},
+				{"name": "Performance", "slug": "performance", "descn": "Core Web Vitals (LCP, FID, CLS), code-splitting, lazy loading, and image optimization."},
+				{"name": "Browser Security", "slug": "browser_security", "descn": "Same-Origin Policy, CORS, Content Security Policy (CSP), and preventing XSS/CSRF."},
+				{"name": "Caching Strategies", "slug": "caching_strategies", "descn": "Service Workers, HTTP Cache headers (ETag, Cache-Control), and Progressive Web Apps (PWA)."}
+			]
+		},
+		{
+			"hidden": true,
+			"name": "Deployment & Ecosystem",
+			"slug": "deploy",
+			"modules": [
+				{"name": "SSG/SSR", "slug": "ssg_ssr", "descn": "The differences between Static Site Generation, Server-Side Rendering, and Incremental Static Regeneration."},
+				{"name": "Testing Library", "slug": "testing_lib", "descn": "Testing components with Vitest or Jest and the React Testing Library (focusing on user-centric testing)."}
+			]
+		}
+	  ]
+	}
   ]
 }

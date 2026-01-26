@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of code coverage in software testing?",
+      "o": [
+        "To measure the execution speed of the test suite",
+        "To determine which parts of the source code are executed during testing",
+        "To automatically fix bugs in the source code",
+        "To ensure the code follows PEP 8 style guidelines"
+      ],
+      "a": 1,
+      "e": "Code coverage is a metric used to measure the proportion of source code executed when a particular test suite runs, helping identify untested paths."
+    },
+    {
+      "q": "Which tool is the industry standard for measuring code coverage in Python programs?",
+      "o": [
+        "pytest-speed",
+        "coverage.py",
+        "pychecker",
+        "pylint"
+      ],
+      "a": 1,
+      "e": "`coverage.py` is the most widely used tool for monitoring Python programs, noting which parts of the code have been executed."
+    },
+    {
+      "q": "What does 'Branch Coverage' measure that 'Statement Coverage' might miss?",
+      "o": [
+        "The number of functions in a module",
+        "Whether both the True and False paths of conditional statements were executed",
+        "The total number of lines in the file",
+        "The execution of comments and docstrings"
+      ],
+      "a": 1,
+      "e": "Statement coverage only checks if a line was run; branch coverage ensures that every possible outcome of a decision point (like an `if` statement) is tested."
+    },
+    {
+      "q": "How do you run a Python script named `main.py` using `coverage.py` from the command line?",
+      "o": [
+        "coverage run main.py",
+        "coverage start main.py",
+        "python -m coverage main.py",
+        "coverage exec main.py"
+      ],
+      "a": 0,
+      "e": "The `run` command executes the script and collects data on which lines were executed during the run."
+    },
+    {
+      "q": "Which command is used to generate a human-readable visual report (in a browser) of the coverage results?",
+      "o": [
+        "coverage report",
+        "coverage html",
+        "coverage view",
+        "coverage xml"
+      ],
+      "a": 1,
+      "e": "`coverage html` creates a set of HTML files including annotated source code that highlights which lines were missed, usually stored in a `htmlcov` directory."
+    },
+    {
+      "q": "What is the name of the default data file where `coverage.py` stores its collection results?",
+      "o": [
+        "coverage.xml",
+        "coverage.json",
+        ".coverage",
+        "results.dat"
+      ],
+      "a": 2,
+      "e": "By default, `coverage.py` saves its data in a hidden file named `.coverage` in the current working directory."
+    },
+    {
+      "q": "What does the command `coverage report -m` do?",
+      "o": [
+        "Generates a report for multiple files",
+        "Shows a summary of coverage including the line numbers of missing statements",
+        "Runs the tests in multi-threaded mode",
+        "Ignores all modules except the main one"
+      ],
+      "a": 1,
+      "e": "The `-m` (or `--show-missing`) flag adds a column to the summary report indicating exactly which lines were not executed."
+    },
+    {
+      "q": "If a project has 100% code coverage, does it mean the code is bug-free?",
+      "o": [
+        "Yes, 100% coverage guarantees correctness",
+        "No, it only means every line was executed, not that the logic is correct for all inputs",
+        "Yes, but only if branch coverage is also 100%",
+        "No, coverage only applies to syntax errors"
+      ],
+      "a": 1,
+      "e": "Coverage is a measure of thoroughness, not correctness. Code can be 100% covered but still fail on edge cases or contain logical flaws."
+    },
+    {
+      "q": "Which configuration file is commonly used to exclude specific files or directories from coverage analysis?",
+      "o": [
+        "setup.cfg",
+        ".coveragerc",
+        "pytest.ini",
+        "All of the above"
+      ],
+      "a": 3,
+      "e": "`coverage.py` can read settings from `.coveragerc`, `setup.cfg`, `tox.ini`, and `pyproject.toml`."
+    },
+    {
+      "q": "Which comment can be added to a line of Python code to tell `coverage.py` to ignore it?",
+      "o": [
+        "# no-cover",
+        "# pragma: no cover",
+        "# ignore: coverage",
+        "# coverage: exclude"
+      ],
+      "a": 1,
+      "e": "The pragma `# pragma: no cover` tells the tool that the line (or block) is intentionally not covered by tests and should be excluded from statistics."
+    },
+    {
+      "q": "How can you combine coverage data from multiple test runs (e.g., from different machines)?",
+      "o": [
+        "coverage merge",
+        "coverage combine",
+        "coverage add",
+        "coverage join"
+      ],
+      "a": 1,
+      "e": "The `combine` command merges several data files (typically created by parallel runs) into a single `.coverage` file."
+    },
+    {
+      "q": "When using `pytest`, which plugin is typically used to integrate code coverage directly into the test run?",
+      "o": [
+        "pytest-cov",
+        "pytest-coverage",
+        "coverage-pytest",
+        "pytest-monitor"
+      ],
+      "a": 0,
+      "e": "`pytest-cov` is a plugin that allows you to run `pytest` and get a coverage report simultaneously using the `--cov` flag."
+    }
+  ]
+}

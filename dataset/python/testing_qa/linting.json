@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary goal of using a linter in a Python project?",
+      "o": [
+        "To compile Python into faster bytecode",
+        "To analyze source code to flag programming errors, bugs, and stylistic errors",
+        "To automatically upload code to a remote server",
+        "To run unit tests and report failures"
+      ],
+      "a": 1,
+      "e": "Linters perform static analysis of your code to find potential errors and enforce style guides without actually executing the code."
+    },
+    {
+      "q": "Which tool is considered the most comprehensive and strict linter for Python, often used to enforce PEP 8?",
+      "o": [
+        "Pylint",
+        "Black",
+        "Conda",
+        "Pytest"
+      ],
+      "a": 0,
+      "e": "Pylint is a highly configurable tool that checks for errors, enforces a coding standard, and looks for code smells."
+    },
+    {
+      "q": "What is the main difference between a 'linter' and a 'formatter' like Black?",
+      "o": [
+        "Linters only work on Windows",
+        "Formatters only check for logic errors",
+        "Linters flag issues; formatters automatically restructure code to a specific style",
+        "There is no difference"
+      ],
+      "a": 2,
+      "e": "Linters (like Flake8) tell you what is wrong; formatters (like Black or Yapf) automatically change your code to match a standard."
+    },
+    {
+      "q": "Which linter is actually a wrapper that combines PyFlakes, pycodestyle, and Ned Batchelder's McCabe script?",
+      "o": [
+        "PyDocStyle",
+        "Flake8",
+        "Mypy",
+        "Bandit"
+      ],
+      "a": 1,
+      "e": "Flake8 is a popular 'modular' linter that combines logical error checking, style checking, and complexity analysis."
+    },
+    {
+      "q": "What does the tool 'Mypy' specifically check for in Python code?",
+      "o": [
+        "Security vulnerabilities",
+        "Static type hints and type safety",
+        "Unused imports only",
+        "Docstring completeness"
+      ],
+      "a": 1,
+      "e": "Mypy is a static type checker that uses Python's type hints to find type-related errors before the code runs."
+    },
+    {
+      "q": "Which tool would you use specifically to find common security issues in Python code?",
+      "o": [
+        "Bandit",
+        "Flake8",
+        "Pylint",
+        "isort"
+      ],
+      "a": 0,
+      "e": "Bandit is a tool designed to find common security vulnerabilities (like hardcoded passwords or shell injection) in Python code."
+    },
+    {
+      "q": "What is the purpose of the 'isort' utility?",
+      "o": [
+        "To sort a list of numbers in Python",
+        "To sort and categorize Python import statements automatically",
+        "To check if a variable is of a specific type",
+        "To optimize database queries"
+      ],
+      "a": 1,
+      "e": "isort automatically sorts your imports alphabetically and separates them into sections (standard library, third-party, local)."
+    },
+    {
+      "q": "Which configuration file is widely used to centralize settings for multiple linters like Flake8 and Black?",
+      "o": [
+        "setup.py",
+        "pyproject.toml",
+        "linter.json",
+        "requirements.txt"
+      ],
+      "a": 1,
+      "e": "According to PEP 518, `pyproject.toml` is the modern standard for tool configuration in Python projects."
+    },
+    {
+      "q": "What does a 'McCabe complexity' score in a linter report indicate?",
+      "o": [
+        "The number of lines in a file",
+        "The number of linearly independent paths through a program's source code",
+        "The amount of RAM the code will use",
+        "The number of contributors to the file"
+      ],
+      "a": 1,
+      "e": "Cyclomatic complexity (McCabe) measures how complex your code is; a high score usually means a function should be broken down into smaller pieces."
+    },
+    {
+      "q": "How can you disable a specific linter warning on a single line in Pylint?",
+      "o": [
+        "# ignore-this",
+        "# pylint: disable=warning-name",
+        "# no-lint",
+        "// skip-linter"
+      ],
+      "a": 1,
+      "e": "Pylint allows inline suppression of specific messages using a comment with the `disable` keyword."
+    },
+    {
+      "q": "What is the benefit of integrating linters into a 'Pre-commit' hook?",
+      "o": [
+        "It makes the code run faster on the server",
+        "It prevents code that fails linting from being committed to version control",
+        "It automatically writes the documentation",
+        "It bypasses the need for unit testing"
+      ],
+      "a": 1,
+      "e": "Pre-commit hooks run linters automatically before every `git commit`, ensuring only clean code enters the repository."
+    },
+    {
+      "q": "Which linter is written in Rust and claims to be significantly faster than Pylint or Flake8?",
+      "o": [
+        "Ruff",
+        "FastLint",
+        "RustPython",
+        "QuickCheck"
+      ],
+      "a": 0,
+      "e": "Ruff is an extremely fast Python linter and formatter written in Rust that can replace dozens of separate tools."
+    }
+  ]
+}
