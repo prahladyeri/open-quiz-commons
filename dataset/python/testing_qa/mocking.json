@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which class in the `unittest.mock` module is the most commonly used to replace parts of your system under test?",
+      "o": [
+        "Fake",
+        "Mock",
+        "Stub",
+        "Proxy"
+      ],
+      "a": 1,
+      "e": "`Mock` is the flexible base class used to create objects that can be used in place of real objects to record how they are used."
+    },
+    {
+      "q": "What is the primary difference between `Mock` and `MagicMock`?",
+      "o": [
+        "MagicMock can only be used with Python 2",
+        "MagicMock implements common magic (dunder) methods by default",
+        "Mock is asynchronous, MagicMock is synchronous",
+        "MagicMock is faster but consumes more memory"
+      ],
+      "a": 1,
+      "e": "`MagicMock` is a subclass of `Mock` that has default implementations of most Python 'magic' methods (like `__getitem__`, `__iter__`, etc.) already available."
+    },
+    {
+      "q": "Which decorator/context manager is used to temporarily replace an object at a specific string path with a mock?",
+      "o": [
+        "unittest.mock.replace",
+        "unittest.mock.substitute",
+        "unittest.mock.patch",
+        "unittest.mock.fake"
+      ],
+      "a": 2,
+      "e": "`patch` handles the lookup and replacement of an object during a test, automatically restoring the original object once the test completes."
+    },
+    {
+      "q": "When using `patch('package.module.ClassName')`, which object should you target for patching?",
+      "o": [
+        "Where the object is defined",
+        "Where the object is looked up/imported",
+        "Always the root level of the package",
+        "It doesn't matter"
+      ],
+      "a": 1,
+      "e": "You should patch where the object is *used* (looked up). If `module_a` imports `ClassName` from `module_b`, you should patch `module_a.ClassName`."
+    },
+    {
+      "q": "How do you make a mock object return a specific value when called?",
+      "o": [
+        "mock.set_return(value)",
+        "mock.return_value = value",
+        "mock.call_result = value",
+        "mock.value = value"
+      ],
+      "a": 1,
+      "e": "The `return_value` attribute defines the result returned when the mock object is invoked as a function."
+    },
+    {
+      "q": "What attribute allows a mock to return different values on consecutive calls or raise an exception?",
+      "o": [
+        "side_effect",
+        "sequence_value",
+        "multi_call",
+        "raise_error"
+      ],
+      "a": 0,
+      "e": "`side_effect` can take a list (returning values in order), a function (returning the function's result), or an exception class/instance to be raised."
+    },
+    {
+      "q": "Which method is used to verify that a mock was called at least once with specific arguments?",
+      "o": [
+        "assert_called()",
+        "assert_was_called()",
+        "assert_called_with()",
+        "assert_invoked_once()"
+      ],
+      "a": 2,
+      "e": "`assert_called_with()` verifies that the last call made to the mock was with the specified arguments."
+    },
+    {
+      "q": "What is the purpose of the `spec` argument when creating a mock?",
+      "o": [
+        "To speed up the mock execution",
+        "To limit the mock to only the attributes and methods present on a specific object",
+        "To define the return type of the mock",
+        "To provide a documentation string for the mock"
+      ],
+      "a": 1,
+      "e": "Specifying a `spec` prevents the mock from allowing access to arbitrary attributes that don't exist on the original class, helping catch typos in test code."
+    },
+    {
+      "q": "Which `patch` variant is used to replace dictionary values within a test?",
+      "o": [
+        "patch.dict",
+        "patch.object",
+        "patch.multiple",
+        "patch.map"
+      ],
+      "a": 0,
+      "e": "`patch.dict` is specifically designed to patch dictionary-like objects, such as `os.environ`."
+    },
+    {
+      "q": "How can you access a list of all calls made to a mock object?",
+      "o": [
+        "mock.call_list",
+        "mock.history",
+        "mock.call_args_list",
+        "mock.get_calls()"
+      ],
+      "a": 2,
+      "e": "`call_args_list` is a list of `call` objects representing every time the mock was invoked, including the arguments used."
+    },
+    {
+      "q": "In `unittest.mock`, what does `PropertyMock` do?",
+      "o": [
+        "Mocks a class attribute that is protected",
+        "Mocks a value that is treated as a property rather than a method",
+        "Ensures a mock cannot be modified",
+        "Mocks the metadata of a module"
+      ],
+      "a": 1,
+      "e": "`PropertyMock` is used when you need to mock an attribute that is defined as a `@property` on a class."
+    },
+    {
+      "q": "What is 'autospeccing' in the context of `patch`?",
+      "o": [
+        "Automatically generating documentation for mocks",
+        "Creating a mock that automatically has the same attributes and signature as the object it replaces",
+        "Automatically mocking every module in a package",
+        "Validating that a mock returns the correct data type"
+      ],
+      "a": 1,
+      "e": "Passing `autospec=True` to `patch` creates a mock that behaves like the object it replaces, including enforcing function signatures so calls with wrong arguments fail."
+    }
+  ]
+}
