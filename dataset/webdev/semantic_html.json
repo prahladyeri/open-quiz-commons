@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary benefit of using Semantic HTML tags like <main>, <nav>, and <article> instead of generic <div> tags?",
+      "o": [
+        "They automatically apply CSS grid styling",
+        "They provide meaning to the browser and assistive technologies about the content's role",
+        "They make the HTML file size significantly smaller",
+        "They are required for JavaScript to interact with the DOM"
+      ],
+      "a": 1,
+      "e": "Semantic tags describe their meaning to both the browser and the developer, which helps screen readers navigate the page and improves SEO."
+    },
+    {
+      "q": "Which tag is the most appropriate for a standalone piece of content that could be independently distributed or reused, such as a blog post or a news story?",
+      "o": [
+        "<section>",
+        "<div>",
+        "<article>",
+        "<body>"
+      ],
+      "a": 2,
+      "e": "The <article> element represents a complete, self-contained composition in a document, page, or site."
+    },
+    {
+      "q": "How does using proper semantic heading levels (<h1> through <h6>) impact SEO and accessibility?",
+      "o": [
+        "It determines the default font size in the browser",
+        "It creates a logical document outline used by screen readers and search engine crawlers",
+        "It is used by the browser to prioritize image loading",
+        "It has no impact on SEO, only on visual layout"
+      ],
+      "a": 1,
+      "e": "Search engines and screen readers use headings to understand the structure and hierarchy of the page content. Skipping levels can confuse these tools."
+    },
+    {
+      "q": "What is the correct use of the <figure> and <figcaption> elements?",
+      "o": [
+        "To group any set of <div> elements together",
+        "To wrap images, diagrams, or code snippets along with an explanatory caption",
+        "To create a sidebar for navigation links",
+        "To define the main header of a webpage"
+      ],
+      "a": 1,
+      "e": "<figure> is used to encapsulate self-contained content, and <figcaption> provides a textual description for that content."
+    },
+    {
+      "q": "Which attribute should be added to an <img> tag to ensure it is accessible to users with visual impairments?",
+      "o": [
+        "title",
+        "src",
+        "alt",
+        "id"
+      ],
+      "a": 2,
+      "e": "The 'alt' (alternative text) attribute is read aloud by screen readers to describe the image content to users who cannot see it."
+    },
+    {
+      "q": "What does the ARIA attribute 'role=\"button\"' do when applied to a <div>?",
+      "o": [
+        "It automatically adds a click event listener",
+        "It styles the div to look like a button",
+        "It tells assistive technologies to treat the div as a button",
+        "It makes the div keyboard-focusable by default"
+      ],
+      "a": 2,
+      "e": "ARIA roles provide metadata to assistive technologies, but they do not add default browser behaviors like keyboard focus or event handling. Native <button> tags are always preferred."
+    },
+    {
+      "q": "Which tag should be used to wrap the primary navigation links of a website?",
+      "o": [
+        "<ul>",
+        "<menu>",
+        "<nav>",
+        "<header>"
+      ],
+      "a": 2,
+      "e": "The <nav> element is a landmark that allows screen reader users to jump directly to the navigation section of a page."
+    },
+    {
+      "q": "Why is it better to use <button> instead of <div onclick=\"...\"> for clickable elements?",
+      "o": [
+        "Buttons have native keyboard accessibility (Tab and Enter support)",
+        "Divs cannot have click events in modern browsers",
+        "Buttons are faster to render in the DOM",
+        "Divs are reserved only for layout, never for interaction"
+      ],
+      "a": 0,
+      "e": "Native buttons are keyboard-accessible out of the box. Using a div requires extra work (tabindex and keydown listeners) to achieve the same level of accessibility."
+    },
+    {
+      "q": "In the context of SEO, what is the 'main' landmark used for?",
+      "o": [
+        "To identify the navigation bar",
+        "To wrap the logo and site title",
+        "To identify the unique, primary content of the document",
+        "To define the copyright section at the bottom"
+      ],
+      "a": 2,
+      "e": "The <main> tag helps search engines identify the core content of a page, ignoring headers, footers, and sidebars that repeat across the site."
+    },
+    {
+      "q": "Which element is specifically intended to contain contact information for its nearest <article> or <body> ancestor?",
+      "o": [
+        "<footer>",
+        "<address>",
+        "<contact>",
+        "<aside>"
+      ],
+      "a": 1,
+      "e": "The <address> element is specifically used to provide contact information for the author or owner of the document or article."
+    },
+    {
+      "q": "What is the purpose of the <time> element?",
+      "o": [
+        "To display a live clock on the page",
+        "To represent a specific period in time or a date in a machine-readable format",
+        "To set a timeout for a JavaScript function",
+        "To measure how long a user stays on a page"
+      ],
+      "a": 1,
+      "e": "Using <time datetime=\"2024-01-01\"> allows browsers and search engines to parse dates and times accurately regardless of how they are formatted visually."
+    },
+    {
+      "q": "What does the 'aria-label' attribute provide?",
+      "o": [
+        "A tooltip that appears on hover",
+        "A text string that labels an element when no visible text is present",
+        "The CSS class name for the element",
+        "A way to translate the text into different languages"
+      ],
+      "a": 1,
+      "e": "aria-label is used when an element has no visible text (like an icon-only button) to provide a descriptive name for screen readers."
+    }
+  ]
+}
