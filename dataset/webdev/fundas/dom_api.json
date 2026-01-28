@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which method is used to select the first element that matches a specific CSS selector?",
+      "o": [
+        "document.getElementBySelector()",
+        "document.querySelector()",
+        "document.findFirst()",
+        "document.getNodes()"
+      ],
+      "a": 1,
+      "e": "`querySelector()` is a powerful and flexible method that returns the first element within the document that matches the specified selector or group of selectors."
+    },
+    {
+      "q": "What is 'Event Bubbling' in the DOM?",
+      "o": [
+        "When an event is triggered on all elements simultaneously",
+        "When an event starts at the target element and propagates up to its ancestors",
+        "When an event starts at the Document and moves down to the target",
+        "A method to delete multiple events at once"
+      ],
+      "a": 1,
+      "e": "In the bubbling phase, the event first triggers on the target element and then bubbles up through its parents in the DOM tree."
+    },
+    {
+      "q": "Which method should you use to add a new child element to an existing parent element?",
+      "o": [
+        "parent.insertChild()",
+        "parent.appendChild()",
+        "parent.addChild()",
+        "parent.push()"
+      ],
+      "a": 1,
+      "e": "`appendChild()` adds a node to the end of the list of children of a specified parent node."
+    },
+    {
+      "q": "How can you prevent a click event on a link from navigating to a new URL?",
+      "o": [
+        "event.stop()",
+        "event.preventDefault()",
+        "event.stopPropagation()",
+        "return false"
+      ],
+      "a": 1,
+      "e": "`preventDefault()` cancels the event's default action (like following a link or submitting a form) without stopping further propagation of the event."
+    },
+    {
+      "q": "What is the primary difference between `innerText` and `textContent`?",
+      "o": [
+        "innerText is for HTML; textContent is for plain text",
+        "innerText is aware of CSS styling (visibility); textContent is not",
+        "textContent is only supported in Internet Explorer",
+        "There is no difference"
+      ],
+      "a": 1,
+      "e": "`innerText` returns only the 'human-readable' text (it won't return text hidden by CSS), while `textContent` returns the raw content of all elements, including `<script>` and `<style>` tags."
+    },
+    {
+      "q": "Which property allows you to read or set the HTML markup contained within an element?",
+      "o": [
+        "element.markup",
+        "element.innerContent",
+        "element.innerHTML",
+        "element.content"
+      ],
+      "a": 2,
+      "e": "`innerHTML` allows you to retrieve or replace the entire HTML structure inside an element as a string."
+    },
+    {
+      "q": "What does `event.stopPropagation()` do?",
+      "o": [
+        "It prevents the default browser behavior",
+        "It prevents the event from bubbling up to parent elements",
+        "It cancels the event entirely",
+        "It reloads the page"
+      ],
+      "a": 1,
+      "e": "`stopPropagation()` stops the event from moving further up the DOM tree, ensuring parent event handlers are not triggered."
+    },
+    {
+      "q": "Which DOM property provides a live collection of an element's child elements?",
+      "o": [
+        "element.childNodes",
+        "element.children",
+        "element.list",
+        "element.subElements"
+      ],
+      "a": 1,
+      "e": "`element.children` returns only the child nodes that are elements (tags), while `childNodes` includes text nodes and comments."
+    },
+    {
+      "q": "How do you correctly attach an event listener to an element so it can be easily removed later?",
+      "o": [
+        "element.onclick = function() {}",
+        "element.addEventListener('click', handlerFunction)",
+        "element.attachEvent('click', handler)",
+        "element.addListener('click')"
+      ],
+      "a": 1,
+      "e": "`addEventListener` is the modern standard; it allows multiple listeners for the same event and can be removed using `removeEventListener` if the handler is a named function."
+    },
+    {
+      "q": "What is the 'Critical Rendering Path'?",
+      "o": [
+        "The fastest way to download a JavaScript file",
+        "The sequence of steps the browser takes to convert HTML, CSS, and JS into actual pixels",
+        "The path of the mouse cursor across the screen",
+        "The hierarchy of file imports in a project"
+      ],
+      "a": 1,
+      "e": "The Critical Rendering Path involves creating the DOM, CSSOM, Render Tree, Layout, and finally Painting."
+    },
+    {
+      "q": "What happens when you use `document.createDocumentFragment()`?",
+      "o": [
+        "It creates a new window",
+        "It creates a 'lightweight' document that allows you to perform DOM operations off-screen for better performance",
+        "It creates a backup of the current page",
+        "It is used to parse JSON data"
+      ],
+      "a": 1,
+      "e": "Document fragments are not part of the active DOM tree; changes made to them do not cause reflows, making them highly efficient for batch insertions."
+    },
+    {
+      "q": "Where is data stored if you use `window.localStorage`?",
+      "o": [
+        "On the server database",
+        "In the browser, with no expiration date",
+        "In the browser, but it's deleted when the tab is closed",
+        "In the user's RAM only"
+      ],
+      "a": 1,
+      "e": "`localStorage` stores data with no expiration date, meaning the data persists even after the browser is closed and reopened."
+    }
+  ]
+}
