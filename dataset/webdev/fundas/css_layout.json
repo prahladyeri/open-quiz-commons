@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which CSS property is required on a parent element to turn it into a flex container?",
+      "o": [
+        "flex: 1",
+        "display: flex",
+        "align-items: center",
+        "orientation: horizontal"
+      ],
+      "a": 1,
+      "e": "Setting `display: flex` (or `inline-flex`) initializes the flex formatting context for all direct children."
+    },
+    {
+      "q": "In Flexbox, which property is used to align items along the 'Main Axis'?",
+      "o": [
+        "align-items",
+        "justify-content",
+        "align-content",
+        "place-items"
+      ],
+      "a": 1,
+      "e": "`justify-content` manages the distribution of space between and around content items along the main axis (usually horizontal)."
+    },
+    {
+      "q": "How do you switch the 'Main Axis' from horizontal to vertical in a Flexbox container?",
+      "o": [
+        "flex-direction: column",
+        "flex-wrap: wrap",
+        "align-axis: vertical",
+        "display: block"
+      ],
+      "a": 0,
+      "e": "The `flex-direction` property defaults to `row`. Setting it to `column` makes the main axis vertical."
+    },
+    {
+      "q": "Which CSS Grid property is used to define the number and sizes of the columns in a layout?",
+      "o": [
+        "grid-template-columns",
+        "grid-columns-setup",
+        "column-count",
+        "grid-width"
+      ],
+      "a": 0,
+      "e": "`grid-template-columns` defines the line names and track sizing functions of the grid columns."
+    },
+    {
+      "q": "What does the `fr` unit represent in CSS Grid?",
+      "o": [
+        "Fixed Resolution",
+        "Fraction of the available space in the grid container",
+        "Font-relative size",
+        "Frequency of the grid repeat"
+      ],
+      "a": 1,
+      "e": "The `fr` unit allows you to create flexible grid tracks that grow and shrink to fill the remaining free space."
+    },
+    {
+      "q": "Which property allows a single flex item to grow and take up extra space if available?",
+      "o": [
+        "flex-spread",
+        "flex-grow",
+        "flex-shrink",
+        "flex-basis"
+      ],
+      "a": 1,
+      "e": "`flex-grow` defines the ability for a flex item to grow if necessary, accepting a unitless value that serves as a proportion."
+    },
+    {
+      "q": "In CSS Grid, which shorthand property is used to define an item's position across multiple rows and columns?",
+      "o": [
+        "grid-area",
+        "grid-position",
+        "grid-span",
+        "grid-template"
+      ],
+      "a": 0,
+      "e": "`grid-area` can be used as a shorthand for `grid-row-start`, `grid-column-start`, `grid-row-end`, and `grid-column-end`."
+    },
+    {
+      "q": "What is the difference between `align-items` and `align-content` in Flexbox?",
+      "o": [
+        "They are identical",
+        "align-items works on a single line; align-content works on multi-line containers",
+        "align-items is for Grid; align-content is for Flex",
+        "align-items is for text; align-content is for blocks"
+      ],
+      "a": 1,
+      "e": "`align-content` only has an effect when there is extra space in the cross-axis and the container has multiple lines (`flex-wrap: wrap`)."
+    },
+    {
+      "q": "Which CSS Grid function is used to create a specified number of identical tracks efficiently?",
+      "o": [
+        "repeat()",
+        "multiply()",
+        "grid-loop()",
+        "auto-fill()"
+      ],
+      "a": 0,
+      "e": "The `repeat()` notation allows a large number of columns or rows that exhibit a recurring pattern to be written in a compact form."
+    },
+    {
+      "q": "How can you create a gap between rows and columns in both Flexbox and Grid using a single property?",
+      "o": [
+        "margin",
+        "padding",
+        "gap",
+        "spacing"
+      ],
+      "a": 2,
+      "e": "The `gap` property (formerly `grid-gap`) is now supported in most modern browsers for both CSS Grid and Flexbox layouts."
+    },
+    {
+      "q": "What does `justify-self: center` do in a CSS Grid layout?",
+      "o": [
+        "Centers the entire grid within its parent",
+        "Centers a specific grid item inside its allocated grid area along the inline axis",
+        "Centers all text within the grid",
+        "Centers the grid tracks"
+      ],
+      "a": 1,
+      "e": "While `justify-items` is set on the container, `justify-self` allows an individual grid item to override that alignment."
+    },
+    {
+      "q": "In a Flexbox container, what is the default value of `align-items`?",
+      "o": [
+        "center",
+        "flex-start",
+        "stretch",
+        "baseline"
+      ],
+      "a": 2,
+      "e": "By default, flex items `stretch` to fill the container's cross-axis height (or width, depending on direction)."
+    }
+  ]
+}
