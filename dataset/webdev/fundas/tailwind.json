@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What does it mean that Tailwind CSS is a 'utility-first' framework?",
+      "o": [
+        "It focuses on pre-built components like Modals and Navbars",
+        "It provides low-level CSS classes that let you build custom designs directly in your HTML",
+        "It is designed primarily for building command-line utilities",
+        "It automatically writes your CSS based on your JavaScript logic"
+      ],
+      "a": 1,
+      "e": "Utility-first means instead of writing custom CSS, you apply pre-defined classes (e.g., `flex`, `pt-4`, `text-center`) to compose your design."
+    },
+    {
+      "q": "How do you apply a hover effect to an element in Tailwind?",
+      "o": [
+        "class=\"hover-bg-blue-500\"",
+        "class=\"bg-blue-500:hover\"",
+        "class=\"hover:bg-blue-500\"",
+        "class=\"onHover:bg-blue-500\""
+      ],
+      "a": 2,
+      "e": "Tailwind uses modifiers like `hover:`, `focus:`, and `active:` to apply styles based on the element's state."
+    },
+    {
+      "q": "What is the purpose of the `tailwind.config.js` file?",
+      "o": [
+        "To store the compiled CSS output",
+        "To customize the default theme, add plugins, and define design tokens",
+        "To list all the HTML files in the project",
+        "To install the Tailwind CLI"
+      ],
+      "a": 1,
+      "e": "This file is the heart of Tailwind customization, allowing you to define your own colors, spacing, breakpoints, and more."
+    },
+    {
+      "q": "In Tailwind, which class prefix is used to create responsive designs that target screens larger than 768px (tablets)?",
+      "o": [
+        "tablet:",
+        "lg:",
+        "md:",
+        "sm:"
+      ],
+      "a": 2,
+      "e": "The `md:` prefix targets the 'medium' breakpoint, which defaults to 768px in the standard Tailwind configuration."
+    },
+    {
+      "q": "What does the 'Just-in-Time' (JIT) engine do in Tailwind?",
+      "o": [
+        "It compiles all possible CSS classes at the start of a project",
+        "It generates CSS on-demand as you write your HTML, keeping the file size minimal",
+        "It automatically optimizes images for faster loading",
+        "It translates CSS to JavaScript for better performance"
+      ],
+      "a": 1,
+      "e": "The JIT engine scans your files for used classes and generates only the necessary CSS, enabling faster builds and arbitrarily dynamic values like `top-[117px]`."
+    },
+    {
+      "q": "Which utility class would you use to add a padding of 1rem (16px) to both the left and right sides of an element?",
+      "o": [
+        "p-4",
+        "px-4",
+        "py-4",
+        "pl-4 pr-4"
+      ],
+      "a": 1,
+      "e": "`px-4` applies padding to the x-axis (left and right). By default, `4` translates to `1rem` in Tailwind's spacing scale."
+    },
+    {
+      "q": "How can you apply a style specifically for Dark Mode users in Tailwind?",
+      "o": [
+        "class=\"night:bg-black\"",
+        "class=\"dark:bg-black\"",
+        "class=\"mode-dark:bg-black\"",
+        "class=\"theme-dark:bg-black\""
+      ],
+      "a": 1,
+      "e": "By using the `dark:` modifier, you can easily style elements for dark mode, which is triggered by either system settings or a class on the `<html>` element."
+    },
+    {
+      "q": "What is the 'Box Shadow' utility class to add a large shadow to an element?",
+      "o": [
+        "shadow-lg",
+        "box-shadow: large",
+        "drop-shadow-4",
+        "shadow-xl"
+      ],
+      "a": 0,
+      "e": "`shadow-lg` is the standard Tailwind utility for a large box shadow. `shadow-xl` and `shadow-2xl` are also available for even larger shadows."
+    },
+    {
+      "q": "Which Tailwind directive is used in your CSS file to inject Tailwind's base, components, and utilities styles?",
+      "o": [
+        "@import tailwind",
+        "@tailwind base; @tailwind components; @tailwind utilities;",
+        "@use tailwind;",
+        "require('tailwind')"
+      ],
+      "a": 1,
+      "e": "These `@tailwind` directives are replaced by the Tailwind CLI with the actual generated CSS during the build process."
+    },
+    {
+      "q": "How do you specify a custom, one-off color value like `#ff5733` using Tailwind's arbitrary value syntax?",
+      "o": [
+        "bg-[#ff5733]",
+        "bg-custom-#ff5733",
+        "bg-hex-ff5733",
+        "color-[#ff5733]"
+      ],
+      "a": 0,
+      "e": "Square brackets `[]` allow you to use arbitrary values that aren't defined in your theme, generating a specific class for that value on the fly."
+    },
+    {
+      "q": "What does the `group` class do when used with a modifier like `group-hover:text-blue-500`?",
+      "o": [
+        "It groups multiple elements together in a flexbox",
+        "It allows you to style a child element when its parent (the 'group') is hovered",
+        "It applies the same style to all elements with that class",
+        "It creates a CSS Grid group"
+      ],
+      "a": 1,
+      "e": "The `group` class is placed on a container, allowing children to respond to the container's state using `group-hover`, `group-focus`, etc."
+    },
+    {
+      "q": "What is the purpose of the `content` array in the `tailwind.config.js` file?",
+      "o": [
+        "To list the text content of the website",
+        "To specify the paths to all of your template files so Tailwind can scan them for used classes",
+        "To define the HTML meta tags",
+        "To link external CSS files"
+      ],
+      "a": 1,
+      "e": "The `content` array tells Tailwind which files to watch and scan, ensuring that the JIT engine generates CSS for every class you use."
+    }
+  ]
+}
