@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What does the BEM (Block, Element, Modifier) naming convention aim to solve in CSS architecture?",
+      "o": [
+        "Reducing the size of CSS files through compression",
+        "Creating a clear relationship between the HTML and CSS to improve maintainability",
+        "Automatically generating responsive breakpoints",
+        "Enabling CSS-in-JS functionality"
+      ],
+      "a": 1,
+      "e": "BEM provides a modular structure that makes CSS more readable and predictable, reducing the risk of selector collisions in large projects."
+    },
+    {
+      "q": "In the BEM class name `button--large`, what does the double hyphen indicate?",
+      "o": [
+        "The element inside the block",
+        "A child of the button",
+        "A modifier that changes the appearance or state of the block",
+        "A secondary block"
+      ],
+      "a": 2,
+      "e": "In BEM, `__` (double underscore) denotes an Element, while `--` (double hyphen) denotes a Modifier."
+    },
+    {
+      "q": "What is the primary advantage of using CSS Variables (Custom Properties) over SASS variables?",
+      "o": [
+        "They have a simpler syntax",
+        "They can be updated dynamically at runtime via JavaScript",
+        "They are supported in Internet Explorer 6",
+        "They can only store color values"
+      ],
+      "a": 1,
+      "e": "CSS Variables are part of the DOM, meaning they can be changed in the browser (e.g., for a theme switcher) without recompiling the CSS."
+    },
+    {
+      "q": "What is 'CSS Specificity'?",
+      "o": [
+        "A tool that checks for spelling errors in CSS",
+        "The set of rules browsers use to determine which CSS property values are the most relevant to an element",
+        "The speed at which CSS is rendered",
+        "The process of converting SASS into CSS"
+      ],
+      "a": 1,
+      "e": "Specificity determines which styles are applied when multiple rules target the same element. IDs have higher specificity than classes, which have higher specificity than tags."
+    },
+    {
+      "q": "What do CSS 'Cascade Layers' (@layer) allow developers to control?",
+      "o": [
+        "The z-index of elements on the page",
+        "The order of precedence of CSS rules, independent of specificity",
+        "The loading speed of external fonts",
+        "The transparency levels of nested divs"
+      ],
+      "a": 1,
+      "e": "@layer allows you to group CSS into layers where the layer order determines priority, helping to manage style overrides more predictably."
+    },
+    {
+      "q": "In SASS/SCSS, what is a '@mixin' used for?",
+      "o": [
+        "To perform mathematical calculations",
+        "To create reusable blocks of CSS code that can be included in other selectors",
+        "To define global constants",
+        "To import external JSON data"
+      ],
+      "a": 1,
+      "e": "Mixins allow you to define a group of CSS declarations that you want to reuse throughout your site, often accepting arguments for flexibility."
+    },
+    {
+      "q": "Which CSS architecture philosophy promotes the use of single-purpose classes (e.g., `.m-0`, `.text-center`)?",
+      "o": [
+        "OOCSS (Object Oriented CSS)",
+        "SMACSS (Scalable and Modular Architecture for CSS)",
+        "Utility-First / Atomic CSS",
+        "BEM"
+      ],
+      "a": 2,
+      "e": "Utility-first/Atomic CSS (like Tailwind) uses small, single-responsibility classes to build components directly in the HTML."
+    },
+    {
+      "q": "What does the 'S' in SMACSS stand for?",
+      "o": [
+        "Semantic",
+        "Scalable",
+        "Simplified",
+        "Systematic"
+      ],
+      "a": 1,
+      "e": "SMACSS stands for Scalable and Modular Architecture for CSS, which categorizes CSS rules into Base, Layout, Module, State, and Theme."
+    },
+    {
+      "q": "What is the purpose of a PostCSS plugin like 'Autoprefixer'?",
+      "o": [
+        "To minify the CSS code",
+        "To automatically add vendor prefixes (like -webkit- or -moz-) to CSS properties",
+        "To convert CSS into JavaScript",
+        "To validate the accessibility of colors"
+      ],
+      "a": 1,
+      "e": "Autoprefixer uses data from 'Can I Use' to add necessary prefixes, ensuring cross-browser compatibility without manual effort."
+    },
+    {
+      "q": "In CSS, what happens to a rule marked with `!important`?",
+      "o": [
+        "It is ignored by the browser",
+        "It overrides almost all other declarations, regardless of specificity",
+        "It only applies to mobile devices",
+        "It makes the text bold automatically"
+      ],
+      "a": 1,
+      "e": "`!important` is a tool used to bypass the standard cascade and specificity, though it should be used sparingly as it makes debugging difficult."
+    },
+    {
+      "q": "What is 'CSS-in-JS'?",
+      "o": [
+        "Writing CSS styles inside JavaScript files, often scoped to a specific component",
+        "A way to run JavaScript inside a .css file",
+        "A legacy method of styling websites using <script> tags",
+        "A tool that converts CSS files into .js files"
+      ],
+      "a": 0,
+      "e": "Popular in the React ecosystem (e.g., Styled Components), CSS-in-JS allows for scoped styling and dynamic styles based on component props."
+    },
+    {
+      "q": "What is 'Tree Shaking' in the context of CSS?",
+      "o": [
+        "Organizing files into a folder tree",
+        "Removing unused CSS from the final bundle to reduce file size",
+        "Updating the DOM tree",
+        "Ensuring the CSS follows a hierarchical structure"
+      ],
+      "a": 1,
+      "e": "Tree shaking (or Purging) analyzes your HTML/JS and 'shakes off' any CSS rules that aren't actually used in your project."
+    }
+  ]
+}
