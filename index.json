@@ -181,7 +181,6 @@
       ]
     },
 	{
-	  "hidden": true,
       "name": "Web Development",
       "slug": "webdev",
       "icon": "fa fa-laptop",
