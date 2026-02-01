@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of the 'Virtual DOM' in React?",
+      "o": [
+        "To provide a direct backup of the browser's DOM",
+        "To minimize expensive real DOM manipulations by calculating changes in memory",
+        "To store global application state",
+        "To replace the need for CSS"
+      ],
+      "a": 1,
+      "e": "React creates a lightweight copy of the DOM. When state changes, it compares the new Virtual DOM with a snapshot of the old one (diffing) and updates only the necessary parts of the real DOM (reconciliation)."
+    },
+    {
+      "q": "Which Hook is used to manage local state within a functional component?",
+      "o": [
+        "useEffect",
+        "useContext",
+        "useState",
+        "useReducer"
+      ],
+      "a": 2,
+      "e": "`useState` returns a stateful value and a function to update it, which are preserved across re-renders."
+    },
+    {
+      "q": "What is the 'dependency array' in a `useEffect` Hook used for?",
+      "o": [
+        "To list all variables used in the component",
+        "To control when the effect should re-run",
+        "To define the initial state of the component",
+        "To import external libraries"
+      ],
+      "a": 1,
+      "e": "If the array is empty `[]`, the effect runs once on mount. If it contains variables, the effect runs whenever those specific values change."
+    },
+    {
+      "q": "In React, data is passed from parent to child components via:",
+      "o": [
+        "State",
+        "Props",
+        "Hooks",
+        "Context only"
+      ],
+      "a": 1,
+      "e": "Props (short for properties) are read-only inputs passed from a parent component to a child component, following a unidirectional data flow."
+    },
+    {
+      "q": "What is JSX?",
+      "o": [
+        "A specialized version of Java",
+        "A syntax extension for JavaScript that looks like HTML",
+        "A new type of CSS preprocessor",
+        "A state management library"
+      ],
+      "a": 1,
+      "e": "JSX allows you to write HTML-like structures in the same file as your JavaScript logic, which is then transpiled into `React.createElement` calls."
+    },
+    {
+      "q": "When rendering a list of elements in React, why is the 'key' prop important?",
+      "o": [
+        "It sets the CSS ID of the element",
+        "It helps React identify which items have changed, been added, or removed",
+        "It is required for accessibility (ARIA) standards",
+        "It determines the alphabetical order of the list"
+      ],
+      "a": 1,
+      "e": "Keys provide a stable identity to elements in a list, allowing React's reconciliation algorithm to optimize re-renders efficiently."
+    },
+    {
+      "q": "Which Hook would you use to share data globally across many components without 'prop drilling'?",
+      "o": [
+        "useRef",
+        "useMemo",
+        "useContext",
+        "useCallback"
+      ],
+      "a": 2,
+      "e": "`useContext` allows a component to subscribe to a React Context, providing a way to pass data through the component tree without manually passing props at every level."
+    },
+    {
+      "q": "What is the correct way to update a state variable named `count` based on its previous value?",
+      "o": [
+        "setCount(count + 1)",
+        "setCount(prevCount => prevCount + 1)",
+        "count = count + 1",
+        "this.state.count = count + 1"
+      ],
+      "a": 1,
+      "e": "Using a functional update ensures you are working with the most up-to-date state, especially when multiple updates are triggered in a single render cycle."
+    },
+    {
+      "q": "What does the `useRef` Hook return?",
+      "o": [
+        "A stateful value and an updater function",
+        "A mutable ref object with a `.current` property that persists for the full lifetime of the component",
+        "A memoized version of a callback function",
+        "The current width and height of the window"
+      ],
+      "a": 1,
+      "e": "`useRef` is commonly used to access DOM elements directly or to store any mutable value that doesn't trigger a re-render when changed."
+    },
+    {
+      "q": "What is a 'Pure Component' or 'React.memo' used for?",
+      "o": [
+        "To validate the data types of props",
+        "To prevent a component from re-rendering if its props haven't changed",
+        "To ensure a component doesn't have any side effects",
+        "To fetch data from an API"
+      ],
+      "a": 1,
+      "e": "`React.memo` is a higher-order component that performs a shallow comparison of props to skip unnecessary re-renders for performance optimization."
+    },
+    {
+      "q": "Which Hook is specifically designed for handling complex state logic that involves multiple sub-values?",
+      "o": [
+        "useState",
+        "useReducer",
+        "useLayoutEffect",
+        "useLogic"
+      ],
+      "a": 1,
+      "e": "`useReducer` is often preferred over `useState` when you have complex state transitions that depend on previous state, similar to how Redux works."
+    },
+    {
+      "q": "What is the purpose of 'Fragment' (<>...</> or <React.Fragment>)?",
+      "o": [
+        "To group multiple elements without adding an extra node to the DOM",
+        "To create a separate thread for JavaScript execution",
+        "To handle errors within a specific component",
+        "To apply global styles"
+      ],
+      "a": 0,
+      "e": "Fragments allow you to return multiple elements from a component's render method without wrapping them in a unnecessary `<div>`."
+    }
+  ]
+}

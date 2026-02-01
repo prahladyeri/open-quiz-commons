@@ -187,7 +187,6 @@
       "icon": "fa fa-laptop",
 	  "subtopics": [
 		{
-			"hidden": true,
 			"name": "Fundamentals & Styling",
 			"slug": "fundas",
 			"modules": [
