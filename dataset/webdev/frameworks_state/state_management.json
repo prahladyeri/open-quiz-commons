@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary problem that 'Prop Drilling' creates in large-scale applications?",
+      "o": [
+        "It slows down the network request speed",
+        "It forces intermediate components to pass down data they don't actually use",
+        "It prevents the use of CSS-in-JS libraries",
+        "It causes the browser to crash on mobile devices"
+      ],
+      "a": 1,
+      "e": "Prop drilling occurs when data is passed through multiple layers of components just to reach a deeply nested child, making the code harder to maintain and refactor."
+    },
+    {
+      "q": "In Redux, what is the role of a 'Reducer'?",
+      "o": [
+        "To dispatch actions to the store",
+        "To perform asynchronous API calls",
+        "To take the current state and an action, and return a new state",
+        "To minimize the size of the JavaScript bundle"
+      ],
+      "a": 2,
+      "e": "Reducers are pure functions that specify how the application's state changes in response to actions sent to the store."
+    },
+    {
+      "q": "Which state management library is best known for its 'Signal' based approach to reactivity?",
+      "o": [
+        "Redux",
+        "MobX",
+        "Preact/Solid",
+        "React Query"
+      ],
+      "a": 2,
+      "e": "Signals provide a way to store state that automatically tracks dependencies and updates only the specific parts of the UI that use that value, popularized by SolidJS and Preact."
+    },
+    {
+      "q": "What is the main focus of 'TanStack Query' (formerly React Query)?",
+      "o": [
+        "Managing local UI state like 'isModalOpen'",
+        "Handling server-state: fetching, caching, and synchronizing data with a server",
+        "Generating SQL queries for the backend",
+        "Replacing the need for CSS"
+      ],
+      "a": 1,
+      "e": "TanStack Query is a powerful tool for managing asynchronous state (data from APIs), handling complex tasks like caching, de-duplication, and background updates automatically."
+    },
+    {
+      "q": "What does 'Immutability' mean in the context of state management?",
+      "o": [
+        "State can be changed directly at any time",
+        "State cannot be modified after it is created; instead, a new copy is made with changes",
+        "State is stored in a permanent database on the user's hard drive",
+        "State is only accessible by a single component"
+      ],
+      "a": 1,
+      "e": "Immutability allows libraries like React and Redux to use 'shallow equality' checks to determine if the state has changed, which is much faster than deep comparison."
+    },
+    {
+      "q": "In Redux Toolkit, what is a 'Slice'?",
+      "o": [
+        "A piece of code that handles data pagination",
+        "A collection of Redux reducer logic and actions for a single feature",
+        "A method to divide the UI into different segments",
+        "A tool for measuring performance"
+      ],
+      "a": 1,
+      "e": "A Slice bundle the initial state, reducers, and action creators together, reducing the boilerplate code traditionally required by Redux."
+    },
+    {
+      "q": "Which of these is a 'Store' in the context of Zustand?",
+      "o": [
+        "A physical location where software is sold",
+        "A hook-based state container that allows components to select specific slices of state",
+        "A specialized database for JSON objects",
+        "An HTML element for caching data"
+      ],
+      "a": 1,
+      "e": "Zustand uses a simplified approach where you create a store as a hook, allowing components to subscribe to state without complex Provider wrapping."
+    },
+    {
+      "q": "What is 'Stale-While-Revalidate' (SWR)?",
+      "o": [
+        "A way to delete expired cookies",
+        "A strategy that returns cached data first, then fetches an update in the background",
+        "A security protocol for validating user passwords",
+        "A CSS property for animating state transitions"
+      ],
+      "a": 1,
+      "e": "SWR (and libraries like it) improves perceived performance by showing the user 'stale' data immediately while ensuring the information is eventually updated."
+    },
+    {
+      "q": "What is a 'Selector' function used for in libraries like Redux or Recoil?",
+      "o": [
+        "To select elements from the DOM",
+        "To extract and derive specific pieces of data from the global state",
+        "To choose which API endpoint to call",
+        "To select the theme of the application"
+      ],
+      "a": 1,
+      "e": "Selectors encapsulate the structure of the state, allowing components to stay decoupled from the exact shape of the store and preventing unnecessary re-renders."
+    },
+    {
+      "q": "What does it mean when a state management library is described as 'Unidirectional'?",
+      "o": [
+        "Data can flow in both directions between parent and child",
+        "Data follows a one-way loop: Action -> Store -> View",
+        "The library only supports one platform (e.g., only Web)",
+        "State can only be changed by one user at a time"
+      ],
+      "a": 1,
+      "e": "Unidirectional data flow (Flux architecture) makes application behavior more predictable and easier to debug by ensuring state changes only happen in a specific order."
+    },
+    {
+      "q": "In Recoil, what is an 'Atom'?",
+      "o": [
+        "The smallest unit of state that components can subscribe to",
+        "A function that performs side effects",
+        "A type of HTML tag",
+        "A tool for minifying code"
+      ],
+      "a": 0,
+      "e": "Atoms are units of state in Recoil. They are updateable and subscribable: when an atom is updated, each subscribed component is re-rendered with the new value."
+    },
+    {
+      "q": "What is the primary benefit of using 'Context API' for state management?",
+      "o": [
+        "It is faster than Redux for all scenarios",
+        "It is built into React, requiring no external libraries for basic global state",
+        "It automatically caches API responses",
+        "It provides a visual debugger for state changes"
+      ],
+      "a": 1,
+      "e": "Context API is an excellent choice for 'static' global data like themes, locales, or user authentication status that doesn't change frequently."
+    }
+  ]
+}
