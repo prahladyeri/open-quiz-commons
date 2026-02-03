@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the main difference between a 'Controlled' and an 'Uncontrolled' component in React forms?",
+      "o": [
+        "Controlled components are faster; Uncontrolled are more secure",
+        "Controlled components use React state for values; Uncontrolled use the DOM (refs)",
+        "Controlled components only work with text inputs",
+        "Uncontrolled components cannot be validated"
+      ],
+      "a": 1,
+      "e": "In a controlled component, React is the 'single source of truth' for the input value via `useState`. In uncontrolled components, the form data is handled by the DOM itself."
+    },
+    {
+      "q": "Which HTML5 attribute can be used for basic client-side validation without any JavaScript?",
+      "o": [
+        "validate",
+        "required",
+        "check",
+        "important"
+      ],
+      "a": 1,
+      "e": "The `required` attribute specifies that an input field must be filled out before submitting the form. Browsers provide built-in tooltips for this."
+    },
+    {
+      "q": "What is the purpose of the 'pattern' attribute in an HTML input tag?",
+      "o": [
+        "To define the CSS background pattern",
+        "To specify a Regular Expression (RegEx) that the input value must match",
+        "To set the tab order of the form",
+        "To define a list of autocomplete options"
+      ],
+      "a": 1,
+      "e": "The `pattern` attribute allows for complex validation (like phone numbers or zip codes) by matching the input against a regex string."
+    },
+    {
+      "q": "When using React Hook Form, what does the 'register' function do?",
+      "o": [
+        "It signs the user up for a new account",
+        "It connects an input element to the library's state and validation logic",
+        "It saves the form data to a database",
+        "It resets the form to its initial values"
+      ],
+      "a": 1,
+      "e": "The `register` method applies the necessary event listeners (onChange, onBlur) and refs to an input so the library can track its value and errors."
+    },
+    {
+      "q": "What is 'Debouncing' in the context of form validation?",
+      "o": [
+        "Checking the input only after the user has stopped typing for a specific duration",
+        "Validating the form on every single keystroke",
+        "Encrypting the form data before submission",
+        "Automatically correcting typos"
+      ],
+      "a": 0,
+      "e": "Debouncing prevents expensive validation logic (like an API call to check if a username is taken) from running hundreds of times while a user types."
+    },
+    {
+      "q": "Which library is a popular 'schema-based' validator often used with Formik or React Hook Form?",
+      "o": [
+        "Lodash",
+        "Yup",
+        "Axios",
+        "Moment.js"
+      ],
+      "a": 1,
+      "e": "Yup (and Zod) allows you to define a schema object that describes the shapes, types, and validation rules for your form data."
+    },
+    {
+      "q": "Why is it important to perform validation on the Server even if you have Client-side validation?",
+      "o": [
+        "Client-side validation is too slow",
+        "Client-side validation can be bypassed by disabling JavaScript or using tools like Postman",
+        "Server-side validation is required by CSS standards",
+        "It isn't important; one or the other is sufficient"
+      ],
+      "a": 1,
+      "e": "Client-side validation is for User Experience (UX); Server-side validation is for Security and Data Integrity."
+    },
+    {
+      "q": "In a standard HTML form, which event is triggered when a user clicks a 'submit' button?",
+      "o": [
+        "onclick",
+        "onchange",
+        "onsubmit",
+        "oninput"
+      ],
+      "a": 2,
+      "e": "The `onsubmit` event occurs when a form is submitted. It is usually handled on the `<form>` element rather than the button."
+    },
+    {
+      "q": "What is the 'FormData' API used for in JavaScript?",
+      "o": [
+        "To style forms using JavaScript",
+        "To easily construct a set of key/value pairs representing form fields and their values",
+        "To create new database tables",
+        "To validate email addresses"
+      ],
+      "a": 1,
+      "e": "`new FormData(formElement)` captures all the data in a form, making it easy to send via an `fetch` or `XMLHttpRequest` POST request."
+    },
+    {
+      "q": "What does 'touch' state (or 'isDirty') mean in form libraries?",
+      "o": [
+        "The user has physically touched the screen",
+        "The user has interacted with or modified a specific input field",
+        "The form has been successfully submitted",
+        "The input contains a virus"
+      ],
+      "a": 1,
+      "e": "Tracking 'touched' state allows developers to wait until a user has finished interacting with a field before showing them an error message, preventing annoying 'early' errors."
+    },
+    {
+      "q": "What is 'Constraint Validation API'?",
+      "o": [
+        "A set of methods for styling invalid inputs",
+        "A native browser API for checking the validity of form elements and providing custom error messages",
+        "A third-party library for React",
+        "A database constraint system"
+      ],
+      "a": 1,
+      "e": "The Constraint Validation API includes properties like `validity.valid` and methods like `setCustomValidity()` to tap into the browser's native validation engine."
+    },
+    {
+      "q": "In React, how do you prevent the page from reloading when a form is submitted?",
+      "o": [
+        "event.stopReload()",
+        "event.preventDefault()",
+        "return false",
+        "form.stay()"
+      ],
+      "a": 1,
+      "e": "Standard HTML forms reload the page on submission. `event.preventDefault()` stops this behavior so you can handle the data with JavaScript."
+    }
+  ]
+}
