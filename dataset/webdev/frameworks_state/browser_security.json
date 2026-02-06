@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What does the 'Same-Origin Policy' (SOP) prevent in a browser?",
+      "o": [
+        "It prevents users from visiting multiple websites at once",
+        "It restricts a script on one origin from interacting with a resource from another origin",
+        "It stops the browser from caching sensitive data",
+        "It prevents websites from using external CSS libraries"
+      ],
+      "a": 1,
+      "e": "SOP is a fundamental security building block that ensures scripts from site A cannot access private data from site B (like cookies or DOM) unless explicitly permitted."
+    },
+    {
+      "q": "What is the purpose of 'Cross-Origin Resource Sharing' (CORS)?",
+      "o": [
+        "To block all cross-site requests by default",
+        "To allow servers to specify which origins are permitted to access their resources",
+        "To encrypt data sent between the browser and the server",
+        "To speed up the loading of third-party scripts"
+      ],
+      "a": 1,
+      "e": "CORS is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin access to selected resources from a different origin."
+    },
+    {
+      "q": "What is a 'Preflight Request' in the context of CORS?",
+      "o": [
+        "A request sent to verify the user's password",
+        "An OPTIONS request sent by the browser to check if the actual request is safe to send",
+        "A background task that pre-loads images",
+        "A check to see if the user is connected to the internet"
+      ],
+      "a": 1,
+      "e": "For 'non-simple' requests (like those with JSON or custom headers), the browser sends an OPTIONS request first to ensure the server understands and allows the cross-origin method."
+    },
+    {
+      "q": "Which security header is used to prevent 'Cross-Site Scripting' (XSS) by restricting where scripts can be loaded from?",
+      "o": [
+        "X-Frame-Options",
+        "Strict-Transport-Security",
+        "Content-Security-Policy (CSP)",
+        "Referrer-Policy"
+      ],
+      "a": 2,
+      "e": "CSP allows site administrators to declare which dynamic resources are allowed to load, effectively neutralizing most XSS attacks by blocking unauthorized scripts."
+    },
+    {
+      "q": "What is 'Cross-Site Request Forgery' (CSRF)?",
+      "o": [
+        "Stealing a user's password through a fake login page",
+        "Tricking a logged-in user's browser into sending an unauthorized request to a web application",
+        "Injecting malicious scripts into a database",
+        "A type of denial-of-service attack"
+      ],
+      "a": 1,
+      "e": "CSRF exploits the fact that browsers automatically include credentials like cookies in requests, allowing a malicious site to perform actions on behalf of a user on a different site."
+    },
+    {
+      "q": "Which cookie attribute helps prevent CSRF attacks by controlling when cookies are sent with cross-site requests?",
+      "o": [
+        "HttpOnly",
+        "Secure",
+        "SameSite",
+        "Expires"
+      ],
+      "a": 2,
+      "e": "The `SameSite` attribute (values like `Strict` or `Lax`) tells the browser whether to send cookies along with requests initiated by third-party websites."
+    },
+    {
+      "q": "What does the 'HttpOnly' flag on a cookie do?",
+      "o": [
+        "It forces the cookie to be sent over HTTPS only",
+        "It prevents JavaScript from accessing the cookie via document.cookie",
+        "It makes the cookie expire as soon as the browser is closed",
+        "It prevents the cookie from being sent to the server"
+      ],
+      "a": 1,
+      "e": "`HttpOnly` is a vital defense against XSS; even if a script is successfully injected, it cannot steal the session cookie because the JS engine is blocked from reading it."
+    },
+    {
+      "q": "What is 'Subresource Integrity' (SRI)?",
+      "o": [
+        "A way to check if a user is human",
+        "A security feature that allows browsers to verify that fetched resources (like CDNs) haven't been manipulated",
+        "An encryption method for local storage",
+        "A tool for minifying JavaScript files"
+      ],
+      "a": 1,
+      "e": "SRI uses cryptographic hashes (the `integrity` attribute) to ensure that if a file on a CDN is hacked or altered, the browser will refuse to execute it."
+    },
+    {
+      "q": "What does 'Strict-Transport-Security' (HSTS) ensure?",
+      "o": [
+        "The website can only be accessed via a VPN",
+        "The browser should only communicate with the server using HTTPS, never HTTP",
+        "All images must be loaded from the same domain",
+        "The server is protected against SQL injection"
+      ],
+      "a": 1,
+      "e": "HSTS tells the browser to automatically convert all attempts to access the site using HTTP to HTTPS requests, protecting against man-in-the-middle attacks."
+    },
+    {
+      "q": "What is the 'X-Frame-Options' header used for?",
+      "o": [
+        "To speed up the rendering of iframes",
+        "To prevent 'Clickjacking' by controlling whether a page can be embedded in an iframe",
+        "To allow multiple windows to share the same state",
+        "To set the dimensions of the browser window"
+      ],
+      "a": 1,
+      "e": "Clickjacking involves overlaying a transparent iframe over a legitimate site. `X-Frame-Options: DENY` or `SAMEORIGIN` prevents the site from being framed maliciously."
+    },
+    {
+      "q": "What is the difference between 'Stored XSS' and 'Reflected XSS'?",
+      "o": [
+        "Stored XSS happens in the browser; Reflected happens on the server",
+        "Stored XSS is saved in the database; Reflected is 'bounced' off a URL parameter or form input",
+        "Stored XSS only affects CSS; Reflected affects JavaScript",
+        "There is no practical difference"
+      ],
+      "a": 1,
+      "e": "Stored (or Persistent) XSS is the most dangerous because the payload is saved on the server (e.g., in a comment section) and served to every user who views the page."
+    },
+    {
+      "q": "What security risk is associated with `target=\"_blank\"` on a link?",
+      "o": [
+        "It allows the new page to access the original page's window object via `window.opener`",
+        "It causes the browser to download viruses automatically",
+        "It bypasses the Same-Origin Policy",
+        "It disables the back button for the user"
+      ],
+      "a": 0,
+      "e": "Without `rel=\"noopener\"`, the newly opened page can potentially redirect the original page to a phishing site using `window.opener.location`."
+    }
+  ]
+}
