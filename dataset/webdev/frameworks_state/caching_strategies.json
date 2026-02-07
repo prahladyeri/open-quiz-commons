@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary difference between `Cache-Control: no-cache` and `Cache-Control: no-store`?",
+      "o": [
+        "They are identical and interchangeable",
+        "no-cache allows the browser to store the file but requires revalidation; no-store prevents any caching at all",
+        "no-store is only for images; no-cache is for scripts",
+        "no-cache is a server header; no-store is a client header"
+      ],
+      "a": 1,
+      "e": "`no-cache` tells the browser to check with the server (using ETags) before using the cached version. `no-store` is much stricter, telling the browser not to save the file to disk at all."
+    },
+    {
+      "q": "What is the purpose of the `ETag` (Entity Tag) in an HTTP response?",
+      "o": [
+        "To encrypt the data during transfer",
+        "To act as a unique identifier for a specific version of a resource",
+        "To define the expiration date of a cookie",
+        "To track the user's location"
+      ],
+      "a": 1,
+      "e": "An ETag is a hash of the file. If the file hasn't changed, the server can send a '304 Not Modified' response, saving bandwidth by not re-sending the file."
+    },
+    {
+      "q": "Which technology is used in Progressive Web Apps (PWAs) to manage offline caching and network requests via JavaScript?",
+      "o": [
+        "Web Workers",
+        "Service Workers",
+        "Local Storage",
+        "IndexedDB"
+      ],
+      "a": 1,
+      "e": "Service Workers act as a proxy between the browser and the network, allowing developers to intercept requests and serve cached content even when the user is offline."
+    },
+    {
+      "q": "In the 'Stale-While-Revalidate' caching strategy, what happens when a resource is requested?",
+      "o": [
+        "The browser always waits for the server to respond",
+        "The browser shows the cached version immediately while fetching an update in the background",
+        "The browser deletes the cache and downloads everything again",
+        "The browser only uses the cache if the network is completely down"
+      ],
+      "a": 1,
+      "e": "This strategy maximizes performance by providing an instant UI update from the cache while ensuring the data is updated for the next visit."
+    },
+    {
+      "q": "What does the `max-age` directive in a `Cache-Control` header specify?",
+      "o": [
+        "The maximum size of the file in bytes",
+        "The time in seconds that the response is considered fresh",
+        "The number of times the file can be opened",
+        "The version of the HTTP protocol"
+      ],
+      "a": 1,
+      "e": "For example, `max-age=3600` tells the browser it can use the cached resource for one hour without checking back with the server."
+    },
+    {
+      "q": "What is 'Cache Busting'?",
+      "o": [
+        "Clearing the browser's cache manually",
+        "Using unique versioning in filenames (e.g., style.v2.css) to force browsers to download new versions",
+        "A type of cyber attack that overflows the cache",
+        "A method to speed up database queries"
+      ],
+      "a": 1,
+      "e": "Since browsers cache files based on URLs, changing the filename (often with a hash) ensures users receive the latest code immediately after a deployment."
+    },
+    {
+      "q": "Which header is used by the browser to send the ETag back to the server for validation?",
+      "o": [
+        "If-None-Match",
+        "Verify-ETag",
+        "Check-Version",
+        "Cache-Key"
+      ],
+      "a": 0,
+      "e": "If the `If-None-Match` value matches the server's current ETag, the server returns a 304 status, indicating the browser's cache is still valid."
+    },
+    {
+      "q": "What is the 'Cache-First' (Cache Falling Back to Network) strategy most commonly used for?",
+      "o": [
+        "Dynamic API data like stock prices",
+        "Static assets like images, fonts, and stylesheets",
+        "The main HTML document",
+        "User authentication tokens"
+      ],
+      "a": 1,
+      "e": "For assets that rarely change, checking the cache first ensures the fastest possible load time and reduces server load."
+    },
+    {
+      "q": "What is the 'Vary' header used for in caching?",
+      "o": [
+        "To list all variables used in the script",
+        "To tell the cache which request headers should be considered when determining if a cached response can be used",
+        "To change the background color of the page",
+        "To specify the duration of a session"
+      ],
+      "a": 1,
+      "e": "Commonly used as `Vary: Accept-Encoding`, it ensures that a user who supports Brotli doesn't accidentally receive a cached Gzip version."
+    },
+    {
+      "q": "Which of the following is a key limitation of Service Worker caching?",
+      "o": [
+        "It only works on desktop browsers",
+        "It requires an HTTPS connection (except for localhost)",
+        "It can only store text files",
+        "It cannot be cleared by the user"
+      ],
+      "a": 1,
+      "e": "Because Service Workers can intercept and modify network requests, they are restricted to secure origins to prevent man-in-the-middle attacks."
+    },
+    {
+      "q": "What happens if a response includes `Cache-Control: private`?",
+      "o": [
+        "The file is encrypted with a password",
+        "The resource can be cached by the browser but NOT by public intermediate caches like CDNs",
+        "The resource is hidden from the search engine crawlers",
+        "The cache is deleted after 5 minutes"
+      ],
+      "a": 1,
+      "e": "The `private` directive is typically used for user-specific data that shouldn't be stored in a shared proxy cache where other users might access it."
+    },
+    {
+      "q": "In the Cache API, which method is used to save a response to the cache?",
+      "o": [
+        "cache.save()",
+        "cache.put()",
+        "cache.push()",
+        "cache.set()"
+      ],
+      "a": 1,
+      "e": "The `cache.put(request, response)` method allows you to manually add a request/response pair to the Cache Storage."
+    }
+  ]
+}
