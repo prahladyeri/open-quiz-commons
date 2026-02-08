@@ -197,7 +197,6 @@
 			]
 		}, 
 		{
-			"hidden": true,
 			"name": "Frontend Frameworks & State",
 			"slug": "frameworks_state",
 			"modules": [
