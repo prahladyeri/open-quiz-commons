@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the main characteristic of Static Site Generation (SSG)?",
+      "o": [
+        "The HTML is generated on the server for every single request",
+        "The HTML is generated at build time and served as pre-rendered files",
+        "The page is rendered entirely in the browser using JavaScript",
+        "The site requires a live database connection to display any content"
+      ],
+      "a": 1,
+      "e": "SSG produces static HTML files during the build process. These files can be hosted on a CDN, making them extremely fast and secure."
+    },
+    {
+      "q": "When is Server-Side Rendering (SSR) preferred over Static Site Generation (SSG)?",
+      "o": [
+        "When the content is the same for every user",
+        "When the page contains highly dynamic data that changes on every request",
+        "When you want the absolute fastest Time to First Byte (TTFB)",
+        "When you don't have access to a server"
+      ],
+      "a": 1,
+      "e": "SSR is ideal for pages with personalized data (like a user dashboard) or frequently updating data that must be fresh for every visit."
+    },
+    {
+      "q": "What does 'Hydration' refer to in the context of SSR/SSG?",
+      "o": [
+        "The process of cleaning up unused CSS files",
+        "The process of attaching event listeners to static HTML to make it interactive",
+        "Converting a database schema into JSON",
+        "Compressing images for faster mobile loading"
+      ],
+      "a": 1,
+      "e": "After the browser receives the static HTML, the JavaScript bundle 'hydrates' the page, allowing React/Vue/etc. to take over and handle user interactions."
+    },
+    {
+      "q": "What is Incremental Static Regeneration (ISR)?",
+      "o": [
+        "A way to rebuild the entire site every time a user visits",
+        "A strategy to update specific static pages in the background without a full rebuild",
+        "A method for rendering pages only when the user scrolls",
+        "A CSS optimization technique"
+      ],
+      "a": 1,
+      "e": "ISR allows you to keep the benefits of static files while enabling updates to content at specific intervals or on-demand, without re-deploying the whole site."
+    },
+    {
+      "q": "In a Next.js application, which function is used to fetch data for Server-Side Rendering (SSR)?",
+      "o": [
+        "getStaticProps",
+        "getServerSideProps",
+        "getInitialData",
+        "useEffect"
+      ],
+      "a": 1,
+      "e": "`getServerSideProps` runs on every request on the server side to fetch data and pass it to the component as props."
+    },
+    {
+      "q": "What is a major SEO advantage of SSR over a standard Client-Side Rendered (CSR) SPA?",
+      "o": [
+        "It makes the website files smaller",
+        "It provides a fully rendered HTML document for search engine crawlers to index immediately",
+        "It automatically generates meta tags for social media",
+        "It prevents Google from seeing the JavaScript code"
+      ],
+      "a": 1,
+      "e": "While search engines have improved at indexing JS, providing a full HTML response is more reliable and ensures all content is visible to every crawler."
+    },
+    {
+      "q": "Which of the following is a drawback of traditional Server-Side Rendering (SSR)?",
+      "o": [
+        "Poor SEO",
+        "Slower Time to First Byte (TTFB) compared to SSG",
+        "No support for JavaScript",
+        "Inability to use CSS"
+      ],
+      "a": 1,
+      "e": "Because the server must generate the HTML for every request, the initial response time is usually slower than serving a pre-built file from a CDN."
+    },
+    {
+      "q": "What is the 'Flash of Unstyled Content' (FOUC) often associated with in poor SSR implementations?",
+      "o": [
+        "The background color changing randomly",
+        "A brief moment where raw HTML is visible before CSS or JS is applied",
+        "The browser crashing due to memory leaks",
+        "Images appearing as broken icons"
+      ],
+      "a": 1,
+      "e": "FOUC happens if the HTML is rendered but the styles are loaded late or the JS hasn't yet hydrated the components."
+    },
+    {
+      "q": "Which tool is specifically famous for popularized Static Site Generation for React?",
+      "o": [
+        "Gatsby",
+        "Express",
+        "Redux",
+        "Angular"
+      ],
+      "a": 0,
+      "e": "Gatsby was a pioneer in the 'JAMstack' movement, using GraphQL and React to build highly optimized static websites."
+    },
+    {
+      "q": "What does 'Client-Side Rendering' (CSR) primarily rely on to show content?",
+      "o": [
+        "Pre-built HTML files",
+        "A JavaScript bundle that builds the UI in the browser",
+        "A server that sends fully formed pages",
+        "A direct connection to a SQL database"
+      ],
+      "a": 1,
+      "e": "In CSR, the server sends a nearly empty HTML file and a JS script. The browser then executes the script to fetch data and render the page."
+    },
+    {
+      "q": "What is 'Partial Hydration' (or 'Islands Architecture')?",
+      "o": [
+        "Loading only half of the CSS",
+        "Hydrating only the interactive components while leaving the rest as static HTML",
+        "A method to hydrate the page only on mobile devices",
+        "Storing the state of the app in the cloud"
+      ],
+      "a": 1,
+      "e": "Islands architecture (used by frameworks like Astro) reduces the amount of JavaScript sent to the browser by only making necessary parts interactive."
+    },
+    {
+      "q": "Which environment is required to host an SSR application compared to an SSG one?",
+      "o": [
+        "A simple file storage (like S3)",
+        "A live Node.js or similar server environment",
+        "A specialized CSS compiler",
+        "Only a browser is needed"
+      ],
+      "a": 1,
+      "e": "SSG can be hosted on 'dumb' static hosting. SSR requires a 'smart' server or serverless functions to run the code and generate HTML on the fly."
+    }
+  ]
+}
