@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the core philosophy of the React Testing Library (RTL)?",
+      "o": [
+        "Testing the internal state and methods of components",
+        "Testing components as the user would interact with them",
+        "Achieving 100% line-by-line code coverage",
+        "Ensuring the Virtual DOM matches the real DOM exactly"
+      ],
+      "a": 1,
+      "e": "RTL encourages testing the 'output' (what the user sees) rather than the 'implementation details' (state/props), making tests more resilient to refactoring."
+    },
+    {
+      "q": "Which query method should be your first choice for selecting an element according to RTL accessibility guidelines?",
+      "o": [
+        "getByTestId",
+        "getByClassName",
+        "getByRole",
+        "querySelector"
+      ],
+      "a": 2,
+      "e": "`getByRole` ensures that your UI is accessible to screen readers and reflects how assistive technology perceives the page structure."
+    },
+    {
+      "q": "What is the difference between the `get...`, `query...`, and `find...` prefixes in RTL?",
+      "o": [
+        "There is no difference; they are aliases",
+        "get throws an error if not found; query returns null; find returns a promise",
+        "find is for CSS selectors; get is for text",
+        "query is the only one that can interact with the keyboard"
+      ],
+      "a": 1,
+      "e": "`getBy` is for immediate presence; `queryBy` is useful for asserting an element is NOT in the DOM; `findBy` is used for asynchronous elements (e.g., after an API call)."
+    },
+    {
+      "q": "How do you simulate a user typing into an input field using the `user-event` library?",
+      "o": [
+        "fireEvent.change(input, { target: { value: 'hello' } })",
+        "await userEvent.type(input, 'hello')",
+        "input.value = 'hello'",
+        "user.input('hello')"
+      ],
+      "a": 1,
+      "e": "While `fireEvent` works, `user-event` is preferred because it better simulates full browser interactions like `keydown` and `keyup` events."
+    },
+    {
+      "q": "What is the purpose of the `screen` object in React Testing Library?",
+      "o": [
+        "To take a screenshot of the test failure",
+        "To provide a global object for querying the entire rendered document body",
+        "To adjust the resolution of the test browser",
+        "To manage the mock server state"
+      ],
+      "a": 1,
+      "e": "Using `screen` is the modern way to query elements, removing the need to destructure queries from the `render` result."
+    },
+    {
+      "q": "What does the `render` function do?",
+      "o": [
+        "Compiles the React code into a production build",
+        "Mounts a React component into a virtual DOM for testing",
+        "Checks the component for syntax errors",
+        "Uploads the component to a testing server"
+      ],
+      "a": 1,
+      "e": "The `render` function from RTL takes a React component and renders it into a container (usually `document.body`) so it can be queried."
+    },
+    {
+      "q": "What is a 'Snapshot Test'?",
+      "o": [
+        "A test that records the performance speed of a component",
+        "A test that compares the rendered output of a component to a previously saved 'golden' file",
+        "A photo taken of the developer when a test fails",
+        "A test that only runs on mobile screen sizes"
+      ],
+      "a": 1,
+      "e": "Snapshot tests are used to catch unexpected UI changes by asserting that the current HTML structure hasn't drifted from the stored version."
+    },
+    {
+      "q": "How should you handle asynchronous updates, like an element appearing after a successful API fetch?",
+      "o": [
+        "Use a `setTimeout` inside the test",
+        "Wrap the assertion in a `waitFor` block",
+        "Call `render` again",
+        "Use `getBy` and hope for the best"
+      ],
+      "a": 1,
+      "e": "`waitFor` allows you to wait for a specific expectation to pass, retrying the check until the timeout is reached."
+    },
+    {
+      "q": "In the context of Vitest or Jest, what is a 'Spy'?",
+      "o": [
+        "A tool that hides the test results from other developers",
+        "A function that tracks calls, arguments, and return values of an existing function",
+        "A hidden element in the DOM used for tracking",
+        "A bug that is difficult to find"
+      ],
+      "a": 1,
+      "e": "`vi.spyOn` or `jest.spyOn` allows you to observe how a function is used without necessarily replacing its original implementation."
+    },
+    {
+      "q": "What is the purpose of `cleanup` in RTL?",
+      "o": [
+        "To delete all files in the test directory",
+        "To unmount React trees that were mounted with `render` to prevent memory leaks",
+        "To reset the CSS styles of the browser",
+        "To clear the `localStorage` after every test"
+      ],
+      "a": 1,
+      "e": "Most modern test runners handle this automatically, but `cleanup` ensures the DOM is fresh for the next test case."
+    },
+    {
+      "q": "Which matcher (from `jest-dom`) would you use to check if a button is disabled?",
+      "o": [
+        "expect(button).toBeDisabled()",
+        "expect(button).not.toBeVisible()",
+        "expect(button).toHaveAttribute('off')",
+        "expect(button).isClickable(false)"
+      ],
+      "a": 0,
+      "e": "The `jest-dom` library provides custom matchers like `toBeDisabled()`, `toBeInTheDocument()`, and `toHaveTextContent()` for more readable assertions."
+    },
+    {
+      "q": "What is 'mocking' an API in a test environment?",
+      "o": [
+        "Making fun of the backend team's code",
+        "Using a library like MSW (Mock Service Worker) to intercept network requests and return fake data",
+        "Running the actual backend server during the frontend tests",
+        "Deleting the API endpoints from the production server"
+      ],
+      "a": 1,
+      "e": "Mocking prevents tests from relying on real networks or databases, making them faster, more reliable, and deterministic."
+    }
+  ]
+}
