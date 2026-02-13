@@ -209,7 +209,6 @@
 			]
 		},
 		{
-			"hidden": true,
 			"name": "Deployment & Ecosystem",
 			"slug": "deploy",
 			"modules": [
