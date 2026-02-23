@@ -89,7 +89,6 @@
           ]
         },
         {
-          "hidden": true,
           "name": "Testing & Quality",
           "slug": "testing_qa",
           "modules": [
