@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary difference between Supervised and Unsupervised Learning?",
+      "o": [
+        "Supervised learning requires more processing power",
+        "Supervised learning uses labeled data; Unsupervised learning finds patterns in unlabeled data",
+        "Unsupervised learning is only used for images",
+        "Supervised learning cannot be used for regression"
+      ],
+      "a": 1,
+      "e": "Supervised learning involves training a model on a dataset where the answer (label) is already known. Unsupervised learning looks for hidden structures or clusters within data that has no labels."
+    },
+    {
+      "q": "In Machine Learning, what is 'Overfitting'?",
+      "o": [
+        "When a model is too simple to learn the underlying trend",
+        "When a model learns the training data and its noise too well, performing poorly on new data",
+        "When the dataset is too large for the computer's memory",
+        "When the model's accuracy is 0%"
+      ],
+      "a": 1,
+      "e": "Overfitting happens when a model becomes too complex and 'memorizes' the training data, losing its ability to generalize to unseen examples."
+    },
+    {
+      "q": "Which of these is a classic example of a 'Classification' problem?",
+      "o": [
+        "Predicting the price of a house based on square footage",
+        "Grouping customers based on purchasing habits",
+        "Determining if an email is 'Spam' or 'Not Spam'",
+        "Predicting the temperature for tomorrow"
+      ],
+      "a": 2,
+      "e": "Classification is about predicting a discrete label or category. Predicting a continuous numerical value (like price or temperature) is called 'Regression'."
+    },
+    {
+      "q": "What is the purpose of the 'Train/Test Split' technique?",
+      "o": [
+        "To make the training process faster",
+        "To evaluate the model's performance on unseen data to ensure it can generalize",
+        "To satisfy the requirements of the Python interpreter",
+        "To double the amount of data available"
+      ],
+      "a": 1,
+      "e": "By setting aside a portion of data (the test set) that the model never sees during training, we can objectively measure how it will perform in the real world."
+    },
+    {
+      "q": "What does the 'Mean Squared Error' (MSE) represent in regression tasks?",
+      "o": [
+        "The percentage of correct predictions",
+        "The average of the squared differences between predicted and actual values",
+        "The number of features used in the model",
+        "The time it takes to train the model"
+      ],
+      "a": 1,
+      "e": "MSE is a common loss function for regression. Squaring the errors penalizes larger discrepancies more heavily than smaller ones."
+    },
+    {
+      "q": "In a Scikit-Learn pipeline, what is the 'fit' method used for?",
+      "o": [
+        "To adjust the size of the window",
+        "To train the model by finding weights/parameters from the provided data",
+        "To transform the data into a different format",
+        "To check if the code contains errors"
+      ],
+      "a": 1,
+      "e": "The `.fit()` method is the standard way to trigger the learning process in Scikit-Learn, where the estimator learns from the training data."
+    },
+    {
+      "q": "What is a 'Feature' in the context of a dataset?",
+      "o": [
+        "The final prediction of the model",
+        "An individual measurable property or characteristic of the data (an input variable)",
+        "A bug in the machine learning code",
+        "The title of the machine learning project"
+      ],
+      "a": 1,
+      "e": "Features (often denoted as $X$) are the variables used by the model to make a prediction. For example, in house price prediction, 'number of bedrooms' is a feature."
+    },
+    {
+      "q": "Which algorithm is commonly used for clustering unlabeled data?",
+      "o": [
+        "Linear Regression",
+        "K-Means",
+        "Logistic Regression",
+        "Support Vector Machines"
+      ],
+      "a": 1,
+      "e": "K-Means is a popular unsupervised algorithm that groups data points into $K$ distinct clusters based on their similarities."
+    },
+    {
+      "q": "What does 'Feature Scaling' (like Normalization or Standardization) help with?",
+      "o": [
+        "It makes the dataset smaller to save space",
+        "It ensures all features contribute equally to the model, preventing variables with larger scales from dominating",
+        "It labels the data automatically",
+        "It removes outliers from the dataset"
+      ],
+      "a": 1,
+      "e": "Many algorithms (like KNN or SVM) use distance calculations. If one feature ranges from 0-1 and another from 0-1000, the larger range will skew the results if not scaled."
+    },
+    {
+      "q": "What is the 'Bias-Variance Tradeoff'?",
+      "o": [
+        "A method for choosing between Python and R",
+        "The balance between a model being too simple (high bias) vs. too sensitive to noise (high variance)",
+        "The cost of buying more GPUs for training",
+        "The difference between training time and prediction time"
+      ],
+      "a": 1,
+      "e": "A good model finds the 'sweet spot' where both bias and variance are minimized to achieve the lowest possible total error on new data."
+    },
+    {
+      "q": "In a binary classification Confusion Matrix, what is a 'False Positive'?",
+      "o": [
+        "When the model predicts 0 and the actual value is 0",
+        "When the model predicts 1 but the actual value is 0",
+        "When the model fails to make any prediction",
+        "When the model correctly identifies a negative case"
+      ],
+      "a": 1,
+      "e": "A False Positive (Type I error) occurs when the model incorrectly predicts the positive class (e.g., diagnosing a healthy patient with a disease)."
+    },
+    {
+      "q": "What is 'Hyperparameter Tuning'?",
+      "o": [
+        "The process of cleaning the training data",
+        "The process of searching for the best external settings for an algorithm (like 'K' in KNN) to optimize performance",
+        "Automatically writing code for the neural network",
+        "Updating the weights of a model during training"
+      ],
+      "a": 1,
+      "e": "Hyperparameters are settings defined before training (like learning rate or number of trees). 'Tuning' (e.g., GridSearch) finds the best combination of these settings."
+    }
+  ]
+}
