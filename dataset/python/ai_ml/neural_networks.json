@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary function of an 'Activation Function' in a neural network?",
+      "o": [
+        "To normalize the input data",
+        "To introduce non-linearity, allowing the network to learn complex patterns",
+        "To act as a backup for the weights",
+        "To calculate the final error of the model"
+      ],
+      "a": 1,
+      "e": "Without non-linear activation functions (like ReLU or Sigmoid), a neural network would just be a giant linear regression model, no matter how many layers it has."
+    },
+    {
+      "q": "Which algorithm is used to calculate the gradient of the loss function with respect to the weights in the network?",
+      "o": [
+        "Forward Propagation",
+        "Backpropagation",
+        "Binary Search",
+        "Gradient Descent"
+      ],
+      "a": 1,
+      "e": "Backpropagation uses the chain rule from calculus to determine how much each weight contributed to the total error, moving backward from the output layer to the input."
+    },
+    {
+      "q": "What is a 'Layer' in a Deep Neural Network composed of?",
+      "o": [
+        "A collection of individual neurons (perceptrons)",
+        "A single large computer processor",
+        "A list of Python strings",
+        "A database table"
+      ],
+      "a": 0,
+      "e": "Deep networks consist of an input layer, one or more 'hidden' layers, and an output layer, each containing nodes that process information."
+    },
+    {
+      "q": "What does the 'Learning Rate' hyperparameter control?",
+      "o": [
+        "The speed at which data is read from the disk",
+        "The size of the steps taken during gradient descent to update weights",
+        "The number of neurons in the hidden layer",
+        "The total number of epochs the model runs"
+      ],
+      "a": 1,
+      "e": "If the learning rate is too high, the model might overshoot the minimum error; if it is too low, the training will be extremely slow or get stuck."
+    },
+    {
+      "q": "Which activation function is most commonly used in the hidden layers of modern deep learning models?",
+      "o": [
+        "Sigmoid",
+        "Tanh",
+        "ReLU (Rectified Linear Unit)",
+        "Softmax"
+      ],
+      "a": 2,
+      "e": "ReLU ($f(x) = max(0, x)$) is preferred because it helps avoid the 'vanishing gradient' problem and is computationally efficient."
+    },
+    {
+      "q": "What is an 'Epoch' in the context of training a neural network?",
+      "o": [
+        "The time it takes to process one single data point",
+        "One full pass of the entire training dataset through the network",
+        "A specific version of the Python interpreter",
+        "The moment the model reaches 100% accuracy"
+      ],
+      "a": 1,
+      "e": "Training usually requires many epochs, as the network needs multiple passes over the data to adjust weights for better accuracy."
+    },
+    {
+      "q": "In an image classification task, which type of neural network architecture is most effective?",
+      "o": [
+        "Recurrent Neural Networks (RNN)",
+        "Convolutional Neural Networks (CNN)",
+        "Generative Adversarial Networks (GAN)",
+        "Linear Perceptrons"
+      ],
+      "a": 1,
+      "e": "CNNs use 'filters' to capture spatial patterns (like edges and shapes) in images, making them the standard for computer vision."
+    },
+    {
+      "q": "What is the purpose of 'Dropout' in a neural network?",
+      "o": [
+        "To speed up the prediction time",
+        "To prevent overfitting by randomly 'turning off' neurons during training",
+        "To delete data that the model finds confusing",
+        "To stop the training early if the error is low"
+      ],
+      "a": 1,
+      "e": "Dropout forces the network to become more robust and prevents it from relying too heavily on specific individual neurons."
+    },
+    {
+      "q": "Which activation function is typically used in the final layer of a multi-class classification network?",
+      "o": [
+        "ReLU",
+        "Sigmoid",
+        "Softmax",
+        "Linear"
+      ],
+      "a": 2,
+      "e": "Softmax turns the raw output scores into a probability distribution that sums up to 1, representing the likelihood for each class."
+    },
+    {
+      "q": "What is the 'Vanishing Gradient' problem?",
+      "o": [
+        "When the network runs out of memory",
+        "When gradients become so small during backpropagation that weights stop updating",
+        "When the loss function reaches zero too quickly",
+        "When the training data is deleted accidentally"
+      ],
+      "a": 1,
+      "e": "This often happens in very deep networks using Sigmoid or Tanh functions, where the gradients diminish as they are multiplied through the layers."
+    },
+    {
+      "q": "What does an 'Optimizer' (like Adam or SGD) do?",
+      "o": [
+        "It cleans the dataset for the model",
+        "It manages how weights are updated based on the calculated gradients",
+        "It chooses the best activation function automatically",
+        "It visualizes the neurons in the network"
+      ],
+      "a": 1,
+      "e": "Optimizers implement the logic for updating weights to minimize the loss function as efficiently as possible."
+    },
+    {
+      "q": "What is 'Transfer Learning'?",
+      "o": [
+        "Moving code from a laptop to a cloud server",
+        "Taking a pre-trained model on a large dataset and fine-tuning it for a specific task",
+        "Converting a neural network into a decision tree",
+        "Sharing weights between different users"
+      ],
+      "a": 1,
+      "e": "Transfer learning allows you to leverage features already learned by massive models (like ImageNet models), saving time and computational resources."
+    }
+  ]
+}
