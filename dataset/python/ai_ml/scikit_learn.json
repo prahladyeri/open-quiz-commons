@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the standard 'Estimator' interface in Scikit-Learn for training a model?",
+      "o": [
+        "model.train(data)",
+        "model.fit(X, y)",
+        "model.learn(features, labels)",
+        "model.execute(input)"
+      ],
+      "a": 1,
+      "e": "All Scikit-Learn estimators implement the `fit(X, y)` method, where X is the feature matrix and y is the target vector."
+    },
+    {
+      "q": "Which Scikit-Learn class is used to automate a sequence of data transformations followed by an estimator?",
+      "o": [
+        "sklearn.sequence.Flow",
+        "sklearn.pipeline.Pipeline",
+        "sklearn.compose.TransformStack",
+        "sklearn.model_selection.GridSearch"
+      ],
+      "a": 1,
+      "e": "A `Pipeline` allows you to chain multiple steps (like scaling and PCA) with a final model into a single object, preventing data leakage."
+    },
+    {
+      "q": "What is the difference between the `transform()` and `predict()` methods in Scikit-Learn?",
+      "o": [
+        "They are aliases for the same operation",
+        "transform() is for preprocessing data; predict() is for generating labels/values from a model",
+        "transform() is only for labels; predict() is only for features",
+        "transform() is used only in Unsupervised learning"
+      ],
+      "a": 1,
+      "e": "Transformers (like StandardScaler) use `transform()` to modify data. Predictors (like RandomForest) use `predict()` to generate outputs based on learned patterns."
+    },
+    {
+      "q": "Which utility function is used to split a dataset into random train and test subsets?",
+      "o": [
+        "split_data()",
+        "train_test_split()",
+        "random_divider()",
+        "cross_val_score()"
+      ],
+      "a": 1,
+      "e": "`train_test_split` is found in `sklearn.model_selection` and is the standard way to prepare data for validation."
+    },
+    {
+      "q": "What does 'fit_transform()' do that is different from calling 'fit()' then 'transform()' separately?",
+      "o": [
+        "It is strictly a convenience method that does both in one step, often more efficiently",
+        "It only works on the testing set",
+        "It ignores outliers automatically",
+        "It can only be used on numerical data"
+      ],
+      "a": 0,
+      "e": "`fit_transform()` is a convenience method that calculates the necessary parameters (like mean/std) and applies the transformation to the data simultaneously."
+    },
+    {
+      "q": "Which tool in Scikit-Learn is used to perform an exhaustive search over specified parameter values for an estimator?",
+      "o": [
+        "RandomizedSearchCV",
+        "ParameterGrid",
+        "GridSearchCV",
+        "CrossVal"
+      ],
+      "a": 2,
+      "e": "`GridSearchCV` implements a 'fit' and a 'score' method over a grid of parameters, using cross-validation to find the best configuration."
+    },
+    {
+      "q": "What is the purpose of 'StandardScaler' in the `preprocessing` module?",
+      "o": [
+        "To remove duplicate rows in the dataset",
+        "To scale features by removing the mean and scaling to unit variance",
+        "To convert text labels into numbers",
+        "To fill in missing values with the average"
+      ],
+      "a": 1,
+      "e": "StandardScaler ensures that features have a mean of 0 and a standard deviation of 1, which is critical for algorithms like SVM and K-Means."
+    },
+    {
+      "q": "How does Scikit-Learn handle categorical text data in its native estimators?",
+      "o": [
+        "It processes them as strings automatically",
+        "It requires them to be encoded into numerical values (e.g., OneHotEncoder or LabelEncoder)",
+        "It ignores any column containing text",
+        "It converts them into random numbers"
+      ],
+      "a": 1,
+      "e": "Most Scikit-Learn models require numerical input. Text categories must be converted using tools like `OneHotEncoder` or `OrdinalEncoder` before training."
+    },
+    {
+      "q": "In Scikit-Learn, what does 'n_clusters' represent in the KMeans algorithm?",
+      "o": [
+        "The number of features in the dataset",
+        "The number of iterations to run",
+        "The number of centroids to generate (the 'K' value)",
+        "The number of CPU cores to use"
+      ],
+      "a": 2,
+      "e": "`n_clusters` is a hyperparameter that defines how many distinct groups the algorithm should attempt to find in the data."
+    },
+    {
+      "q": "What metric is commonly used for a 'classification_report' to show the balance between precision and recall?",
+      "o": [
+        "MSE",
+        "R2 Score",
+        "F1-Score",
+        "Inertia"
+      ],
+      "a": 2,
+      "e": "The F1-Score is the harmonic mean of precision and recall, providing a single metric that rewards a balance between the two."
+    },
+    {
+      "q": "Which module would you use to find the 'RandomForestClassifier'?",
+      "o": [
+        "sklearn.linear_model",
+        "sklearn.ensemble",
+        "sklearn.tree",
+        "sklearn.neighbors"
+      ],
+      "a": 1,
+      "e": "Random Forest is an ensemble method because it combines the predictions of multiple decision trees to improve accuracy and reduce overfitting."
+    },
+    {
+      "q": "What is 'Cross-Validation' as implemented by `cross_val_score`?",
+      "o": [
+        "Checking if the code works on different operating systems",
+        "Splitting the data into $k$ folds and training/testing the model $k$ times to get a robust performance estimate",
+        "Comparing Scikit-Learn results with TensorFlow results",
+        "Validating the data against a SQL database"
+      ],
+      "a": 1,
+      "e": "K-fold cross-validation ensures the model's performance isn't dependent on a single lucky or unlucky train/test split."
+    }
+  ]
+}
