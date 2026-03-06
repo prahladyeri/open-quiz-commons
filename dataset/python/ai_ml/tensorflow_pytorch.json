@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the fundamental difference in 'Graph' execution between standard TensorFlow 1.x and PyTorch?",
+      "o": [
+        "TensorFlow uses Eager execution; PyTorch uses Static graphs",
+        "TensorFlow 1.x uses Static graphs (Define-and-Run); PyTorch uses Dynamic graphs (Define-by-Run)",
+        "There is no difference in how they handle graphs",
+        "PyTorch doesn't use graphs at all"
+      ],
+      "a": 1,
+      "e": "PyTorch's dynamic computational graph is built on the fly during the forward pass, making it easier to debug with standard Python tools compared to TF 1.x's static approach."
+    },
+    {
+      "q": "Which high-level API is the official frontend for TensorFlow to simplify model building?",
+      "o": [
+        "Torchvision",
+        "Keras",
+        "Fast.ai",
+        "Lightning"
+      ],
+      "a": 1,
+      "e": "Keras is integrated into TensorFlow as `tf.keras`, providing a user-friendly, modular interface for creating deep learning models."
+    },
+    {
+      "q": "In PyTorch, which method is called to perform the 'Backpropagation' step?",
+      "o": [
+        "loss.minimize()",
+        "loss.backward()",
+        "optimizer.step()",
+        "model.train()"
+      ],
+      "a": 1,
+      "e": "`loss.backward()` computes the gradient of the loss with respect to all tensors that have `requires_grad=True`."
+    },
+    {
+      "q": "What is 'TensorFlow Serving' primarily used for?",
+      "o": [
+        "Training models on mobile phones",
+        "Deploying and managing machine learning models in production environments",
+        "Visualizing neural network layers",
+        "Generating synthetic datasets"
+      ],
+      "a": 1,
+      "e": "TensorFlow Serving is a high-performance system for serving machine learning models, designed for production environments."
+    },
+    {
+      "q": "Which PyTorch-based library provides a high-level interface to reduce boilerplate code like training loops?",
+      "o": [
+        "TensorBoard",
+        "PyTorch Lightning",
+        "Scikit-learn",
+        "TFLite"
+      ],
+      "a": 1,
+      "e": "PyTorch Lightning decouples the research code from the engineering code, handling hardware (GPU/TPU) and training loops automatically."
+    },
+    {
+      "q": "What is a 'Tensor' in both TensorFlow and PyTorch?",
+      "o": [
+        "A type of database index",
+        "A multi-dimensional array that can be processed on a GPU",
+        "A specialized neural network layer",
+        "A Python dictionary used for metadata"
+      ],
+      "a": 1,
+      "e": "Tensors are the core data structure, similar to NumPy arrays but with support for hardware acceleration and automatic differentiation."
+    },
+    {
+      "q": "How do you move a tensor to a GPU in PyTorch?",
+      "o": [
+        "tensor.to('cuda')",
+        "tensor.gpu()",
+        "tf.device('/gpu:0')",
+        "tensor.enable_acceleration()"
+      ],
+      "a": 0,
+      "e": "PyTorch requires explicit device management using `.to('cuda')` or `.cuda()`, giving developers fine-grained control over memory."
+    },
+    {
+      "q": "What is the purpose of 'TensorBoard'?",
+      "o": [
+        "To edit tensor values manually",
+        "To visualize metrics like loss, accuracy, and model graphs during training",
+        "To host models on a web server",
+        "To convert PyTorch models to TensorFlow"
+      ],
+      "a": 1,
+      "e": "TensorBoard is a visualization toolkit originally for TensorFlow, but now widely used with PyTorch too via the `SummaryWriter`."
+    },
+    {
+      "q": "What does `optimizer.zero_grad()` do in a PyTorch training loop?",
+      "o": [
+        "Resets the model weights to zero",
+        "Clears the gradients from the previous iteration to prevent accumulation",
+        "Stops the training process",
+        "Sets the learning rate to zero"
+      ],
+      "a": 1,
+      "e": "By default, gradients accumulate in PyTorch. You must clear them at the start of each optimization step to ensure correct weight updates."
+    },
+    {
+      "q": "Which TensorFlow format is optimized for deployment on mobile and edge devices?",
+      "o": [
+        "TF-Mobile",
+        "TensorFlow Lite (TFLite)",
+        "TF-Nano",
+        "CoreML"
+      ],
+      "a": 1,
+      "e": "TFLite is a lightweight version of TensorFlow designed for low-latency inference on mobile and IoT devices."
+    },
+    {
+      "q": "What is the 'Autograd' system in PyTorch?",
+      "o": [
+        "A tool for automatic code documentation",
+        "A library for automatic dataset cleaning",
+        "The automatic differentiation engine that powers gradient calculation",
+        "A system for automatically choosing the best model"
+      ],
+      "a": 2,
+      "e": "Autograd records all operations performed on tensors to create a computational graph that can be traversed to compute gradients."
+    },
+    {
+      "q": "Which tool allows you to convert a PyTorch model into a format that can be run in other frameworks like TensorFlow or ONNX Runtime?",
+      "o": [
+        "TorchScript",
+        "ONNX (Open Neural Network Exchange)",
+        "PyTorch Converter",
+        "TF-Connect"
+      ],
+      "a": 1,
+      "e": "ONNX provides an open source format for AI models, allowing interoperability between different deep learning frameworks."
+    }
+  ]
+}
