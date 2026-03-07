@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What does 'Accuracy' measure in a classification model?",
+      "o": [
+        "The number of positive predictions made",
+        "The ratio of correctly predicted observations to the total observations",
+        "The speed at which the model makes a prediction",
+        "The difference between the highest and lowest scores"
+      ],
+      "a": 1,
+      "e": "Accuracy is the most intuitive performance measure, but it can be misleading if the dataset is imbalanced (e.g., 99% of cases are Class A)."
+    },
+    {
+      "q": "In a medical test, what does 'Recall' (Sensitivity) represent?",
+      "o": [
+        "The ability of the model to find all the positive cases",
+        "The ability of the model to avoid false alarms",
+        "The total number of patients tested",
+        "The time it takes to get results"
+      ],
+      "a": 0,
+      "e": "Recall answers: 'Of all the people who actually had the disease, how many did we correctly identify?' High recall is critical when the cost of a False Negative is high."
+    },
+    {
+      "q": "What is 'Precision'?",
+      "o": [
+        "The total number of correct predictions",
+        "The ratio of correctly predicted positive observations to the total predicted positives",
+        "The consistency of the model over time",
+        "The depth of the neural network"
+      ],
+      "a": 1,
+      "e": "Precision answers: 'Of all the people we labeled as having the disease, how many actually had it?' High precision is critical when the cost of a False Positive is high (e.g., spam filters)."
+    },
+    {
+      "q": "What is the 'F1-Score'?",
+      "o": [
+        "The maximum accuracy a model can reach",
+        "The harmonic mean of Precision and Recall",
+        "The square root of the Mean Squared Error",
+        "The ratio of training data to testing data"
+      ],
+      "a": 1,
+      "e": "The F1-Score provides a balance between Precision and Recall. It is particularly useful when you have an uneven class distribution."
+    },
+    {
+      "q": "What does the 'ROC Curve' (Receiver Operating Characteristic) visualize?",
+      "o": [
+        "The distribution of features in the dataset",
+        "The trade-off between the True Positive Rate and the False Positive Rate at various thresholds",
+        "The decrease in loss over training epochs",
+        "The relationship between two independent variables"
+      ],
+      "a": 1,
+      "e": "The ROC curve helps in choosing the best threshold for a classifier. A model with an Area Under the Curve (AUC) of 1.0 is perfect."
+    },
+    {
+      "q": "Which metric is most suitable for evaluating a Regression model?",
+      "o": [
+        "F1-Score",
+        "Root Mean Squared Error (RMSE)",
+        "Precision",
+        "ROC-AUC"
+      ],
+      "a": 1,
+      "e": "RMSE measures the average magnitude of the error by taking the square root of the average of squared differences between prediction and actual observation."
+    },
+    {
+      "q": "What is 'R-squared' ($R^2$)?",
+      "o": [
+        "The ratio of correct classifications",
+        "The proportion of variance in the dependent variable that is predictable from the independent variables",
+        "The learning rate of the optimizer",
+        "The number of layers in a decision tree"
+      ],
+      "a": 1,
+      "e": "$R^2$ indicates how well the regression model fits the data. A score of 1.0 indicates a perfect fit."
+    },
+    {
+      "q": "In a Confusion Matrix, what is a 'True Negative'?",
+      "o": [
+        "An error that the model didn't catch",
+        "A case where the model correctly predicted the negative class",
+        "A case where the model predicted negative but it was actually positive",
+        "A piece of data that was deleted from the set"
+      ],
+      "a": 1,
+      "e": "A True Negative (TN) is an outcome where the model correctly predicts the negative class (e.g., a healthy person is correctly identified as healthy)."
+    },
+    {
+      "q": "What does 'Log Loss' (Cross-Entropy Loss) penalize?",
+      "o": [
+        "Models that are too slow",
+        "False predictions that are made with high confidence",
+        "Using too many features",
+        "Large datasets"
+      ],
+      "a": 1,
+      "e": "Log Loss measures the performance of a classification model where the prediction input is a probability value between 0 and 1. It heavily penalizes 'confident' wrong answers."
+    },
+    {
+      "q": "What is 'K-Fold Cross-Validation'?",
+      "o": [
+        "A way to encrypt data",
+        "A technique where the data is split into K subsets to ensure the model's performance is consistent across different data samples",
+        "A method for clustering data into K groups",
+        "Training the model on K different computers at once"
+      ],
+      "a": 1,
+      "e": "Cross-validation provides a more reliable estimate of model performance than a single train/test split by averaging the results of K different trials."
+    },
+    {
+      "q": "What is the 'Area Under the Precision-Recall Curve' (PR-AUC) often preferred over ROC-AUC?",
+      "o": [
+        "When the model is a neural network",
+        "When dealing with highly imbalanced datasets where the minority class is the focus",
+        "When the dataset has more than 1,000 features",
+        "When the labels are continuous numbers"
+      ],
+      "a": 1,
+      "e": "PR-AUC is more informative than ROC-AUC when the positive class is rare, as it doesn't get skewed by a large number of True Negatives."
+    },
+    {
+      "q": "What does 'MAE' (Mean Absolute Error) measure?",
+      "o": [
+        "The average of the absolute differences between predictions and actual values",
+        "The percentage of total errors",
+        "The maximum error in the entire dataset",
+        "The error rate of the training set only"
+      ],
+      "a": 0,
+      "e": "Unlike MSE, MAE does not square the errors, meaning it is more robust to outliers and gives a linear representation of the error magnitude."
+    }
+  ]
+}
