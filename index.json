@@ -100,7 +100,7 @@
           ]
         },
         {
-          "hidden": true,
+          "hidden": false,
           "name": "AI & ML",
           "slug": "ai_ml",
           "modules": [
