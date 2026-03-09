@@ -214,6 +214,28 @@
 				{"name": "SSG/SSR", "slug": "ssg_ssr", "descn": "The differences between Static Site Generation, Server-Side Rendering, and Incremental Static Regeneration."},
 				{"name": "Testing Library", "slug": "testing_lib", "descn": "Testing components with Vitest or Jest and the React Testing Library (focusing on user-centric testing)."}
 			]
+		},
+		{
+		  "name": "Modern Architecture & Tooling",
+		  "slug": "modern_arch",
+		  "hidden": true,
+		  "modules": [
+			{
+			  "name": "Local-First Ops",
+			  "slug": "local_first",
+			  "descn": "Architecting apps using SQLite/WASM, OPFS for persistence, and synchronization strategies for offline capability."
+			},
+			{
+			  "name": "Build Internals",
+			  "slug": "build_internals",
+			  "descn": "The mechanics of ESM, tree-shaking, transpilation (Babel/SWC), and why Vite's HMR is faster than traditional bundlers."
+			},
+			{
+			  "name": "API Patterns",
+			  "slug": "api_patterns",
+			  "descn": "Comparing REST, GraphQL, and tRPC: Type-safety across the wire and efficient data fetching (Batching/Throttling)."
+			}
+		  ]
 		}
 	  ]
 	}
