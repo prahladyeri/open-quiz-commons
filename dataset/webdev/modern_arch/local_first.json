@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary architectural goal of 'Local-First' software?",
+      "o": [
+        "To eliminate the need for any cloud storage or servers",
+        "To ensure the application is fully functional offline by treating local storage as the primary data source",
+        "To make applications run faster by using edge computing exclusively",
+        "To prevent users from sharing data with others"
+      ],
+      "a": 1,
+      "e": "Local-first software prioritizes local data ownership and availability, allowing users to read and write data without a network connection, with sync happening in the background."
+    },
+    {
+      "q": "Which technology is commonly used to resolve data conflicts in multi-user local-first applications?",
+      "o": [
+        "REST API",
+        "CRDTs (Conflict-free Replicated Data Types)",
+        "JWT (JSON Web Tokens)",
+        "GraphQL"
+      ],
+      "a": 1,
+      "e": "CRDTs are data structures that allow multiple replicas to be updated independently and concurrently, ensuring they can always be merged into a consistent state without manual conflict resolution."
+    },
+    {
+      "q": "What is the role of the 'Origin Private File System' (OPFS) in modern web-based local-first apps?",
+      "o": [
+        "To stream video content more efficiently",
+        "To provide a high-performance, private file system for storing large amounts of data (like SQLite databases) in the browser",
+        "To replace the browser's cookies for session management",
+        "To host the application's HTML and CSS files"
+      ],
+      "a": 1,
+      "e": "OPFS allows web applications to access a sandboxed file system with much higher performance than IndexedDB, making it ideal for running SQLite directly in the browser."
+    },
+    {
+      "q": "In the context of local-first sync, what is 'Optimistic UI'?",
+      "o": [
+        "A UI that only shows positive feedback to the user",
+        "Updating the interface immediately as if an action was successful, before the server confirms it",
+        "A design pattern that uses bright colors and large fonts",
+        "A UI that requires a constant high-speed connection"
+      ],
+      "a": 1,
+      "e": "Optimistic UI makes the app feel instantaneous by assuming the local change will eventually sync successfully with the backend or other peers."
+    },
+    {
+      "q": "How does 'Sync Engine' (like Replicache or ElectricSQL) differ from traditional 'Fetch' requests?",
+      "o": [
+        "It only works with WebSockets",
+        "It automatically manages data replication and delta updates between local and remote databases",
+        "It is used for uploading images instead of JSON",
+        "It requires a 5G connection to function"
+      ],
+      "a": 1,
+      "e": "Sync engines handle the complex logic of tracking which data has changed locally and efficiently syncing those 'deltas' with the server, rather than full state transfers."
+    },
+    {
+      "q": "What is 'End-to-End Encryption' (E2EE) particularly important for in local-first apps?",
+      "o": [
+        "To speed up the database queries",
+        "To ensure the server-side sync provider cannot read the user's private data",
+        "To compress the files before they are saved to disk",
+        "To prevent the browser from crashing"
+      ],
+      "a": 1,
+      "e": "Since local-first often involves syncing data through a central relay or cloud, E2EE ensures that only the user's devices (the 'ends') can decrypt the content."
+    },
+    {
+      "q": "Which of these is a significant challenge when building local-first software?",
+      "o": [
+        "The lack of CSS support for offline apps",
+        "The complexity of managing data migrations across multiple distributed devices",
+        "The inability to use JavaScript in a service worker",
+        "The requirement that users must install a desktop app"
+      ],
+      "a": 1,
+      "e": "Handling schema changes (migrations) is difficult when different devices might be running different versions of the app and haven't synced in a long time."
+    },
+    {
+      "q": "What is 'Operational Transformation' (OT) compared to CRDTs?",
+      "o": [
+        "An older method for real-time collaboration that usually requires a central server to sequence operations",
+        "A newer, faster version of CRDTs",
+        "A tool for converting SQLite to PostgreSQL",
+        "A method for styling local-first components"
+      ],
+      "a": 0,
+      "e": "OT (used by Google Docs) relies on a central authority to resolve conflicts, whereas CRDTs are decentralized and better suited for peer-to-peer or local-first architectures."
+    },
+    {
+      "q": "What does the 'Seven Ideals of Local-First Software' paper identify as a key benefit for users?",
+      "o": [
+        "Lower subscription costs",
+        "The 'Long Now'—software that continues to work even if the company providing the service disappears",
+        "Access to more social media features",
+        "Built-in AI writing assistants"
+      ],
+      "a": 1,
+      "e": "The 'Long Now' refers to the longevity of data and software; because the data is on the user's disk, they aren't at the mercy of a service's uptime or business viability."
+    },
+    {
+      "q": "In a local-first React app, how is IndexedDB typically used?",
+      "o": [
+        "As a temporary cache for images",
+        "As a persistent, client-side NoSQL database to store the application state",
+        "To replace the Redux store entirely",
+        "To store the user's password in plain text"
+      ],
+      "a": 1,
+      "e": "IndexedDB is the standard browser API for persistent storage, allowing apps to store large amounts of structured data that remains after the tab is closed."
+    },
+    {
+      "q": "What is 'Rebuffering' or 'Re-syncing' in a local-first context?",
+      "o": [
+        "Downloading the entire application again",
+        "The process of merging remote changes into the local state after a period of being offline",
+        "A CSS animation technique",
+        "Refreshing the browser page"
+      ],
+      "a": 1,
+      "e": "When a device comes back online, it must exchange missing operations with the server or other peers to reach a consistent state."
+    },
+    {
+      "q": "Which database is frequently ported to WebAssembly (Wasm) to provide local-first SQL capabilities?",
+      "o": [
+        "PostgreSQL",
+        "SQLite",
+        "MongoDB",
+        "Oracle"
+      ],
+      "a": 1,
+      "e": "SQLite's small footprint and file-based nature make it perfect for running in the browser via Wasm, often backed by OPFS for persistence."
+    }
+  ]
+}
