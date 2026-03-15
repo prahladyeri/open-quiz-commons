@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary difference between a 'Bundler' (like Webpack) and a 'Task Runner' (like Gulp)?",
+      "o": [
+        "Bundlers only work with CSS; Task Runners only work with JS",
+        "Bundlers traverse a dependency graph to package assets; Task Runners execute a series of independent automated steps",
+        "Task Runners are built into browsers; Bundlers are for servers",
+        "There is no difference; they are the same thing"
+      ],
+      "a": 1,
+      "e": "A bundler starts from an entry point and builds a map of every required file. A task runner simply automates repetitive tasks like minification or unit testing in a linear fashion."
+    },
+    {
+      "q": "What is 'Tree Shaking' in the context of modern build tools?",
+      "o": [
+        "A method for organizing folder structures",
+        "The process of removing unused code (dead code) from the final bundle during build",
+        "An algorithm for optimizing image file sizes",
+        "A way to restart the development server automatically"
+      ],
+      "a": 1,
+      "e": "Tree shaking relies on the static structure of ES6 modules (`import`/`export`) to identify and discard code that is never actually called in the application."
+    },
+    {
+      "q": "Why did modern tools like Vite and Esbuild significantly improve build speeds compared to older tools?",
+      "o": [
+        "They use cloud computing for every build",
+        "They are written in low-level languages like Go or Rust and leverage native 'unbundled' ESM for development",
+        "They skip the minification step entirely",
+        "They only support one version of JavaScript"
+      ],
+      "a": 1,
+      "e": "By using Go (Esbuild) or Rust (SWC), these tools bypass the performance bottlenecks of Node.js-based transpilers. Vite further improves dev speed by serving modules as native ESM."
+    },
+    {
+      "q": "What is the role of 'Babel' in a typical build pipeline?",
+      "o": [
+        "To manage database connections",
+        "To transpile modern JavaScript (ES6+) into older versions compatible with legacy browsers",
+        "To bundle multiple CSS files into one",
+        "To host the application on a server"
+      ],
+      "a": 1,
+      "e": "Babel allows developers to use the latest language features while ensuring the code still runs in environments that don't yet support them."
+    },
+    {
+      "q": "What is 'HMR' (Hot Module Replacement)?",
+      "o": [
+        "Replacing hardware components while the server is running",
+        "Updating only the changed modules in a running application without a full page reload",
+        "A method for cooling down server CPUs",
+        "A security protocol for form submissions"
+      ],
+      "a": 1,
+      "e": "HMR preserves the application state (like text in an input or a toggle) while allowing the developer to see code changes instantly."
+    },
+    {
+      "q": "What does a 'Source Map' do?",
+      "o": [
+        "It provides a visual map of the server architecture",
+        "It maps compressed/minified code back to the original source code for easier debugging",
+        "It shows the physical location of the user",
+        "It documents every API endpoint in the project"
+      ],
+      "a": 1,
+      "e": "Source maps allow developers to debug production code in the browser's developer tools as if they were looking at the original, unminified files."
+    },
+    {
+      "q": "What is 'Polyfilling'?",
+      "o": [
+        "Filling a database with dummy data",
+        "Providing modern functionality on older browsers that do not natively support it",
+        "The process of adding padding to a CSS layout",
+        "A technique for optimizing memory usage"
+      ],
+      "a": 1,
+      "e": "A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern features in older browsers that do not natively support them."
+    },
+    {
+      "q": "What is the 'Module Graph'?",
+      "o": [
+        "A chart showing the team's productivity",
+        "A data structure representing the relationships and dependencies between all files in a project",
+        "A specialized database for storing React components",
+        "The CSS layout for the main navigation"
+      ],
+      "a": 1,
+      "e": "Build tools use the module graph to determine the order in which files should be processed and bundled to ensure dependencies are resolved correctly."
+    },
+    {
+      "q": "What is 'Transpilation' vs 'Compilation' in web development?",
+      "o": [
+        "They are exactly the same",
+        "Transpilation is source-to-source (e.g., TS to JS); Compilation is source-to-machine code",
+        "Transpilation is only for CSS; Compilation is only for JS",
+        "Compilation happens in the browser; Transpilation happens on the server"
+      ],
+      "a": 1,
+      "e": "Transpilation transforms code from one high-level language to another (like TypeScript to JavaScript), whereas traditional compilation usually converts to a lower-level executable."
+    },
+    {
+      "q": "In Webpack, what is a 'Loader'?",
+      "o": [
+        "A progress bar for the user",
+        "A transformation applied to the source code of a module (e.g., converting SASS to CSS)",
+        "A tool for uploading files to a CDN",
+        "A script that restarts the server"
+      ],
+      "a": 1,
+      "e": "Loaders allow Webpack to process non-JavaScript files (like images, CSS, or TypeScript) and include them in the dependency graph."
+    },
+    {
+      "q": "What is the 'Dist' (or 'Build') folder?",
+      "o": [
+        "The folder where the developer writes original code",
+        "The folder containing the final, optimized, and ready-to-deploy assets",
+        "A temporary directory for cache only",
+        "A folder for project documentation"
+      ],
+      "a": 1,
+      "e": "The distribution folder is the result of the build process. It contains the minified and bundled files that are actually served to the user."
+    },
+    {
+      "q": "What is 'Pre-bundling' in tools like Vite?",
+      "o": [
+        "Bundling the app before the developer starts writing code",
+        "Using Esbuild to convert heavy CommonJS/UMD dependencies into ESM for faster browser loading",
+        "A method for compressing images during the build",
+        "Pre-loading every page of the website on the user's device"
+      ],
+      "a": 1,
+      "e": "Vite pre-bundles dependencies using Esbuild to improve page load speed and handle modules that aren't natively provided as ESM."
+    }
+  ]
+}
