@@ -234,6 +234,16 @@
 			  "name": "API Patterns",
 			  "slug": "api_patterns",
 			  "descn": "Comparing REST, GraphQL, and tRPC: Type-safety across the wire and efficient data fetching (Batching/Throttling)."
+			},
+			{
+			  "name": "Edge Computing & Isolates",
+			  "slug": "edge_isolates",
+			  "descn": "Understanding Isolate-based runtimes, global distribution, and low-latency data storage using D1 or KV."
+			},
+			{
+			  "name": "Reactive State & Signals",
+			  "slug": "state_signals",
+			  "descn": "Comparing global stores to signal-based reactivity and managing complex UI states with Finite State Machines."
 			}
 		  ]
 		}

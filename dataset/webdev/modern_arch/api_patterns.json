@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary architectural difference between REST and GraphQL?",
+      "o": [
+        "REST is faster for all use cases",
+        "REST uses multiple endpoints for different resources; GraphQL uses a single endpoint and allows clients to specify needed data",
+        "GraphQL only works with NoSQL databases",
+        "REST is strictly for browser-to-server communication"
+      ],
+      "a": 1,
+      "e": "REST is resource-oriented with fixed endpoints (e.g., /users, /posts), while GraphQL is query-oriented, letting the client fetch exactly the fields they need in a single request."
+    },
+    {
+      "q": "What problem does 'gRPC' primarily solve in microservices architectures?",
+      "o": [
+        "It makes HTML templates easier to write",
+        "It provides high-performance, low-latency communication using Protocol Buffers over HTTP/2",
+        "It replaces the need for any database",
+        "It simplifies the styling of mobile apps"
+      ],
+      "a": 1,
+      "e": "gRPC is ideal for internal service-to-service communication because it uses a binary format (Protobuf) which is much faster and smaller than JSON-based REST."
+    },
+    {
+      "q": "What is 'Over-fetching' in the context of API design?",
+      "o": [
+        "The server sending more data than the client actually needs for a specific UI",
+        "A user refreshing the page too many times",
+        "The browser downloading multiple images at once",
+        "The database running out of storage space"
+      ],
+      "a": 0,
+      "e": "Over-fetching occurs often in REST when an endpoint returns a full user object with 50 fields, but the UI only needs the 'username'."
+    },
+    {
+      "q": "What is a 'Webhook'?",
+      "o": [
+        "A tool for scraping data from websites",
+        "An automated message sent from an application when a specific event happens (a 'push' from server to client)",
+        "A specialized type of CSS selector",
+        "A way to secure API keys in the browser"
+      ],
+      "a": 1,
+      "e": "Webhooks are 'reverse APIs'—instead of the client asking the server for data, the server sends data to a client-provided URL when an event (like a payment) occurs."
+    },
+    {
+      "q": "In an Event-Driven Architecture, what is the role of a 'Message Broker' (like RabbitMQ or Kafka)?",
+      "o": [
+        "To host the application's frontend files",
+        "To act as an intermediary that receives, stores, and routes messages between services asynchronously",
+        "To encrypt all incoming HTTP traffic",
+        "To serve as the primary relational database"
+      ],
+      "a": 1,
+      "e": "Message brokers decouple services, allowing a producer to send an event without needing to know which specific services will consume it or if they are currently online."
+    },
+    {
+      "q": "What is the 'BFF' (Backend for Frontend) pattern?",
+      "o": [
+        "A security protocol for social media apps",
+        "Creating a dedicated backend service for a specific frontend (e.g., one for Mobile, one for Web) to optimize data delivery",
+        "Using a single database for all frontend applications",
+        "A method for sharing code between developers"
+      ],
+      "a": 1,
+      "e": "BFFs act as a translation layer, aggregating multiple microservice calls into a single response tailored specifically for the requirements of a particular UI."
+    },
+    {
+      "q": "What does 'Idempotency' mean in API design?",
+      "o": [
+        "The API is always available 100% of the time",
+        "Making the same request multiple times has the same effect as making it once",
+        "The API can only be accessed by one user",
+        "The API automatically deletes old data"
+      ],
+      "a": 1,
+      "e": "Idempotency (crucial for DELETE or PUT requests) ensures that if a network error causes a retry, the system doesn't accidentally perform the action twice (like double-charging a card)."
+    },
+    {
+      "q": "What is 'TRPC'?",
+      "o": [
+        "A replacement for the HTTP protocol",
+        "A library that allows you to build end-to-end typesafe APIs without a schema (leveraging TypeScript)",
+        "A tool for testing API performance",
+        "A specialized database for storing JSON"
+      ],
+      "a": 1,
+      "e": "tRPC allows you to share types between your client and server directly, ensuring that if you change a database field, your frontend code will show a TypeScript error immediately."
+    },
+    {
+      "q": "What is 'Backpressure' in a streaming API context?",
+      "o": [
+        "A security attack that floods the server with requests",
+        "A mechanism where a data consumer signals to the producer to slow down because it cannot keep up with the data flow",
+        "The delay caused by a slow database query",
+        "The process of compressing data before sending it"
+      ],
+      "a": 1,
+      "e": "Backpressure prevents a fast producer from overwhelming a slow consumer, which could otherwise lead to memory exhaustion or service crashes."
+    },
+    {
+      "q": "What is the primary benefit of using 'WebSockets' over traditional HTTP polling?",
+      "o": [
+        "It is more secure than HTTPS",
+        "It provides full-duplex, real-time communication over a single, long-lived connection",
+        "It allows for better SEO indexing",
+        "It automatically minifies the data being sent"
+      ],
+      "a": 1,
+      "e": "WebSockets enable instant updates (like in chat apps or live sports scores) because either the client or the server can send data at any time without a new request."
+    },
+    {
+      "q": "What is a 'Long Polling' strategy?",
+      "o": [
+        "Making a very long request that takes hours to finish",
+        "The client requests data and the server holds the request open until new data is available or a timeout is reached",
+        "A way to measure the physical length of network cables",
+        "A method for storing data in the browser for a long time"
+      ],
+      "a": 1,
+      "e": "Long polling is a precursor to WebSockets; it emulates a 'push' by keeping the connection open, reducing the overhead of frequent empty polling requests."
+    },
+    {
+      "q": "In REST, what is 'HATEOAS'?",
+      "o": [
+        "A security framework for preventing SQL injection",
+        "A principle where the API response includes links to other related actions the client can perform",
+        "A specialized database for high-availability apps",
+        "A type of CSS framework for building dashboards"
+      ],
+      "a": 1,
+      "e": "HATEOAS (Hypermedia as the Engine of Application State) makes an API 'self-discoverable' by providing the URLs for next steps directly in the JSON response."
+    }
+  ]
+}
