@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is a 'V8 Isolate' in the context of Edge Computing (like Cloudflare Workers)?",
+      "o": [
+        "A standalone virtual machine running a full Linux OS",
+        "A lightweight instance of the V8 engine that encapsulates its own memory, heap, and call stack",
+        "A specialized hardware chip located in data centers",
+        "A method for compressing JavaScript files"
+      ],
+      "a": 1,
+      "e": "Isolates are much lighter than Virtual Machines or Containers. They allow thousands of separate scripts to run on a single process with high security and minimal overhead."
+    },
+    {
+      "q": "What is the primary performance advantage of 'Isolates' over 'Containers' for serverless functions?",
+      "o": [
+        "They have faster CPU speeds",
+        "They eliminate 'Cold Starts' because they can be instantiated in milliseconds",
+        "They provide more disk storage space",
+        "They support more programming languages like COBOL"
+      ],
+      "a": 1,
+      "e": "Because Isolates don't need to boot an entire OS or filesystem, they start almost instantly, solving the latency issues common in traditional container-based serverless functions."
+    },
+    {
+      "q": "Why are Edge Isolates typically restricted to specific APIs (like the Fetch API) rather than the full Node.js standard library?",
+      "o": [
+        "To make the code harder to hack",
+        "To ensure portability and security by using standardized Web APIs that are memory-safe and efficient",
+        "Because Edge servers don't have enough RAM for Node.js",
+        "To force developers to use newer frameworks"
+      ],
+      "a": 1,
+      "e": "By sticking to 'WinterCG' compliant Web APIs, Edge platforms ensure that code is lightweight and can run across different providers (Cloudflare, Fastly, Deno) without modification."
+    },
+    {
+      "q": "What is '0ms Cold Start'?",
+      "o": [
+        "A marketing term for a very fast computer",
+        "The ability to begin executing code immediately upon request by pre-warming Isolates or using snapshotting",
+        "A way to run code without any electricity",
+        "A bug where the timer fails to start"
+      ],
+      "a": 1,
+      "e": "Edge platforms use various techniques, including V8 snapshots, to keep code in a 'ready' state, allowing them to respond to requests without the typical initialization delay."
+    },
+    {
+      "q": "How do Edge Isolates handle multi-tenancy security?",
+      "o": [
+        "By putting each user on a different physical server",
+        "By leveraging V8's sandboxing, which prevents one Isolate from accessing the memory of another",
+        "By requiring a password for every function call",
+        "By running all code in plain text"
+      ],
+      "a": 1,
+      "e": "V8 was originally designed to run untrusted code in a browser tab. This same sandboxing technology is used at the edge to isolate multiple users' code on the same machine safely."
+    },
+    {
+      "q": "What is a 'Durable Object' in the Cloudflare Isolate ecosystem?",
+      "o": [
+        "An image file that never expires",
+        "A specialized class that provides low-latency coordination and consistent storage for specific Isolates",
+        "A physical hard drive located at the edge",
+        "A backup copy of the application's source code"
+      ],
+      "a": 1,
+      "e": "Durable Objects allow for stateful edge computing, enabling things like real-time collaboration or shopping carts to live at the edge with guaranteed consistency."
+    },
+    {
+      "q": "In an Edge environment, what is 'Request Collapsing'?",
+      "o": [
+        "Deleting requests that take too long",
+        "Combining multiple identical requests for the same resource into a single network call to the origin",
+        "A security attack that crashes the server",
+        "A method for minifying JSON data"
+      ],
+      "a": 1,
+      "e": "Request collapsing (or shielding) prevents the 'thundering herd' problem, where thousands of requests hit the origin server at once for the same data."
+    },
+    {
+      "q": "What is the 'Global Network' advantage for Edge Isolates?",
+      "o": [
+        "The ability to run code in space",
+        "Executing code at the PoP (Point of Presence) geographically closest to the user to minimize latency",
+        "Using only one giant server for the whole world",
+        "Providing free internet to everyone"
+      ],
+      "a": 1,
+      "e": "By running code at the 'edge' of the network (near the user), data doesn't have to travel back and forth to a central data center, significantly improving perceived performance."
+    },
+    {
+      "q": "What is a 'Service Binding'?",
+      "o": [
+        "A contract signed with a cloud provider",
+        "A fast, internal API that allows one Edge Worker to call another without going over the public internet",
+        "A way to connect a printer to the edge",
+        "A CSS property for layout"
+      ],
+      "a": 1,
+      "e": "Service bindings allow for a microservices architecture within the edge, where functions can communicate with near-zero latency and high security."
+    },
+    {
+      "q": "What is the typical memory limit for a single Edge Isolate (e.g., standard Cloudflare Worker)?",
+      "o": [
+        "1 GB",
+        "128 MB",
+        "10 GB",
+        "1 MB"
+      ],
+      "a": 1,
+      "e": "Because they are designed to be extremely lightweight, Isolates usually have much smaller memory limits (typically 128MB) than traditional server environments."
+    },
+    {
+      "q": "What is 'Smart Placement' in edge computing?",
+      "o": [
+        "Automatically moving code to the server with the most RAM",
+        "Dynamically deciding whether to run code at the Edge PoP or near the backend database to minimize total round-trip time",
+        "Putting the most important buttons at the top of the UI",
+        "Storing data in alphabetical order"
+      ],
+      "a": 1,
+      "e": "If a function needs to make many database calls, 'Smart Placement' might move that function closer to the database rather than the user to reduce the total latency of the operation."
+    },
+    {
+      "q": "Which language is commonly used to write Edge Isolates besides JavaScript?",
+      "o": [
+        "COBOL",
+        "WebAssembly (Wasm) targets like Rust, Go, or C++",
+        "VBA",
+        "Bash"
+      ],
+      "a": 1,
+      "e": "Since many Edge platforms support WebAssembly, developers can write performance-critical code in languages like Rust and run it with the same isolation benefits as JavaScript."
+    }
+  ]
+}
