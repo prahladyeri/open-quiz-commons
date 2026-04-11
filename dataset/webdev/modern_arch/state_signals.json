@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary architectural difference between 'Signals' and traditional 'Store-based' state (like Redux)?",
+      "o": [
+        "Signals only work in the browser, while Redux works on the server",
+        "Signals use fine-grained reactivity to update only the specific parts of the UI that depend on a value",
+        "Signals require a central dispatcher to manage all actions",
+        "There is no functional difference; they are different names for the same thing"
+      ],
+      "a": 1,
+      "e": "Unlike Redux, which often triggers a re-render of large component trees, signals track dependencies at a granular level, updating only the specific DOM nodes or components that 'consume' the signal."
+    },
+    {
+      "q": "What are the three core primitives typically found in a Signal-based system?",
+      "o": [
+        "State, Action, Reducer",
+        "Signal (Source), Computed (Derived), and Effect (Sink)",
+        "Get, Set, Delete",
+        "Observable, Subscriber, Operator"
+      ],
+      "a": 1,
+      "e": "Signals hold values, Computed signals derive new values from other signals, and Effects perform side-effects (like DOM updates or logging) when dependencies change."
+    },
+    {
+      "q": "What is 'Glitch-Free' reactivity in the context of Signals?",
+      "o": [
+        "A guarantee that the UI will never flicker",
+        "Ensuring that derived state never exposes an inconsistent intermediate value during a synchronous update",
+        "Automatically fixing syntax errors in the code",
+        "A method for preventing network errors"
+      ],
+      "a": 1,
+      "e": "In a 'glitchy' system, a derived value might update multiple times if its dependencies change simultaneously. Signals use a push/pull or topological sort mechanism to ensure the final value is computed only once."
+    },
+    {
+      "q": "How do Signals handle 'Dependency Tracking'?",
+      "o": [
+        "The developer must manually list all dependencies in an array",
+        "They use automatic subscription tracking by intercepting property access during execution",
+        "They scan the entire file system for variable names",
+        "They rely on the file import structure"
+      ],
+      "a": 1,
+      "e": "When a signal is read inside a computed function or effect, it registers itself as a dependency automatically, removing the need for 'dependency arrays' like those in React's `useEffect`."
+    },
+    {
+      "q": "What is the 'Pull' aspect of the 'Push/Pull' hybrid model used by modern Signal libraries?",
+      "o": [
+        "Pulling data from a remote API",
+        "Lazily evaluating computed signals only when they are actually read",
+        "Downloading the library from a CDN",
+        "Getting a user's input from a form"
+      ],
+      "a": 1,
+      "e": "To optimize performance, signals often 'push' a notification that something has changed, but only 'pull' (calculate) the actual new value when it is needed by the UI."
+    },
+    {
+      "q": "Which framework is largely credited with the modern resurgence of Signals in the web ecosystem?",
+      "o": [
+        "React",
+        "SolidJS",
+        "Next.js",
+        "jQuery"
+      ],
+      "a": 1,
+      "e": "SolidJS pioneered the use of signals for a 'no-VDOM' approach, proving that fine-grained reactivity could lead to industry-leading performance benchmarks."
+    },
+    {
+      "q": "What happens when a Signal's value is updated but no parts of the UI are currently using it?",
+      "o": [
+        "The whole application crashes",
+        "Nothing happens; no computations or DOM updates are triggered (Laziness)",
+        "The server is notified of the unused state",
+        "The signal is automatically deleted from memory"
+      ],
+      "a": 1,
+      "e": "Signals are inherently efficient because they only perform work when there is a 'subscriber' (like a visible UI component) interested in the result."
+    },
+    {
+      "q": "In a Signal-based UI, how are DOM updates typically performed?",
+      "o": [
+        "The framework re-runs the entire component function",
+        "Directly targeting and updating the specific DOM node's property without a Virtual DOM diffing step",
+        "By refreshing the entire page",
+        "By sending the updated state to the server first"
+      ],
+      "a": 1,
+      "e": "By bypassing the Virtual DOM, Signal-based frameworks can achieve near-native performance, as they know exactly which element needs to change at the moment the signal updates."
+    },
+    {
+      "q": "What is a 'Writable Signal'?",
+      "o": [
+        "A signal that can only be read by the server",
+        "A signal that allows both reading and direct updating (setting) of its value",
+        "A signal used for saving data to a file",
+        "A signal that is written in TypeScript"
+      ],
+      "a": 1,
+      "e": "Writable signals are the 'sources of truth' in your application state, while computed signals are read-only views of that state."
+    },
+    {
+      "q": "What is the benefit of 'Automatic Cleanup' in Effects?",
+      "o": [
+        "It deletes old comments from the code",
+        "It automatically unsubscribes and cleans up resources (like timers or event listeners) when the effect is re-run or disposed",
+        "It clears the browser's cache",
+        "It formats the code according to Prettier rules"
+      ],
+      "a": 1,
+      "e": "Cleanup ensures that your application doesn't leak memory or leave 'ghost' event listeners active as users navigate through different views."
+    },
+    {
+      "q": "How does the 'Preact Signals' implementation differ from React's `useState`?",
+      "o": [
+        "It can only store numbers",
+        "It can be used outside of components and doesn't trigger a component re-render unless explicitly used in the JSX",
+        "It requires a 100MB download",
+        "It only works with classes"
+      ],
+      "a": 1,
+      "e": "Preact signals can live in global scope and allow the UI to 'tunnel' updates directly to the DOM, often avoiding the heavy work of the React-style reconciliation process."
+    },
+    {
+      "q": "What is 'Equality Check' (Memoization) in Signals?",
+      "o": [
+        "Comparing two different signal libraries",
+        "Preventing updates from propagating if the new value is identical to the old value",
+        "Checking if the user's password is correct",
+        "Ensuring all variables have the same name"
+      ],
+      "a": 1,
+      "e": "If you set a signal to its current value, the system detects no change and halts the reactive chain early, preventing unnecessary computations or UI updates."
+    }
+  ]
+}
