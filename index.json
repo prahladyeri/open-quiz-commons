@@ -218,7 +218,6 @@
 		{
 		  "name": "Modern Architecture & Tooling",
 		  "slug": "modern_arch",
-		  "hidden": true,
 		  "modules": [
 			{
 			  "name": "Local-First Ops",
