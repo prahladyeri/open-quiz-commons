@@ -251,7 +251,7 @@
 	{
       "name": "PHP",
       "slug": "php",
-      "icon": "fa fa-php",
+      "icon": "fa-brands fa-php",
 	  "subtopics": [
 		{
 		  "name": "Core PHP",
