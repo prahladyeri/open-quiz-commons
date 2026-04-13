@@ -247,6 +247,129 @@
 		  ]
 		}
 	  ]
+	},
+	{
+      "name": "PHP",
+      "slug": "php",
+      "icon": "fa fa-php",
+	  "subtopics": [
+		{
+		  "name": "Core PHP",
+		  "slug": "core",
+		  "hidden": true,
+		  "modules": [
+			  {
+				  "name": "Syntax & Control structures",
+				  "slug": "syntax_control_struct",
+				  "descn": "Focus on modern alternatives like the match expression (PHP 8+) vs. switch, and strict comparison ===."
+			  },
+			  {
+				  "name": "Type System",
+				  "slug": "type_system",
+				  "descn": "Scalar type declarations (int, string, bool, float), Union types, Intersection types, and the mixed type."
+			  },
+			  {
+				  "name": "String & Array Manipulation",
+				  "slug": "string_array_manip",
+				  "descn": "Advanced array functions (array_map, array_reduce, array_filter) and multibyte string handling."
+			  },
+			  {
+				  "name": "Functions & Scope",
+				  "slug": "functions_scope",
+				  "descn": "Closures, Arrow functions (fn() =>), and the use keyword for capturing scope."
+			  },
+			  {
+				  "name": "Generators & Iterables",
+				  "slug": "generators_iterables",
+				  "descn": "Memory-efficient data handling using yield and yield from."
+			  },
+			  {
+				  "name": "Error & Exception Handling",
+				  "slug": "error_exception_handling",
+				  "descn": "Try-catch-finally blocks, custom Exception classes, and the Throwable interface."
+			  },
+			  {
+				  "name": "OOP Basics",
+				  "slug": "oop_basics",
+				  "descn": "Classes, Visibility (public/private/protected), and Constructor Property Promotion (PHP 8+)."
+			  },
+			  {
+				  "name": "Interfaces & Traits",
+				  "slug": "interfaces_traits",
+				  "descn": "Decoupling logic using Interfaces and code reuse via Traits without the 'fragile base class' problem."
+			  },
+			  {
+				  "name": "Attributes (Metadata)",
+				  "slug": "attributes_metadata",
+				  "descn": "Using native PHP 8 attributes instead of traditional DocBlock annotations for routing or validation logic."
+			  },
+			  {
+				  "name": "Data Sanitization",
+				  "slug": "data_sanitization",
+				  "descn": "filter_var, htmlspecialchars, and secure input handling to prevent XSS."
+			  },
+			  {
+				  "name": "Cryptography",
+				  "slug": "cryptography",
+				  "descn": "Modern password hashing using password_hash() and password_verify() rather than legacy MD5/SHA1."
+			  },
+			  {
+				  "name": "Configuration & Superglobals",
+				  "slug": "configuration_superglobals",
+				  "descn": "Proper use of $_SESSION, $_COOKIE, and understanding the lifecycle of a PHP request."
+			  },
+			  {
+				  "name": "SPL (Standard PHP Library)",
+				  "slug": "spl",
+				  "descn": "Useful data structures like SplStack, SplQueue, and FileSystem iterators."
+			  },
+			  {
+				  "name": "Date & Time",
+				  "slug": "date_time",
+				  "descn": "Working with the DateTimeImmutable class and timezone handling."
+			  }
+		  ]
+		},
+		{
+			"hidden": true,
+		  "name": "Databases & Persistence",
+		  "slug": "persistence",
+		  "modules": [
+			{
+			  "name": "PDO & Prepared Statements",
+			  "slug": "pdo_prepared",
+			  "descn": "Secure database interaction using PDO, named parameters, and preventing SQL injection."
+			},
+			{
+			  "name": "Transactions & Locking",
+			  "slug": "db_transactions",
+			  "descn": "Managing ACID properties, commit/rollback logic, and row-level locking."
+			}
+		  ]
+		},
+		{
+			"hidden": true,
+		  "name": "Ecosystem & Tooling",
+		  "slug": "ecosystem",
+		  "modules": [
+			{
+			  "name": "Composer & Autoloading",
+			  "slug": "composer_autoload",
+			  "descn": "Dependency management, PSR-4 autoloading standards, and class maps."
+			},
+			{
+			  "name": "Testing (PHPUnit)",
+			  "slug": "testing_phpunit",
+			  "descn": "Unit testing basics, assertions, and mocking dependencies."
+			},
+			{
+			  "name": "PHP-FPM & Web Servers",
+			  "slug": "php_fpm_lifecycle",
+			  "descn": "How PHP-FPM interacts with Nginx/Apache and the request-response lifecycle."
+			}
+		  ]
+		}		
+	  ]
 	}
   ]
 }
