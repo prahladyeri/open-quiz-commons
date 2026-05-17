@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which symbol is used to start a PHP script?",
+      "o": [
+        "<?php",
+        "<php>",
+        "<?",
+        "<script>"
+      ],
+      "a": 0,
+      "e": "PHP code begins with the <?php opening tag."
+    },
+    {
+      "q": "How are variables declared in PHP?",
+      "o": [
+        "Using var keyword",
+        "Using let keyword",
+        "Using $ symbol",
+        "Using const keyword only"
+      ],
+      "a": 2,
+      "e": "All PHP variables start with the $ symbol."
+    },
+    {
+      "q": "Which symbol is used to terminate a statement in PHP?",
+      "o": [
+        ":",
+        ".",
+        ";",
+        ","
+      ],
+      "a": 2,
+      "e": "PHP statements end with a semicolon (;)."
+    },
+    {
+      "q": "Which control structure is used for conditional execution in PHP?",
+      "o": [
+        "loop",
+        "switch",
+        "if",
+        "foreach"
+      ],
+      "a": 2,
+      "e": "The if statement is used for conditional execution in PHP."
+    },
+    {
+      "q": "Which keyword is used to define a function in PHP?",
+      "o": [
+        "function",
+        "def",
+        "func",
+        "method"
+      ],
+      "a": 0,
+      "e": "Functions in PHP are declared using the function keyword."
+    },
+    {
+      "q": "Which loop executes a block of code at least once in PHP?",
+      "o": [
+        "for loop",
+        "while loop",
+        "do-while loop",
+        "foreach loop"
+      ],
+      "a": 2,
+      "e": "The do-while loop runs the code block once before checking the condition."
+    },
+    {
+      "q": "Which statement is used to exit a loop in PHP?",
+      "o": [
+        "stop",
+        "exit",
+        "break",
+        "return"
+      ],
+      "a": 2,
+      "e": "The break statement is used to exit loops early."
+    },
+    {
+      "q": "Which PHP construct is used to select one among multiple conditions?",
+      "o": [
+        "switch",
+        "select",
+        "choose",
+        "match"
+      ],
+      "a": 0,
+      "e": "The switch statement is used for multi-way branching."
+    },
+    {
+      "q": "What does the 'echo' statement do in PHP?",
+      "o": [
+        "Takes input from user",
+        "Prints output to the browser",
+        "Declares a variable",
+        "Ends the script"
+      ],
+      "a": 1,
+      "e": "echo is used to output text or variables to the browser."
+    },
+    {
+      "q": "Which PHP loop is best suited for iterating over arrays?",
+      "o": [
+        "for loop",
+        "while loop",
+        "foreach loop",
+        "do-while loop"
+      ],
+      "a": 2,
+      "e": "foreach is specifically designed for iterating over arrays."
+    }
+  ]
+}

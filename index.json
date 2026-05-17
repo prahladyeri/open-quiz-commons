@@ -249,7 +249,7 @@
 	  ]
 	},
 	{
-		  "hidden": true,
+	  "hidden": true,
       "name": "PHP",
       "slug": "php",
       "icon": "fa-brands fa-php",
