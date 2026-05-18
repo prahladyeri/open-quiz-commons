@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What is the default type of variables in PHP?",
+      "o": [
+        "Strictly typed",
+        "Weakly typed",
+        "Strongly typed",
+        "Statically typed"
+      ],
+      "a": 1,
+      "e": "PHP is a weakly typed language where variable types are determined at runtime."
+    },
+    {
+      "q": "Which operator is used for concatenation in PHP?",
+      "o": [
+        "+",
+        ".",
+        "&",
+        ","
+      ],
+      "a": 1,
+      "e": "The dot (.) operator is used to concatenate strings in PHP."
+    },
+    {
+      "q": "Which function is used to check the type of a variable in PHP?",
+      "o": [
+        "gettype()",
+        "typeof()",
+        "type()",
+        "var_type()"
+      ],
+      "a": 0,
+      "e": "gettype() returns the type of a variable in PHP."
+    },
+    {
+      "q": "What will PHP do if you add an integer and a string containing a number?",
+      "o": [
+        "Throw an error",
+        "Convert string to integer and add",
+        "Convert both to string",
+        "Return null"
+      ],
+      "a": 1,
+      "e": "PHP performs type juggling and converts the string to a number when possible."
+    },
+    {
+      "q": "Which keyword is used to define constants in modern PHP?",
+      "o": [
+        "define",
+        "const",
+        "Both define and const",
+        "constant"
+      ],
+      "a": 2,
+      "e": "PHP supports both define() and const for defining constants."
+    },
+    {
+      "q": "Which function checks if a variable is an integer?",
+      "o": [
+        "is_int()",
+        "is_integer() only",
+        "check_int()",
+        "intval()"
+      ],
+      "a": 0,
+      "e": "is_int() checks whether a variable is of integer type."
+    },
+    {
+      "q": "What is type juggling in PHP?",
+      "o": [
+        "Manual type conversion by developer",
+        "Automatic conversion of types by PHP",
+        "Strict type enforcement",
+        "Type casting only in arrays"
+      ],
+      "a": 1,
+      "e": "Type juggling is PHP's automatic conversion of variable types during operations."
+    },
+    {
+      "q": "Which operator is used for strict comparison in PHP?",
+      "o": [
+        "==",
+        "=",
+        "===",
+        "!="
+      ],
+      "a": 2,
+      "e": "=== checks both value and type, making it a strict comparison operator."
+    },
+    {
+      "q": "What does the function var_dump() do?",
+      "o": [
+        "Deletes a variable",
+        "Prints variable type and value",
+        "Converts variable type",
+        "Checks memory usage"
+      ],
+      "a": 1,
+      "e": "var_dump() displays structured information including type and value of a variable."
+    },
+    {
+      "q": "Which is true about PHP type casting?",
+      "o": [
+        "It is always automatic",
+        "It cannot be done manually",
+        "It can be done using (int), (string), etc.",
+        "It is not supported in PHP"
+      ],
+      "a": 2,
+      "e": "PHP allows explicit type casting using (int), (float), (string), etc."
+    }
+  ]
+}
