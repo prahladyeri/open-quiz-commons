@@ -249,7 +249,6 @@
 	  ]
 	},
 	{
-	  "hidden": true,
       "name": "PHP",
       "slug": "php",
       "icon": "fa-brands fa-php",
@@ -257,7 +256,6 @@
 		{
 		  "name": "Core PHP",
 		  "slug": "core",
-		  "hidden": true,
 		  "modules": [
 			  {
 				  "name": "Syntax & Control structures",

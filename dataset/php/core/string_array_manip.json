@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which PHP function returns the length of a string?",
+      "o": [
+        "count()",
+        "strlen()",
+        "size()",
+        "length()"
+      ],
+      "a": 1,
+      "e": "strlen() returns the number of characters in a string."
+    },
+    {
+      "q": "Which function converts a string to uppercase in PHP?",
+      "o": [
+        "toupper()",
+        "strtoupper()",
+        "upper()",
+        "ucase()"
+      ],
+      "a": 1,
+      "e": "strtoupper() converts all alphabetic characters in a string to uppercase."
+    },
+    {
+      "q": "Which PHP function is used to split a string into an array?",
+      "o": [
+        "explode()",
+        "split()",
+        "implode()",
+        "slice()"
+      ],
+      "a": 0,
+      "e": "explode() splits a string into an array using a delimiter."
+    },
+    {
+      "q": "What does implode() do in PHP?",
+      "o": [
+        "Destroys an array",
+        "Joins array elements into a string",
+        "Splits strings into arrays",
+        "Sorts array elements"
+      ],
+      "a": 1,
+      "e": "implode() joins array elements together into a single string."
+    },
+    {
+      "q": "Which function removes whitespace from both ends of a string?",
+      "o": [
+        "strip()",
+        "trim()",
+        "clean()",
+        "remove_space()"
+      ],
+      "a": 1,
+      "e": "trim() removes whitespace and optional characters from both ends of a string."
+    },
+    {
+      "q": "Which function checks whether a value exists in an array?",
+      "o": [
+        "array_exists()",
+        "in_array()",
+        "contains()",
+        "has_value()"
+      ],
+      "a": 1,
+      "e": "in_array() checks whether a given value exists inside an array."
+    },
+    {
+      "q": "Which function adds an element to the end of an array?",
+      "o": [
+        "array_push()",
+        "append()",
+        "push_back()",
+        "array_add()"
+      ],
+      "a": 0,
+      "e": "array_push() appends one or more elements to the end of an array."
+    },
+    {
+      "q": "Which PHP function sorts an array in ascending order?",
+      "o": [
+        "sort()",
+        "order()",
+        "asort()",
+        "arrange()"
+      ],
+      "a": 0,
+      "e": "sort() sorts indexed arrays in ascending order."
+    },
+    {
+      "q": "What does count() return when used on an array?",
+      "o": [
+        "The total memory used",
+        "The highest index",
+        "The number of elements",
+        "The array type"
+      ],
+      "a": 2,
+      "e": "count() returns the number of elements present in an array."
+    },
+    {
+      "q": "Which function is used to replace text inside a string?",
+      "o": [
+        "replace()",
+        "str_replace()",
+        "swap()",
+        "modify()"
+      ],
+      "a": 1,
+      "e": "str_replace() replaces occurrences of a search string with another string."
+    }
+  ]
+}
