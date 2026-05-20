@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which keyword is used to declare a function in PHP?",
+      "o": [
+        "func",
+        "define",
+        "function",
+        "method"
+      ],
+      "a": 2,
+      "e": "Functions in PHP are declared using the function keyword."
+    },
+    {
+      "q": "What is the primary purpose of functions in programming?",
+      "o": [
+        "To increase file size",
+        "To repeat code manually",
+        "To organize and reuse code",
+        "To declare variables"
+      ],
+      "a": 2,
+      "e": "Functions help organize logic into reusable blocks of code."
+    },
+    {
+      "q": "How do you return a value from a PHP function?",
+      "o": [
+        "output",
+        "yield",
+        "return",
+        "send"
+      ],
+      "a": 2,
+      "e": "The return keyword sends a value back from a function."
+    },
+    {
+      "q": "What is the default scope of a variable declared inside a PHP function?",
+      "o": [
+        "Global",
+        "Static",
+        "Function-local",
+        "Session-wide"
+      ],
+      "a": 2,
+      "e": "Variables declared inside functions are local to that function."
+    },
+    {
+      "q": "Which keyword is used to access a global variable inside a function?",
+      "o": [
+        "public",
+        "extern",
+        "global",
+        "scope"
+      ],
+      "a": 2,
+      "e": "The global keyword allows access to variables defined in the global scope."
+    },
+    {
+      "q": "What does a static variable inside a function do?",
+      "o": [
+        "Makes the function faster",
+        "Retains its value between function calls",
+        "Creates a global variable",
+        "Prevents reassignment"
+      ],
+      "a": 1,
+      "e": "Static variables preserve their value across multiple function calls."
+    },
+    {
+      "q": "Which feature allows passing a variable number of arguments to a PHP function?",
+      "o": [
+        "... operator",
+        "args keyword",
+        "dynamic()",
+        "spread() only"
+      ],
+      "a": 0,
+      "e": "PHP supports variadic functions using the ... operator."
+    },
+    {
+      "q": "What is an anonymous function in PHP?",
+      "o": [
+        "A function without parameters",
+        "A function without a return value",
+        "A function without a name",
+        "A private function"
+      ],
+      "a": 2,
+      "e": "Anonymous functions are functions defined without a name, often assigned to variables."
+    },
+    {
+      "q": "Which syntax is commonly used for anonymous functions in PHP?",
+      "o": [
+        "lambda => {}",
+        "function() {}",
+        "anon() {}",
+        "fn => {}"
+      ],
+      "a": 1,
+      "e": "Anonymous functions are typically written using function() {} syntax."
+    },
+    {
+      "q": "What is the purpose of type hints in PHP functions?",
+      "o": [
+        "To improve HTML rendering",
+        "To enforce expected parameter types",
+        "To increase database speed",
+        "To reduce file size"
+      ],
+      "a": 1,
+      "e": "Type hints specify expected parameter or return types for better reliability and readability."
+    }
+  ]
+}
