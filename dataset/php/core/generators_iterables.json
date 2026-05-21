@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of generators in PHP?",
+      "o": [
+        "To create database tables",
+        "To generate HTML templates",
+        "To iterate over data efficiently",
+        "To compress arrays"
+      ],
+      "a": 2,
+      "e": "Generators allow efficient iteration over large datasets without loading everything into memory."
+    },
+    {
+      "q": "Which keyword is used to create a generator in PHP?",
+      "o": [
+        "yield",
+        "return",
+        "generate",
+        "iterator"
+      ],
+      "a": 0,
+      "e": "Using the yield keyword inside a function turns it into a generator."
+    },
+    {
+      "q": "How does a generator differ from a normal function?",
+      "o": [
+        "It cannot accept parameters",
+        "It returns all values at once",
+        "It yields values one at a time",
+        "It only works with arrays"
+      ],
+      "a": 2,
+      "e": "Generators pause execution and yield values one at a time during iteration."
+    },
+    {
+      "q": "What is an iterable in PHP?",
+      "o": [
+        "Only arrays",
+        "Only objects",
+        "A value that can be looped over",
+        "A special database structure"
+      ],
+      "a": 2,
+      "e": "An iterable is any value that can be traversed using foreach, such as arrays or Traversable objects."
+    },
+    {
+      "q": "Which loop is commonly used to iterate over generators?",
+      "o": [
+        "while",
+        "switch",
+        "foreach",
+        "do-while"
+      ],
+      "a": 2,
+      "e": "Generators are typically consumed using foreach loops."
+    },
+    {
+      "q": "What advantage do generators provide for large datasets?",
+      "o": [
+        "Better graphics rendering",
+        "Lower memory usage",
+        "Automatic database indexing",
+        "Faster internet speed"
+      ],
+      "a": 1,
+      "e": "Generators reduce memory usage by producing values lazily instead of storing all values at once."
+    },
+    {
+      "q": "Which interface is commonly associated with iterable objects in PHP?",
+      "o": [
+        "Runnable",
+        "Serializable",
+        "Traversable",
+        "Callable"
+      ],
+      "a": 2,
+      "e": "Traversable is the base interface for objects that can be iterated using foreach."
+    },
+    {
+      "q": "What happens when a generator function reaches the end?",
+      "o": [
+        "It restarts automatically",
+        "Iteration stops",
+        "It throws an exception",
+        "It converts to an array"
+      ],
+      "a": 1,
+      "e": "Once all yield statements are exhausted, iteration naturally stops."
+    },
+    {
+      "q": "Can generators maintain internal state between iterations?",
+      "o": [
+        "No",
+        "Only in PHP 8+",
+        "Yes",
+        "Only with arrays"
+      ],
+      "a": 2,
+      "e": "Generators preserve execution state between yielded values."
+    },
+    {
+      "q": "Which keyword is primarily used with iterables in PHP?",
+      "o": [
+        "foreach",
+        "switch",
+        "class",
+        "static"
+      ],
+      "a": 0,
+      "e": "foreach is the primary construct used to iterate over iterable values in PHP."
+    }
+  ]
+}
