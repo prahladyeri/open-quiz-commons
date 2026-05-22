@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which keyword is used to handle exceptions in PHP?",
+      "o": [
+        "handle",
+        "except",
+        "catch",
+        "trap"
+      ],
+      "a": 2,
+      "e": "The catch block is used to handle exceptions thrown inside a try block."
+    },
+    {
+      "q": "Which keyword is used to throw an exception manually in PHP?",
+      "o": [
+        "raise",
+        "throw",
+        "exception",
+        "trigger"
+      ],
+      "a": 1,
+      "e": "The throw keyword is used to create and throw exceptions in PHP."
+    },
+    {
+      "q": "Which block is always executed whether an exception occurs or not?",
+      "o": [
+        "last",
+        "final",
+        "finally",
+        "cleanup"
+      ],
+      "a": 2,
+      "e": "The finally block executes regardless of whether an exception was thrown."
+    },
+    {
+      "q": "What is the purpose of a try block in PHP?",
+      "o": [
+        "To define functions",
+        "To test loops",
+        "To wrap code that may throw exceptions",
+        "To suppress warnings"
+      ],
+      "a": 2,
+      "e": "Code that may generate exceptions is placed inside a try block."
+    },
+    {
+      "q": "Which PHP function is commonly used to display debugging information about variables?",
+      "o": [
+        "echo()",
+        "dump()",
+        "var_dump()",
+        "debug()"
+      ],
+      "a": 2,
+      "e": "var_dump() prints detailed information including type and value."
+    },
+    {
+      "q": "What is the difference between errors and exceptions in PHP?",
+      "o": [
+        "Errors can always be caught",
+        "Exceptions are manually throwable and catchable",
+        "Errors only occur in databases",
+        "Exceptions terminate PHP immediately"
+      ],
+      "a": 1,
+      "e": "Exceptions are designed for structured error handling using try/catch."
+    },
+    {
+      "q": "Which operator suppresses error messages in PHP?",
+      "o": [
+        "#",
+        "!",
+        "@",
+        "$"
+      ],
+      "a": 2,
+      "e": "The @ operator suppresses error reporting for an expression."
+    },
+    {
+      "q": "Which function is used to define a custom error handler in PHP?",
+      "o": [
+        "register_error()",
+        "set_error_handler()",
+        "handle_error()",
+        "error_handler()"
+      ],
+      "a": 1,
+      "e": "set_error_handler() allows developers to define custom error handling behavior."
+    },
+    {
+      "q": "What happens if an exception is thrown but not caught?",
+      "o": [
+        "PHP ignores it",
+        "The script may terminate with a fatal error",
+        "The exception becomes a warning",
+        "The server restarts automatically"
+      ],
+      "a": 1,
+      "e": "Uncaught exceptions usually terminate script execution with an error message."
+    },
+    {
+      "q": "Which predefined class is commonly used for generic exceptions in PHP?",
+      "o": [
+        "Throwable",
+        "Exception",
+        "Error",
+        "Runtime"
+      ],
+      "a": 1,
+      "e": "The Exception class is the standard base class for exceptions in PHP."
+    }
+  ]
+}
