@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "Which keyword is used to define a class in PHP?",
+      "o": [
+        "object",
+        "class",
+        "struct",
+        "define"
+      ],
+      "a": 1,
+      "e": "Classes in PHP are declared using the class keyword."
+    },
+    {
+      "q": "Which keyword is used to create an object from a class?",
+      "o": [
+        "create",
+        "object",
+        "instance",
+        "new"
+      ],
+      "a": 3,
+      "e": "The new keyword creates an instance of a class."
+    },
+    {
+      "q": "What does the public visibility modifier mean in PHP?",
+      "o": [
+        "Accessible only inside the class",
+        "Accessible only by child classes",
+        "Accessible from anywhere",
+        "Accessible only in static methods"
+      ],
+      "a": 2,
+      "e": "Public properties and methods can be accessed from any scope."
+    },
+    {
+      "q": "Which visibility modifier restricts access to the same class only?",
+      "o": [
+        "private",
+        "protected",
+        "internal",
+        "hidden"
+      ],
+      "a": 0,
+      "e": "Private members are accessible only within the class where they are declared."
+    },
+    {
+      "q": "What is the purpose of the protected visibility modifier?",
+      "o": [
+        "Allows access from anywhere",
+        "Restricts access to static methods only",
+        "Allows access within the class and child classes",
+        "Makes methods immutable"
+      ],
+      "a": 2,
+      "e": "Protected members are accessible inside the class and subclasses."
+    },
+    {
+      "q": "Which method acts as a constructor in PHP?",
+      "o": [
+        "__start()",
+        "__create()",
+        "__construct()",
+        "__init()"
+      ],
+      "a": 2,
+      "e": "__construct() is automatically called when an object is created."
+    },
+    {
+      "q": "What is constructor property promotion introduced in PHP 8?",
+      "o": [
+        "Automatic database mapping",
+        "Declaring and assigning properties directly in constructor parameters",
+        "Promoting private methods to public",
+        "Converting arrays into objects"
+      ],
+      "a": 1,
+      "e": "Constructor property promotion reduces boilerplate by declaring properties directly in constructor parameters."
+    },
+    {
+      "q": "Which example correctly uses constructor property promotion?",
+      "o": [
+        "function __construct(public $name) {}",
+        "function __construct(var $name) {}",
+        "constructor(public $name) {}",
+        "function __construct(property $name) {}"
+      ],
+      "a": 0,
+      "e": "PHP 8 allows visibility modifiers directly in constructor parameters for automatic property creation."
+    },
+    {
+      "q": "What does inheritance allow in object-oriented programming?",
+      "o": [
+        "Combining multiple databases",
+        "One class acquiring properties and methods of another",
+        "Creating global variables",
+        "Automatic memory cleanup"
+      ],
+      "a": 1,
+      "e": "Inheritance enables a child class to reuse and extend functionality from a parent class."
+    },
+    {
+      "q": "Which keyword is used to inherit a class in PHP?",
+      "o": [
+        "implements",
+        "inherits",
+        "extends",
+        "uses"
+      ],
+      "a": 2,
+      "e": "The extends keyword is used for class inheritance in PHP."
+    }
+  ]
+}
