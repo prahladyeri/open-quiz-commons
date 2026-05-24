@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "q": "What is the main purpose of an interface in PHP?",
+      "o": [
+        "To store data variables",
+        "To define a contract for classes",
+        "To implement reusable code",
+        "To create objects directly"
+      ],
+      "a": 1,
+      "e": "Interfaces define a contract that implementing classes must follow by providing method definitions."
+    },
+    {
+      "q": "Which keyword is used to declare an interface in PHP?",
+      "o": [
+        "interface",
+        "implements",
+        "abstract",
+        "contract"
+      ],
+      "a": 0,
+      "e": "The interface keyword is used to define an interface in PHP."
+    },
+    {
+      "q": "How does a class use an interface?",
+      "o": [
+        "using",
+        "extends",
+        "implements",
+        "imports"
+      ],
+      "a": 2,
+      "e": "A class uses the implements keyword to follow an interface contract."
+    },
+    {
+      "q": "Which statement about PHP interfaces is correct?",
+      "o": [
+        "Interfaces can contain method implementations",
+        "Interfaces can have properties with values",
+        "Interfaces define method signatures only",
+        "Interfaces cannot be used in PHP"
+      ],
+      "a": 2,
+      "e": "Interfaces in PHP define only method signatures, not implementations."
+    },
+    {
+      "q": "What is a trait in PHP?",
+      "o": [
+        "A database schema",
+        "A reusable collection of methods",
+        "A type of interface",
+        "A special class constructor"
+      ],
+      "a": 1,
+      "e": "Traits allow code reuse across multiple classes without using inheritance."
+    },
+    {
+      "q": "Which keyword is used to define a trait in PHP?",
+      "o": [
+        "trait",
+        "use",
+        "module",
+        "mix"
+      ],
+      "a": 0,
+      "e": "The trait keyword is used to declare reusable method groups."
+    },
+    {
+      "q": "How do you include a trait inside a class?",
+      "o": [
+        "import TraitName;",
+        "include TraitName;",
+        "use TraitName;",
+        "extends TraitName;"
+      ],
+      "a": 2,
+      "e": "Traits are included inside classes using the use keyword."
+    },
+    {
+      "q": "Which problem do traits primarily solve?",
+      "o": [
+        "Database connection pooling",
+        "Multiple inheritance limitation",
+        "Memory leaks",
+        "Type safety enforcement"
+      ],
+      "a": 1,
+      "e": "Traits help achieve code reuse where multiple inheritance is not supported in PHP."
+    },
+    {
+      "q": "Can a PHP class use multiple traits?",
+      "o": [
+        "No, only one trait is allowed",
+        "Yes, multiple traits can be used",
+        "Only in PHP 5",
+        "Only if interfaces are not used"
+      ],
+      "a": 1,
+      "e": "PHP allows a class to use multiple traits simultaneously."
+    },
+    {
+      "q": "What happens if two traits define the same method?",
+      "o": [
+        "PHP automatically merges them",
+        "It causes a fatal error unless resolved explicitly",
+        "The first trait is ignored",
+        "The class is converted to abstract"
+      ],
+      "a": 1,
+      "e": "Method conflicts between traits must be resolved explicitly using conflict resolution syntax."
+    }
+  ]
+}
