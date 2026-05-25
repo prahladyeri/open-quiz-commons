@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which PHP version officially introduced native 'Attributes' to replace PHPDoc annotations?",
+      "o": [
+        "PHP 7.4",
+        "PHP 8.0",
+        "PHP 8.1",
+        "PHP 8.2"
+      ],
+      "a": 1,
+      "e": "PHP 8.0 introduced native attributes, providing structured, type-safe metadata directly inside the language syntax rather than parsing docblock strings."
+    },
+    {
+      "q": "What is the correct syntax for declaring an attribute on a class or function in PHP?",
+      "o": [
+        "@Attribute",
+        "#[MyAttribute]",
+        "[[MyAttribute]]",
+        "/* @MyAttribute */"
+      ],
+      "a": 1,
+      "e": "PHP uses the `#[...]` syntax (the hash-bracket syntax) for attributes, which aligns with modern syntax preferences and doubles as a comment in older PHP versions to prevent syntax errors."
+    },
+    {
+      "q": "Which core engine class is used to fetch and inspect attributes via code?",
+      "o": [
+        "ReflectionAttribute",
+        "MetadataReader",
+        "AttributeParser",
+        "PhpAttributeInstance"
+      ],
+      "a": 0,
+      "e": "The Reflection API was expanded in PHP 8.0 to include `ReflectionAttribute`, which allows developers to retrieve attributes from classes, methods, properties, and parameters."
+    },
+    {
+      "q": "To declare that a custom class can be used as an attribute, which attribute must be applied to it?",
+      "o": [
+        "#[Metadata]",
+        "#[System\\Attribute]",
+        "#[Attribute]",
+        "#[Injectable]"
+      ],
+      "a": 2,
+      "e": "A class must be explicitly marked with the built-in `#[Attribute]` class attribute to be recognized and instantiated as a valid attribute container."
+    },
+    {
+      "q": "How do you pass arguments to an attribute when applying it to a structural element?",
+      "o": [
+        "#[MyAttribute('value', key: 'name')]",
+        "#[MyAttribute(value, key=name)]",
+        "#[MyAttribute]('value')",
+        "Using a JSON string inside the brackets"
+      ],
+      "a": 0,
+      "e": "Attributes support standard PHP positional and named arguments, allowing you to pass configuration values directly during declaration."
+    },
+    {
+      "q": "What does the `Reflection::getAttributes()` method return?",
+      "o": [
+        "An array of instantiated attribute objects",
+        "An array of string names of the attributes",
+        "An array of ReflectionAttribute objects",
+        "A JSON representation of the metadata"
+      ],
+      "a": 2,
+      "e": "`getAttributes()` returns an array of `ReflectionAttribute` elements. The actual custom attribute object is not instantiated until you explicitly call `newInstance()` on it."
+    },
+    {
+      "q": "Which flag can be passed to the `#[Attribute]` declaration to limit where it can be applied (e.g., only to properties)?",
+      "o": [
+        "Attribute::TARGET_PROPERTY",
+        "Attribute::ONLY_PROPERTY",
+        "Attribute::TYPE_PROPERTY",
+        "Attribute::SCOPE_PROPERTY"
+      ],
+      "a": 0,
+      "e": "You can use bitwise flags like `Attribute::TARGET_PROPERTY`, `Attribute::TARGET_CLASS`, or `Attribute::TARGET_METHOD` to strictly control where an attribute is valid."
+    },
+    {
+      "q": "What is the default behavior regarding attribute inheritance if a parent class has an attribute?",
+      "o": [
+        "Attributes are always automatically inherited by child classes",
+        "Attributes are ignored by child classes unless checked with the ReflectionAttribute::IS_INSTANCEOF flag in getAttributes()",
+        "PHP throws a compilation error if an attribute is inherited",
+        "Child classes must redeclare the parent's attributes exactly"
+      ],
+      "a": 1,
+      "e": "By default, `getAttributes()` looks only at the specific target. To catch inherited attributes or implementations, pass `ReflectionAttribute::IS_INSTANCEOF` as an argument during retrieval."
+    },
+    {
+      "q": "How can you allow an attribute to be applied multiple times on the same target (e.g., repeating a route rule)?",
+      "o": [
+        "By default, all attributes can be repeated",
+        "By passing Attribute::IS_REPEATABLE to the #[Attribute] definition",
+        "By nesting brackets like #[#[MyAttribute]]",
+        "By separating declarations with a comma"
+      ],
+      "a": 1,
+      "e": "To allow repeating an attribute on the same property or method, you must explicitly declare it with the bitwise flag: `#[Attribute(Attribute::IS_REPEATABLE)]`."
+    },
+    {
+      "q": "What happens if you look up an attribute name that doesn't exist as a class in the codebase using `getAttributes()`?",
+      "o": [
+        "PHP crashes immediately with a Fatal Error",
+        "getAttributes() successfully returns a ReflectionAttribute instance, but calling newInstance() will throw an Error",
+        "getAttributes() skips over it entirely",
+        "The string name is returned instead of an object"
+      ],
+      "a": 1,
+      "e": "Parsing attributes is deferred. Merely querying `getAttributes()` reads the raw text token data; the engine only attempts to check or instantiate the class when you run `newInstance()`."
+    },
+    {
+      "q": "Which of the following is a classic framework use-case for native PHP attributes?",
+      "o": [
+        "Declaring environment variables in the .env file",
+        "Defining HTTP routing paths and validation constraints directly above controller methods",
+        "Compiling PHP code into fast binary targets",
+        "Managing connection pools inside a relational database"
+      ],
+      "a": 1,
+      "e": "Modern PHP engines and frameworks (like Symfony and Laravel) rely heavily on attributes to cleanly associate routes, validation rules, or dependency injection hooks directly with the code structure."
+    },
+    {
+      "q": "Can attributes be applied to anonymous classes or closure expressions in PHP?",
+      "o": [
+        "Yes, they can be applied to both anonymous classes and closure declarations",
+        "No, attributes are only valid for declared named structures",
+        "Only to anonymous classes, not to closures",
+        "Only to closures, not to anonymous classes"
+      ],
+      "a": 0,
+      "e": "PHP's attribute engine allows attaching metadata to anonymous classes and arrow functions/closures, ensuring flexible metadata mapping even for dynamic structures."
+    }
+  ]
+}
