@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary difference between data 'Sanitization' and data 'Validation' in PHP?",
+      "o": [
+        "Sanitization checks if data matches a format; Validation cleans the data",
+        "Sanitization removes or encodes unsafe characters; Validation checks if the data conforms to specific rules or formats",
+        "They are identical concepts executed by the same functions",
+        "Sanitization is for databases; Validation is only for emails"
+      ],
+      "a": 1,
+      "e": "Sanitization alters the input to make it safe by stripping or encoding problematic characters. Validation is a passive check that simply rejects input if it doesn't meet exact criteria (e.g., an integer range)."
+    },
+    {
+      "q": "Which native PHP function extension is specifically designed to validate and sanitize external user inputs safely?",
+      "o": [
+        "filter_var() and filter_input()",
+        "htmlspecialchars()",
+        "preg_replace()",
+        "stripslashes()"
+      ],
+      "a": 0,
+      "e": "The Data Filtering extension (`filter_var`, `filter_input`, etc.) provides a unified, highly optimized C-level implementation for handling typical validation and sanitization tasks."
+    },
+    {
+      "q": "What filter flag should be used with `filter_var()` to verify if a string is a correctly structured email address?",
+      "o": [
+        "FILTER_SANITIZE_EMAIL",
+        "FILTER_VALIDATE_EMAIL",
+        "FILTER_CHECK_EMAIL",
+        "FILTER_PURE_EMAIL"
+      ],
+      "a": 1,
+      "e": "`FILTER_VALIDATE_EMAIL` returns the email string if it passes the RFC validation rules, or `false` if it is invalid. `FILTER_SANITIZE_EMAIL` would instead strip out invalid characters, altering the string."
+    },
+    {
+      "q": "Why is relying solely on `FILTER_SANITIZE_STRING` discouraged in modern PHP (and deprecated since PHP 8.1)?",
+      "o": [
+        "It causes significant memory leaks in the Zend Engine",
+        "It uses an outdated stripping strategy that fails to properly secure data against modern context-specific XSS vectors",
+        "It only works with ASCII text and breaks UTF-8 characters",
+        "It was replaced by a mandatory database middleware requirement"
+      ],
+      "a": 1,
+      "e": "Universal string sanitization is a flawed approach because escaping must match the specific output context (HTML body, HTML attributes, JavaScript, or SQL). Context-aware escaping functions should be used instead."
+    },
+    {
+      "q": "Which function should be used to encode characters in a string to prevent Reflected Cross-Site Scripting (XSS) when outputting user data into raw HTML body text?",
+      "o": [
+        "strip_tags()",
+        "htmlspecialchars()",
+        "urlencode()",
+        "addslashes()"
+      ],
+      "a": 1,
+      "e": "`htmlspecialchars()` converts special characters like `<` and `>` into their safe HTML entity equivalents (`&lt;` and `&gt;`), preventing the browser from interpreting user input as executable script tags."
+    },
+    {
+      "q": "What is the security risk of using `strip_tags()` as a primary defense against malicious XSS injections?",
+      "o": [
+        "It cannot handle strings longer than 256 characters",
+        "It does not validate or strip malicious JavaScript hidden inside broken tags or unquoted HTML attributes",
+        "It automatically encrypts the payload, making it harder for firewalls to detect",
+        "It blocks valid SQL queries from executing"
+      ],
+      "a": 1,
+      "e": "`strip_tags()` uses a simple state machine that can be bypassed using partial, malformed, or unquoted attribute structures (e.g., `<img src=x onerror=alert(1)>`), making it an insufficient standalone security tool."
+    },
+    {
+      "q": "When constructing raw SQL strings manually, which native approach is the most effective defense against SQL Injection?",
+      "o": [
+        "Running mysqli_real_escape_string() on all parameters",
+        "Using PDO with Prepared Statements and parameterized queries",
+        "Using str_replace() to strip out the word 'SELECT'",
+        "Casting every parameter to a string object"
+      ],
+      "a": 1,
+      "e": Prepared statements completely separate the query structure from the data parameters. The SQL engine compiles the query template first, treating user arguments strictly as parameters, neutralizing injection attempts entirely."
+    },
+    {
+      "q": "What does passing the `FILTER_REQUIRE_SCALAR` flag to a validation filter achieve?",
+      "o": [
+        "It forces the input to be converted into an array",
+        "It ensures the input is a single scalar value (string, int, float, bool) and rejects array structures entirely",
+        "It requires the input to be an instantiated class object",
+        "It validates that a string contains only uppercase letters"
+      ],
+      "a": 1,
+      "e": "Attackers can sometimes pass unexpected nested arrays via HTTP requests to break code that expects a simple string. `FILTER_REQUIRE_SCALAR` enforces type geometry compliance."
+    },
+    {
+      "q": "Which function is appropriate for ensuring a string can be safely appended as a query parameter inside a tracking URL link?",
+      "o": [
+        "rawurlencode()",
+        "htmlspecialchars()",
+        "base64_encode()",
+        "stripcslashes()"
+      ],
+      "a": 0,
+      "e": "`rawurlencode()` encodes characters according to RFC 3986 (converting spaces to `%20`), which ensures the value does not break URL parsing boundaries."
+    },
+    {
+      "q": "What happens when `filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT)` is called but the key 'age' does not exist in the $_POST array?",
+      "o": [
+        "PHP throws an undefined index Notice",
+        "It returns false",
+        "It returns null",
+        "The script exits immediately with a fatal error"
+      ],
+      "a": 2,
+      "e": "`filter_input()` returns `null` if the variable is missing from the global array, and returns `false` if the variable exists but fails the validation filter criterion."
+    },
+    {
+      "q": "Why is checking the MIME type using `$_FILES['uploaded_file']['type']` considered insecure during file upload validation?",
+      "o": [
+        "It does not support modern file extensions",
+        "The value is provided entirely by the client's browser headers and can be easily spoofed by an attacker sending a malicious script",
+        "It causes performance lag when reading large files",
+        "PHP automatically overwrites this value with random strings"
+      ],
+      "a": 1,
+      "e": "The browser sends the content type header along with the multipart payload. To validate a file securely, read the actual binary file bytes on the server using an extension like `finfo_file()`."
+    },
+    {
+      "q": "Which flag combo ensures that `filter_var()` tracking an integer rejects octal/hex notations and restricts evaluation strictly to base-10 decimals?",
+      "o": [
+        "FILTER_FLAG_STRICT_BASE",
+        "FILTER_FLAG_ALLOW_OCTAL | FILTER_FLAG_ALLOW_HEX",
+        "No flags are needed; base-10 is the only format checked by default",
+        "Do not pass ALLOW_OCTAL or ALLOW_HEX, as the default behavior avoids them unless explicitly enabled"
+      ],
+      "a": 2,
+      "e": "By default, `FILTER_VALIDATE_INT` only matches standard base-10 decimal inputs. An input will fail to validate as an integer if it contains hex prefixes (`0x`) or leading octal zeroes unless those explicit flags are turned on."
+    }
+  ]
+}
