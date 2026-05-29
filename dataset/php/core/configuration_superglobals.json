@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which superglobal array contains information about headers, paths, and script locations?",
+      "o": [
+        "$_REQUEST",
+        "$_SERVER",
+        "$_ENV",
+        "$_GET"
+      ],
+      "a": 1,
+      "e": "`$_SERVER` is populated by the web server and contains critical environment details such as HTTP headers, script names, and request URIs."
+    },
+    {
+      "q": "What is a major security risk associated with using the `$_REQUEST` superglobal to fetch user input?",
+      "o": [
+        "It bypasses PHP's memory limits",
+        "It combines $_GET, $_POST, and $_COOKIE data, making the input origin ambiguous and vulnerable to parameter overriding",
+        "It can only handle integer values",
+        "It automatically encrypts the data, making validation impossible"
+      ],
+      "a": 1,
+      "e": "Because `$_REQUEST` aggregates multiple input methods, an attacker could potentially override expected POST parameters by sending variables via the query string (GET) or cookies, depending on the `request_order` configuration."
+    },
+    {
+      "q": "Which native PHP function is used to retrieve the value of an environment variable?",
+      "o": [
+        "get_env_var()",
+        "getenv()",
+        "ini_get()",
+        "env()"
+      ],
+      "a": 1,
+      "e": "`getenv()` reads configuration parameters from the environment. Alternatively, you can access the `$_ENV` superglobal array if your `variables_order` ini setting permits it."
+    },
+    {
+      "q": "What is the purpose of the `variables_order` directive in the `php.ini` file?",
+      "o": [
+        "It sets the alphabetical order of variables in a script",
+        "It defines the order in which PHP registers Environment, GET, POST, Cookie, and Server superglobal variables",
+        "It determines the priority of variable type definitions",
+        "It configures the database query execution sequence"
+      ],
+      "a": 1,
+      "e": "The `variables_order` directive (e.g., set to 'EGPCS') controls which superglobal arrays are created. Excluding a letter (like 'E' for Environment) can improve performance but makes that specific superglobal unavailable."
+    },
+    {
+      "q": "Which PHP function allows you to change a configuration directive value at runtime inside your script?",
+      "o": [
+        "ini_set()",
+        "ini_get()",
+        "config_set()",
+        "set_cfg_var()"
+      ],
+      "a": 0,
+      "e": "`ini_set('directive', 'value')` changes options during execution, but it only works for directives that are categorized as `PHP_INI_USER` or `PHP_INI_ALL`."
+    },
+    {
+      "q": "What happens if you attempt to use `ini_set()` to alter a directive marked as `PHP_INI_SYSTEM`?",
+      "o": [
+        "PHP throws a Fatal error and terminates execution",
+        "The function returns false and the directive value remains unchanged",
+        "The script triggers a compiler Warning but updates the system globally",
+        "The web server restarts automatically"
+      ],
+      "a": 1,
+      "e": "`PHP_INI_SYSTEM` settings (like `display_errors` or `safe_mode` historically) can only be changed inside the main `php.ini` file or a server configuration block. `ini_set()` will return `false` on failure."
+    },
+    {
+      "q": "Why is the `register_globals` directive permanently removed in modern versions of PHP?",
+      "o": [
+        "It was too slow to parse during execution",
+        "It automatically registered URL inputs as global script variables, leading to massive security vulnerabilities",
+        "It was incompatible with object-oriented programming",
+        "It forced variables to be strictly typed"
+      ],
+      "a": 1,
+      "e": "With `register_globals` turned on, a URL parameter like `?authenticated=1` would automatically create a global `$authenticated` variable, allowing attackers to easily bypass uninitialized variable checks."
+    },
+    {
+      "q": "Which directive in `php.ini` should be explicitly turned off in production environments to prevent leaking source code paths or database credentials?",
+      "o": [
+        "log_errors",
+        "display_errors",
+        "expose_php",
+        "error_reporting"
+      ],
+      "a": 1,
+      "e": "Setting `display_errors = Off` ensures that runtime errors and unhandled exceptions are hidden from the user. You should instead rely on `log_errors = On` to pipe anomalies safely to a log file."
+    },
+    {
+      "q": "Which superglobal array is unique because its data persists across multiple separate page HTTP requests for a single user?",
+      "o": [
+        "$_POST",
+        "$_SERVER",
+        "$_SESSION",
+        "$_ENV"
+      ],
+      "a": 2,
+      "e": "`$_SESSION` stores user-specific state on the server across multiple requests, mapping to the client via a unique tracking identifier cookie (typically `PHPSESSID`)."
+    },
+    {
+      "q": "How can you check if a specific configuration directive has a value enabled at runtime using boolean checks?",
+      "o": [
+        "ini_get_bool()",
+        "ini_parse()",
+        "ini_get() combined with filter_var() or checking string values",
+        "config_get()"
+      ],
+      "a": 2,
+      "e": "`ini_get()` always returns the directive's string representation from `php.ini` (like '1', 'On', 'Off', or ''). You must check the truthiness or evaluate the string value yourself."
+    },
+    {
+      "q": "What does the `post_max_size` directive control?",
+      "o": [
+        "The maximum number of variables allowed in a POST request",
+        "The maximum size of POST data allowed, including file uploads",
+        "The maximum execution time for a POST script",
+        "The total memory buffer allocated for database interactions"
+      ],
+      "a": 1,
+      "e": "`post_max_size` defines the absolute ceiling for an incoming POST request body. It must always be configured to be greater than or equal to `upload_max_filesize`."
+    },
+    {
+      "q": "Which superglobal contains the parsed HTTP multipart file upload data structures?",
+      "o": [
+        "$_POST",
+        "$_FILES",
+        "$_REQUEST",
+        "$_SERVER"
+      ],
+      "a": 1,
+      "e": "`$_FILES` is populated when a form is submitted using `enctype=\"multipart/form-data\"`. It contains temporary paths, file names, error tracking codes, and file sizes."
+    }
+  ]
+}
