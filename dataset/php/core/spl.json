@@ -119,7 +119,7 @@
         "RegexIterator"
       ],
       "a": 1,
-      "e": `FilterIterator` is an abstract class where you define a custom `accept()` method returning true or false. Elements that return false are automatically skipped during loop iteration.
+      "e": "`FilterIterator` is an abstract class where you define a custom `accept()` method returning true or false. Elements that return false are automatically skipped during loop iteration."
     },
     {
       "q": "What happens when you instantiate a standard `SplFileObject` on a CSV file and set the flag `SplFileObject::READ_CSV`?",
@@ -130,7 +130,7 @@
         "It locks the file from being edited by other system programs"
       ],
       "a": 1,
-      "e": `SplFileObject` treats files as objects. Enabling the `READ_CSV` flag instructs the internal pointer to automatically trigger `fgetcsv()` on every iteration step, cleanly parsing rows.
+      "e": "`SplFileObject` treats files as objects. Enabling the `READ_CSV` flag instructs the internal pointer to automatically trigger `fgetcsv()` on every iteration step, cleanly parsing rows."
     }
   ]
 }
