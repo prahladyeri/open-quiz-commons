@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of the Standard PHP Library (SPL)?",
+      "o": [
+        "To provide a set of functions for interacting with MySQL databases",
+        "To provide a collection of interfaces and classes designed to solve common tool and data structure problems",
+        "To replace the core Zend Engine compilation layer",
+        "To manage external composer dependencies automatically"
+      ],
+      "a": 1,
+      "e": "SPL is a built-in extension that provides standard design patterns, advanced data structures (like heaps, stacks, and queues), and object-oriented file iterators."
+    },
+    {
+      "q": "Which SPL interface allows an object to be looped over using a standard `foreach` construct?",
+      "o": [
+        "Countable",
+        "ArrayAccess",
+        "Traversable",
+        "Serializable"
+      ],
+      "a": 2,
+      "e": "`Traversable` is the internal abstract base interface that dictates an object can be iterated. In user-land code, you implement its sub-interfaces: `Iterator` or `IteratorAggregate`."
+    },
+    {
+      "q": "What unique capability does implementing the `ArrayAccess` interface grant to a custom PHP object?",
+      "o": [
+        "It converts the object into a JSON string automatically",
+        "It allows the object to be accessed using standard array bracket syntax (e.g., $obj['key'])",
+        "It forces all object properties to be integers",
+        "It allows the object to be passed directly to array_merge()"
+      ],
+      "a": 1,
+      "e": "`ArrayAccess` requires implementing four methods: `offsetExists`, `offsetGet`, `offsetSet`, and `offsetUnset`, allowing objects to mimic regular array syntax."
+    },
+    {
+      "q": "Which SPL data structure class represents a discrete, memory-efficient Doubly Linked List that optimizes sequential push/pop operations?",
+      "o": [
+        "SplFixedArray",
+        "SplDoublyLinkedList",
+        "SplStack",
+        "SplQueue"
+      ],
+      "a": 1,
+      "e": "`SplDoublyLinkedList` serves as the underlying engine for both `SplStack` and `SplQueue`, providing low-level memory architecture for node manipulation."
+    },
+    {
+      "q": "Why is an `SplFixedArray` often preferred over a standard native PHP array for large, numerical datasets?",
+      "o": [
+        "It supports string keys more efficiently",
+        "It is strictly bound to a fixed size and stores elements sequentially in memory, using significantly less RAM and offering faster lookup speeds",
+        "It automatically encrypts its contents",
+        "It can be shared across separate server processes"
+      ],
+      "a": 1,
+      "e": "Standard PHP arrays are actually associative hash tables under the hood. `SplFixedArray` utilizes a classic C-style contiguous memory block, drastically lowering structural memory overhead."
+    },
+    {
+      "q": "What is the specialized function of the `SplPriorityQueue` structure?",
+      "o": [
+        "It sorts elements alphabetically automatically",
+        "It behaves like a standard FIFO queue but elements are dequeued based on an explicit priority score assigned to them",
+        "It limits the queue to only contain high-priority system files",
+        "It processes elements inside a parallel asynchronous thread loop"
+      ],
+      "a": 1,
+      "e": "`SplPriorityQueue` uses a max-heap implementation to maintain internal sorted order, ensuring that items with the highest priority score are extracted first."
+    },
+    {
+      "q": "Which class would you use to recursively iterate through nested folders and list deep sub-directory files in an object-oriented loop?",
+      "o": [
+        "DirectoryIterator",
+        "RecursiveDirectoryIterator combined with RecursiveIteratorIterator",
+        "SplFileObject",
+        "GlobIterator"
+      ],
+      "a": 1,
+      "e": "`RecursiveDirectoryIterator` maps the nested folder paths, while `RecursiveIteratorIterator` flattens that recursive depth into a single linear loop context."
+    },
+    {
+      "q": "What major architectural optimization does a 'Generator' (using the `yield` keyword) offer over returning an SPL `ArrayIterator`?",
+      "o": [
+        "Generators compile directly into machine instructions",
+        "Generators utilize lazy-evaluation to stream data values one at a time, preventing massive memory consumption when processing huge files",
+        "Generators automatically validate data types",
+        "Generators allow bi-directional loops over the data set"
+      ],
+      "a": 1,
+      "e": "Instead of loading an entire dataset into memory to populate an iterator object, a Generator pauses execution state and yields values on demand, handling millions of rows using virtually zero extra RAM."
+    },
+    {
+      "q": "Which SPL exception class is designed to handle invalid arguments passed to a function that don't match expected criteria?",
+      "o": [
+        "RuntimeException",
+        "InvalidArgumentException",
+        "OutOfBoundsException",
+        "BadMethodCallException"
+      ],
+      "a": 1,
+      "e": "`InvalidArgumentException` belongs to the LogicException branch of SPL, indicating a developer error where arguments do not match the expected structural characteristics."
+    },
+    {
+      "q": "What structural pattern does the `SplObserver` and `SplSubject` interface pairing implement natively in PHP?",
+      "o": [
+        "Singleton Pattern",
+        "Observer Pattern (Publish-Subscribe)",
+        "Factory Method Pattern",
+        "Repository Pattern"
+      ],
+      "a": 1,
+      "e": These built-in interfaces let you attach observers to a subject class. When the subject alters state, it calls `notify()`, which automatically triggers the `update()` method on all registered observers.
+    },
+    {
+      "q": "Which SPL iterator allows you to wrap another iterator and filter out elements based on custom logic implemented in an `accept()` method?",
+      "o": [
+        "CallbackFilterIterator",
+        "FilterIterator",
+        "LimitIterator",
+        "RegexIterator"
+      ],
+      "a": 1,
+      "e": `FilterIterator` is an abstract class where you define a custom `accept()` method returning true or false. Elements that return false are automatically skipped during loop iteration.
+    },
+    {
+      "q": "What happens when you instantiate a standard `SplFileObject` on a CSV file and set the flag `SplFileObject::READ_CSV`?",
+      "o": [
+        "It converts the file to an Excel format",
+        "It allows you to iterate over the file lines directly as pre-parsed native PHP arrays of column values",
+        "It loads the entire file into a database table",
+        "It locks the file from being edited by other system programs"
+      ],
+      "a": 1,
+      "e": `SplFileObject` treats files as objects. Enabling the `READ_CSV` flag instructs the internal pointer to automatically trigger `fgetcsv()` on every iteration step, cleanly parsing rows.
+    }
+  ]
+}
