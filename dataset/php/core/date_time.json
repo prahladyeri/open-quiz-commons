@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which core PHP class, introduced to improve date manipulation, represents an immutable date and time instance?",
+      "o": [
+        "DateTime",
+        "DateTimeImmutable",
+        "Timestamp",
+        "Carbon"
+      ],
+      "a": 1,
+      "e": "`DateTimeImmutable` behaves identically to `DateTime`, but calling modification methods (like `modify()` or `add()`) returns a brand-new instance instead of altering the original object, preventing accidental state bugs."
+    },
+    {
+      "q": "What format character should be passed to `DateTime::format()` to get a complete ISO 8601 compliant date string?",
+      "o": [
+        "Y-m-d",
+        "c",
+        "U",
+        "r"
+      ],
+      "a": 1,
+      "e": "The format character `c` returns an ISO 8601 string (e.g., `2026-06-01T20:10:52+05:30`). Alternatively, `r` returns an RFC 2822 formatted string."
+    },
+    {
+      "q": "Which class is used to represent the length or difference between two specific dates (e.g., '2 years, 3 days')?",
+      "o": [
+        "DateTimeZone",
+        "DatePeriod",
+        "DateInterval",
+        "DateDuration"
+      ],
+      "a": 2,
+      "e": "`DateInterval` encapsulates a relative duration string (following the ISO 8601 duration format, like `P2Y3D`) and is returned when using the `diff()` method."
+    },
+    {
+      "q": "What is a major risk of using the legacy `strtotime()` function for future-date arithmetic?",
+      "o": [
+        "It cannot parse standard strings like 'next Thursday'",
+        "It relies on the Unix timestamp format, making it susceptible to the Year 2038 problem on 32-bit systems",
+        "It forces the application timezone to reset to UTC",
+        "It converts all outputs into float variables"
+      ],
+      "a": 1,
+      "e": "On 32-bit platforms, integer timestamps overflow on January 19, 2038. Using the object-oriented `DateTime` or `DateTimeImmutable` classes avoids this limitation entirely."
+    },
+    {
+      "q": "How can you safely instantiate a `DateTime` object using a non-standard custom format string (e.g., '01/06/2026 20:10')?",
+      "o": [
+        "new DateTime('01/06/2026 20:10')",
+        "DateTime::createFromFormat('d/m/Y H:i', '01/06/2026 20:10')",
+        "DateTime::parseCustom('01/06/2026 20:10')",
+        "new DateTimeZone('01/06/2026 20:10')"
+      ],
+      "a": 1,
+      "e": "`DateTime::createFromFormat()` provides strict parsing control by matching an explicit format mask against the input string, returning `false` if the validation fails."
+    },
+    {
+      "q": "What class allows you to generate a recurring sequence of dates over a set interval between a start and end point?",
+      "o": [
+        "DateInterval",
+        "DatePeriod",
+        "DateTimeSequence",
+        "Chronos"
+      ],
+      "a": 1,
+      "e": "`DatePeriod` accepts a start date, an interval duration, and an end date (or an explicit iteration count), allowing you to easily loop through recurring dates like calendar appointments."
+    },
+    {
+      "q": "What happens when you pass a `DateTimeZone` object as the second argument to the `DateTime` constructor?",
+      "o": [
+        "The constructor ignores it unless the string is empty",
+        "It explicitly interprets the provided date string context within that target timezone, modifying the underlying UTC offset calculation accordingly",
+        "It changes the server's global php.ini timezone setting",
+        "It converts the output string into an array of localized time metrics"
+      ],
+      "a": 1,
+      "e": "If the date string does not contain an inline timezone descriptor, passing a `DateTimeZone` forces the engine to parse that string relative to the specified zone."
+    },
+    {
+      "q": "Which method is used to adjust an existing `DateTime` object's current timezone while converting its visible values to match that location accurately?",
+      "o": [
+        "modify()",
+        "setTimezone()",
+        "changeZone()",
+        "format()"
+      ],
+      "a": 1,
+      "e": "`setTimezone()` updates the target instance's timezone context, altering the format output parameters while ensuring the underlying universal epoch point remains identical."
+    },
+    {
+      "q": "What does the `U` format character output when passed to `DateTime::format()`?",
+      "o": [
+        "The current day of the week as an integer",
+        "The raw Unix Timestamp (seconds elapsed since January 1, 1970 UTC)",
+        "The total number of weeks in the current year",
+        "The microsecond precision segment"
+      ],
+      "a": 1,
+      "e": "`$date->format('U')` retrieves the standard Unix timestamp. For millisecond/microsecond variations, you can leverage character masks like `v` or `u`."
+    },
+    {
+      "q": "Why is the `modify()` method on a regular `DateTime` object considered a potential vector for side effects in large applications?",
+      "o": [
+        "It alters the global server timezone context",
+        "It mutates the original object in place, meaning passing that object to a function can unexpectedly break downstream variables sharing that reference",
+        "It can only handle string arguments shorter than 10 characters",
+        "It automatically drops microsecond accuracy arrays"
+      ],
+      "a": 1,
+      "e": "Because standard `DateTime` instances are mutable, calling methods like `modify('+1 day')` transforms the underlying state directly. This is why `DateTimeImmutable` is the modern default standard choice."
+    },
+    {
+      "q": "Which function allows you to modify the default fallback timezone used by all date/time functions within a running PHP script execution?",
+      "o": [
+        "ini_set('date.timezone', ...)",
+        "date_default_timezone_set()",
+        "Both ini_set() and date_default_timezone_set() are valid native approaches",
+        "timezone_register_global()"
+      ],
+      "a": 2,
+      "e": "You can declare the default script runtime timezone by executing `date_default_timezone_set()` or by adjusting the configuration option directly via `ini_set('date.timezone', 'Region/Zone')`."
+    },
+    {
+      "q": "What does an interval specification string of 'P1DT12H' represent in a `DateInterval` declaration?",
+      "o": [
+        "A period of 1 December True 12 Hours",
+        "A duration of 1 Day and 12 Hours",
+        "An absolute timestamp value mapping to post-meridiem calculations",
+        "A priority offset weighting of 1st degree type parameters"
+      ],
+      "a": 1,
+      "e": "Following the ISO 8601 standard duration syntax, `P` stands for Period (date components like years, months, days) and `T` demarcates the Time block selector (hours, minutes, seconds)."
+    }
+  ]
+}
