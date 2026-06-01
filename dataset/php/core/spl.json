@@ -108,7 +108,7 @@
         "Repository Pattern"
       ],
       "a": 1,
-      "e": These built-in interfaces let you attach observers to a subject class. When the subject alters state, it calls `notify()`, which automatically triggers the `update()` method on all registered observers.
+      "e": "These built-in interfaces let you attach observers to a subject class. When the subject alters state, it calls `notify()`, which automatically triggers the `update()` method on all registered observers."
     },
     {
       "q": "Which SPL iterator allows you to wrap another iterator and filter out elements based on custom logic implemented in an `accept()` method?",
