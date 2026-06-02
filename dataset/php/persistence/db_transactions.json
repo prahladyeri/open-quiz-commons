@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What do the four properties of the 'ACID' acronym guarantee in database transaction management?",
+      "o": [
+        "Accuracy, Consistency, Indexing, and Durability",
+        "Atomicity, Consistency, Isolation, and Durability",
+        "Asynchronous, Concurrent, Isolated, and Distributed",
+        "Allocation, Concurrency, Integrity, and Deferred"
+      ],
+      "a": 1,
+      "e": "ACID guarantees that database modifications are processed reliably: Atomicity (all or nothing), Consistency (valid state transitions), Isolation (independent concurrent execution), and Durability (survives system crashes)."
+    },
+    {
+      "q": "What is the primary difference between a 'Pessimistic Lock' and an 'Optimistic Lock' design pattern?",
+      "o": [
+        "Pessimistic locking is handled entirely by PHP; Optimistic locking is handled by the OS",
+        "Pessimistic locking prevents conflicts by locking rows explicitly before modification; Optimistic locking checks for a collision (e.g., via a version column) only at the moment of saving",
+        "Pessimistic locking only works on SELECT queries; Optimistic locking only works on DELETE queries",
+        "Optimistic locking runs queries faster by skipping database validation constraints"
+      ],
+      "a": 1,
+      "e": "Pessimistic locking assumes conflicts are frequent and blocks others early. Optimistic locking assumes conflicts are rare, allows concurrent reads/writes, and rejects the commit if a collision is detected via a version timestamp or counter."
+    },
+    {
+      "q": "Which SQL clause is standard for implementing a Pessimistic Write Lock on selected rows within a transaction block?",
+      "o": [
+        "LOCK ROW EXCLUSIVE",
+        "FOR UPDATE",
+        "WITH LOCK",
+        "DISABLE CONCURRENCY"
+      ],
+      "a": 1,
+      "e": "Appending `FOR UPDATE` to a `SELECT` statement inside a transaction instructs the database engine to place an exclusive write lock on the matching rows, forcing other transactions to wait until the current transaction commits or rolls back."
+    },
+    {
+      "q": "What database phenomenon occurs when a transaction reads data, a concurrent transaction modifies that data and commits, and the first transaction rereads the data to find different values?",
+      "o": [
+        "Dirty Read",
+        "Non-Repeatable Read",
+        "Phantom Read",
+        "Deadlock Overflow"
+      ],
+      "a": 1,
+      "e": "A Non-Repeatable Read happens when a transaction retrieves the same row twice but discovers modified column values because another transaction committed changes in between."
+    },
+    {
+      "q": "How does a 'Phantom Read' differ from a 'Non-Repeatable Read'?",
+      "o": [
+        "Phantom reads only occur when using SQLite",
+        "Non-Repeatable Reads involve modifications to existing rows; Phantom Reads involve new matching rows being inserted or deleted by another transaction during a range query",
+        "Phantom reads occur when the database cache fails to clear",
+        "There is no difference; they are identical terms"
+      ],
+      "a": 1,
+      "e": "A Phantom Read occurs when a transaction re-runs a search criteria query and finds a new set of 'phantom' rows that were inserted or removed by another concurrent transaction."
+    },
+    {
+      "q": "What is a 'Dirty Read'?",
+      "o": [
+        "Reading corrupted binary file blocks from disk",
+        "A transaction reading uncommitted data changes made by another concurrent transaction that might eventually roll back",
+        "Reading database records without an active network connection",
+        "A query that fails due to invalid syntax parsing"
+      ],
+      "a": 1,
+      "e": "Dirty reads allow a transaction to see uncommitted, volatile data. If the originating transaction rolls back, the reading transaction has processed fictional data that technically never existed in the database ledger."
+    },
+    {
+      "q": "Which transaction Isolation Level provides the absolute highest degree of data consistency but reduces concurrency by executing transactions as if they were ordered linearly?",
+      "o": [
+        "READ UNCOMMITTED",
+        "READ COMMITTED",
+        "REPEATABLE READ",
+        "SERIALIZABLE"
+      ],
+      "a": 3,
+      "e": "`SERIALIZABLE` completely isolates transactions by locking range queries and rows, neutralizing Dirty, Non-Repeatable, and Phantom reads at the cost of significantly lower database throughput."
+    },
+    {
+      "q": "What is a database 'Deadlock'?",
+      "o": [
+        "A hardware failure that destroys the transaction logs",
+        "A circular dependency where Transaction A holds a lock requested by Transaction B, while Transaction B holds a lock requested by Transaction A, causing both to freeze indefinitely",
+        "An optimized state where all tables are locked for regular maintenance",
+        "A script running out of local PHP memory during an insert loop"
+      ],
+      "a": 1,
+      "e": "Deadlocks occur when concurrent processes lock resources in different orders. Modern database engines resolve deadlocks automatically by detecting the cycle and terminating (rolling back) one of the transactions with an error."
+    },
+    {
+      "q": "What happens if a PHP script exits or crashes unexpectedly mid-execution while a PDO database transaction block is still open?",
+      "o": [
+        "The database engine remains frozen until the server restarts",
+        "The database automatically rolls back the uncommitted transaction when the connection closes to ensure data safety",
+        "The database automatically commits whatever statements finished successfully up to that point",
+        "The database duplicates the last executed statement"
+      ],
+      "a": 1,
+      "e": "When the PHP process terminates or the database connection drops, any uncommitted transaction context is automatically rolled back by the database server to prevent partial, incomplete state changes."
+    },
+    {
+      "q": "In a standard transaction block using PDO, how should error tracking be handled to guarantee database rollback execution on failure?",
+      "o": [
+        "By setting PDO::ATTR_PERSISTENT to true",
+        "By wrapping the transaction operations inside a try/catch block and invoking PDO::rollBack() within the catch block",
+        "By running query verification steps using JavaScript in the browser",
+        "PDO automatically handles rollbacks without any code configurations"
+      ],
+      "a": 1,
+      "e": "To ensure reliable error handling, execute `beginTransaction()` inside a `try` block, run your queries, execute `commit()`, and catch any `PDOException` anomalies to safely execute `rollBack()` inside the `catch` structure."
+    },
+    {
+      "q": "What unique operational behavior defines a Shared Lock (Read Lock) compared to an Exclusive Lock (Write Lock)?",
+      "o": [
+        "Shared locks permit other connections to read the rows but prevent them from modifying them; Exclusive locks block both concurrent reads and writes",
+        "Shared locks allow concurrent writes but prevent reads",
+        "Shared locks can only be initiated on primary keys",
+        "Shared locks automatically duplicate the database rows across threads"
+      ],
+      "a": 0,
+      "e": "Shared locks (`LOCK IN SHARE MODE` or `FOR SHARE`) permit concurrent reading but queue modifications. Exclusive locks (`FOR UPDATE`) deny concurrent shared locks or modifications to prevent data inconsistencies."
+    },
+    {
+      "q": "Why is the default isolation level of many relational databases (like MySQL InnoDB's REPEATABLE READ or PostgreSQL's READ COMMITTED) chosen over SERIALIZABLE?",
+      "o": [
+        "Because SERIALIZABLE is an old standard that is no longer supported",
+        "To balance data consistency with high-performance concurrency, as SERIALIZABLE introduces extensive locking overhead that drastically limits throughput",
+        "Because default isolation levels do not use system RAM",
+        "To allow PHP to handle the locking mechanisms instead"
+      ],
+      "a": 1,
+      "e": "Database design is a trade-off. Lower isolation levels permit minor read anomalies in exchange for blistering performance and high parallel request execution capacity."
+    }
+  ]
+}

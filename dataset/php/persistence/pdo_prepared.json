@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary architectural difference between `PDO::query()` and `PDO::prepare()`?",
+      "o": [
+        "query() handles SELECT statements, while prepare() handles INSERT and UPDATE statements",
+        "query() executes an SQL statement in a single round-trip; prepare() creates a statement template that can be executed multiple times with different arguments",
+        "prepare() compiles the PHP script into bytecode before running the query",
+        "query() automatically encrypts the connection string"
+      ],
+      "a": 1,
+      "e": "`PDO::query()` is ideal for static SQL strings with no user input. `PDO::prepare()` creates a prepared statement, separating the query structure from the data parameters for safer and repeatable execution."
+    },
+    {
+      "q": "Which method is called on a prepared statement object to send parameters to the database and actually run the query?",
+      "o": [
+        "run()",
+        "execute()",
+        "submit()",
+        "fetch()"
+      ],
+      "a": 1,
+      "e": "After binding your variables or passing an array of parameters to `$stmt->execute()`, the database runs the pre-compiled template with those values applied."
+    },
+    {
+      "q": "What is a 'Named Placeholder' syntax in a PDO prepared statement?",
+      "o": [
+        "Using question marks like WHERE id = ?",
+        "Using colons followed by a variable name identifier like WHERE id = :id",
+        "Using standard PHP dollar variables inside the string like WHERE id = $id",
+        "Enclosing variables in double square brackets like [[id]]"
+      ],
+      "a": 1,
+      "e": "Named placeholders use the `:parameter_name` syntax. They are often preferred over positional question-mark placeholders (`?`) because they make complex queries with many parameters much easier to read and maintain."
+    },
+    {
+      "q": "What happens if you pass an associative array to `execute()` where the keys match the named placeholders defined in `prepare()`?",
+      "o": [
+        "PDO throws an array-to-string conversion exception",
+        "The values are automatically bound and the query executes in a single step",
+        "PDO ignores the array unless bindValue() was called first",
+        "The database converts the array into a JSON column"
+      ],
+      "a": 1,
+      "e": "Passing an array directly to `$stmt->execute([':id' => $id])` is a highly efficient shortcut that eliminates the need to write separate multi-line `bindValue()` or `bindParam()` statements."
+    },
+    {
+      "q": "Why is the `PDO::ATTR_EMULATE_PREPARES` attribute often disabled (`false`) in high-security production environments?",
+      "o": [
+        "Emulated prepares make the database run significantly slower",
+        "When true, PHP handles the parameter injection locally via string manipulation instead of forcing the database server to compile a true native prepared statement",
+        "It prevents the application from using named placeholders",
+        "It restricts the database connection to read-only mode"
+      ],
+      "a": 1,
+      "e": "Setting `ATTR_EMULATE_PREPARES => false` forces PDO to use true, native prepared statements managed directly by the database server engine, minimizing risks from sophisticated edge-case SQL injection vectors."
+    },
+    {
+      "q": "What unique operational behavior defines `PDOStatement::bindParam()` compared to `PDOStatement::bindValue()`?",
+      "o": [
+        "bindParam() only allows integer assignments",
+        "bindParam() binds parameters by reference, evaluating the variable's value dynamically at the exact moment execute() is invoked",
+        "bindValue() is vulnerable to SQL injection while bindParam() is completely safe",
+        "bindParam() automatically converts empty strings into null values"
+      ],
+      "a": 1,
+      "e": "Because `bindParam` binds variables by reference, you can call it once at the top of a loop, update the referenced variable's data on each iteration, and run `execute()` sequentially with the new data."
+    },
+    {
+      "q": "Which data type constant should be passed to a bind method to indicate a parameter is an integer?",
+      "o": [
+        "PDO::PARAM_INT",
+        "PDO::TYPE_INTEGER",
+        "PDO::PARAM_STR",
+        "PDO::INT"
+      ],
+      "a": 0,
+      "e": "Explicitly passing `PDO::PARAM_INT` instructs the driver to cast or format the parameter data type correctly within the protocol layer, which is essential for certain database strict modes or pagination `LIMIT` clauses."
+    },
+    {
+      "q": "What error or behavior occurs if you attempt to use the same named placeholder multiple times inside a single prepared statement while emulation is disabled?",
+      "o": [
+        "PHP automatically renames the duplicates with numbers",
+        "Depending on the database driver (like native MySQL/PostgreSQL protocols), it can trigger a preparation error because native parameters can generally only be bound once per query layout",
+        "The query runs successfully but ignores the second instance",
+        "The database engine crashes instantly"
+      ],
+      "a": 1,
+      "e": "With native prepares disabled from emulation, repeating `:my_param` twice in a statement will fail on certain drivers. You should resolve this by utilizing unique placeholder names (e.g., `:my_param1`, `:my_param2`)."
+    },
+    {
+      "q": "How can you safely handle an array of variable parameters inside an `IN (...)` clause using a prepared statement?",
+      "o": [
+        "Concatenate the raw array values into the query string using implode()",
+        "Dynamically generate a string of comma-separated placeholders (like ?,?,?) matching the count of items, then bind the array values dynamically during execution",
+        "Pass the entire PHP array object directly to a single placeholder slot",
+        "IN clauses cannot use prepared statements in PDO"
+      ],
+      "a": 1,
+      "e": "Prepared statements cannot automatically map an array to a single parameter slot. You must dynamically generate a placeholder string like `IN (?, ?, ?)` based on your item count, and then pass your flat value array into `execute()`."
+    },
+    {
+      "q": "What method would you use to verify that a prepared statement template compiled successfully without causing a silent error, when exceptions are not explicitly enabled?",
+      "o": [
+        "Checking if the return value of prepare() evaluates to false",
+        "PDOStatement::isValid()",
+        "PDO::checkSyntax()",
+        "Evaluating the statement's memory footprint size"
+      ],
+      "a": 0,
+      "e": "If `PDO::prepare()` fails (e.g., due to a syntax error or a non-existent table name) and exceptions are disabled, it returns `false` instead of returning a valid `PDOStatement` object."
+    },
+    {
+      "q": "Which parameter binding option is required to handle large binary chunks or files safely without crashing the execution memory layout?",
+      "o": [
+        "PDO::PARAM_STR",
+        "PDO::PARAM_LOB",
+        "PDO::PARAM_BINARY",
+        "PDO::PARAM_FILE"
+      ],
+      "a": 1,
+      "e": "`PDO::PARAM_LOB` tells PDO to bind the data as a Large Object stream, allowing the application to read or write heavy binary payloads (like images or blobs) cleanly without exceeding PHP's local memory limits."
+    },
+    {
+      "q": "What security risk remains if you use prepared statements for a query's input values, but dynamically build the table name or order-by column identifier from unvalidated user parameters?",
+      "o": [
+        "No risk remains; prepared statements guarantee full injection safety",
+        "It exposes the application to severe SQL injection because identifiers like table names, column targets, or keywords cannot be parameterized and must be whitelisted manually",
+        "It forces PDO to crash with an out-of-bounds structural error",
+        "The database will randomly select a wrong table index"
+      ],
+      "a": 1,
+      "e": "Prepared statements only isolate *data values*. Structural identifiers like table titles, column names, or keywords (ASC/DESC) cannot be parameterized. To avoid injection, you must filter structural input against a strict array whitelist inside your code."
+    }
+  ]
+}

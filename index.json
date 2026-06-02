@@ -330,7 +330,6 @@
 		  ]
 		},
 		{
-			"hidden": true,
 		  "name": "Databases & Persistence",
 		  "slug": "persistence",
 		  "modules": [
@@ -343,6 +342,26 @@
 			  "name": "Transactions & Locking",
 			  "slug": "db_transactions",
 			  "descn": "Managing ACID properties, commit/rollback logic, and row-level locking."
+			},
+			{
+			  "name": "ORMs & Data Mapping",
+			  "slug": "object_relational_mapping",
+			  "descn": "Focuses on how modern frameworks abstract database interactions into object-oriented models, evaluating performance choices and structural design patterns."
+			},
+			{
+			  "name": "Performance & Hydration Bottlenecks",
+			  "slug": "query_optimization_nplusone",
+			  "descn": "Addresses the single biggest performance killer in application persistence layers: unoptimized database retrieval loops."
+			},
+			{
+			  "name": "Database Version Control",
+			  "slug": "migrations_schema_management",
+			  "descn": "Evaluates programmatic database schema evolution, safe deployments, and structural consistency across distributed environments."
+			},
+			{
+			  "name": "NoSQL Integration & Key-Value Caching",
+			  "slug": "nosql_caching_layers",
+			  "descn": "Covers scenarios where relational databases are augmented or replaced by alternative persistence and caching storage backends."
 			}
 		  ]
 		},
