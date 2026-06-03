@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the fundamental architectural difference between the Active Record pattern and the Data Mapper pattern?",
+      "o": [
+        "Active Record only works with MySQL, while Data Mapper works with any NoSQL database",
+        "Active Record maps a database row directly to a single class containing both data and persistence logic; Data Mapper separates the domain entity from the database persistence layer entirely",
+        "Data Mapper is built exclusively for compiled languages, while Active Record is for interpreted languages",
+        "Active Record automatically eliminates the N+1 query problem, while Data Mapper worsens it"
+      ],
+      "a": 1,
+      "e": "In Active Record (e.g., Eloquent), a model extends a base database class and saves itself (`$user->save()`). In Data Mapper (e.g., Doctrine), the entity is a plain old PHP object (POPO), and a separate repository/entity manager handles saving it (`$entityManager->persist($user)`)."
+    },
+    {
+      "q": "In an ORM using the Data Mapper pattern, what is the responsibility of the 'Unit of Work' component?",
+      "o": [
+        "To compile PHP entities into fast raw machine code",
+        "To keep track of all business transactions and automatically maintain a list of objects affected by a business transaction, coordinating the writing out of changes",
+        "To manage concurrent user authentication sessions",
+        "To run background cron jobs for database repairs"
+      ],
+      "a": 1,
+      "e": "The Unit of Work tracks all changes (inserts, updates, deletes) made to loaded entities during a single request loop. When `flush()` is called, it calculates the net database diff and executes them in a single optimized transactional block."
+    },
+    {
+      "q": "What is an ORM 'Proxy Object' and why is it used?",
+      "o": [
+        "A network gateway class that hides the database server IP address",
+        "A lightweight placeholder object that stands in for a related entity, deferring heavy database execution until its properties are actually accessed (Lazy Loading)",
+        "A duplicate copy of a model used to bypass security access controls",
+        "An encrypted model instance stored exclusively inside the browser's session cookies"
+      ],
+      "a": 1,
+      "e": "When you fetch an entity that has relationships, loading all related objects immediately would kill performance. The ORM injects a dynamic Proxy class that intercepts property calls and fetches the actual database data only when requested."
+    },
+    {
+      "q": "What is the primary cause of the notorious 'N+1 Query Problem' when utilizing ORM relationships?",
+      "o": [
+        "The database running out of available parallel connections",
+        "Looping over a collection of parent records and executing an individual secondary query to fetch the related child data for each individual parent row",
+        "Exceeding the maximum allowed length of a compiled SQL string query",
+        "Using named placeholders instead of standard question mark tokens"
+      ],
+      "a": 1,
+      "e": "If you load 100 books and try to access each book's author inside a loop without pre-fetching, the ORM will run 1 additional query per book to get the author. This results in 1 initial query + 100 individual follow-up queries instead of 2 efficient queries."
+    },
+    {
+      "q": "Which strategy is the standard solution for resolving the N+1 query problem in an Active Record ORM?",
+      "o": [
+        "Switching the database connection driver to use persistent locks",
+        "Eager Loading (using methods like 'with' to pre-fetch related records using JOINs or IN clauses upfront)",
+        "Casting all retrieved model arrays into standard strings",
+        "Disabling the database configuration query cache entirely"
+      ],
+      "a": 1,
+      "e": "Eager Loading instructs the ORM to fetch all target relations simultaneously in the initial pass, flattening the operation into a minimal, predictable number of structural SQL queries regardless of the collection size."
+    },
+    {
+      "q": "What does 'Identity Map' design pattern ensure inside an ORM session context?",
+      "o": [
+        "That every table has a unique primary key auto-increment configuration",
+        "That each unique database record is loaded exactly once into a single PHP object instance per request lifetime, preventing duplicate object duplication",
+        "That database passwords are encrypted using strong salted algorithms",
+        "That column definitions match the framework variable naming conventions exactly"
+      ],
+      "a": 1,
+      "e": "The Identity Map acts as an in-memory lookup registry. If you query for User ID #5 multiple times across different code modules during the same request, the ORM returns the exact same object reference instead of creating new memory allocations."
+    },
+    {
+      "q": "In modern ORM setups, how are Entity Relationships (like One-To-Many or Many-To-Many) typically mapped configuration-wise?",
+      "o": [
+        "By hardcoding raw table arrays inside the public server directory",
+        "Using native PHP Attributes (or DocBlock annotations) declared directly above the class properties representing the relations",
+        "By setting global operating system environment variables",
+        "Using dedicated custom JavaScript setup files loaded via composer"
+      ],
+      "a": 1,
+      "e": "Modern PHP engines favor native attributes (`#[ORM\\ManyToOne(targetEntity: User::class)]`) to declare metadata relationships clearly right alongside the structural property implementations."
+    },
+    {
+      "q": "What unique capability do 'Lifecycle Callback' hooks (such as PrePersist, PostUpdate, or PreRemove) provide in an ORM?",
+      "o": [
+        "They allow you to automatically rewrite the framework source code",
+        "They let you register structural trigger functions that execute automatically right before or after an entity undergoes a specific state persistence change",
+        "They measure the exact microsecond execution speed of an SQL statement",
+        "They restrict entity fields from being converted into JSON strings"
+      ],
+      "a": 1,
+      "e": "Lifecycle hooks are perfect for separating concerns, allowing you to automatically execute actions like setting an updated timestamp right before a record is committed to the database ledger."
+    },
+    {
+      "q": "What is the architectural tradeoff of 'Hydrating' query data into full Entity Object graphs versus returning raw associative arrays?",
+      "o": [
+        "Arrays introduce massive security vulnerabilities while objects are completely immune to hacking",
+        "Hydration provides clean, rich domain behaviors and type safety but consumes substantially more server memory and CPU cycles to instantiate all the object wrappers",
+        "Objects are faster to loop over than native arrays inside standard PHP loops",
+        "Arrays cannot represent database text columns accurately"
+      ],
+      "a": 1,
+      "e": "Object hydration wraps raw database outputs into structured class objects. While great for domain modeling, generating thousands of objects introduces performance overhead. For read-heavy reporting views, retrieving raw arrays is often preferred."
+    },
+    {
+      "q": "What is the definition of a 'Polymorphic Relation' in an ORM framework?",
+      "o": [
+        "A database configuration that allows a single table to be shared across completely separate physical servers",
+        "A dynamic structural relation where a target model can belong to more than one other type of model using a single association layout",
+        "An encrypted connection string that alters its hash on every query step",
+        "A database field that only accepts boolean variables"
+      ],
+      "a": 1,
+      "e": "Polymorphic relations allow a single target model (like a `Comment`) to link to multiple parent structures (like `Post` or `Video`). Under the hood, the comments table uses two columns: an integer ID column and a string type column indicating the parent class name."
+    },
+    {
+      "q": "In a Data Mapper ORM like Doctrine, what is the role of the 'Entity Repository'?",
+      "o": [
+        "To handle the low-level encryption handshakes of connection pools",
+        "To isolate and house custom data querying logic, separating domain actions from structural persistence mechanisms",
+        "To serve as a temporary storage directory for file cache uploads",
+        "To compile migrations into raw transactional SQL files"
+      ],
+      "a": 1,
+      "e": "Repositories act as an abstraction layer for fetching your domain objects. Instead of cluttering controllers with complex query builder setups, you hide query logic behind clear, domain-specific repository method names."
+    },
+    {
+      "q": "What severe pitfall can occur if you execute ORM query modifications within a loop that processes millions of database rows sequentially?",
+      "o": [
+        "The server's physical hard drive will immediately run out of storage sectors",
+        "The ORM identity map will continuously expand with tracking objects, causing severe memory leaks that quickly trigger a PHP out-of-memory fatal crash",
+        "PHP will force all text columns to be converted into integer formats",
+        "The server's global system timezone configuration will be lost"
+      ],
+      "a": 1,
+      "e": "Because ORMs track changes for everything they load, looping through large datasets expands the internal management arrays. To survive massive bulk updates or imports, you must regularly clear or detach processed models from the ORM memory context."
+    }
+  ]
+}
