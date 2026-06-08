@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "Which tool or technique is most effective for identifying hidden N+1 query problems in a PHP application during development?",
+      "o": [
+        "Running framework-specific optimization commands like `php artisan optimize`",
+        "Using a query logging profiler (e.g., Laravel Debugbar or Doctrine SQL Logger) to count and inspect executed statements per request",
+        "Increasing the PHP `memory_limit` directive in `php.ini` to accommodate larger datasets",
+        "Disabling the ORM's identity map globally to force raw SQL execution"
+      ],
+      "a": 1,
+      "e": "Profilers intercept and log every SQL statement executed during a request lifecycle. This makes it trivial to spot repetitive, identical queries executed sequentially in a loop, which is the hallmark of the N+1 problem."
+    },
+    {
+      "q": "In an Active Record ORM like Laravel's Eloquent, which method is primarily used to eager load a relationship and prevent the N+1 query problem?",
+      "o": [
+        "`lazyLoad()`",
+        "`with()`",
+        "`join()`",
+        "`hydrate()`"
+      ],
+      "a": 1,
+      "e": "The `with()` method instructs the ORM to fetch the related models in a single additional query (or via a `WHERE IN` clause), rather than querying the database individually for each parent model inside a loop."
+    },
+    {
+      "q": "In Doctrine DQL, what is the specific purpose of the `JOIN FETCH` clause?",
+      "o": [
+        "To permanently delete orphaned records from the database during a query",
+        "To eager load associated entities in a single SQL query, avoiding subsequent lazy-loading database hits",
+        "To force the database query planner to use a specific B-Tree index",
+        "To encrypt the joined data payload before it is transmitted to the PHP application"
+      ],
+      "a": 1,
+      "e": "`JOIN FETCH` tells the ORM to retrieve the related entities alongside the root entity in the same SQL `SELECT` statement. This populates the object graph immediately and prevents the ORM from issuing lazy-loading queries when the relationship is accessed."
+    },
+    {
+      "q": "When generating read-only reports from a large dataset, why might returning raw associative arrays or DTOs be preferable to full ORM entity hydration?",
+      "o": [
+        "Arrays cannot be cached by Redis, making them inherently more secure",
+        "Full entity hydration consumes significantly more CPU and memory to instantiate objects, manage the identity map, and track potential changes",
+        "Associative arrays automatically prevent SQL injection at the database driver level",
+        "ORMs are architecturally incapable of mapping more than 100 rows to objects in a single request"
+      ],
+      "a": 1,
+      "e": "Instantiating thousands of entity objects, mapping properties, and registering them in the Unit of Work and Identity Map introduces heavy memory and CPU overhead. For read-only data, lightweight arrays or DTOs bypass this management layer entirely."
+    },
+    {
+      "q": "What is the recommended approach when using an ORM to sequentially process and update 50,000 records in a single PHP script?",
+      "o": [
+        "Load all 50,000 records into memory at once and call `save()` on each entity in a `foreach` loop",
+        "Process records in chunks, and periodically call the ORM's `clear()` or `detach()` method to free memory",
+        "Disable PHP's garbage collector using `gc_disable()` to speed up execution",
+        "Increase the database connection timeout to 24 hours to prevent dropped connections"
+      ],
+      "a": 1,
+      "e": "Loading massive datasets bloats the ORM's Identity Map and Unit of Work, causing fatal memory exhaustion. Chunking the query and clearing the entity manager periodically releases tracked objects from memory, keeping the footprint stable."
+    },
+    {
+      "q": "What is a significant risk of using 'Partial Objects' (fetching only specific columns of an entity) in an ORM like Doctrine?",
+      "o": [
+        "It permanently deletes the unselected columns from the underlying database schema",
+        "If the partially loaded entity is later modified and flushed, it may overwrite the unselected columns with NULL or default values",
+        "It forces the database connection to switch into read-only mode for the remainder of the request",
+        "It prevents the use of any `WHERE` clauses in the subsequent query builder"
+      ],
+      "a": 1,
+      "e": "Because the ORM is unaware of the unselected fields, it assumes they are unchanged or null. When `flush()` is called, the resulting `UPDATE` statement might inadvertently wipe out data in those unselected columns."
+    },
+    {
+      "q": "When paginating a query that uses multiple `JOIN FETCH` clauses on collection associations (e.g., One-To-Many), what performance issue commonly arises?",
+      "o": [
+        "The database returns a Cartesian product, duplicating parent rows and consuming excessive memory to hydrate redundant objects",
+        "The ORM automatically switches to a NoSQL document-based execution mode",
+        "Pagination becomes infinitely fast due to automatic database index merging",
+        "The primary key of the parent entity is temporarily altered to a UUID to prevent collisions"
+      ],
+      "a": 0,
+      "e": "Joining multiple one-to-many collections multiplies the result rows (e.g., 10 posts × 5 comments × 2 tags = 100 rows). Hydrating this redundant, duplicated data is highly inefficient. It is often better to fetch collections via separate queries or subselects."
+    },
+    {
+      "q": "How do Data Transfer Objects (DTOs) help resolve hydration bottlenecks in read-heavy PHP applications?",
+      "o": [
+        "DTOs automatically replicate data to secondary read-replica database servers",
+        "DTOs allow the ORM to map query results directly to lightweight, plain PHP objects without the overhead of entity tracking, identity maps, or lifecycle callbacks",
+        "DTOs encrypt the data payload during transit between the database and PHP",
+        "DTOs replace the need for a relational database entirely by storing data in memory"
+      ],
+      "a": 1,
+      "e": "DTOs are simple, stateless objects. By mapping SQL results directly to DTOs (e.g., via Doctrine's `NEW` operator in DQL or Laravel's `select` with casting), you bypass the heavy entity management layer entirely, gaining massive performance improvements."
+    },
+    {
+      "q": "In Doctrine, what is the primary advantage of using the `SUBSELECT` fetch mode for a One-To-Many relationship compared to `EAGER` (JOIN) fetching?",
+      "o": [
+        "It prevents the Cartesian product explosion that occurs when joining multiple collections, executing one additional query for the entire loaded collection instead",
+        "It allows the ORM to write data to the database without requiring a primary key",
+        "It automatically converts all string columns to integers for faster comparison",
+        "It bypasses the database entirely and reads directly from the PHP session cache"
+      ],
+      "a": 0,
+      "e": "`SUBSELECT` fetching executes one additional query to load the related collections for *all* currently loaded entities in the identity map. This avoids the row-multiplication (Cartesian product) inherent in `JOIN` fetching multiple collections simultaneously."
+    },
+    {
+      "q": "What is the fundamental difference between Query Caching and Result Caching in an ORM?",
+      "o": [
+        "Query caching stores the parsed SQL/AST tree to avoid re-parsing, while Result caching stores the actual hydrated data/objects to avoid hitting the database entirely",
+        "Query caching stores user authentication tokens, while Result caching stores session metadata",
+        "They are identical mechanisms and can be used interchangeably without performance differences",
+        "Result caching only functions correctly when connected to NoSQL databases like MongoDB"
+      ],
+      "a": 0,
+      "e": "Query caching saves the compiled execution plan (AST) of a DQL/SQL string, saving CPU on parsing. Result caching saves the final output (arrays or objects). For read-heavy, static data, Result caching provides the most significant performance boost by skipping database execution altogether."
+    },
+    {
+      "q": "How does an ORM typically implement Lazy Loading for a single-valued association (e.g., `ManyToOne`)?",
+      "o": [
+        "By opening a brand new database connection for every single property access",
+        "By returning a dynamically generated Proxy object that intercepts method/property calls and triggers a database query only upon first access",
+        "By downloading the entire database schema to the client's browser for local resolution",
+        "By pre-fetching all related records in the background using persistent WebSocket connections"
+      ],
+      "a": 1,
+      "e": "The ORM returns a proxy class extending the target entity. This proxy holds only the foreign key. When a non-identifier property is accessed, the proxy's magic methods (like `__get`) intercept the call, fetch the full record from the database, and populate the proxy state."
+    },
+    {
+      "q": "When needing to insert 10,000 new records, why is it often recommended to bypass the ORM's entity persistence and use a Query Builder or raw batch `INSERT` instead?",
+      "o": [
+        "ORMs are legally and architecturally prohibited from performing bulk inserts",
+        "The ORM will attempt to manage, track, and hydrate 10,000 individual objects, causing massive memory overhead and executing thousands of individual `INSERT` statements",
+        "Raw SQL is the only way to generate auto-incrementing IDs in modern relational databases",
+        "Query builders automatically compress the data payload to save network bandwidth"
+      ],
+      "a": 1,
+      "e": "Persisting entities one by one forces the Unit of Work to track every object and execute individual `INSERT` queries. A batch `INSERT` (or using specialized bulk-insert packages) sends a single, highly optimized query to the database, saving immense time and memory."
+    }
+  ]
+}
