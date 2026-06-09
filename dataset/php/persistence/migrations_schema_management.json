@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "q": "What is the primary purpose of database migrations in a modern PHP application?",
+      "o": [
+        "To automatically optimize database indexes based on real-time query performance",
+        "To provide a version-controlled, programmatic way to evolve the database schema alongside the application code",
+        "To encrypt sensitive database credentials before committing them to a Git repository",
+        "To replicate production database data into local development environments automatically"
+      ],
+      "a": 1,
+      "e": "Migrations act as version control for your database. They allow teams to define schema changes (like creating tables or adding columns) in PHP code, ensuring every environment (dev, staging, prod) can reliably reach the same database state."
+    },
+    {
+      "q": "What does it mean for a database migration to be 'idempotent', and why is this property desirable?",
+      "o": [
+        "It means the migration can only be executed once and will permanently lock the database table",
+        "It means the migration can be applied multiple times without changing the result beyond the initial application, preventing errors on re-runs",
+        "It means the migration automatically rolls back if it takes longer than 30 seconds to execute",
+        "It means the migration generates a unique hash that prevents it from being tracked in the migrations table"
+      ],
+      "a": 1,
+      "e": "An idempotent migration yields the same final database state whether run once or multiple times. For example, using `CREATE TABLE IF NOT EXISTS` or checking if a column exists before adding it prevents fatal SQL errors during accidental re-execution or complex deployment retries."
+    },
+    {
+      "q": "When using a tool like Doctrine Migrations to generate a new migration file automatically, what mechanism does it primarily rely on?",
+      "o": [
+        "It reads the Git commit history to infer what database changes were intended",
+        "It performs a 'schema diff' by comparing the current live database structure against the metadata defined in your PHP entity classes",
+        "It parses raw SQL logs from the database server to identify missing tables",
+        "It downloads the latest schema definition from a centralized cloud registry"
+      ],
+      "a": 1,
+      "e": "Doctrine's `migrations:diff` command inspects the mapping metadata (e.g., PHP attributes or XML) of your entities and compares it to the actual database schema. It then generates the `UP` and `DOWN` SQL statements required to make the database match the code."
+    },
+    {
+      "q": "What is the standard, zero-downtime strategy for renaming a column in a production database table that is actively being written to?",
+      "o": [
+        "Execute a single `ALTER TABLE RENAME COLUMN` statement during peak traffic hours",
+        "1. Add the new column, 2. Write to both old and new columns via the app, 3. Backfill existing data to the new column, 4. Switch app reads to the new column, 5. Drop the old column",
+        "Export the entire table to a CSV file, rename the header, and re-import the data",
+        "Rename the column in the PHP entity and run `php artisan migrate:fresh` to rebuild the schema"
+      ],
+      "a": 1,
+      "e": "Directly renaming a column can cause application errors if the code and database schema are out of sync during deployment. The expand-and-contract pattern ensures backward compatibility at every step, allowing for safe, zero-downtime deployments."
+    },
+    {
+      "q": "How do migration tracking tables (e.g., `doctrine_migration_versions` or Laravel's `migrations` table) function?",
+      "o": [
+        "They store the actual row data of every table modified by the migration",
+        "They record the filename or version identifier of each successfully executed migration, preventing the system from running the same migration twice",
+        "They cache the compiled PHP classes to speed up subsequent migration executions",
+        "They maintain a log of every SQL syntax error encountered during development"
+      ],
+      "a": 1,
+      "e": "When a migration runs successfully, its unique version identifier (often a timestamp-based filename) is inserted into this tracking table. The migration tool queries this table to determine which migrations are 'pending' and need to be executed."
+    },
+    {
+      "q": "Why is it considered a severe anti-pattern to manually edit a migration file after it has already been executed and committed to version control?",
+      "o": [
+        "It violates the immutability of the migration history; other developers' databases will become out of sync because the tracking table already marks it as 'run'",
+        "The PHP interpreter will permanently ban the file from being executed again",
+        "Editing the file automatically deletes the associated database tables as a security measure",
+        "It causes the database to switch into read-only mode until the file hash is reset"
+      ],
+      "a": 0,
+      "e": "Once a migration is run, the system assumes its code matches the recorded version. If you change the code, the system won't re-run it, leaving some environments with the old schema and others (if forced) with the new one, causing catastrophic state divergence."
+    },
+    {
+      "q": "What is the safest approach to adding a new `NOT NULL` column to a table that already contains millions of rows?",
+      "o": [
+        "Run a single `ALTER TABLE ADD COLUMN name VARCHAR(255) NOT NULL` statement, letting the database handle the default values",
+        "1. Add the column as `NULLABLE`, 2. Backfill the data in small batches, 3. Alter the column to add the `NOT NULL` constraint",
+        "Truncate the table, add the `NOT NULL` column, and ask users to re-enter their data",
+        "Disable foreign key checks, add the column, and immediately re-enable foreign key checks"
+      ],
+      "a": 1,
+      "e": "Adding a `NOT NULL` column directly to a massive table can cause long table locks and timeout errors. Adding it as nullable first allows the application to remain responsive while a background script backfills the data, after which the constraint can be safely applied."
+    },
+    {
+      "q": "In the context of database schema management, what is the primary difference between a 'Migration' and a 'Seeder' (or Fixture)?",
+      "o": [
+        "Migrations define the structural schema (tables, columns, indexes), while seeders populate the tables with initial or dummy data",
+        "Migrations are written in PHP, while seeders must be written in raw SQL",
+        "Migrations are only used in production, while seeders are only used in local development",
+        "Migrations alter existing data, while seeders alter the database structure"
+      ],
+      "a": 0,
+      "e": "Migrations are responsible for the 'shape' of the database (DDL). Seeders are responsible for the 'content' (DML), providing predictable test data or essential default configuration records (like user roles) after the schema is in place."
+    },
+    {
+      "q": "What is the purpose of the `--dry-run` or `--dump-sql` flag when executing a migration command?",
+      "o": [
+        "It permanently deletes the migration file after displaying its contents",
+        "It outputs the exact SQL statements that *would* be executed without actually applying them to the database, allowing for manual review",
+        "It compresses the migration file to save disk space",
+        "It forces the migration to run in a separate, isolated Docker container"
+      ],
+      "a": 1,
+      "e": "Schema changes can be destructive. Using `--dry-run` allows developers and DBAs to inspect the generated `ALTER`, `CREATE`, or `DROP` statements to verify correctness and catch potential data-loss scenarios before they are applied to a live database."
+    },
+    {
+      "q": "When writing framework-agnostic migrations, how should you handle database-specific features (e.g., PostgreSQL's `JSONB` vs. MySQL's `JSON`)?",
+      "o": [
+        "Hardcode the specific SQL dialect for the production database and ignore local development errors",
+        "Use the ORM's schema builder abstraction methods (e.g., `$table->json('data')`), which translate to the appropriate native type for the active database driver",
+        "Avoid using JSON columns entirely and serialize data into `TEXT` columns manually",
+        "Write separate migration files for every supported database and manually select the correct one during deployment"
+      ],
+      "a": 1,
+      "e": "Modern schema builders (like Laravel's Blueprint or Doctrine's Schema Manager) abstract vendor-specific syntax. Using `$table->json()` ensures the migration generates `JSONB` for Postgres and `JSON` for MySQL, maintaining cross-database compatibility."
+    },
+    {
+      "q": "What is a 'Squashed Migration' and in what scenario is it most useful?",
+      "o": [
+        "A migration that has been compressed using GZIP to save repository space",
+        "A process of combining dozens of historical, incremental migration files into a single, consolidated migration file to speed up fresh database provisioning",
+        "A migration that intentionally deletes all data in the database to free up space",
+        "A migration that merges two separate database servers into a single master node"
+      ],
+      "a": 1,
+      "e": "Over years, a project might accumulate hundreds of migration files, making a fresh `migrate` command very slow. Squashing combines them into one initial schema definition, drastically reducing the time it takes to build a new environment from scratch."
+    },
+    {
+      "q": "What is a major risk of relying solely on the ORM's automatic `down()` (rollback) method for destructive operations like `dropColumn`?",
+      "o": [
+        "The rollback will automatically create a backup of the deleted data in a separate audit table",
+        "Rolling back a `dropColumn` operation permanently destroys the data that was in that column, as the ORM cannot magically reconstruct the lost values",
+        "The ORM will refuse to execute the rollback unless a database administrator manually approves it",
+        "It will automatically convert the dropped column into a hidden virtual column"
+      ],
+      "a": 1,
+      "e": "While the ORM can generate the SQL to re-add the column during a rollback, the *data* that was in that column is gone forever once the `DROP` executes. Rollbacks are structural, not data-restorative."
+    },
+    {
+      "q": "In a CI/CD pipeline, at what stage should database migrations typically be executed?",
+      "o": [
+        "Before running the automated test suite, to ensure tests use the latest schema",
+        "After the new application code has been successfully deployed to the target environment, but before routing live traffic to it",
+        "Only when a developer manually triggers them from their local machine",
+        "During the Docker image build process, so the database is baked into the container"
+      ],
+      "a": 1,
+      "e": "Migrations should run against the target environment's database *after* the new code is in place (or during the deployment step) but *before* the load balancer starts sending live user traffic to the new instances. This ensures the schema supports the new code immediately."
+    }
+  ]
+}
