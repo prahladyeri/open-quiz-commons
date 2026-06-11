@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "q": "What is the primary design difference between PHP's PSR-16 (Simple Cache) and PSR-6 (Caching Interface)?",
+      "o": [
+        "PSR-16 is exclusively designed for Redis, while PSR-6 is exclusively for Memcached",
+        "PSR-16 provides a simplified `get`, `set`, and `delete` interface, whereas PSR-6 introduces a more complex 'Cache Item' object model with deferred saving via `saveDeferred()` and `commit()`",
+        "PSR-16 handles distributed locking natively, while PSR-6 only handles local file caching",
+        "PSR-16 requires PHP 8.0+, while PSR-6 is strictly limited to PHP 7.4 and below"
+      ],
+      "a": 1,
+      "e": "PSR-16 was created to offer a minimal, easy-to-use caching interface for simple use cases. PSR-6 is more robust, treating cache entries as distinct 'Item' objects, which allows for advanced features like batch operations and deferred writes."
+    },
+    {
+      "q": "What is the 'Cache Stampede' (or Thundering Herd) problem, and how is it typically mitigated in PHP applications?",
+      "o": [
+        "When the cache server runs out of memory and aggressively deletes all keys, causing a total application outage",
+        "When a popular cache key expires, causing hundreds of concurrent requests to simultaneously hit the database to regenerate the same data; mitigated via probabilistic early expiration or distributed locking",
+        "When a PHP script recursively calls the cache driver, causing a stack overflow and fatal memory exhaustion",
+        "When the cache driver automatically replicates data to too many slave nodes, causing severe network saturation"
+      ],
+      "a": 1,
+      "e": "If a highly trafficked key expires, all concurrent requests will miss the cache and attempt to rebuild it simultaneously, overwhelming the database. Solutions include having one request rebuild the cache while others serve slightly stale data, or using a lock to ensure only one process regenerates the value."
+    },
+    {
+      "q": "Beyond simple key-value string storage, which Redis data structure is most efficient for implementing a sliding-window rate limiter in PHP?",
+      "o": [
+        "Hashes (`HSET`)",
+        "Sorted Sets (`ZADD` with timestamps as scores)",
+        "Bitmaps (`SETBIT`)",
+        "HyperLogLog (`PFADD`)"
+      ],
+      "a": 1,
+      "e": "Sorted Sets allow you to store request timestamps as scores. You can efficiently remove old timestamps outside the window using `ZREMRANGEBYSCORE` and count the remaining requests with `ZCARD`, all in highly optimized, atomic Redis operations."
+    },
+    {
+      "q": "When implementing a distributed lock in Redis to prevent concurrent job execution, why is the atomic `SET key value NX EX seconds` command preferred over separate `SETNX` and `EXPIRE` commands?",
+      "o": [
+        "`SETNX` is deprecated and removed in modern Redis versions",
+        "Combining them into a single atomic `SET` command prevents a race condition where the PHP process crashes after `SETNX` but before `EXPIRE`, leaving a permanent, unreleasable lock",
+        "`EXPIRE` cannot be applied to keys that were initially created using `SETNX`",
+        "It automatically serializes the PHP object payload into a compact `igbinary` format"
+      ],
+      "a": 1,
+      "e": "Executing two separate commands introduces a vulnerability window. If the application crashes between `SETNX` and `EXPIRE`, the key remains in Redis forever without a TTL, causing a permanent deadlock. The atomic `SET` with `NX` and `EX` flags guarantees both actions happen together."
+    },
+    {
+      "q": "What is a significant performance benefit of configuring a PHP Redis client (like `phpredis`) to use `igbinary` instead of the native `serialize()` function?",
+      "o": [
+        "It encrypts the cached payload, preventing unauthorized reading of sensitive data in transit",
+        "It produces a more compact binary representation, reducing network bandwidth and memory usage while significantly improving serialization speed",
+        "It automatically converts all nested PHP arrays into native Redis Hash structures",
+        "It bypasses the need for a TTL (Time-To-Live) on the cached keys entirely"
+      ],
+      "a": 1,
+      "e": "Native PHP `serialize()` generates verbose, human-readable strings. `igbinary` replaces this with a compact binary format, which reduces the payload size sent over the network and speeds up both serialization and deserialization CPU cycles."
+    },
+    {
+      "q": "What is the primary advantage of 'Cache Tagging' (supported by some PSR-6/PSR-16 implementations) over relying solely on individual key TTLs?",
+      "o": [
+        "It allows invalidating a group of related cache entries simultaneously without needing to know their exact individual keys",
+        "It automatically compresses the cache payload to save Redis memory",
+        "It forces the cache driver to use persistent TCP connections",
+        "It prevents the cache from ever storing null or false values"
+      ],
+      "a": 0,
+      "e": "Cache tags allow you to associate multiple keys with a logical group (e.g., 'user_profile_123'). When the user updates their profile, you can invalidate the entire tag, clearing all related cached fragments (bio, preferences, stats) in one operation."
+    },
+    {
+      "q": "In a Redis configuration where `maxmemory` is reached, what does the `volatile-lru` eviction policy do?",
+      "o": [
+        "It deletes the least recently used keys across the entire database, regardless of whether they have a TTL set",
+        "It only evicts keys that have an explicit expiration time (TTL) set, removing the least recently used among them",
+        "It immediately rejects all new `SET` commands with an out-of-memory error",
+        "It randomly deletes keys until memory is freed, completely ignoring usage patterns"
+      ],
+      "a": 1,
+      "e": "`volatile-lru` is a safe eviction policy for mixed-use Redis instances. It ensures that keys intended to be permanent (no TTL) are never deleted, while still freeing up memory by removing the least recently accessed keys that were explicitly marked to expire."
+    },
+    {
+      "q": "In the standard 'Cache-Aside' (Lazy Loading) pattern, what is the correct sequence of operations when a requested key is missing from the cache?",
+      "o": [
+        "Return a 404 error to the user immediately to save database resources",
+        "Query the database, write the result to the cache with a TTL, and then return the result to the caller",
+        "Delete the cache key, query the database, and return the result without updating the cache",
+        "Wait for a background cron job to eventually populate the missing key and retry the request later"
+      ],
+      "a": 1,
+      "e": "Cache-Aside dictates that the application code is responsible for managing the cache. On a cache miss, the application fetches the data from the source of truth (database), populates the cache for future requests, and serves the data to the current request."
+    },
+    {
+      "q": "What is the primary trade-off of using persistent connections (e.g., `pconnect` in `phpredis`) for a NoSQL caching layer in PHP-FPM?",
+      "o": [
+        "It guarantees zero latency for all cache operations by keeping data in PHP's shared memory",
+        "It reduces the overhead of TCP handshakes per request, but can lead to connection exhaustion or stale state if not managed carefully across many PHP-FPM workers",
+        "It automatically encrypts all data in transit without requiring TLS configuration",
+        "It forces the Redis server to run in single-threaded mode to match the PHP worker"
+      ],
+      "a": 1,
+      "e": "Persistent connections keep the TCP socket open between PHP-FPM child processes and Redis. While this saves connection overhead, a high number of PHP-FPM workers can exhaust the Redis `maxclients` limit, and connections may retain unwanted state (like selected DB or transactions) if not reset."
+    },
+    {
+      "q": "Why might a 'Write-Through' caching strategy be problematic in a high-write PHP application compared to 'Cache-Aside'?",
+      "o": [
+        "Write-Through requires the primary database to be completely disabled",
+        "Every write operation must synchronously update the cache, adding latency to write operations and potentially causing cache-database inconsistency if the cache write fails",
+        "Write-Through only supports string data types, not arrays or objects",
+        "It prevents the use of any PSR-16 compliant cache drivers"
+      ],
+      "a": 1,
+      "e": "In Write-Through, the application writes to the cache, and the cache is responsible for writing to the database. In PHP, this is often implemented synchronously. If the cache update fails, or if there's high write volume, it introduces latency and complexity compared to simply invalidating the cache (Cache-Aside) after a database write."
+    },
+    {
+      "q": "What is a best practice for designing cache keys in a shared Redis instance used by multiple PHP microservices?",
+      "o": [
+        "Use short, generic names like `user:1` to save maximum memory",
+        "Prefix keys with the application or service name and environment (e.g., `billing:prod:user:1`) to prevent namespace collisions",
+        "Use the raw, unhashed SQL query string as the cache key to guarantee absolute uniqueness",
+        "Avoid using colons (`:`) in cache keys as they are invalid characters in the Redis protocol"
+      ],
+      "a": 1,
+      "e": "Shared Redis instances require strict namespacing. Prefixing with `{service}:{environment}:` ensures that a `user:1` key in the `billing` service does not accidentally overwrite or read a `user:1` key from the `auth` service or the `staging` environment."
+    },
+    {
+      "q": "What common pitfall occurs when caching a complex PHP object (like an ORM Entity) and later retrieving it after the application code has been updated?",
+      "o": [
+        "The cache driver automatically updates the object's class definition in memory to match the new code",
+        "Unserializing the cached payload may fail or produce broken objects if the class structure (properties/methods) has changed, or if the autoloader cannot find the exact class version",
+        "The cache key automatically expires to prevent this issue from ever occurring",
+        "PHP will seamlessly map the old serialized properties to the new class structure without any data loss or warnings"
+      ],
+      "a": 1,
+      "e": "Serialized PHP objects contain references to specific class names and property layouts. If a deployment changes the class (e.g., renaming a property or removing a method), `unserialize()` may fail, throw errors, or create objects in an invalid state. It is generally safer to cache primitive arrays or DTOs rather than full ORM entities."
+    }
+  ]
+}
