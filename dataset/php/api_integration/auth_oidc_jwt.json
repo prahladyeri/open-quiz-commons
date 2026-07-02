@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What does OIDC stand for in the context of API authentication?",
+            "o": [
+                "Open Identification Connection",
+                "OpenID Connect",
+                "Open Internet Device Communication",
+                "Observable Integrated Data Channel"
+            ],
+            "a": 1,
+            "e": "OIDC stands for OpenID Connect, a simple identity layer on top of the OAuth 2.0 protocol for authentication."
+        },
+        {
+            "q": "Which PHP extension is commonly used for handling JWT tokens?",
+            "o": [
+                "php-jwt",
+                "php-json",
+                "jwt-php",
+                "jwt-auth"
+            ],
+            "a": 0,
+            "e": "The php-jwt library (also known as firebase/php-jwt) is commonly used for encoding and decoding JWT tokens in PHP."
+        },
+        {
+            "q": "In OIDC, which JSON Web Token contains the user identity information?",
+            "o": [
+                "Access Token",
+                "Refresh Token",
+                "ID Token",
+                "Session Token"
+            ],
+            "a": 2,
+            "e": "The ID Token is a JWT that contains user identity claims and is used in OpenID Connect."
+        },
+        {
+            "q": "What algorithm is most commonly used to sign JWTs in OIDC?",
+            "o": [
+                "HS256 (HMAC with SHA-256)",
+                "RSA",
+                "ECDSA",
+                "None of the above"
+            ],
+            "a": 0,
+            "e": "HS256 is a commonly used signing algorithm for JWTs, but depending on the provider, RSA or ECDSA may also be used."
+        },
+        {
+            "q": "When integrating OIDC in PHP, which library helps with handling OAuth2 flows?",
+            "o": [
+                "GuzzleHttp",
+                "League OAuth2 Client",
+                "Firebase JWT",
+                "Monolog"
+            ],
+            "a": 1,
+            "e": "League OAuth2 Client is a popular PHP library that simplifies OAuth2 and OIDC flows."
+        },
+        {
+            "q": "How do you verify a JWT received from an OIDC provider in PHP?",
+            "o": [
+                "Decode the JWT and trust its content",
+                "Check the signature using the OIDC provider's public keys",
+                "Check the JWT without any cryptographic validation",
+                "Only verify the expiration claim"
+            ],
+            "a": 1,
+            "e": "Proper verification requires checking the JWT signature against the provider's public keys to ensure authenticity."
+        },
+        {
+            "q": "Which PHP function is typically used to decode a JWT after verification?",
+            "o": [
+                "jwt_decode()",
+                "json_decode()",
+                "base64_decode()",
+                "token_decode()"
+            ],
+            "a": 0,
+            "e": "jwt_decode() from jwt libraries (e.g., firebase/php-jwt) is used to decode and verify JWTs."
+        },
+        {
+            "q": "Which claim is required in a JWT token for OIDC Authentication to check the token audience?",
+            "o": [
+                "iss (issuer)",
+                "aud (audience)",
+                "sub (subject)",
+                "exp (expiration)"
+            ],
+            "a": 1,
+            "e": "The aud claim specifies the audience that the JWT is intended for, ensuring the token is meant for your application."
+        },
+        {
+            "q": "What does the 'exp' claim in a JWT represent?",
+            "o": [
+                "Expected issue date",
+                "Expiration time",
+                "External provider",
+                "Executor ID"
+            ],
+            "a": 1,
+            "e": "The 'exp' claim indicates the expiration time after which the token must not be accepted."
+        },
+        {
+            "q": "After successful OIDC login, how is the user typically authenticated in a PHP app?",
+            "o": [
+                "By storing the user's password in session",
+                "By validating and storing the ID Token claims in the session",
+                "By verifying the access token only",
+                "By saving the user's OAuth client secret"
+            ],
+            "a": 1,
+            "e": "The authenticated user's data from the verified ID Token is usually stored in the session for subsequent requests."
+        }
+    ]
+}

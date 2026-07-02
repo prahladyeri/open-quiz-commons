@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is structured logging in PHP observability?",
+            "o": [
+                "Logging messages as plain text strings",
+                "Logging data in a consistent, parseable format like JSON",
+                "Ignoring log levels",
+                "Logging only errors"
+            ],
+            "a": 1,
+            "e": "Structured logging involves recording logs in a consistent, machine-readable format such as JSON for better analysis and querying."
+        },
+        {
+            "q": "Which PHP library is commonly used for structured logging?",
+            "o": [
+                "Monolog",
+                "PHPUnit",
+                "Guzzle",
+                "PHPMailer"
+            ],
+            "a": 0,
+            "e": "Monolog is a popular logging library in PHP that supports structured logging with various handlers and formatters."
+        },
+        {
+            "q": "Which format is commonly used for structured logs in PHP DevOps?",
+            "o": [
+                "XML",
+                "CSV",
+                "JSON",
+                "YAML"
+            ],
+            "a": 2,
+            "e": "JSON is widely used for structured logs due to its readability and native support in many logging tools."
+        },
+        {
+            "q": "How can you add contextual information (such as user ID) in Monolog structured logs?",
+            "o": [
+                "By embedding data in the log message string",
+                "Using the Monolog context array parameter",
+                "By setting log level",
+                "By enabling debug mode"
+            ],
+            "a": 1,
+            "e": "Monolog accepts a context array to include extra structured data alongside the log message."
+        },
+        {
+            "q": "What is a benefit of structured logging in a DevOps environment?",
+            "o": [
+                "Logs are harder to parse",
+                "Easier to analyze and search logs automatically",
+                "Increases disk space usage without benefit",
+                "Less information output"
+            ],
+            "a": 1,
+            "e": "Structured logs enable automated tools to efficiently parse, analyze, and alert on log data."
+        },
+        {
+            "q": "Which Monolog handler can be used to send structured logs to a remote system like Elasticsearch?",
+            "o": [
+                "StreamHandler",
+                "SyslogHandler",
+                "ElasticsearchHandler",
+                "ErrorLogHandler"
+            ],
+            "a": 2,
+            "e": "ElasticsearchHandler allows Monolog to send JSON structured logs directly to an Elasticsearch server."
+        },
+        {
+            "q": "What is the role of a formatter in PHP structured logging?",
+            "o": [
+                "To decide the log file size",
+                "To convert log entries into a specific structured format e.g. JSON",
+                "To send logs over network",
+                "To authenticate logging users"
+            ],
+            "a": 1,
+            "e": "Formatters format the log record into a desired output format like JSON or line-based text."
+        },
+        {
+            "q": "How do you initialize Monolog logger for JSON structured logs?",
+            "o": [
+                "$logger = new Logger('app');\n$logger->pushHandler(new StreamHandler('app.log'));",
+                "$logger = new Logger('app');\n$handler = new StreamHandler('app.log');\n$handler->setFormatter(new JsonFormatter());\n$logger->pushHandler($handler);",
+                "$logger = new Logger('app');\n$logger->setLevel('JSON');",
+                "$logger = new Logger('app', new JsonFormatter());"
+            ],
+            "a": 1,
+            "e": "To enable JSON structured logging in Monolog, assign a JsonFormatter to the handler, then push the handler to the Logger."
+        },
+        {
+            "q": "Why is including a timestamp and log level important in structured logs?",
+            "o": [
+                "To filter and correlate logs by time and severity",
+                "To increase log size artificially",
+                "To confuse attackers",
+                "Not required in structured logs"
+            ],
+            "a": 0,
+            "e": "Timestamps and levels help in sorting, filtering, and alerting on log events efficiently."
+        },
+        {
+            "q": "In a DevOps pipeline, structured logs are most commonly collected and visualized using:",
+            "o": [
+                "ELK Stack (Elasticsearch, Logstash, Kibana)",
+                "XAMPP",
+                "MySQL Workbench",
+                "Composer"
+            ],
+            "a": 0,
+            "e": "The ELK stack is widely used for collecting, storing, and visualizing structured logs in DevOps practices."
+        }
+    ]
+}

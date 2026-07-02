@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is API Platform in the context of PHP?",
+            "o": [
+                "A PHP framework to build APIs and manage OpenAPI documentation",
+                "A database management system",
+                "A PHP templating engine",
+                "A debugging tool for PHP applications"
+            ],
+            "a": 0,
+            "e": "API Platform is a framework to build API-first projects in PHP, supporting OpenAPI specification out of the box."
+        },
+        {
+            "q": "Which format does API Platform use by default to document APIs?",
+            "o": [
+                "OpenAPI (Swagger)",
+                "RAML",
+                "GraphQL SDL",
+                "WSDL"
+            ],
+            "a": 0,
+            "e": "API Platform automatically generates OpenAPI (formerly Swagger) documentation for APIs."
+        },
+        {
+            "q": "How do you expose a PHP entity as a REST API resource using API Platform?",
+            "o": [
+                "By adding the #[ApiResource] attribute or ApiResource annotation to the entity class",
+                "By extending a base API class",
+                "By creating a YAML configuration file only",
+                "By writing a controller with custom REST routes"
+            ],
+            "a": 0,
+            "e": "API Platform uses the #[ApiResource] PHP attribute (or annotation) to expose an entity as an API resource."
+        },
+        {
+            "q": "Which PHP package is primarily used to generate OpenAPI documentation in API Platform?",
+            "o": [
+                "api-platform/core",
+                "symfony/serializer",
+                "nelmio/api-doc-bundle",
+                "zircote/swagger-php"
+            ],
+            "a": 0,
+            "e": "The api-platform/core package manages API building and OpenAPI documentation generation."
+        },
+        {
+            "q": "How can you customize the OpenAPI documentation title in API Platform?",
+            "o": [
+                "By modifying the 'title' option in api_platform.yaml configuration",
+                "By editing the composer.json file",
+                "By annotating each entity with a title",
+                "By changing the main index.php file"
+            ],
+            "a": 0,
+            "e": "You customize OpenAPI docs via the api_platform.yaml file under the openapi configuration."
+        },
+        {
+            "q": "Which Symfony bundle is integrated with API Platform to automatically generate and expose OpenAPI docs?",
+            "o": [
+                "ApiPlatformBundle",
+                "MakerBundle",
+                "TwigBundle",
+                "DoctrineBundle"
+            ],
+            "a": 0,
+            "e": "ApiPlatformBundle is the Symfony bundle that integrates API Platform, handling resource management and OpenAPI docs."
+        },
+        {
+            "q": "Can API Platform support GraphQL in addition to REST?",
+            "o": [
+                "Yes, via built-in support for GraphQL endpoints",
+                "No, only REST APIs are supported",
+                "Only with a third-party plugin",
+                "GraphQL requires separate configuration unrelated to API Platform"
+            ],
+            "a": 0,
+            "e": "API Platform supports GraphQL natively, allowing automatic GraphQL endpoint generation."
+        },
+        {
+            "q": "Which command is used to install API Platform using Composer?",
+            "o": [
+                "composer require api-platform/core",
+                "composer install api-platform",
+                "composer update api-platform",
+                "composer create-project api-platform/api-platform"
+            ],
+            "a": 0,
+            "e": "Installing API Platform in existing projects is done with composer require api-platform/core."
+        },
+        {
+            "q": "What is the role of the OpenAPI Generator in API Platform?",
+            "o": [
+                "To generate client SDKs and server stubs based on the OpenAPI spec",
+                "To provide database migrations",
+                "To serve static content",
+                "To manage user authentication"
+            ],
+            "a": 0,
+            "e": "OpenAPI Generator uses the API schema to generate clients and server code across languages."
+        },
+        {
+            "q": "How to add a custom operation to an API resource in API Platform that appears in OpenAPI docs?",
+            "o": [
+                "By defining a custom operation in the resource annotation or attribute with an OpenAPI context",
+                "By modifying the database schema",
+                "By creating manual OpenAPI YAML files only",
+                "By adding a route in routes.yaml unrelated to the API resource"
+            ],
+            "a": 0,
+            "e": "Custom operations are annotated in the resource with an 'openapi_context' to include details in docs."
+        }
+    ]
+}

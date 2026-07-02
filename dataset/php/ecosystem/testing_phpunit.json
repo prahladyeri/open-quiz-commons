@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is PHPUnit used for in PHP?",
+            "o": [
+                "Database management",
+                "Unit testing of PHP code",
+                "Web server configuration",
+                "Dependency injection"
+            ],
+            "a": 1,
+            "e": "PHPUnit is a testing framework for writing and running unit tests for PHP applications."
+        },
+        {
+            "q": "Which command is used to install PHPUnit via Composer?",
+            "o": [
+                "composer require phpunit/phpunit",
+                "composer install phpunit",
+                "composer update phpunit",
+                "composer add phpunit"
+            ],
+            "a": 0,
+            "e": "The correct command is 'composer require phpunit/phpunit' to add PHPUnit as a dependency."
+        },
+        {
+            "q": "Which annotation is used in PHPUnit to indicate a test method?",
+            "o": [
+                "@test",
+                "@TestCase",
+                "@phpunit",
+                "@testing"
+            ],
+            "a": 0,
+            "e": "PHPUnit uses the '@test' annotation or simply public methods prefixed with 'test' to identify test methods."
+        },
+        {
+            "q": "What is the purpose of the setUp() method in a PHPUnit test class?",
+            "o": [
+                "Clean up resources after tests",
+                "Initialize environment before each test",
+                "Mark a test as skipped",
+                "Run code once before all tests"
+            ],
+            "a": 1,
+            "e": "setUp() is called before each test method to prepare the environment."
+        },
+        {
+            "q": "Which of the following assertions is used to check equality in PHPUnit?",
+            "o": [
+                "$this->assertEquals()",
+                "$this->assertSame()",
+                "$this->assertTrue()",
+                "$this->assertContains()"
+            ],
+            "a": 0,
+            "e": "assertEquals() checks if two values are equal, allowing type coercion."
+        },
+        {
+            "q": "Which configuration file is commonly used to configure PHPUnit options?",
+            "o": [
+                "php.ini",
+                "phpunit.xml",
+                ".env",
+                "config.php"
+            ],
+            "a": 1,
+            "e": "phpunit.xml allows configuring bootstrap files, test suites, and other options."
+        },
+        {
+            "q": "How do you run PHPUnit tests from the command line?",
+            "o": [
+                "phpunit",
+                "php run tests",
+                "composer test",
+                "php test"
+            ],
+            "a": 0,
+            "e": "The command 'phpunit' runs the tests, often with arguments specifying directories or files."
+        },
+        {
+            "q": "To skip a test conditionally in PHPUnit, which method can be called?",
+            "o": [
+                "$this->markTestSkipped()",
+                "$this->skip()",
+                "$this->ignoreTest()",
+                "$this->pauseTest()"
+            ],
+            "a": 0,
+            "e": "markTestSkipped() marks a test as skipped during execution."
+        },
+        {
+            "q": "What is the recommended method to create mock objects in PHPUnit?",
+            "o": [
+                "Using Mockery library only",
+                "Using $this->createMock() or $this->getMockBuilder()",
+                "Manually extending classes",
+                "Using real classes without mocks"
+            ],
+            "a": 1,
+            "e": "PHPUnit provides built-in methods createMock() and getMockBuilder() to create mock objects."
+        },
+        {
+            "q": "What namespace does PHPUnit use for its classes since version 6?",
+            "o": [
+                "PHPUnit_Framework_",
+                "PHPUnit\\Framework\\",
+                "PHPUnitTesting\\",
+                "TestPHPUnit\\"
+            ],
+            "a": 1,
+            "e": "Since PHPUnit 6, classes are under the namespace PHPUnit\\Framework\\."
+        }
+    ]
+}

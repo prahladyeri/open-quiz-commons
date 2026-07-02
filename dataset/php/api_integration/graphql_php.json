@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "Which PHP library is commonly used to integrate GraphQL APIs?",
+            "o": [
+                "graphql-php",
+                "Guzzle",
+                "cURL",
+                "Monolog"
+            ],
+            "a": 0,
+            "e": "graphql-php is a popular library designed specifically for GraphQL in PHP."
+        },
+        {
+            "q": "In graphql-php, what is the primary purpose of the 'Schema' class?",
+            "o": [
+                "To define the GraphQL query and mutation types",
+                "To handle HTTP requests",
+                "To log errors",
+                "To communicate with the REST API"
+            ],
+            "a": 0,
+            "e": "The Schema class defines types and fields exposed by the GraphQL API."
+        },
+        {
+            "q": "How do you execute a GraphQL query in PHP using graphql-php?",
+            "o": [
+                "$result = GraphQL::executeQuery($schema, $query);",
+                "$result = $http->post($query);",
+                "$result = curl_exec($query);",
+                "$result = $schema->run($query);"
+            ],
+            "a": 0,
+            "e": "GraphQL::executeQuery() is used to process and execute GraphQL queries against a schema."
+        },
+        {
+            "q": "What is the role of 'resolve functions' in graphql-php?",
+            "o": [
+                "To define how to fetch the data for a particular field",
+                "To authenticate users",
+                "To handle routing",
+                "To manage sessions"
+            ],
+            "a": 0,
+            "e": "Resolve functions specify how to retrieve data when a field is requested."
+        },
+        {
+            "q": "Which GraphQL operation types are supported by graphql-php?",
+            "o": [
+                "Query, Mutation, Subscription",
+                "GET, POST, DELETE",
+                "Select, Insert, Update",
+                "Create, Read, Update, Delete"
+            ],
+            "a": 0,
+            "e": "graphql-php supports Query, Mutation, and Subscription operation types per GraphQL specs."
+        },
+        {
+            "q": "To integrate a GraphQL API endpoint in a PHP application, which HTTP method is typically used?",
+            "o": [
+                "POST",
+                "GET",
+                "PUT",
+                "DELETE"
+            ],
+            "a": 0,
+            "e": "GraphQL requests usually use POST to send queries and mutations."
+        },
+        {
+            "q": "In a GraphQL PHP server setup, how would you handle errors during query execution?",
+            "o": [
+                "Catch exceptions and return errors in the response object",
+                "Ignore them",
+                "Log and halt all execution immediately",
+                "Restart the server"
+            ],
+            "a": 0,
+            "e": "Proper error handling involves catching exceptions and including error information in the response."
+        },
+        {
+            "q": "Which PHP version is generally recommended for using graphql-php?",
+            "o": [
+                "PHP 7.2 or higher",
+                "PHP 5.6",
+                "PHP 5.0",
+                "Any PHP version"
+            ],
+            "a": 0,
+            "e": "graphql-php requires PHP 7.2 or later due to language and library dependencies."
+        },
+        {
+            "q": "What is the typical format for sending variables along with a GraphQL query in PHP?",
+            "o": [
+                "As a separate JSON object mapped to the $variableValues parameter",
+                "Appending to the query string",
+                "In HTTP headers",
+                "Inside XML format"
+            ],
+            "a": 0,
+            "e": "Variables are passed as a JSON associative array to enable dynamic queries."
+        },
+        {
+            "q": "Which Composer command is used to install the graphql-php library?",
+            "o": [
+                "composer require webonyx/graphql-php",
+                "composer install graphql-php",
+                "composer add graphql-php",
+                "composer get graphql-php"
+            ],
+            "a": 0,
+            "e": "The correct Composer command is 'composer require webonyx/graphql-php'."
+        }
+    ]
+}

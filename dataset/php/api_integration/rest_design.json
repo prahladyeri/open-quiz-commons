@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What HTTP method is typically used to retrieve data from a RESTful API?",
+            "o": [
+                "POST",
+                "GET",
+                "PUT",
+                "DELETE"
+            ],
+            "a": 1,
+            "e": "GET is used to retrieve data without modifying the server state."
+        },
+        {
+            "q": "In REST API design, which HTTP status code indicates that a resource was successfully created?",
+            "o": [
+                "200 OK",
+                "201 Created",
+                "404 Not Found",
+                "500 Internal Server Error"
+            ],
+            "a": 1,
+            "e": "201 Created indicates that a resource has been successfully created on the server."
+        },
+        {
+            "q": "Which PHP function is commonly used to make an HTTP request to a REST API?",
+            "o": [
+                "curl_init()",
+                "file_get_contents()",
+                "http_get()",
+                "exec()"
+            ],
+            "a": 0,
+            "e": "curl_init() initializes a cURL session, which is commonly used for REST API calls."
+        },
+        {
+            "q": "What should a RESTful API use to identify resources uniquely?",
+            "o": [
+                "IP addresses",
+                "URI (Uniform Resource Identifier)",
+                "HTTP methods",
+                "Headers"
+            ],
+            "a": 1,
+            "e": "URIs uniquely identify resources in REST APIs."
+        },
+        {
+            "q": "Which HTTP method is idempotent and typically used to update an existing resource in REST?",
+            "o": [
+                "POST",
+                "PUT",
+                "PATCH",
+                "OPTIONS"
+            ],
+            "a": 1,
+            "e": "PUT is idempotent and used for updating or replacing a resource."
+        },
+        {
+            "q": "How do you send JSON data in a POST request using PHP cURL?",
+            "o": [
+                "Add JSON string to CURLOPT_POSTFIELDS and set Content-Type header to application/json",
+                "Put JSON in GET parameters",
+                "Use curl_setopt with CURLOPT_UPLOAD",
+                "Send JSON as a cookie"
+            ],
+            "a": 0,
+            "e": "The JSON payload is set via CURLOPT_POSTFIELDS with the Content-Type header set to application/json."
+        },
+        {
+            "q": "What does REST stand for in API design?",
+            "o": [
+                "Representational State Transfer",
+                "Remote Execution Service Technology",
+                "Resource Service Transport",
+                "Reliable Service Transfer"
+            ],
+            "a": 0,
+            "e": "REST stands for Representational State Transfer, an architectural style for APIs."
+        },
+        {
+            "q": "When integrating REST APIs in PHP, which function decodes a JSON response string into a PHP array?",
+            "o": [
+                "json_encode()",
+                "json_decode()",
+                "serialize()",
+                "unserialize()"
+            ],
+            "a": 1,
+            "e": "json_decode() converts JSON to PHP arrays or objects."
+        },
+        {
+            "q": "Which HTTP header should be set to tell the server that the client expects JSON response?",
+            "o": [
+                "Content-Type: application/json",
+                "Accept: application/json",
+                "Authorization: Bearer token",
+                "Cache-Control: no-cache"
+            ],
+            "a": 1,
+            "e": "Accept header indicates the expected response content type, e.g., application/json."
+        },
+        {
+            "q": "What is the recommended status code for a successful DELETE request in a RESTful API?",
+            "o": [
+                "200 OK",
+                "204 No Content",
+                "202 Accepted",
+                "400 Bad Request"
+            ],
+            "a": 1,
+            "e": "204 No Content means the resource was deleted successfully and no content is returned."
+        }
+    ]
+}

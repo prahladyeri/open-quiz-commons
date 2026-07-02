@@ -366,7 +366,6 @@
 		  ]
 		},
 		{
-			"hidden": true,
 		  "name": "Ecosystem & Tooling",
 		  "slug": "ecosystem",
 		  "modules": [
@@ -387,6 +386,161 @@
 			}
 		  ]
 		}		
+
+		,
+		{
+		  "name": "Frameworks & Architecture",
+		  "slug": "frameworks_architecture",
+		  "modules": [
+			{
+			  "name": "Laravel Core Concepts",
+			  "slug": "laravel_core",
+			  "descn": "Service Container, Service Providers, Facades, Eloquent ORM, and the Request Lifecycle (Kernel/Middleware)."
+			},
+			{
+			  "name": "Symfony Components & Internals",
+			  "slug": "symfony_internals",
+			  "descn": "HttpKernel, DependencyInjection Compiler Passes, EventDispatcher, and using standalone components outside full-stack."
+			},
+			{
+			  "name": "Domain-Driven Design (DDD) in PHP",
+			  "slug": "ddd_php",
+			  "descn": "Implementing Entities, Value Objects, Aggregates, Repositories, and Domain Events using modern PHP typing."
+			},
+			{
+			  "name": "Modular Monoliths & Package Architecture",
+			  "slug": "modular_monolith",
+			  "descn": "Structuring large apps via `packages/` or `modules/` directories, enforcing boundaries with Deptrac or PHPStan rules."
+			},
+			{
+			  "name": "Hybrid Full-Stack (Livewire, Inertia, HTMX)",
+			  "slug": "hybrid_fullstack",
+			  "descn": "Building reactive UIs without a separate SPA: Server-side rendering with client-side interactivity bridges."
+			}
+		  ]
+		},
+		{
+		  "name": "Async & High Performance",
+		  "slug": "async_high_perf",
+		  "modules": [
+			{
+			  "name": "Swoole / OpenSwoole & RoadRunner",
+			  "slug": "swoole_roadrunner",
+			  "descn": "Running PHP as a persistent application server (worker model), managing memory leaks, and coroutine handling."
+			},
+			{
+			  "name": "Laravel Octane & FrankenPHP",
+			  "slug": "octane_frankenphp",
+			  "descn": "Supercharging Laravel/Symfony via Swoole/RoadRunner/FrankenPHP: Warm boot, static file serving, and worker management."
+			},
+			{
+			  "name": "Fibers & Async Control Flow (PHP 8.1+)",
+			  "slug": "fibers_async",
+			  "descn": "Low-level interruption primitives: implementing non-blocking I/O, concurrency patterns, and scheduler integration."
+			},
+			{
+			  "name": "ReactPHP & Amp",
+			  "slug": "reactphp_amp",
+			  "descn": "Event-loop based async programming: Promises, Streams, and building non-blocking HTTP clients/servers without extensions."
+			}
+		  ]
+		},
+		{
+		  "name": "API Development & Integration",
+		  "slug": "api_integration",
+		  "hidden": true,
+		  "modules": [
+			{
+			  "name": "REST API Design & Standards",
+			  "slug": "rest_design",
+			  "descn": "Resource modeling, HTTP semantics (ETag, Link headers), Problem Details (RFC 7807), and versioning strategies."
+			},
+			{
+			  "name": "GraphQL (Webonyx / Lighthouse)",
+			  "slug": "graphql_php",
+			  "descn": "Schema-first vs Code-first, N+1 solving via DataLoader, authorization directives, and federation."
+			},
+			{
+			  "name": "Authentication & Authorization (OAuth2, OIDC, JWT)",
+			  "slug": "auth_oidc_jwt",
+			  "descn": "Implementing Resource Servers, Introspection, JWKS rotation, and scopes/claims validation using `lcobucci/jwt` or `league/oauth2-server`."
+			},
+			{
+			  "name": "API Platform & OpenAPI",
+			  "slug": "api_platform_openapi",
+			  "descn": "Auto-generating OpenAPI/Swagger docs, Hydra/JSON-LD, and filtering/pagination/serialization groups."
+			},
+			{
+			  "name": "gRPC & Protobuf",
+			  "slug": "grpc_protobuf",
+			  "descn": "Contract-first RPC: Generating PHP stubs from `.proto` files, unary/streaming calls, and gRPC-Web for browsers."
+			}
+		  ]
+		},
+		{
+		  "name": "Observability & DevOps",
+		  "slug": "observability_devops",
+		  "hidden": true,
+		  "modules": [
+			{
+			  "name": "Structured Logging (Monolog & PSR-3)",
+			  "slug": "structured_logging",
+			  "descn": "JSON formatting, Logstash/Fluentd integration, context enrichment (request IDs, user IDs), and log levels strategy."
+			},
+			{
+			  "name": "Metrics & Tracing (OpenTelemetry)",
+			  "slug": "opentelemetry_php",
+			  "descn": "Auto-instrumentation vs manual spans, exporting to Jaeger/Zipkin/Prometheus, and correlating logs/traces/metrics."
+			},
+			{
+			  "name": "Docker & CI/CD for PHP",
+			  "slug": "docker_ci_cd",
+			  "descn": "Multi-stage builds (Composer layer caching), FrankenPHP static binaries, GitHub Actions/GitLab CI pipelines, and zero-downtime deployments."
+			},
+			{
+			  "name": "Queue Workers & Background Jobs",
+			  "slug": "queue_workers",
+			  "descn": "Redis/RabbitMQ/Database drivers, delayed jobs, batching, idempotency, horizon/supervisor management, and handling poison pills."
+			},
+			{
+			  "name": "Feature Flags & Configuration",
+			  "slug": "feature_flags_config",
+			  "descn": "Runtime toggling (LaunchDarkly, Unleash, or custom), environment-specific config (`.env` vs PHP config files), and secrets management (Vault, AWS SM)."
+			}
+		  ]
+		},
+		{
+		  "name": "Code Quality & Modernization",
+		  "slug": "code_quality_modernization",
+		  "hidden": true,
+		  "modules": [
+			{
+			  "name": "Static Analysis (PHPStan / Psalm)",
+			  "slug": "static_analysis",
+			  "descn": "Configuring baseline files, generics annotations, dead code detection, and running in CI to catch bugs pre-runtime."
+			},
+			{
+			  "name": "Automated Refactoring (Rector)",
+			  "slug": "rector_refactoring",
+			  "descn": "Upgrading PHP versions automatically (7.4 -> 8.3), modernizing syntax (typedefs, promoted props), and custom rules for codebase consistency."
+			},
+			{
+			  "name": "Coding Standards & Style (PHP_CodeSniffer / Pint)",
+			  "slug": "coding_standards",
+			  "descn": "PSR-12 enforcement, Laravel Pint (opinionated), custom sniffs for architectural rules (e.g. no `dd()` in prod)."
+			},
+			{
+			  "name": "Mutation Testing (Infection)",
+			  "slug": "mutation_testing",
+			  "descn": "Measuring test suite effectiveness by injecting bugs (mutants) and verifying tests catch them."
+			},
+			{
+			  "name": "Legacy Migration Strategies",
+			  "slug": "legacy_migration",
+			  "descn": "Strangler Fig pattern, running dual PHP versions (PHP-FPM + FrankenPHP), polyfills (symfony/polyfill), and deprecation handling."
+			}
+		  ]
+		}
 	  ]
 	}
   ]

@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the role of PHP-FPM in the PHP ecosystem?",
+            "o": [
+                "It is a web server like Apache or Nginx",
+                "It is a FastCGI process manager for PHP to handle requests efficiently",
+                "It is a PHP code debugger",
+                "It is an IDE for PHP development"
+            ],
+            "a": 1,
+            "e": "PHP-FPM (FastCGI Process Manager) manages PHP processes to handle web requests efficiently, often used with web servers."
+        },
+        {
+            "q": "Which of these is the correct order of the PHP-FPM worker lifecycle stages?",
+            "o": [
+                "Accept request > Init > Execute PHP > Terminate",
+                "Init > Wait for request > Execute PHP > Terminate",
+                "Execute PHP > Init > Accept request > Terminate",
+                "Accept request > Execute PHP > Init > Terminate"
+            ],
+            "a": 1,
+            "e": "PHP-FPM workers initialize, wait to accept requests, execute PHP code, then terminate or recycle."
+        },
+        {
+            "q": "What triggers the PHP-FPM worker process to terminate or respawn?",
+            "o": [
+                "When a worker reaches max_requests limit",
+                "After handling each request",
+                "When the server reboots only",
+                "When PHP script fails"
+            ],
+            "a": 0,
+            "e": "PHP-FPM workers are respawned after reaching max_requests to free resources and avoid memory leaks."
+        },
+        {
+            "q": "In PHP-FPM, what is the purpose of the master process?",
+            "o": [
+                "Handles incoming HTTP requests directly",
+                "Spawns and manages worker processes",
+                "Executes PHP scripts",
+                "Performs database queries"
+            ],
+            "a": 1,
+            "e": "The master process manages workers and handles signals but doesn't process requests itself."
+        },
+        {
+            "q": "How does PHP-FPM optimize performance for PHP web applications?",
+            "o": [
+                "By spawning a new PHP process for every request",
+                "By keeping persistent worker processes ready to handle multiple requests",
+                "By compiling PHP to machine code ahead of time",
+                "By caching full HTML pages"
+            ],
+            "a": 1,
+            "e": "Persistent PHP-FPM workers avoid process creation overhead for each request, improving performance."
+        },
+        {
+            "q": "What happens during the PHP-FPM worker initialization phase?",
+            "o": [
+                "The worker accepts a new request immediately",
+                "The worker loads PHP environment, extensions, and configures settings",
+                "The worker terminates idle connections",
+                "The worker compiles PHP scripts"
+            ],
+            "a": 1,
+            "e": "At initialization, the worker sets up the PHP runtime environment before processing requests."
+        },
+        {
+            "q": "Which signal is typically used to gracefully reload PHP-FPM configuration?",
+            "o": [
+                "SIGKILL",
+                "SIGTERM",
+                "SIGUSR2",
+                "SIGHUP"
+            ],
+            "a": 3,
+            "e": "Sending SIGHUP to PHP-FPM master prompts a graceful reload of the config and worker processes."
+        },
+        {
+            "q": "During PHP-FPM’s request handling, which component actually executes the PHP code?",
+            "o": [
+                "The master process",
+                "The worker process",
+                "The web server",
+                "The database server"
+            ],
+            "a": 1,
+            "e": "Each worker process executes the PHP code when a request is dispatched to it."
+        },
+        {
+            "q": "What PHP-FPM configuration parameter controls how many requests a single worker will serve before respawning?",
+            "o": [
+                "pm.max_children",
+                "pm.max_requests",
+                "pm.start_servers",
+                "pm.process_idle_timeout"
+            ],
+            "a": 1,
+            "e": "pm.max_requests limits the number of requests a worker serves, respawning it for stability."
+        },
+        {
+            "q": "Why does PHP-FPM use multiple worker processes in its lifecycle design?",
+            "o": [
+                "To parallelize request handling and improve concurrency",
+                "To improve security by isolating each request",
+                "To reduce memory usage by sharing workers",
+                "To compile PHP scripts in parallel"
+            ],
+            "a": 0,
+            "e": "Multiple workers enable concurrent processing of requests, improving throughput under load."
+        }
+    ]
+}

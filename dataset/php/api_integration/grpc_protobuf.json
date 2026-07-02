@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "What is gRPC primarily used for in PHP API integration?",
+            "o": [
+                "Image processing",
+                "Remote procedure calls (RPC)",
+                "Local file management",
+                "Database querying"
+            ],
+            "a": 1,
+            "e": "gRPC is a high-performance RPC framework used to enable communication between client and server applications."
+        },
+        {
+            "q": "Which protocol does gRPC use as its transport layer?",
+            "o": [
+                "HTTP/1.1",
+                "WebSocket",
+                "HTTP/2",
+                "FTP"
+            ],
+            "a": 2,
+            "e": "gRPC uses HTTP/2 for transport to enable multiplexing, flow control, and efficient binary framing."
+        },
+        {
+            "q": "What is the role of Protocol Buffers (protobuf) in gRPC PHP integration?",
+            "o": [
+                "Styling API documentation",
+                "Data serialization and interface definition",
+                "Database migrations",
+                "Authentication"
+            ],
+            "a": 1,
+            "e": "Protocol Buffers define message formats and services that are serialized efficiently over the network."
+        },
+        {
+            "q": "How do you generate PHP classes from .proto files?",
+            "o": [
+                "Run `protoc --php_out=./path file.proto`",
+                "Use composer require grpc/grpc",
+                "Use php artisan command",
+                "Write the classes manually"
+            ],
+            "a": 0,
+            "e": "The protoc compiler with the PHP plugin generates PHP source files from .proto definitions."
+        },
+        {
+            "q": "Which PHP package is essential to install to use gRPC client and server interfaces?",
+            "o": [
+                "grpc/grpc",
+                "guzzlehttp/guzzle",
+                "symfony/http-foundation",
+                "phpunit/phpunit"
+            ],
+            "a": 0,
+            "e": "grpc/grpc is the official PHP extension and library for gRPC support."
+        },
+        {
+            "q": "What command is commonly used to add the gRPC PHP package via Composer?",
+            "o": [
+                "composer require grpc/grpc",
+                "composer install grpc-php",
+                "php composer.phar add grpc",
+                "composer update grpc"
+            ],
+            "a": 0,
+            "e": "The correct command to add the gRPC package is `composer require grpc/grpc`."
+        },
+        {
+            "q": "In a gRPC PHP service, what class is generated that extends the base service implementation?",
+            "o": [
+                "ServiceGrpcClient",
+                "ServiceClientStub",
+                "ServiceGrpc",
+                "ServiceXXXClient (where XXX is the service name)"
+            ],
+            "a": 3,
+            "e": "The protoc compiler generates a client class named ServiceXXXClient for the respective service."
+        },
+        {
+            "q": "What method signature is used in PHP to call a unary gRPC method asynchronously?",
+            "o": [
+                "$client->MethodName($request, $metadata, $options)",
+                "$client->startMethodName($request)",
+                "$client->MethodNameAsync($request)",
+                "$client->callMethodName()"
+            ],
+            "a": 0,
+            "e": "Unary calls use the method name directly, optionally with metadata and options arguments."
+        },
+        {
+            "q": "Which of the following is a correct step to implement a gRPC server in PHP?",
+            "o": [
+                "Create a PHP class that implements the generated service interface",
+                "Use htaccess to redirect calls to server.php",
+                "Write raw socket programming code",
+                "Install a PHP template engine"
+            ],
+            "a": 0,
+            "e": "You define a class implementing the generated abstract service class methods to handle RPCs."
+        },
+        {
+            "q": "Which data format does Protocol Buffers use for message serialization?",
+            "o": [
+                "JSON",
+                "XML",
+                "Binary",
+                "YAML"
+            ],
+            "a": 2,
+            "e": "Protocol Buffers serialize data in an efficient, compact binary format."
+        },
+        {
+            "q": "How are streaming RPCs supported in gRPC PHP?",
+            "o": [
+                "Only server streaming is supported, client streaming is not",
+                "Both client and server streaming are supported using stream observers",
+                "Streaming is not supported in PHP implementation",
+                "Only unary is supported in PHP"
+            ],
+            "a": 1,
+            "e": "gRPC supports unary, client streaming, server streaming, and bidirectional streaming RPCs in PHP."
+        },
+        {
+            "q": "Which extension must be enabled in PHP to support gRPC native functionality?",
+            "o": [
+                "grpc.so",
+                "protobuf.so",
+                "curl.so",
+                "swoole.so"
+            ],
+            "a": 0,
+            "e": "The grpc PHP extension (`grpc.so`) must be installed and enabled to run gRPC code."
+        },
+        {
+            "q": "What is the command used to compile .proto files with gRPC PHP plugin?",
+            "o": [
+                "protoc --grpc_out=./path --plugin=protoc-gen-grpc=grpc_php_plugin file.proto",
+                "php grpc-compile file.proto",
+                "composer grpc:generate file.proto",
+                "protoc --php_out=./path file.proto"
+            ],
+            "a": 0,
+            "e": "You must specify the grpc plugin with --grpc_out and plugin option to generate gRPC service classes."
+        },
+        {
+            "q": "What will happen if you omit the service definitions in your .proto file when using gRPC?",
+            "o": [
+                "Only message classes are generated, no RPC methods",
+                "Full client and server code are generated",
+                "The compiler throws an error",
+                "The entire .proto is ignored"
+            ],
+            "a": 0,
+            "e": "Without service definitions, protoc generates only message classes and no service stubs."
+        },
+        {
+            "q": "Which PHP function is used to start the gRPC server?",
+            "o": [
+                "$server->run()",
+                "$server->start()",
+                "$server->serve()",
+                "$server->begin()"
+            ],
+            "a": 1,
+            "e": "The start() method on a gRPC server object begins listening for incoming requests."
+        }
+    ]
+}
