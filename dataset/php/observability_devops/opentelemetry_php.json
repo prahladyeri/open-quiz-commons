@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "What is OpenTelemetry primarily used for in PHP applications?",
+            "o": [
+                "Managing database connections",
+                "Improving application observability",
+                "Enhancing PHP syntax",
+                "Compiling PHP code"
+            ],
+            "a": 1,
+            "e": "OpenTelemetry is used to collect telemetry data such as traces, metrics, and logs to improve observability of applications."
+        },
+        {
+            "q": "Which OpenTelemetry component is responsible for collecting and exporting telemetry data?",
+            "o": [
+                "Collector",
+                "Tracer",
+                "Exporter",
+                "Instrumentor"
+            ],
+            "a": 0,
+            "e": "The OpenTelemetry Collector receives, processes, and exports telemetry data to backends or storage."
+        },
+        {
+            "q": "In OpenTelemetry PHP, what is a Tracer used for?",
+            "o": [
+                "Starting and ending spans for distributed tracing",
+                "Creating database queries",
+                "Generating log files",
+                "Compiling PHP code"
+            ],
+            "a": 0,
+            "e": "A Tracer is used to create and manage spans that represent units of work in distributed tracing."
+        },
+        {
+            "q": "How do you install the OpenTelemetry PHP SDK using Composer?",
+            "o": [
+                "composer require open-telemetry/sdk",
+                "composer install open-telemetry/sdk-php",
+                "composer require open-telemetry/opentelemetry",
+                "composer add opentelemetry/php-sdk"
+            ],
+            "a": 2,
+            "e": "The correct package to install OpenTelemetry PHP SDK is `open-telemetry/opentelemetry`."
+        },
+        {
+            "q": "Which format is commonly used to export traces collected by OpenTelemetry?",
+            "o": [
+                "JSON",
+                "Protocol Buffers (protobuf)",
+                "XML",
+                "Plain text"
+            ],
+            "a": 1,
+            "e": "Protocol Buffers is a compact, efficient format often used for exporting traces in OpenTelemetry."
+        },
+        {
+            "q": "What is the function of a Span in OpenTelemetry PHP?",
+            "o": [
+                "Represents a single operation or unit of work",
+                "Stores configuration for the tracer",
+                "Saves logs to disk",
+                "Monitors server CPU usage"
+            ],
+            "a": 0,
+            "e": "A Span represents a timed operation or unit of work in a trace."
+        },
+        {
+            "q": "How can you obtain the global tracer in OpenTelemetry PHP?",
+            "o": [
+                "\\OpenTelemetry\\api\\Trace\\Tracer::getGlobalTracer()",
+                "\\OpenTelemetry\\Tracing\\TracerProvider::getTracer()",
+                "TracerProvider::getGlobalTracer()",
+                "Tracer::getTracer()"
+            ],
+            "a": 1,
+            "e": "You should use the TracerProvider's getTracer() method from the OpenTelemetry SDK to get a tracer."
+        },
+        {
+            "q": "Which environment variable is commonly set to configure the endpoint for exporting OpenTelemetry data?",
+            "o": [
+                "OTEL_EXPORTER_OTLP_ENDPOINT",
+                "OTEL_TRACE_ENDPOINT",
+                "OTEL_EXPORTER_ENDPOINT",
+                "OTEL_EXPORTER_URL"
+            ],
+            "a": 0,
+            "e": "The OTEL_EXPORTER_OTLP_ENDPOINT environment variable specifies the endpoint for OTLP exporter."
+        },
+        {
+            "q": "Which protocol does OpenTelemetry usually use to export telemetry data by default?",
+            "o": [
+                "HTTP/JSON",
+                "gRPC",
+                "FTP",
+                "TCP"
+            ],
+            "a": 1,
+            "e": "OpenTelemetry commonly uses gRPC for efficient transmission of telemetry data."
+        },
+        {
+            "q": "What is the first step to instrument a PHP script with OpenTelemetry?",
+            "o": [
+                "Import OpenTelemetry classes and initialize a TracerProvider",
+                "Start writing log files manually",
+                "Configure database connections",
+                "Use error reporting functions"
+            ],
+            "a": 0,
+            "e": "Instrumentation starts by importing necessary OpenTelemetry classes and initializing a TracerProvider to create spans."
+        },
+        {
+            "q": "Which OpenTelemetry PHP package provides auto-instrumentation for common libraries?",
+            "o": [
+                "opentelemetry/opentelemetry-php-auto",
+                "opentelemetry/sdk-auto",
+                "opentelemetry/instrumentation",
+                "opentelemetry/opentelemetry-php-instrumentation"
+            ],
+            "a": 3,
+            "e": "`opentelemetry/opentelemetry-php-instrumentation` is the package for auto-instrumentation support."
+        },
+        {
+            "q": "In OpenTelemetry PHP, how do you start a new span named 'db-query'?",
+            "o": [
+                "$span = $tracer->startSpan('db-query');",
+                "$span = startSpan('db-query');",
+                "$span = Tracer::start('db-query');",
+                "$span = new Span('db-query');"
+            ],
+            "a": 0,
+            "e": "You use the tracer's startSpan method to begin a new span with a specific name."
+        },
+        {
+            "q": "What are the typical types of telemetry data collected by OpenTelemetry?",
+            "o": [
+                "Traces, metrics, and logs",
+                "Errors, alerts, and warnings",
+                "Configurations, exceptions, and events",
+                "Requests, responses, and headers"
+            ],
+            "a": 0,
+            "e": "OpenTelemetry collects traces, metrics, and logs to provide comprehensive observability."
+        },
+        {
+            "q": "To send traces from PHP OpenTelemetry SDK to Jaeger, which exporter is typically used?",
+            "o": [
+                "JaegerExporter",
+                "ConsoleExporter",
+                "ZipkinExporter",
+                "FileExporter"
+            ],
+            "a": 0,
+            "e": "JaegerExporter formats and sends trace data to Jaeger backend."
+        },
+        {
+            "q": "What is the purpose of context propagation in OpenTelemetry PHP?",
+            "o": [
+                "Passing state such as Span context between different parts of an application",
+                "Storing configuration variables",
+                "Encrypting telemetry data",
+                "Managing database connections"
+            ],
+            "a": 0,
+            "e": "Context propagation transfers trace context so that spans across distributed services are correlated."
+        }
+    ]
+}

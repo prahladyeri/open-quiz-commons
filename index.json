@@ -1,547 +1,852 @@
 {
-  "schema_version": "1.0",
-  "subjects": [
-    {
-      "name": "Python",
-      "slug": "python",
-      "icon": "fa-brands fa-python",
-      "subtopics": [
+    "schema_version": "1.0",
+    "subjects": [
         {
-          "name": "Core Python",
-          "slug": "core",
-          "modules": [
-            {"name": "Basics", "slug": "basics"},
-            {"name": "Data Types and Expressions", "slug": "data_types_and_expressions"},
-            {"name": "Control Flow", "slug": "control_flow"},
-            {"name": "Functions", "slug": "functions"},
-            {"name": "Classes and OOP", "slug": "classes_and_oop"},
-            {"name": "Exceptions and Errors", "slug": "exceptions_and_errors"},
-            {"name": "File I/O", "slug": "file_io"},
-            {"name": "Modules and Packages", "slug": "modules_and_packages"},
-            {"name": "Standard Library", "slug": "standard_library"},
-            {"name": "Iterators and Generators", "slug": "iterators_and_generators"},
-            {"name": "Testing and Debugging", "slug": "testing_and_debugging"}
-          ]
+            "name": "Python",
+            "slug": "python",
+            "icon": "fa-brands fa-python",
+            "subtopics": [
+                {
+                    "name": "Core Python",
+                    "slug": "core",
+                    "modules": [
+                        {
+                            "name": "Basics",
+                            "slug": "basics"
+                        },
+                        {
+                            "name": "Data Types and Expressions",
+                            "slug": "data_types_and_expressions"
+                        },
+                        {
+                            "name": "Control Flow",
+                            "slug": "control_flow"
+                        },
+                        {
+                            "name": "Functions",
+                            "slug": "functions"
+                        },
+                        {
+                            "name": "Classes and OOP",
+                            "slug": "classes_and_oop"
+                        },
+                        {
+                            "name": "Exceptions and Errors",
+                            "slug": "exceptions_and_errors"
+                        },
+                        {
+                            "name": "File I/O",
+                            "slug": "file_io"
+                        },
+                        {
+                            "name": "Modules and Packages",
+                            "slug": "modules_and_packages"
+                        },
+                        {
+                            "name": "Standard Library",
+                            "slug": "standard_library"
+                        },
+                        {
+                            "name": "Iterators and Generators",
+                            "slug": "iterators_and_generators"
+                        },
+                        {
+                            "name": "Testing and Debugging",
+                            "slug": "testing_and_debugging"
+                        }
+                    ]
+                },
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "modules": [
+                        {
+                            "name": "SQLite & MySQL",
+                            "slug": "sqlite_and_mysql"
+                        },
+                        {
+                            "name": "PostgreSQL",
+                            "slug": "postgresql"
+                        },
+                        {
+                            "name": "SQLAlchemy ORM",
+                            "slug": "sqlalchemy"
+                        },
+                        {
+                            "name": "Raw SQL & Cursors",
+                            "slug": "raw_sql_cursors"
+                        },
+                        {
+                            "name": "Database Migrations",
+                            "slug": "migrations"
+                        },
+                        {
+                            "name": "Transactions and Isolation",
+                            "slug": "transactions_and_isolation"
+                        }
+                    ]
+                },
+                {
+                    "name": "Web",
+                    "slug": "web",
+                    "modules": [
+                        {
+                            "name": "Flask Basics",
+                            "slug": "flask"
+                        },
+                        {
+                            "name": "Django Basics",
+                            "slug": "django"
+                        },
+                        {
+                            "name": "REST APIs and FastAPI",
+                            "slug": "rest_api_fastapi"
+                        },
+                        {
+                            "name": "Jinja2 Templating",
+                            "slug": "jinja2_templating"
+                        },
+                        {
+                            "name": "Authentication & Sessions",
+                            "slug": "auth_sessions"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Science",
+                    "slug": "data_science",
+                    "modules": [
+                        {
+                            "name": "NumPy",
+                            "slug": "numpy"
+                        },
+                        {
+                            "name": "Pandas",
+                            "slug": "pandas"
+                        },
+                        {
+                            "name": "Data Visualization",
+                            "slug": "data_visualization"
+                        },
+                        {
+                            "name": "Statistics Basics",
+                            "slug": "statistics"
+                        },
+                        {
+                            "name": "Jupyter Notebooks",
+                            "slug": "jupyter_notebooks"
+                        }
+                    ]
+                },
+                {
+                    "name": "System & OS",
+                    "slug": "system_and_os",
+                    "modules": [
+                        {
+                            "name": "os & sys Modules",
+                            "slug": "os_and_sys"
+                        },
+                        {
+                            "name": "Subprocess",
+                            "slug": "subprocess"
+                        },
+                        {
+                            "name": "Environment Variables",
+                            "slug": "environment_vars"
+                        },
+                        {
+                            "name": "File System Operations",
+                            "slug": "file_system"
+                        },
+                        {
+                            "name": "Automation Scripts",
+                            "slug": "automation"
+                        }
+                    ]
+                },
+                {
+                    "name": "Networking",
+                    "slug": "networking",
+                    "modules": [
+                        {
+                            "name": "Sockets",
+                            "slug": "sockets"
+                        },
+                        {
+                            "name": "HTTP Clients",
+                            "slug": "http"
+                        },
+                        {
+                            "name": "Async Networking",
+                            "slug": "async"
+                        },
+                        {
+                            "name": "Requests vs aiohttp",
+                            "slug": "requests_aiohttp"
+                        }
+                    ]
+                },
+                {
+                    "name": "Packaging & Distribution",
+                    "slug": "packaging_and_distribution",
+                    "modules": [
+                        {
+                            "name": "venv & virtualenv",
+                            "slug": "venv"
+                        },
+                        {
+                            "name": "pip & pipx",
+                            "slug": "pip"
+                        },
+                        {
+                            "name": "setup.py & pyproject.toml",
+                            "slug": "setuppy"
+                        },
+                        {
+                            "name": "Wheels & Publishing",
+                            "slug": "wheels"
+                        }
+                    ]
+                },
+                {
+                    "name": "Testing & Quality",
+                    "slug": "testing_qa",
+                    "modules": [
+                        {
+                            "name": "unittest",
+                            "slug": "unittest"
+                        },
+                        {
+                            "name": "pytest",
+                            "slug": "pytest"
+                        },
+                        {
+                            "name": "Mocking",
+                            "slug": "mocking"
+                        },
+                        {
+                            "name": "Code Coverage",
+                            "slug": "code_coverage"
+                        },
+                        {
+                            "name": "Linting & Formatting",
+                            "slug": "linting"
+                        }
+                    ]
+                },
+                {
+                    "hidden": false,
+                    "name": "AI & ML",
+                    "slug": "ai_ml",
+                    "modules": [
+                        {
+                            "name": "Machine Learning Basics",
+                            "slug": "ml_basics"
+                        },
+                        {
+                            "name": "scikit-learn",
+                            "slug": "scikit_learn"
+                        },
+                        {
+                            "name": "Neural Networks Concepts",
+                            "slug": "neural_networks"
+                        },
+                        {
+                            "name": "TensorFlow / PyTorch",
+                            "slug": "tensorflow_pytorch"
+                        },
+                        {
+                            "name": "Model Evaluation",
+                            "slug": "model_evaluation"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "name": "Database",
-          "slug": "database",
-          "modules": [
-            { "name": "SQLite & MySQL", "slug": "sqlite_and_mysql"},
-            { "name": "PostgreSQL", "slug": "postgresql"},
-            { "name": "SQLAlchemy ORM", "slug": "sqlalchemy"},
-            { "name": "Raw SQL & Cursors", "slug": "raw_sql_cursors"},
-            { "name": "Database Migrations", "slug": "migrations"},
-            { "name": "Transactions and Isolation", "slug": "transactions_and_isolation"}
-          ]
+            "name": "JavaScript",
+            "slug": "javascript",
+            "icon": "fa-brands fa-node-js",
+            "subtopics": [
+                {
+                    "name": "Core JS",
+                    "slug": "core",
+                    "modules": [
+                        {
+                            "name": "Basics",
+                            "slug": "basics"
+                        },
+                        {
+                            "name": "Data Types & Operators",
+                            "slug": "data_types_and_operators"
+                        },
+                        {
+                            "name": "Control Flow",
+                            "slug": "control_flow"
+                        },
+                        {
+                            "name": "Functions & Scope",
+                            "slug": "functions_and_scope"
+                        },
+                        {
+                            "name": "Objects & Prototypes",
+                            "slug": "objects_and_prototypes"
+                        },
+                        {
+                            "name": "Arrays & Collections",
+                            "slug": "arrays_and_collections"
+                        },
+                        {
+                            "name": "Async & Promises",
+                            "slug": "async_and_promises"
+                        },
+                        {
+                            "name": "Errors & Debugging",
+                            "slug": "errors_and_debugging"
+                        },
+                        {
+                            "name": "ES6+ Features",
+                            "slug": "es6_and_beyond"
+                        }
+                    ]
+                },
+                {
+                    "name": "Browser",
+                    "slug": "browser",
+                    "modules": [
+                        {
+                            "name": "DOM & Events",
+                            "slug": "dom_and_events"
+                        },
+                        {
+                            "name": "Fetch & AJAX",
+                            "slug": "fetch_and_ajax"
+                        },
+                        {
+                            "name": "Web APIs",
+                            "slug": "web_apis"
+                        },
+                        {
+                            "name": "Browser Storage",
+                            "slug": "browser_storage"
+                        },
+                        {
+                            "name": "Browser Security",
+                            "slug": "browser_security"
+                        },
+                        {
+                            "name": "Performance and Rendering",
+                            "slug": "performance_and_rendering"
+                        },
+                        {
+                            "name": "Forms & User Input",
+                            "slug": "forms_and_input"
+                        },
+                        {
+                            "name": "Browser Modules",
+                            "slug": "browser_modules"
+                        },
+                        {
+                            "name": "Service Workers & PWA",
+                            "slug": "service_workers_and_pwa"
+                        },
+                        {
+                            "name": "Web Workers",
+                            "slug": "web_workers"
+                        },
+                        {
+                            "name": "Media & Graphics",
+                            "slug": "media_and_graphics"
+                        }
+                    ]
+                },
+                {
+                    "name": "Node.js",
+                    "slug": "node",
+                    "modules": [
+                        {
+                            "name": "Node Core Modules",
+                            "slug": "node_core_modules"
+                        },
+                        {
+                            "name": "File System & Process",
+                            "slug": "filesystem_and_process"
+                        },
+                        {
+                            "name": "Event Loop & Async Model",
+                            "slug": "event_loop_and_async"
+                        },
+                        {
+                            "name": "Modules & Packages",
+                            "slug": "modules_and_packages"
+                        },
+                        {
+                            "name": "Networking & HTTP",
+                            "slug": "networking_and_http"
+                        },
+                        {
+                            "name": "Streams & Buffers",
+                            "slug": "streams_and_buffers"
+                        },
+                        {
+                            "name": "Errors & Debugging",
+                            "slug": "errors_and_debugging"
+                        },
+                        {
+                            "name": "Environment & Configuration",
+                            "slug": "environment_and_config"
+                        },
+                        {
+                            "name": "Child Processes & Workers",
+                            "slug": "child_processes_and_workers"
+                        },
+                        {
+                            "name": "Node Security",
+                            "slug": "node_security"
+                        }
+                    ]
+                },
+                {
+                    "name": "Advanced JS",
+                    "slug": "advanced_js",
+                    "modules": [
+                        {
+                            "name": "Functional Programming",
+                            "slug": "functional_programming"
+                        },
+                        {
+                            "name": "Object-Oriented JS",
+                            "slug": "oop"
+                        },
+                        {
+                            "name": "Design Patterns",
+                            "slug": "design_patterns"
+                        },
+                        {
+                            "name": "Performance Optimization",
+                            "slug": "performance_optimization"
+                        },
+                        {
+                            "name": "Type Systems",
+                            "slug": "type_systems"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "name": "Web",
-          "slug": "web",
-          "modules": [
-            { "name": "Flask Basics", "slug": "flask"},
-            { "name": "Django Basics", "slug": "django"},
-            { "name": "REST APIs and FastAPI", "slug": "rest_api_fastapi"},
-            { "name": "Jinja2 Templating", "slug": "jinja2_templating"},
-            { "name": "Authentication & Sessions", "slug": "auth_sessions"}
-          ]
+            "name": "Web Development",
+            "slug": "webdev",
+            "icon": "fa fa-laptop",
+            "subtopics": [
+                {
+                    "name": "Fundamentals & Styling",
+                    "slug": "fundas",
+                    "modules": [
+                        {
+                            "name": "Semantic HTML",
+                            "slug": "semantic_html",
+                            "descn": "Focused on accessibility (ARIA), SEO impact, and using the right tags for the right jobs (beyond just div)."
+                        },
+                        {
+                            "name": "DOM API",
+                            "slug": "dom_api",
+                            "descn": "Core browser interaction: Event bubbling, selectors, localStorage, and the Critical Rendering Path."
+                        },
+                        {
+                            "name": "CSS Layout",
+                            "slug": "css_layout",
+                            "descn": "A deep dive into Flexbox and CSS Grid logic (alignment, spanning, and responsiveness)."
+                        },
+                        {
+                            "name": "Tailwind CSS",
+                            "slug": "tailwind",
+                            "descn": "Utility-first CSS framework: Utility classes, responsive design, configuration, and JIT engine."
+                        },
+                        {
+                            "name": "CSS Architecture",
+                            "slug": "css_architecture",
+                            "descn": "CSS Variables, BEM naming conventions, preprocessors (SASS/PostCSS), and Cascade Layers."
+                        }
+                    ]
+                },
+                {
+                    "name": "Frontend Frameworks & State",
+                    "slug": "frameworks_state",
+                    "modules": [
+                        {
+                            "name": "React Basics",
+                            "slug": "react",
+                            "descn": "Component lifecycle, Hooks (useState, useEffect), Props, and Virtual DOM reconciliation."
+                        },
+                        {
+                            "name": "State Mgmt",
+                            "slug": "state_management",
+                            "descn": "Redux, Context API, signals, and server-state management."
+                        },
+                        {
+                            "name": "Forms Validation",
+                            "slug": "forms_validation",
+                            "descn": "Controlled vs. uncontrolled components, FormData API, and client-side validation logic."
+                        },
+                        {
+                            "name": "Performance",
+                            "slug": "performance",
+                            "descn": "Core Web Vitals (LCP, FID, CLS), code-splitting, lazy loading, and image optimization."
+                        },
+                        {
+                            "name": "Browser Security",
+                            "slug": "browser_security",
+                            "descn": "Same-Origin Policy, CORS, Content Security Policy (CSP), and preventing XSS/CSRF."
+                        },
+                        {
+                            "name": "Caching Strategies",
+                            "slug": "caching_strategies",
+                            "descn": "Service Workers, HTTP Cache headers (ETag, Cache-Control), and Progressive Web Apps (PWA)."
+                        }
+                    ]
+                },
+                {
+                    "name": "Deployment & Ecosystem",
+                    "slug": "deploy",
+                    "modules": [
+                        {
+                            "name": "SSG/SSR",
+                            "slug": "ssg_ssr",
+                            "descn": "The differences between Static Site Generation, Server-Side Rendering, and Incremental Static Regeneration."
+                        },
+                        {
+                            "name": "Testing Library",
+                            "slug": "testing_lib",
+                            "descn": "Testing components with Vitest or Jest and the React Testing Library (focusing on user-centric testing)."
+                        }
+                    ]
+                },
+                {
+                    "name": "Modern Architecture & Tooling",
+                    "slug": "modern_arch",
+                    "modules": [
+                        {
+                            "name": "Local-First Ops",
+                            "slug": "local_first",
+                            "descn": "Architecting apps using SQLite/WASM, OPFS for persistence, and synchronization strategies for offline capability."
+                        },
+                        {
+                            "name": "Build Internals",
+                            "slug": "build_internals",
+                            "descn": "The mechanics of ESM, tree-shaking, transpilation (Babel/SWC), and why Vite's HMR is faster than traditional bundlers."
+                        },
+                        {
+                            "name": "API Patterns",
+                            "slug": "api_patterns",
+                            "descn": "Comparing REST, GraphQL, and tRPC: Type-safety across the wire and efficient data fetching (Batching/Throttling)."
+                        },
+                        {
+                            "name": "Edge Computing & Isolates",
+                            "slug": "edge_isolates",
+                            "descn": "Understanding Isolate-based runtimes, global distribution, and low-latency data storage using D1 or KV."
+                        },
+                        {
+                            "name": "Reactive State & Signals",
+                            "slug": "state_signals",
+                            "descn": "Comparing global stores to signal-based reactivity and managing complex UI states with Finite State Machines."
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "name": "Data Science",
-          "slug": "data_science",
-          "modules": [
-            { "name": "NumPy", "slug": "numpy"},
-            { "name": "Pandas", "slug": "pandas"},
-            { "name": "Data Visualization", "slug": "data_visualization"},
-            { "name": "Statistics Basics", "slug": "statistics"},
-            { "name": "Jupyter Notebooks", "slug": "jupyter_notebooks"}
-          ]
-        },
-        {
-          "name": "System & OS",
-          "slug": "system_and_os",
-          "modules": [
-            { "name": "os & sys Modules", "slug": "os_and_sys"},
-            { "name": "Subprocess", "slug": "subprocess"},
-            { "name": "Environment Variables", "slug": "environment_vars"},
-            { "name": "File System Operations", "slug": "file_system"},
-            { "name": "Automation Scripts", "slug": "automation"}
-          ]
-        },
-        {
-          "name": "Networking",
-          "slug": "networking",
-          "modules": [
-            { "name": "Sockets", "slug": "sockets"},
-            { "name": "HTTP Clients", "slug": "http"},
-            { "name": "Async Networking", "slug": "async"},
-            { "name": "Requests vs aiohttp", "slug": "requests_aiohttp"}
-          ]
-        },
-        {
-          "name": "Packaging & Distribution",
-          "slug": "packaging_and_distribution",
-          "modules": [
-            { "name": "venv & virtualenv", "slug": "venv"},
-            { "name": "pip & pipx", "slug": "pip"},
-            { "name": "setup.py & pyproject.toml", "slug": "setuppy"},
-            { "name": "Wheels & Publishing", "slug": "wheels"}
-          ]
-        },
-        {
-          "name": "Testing & Quality",
-          "slug": "testing_qa",
-          "modules": [
-            { "name": "unittest", "slug": "unittest"},
-            { "name": "pytest", "slug": "pytest"},
-            { "name": "Mocking", "slug": "mocking"},
-            { "name": "Code Coverage", "slug": "code_coverage"},
-            { "name": "Linting & Formatting", "slug": "linting"}
-          ]
-        },
-        {
-          "hidden": false,
-          "name": "AI & ML",
-          "slug": "ai_ml",
-          "modules": [
-            { "name": "Machine Learning Basics", "slug": "ml_basics"},
-            { "name": "scikit-learn", "slug": "scikit_learn"},
-            { "name": "Neural Networks Concepts", "slug": "neural_networks"},
-            { "name": "TensorFlow / PyTorch", "slug": "tensorflow_pytorch"},
-            { "name": "Model Evaluation", "slug": "model_evaluation"}
-          ]
-        }		
-      ]
-    },
-    {
-      "name": "JavaScript",
-      "slug": "javascript",
-      "icon": "fa-brands fa-node-js",
-      "subtopics": [
-        {
-          "name": "Core JS",
-          "slug": "core",
-          "modules": [
-            { "name": "Basics", "slug": "basics"},
-            { "name": "Data Types & Operators", "slug": "data_types_and_operators"},
-            { "name": "Control Flow", "slug": "control_flow"},
-            { "name": "Functions & Scope", "slug": "functions_and_scope"},
-            { "name": "Objects & Prototypes", "slug": "objects_and_prototypes"},
-            { "name": "Arrays & Collections", "slug": "arrays_and_collections"},
-            { "name": "Async & Promises", "slug": "async_and_promises"},
-            { "name": "Errors & Debugging", "slug": "errors_and_debugging"},
-            { "name": "ES6+ Features", "slug": "es6_and_beyond"}
-          ]
-        },
-        {
-          "name": "Browser",
-          "slug": "browser",
-          "modules": [
-            { "name": "DOM & Events", "slug": "dom_and_events"},
-            { "name": "Fetch & AJAX", "slug": "fetch_and_ajax"},
-            { "name": "Web APIs", "slug": "web_apis"},
-            { "name": "Browser Storage", "slug": "browser_storage"},
-            { "name": "Browser Security", "slug": "browser_security" },
-            { "name": "Performance and Rendering", "slug": "performance_and_rendering" },
-            { "name": "Forms & User Input", "slug": "forms_and_input"},
-            { "name": "Browser Modules", "slug": "browser_modules"},
-            { "name": "Service Workers & PWA", "slug": "service_workers_and_pwa"},
-            { "name": "Web Workers", "slug": "web_workers"},
-            { "name": "Media & Graphics", "slug": "media_and_graphics"}
-          ]
-        },
-        {
-          "name": "Node.js",
-          "slug": "node",
-          "modules": [
-            { "name": "Node Core Modules", "slug": "node_core_modules"},
-            { "name": "File System & Process", "slug": "filesystem_and_process" },
-            { "name": "Event Loop & Async Model", "slug": "event_loop_and_async" },
-            { "name": "Modules & Packages", "slug": "modules_and_packages" },
-            { "name": "Networking & HTTP", "slug": "networking_and_http" },
-            { "name": "Streams & Buffers", "slug": "streams_and_buffers" },
-            { "name": "Errors & Debugging", "slug": "errors_and_debugging" },
-            { "name": "Environment & Configuration", "slug": "environment_and_config" },
-            { "name": "Child Processes & Workers", "slug": "child_processes_and_workers"},
-            { "name": "Node Security", "slug": "node_security" }
-          ]
-        },
-        {
-          "name": "Advanced JS",
-          "slug": "advanced_js",
-          "modules": [
-            { "name": "Functional Programming", "slug": "functional_programming" },
-            { "name": "Object-Oriented JS", "slug": "oop" },
-            { "name": "Design Patterns", "slug": "design_patterns" },
-            { "name": "Performance Optimization", "slug": "performance_optimization" },
-            { "name": "Type Systems", "slug": "type_systems" }
-          ]
+            "name": "PHP",
+            "slug": "php",
+            "icon": "fa-brands fa-php",
+            "subtopics": [
+                {
+                    "name": "Core PHP",
+                    "slug": "core",
+                    "modules": [
+                        {
+                            "name": "Syntax & Control structures",
+                            "slug": "syntax_control_struct",
+                            "descn": "Focus on modern alternatives like the match expression (PHP 8+) vs. switch, and strict comparison ===."
+                        },
+                        {
+                            "name": "Type System",
+                            "slug": "type_system",
+                            "descn": "Scalar type declarations (int, string, bool, float), Union types, Intersection types, and the mixed type."
+                        },
+                        {
+                            "name": "String & Array Manipulation",
+                            "slug": "string_array_manip",
+                            "descn": "Advanced array functions (array_map, array_reduce, array_filter) and multibyte string handling."
+                        },
+                        {
+                            "name": "Functions & Scope",
+                            "slug": "functions_scope",
+                            "descn": "Closures, Arrow functions (fn() =>), and the use keyword for capturing scope."
+                        },
+                        {
+                            "name": "Generators & Iterables",
+                            "slug": "generators_iterables",
+                            "descn": "Memory-efficient data handling using yield and yield from."
+                        },
+                        {
+                            "name": "Error & Exception Handling",
+                            "slug": "error_exception_handling",
+                            "descn": "Try-catch-finally blocks, custom Exception classes, and the Throwable interface."
+                        },
+                        {
+                            "name": "OOP Basics",
+                            "slug": "oop_basics",
+                            "descn": "Classes, Visibility (public/private/protected), and Constructor Property Promotion (PHP 8+)."
+                        },
+                        {
+                            "name": "Interfaces & Traits",
+                            "slug": "interfaces_traits",
+                            "descn": "Decoupling logic using Interfaces and code reuse via Traits without the 'fragile base class' problem."
+                        },
+                        {
+                            "name": "Attributes (Metadata)",
+                            "slug": "attributes_metadata",
+                            "descn": "Using native PHP 8 attributes instead of traditional DocBlock annotations for routing or validation logic."
+                        },
+                        {
+                            "name": "Data Sanitization",
+                            "slug": "data_sanitization",
+                            "descn": "filter_var, htmlspecialchars, and secure input handling to prevent XSS."
+                        },
+                        {
+                            "name": "Cryptography",
+                            "slug": "cryptography",
+                            "descn": "Modern password hashing using password_hash() and password_verify() rather than legacy MD5/SHA1."
+                        },
+                        {
+                            "name": "Configuration & Superglobals",
+                            "slug": "configuration_superglobals",
+                            "descn": "Proper use of $_SESSION, $_COOKIE, and understanding the lifecycle of a PHP request."
+                        },
+                        {
+                            "name": "SPL (Standard PHP Library)",
+                            "slug": "spl",
+                            "descn": "Useful data structures like SplStack, SplQueue, and FileSystem iterators."
+                        },
+                        {
+                            "name": "Date & Time",
+                            "slug": "date_time",
+                            "descn": "Working with the DateTimeImmutable class and timezone handling."
+                        }
+                    ]
+                },
+                {
+                    "name": "Databases & Persistence",
+                    "slug": "persistence",
+                    "modules": [
+                        {
+                            "name": "PDO & Prepared Statements",
+                            "slug": "pdo_prepared",
+                            "descn": "Secure database interaction using PDO, named parameters, and preventing SQL injection."
+                        },
+                        {
+                            "name": "Transactions & Locking",
+                            "slug": "db_transactions",
+                            "descn": "Managing ACID properties, commit/rollback logic, and row-level locking."
+                        },
+                        {
+                            "name": "ORMs & Data Mapping",
+                            "slug": "object_relational_mapping",
+                            "descn": "Focuses on how modern frameworks abstract database interactions into object-oriented models, evaluating performance choices and structural design patterns."
+                        },
+                        {
+                            "name": "Performance & Hydration Bottlenecks",
+                            "slug": "query_optimization_nplusone",
+                            "descn": "Addresses the single biggest performance killer in application persistence layers: unoptimized database retrieval loops."
+                        },
+                        {
+                            "name": "Database Version Control",
+                            "slug": "migrations_schema_management",
+                            "descn": "Evaluates programmatic database schema evolution, safe deployments, and structural consistency across distributed environments."
+                        },
+                        {
+                            "name": "NoSQL Integration & Key-Value Caching",
+                            "slug": "nosql_caching_layers",
+                            "descn": "Covers scenarios where relational databases are augmented or replaced by alternative persistence and caching storage backends."
+                        }
+                    ]
+                },
+                {
+                    "name": "Ecosystem & Tooling",
+                    "slug": "ecosystem",
+                    "modules": [
+                        {
+                            "name": "Composer & Autoloading",
+                            "slug": "composer_autoload",
+                            "descn": "Dependency management, PSR-4 autoloading standards, and class maps."
+                        },
+                        {
+                            "name": "Testing (PHPUnit)",
+                            "slug": "testing_phpunit",
+                            "descn": "Unit testing basics, assertions, and mocking dependencies."
+                        },
+                        {
+                            "name": "PHP-FPM & Web Servers",
+                            "slug": "php_fpm_lifecycle",
+                            "descn": "How PHP-FPM interacts with Nginx/Apache and the request-response lifecycle."
+                        }
+                    ]
+                },
+                {
+                    "name": "Frameworks & Architecture",
+                    "slug": "frameworks_architecture",
+                    "modules": [
+                        {
+                            "name": "Laravel Core Concepts",
+                            "slug": "laravel_core",
+                            "descn": "Service Container, Service Providers, Facades, Eloquent ORM, and the Request Lifecycle (Kernel/Middleware)."
+                        },
+                        {
+                            "name": "Symfony Components & Internals",
+                            "slug": "symfony_internals",
+                            "descn": "HttpKernel, DependencyInjection Compiler Passes, EventDispatcher, and using standalone components outside full-stack."
+                        },
+                        {
+                            "name": "Domain-Driven Design (DDD) in PHP",
+                            "slug": "ddd_php",
+                            "descn": "Implementing Entities, Value Objects, Aggregates, Repositories, and Domain Events using modern PHP typing."
+                        },
+                        {
+                            "name": "Modular Monoliths & Package Architecture",
+                            "slug": "modular_monolith",
+                            "descn": "Structuring large apps via `packages/` or `modules/` directories, enforcing boundaries with Deptrac or PHPStan rules."
+                        },
+                        {
+                            "name": "Hybrid Full-Stack (Livewire, Inertia, HTMX)",
+                            "slug": "hybrid_fullstack",
+                            "descn": "Building reactive UIs without a separate SPA: Server-side rendering with client-side interactivity bridges."
+                        }
+                    ]
+                },
+                {
+                    "name": "Async & High Performance",
+                    "slug": "async_high_perf",
+                    "modules": [
+                        {
+                            "name": "Swoole / OpenSwoole & RoadRunner",
+                            "slug": "swoole_roadrunner",
+                            "descn": "Running PHP as a persistent application server (worker model), managing memory leaks, and coroutine handling."
+                        },
+                        {
+                            "name": "Laravel Octane & FrankenPHP",
+                            "slug": "octane_frankenphp",
+                            "descn": "Supercharging Laravel/Symfony via Swoole/RoadRunner/FrankenPHP: Warm boot, static file serving, and worker management."
+                        },
+                        {
+                            "name": "Fibers & Async Control Flow (PHP 8.1+)",
+                            "slug": "fibers_async",
+                            "descn": "Low-level interruption primitives: implementing non-blocking I/O, concurrency patterns, and scheduler integration."
+                        },
+                        {
+                            "name": "ReactPHP & Amp",
+                            "slug": "reactphp_amp",
+                            "descn": "Event-loop based async programming: Promises, Streams, and building non-blocking HTTP clients/servers without extensions."
+                        }
+                    ]
+                },
+                {
+                    "name": "API Development & Integration",
+                    "slug": "api_integration",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "REST API Design & Standards",
+                            "slug": "rest_design",
+                            "descn": "Resource modeling, HTTP semantics (ETag, Link headers), Problem Details (RFC 7807), and versioning strategies."
+                        },
+                        {
+                            "name": "GraphQL (Webonyx / Lighthouse)",
+                            "slug": "graphql_php",
+                            "descn": "Schema-first vs Code-first, N+1 solving via DataLoader, authorization directives, and federation."
+                        },
+                        {
+                            "name": "Authentication & Authorization (OAuth2, OIDC, JWT)",
+                            "slug": "auth_oidc_jwt",
+                            "descn": "Implementing Resource Servers, Introspection, JWKS rotation, and scopes/claims validation using `lcobucci/jwt` or `league/oauth2-server`."
+                        },
+                        {
+                            "name": "API Platform & OpenAPI",
+                            "slug": "api_platform_openapi",
+                            "descn": "Auto-generating OpenAPI/Swagger docs, Hydra/JSON-LD, and filtering/pagination/serialization groups."
+                        },
+                        {
+                            "name": "gRPC & Protobuf",
+                            "slug": "grpc_protobuf",
+                            "descn": "Contract-first RPC: Generating PHP stubs from `.proto` files, unary/streaming calls, and gRPC-Web for browsers."
+                        }
+                    ]
+                },
+                {
+                    "name": "Observability & DevOps",
+                    "slug": "observability_devops",
+                    "hidden": true,
+                    "modules": [
+                        {
+                            "name": "Structured Logging (Monolog & PSR-3)",
+                            "slug": "structured_logging",
+                            "descn": "JSON formatting, Logstash/Fluentd integration, context enrichment (request IDs, user IDs), and log levels strategy."
+                        },
+                        {
+                            "name": "Metrics & Tracing (OpenTelemetry)",
+                            "slug": "opentelemetry_php",
+                            "descn": "Auto-instrumentation vs manual spans, exporting to Jaeger/Zipkin/Prometheus, and correlating logs/traces/metrics."
+                        },
+                        {
+                            "name": "Docker & CI/CD for PHP",
+                            "slug": "docker_ci_cd",
+                            "descn": "Multi-stage builds (Composer layer caching), FrankenPHP static binaries, GitHub Actions/GitLab CI pipelines, and zero-downtime deployments."
+                        },
+                        {
+                            "name": "Queue Workers & Background Jobs",
+                            "slug": "queue_workers",
+                            "descn": "Redis/RabbitMQ/Database drivers, delayed jobs, batching, idempotency, horizon/supervisor management, and handling poison pills."
+                        },
+                        {
+                            "name": "Feature Flags & Configuration",
+                            "slug": "feature_flags_config",
+                            "descn": "Runtime toggling (LaunchDarkly, Unleash, or custom), environment-specific config (`.env` vs PHP config files), and secrets management (Vault, AWS SM)."
+                        }
+                    ]
+                },
+                {
+                    "name": "Code Quality & Modernization",
+                    "slug": "code_quality_modernization",
+                    "hidden": true,
+                    "modules": [
+                        {
+                            "name": "Static Analysis (PHPStan / Psalm)",
+                            "slug": "static_analysis",
+                            "descn": "Configuring baseline files, generics annotations, dead code detection, and running in CI to catch bugs pre-runtime."
+                        },
+                        {
+                            "name": "Automated Refactoring (Rector)",
+                            "slug": "rector_refactoring",
+                            "descn": "Upgrading PHP versions automatically (7.4 -> 8.3), modernizing syntax (typedefs, promoted props), and custom rules for codebase consistency."
+                        },
+                        {
+                            "name": "Coding Standards & Style (PHP_CodeSniffer / Pint)",
+                            "slug": "coding_standards",
+                            "descn": "PSR-12 enforcement, Laravel Pint (opinionated), custom sniffs for architectural rules (e.g. no `dd()` in prod)."
+                        },
+                        {
+                            "name": "Mutation Testing (Infection)",
+                            "slug": "mutation_testing",
+                            "descn": "Measuring test suite effectiveness by injecting bugs (mutants) and verifying tests catch them."
+                        },
+                        {
+                            "name": "Legacy Migration Strategies",
+                            "slug": "legacy_migration",
+                            "descn": "Strangler Fig pattern, running dual PHP versions (PHP-FPM + FrankenPHP), polyfills (symfony/polyfill), and deprecation handling."
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-	{
-      "name": "Web Development",
-      "slug": "webdev",
-      "icon": "fa fa-laptop",
-	  "subtopics": [
-		{
-			"name": "Fundamentals & Styling",
-			"slug": "fundas",
-			"modules": [
-				{"name": "Semantic HTML", "slug": "semantic_html", "descn": "Focused on accessibility (ARIA), SEO impact, and using the right tags for the right jobs (beyond just div)."},
-				{"name": "DOM API", "slug": "dom_api", "descn": "Core browser interaction: Event bubbling, selectors, localStorage, and the Critical Rendering Path."},
-				{"name": "CSS Layout", "slug": "css_layout", "descn": "A deep dive into Flexbox and CSS Grid logic (alignment, spanning, and responsiveness)."},
-				{"name": "Tailwind CSS", "slug": "tailwind", "descn": "Utility-first CSS framework: Utility classes, responsive design, configuration, and JIT engine."},
-				{"name": "CSS Architecture", "slug": "css_architecture", "descn": "CSS Variables, BEM naming conventions, preprocessors (SASS/PostCSS), and Cascade Layers."}
-			]
-		}, 
-		{
-			"name": "Frontend Frameworks & State",
-			"slug": "frameworks_state",
-			"modules": [
-				{"name": "React Basics", "slug": "react", "descn": "Component lifecycle, Hooks (useState, useEffect), Props, and Virtual DOM reconciliation."},
-				{"name": "State Mgmt", "slug": "state_management", "descn": "Redux, Context API, signals, and server-state management."},
-				{"name": "Forms Validation", "slug": "forms_validation", "descn": "Controlled vs. uncontrolled components, FormData API, and client-side validation logic."},
-				{"name": "Performance", "slug": "performance", "descn": "Core Web Vitals (LCP, FID, CLS), code-splitting, lazy loading, and image optimization."},
-				{"name": "Browser Security", "slug": "browser_security", "descn": "Same-Origin Policy, CORS, Content Security Policy (CSP), and preventing XSS/CSRF."},
-				{"name": "Caching Strategies", "slug": "caching_strategies", "descn": "Service Workers, HTTP Cache headers (ETag, Cache-Control), and Progressive Web Apps (PWA)."}
-			]
-		},
-		{
-			"name": "Deployment & Ecosystem",
-			"slug": "deploy",
-			"modules": [
-				{"name": "SSG/SSR", "slug": "ssg_ssr", "descn": "The differences between Static Site Generation, Server-Side Rendering, and Incremental Static Regeneration."},
-				{"name": "Testing Library", "slug": "testing_lib", "descn": "Testing components with Vitest or Jest and the React Testing Library (focusing on user-centric testing)."}
-			]
-		},
-		{
-		  "name": "Modern Architecture & Tooling",
-		  "slug": "modern_arch",
-		  "modules": [
-			{
-			  "name": "Local-First Ops",
-			  "slug": "local_first",
-			  "descn": "Architecting apps using SQLite/WASM, OPFS for persistence, and synchronization strategies for offline capability."
-			},
-			{
-			  "name": "Build Internals",
-			  "slug": "build_internals",
-			  "descn": "The mechanics of ESM, tree-shaking, transpilation (Babel/SWC), and why Vite's HMR is faster than traditional bundlers."
-			},
-			{
-			  "name": "API Patterns",
-			  "slug": "api_patterns",
-			  "descn": "Comparing REST, GraphQL, and tRPC: Type-safety across the wire and efficient data fetching (Batching/Throttling)."
-			},
-			{
-			  "name": "Edge Computing & Isolates",
-			  "slug": "edge_isolates",
-			  "descn": "Understanding Isolate-based runtimes, global distribution, and low-latency data storage using D1 or KV."
-			},
-			{
-			  "name": "Reactive State & Signals",
-			  "slug": "state_signals",
-			  "descn": "Comparing global stores to signal-based reactivity and managing complex UI states with Finite State Machines."
-			}
-		  ]
-		}
-	  ]
-	},
-	{
-      "name": "PHP",
-      "slug": "php",
-      "icon": "fa-brands fa-php",
-	  "subtopics": [
-		{
-		  "name": "Core PHP",
-		  "slug": "core",
-		  "modules": [
-			  {
-				  "name": "Syntax & Control structures",
-				  "slug": "syntax_control_struct",
-				  "descn": "Focus on modern alternatives like the match expression (PHP 8+) vs. switch, and strict comparison ===."
-			  },
-			  {
-				  "name": "Type System",
-				  "slug": "type_system",
-				  "descn": "Scalar type declarations (int, string, bool, float), Union types, Intersection types, and the mixed type."
-			  },
-			  {
-				  "name": "String & Array Manipulation",
-				  "slug": "string_array_manip",
-				  "descn": "Advanced array functions (array_map, array_reduce, array_filter) and multibyte string handling."
-			  },
-			  {
-				  "name": "Functions & Scope",
-				  "slug": "functions_scope",
-				  "descn": "Closures, Arrow functions (fn() =>), and the use keyword for capturing scope."
-			  },
-			  {
-				  "name": "Generators & Iterables",
-				  "slug": "generators_iterables",
-				  "descn": "Memory-efficient data handling using yield and yield from."
-			  },
-			  {
-				  "name": "Error & Exception Handling",
-				  "slug": "error_exception_handling",
-				  "descn": "Try-catch-finally blocks, custom Exception classes, and the Throwable interface."
-			  },
-			  {
-				  "name": "OOP Basics",
-				  "slug": "oop_basics",
-				  "descn": "Classes, Visibility (public/private/protected), and Constructor Property Promotion (PHP 8+)."
-			  },
-			  {
-				  "name": "Interfaces & Traits",
-				  "slug": "interfaces_traits",
-				  "descn": "Decoupling logic using Interfaces and code reuse via Traits without the 'fragile base class' problem."
-			  },
-			  {
-				  "name": "Attributes (Metadata)",
-				  "slug": "attributes_metadata",
-				  "descn": "Using native PHP 8 attributes instead of traditional DocBlock annotations for routing or validation logic."
-			  },
-			  {
-				  "name": "Data Sanitization",
-				  "slug": "data_sanitization",
-				  "descn": "filter_var, htmlspecialchars, and secure input handling to prevent XSS."
-			  },
-			  {
-				  "name": "Cryptography",
-				  "slug": "cryptography",
-				  "descn": "Modern password hashing using password_hash() and password_verify() rather than legacy MD5/SHA1."
-			  },
-			  {
-				  "name": "Configuration & Superglobals",
-				  "slug": "configuration_superglobals",
-				  "descn": "Proper use of $_SESSION, $_COOKIE, and understanding the lifecycle of a PHP request."
-			  },
-			  {
-				  "name": "SPL (Standard PHP Library)",
-				  "slug": "spl",
-				  "descn": "Useful data structures like SplStack, SplQueue, and FileSystem iterators."
-			  },
-			  {
-				  "name": "Date & Time",
-				  "slug": "date_time",
-				  "descn": "Working with the DateTimeImmutable class and timezone handling."
-			  }
-		  ]
-		},
-		{
-		  "name": "Databases & Persistence",
-		  "slug": "persistence",
-		  "modules": [
-			{
-			  "name": "PDO & Prepared Statements",
-			  "slug": "pdo_prepared",
-			  "descn": "Secure database interaction using PDO, named parameters, and preventing SQL injection."
-			},
-			{
-			  "name": "Transactions & Locking",
-			  "slug": "db_transactions",
-			  "descn": "Managing ACID properties, commit/rollback logic, and row-level locking."
-			},
-			{
-			  "name": "ORMs & Data Mapping",
-			  "slug": "object_relational_mapping",
-			  "descn": "Focuses on how modern frameworks abstract database interactions into object-oriented models, evaluating performance choices and structural design patterns."
-			},
-			{
-			  "name": "Performance & Hydration Bottlenecks",
-			  "slug": "query_optimization_nplusone",
-			  "descn": "Addresses the single biggest performance killer in application persistence layers: unoptimized database retrieval loops."
-			},
-			{
-			  "name": "Database Version Control",
-			  "slug": "migrations_schema_management",
-			  "descn": "Evaluates programmatic database schema evolution, safe deployments, and structural consistency across distributed environments."
-			},
-			{
-			  "name": "NoSQL Integration & Key-Value Caching",
-			  "slug": "nosql_caching_layers",
-			  "descn": "Covers scenarios where relational databases are augmented or replaced by alternative persistence and caching storage backends."
-			}
-		  ]
-		},
-		{
-		  "name": "Ecosystem & Tooling",
-		  "slug": "ecosystem",
-		  "modules": [
-			{
-			  "name": "Composer & Autoloading",
-			  "slug": "composer_autoload",
-			  "descn": "Dependency management, PSR-4 autoloading standards, and class maps."
-			},
-			{
-			  "name": "Testing (PHPUnit)",
-			  "slug": "testing_phpunit",
-			  "descn": "Unit testing basics, assertions, and mocking dependencies."
-			},
-			{
-			  "name": "PHP-FPM & Web Servers",
-			  "slug": "php_fpm_lifecycle",
-			  "descn": "How PHP-FPM interacts with Nginx/Apache and the request-response lifecycle."
-			}
-		  ]
-		}		
-
-		,
-		{
-		  "name": "Frameworks & Architecture",
-		  "slug": "frameworks_architecture",
-		  "modules": [
-			{
-			  "name": "Laravel Core Concepts",
-			  "slug": "laravel_core",
-			  "descn": "Service Container, Service Providers, Facades, Eloquent ORM, and the Request Lifecycle (Kernel/Middleware)."
-			},
-			{
-			  "name": "Symfony Components & Internals",
-			  "slug": "symfony_internals",
-			  "descn": "HttpKernel, DependencyInjection Compiler Passes, EventDispatcher, and using standalone components outside full-stack."
-			},
-			{
-			  "name": "Domain-Driven Design (DDD) in PHP",
-			  "slug": "ddd_php",
-			  "descn": "Implementing Entities, Value Objects, Aggregates, Repositories, and Domain Events using modern PHP typing."
-			},
-			{
-			  "name": "Modular Monoliths & Package Architecture",
-			  "slug": "modular_monolith",
-			  "descn": "Structuring large apps via `packages/` or `modules/` directories, enforcing boundaries with Deptrac or PHPStan rules."
-			},
-			{
-			  "name": "Hybrid Full-Stack (Livewire, Inertia, HTMX)",
-			  "slug": "hybrid_fullstack",
-			  "descn": "Building reactive UIs without a separate SPA: Server-side rendering with client-side interactivity bridges."
-			}
-		  ]
-		},
-		{
-		  "name": "Async & High Performance",
-		  "slug": "async_high_perf",
-		  "modules": [
-			{
-			  "name": "Swoole / OpenSwoole & RoadRunner",
-			  "slug": "swoole_roadrunner",
-			  "descn": "Running PHP as a persistent application server (worker model), managing memory leaks, and coroutine handling."
-			},
-			{
-			  "name": "Laravel Octane & FrankenPHP",
-			  "slug": "octane_frankenphp",
-			  "descn": "Supercharging Laravel/Symfony via Swoole/RoadRunner/FrankenPHP: Warm boot, static file serving, and worker management."
-			},
-			{
-			  "name": "Fibers & Async Control Flow (PHP 8.1+)",
-			  "slug": "fibers_async",
-			  "descn": "Low-level interruption primitives: implementing non-blocking I/O, concurrency patterns, and scheduler integration."
-			},
-			{
-			  "name": "ReactPHP & Amp",
-			  "slug": "reactphp_amp",
-			  "descn": "Event-loop based async programming: Promises, Streams, and building non-blocking HTTP clients/servers without extensions."
-			}
-		  ]
-		},
-		{
-		  "name": "API Development & Integration",
-		  "slug": "api_integration",
-		  "hidden": true,
-		  "modules": [
-			{
-			  "name": "REST API Design & Standards",
-			  "slug": "rest_design",
-			  "descn": "Resource modeling, HTTP semantics (ETag, Link headers), Problem Details (RFC 7807), and versioning strategies."
-			},
-			{
-			  "name": "GraphQL (Webonyx / Lighthouse)",
-			  "slug": "graphql_php",
-			  "descn": "Schema-first vs Code-first, N+1 solving via DataLoader, authorization directives, and federation."
-			},
-			{
-			  "name": "Authentication & Authorization (OAuth2, OIDC, JWT)",
-			  "slug": "auth_oidc_jwt",
-			  "descn": "Implementing Resource Servers, Introspection, JWKS rotation, and scopes/claims validation using `lcobucci/jwt` or `league/oauth2-server`."
-			},
-			{
-			  "name": "API Platform & OpenAPI",
-			  "slug": "api_platform_openapi",
-			  "descn": "Auto-generating OpenAPI/Swagger docs, Hydra/JSON-LD, and filtering/pagination/serialization groups."
-			},
-			{
-			  "name": "gRPC & Protobuf",
-			  "slug": "grpc_protobuf",
-			  "descn": "Contract-first RPC: Generating PHP stubs from `.proto` files, unary/streaming calls, and gRPC-Web for browsers."
-			}
-		  ]
-		},
-		{
-		  "name": "Observability & DevOps",
-		  "slug": "observability_devops",
-		  "hidden": true,
-		  "modules": [
-			{
-			  "name": "Structured Logging (Monolog & PSR-3)",
-			  "slug": "structured_logging",
-			  "descn": "JSON formatting, Logstash/Fluentd integration, context enrichment (request IDs, user IDs), and log levels strategy."
-			},
-			{
-			  "name": "Metrics & Tracing (OpenTelemetry)",
-			  "slug": "opentelemetry_php",
-			  "descn": "Auto-instrumentation vs manual spans, exporting to Jaeger/Zipkin/Prometheus, and correlating logs/traces/metrics."
-			},
-			{
-			  "name": "Docker & CI/CD for PHP",
-			  "slug": "docker_ci_cd",
-			  "descn": "Multi-stage builds (Composer layer caching), FrankenPHP static binaries, GitHub Actions/GitLab CI pipelines, and zero-downtime deployments."
-			},
-			{
-			  "name": "Queue Workers & Background Jobs",
-			  "slug": "queue_workers",
-			  "descn": "Redis/RabbitMQ/Database drivers, delayed jobs, batching, idempotency, horizon/supervisor management, and handling poison pills."
-			},
-			{
-			  "name": "Feature Flags & Configuration",
-			  "slug": "feature_flags_config",
-			  "descn": "Runtime toggling (LaunchDarkly, Unleash, or custom), environment-specific config (`.env` vs PHP config files), and secrets management (Vault, AWS SM)."
-			}
-		  ]
-		},
-		{
-		  "name": "Code Quality & Modernization",
-		  "slug": "code_quality_modernization",
-		  "hidden": true,
-		  "modules": [
-			{
-			  "name": "Static Analysis (PHPStan / Psalm)",
-			  "slug": "static_analysis",
-			  "descn": "Configuring baseline files, generics annotations, dead code detection, and running in CI to catch bugs pre-runtime."
-			},
-			{
-			  "name": "Automated Refactoring (Rector)",
-			  "slug": "rector_refactoring",
-			  "descn": "Upgrading PHP versions automatically (7.4 -> 8.3), modernizing syntax (typedefs, promoted props), and custom rules for codebase consistency."
-			},
-			{
-			  "name": "Coding Standards & Style (PHP_CodeSniffer / Pint)",
-			  "slug": "coding_standards",
-			  "descn": "PSR-12 enforcement, Laravel Pint (opinionated), custom sniffs for architectural rules (e.g. no `dd()` in prod)."
-			},
-			{
-			  "name": "Mutation Testing (Infection)",
-			  "slug": "mutation_testing",
-			  "descn": "Measuring test suite effectiveness by injecting bugs (mutants) and verifying tests catch them."
-			},
-			{
-			  "name": "Legacy Migration Strategies",
-			  "slug": "legacy_migration",
-			  "descn": "Strangler Fig pattern, running dual PHP versions (PHP-FPM + FrankenPHP), polyfills (symfony/polyfill), and deprecation handling."
-			}
-		  ]
-		}
-	  ]
-	}
-  ]
+    ]
 }
