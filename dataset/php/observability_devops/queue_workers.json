@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "In PHP, which function starts a queue worker in Laravel?",
+            "o": [
+                "php artisan queue:work",
+                "php artisan worker:start",
+                "php queue:start",
+                "php artisan queue:begin"
+            ],
+            "a": 0,
+            "e": "The command 'php artisan queue:work' starts a queue worker to process jobs from the queue in Laravel."
+        },
+        {
+            "q": "What is the purpose of queue workers in a PHP application?",
+            "o": [
+                "To run scheduled tasks immediately",
+                "To process jobs asynchronously outside of HTTP request lifecycle",
+                "To manage database transactions",
+                "To optimize front-end performance"
+            ],
+            "a": 1,
+            "e": "Queue workers process tasks asynchronously so the application can handle long-running jobs without delaying user responses."
+        },
+        {
+            "q": "Which queue driver in Laravel uses PHP's 'database' for job storage?",
+            "o": [
+                "sync",
+                "database",
+                "redis",
+                "beanstalkd"
+            ],
+            "a": 1,
+            "e": "The 'database' queue driver stores jobs in a database table for processing by workers."
+        },
+        {
+            "q": "How can you monitor the status of your queue workers in production?",
+            "o": [
+                "Using Laravel Horizon for Redis queues",
+                "Running 'php artisan queue:status'",
+                "Checking logs manually only",
+                "No monitoring is available"
+            ],
+            "a": 0,
+            "e": "Laravel Horizon provides a dashboard and metrics to monitor Redis queue workers and job throughput."
+        },
+        {
+            "q": "Which PHP command restarts the queue worker gracefully to avoid dropping jobs?",
+            "o": [
+                "php artisan queue:restart",
+                "php artisan queue:refresh",
+                "php artisan queue:stop",
+                "php artisan worker:restart"
+            ],
+            "a": 0,
+            "e": "'php artisan queue:restart' signals all queue workers to restart after finishing their current job."
+        },
+        {
+            "q": "What environment variable is commonly set to control queue worker timeout in Laravel?",
+            "o": [
+                "QUEUE_WORKER_TIMEOUT",
+                "WORKER_TIMEOUT",
+                "QUEUE_TIMEOUT",
+                "QUEUE_WORKER_RETRY"
+            ],
+            "a": 2,
+            "e": "QUEUE_TIMEOUT sets the maximum number of seconds a worker can run before being killed."
+        },
+        {
+            "q": "In a PHP queue system, why is it important to handle failed jobs?",
+            "o": [
+                "To prevent memory leaks",
+                "To retry or log jobs that did not process correctly",
+                "To speed up the worker restarts",
+                "To avoid using the queue"
+            ],
+            "a": 1,
+            "e": "Handling failed jobs allows you to inspect errors and potentially retry failed tasks to maintain data integrity."
+        },
+        {
+            "q": "Which queue worker option makes it run continuously and wait for new jobs?",
+            "o": [
+                "--once",
+                "--daemon",
+                "--stop-when-empty",
+                "--listen"
+            ],
+            "a": 3,
+            "e": "The '--listen' option keeps the worker running and listening for new jobs instead of exiting after processing one."
+        },
+        {
+            "q": "How can you improve observability of queue workers in PHP applications?",
+            "o": [
+                "By logging job start, success, and failure events",
+                "By disabling logging to improve performance",
+                "By increasing PHP memory_limit only",
+                "By avoiding retries"
+            ],
+            "a": 0,
+            "e": "Logging key events in queue processing helps trace job processing and troubleshoot issues."
+        },
+        {
+            "q": "What is the impact of running multiple queue workers in a PHP app?",
+            "o": [
+                "Improved job throughput and parallel processing",
+                "Increased database deadlocks always",
+                "Slower overall processing",
+                "No difference compared to single worker"
+            ],
+            "a": 0,
+            "e": "Multiple workers can process multiple jobs simultaneously, improving throughput if resources allow."
+        }
+    ]
+}
