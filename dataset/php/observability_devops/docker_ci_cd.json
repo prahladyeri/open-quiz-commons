@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "Which PHP function allows you to enable the display of errors for observability during development?",
+            "o": [
+                "ini_set('display_errors', 1)",
+                "error_reporting(0)",
+                "set_error_handler(null)",
+                "disable_errors()"
+            ],
+            "a": 0,
+            "e": "Using ini_set('display_errors', 1) enables error display which helps debugging during development."
+        },
+        {
+            "q": "What is the main purpose of observability in DevOps?",
+            "o": [
+                "Monitor only CPU and memory usage",
+                "Provide insights into system behavior and root causes of issues",
+                "Deploy applications to production",
+                "Write unit tests"
+            ],
+            "a": 1,
+            "e": "Observability helps understand internal states of the system from external outputs, aiding root cause analysis."
+        },
+        {
+            "q": "In Docker, which file defines how the container image is built?",
+            "o": [
+                "Dockerfile",
+                "docker-compose.yml",
+                "container.conf",
+                "build.script"
+            ],
+            "a": 0,
+            "e": "A Dockerfile contains a set of instructions to build a Docker image."
+        },
+        {
+            "q": "What command is used to build a Docker image from a Dockerfile?",
+            "o": [
+                "docker build -t image_name .",
+                "docker run image_name",
+                "docker start image_name",
+                "docker compose build"
+            ],
+            "a": 0,
+            "e": "The 'docker build' command builds an image from a Dockerfile; -t tags the image."
+        },
+        {
+            "q": "Which Docker Compose section defines the services and how they run?",
+            "o": [
+                "volumes",
+                "networks",
+                "services",
+                "configs"
+            ],
+            "a": 2,
+            "e": "The 'services' section defines the containers to run, their images, ports, and environment."
+        },
+        {
+            "q": "What is CI/CD in DevOps?",
+            "o": [
+                "Continuous Integration and Continuous Deployment",
+                "Containerization and Infrastructure codification",
+                "Code Inspection and Code Documentation",
+                "Cluster Installation and Container Destruction"
+            ],
+            "a": 0,
+            "e": "CI/CD automates the process of integrating code changes and deploying them continuously."
+        },
+        {
+            "q": "Which tool is commonly used for CI/CD pipelines with Docker integration?",
+            "o": [
+                "Jenkins",
+                "PHPMyAdmin",
+                "Wireshark",
+                "Xdebug"
+            ],
+            "a": 0,
+            "e": "Jenkins integrates well with Docker to automate builds, tests, and deployments."
+        },
+        {
+            "q": "In PHP development, which extension is typically used to profile code performance for observability?",
+            "o": [
+                "Xdebug",
+                "cURL",
+                "PDO",
+                "GD"
+            ],
+            "a": 0,
+            "e": "Xdebug provides profiling and debugging features to analyze PHP application performance."
+        },
+        {
+            "q": "Which filename is commonly used as an entry point for CI/CD configuration on GitHub?",
+            "o": [
+                ".github/workflows/ci.yml",
+                "Dockerfile",
+                "jenkinsfile",
+                "Makefile"
+            ],
+            "a": 0,
+            "e": "GitHub Actions uses .github/workflows/*.yml files to configure CI/CD workflows."
+        },
+        {
+            "q": "How can you make a PHP container auto-reload code changes in a Docker container without rebuilding the image?",
+            "o": [
+                "Mount the source code folder as a volume to the container",
+                "Rebuild the image each time",
+                "Restart Docker daemon",
+                "Install a PHP extension"
+            ],
+            "a": 0,
+            "e": "Mounting code as a volume allows hot reload and development without image rebuilds."
+        },
+        {
+            "q": "Which HTTP status code generally signals a successful response in REST APIs monitored via observability tools?",
+            "o": [
+                "200",
+                "404",
+                "500",
+                "302"
+            ],
+            "a": 0,
+            "e": "200 OK indicates the request succeeded and is commonly monitored in observability dashboards."
+        },
+        {
+            "q": "In Docker, what does the 'EXPOSE' instruction in a Dockerfile do?",
+            "o": [
+                "Documents which port the container listens on at runtime",
+                "Opens ports on the host firewall",
+                "Runs the container on the specified port",
+                "Stops container if port is already in use"
+            ],
+            "a": 0,
+            "e": "EXPOSE does not publish the port but documents it for users and tools."
+        },
+        {
+            "q": "In a CI/CD pipeline, what is the purpose of a 'build' step?",
+            "o": [
+                "Compile source code and package application artifacts",
+                "Deploy code to production environment",
+                "Write unit tests",
+                "Monitor application logs"
+            ],
+            "a": 0,
+            "e": "The build step compiles and prepares code or artifacts for testing and deployment."
+        },
+        {
+            "q": "Which command runs a Docker container in detached mode?",
+            "o": [
+                "docker run -d image_name",
+                "docker start -i image_name",
+                "docker exec image_name",
+                "docker attach image_name"
+            ],
+            "a": 0,
+            "e": "The '-d' flag runs a container in the background (detached)."
+        },
+        {
+            "q": "What is the role of health checks in Docker containers for observability?",
+            "o": [
+                "Automatically verify if the application inside the container is running correctly",
+                "Encrypt container data",
+                "Backup container volumes",
+                "Scale container replicas"
+            ],
+            "a": 0,
+            "e": "Health checks provide runtime health status which aids monitoring and troubleshooting."
+        }
+    ]
+}
