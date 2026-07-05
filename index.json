@@ -785,7 +785,7 @@
                 {
                     "name": "Observability & DevOps",
                     "slug": "observability_devops",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Structured Logging (Monolog & PSR-3)",

@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the primary purpose of feature flags in PHP applications?",
+            "o": [
+                "To toggle functionalities on or off without deploying new code",
+                "To increase PHP execution speed",
+                "To encrypt sensitive data",
+                "To manage database connections"
+            ],
+            "a": 0,
+            "e": "Feature flags allow dynamic enabling or disabling of application features without redeploying code."
+        },
+        {
+            "q": "Which of the following best describes a common use case for feature flags in DevOps?",
+            "o": [
+                "Gradual rollout of new features to subsets of users",
+                "Changing server IP addresses",
+                "Increasing server CPU allocation",
+                "Performing SQL backups"
+            ],
+            "a": 0,
+            "e": "Feature flags help deliver features incrementally by toggling them for specific user groups."
+        },
+        {
+            "q": "In PHP, what is a typical way to check if a feature flag is enabled?",
+            "o": [
+                "Using an if statement with a configuration check",
+                "Calling phpinfo() function",
+                "Using exec() to run system commands",
+                "Setting error_reporting level"
+            ],
+            "a": 0,
+            "e": "Feature flags are often checked with if statements retrieving values from config or a centralized storage."
+        },
+        {
+            "q": "What kind of storage mechanisms can be used to manage feature flags in a PHP application?",
+            "o": [
+                "Databases, Redis, configuration files, environment variables",
+                "Only flat text files",
+                "Only PHP session variables",
+                "Only cookies"
+            ],
+            "a": 0,
+            "e": "Feature flags can be stored in various places including databases, key-value stores, config files, or env vars."
+        },
+        {
+            "q": "Which PHP feature flag management library is commonly used for advanced control?",
+            "o": [
+                "LaunchDarkly SDK",
+                "cURL",
+                "PHPMailer",
+                "Monolog"
+            ],
+            "a": 0,
+            "e": "LaunchDarkly is a popular feature flag service provider with PHP SDK support."
+        },
+        {
+            "q": "How do feature flags improve observability in PHP-based systems?",
+            "o": [
+                "By segmenting monitoring data according to feature state and user groups",
+                "By increasing memory allocation",
+                "By disabling all logs when turned off",
+                "By encrypting telemetry data"
+            ],
+            "a": 0,
+            "e": "They help correlate feature usage with logs and metrics to better understand impact."
+        },
+        {
+            "q": "What is a potential risk of mismanaging feature flags in production?",
+            "o": [
+                "Leaving legacy flags active can create technical debt and bugs",
+                "Increasing the PHP upload_max_filesize limit",
+                "Disabling HTTPS",
+                "Causing SQL injection vulnerabilities"
+            ],
+            "a": 0,
+            "e": "Not cleaning up old flags can clutter code and cause unexpected behavior."
+        },
+        {
+            "q": "Which of the following is a good practice for managing feature flags lifecycle?",
+            "o": [
+                "Remove feature flags once the feature is stable and fully deployed",
+                "Keep all flags permanently for audit purposes",
+                "Store flags randomly without documentation",
+                "Never test flags before production"
+            ],
+            "a": 0,
+            "e": "Feature flags should be temporary and removed after the feature rollout completes."
+        },
+        {
+            "q": "How can feature flags aid in reducing deployment risks in PHP applications?",
+            "o": [
+                "By allowing quick rollback of features without code redeployment",
+                "By speeding up PHP script execution",
+                "By disabling error reporting temporarily",
+                "By automatically updating dependencies"
+            ],
+            "a": 0,
+            "e": "Flags enable operators to toggle features off instantly to mitigate issues."
+        },
+        {
+            "q": "Which environment variable related to feature flags might you configure in PHP?",
+            "o": [
+                "FEATURE_FLAG_NEW_UI=true",
+                "PHP_VERSION=7.4",
+                "UPLOAD_TMP_DIR=/tmp",
+                "MYSQL_USER=root"
+            ],
+            "a": 0,
+            "e": "Environment variables prefixed with FEATURE_FLAG_ can control feature toggles."
+        }
+    ]
+}
