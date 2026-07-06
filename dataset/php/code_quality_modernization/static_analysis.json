@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the primary role of static analysis tools in PHP code quality modernization?",
+            "o": [
+                "To execute the code and find runtime errors",
+                "To analyze code without executing it to find bugs and code smells",
+                "To deploy code to production servers",
+                "To format code during deployment"
+            ],
+            "a": 1,
+            "e": "Static analysis tools analyze PHP code without running it to detect errors, potential bugs, and improve code quality."
+        },
+        {
+            "q": "Which of the following is a popular static analysis tool for PHP?",
+            "o": [
+                "PHPUnit",
+                "PHPStan",
+                "Composer",
+                "PHP_CodeSniffer"
+            ],
+            "a": 1,
+            "e": "PHPStan is a widely used static analysis tool for PHP that helps discover bugs before runtime."
+        },
+        {
+            "q": "What does a PHP static analyzer check for?",
+            "o": [
+                "Syntax errors only",
+                "Code style conventions only",
+                "Type safety, dead code, undefined variables, and logical errors",
+                "Performance optimization during runtime"
+            ],
+            "a": 2,
+            "e": "Static analyzers check code for type safety, unused code, undefined variables, and logical errors without running the code."
+        },
+        {
+            "q": "How does static analysis improve code modernization efforts in legacy PHP projects?",
+            "o": [
+                "By rewriting legacy code automatically",
+                "By identifying issues that hinder modernization like type inconsistencies and deprecated practices",
+                "By generating user documentation",
+                "By speeding up runtime performance"
+            ],
+            "a": 1,
+            "e": "Static analysis identifies problematic legacy code parts, enabling safer refactoring and modernization."
+        },
+        {
+            "q": "Which PHP feature can be better utilized with static analyzers for improved code quality?",
+            "o": [
+                "Dynamic typing",
+                "Type declarations (type hints)",
+                "Using global variables extensively",
+                "Disabling error reporting"
+            ],
+            "a": 1,
+            "e": "Using type declarations allows static analysis tools to better check for type-related errors and improve code reliability."
+        },
+        {
+            "q": "What is a common benefit of integrating static analysis in the CI/CD pipeline for PHP projects?",
+            "o": [
+                "Executing performance benchmarks automatically",
+                "Automatically fixing all bugs without manual review",
+                "Early detection of issues before code merges and deployment",
+                "Increasing compilation speed"
+            ],
+            "a": 2,
+            "e": "Integrating static analysis in CI/CD helps catch issues early and prevent faulty code from reaching production."
+        },
+        {
+            "q": "Besides bug detection, what else can PHP static analysis tools enforce?",
+            "o": [
+                "Code style and best practices adherence",
+                "Automatic deployment",
+                "Database schema migrations",
+                "Unit test execution"
+            ],
+            "a": 0,
+            "e": "Static analysis tools can enforce coding standards and best practices to maintain code quality."
+        },
+        {
+            "q": "Which of these is NOT a static analysis tool for PHP?",
+            "o": [
+                "Psalm",
+                "PHPMD (PHP Mess Detector)",
+                "PHPCS (PHP CodeSniffer)",
+                "Xdebug"
+            ],
+            "a": 3,
+            "e": "Xdebug is a debugger and profiler, not a static analysis tool."
+        },
+        {
+            "q": "What is a major limitation of static analysis in PHP?",
+            "o": [
+                "It cannot analyze any code",
+                "It only works on PHP 8 and later",
+                "It might produce false positives and cannot catch every runtime issue",
+                "It replaces the need for tests completely"
+            ],
+            "a": 2,
+            "e": "Static analysis can report false positives and cannot detect problems only visible at runtime."
+        },
+        {
+            "q": "What concept does static analysis encourage to modernize and improve PHP code?",
+            "o": [
+                "Loosely typed code and global state",
+                "Strict typing and well-defined interfaces",
+                "Obfuscated code for security",
+                "Relying on runtime error handling exclusively"
+            ],
+            "a": 1,
+            "e": "Static analysis promotes strict typing and clear interfaces, which enhances maintainability and modernization."
+        }
+    ]
+}
