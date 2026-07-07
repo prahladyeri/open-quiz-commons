@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is Rector in PHP development?",
+            "o": [
+                "A static analysis tool",
+                "A refactoring and modernization tool",
+                "A package manager",
+                "A PHP testing framework"
+            ],
+            "a": 1,
+            "e": "Rector is a PHP tool designed for automated refactoring and modernization of codebases."
+        },
+        {
+            "q": "Which command initializes Rector for a project?",
+            "o": [
+                "rector init",
+                "rector setup",
+                "rector configure",
+                "rector init-config"
+            ],
+            "a": 0,
+            "e": "The command `rector init` initializes configuration for Rector in a PHP project."
+        },
+        {
+            "q": "What configuration file does Rector use by default?",
+            "o": [
+                "rector.yaml",
+                "rector.php",
+                "rector.yml",
+                "rector.json"
+            ],
+            "a": 2,
+            "e": "Rector typically uses `rector.yml` for configuration, which is a YAML format file."
+        },
+        {
+            "q": "Which of the following Rector rulesets is intended to modernize legacy PHP code to newer PHP versions?",
+            "o": [
+                "SetList::CODE_QUALITY",
+                "SetList::PHP_74",
+                "SetList::DEAD_CODE",
+                "SetList::PHP_80"
+            ],
+            "a": 3,
+            "e": "SetList::PHP_80 includes rules to upgrade and modernize code to PHP 8.0 features."
+        },
+        {
+            "q": "How does Rector help with code quality?",
+            "o": [
+                "By adding comments",
+                "By automatically refactoring code with best practices",
+                "By running tests",
+                "By optimizing runtime speed"
+            ],
+            "a": 1,
+            "e": "Rector improves code quality by applying automated refactorings following modern and best practice standards."
+        },
+        {
+            "q": "What is the purpose of Rector's Dry Run mode?",
+            "o": [
+                "To automatically fix issues",
+                "To simulate changes without actual modification",
+                "To run tests after refactoring",
+                "To analyze dependencies"
+            ],
+            "a": 1,
+            "e": "Dry Run mode allows viewing changes Rector would apply without modifying files."
+        },
+        {
+            "q": "Which syntax does Rector prefer for configuration files in PHP projects?",
+            "o": [
+                "JSON",
+                "XML",
+                "PHP",
+                "YAML"
+            ],
+            "a": 3,
+            "e": "Rector uses YAML syntax for easy to read and write configuration files."
+        },
+        {
+            "q": "What is the primary programming language Rector is built for?",
+            "o": [
+                "PHP",
+                "JavaScript",
+                "Python",
+                "Ruby"
+            ],
+            "a": 0,
+            "e": "Rector is a tool specialized for refactoring and modernizing PHP code."
+        },
+        {
+            "q": "Which of the following Rector sets focuses on removing unused or dead code?",
+            "o": [
+                "SetList::CODE_QUALITY",
+                "SetList::DEAD_CODE",
+                "SetList::NAMING",
+                "SetList::QUALITY"
+            ],
+            "a": 1,
+            "e": "SetList::DEAD_CODE is a set of rules that identify and remove dead or unused code."
+        },
+        {
+            "q": "Can Rector be used to upgrade code from PHP 7.4 to PHP 8.0 automatically?",
+            "o": [
+                "Yes, using the PHP_80 set",
+                "No, Rector only supports PHP 7.4",
+                "Only manually",
+                "Only deprecated features"
+            ],
+            "a": 0,
+            "e": "Rector offers sets like PHP_80 to upgrade and refactor code automatically to PHP 8.0."
+        },
+        {
+            "q": "Which Rector rule set helps improve naming conventions across the codebase?",
+            "o": [
+                "SetList::NAMING",
+                "SetList::TYPE_DECLARATION",
+                "SetList::CLEAN_CODE",
+                "SetList::PHP_71"
+            ],
+            "a": 0,
+            "e": "SetList::NAMING focuses on improving and enforcing consistent naming conventions."
+        },
+        {
+            "q": "How do you run Rector to apply all configured refactorings?",
+            "o": [
+                "rector run",
+                "rector apply",
+                "rector fix",
+                "rector start"
+            ],
+            "a": 0,
+            "e": "The command `rector run` executes the configured sets and rules against the codebase."
+        },
+        {
+            "q": "Is Rector capable of detecting and refactoring type declarations in PHP?",
+            "o": [
+                "Yes, with specific sets like TYPE_DECLARATION",
+                "No, it only refactors code style",
+                "Only for arrays",
+                "Only in comments"
+            ],
+            "a": 0,
+            "e": "Rector includes sets that refactor and add scalar and return type declarations automatically."
+        },
+        {
+            "q": "What benefit does automated refactoring with Rector provide?",
+            "o": [
+                "Manual code review elimination",
+                "Faster and consistent modernization",
+                "Writing new code faster",
+                "Slower development"
+            ],
+            "a": 1,
+            "e": "Rector automates tedious refactoring tasks, improving consistency and speeding up modernization."
+        },
+        {
+            "q": "Which package manager is typically used to install Rector in a PHP project?",
+            "o": [
+                "Composer",
+                "npm",
+                "pip",
+                "yarn"
+            ],
+            "a": 0,
+            "e": "Composer is the standard PHP package manager to install Rector as a dependency."
+        },
+        {
+            "q": "Can Rector be used in continuous integration (CI) pipelines?",
+            "o": [
+                "Yes, as a tool to enforce code quality and modernization",
+                "No, it only runs locally",
+                "Only with manual steps",
+                "Only in PHPStorm integration"
+            ],
+            "a": 0,
+            "e": "Rector can be integrated into CI pipelines to automate refactoring checks and enforcement."
+        }
+    ]
+}
