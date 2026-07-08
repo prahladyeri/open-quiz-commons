@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "Which PHP standard recommends PSR-1 and PSR-2 for basic coding style and code style guide?",
+            "o": [
+                "PSR-0",
+                "PSR-1 and PSR-2",
+                "PSR-4",
+                "PSR-7"
+            ],
+            "a": 1,
+            "e": "PSR-1 and PSR-2 define basic coding standards and a coding style guide for PHP code to improve readability and interoperability."
+        },
+        {
+            "q": "What is the primary focus of PSR-12 in PHP?",
+            "o": [
+                "Autoloading standard",
+                "HTTP message interfaces",
+                "Extended coding style guide",
+                "Logger interface"
+            ],
+            "a": 2,
+            "e": "PSR-12 extends PSR-2 and provides an extended and more detailed PHP coding style guide."
+        },
+        {
+            "q": "According to modern PHP coding standards, which declaration style is preferred for visibility in properties and methods?",
+            "o": [
+                "Use 'var' keyword",
+                "Always explicitly declare visibility as public, protected, or private",
+                "Omit visibility, defaults to public",
+                "Use annotations for visibility"
+            ],
+            "a": 1,
+            "e": "Explicitly declaring visibility improves code clarity and is recommended in modern PHP coding standards."
+        },
+        {
+            "q": "In PSR-1 and PSR-2 standards, how should opening curly braces be placed for classes and methods?",
+            "o": [
+                "Same line as the declaration",
+                "Next line after the declaration",
+                "On a separate line with one tab indent",
+                "Curly braces are optional"
+            ],
+            "a": 1,
+            "e": "Opening braces for classes and methods MUST go on the next line, not the same line as the declaration."
+        },
+        {
+            "q": "What does PSR-4 define in PHP code quality standards?",
+            "o": [
+                "Coding style guide",
+                "Autoloading standard for classes",
+                "Logger interface",
+                "HTTP message interface"
+            ],
+            "a": 1,
+            "e": "PSR-4 specifies how to autoload classes from file paths. It replaces the older PSR-0 standard."
+        },
+        {
+            "q": "Which of the following is recommended by PHP coding standards for naming classes?",
+            "o": [
+                "snake_case",
+                "camelCase",
+                "PascalCase (StudlyCaps)",
+                "all lowercase"
+            ],
+            "a": 2,
+            "e": "Class names SHOULD be declared in PascalCase according to PSR coding standards."
+        },
+        {
+            "q": "What is the recommended line length limit in PHP PSR-2 coding style guide?",
+            "o": [
+                "80 characters",
+                "120 characters",
+                "100 characters",
+                "No limit"
+            ],
+            "a": 1,
+            "e": "PSR-2 recommends lines SHOULD not exceed 120 characters; 80 is a widely adopted legacy convention."
+        },
+        {
+            "q": "In modern PHP coding standards, how should files be named?",
+            "o": [
+                "All uppercase letters",
+                "Lowercase letters with underscores",
+                "Class name matching the file name in PascalCase",
+                "No restriction"
+            ],
+            "a": 2,
+            "e": "A file SHOULD declare strict types, contain only one class, and that class name should match the file name."
+        },
+        {
+            "q": "Which tool is commonly used to automatically fix PHP coding style issues according to PSR standards?",
+            "o": [
+                "PHP_CodeSniffer (phpcs) with phpcbf",
+                "PHPMailer",
+                "PHPUnit",
+                "Composer"
+            ],
+            "a": 0,
+            "e": "PHP_CodeSniffer (phpcs) detects coding standard violations; phpcbf can automatically fix many of those issues."
+        },
+        {
+            "q": "Which of the following is a key benefits of following PHP coding standards like PSR-12?",
+            "o": [
+                "Generating more complex code",
+                "Improved code readability and consistency",
+                "Increasing file size",
+                "Better database performance"
+            ],
+            "a": 1,
+            "e": "Coding standards primarily enhance readability, maintainability, and consistency across codebases."
+        }
+    ]
+}
