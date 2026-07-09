@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the main purpose of mutation testing in PHP code quality modernization?",
+            "o": [
+                "To improve code formatting",
+                "To detect dead code",
+                "To evaluate the effectiveness of unit tests by introducing code changes",
+                "To optimize database queries"
+            ],
+            "a": 2,
+            "e": "Mutation testing works by introducing small changes (mutations) into code to check if existing tests catch those changes, thus evaluating test suite effectiveness."
+        },
+        {
+            "q": "Which PHP tool is commonly used for mutation testing?",
+            "o": [
+                "PHPUnit",
+                "Infection",
+                "PHP-CS-Fixer",
+                "PHPStan"
+            ],
+            "a": 1,
+            "e": "Infection is a popular PHP mutation testing framework to improve test suite quality by injecting mutations."
+        },
+        {
+            "q": "How does mutation testing help in modernizing PHP code quality?",
+            "o": [
+                "By automatically fixing syntax errors",
+                "By enforcing coding style guides",
+                "By identifying weak tests that do not detect faults",
+                "By speeding up code execution"
+            ],
+            "a": 2,
+            "e": "Mutation testing reveals weaknesses in test coverage and quality by showing which mutations survive undetected."
+        },
+        {
+            "q": "What is a 'mutator' in the context of mutation testing?",
+            "o": [
+                "A tool to fix code style",
+                "A code change applied to introduce a fault",
+                "A type of PHP function",
+                "A database migration script"
+            ],
+            "a": 1,
+            "e": "A mutator is a mutation operation that modifies code (e.g., changing a + to -) to create a fault for testing purposes."
+        },
+        {
+            "q": "In mutation testing, what does it mean if a mutant 'survives'?",
+            "o": [
+                "The mutant causes a test failure",
+                "The mutant is detected and killed by tests",
+                "The mutant is not detected and passes tests",
+                "The mutant fixes a bug"
+            ],
+            "a": 2,
+            "e": "A surviving mutant means the test suite did not detect the mutation, indicating a potential weakness in tests."
+        },
+        {
+            "q": "What is typically the next step if mutation testing reveals many surviving mutants?",
+            "o": [
+                "Remove unit tests to simplify code",
+                "Improve or add new tests to catch mutants",
+                "Rewrite the entire application",
+                "Ignore the results"
+            ],
+            "a": 1,
+            "e": "Surviving mutants indicate gaps in testing. Developers should enhance the test suite accordingly."
+        },
+        {
+            "q": "Which of the following is NOT a benefit of mutation testing in PHP?",
+            "o": [
+                "Improved test suite quality",
+                "Detection of insufficient test cases",
+                "Automatic code formatting",
+                "Higher confidence in code correctness"
+            ],
+            "a": 2,
+            "e": "Mutation testing does not perform code formatting; it focuses on evaluating and improving test quality."
+        },
+        {
+            "q": "How does infection PHP run mutation testing?",
+            "o": [
+                "By compiling the code into bytecode",
+                "By applying mutations and running PHPUnit tests repeatedly",
+                "By running static analysis",
+                "By minifying PHP scripts"
+            ],
+            "a": 1,
+            "e": "Infection applies mutations one by one, then reruns tests to check if tests detect the mutation."
+        },
+        {
+            "q": "What type of mutations might Infection introduce in PHP code?",
+            "o": [
+                "Changing arithmetic operators like + to -",
+                "Refactoring class names",
+                "Removing comments",
+                "Changing PHP version requirements"
+            ],
+            "a": 0,
+            "e": "Mutation testing changes behavior by modifying operators or conditions, e.g., swapping + with -."
+        },
+        {
+            "q": "When integrating mutation testing into your PHP CI pipeline, a good practice is:",
+            "o": [
+                "To run it only once a month",
+                "To combine it with static analysis and code coverage checks",
+                "To disable all other tests",
+                "To run it exclusively on production servers"
+            ],
+            "a": 1,
+            "e": "Mutation testing complements static analysis and coverage; running together improves overall code quality checks."
+        }
+    ]
+}
