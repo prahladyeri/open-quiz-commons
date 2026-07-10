@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the primary goal when migrating legacy PHP code to a modern codebase?",
+            "o": [
+                "Rewrite all code from scratch",
+                "Improve code quality and maintainability without breaking functionality",
+                "Remove all comments",
+                "Convert PHP to another language"
+            ],
+            "a": 1,
+            "e": "Legacy migration aims to modernize the code with better quality and maintainability while preserving its existing behavior."
+        },
+        {
+            "q": "Which PHP feature is recommended to replace the deprecated 'mysql_*' functions during legacy migration?",
+            "o": [
+                "mysqli or PDO (PHP Data Objects)",
+                "pg_connect",
+                "file_get_contents",
+                "curl"
+            ],
+            "a": 0,
+            "e": "Modern PHP uses mysqli or PDO for secure and robust database access; the old mysql_* functions are deprecated."
+        },
+        {
+            "q": "Which tool can be used to analyze and fix legacy PHP code to modern standards automatically?",
+            "o": [
+                "PHPStan",
+                "PHP CodeSniffer",
+                "PHP-CS-Fixer",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "PHPStan (static analysis), PHP CodeSniffer (coding standard checks), and PHP-CS-Fixer (automatic code fixes) help modernize legacy PHP."
+        },
+        {
+            "q": "Why is dependency injection preferred over using global variables or singletons in modern PHP applications?",
+            "o": [
+                "It makes the code less testable",
+                "It increases tight coupling",
+                "It improves code modularity and testability",
+                "It requires more global variables"
+            ],
+            "a": 2,
+            "e": "Dependency injection reduces coupling and makes unit testing easier by explicitly providing dependencies."
+        },
+        {
+            "q": "What modern PHP feature should replace the legacy array() syntax for better readability?",
+            "o": [
+                "short array syntax []",
+                "object()",
+                "map()",
+                "collection()"
+            ],
+            "a": 0,
+            "e": "Since PHP 5.4, the short array syntax [] is preferred over array() for cleaner code."
+        },
+        {
+            "q": "When migrating legacy code, why is it important to use namespaces?",
+            "o": [
+                "To increase execution speed",
+                "To allow multiple classes with the same name and organize code logically",
+                "To avoid using autoloaders",
+                "To reduce use of functions"
+            ],
+            "a": 1,
+            "e": "Namespaces help prevent name conflicts and logically group related classes and functions in modern PHP."
+        },
+        {
+            "q": "How can legacy spaghetti code be improved during PHP migration?",
+            "o": [
+                "By adding more comments only",
+                "By refactoring into smaller, single-responsibility classes and methods",
+                "By removing all functions",
+                "By increasing code duplication"
+            ],
+            "a": 1,
+            "e": "Refactoring into well-defined classes/methods improves readability, maintainability, and testability."
+        },
+        {
+            "q": "Which is a recommended approach to test legacy PHP code before and after migration?",
+            "o": [
+                "No testing needed",
+                "Write automated unit and integration tests",
+                "Manual testing only",
+                "Only test new features"
+            ],
+            "a": 1,
+            "e": "Automated tests help ensure legacy functionality is preserved while modernizing the code."
+        },
+        {
+            "q": "What is one significant benefit of using Composer during legacy PHP migration?",
+            "o": [
+                "It manages class autoloading and external dependencies efficiently",
+                "It replaces the PHP interpreter",
+                "It removes the need for namespaces",
+                "It increases file size"
+            ],
+            "a": 0,
+            "e": "Composer handles dependency management and class autoloading, simplifying modern PHP project structure."
+        },
+        {
+            "q": "How should error handling be modernized in PHP legacy migration?",
+            "o": [
+                "Stick with custom error codes in return values",
+                "Use PHP exceptions with try-catch blocks",
+                "Ignore errors silently",
+                "Use echo statements for errors"
+            ],
+            "a": 1,
+            "e": "Using exceptions provides a consistent and robust method for error handling in modern PHP."
+        }
+    ]
+}

@@ -817,7 +817,7 @@
                 {
                     "name": "Code Quality & Modernization",
                     "slug": "code_quality_modernization",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Static Analysis (PHPStan / Psalm)",
