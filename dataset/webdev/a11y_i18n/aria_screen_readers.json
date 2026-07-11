@@ -1,0 +1,167 @@
+{
+    "data": [
+        {
+            "q": "What does ARIA stand for in web accessibility?",
+            "o": [
+                "Accessible Rich Internet Applications",
+                "Advanced Responsive Interactive Attributes",
+                "Automated Readable Internet Access",
+                "Application React Interface Attributes"
+            ],
+            "a": 0,
+            "e": "ARIA stands for Accessible Rich Internet Applications and helps improve accessibility for dynamic content."
+        },
+        {
+            "q": "Which ARIA attribute is used to indicate the role of an element?",
+            "o": [
+                "aria-label",
+                "aria-role",
+                "role",
+                "aria-description"
+            ],
+            "a": 2,
+            "e": "The 'role' attribute defines the purpose of an element to assistive technologies."
+        },
+        {
+            "q": "What is the purpose of the aria-label attribute?",
+            "o": [
+                "To provide a visible label for an element",
+                "To give an accessible name to an element for screen readers",
+                "To add a tooltip text",
+                "To define the region of the page"
+            ],
+            "a": 1,
+            "e": "aria-label provides an accessible name to elements that may not have visible labels."
+        },
+        {
+            "q": "Which attribute helps to describe the currently selected item's state in a listbox?",
+            "o": [
+                "aria-expanded",
+                "aria-selected",
+                "aria-checked",
+                "aria-pressed"
+            ],
+            "a": 1,
+            "e": "aria-selected indicates whether an element is selected in widgets like listboxes."
+        },
+        {
+            "q": "Why should you avoid using empty alt attributes on images that convey information?",
+            "o": [
+                "Because screen readers will read the filename",
+                "Because empty alt attributes hide the image from screen readers",
+                "Because alt attributes are optional",
+                "No reason, empty alt is always recommended"
+            ],
+            "a": 1,
+            "e": "Empty alt attributes hide images from screen readers and should only be used for decorative images."
+        },
+        {
+            "q": "What role does 'aria-live' attribute have?",
+            "o": [
+                "It defines an element as a live region where updates should be announced by screen readers",
+                "It locks an element from updates",
+                "It is used to define a clickable button",
+                "It specifies the language of text"
+            ],
+            "a": 0,
+            "e": "aria-live marks areas of a page where dynamic content changes should be announced to users using assistive technology."
+        },
+        {
+            "q": "Which ARIA attribute improves screen reader announcements for expanding/collapsing sections?",
+            "o": [
+                "aria-hidden",
+                "aria-expanded",
+                "aria-atomic",
+                "aria-controls"
+            ],
+            "a": 1,
+            "e": "aria-expanded indicates whether an expandable section is currently open or collapsed."
+        },
+        {
+            "q": "When should you use aria-hidden=\"true\" on an element?",
+            "o": [
+                "When the element should be hidden from all users",
+                "When the element should be hidden from screen readers but visible visually",
+                "To hide elements from sighted users only",
+                "To hide an element during printing"
+            ],
+            "a": 1,
+            "e": "aria-hidden=\"true\" hides content from assistive technologies but keeps it visible on the screen."
+        },
+        {
+            "q": "Which HTML element provides the best native accessibility for buttons without ARIA?",
+            "o": [
+                "<div>",
+                "<span>",
+                "<a>",
+                "<button>"
+            ],
+            "a": 3,
+            "e": "The <button> element natively supports keyboard accessibility and screen readers."
+        },
+        {
+            "q": "What is the best practice for making custom UI controls accessible?",
+            "o": [
+                "Just add a click event handler",
+                "Use semantic HTML or add appropriate ARIA roles and properties",
+                "Make it a <span> and style it",
+                "Avoid using keyboard support"
+            ],
+            "a": 1,
+            "e": "Custom controls should use semantic HTML or ARIA roles/attributes and support keyboard navigation."
+        },
+        {
+            "q": "How can you specify the language of the page for screen readers and translation tools?",
+            "o": [
+                "Using the meta charset tag",
+                "Using lang attribute on the <html> element",
+                "Using aria-language attribute",
+                "Using role=\"language\""
+            ],
+            "a": 1,
+            "e": "The lang attribute on the <html> tag informs screen readers and translation services about the page language."
+        },
+        {
+            "q": "Which ARIA property indicates the relationship between an element and a description elsewhere on the page?",
+            "o": [
+                "aria-describedby",
+                "aria-label",
+                "aria-labelledby",
+                "aria-controls"
+            ],
+            "a": 0,
+            "e": "aria-describedby points to the ID of an element that provides a description for the current element."
+        },
+        {
+            "q": "What does the 'aria-atomic' attribute do?",
+            "o": [
+                "It determines whether changes in a live region should be presented as a whole or only the changed parts",
+                "It controls the opacity",
+                "It disables user interaction",
+                "It toggles visibility"
+            ],
+            "a": 0,
+            "e": "aria-atomic controls whether assistive technologies present all of the live region's content or only changed parts."
+        },
+        {
+            "q": "Which role would you assign via ARIA to an element representing a dialog or popup?",
+            "o": [
+                "alert",
+                "dialog",
+                "tabpanel",
+                "menu"
+            ],
+            "a": 1,
+            "e": "The 'dialog' role defines a dialog or popup window for screen reader users."
+        },
+        {
+            "q": "True or False: When native HTML controls exist, it's recommended to use ARIA roles instead of the native elements.",
+            "o": [
+                "True",
+                "False"
+            ],
+            "a": 1,
+            "e": "Native HTML elements should be preferred over ARIA roles for accessibility unless no native element exists."
+        }
+    ]
+}

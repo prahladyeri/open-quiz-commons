@@ -552,9 +552,87 @@
                             "descn": "Comparing global stores to signal-based reactivity and managing complex UI states with Finite State Machines."
                         }
                     ]
-                }
+                },
+				{
+				  "name": "Accessibility & Internationalization",
+				  "slug": "a11y_i18n",
+				  "hidden": true,
+				  "modules": [
+					{ "name": "ARIA & Screen Reader Patterns", "slug": "aria_screen_readers", "descn": "Landmark roles, live regions, and testing with NVDA/VoiceOver for real assistive-tech compatibility." },
+					{ "name": "WCAG & Color Contrast", "slug": "wcag_contrast", "descn": "Meeting WCAG 2.2 AA/AAA thresholds, focus indicators, and automated audit tooling (axe, Lighthouse)." },
+					{ "name": "i18n/l10n Patterns", "slug": "i18n_l10n", "descn": "ICU message formatting, pluralization rules, and locale-aware date/number handling." },
+					{ "name": "RTL & Bidirectional Layouts", "slug": "rtl_layouts", "descn": "Logical CSS properties, mirroring UI for Arabic/Hebrew, and testing bidi text flows." }
+				  ]
+				},
+				{
+				  "name": "Frontend Observability & Growth",
+				  "slug": "frontend_observability",
+				  "hidden": true,
+				  "modules": [
+					{ "name": "Error Tracking & Session Replay", "slug": "error_tracking", "descn": "Sentry/LogRocket-style instrumentation, source maps, and grouping noisy client errors." },
+					{ "name": "Real User Monitoring (RUM)", "slug": "rum", "descn": "Field-data Core Web Vitals collection vs synthetic lab testing, and the PerformanceObserver API." },
+					{ "name": "A/B Testing & Feature Flags", "slug": "ab_testing_flags", "descn": "Client-side experimentation, flag rollout strategies, and avoiding layout-shift flicker." },
+					{ "name": "Analytics Instrumentation", "slug": "analytics_instrumentation", "descn": "Event taxonomy design, privacy-safe tracking, and Cloudflare Web Analytics / Plausible-style setups." }
+				  ]
+				}
             ]
         },
+		{
+		  "name": "Rust",
+		  "slug": "rust",
+		  "icon": "fa-brands fa-rust",
+		  "subtopics": [
+			{
+			  "name": "Core Rust",
+			  "slug": "core",
+			  "hidden": true,
+			  "modules": [
+				{ "name": "Ownership & Borrowing", "slug": "ownership_borrowing" },
+				{ "name": "Traits & Generics", "slug": "traits_generics" },
+				{ "name": "Error Handling (Result/Option)", "slug": "error_handling" },
+				{ "name": "Concurrency (async/await, Tokio)", "slug": "concurrency_async" }
+			  ]
+			},
+			{
+			  "name": "WASM & Edge",
+			  "slug": "wasm_edge",
+			  "hidden": true,
+			  "modules": [
+				{ "name": "wasm-bindgen & wasm-pack", "slug": "wasm_bindgen" },
+				{ "name": "SQLite-WASM Integration", "slug": "sqlite_wasm" },
+				{ "name": "Cloudflare Workers (Rust)", "slug": "cf_workers_rust" }
+			  ]
+			}
+		  ]
+		},
+		{
+		  "name": "DevOps & Cloud Infrastructure",
+		  "slug": "devops_cloud",
+		  "icon": "fa-solid fa-server",
+		  "hidden": true,
+		  "subtopics": [
+			{
+			  "name": "CI/CD & Automation",
+			  "slug": "ci_cd",
+			  "hidden": true,
+			  "modules": [
+				{ "name": "GitHub Actions", "slug": "github_actions" },
+				{ "name": "Docker & Containers", "slug": "docker" },
+				{ "name": "Infrastructure as Code (Terraform)", "slug": "iac_terraform" }
+			  ]
+			},
+			{
+			  "name": "Edge & Serverless Ops",
+			  "slug": "edge_serverless_ops",
+			  "hidden": true,
+			  "modules": [
+				{ "name": "Cloudflare Workers Deployment", "slug": "cf_workers_deploy" },
+				{ "name": "Observability (Logs, Metrics, Traces)", "slug": "observability" },
+				{ "name": "Rate Limiting & Durable Objects", "slug": "rate_limiting_do" }
+			  ]
+			}
+		  ]
+		},
         {
             "name": "PHP",
             "slug": "php",
