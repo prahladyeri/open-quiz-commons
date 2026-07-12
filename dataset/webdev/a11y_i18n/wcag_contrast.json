@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the minimum recommended contrast ratio between text and its background according to WCAG AA guidelines?",
+            "o": [
+                "3:1",
+                "4.5:1",
+                "7:1",
+                "10:1"
+            ],
+            "a": 1,
+            "e": "WCAG AA requires a contrast ratio of at least 4.5:1 for normal text to ensure readability."
+        },
+        {
+            "q": "Which WCAG level has the strictest contrast ratio requirement of 7:1 for normal text?",
+            "o": [
+                "Level A",
+                "Level AA",
+                "Level AAA",
+                "Level B"
+            ],
+            "a": 2,
+            "e": "WCAG AAA requires a contrast ratio of 7:1 for normal-sized text to ensure higher accessibility."
+        },
+        {
+            "q": "Which tool can be used to measure color contrast on web pages?",
+            "o": [
+                "Chrome DevTools Lighthouse",
+                "Color Contrast Analyzer",
+                "axe Accessibility Scanner",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "All these tools help measure WCAG color contrast and accessibility compliance."
+        },
+        {
+            "q": "If a text color contrasts poorly with its background, what is the best approach to improve accessibility?",
+            "o": [
+                "Make the font size smaller",
+                "Increase contrast by adjusting text or background colors",
+                "Add more animations",
+                "Remove the text"
+            ],
+            "a": 1,
+            "e": "Increasing contrast between text and background colors improves readability and accessibility."
+        },
+        {
+            "q": "What does WCAG stand for?",
+            "o": [
+                "Web Content Accessibility Guidelines",
+                "Website Compliance and Accessibility Guide",
+                "Web Coding Accessibility Guide",
+                "World Consortium for Accessibility in Graphs"
+            ],
+            "a": 0,
+            "e": "WCAG stands for Web Content Accessibility Guidelines, which provide standards for creating accessible web content."
+        },
+        {
+            "q": "In terms of color contrast, what does a ratio of 4.5:1 mean?",
+            "o": [
+                "The text is 4.5 times bigger than the background",
+                "The luminance difference between text and background meets the minimum accessibility requirement",
+                "The color saturation is reduced by 4.5 times",
+                "The font weight is multiplied by 4.5"
+            ],
+            "a": 1,
+            "e": "A 4.5:1 contrast ratio means the difference in relative luminance between two colors meets WCAG minimum standards."
+        },
+        {
+            "q": "Which text size can use a lower contrast ratio (3:1) under WCAG AA?",
+            "o": [
+                "Body text smaller than 12px",
+                "Large text of at least 18pt or 14pt bold",
+                "All text sizes",
+                "None of the above"
+            ],
+            "a": 1,
+            "e": "Large text can have a contrast ratio of 3:1 instead of 4.5:1 when meeting WCAG AA."
+        },
+        {
+            "q": "WCAG contrast guidelines help users with:",
+            "o": [
+                "Color blindness",
+                "Low vision",
+                "Cognitive disabilities",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Proper contrast helps users with various disabilities including low vision and color blindness."
+        },
+        {
+            "q": "Why is sufficient color contrast important in web development?",
+            "o": [
+                "To make the website load faster",
+                "To improve visibility and readability for all users",
+                "To reduce the website size",
+                "To enhance animation speed"
+            ],
+            "a": 1,
+            "e": "Sufficient contrast improves readability and usability across different user conditions and devices."
+        },
+        {
+            "q": "Which of these is NOT a recommended practice to ensure good color contrast?",
+            "o": [
+                "Use automated color contrast checkers",
+                "Use high contrast color combinations",
+                "Rely solely on color to convey information",
+                "Provide text labels along with color coding"
+            ],
+            "a": 2,
+            "e": "Relying solely on color to convey information is discouraged because users with vision impairments might miss it."
+        }
+    ]
+}
