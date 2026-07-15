@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What does 'i18n' stand for in web development?",
+            "o": [
+                "Internationalization",
+                "Internet integration",
+                "Internalization",
+                "Interaction"
+            ],
+            "a": 0,
+            "e": "'i18n' is a numeronym for Internationalization, where 18 is the number of letters between 'i' and 'n'."
+        },
+        {
+            "q": "What is the purpose of 'localization' (l10n) in web development?",
+            "o": [
+                "To translate and adapt content to specific regions or languages",
+                "To internationalize the codebase",
+                "To optimize website speed",
+                "To improve server infrastructure"
+            ],
+            "a": 0,
+            "e": "Localization adapts content and UI to particular locales, including language translation, date formats, currencies, etc."
+        },
+        {
+            "q": "Which HTML attribute is used to specify the language of an element?",
+            "o": [
+                "lang",
+                "locale",
+                "language",
+                "xml:lang"
+            ],
+            "a": 0,
+            "e": "The 'lang' attribute defines the language of the element's content. 'xml:lang' is used in XML contexts."
+        },
+        {
+            "q": "Why is keyboard accessibility important for a11y (accessibility)?",
+            "o": [
+                "Many users rely on keyboard navigation instead of a mouse",
+                "It improves SEO",
+                "It enhances graphics performance",
+                "It fixes broken links"
+            ],
+            "a": 0,
+            "e": "Keyboard accessibility ensures users who cannot use a mouse can navigate the website."
+        },
+        {
+            "q": "Which ARIA role helps screen readers identify navigation landmarks?",
+            "o": [
+                "role=\"navigation\"",
+                "role=\"banner\"",
+                "role=\"main\"",
+                "role=\"footer\""
+            ],
+            "a": 0,
+            "e": "Using role=\"navigation\" designates a block of links as navigational, aiding screen reader users."
+        },
+        {
+            "q": "What does WCAG stand for?",
+            "o": [
+                "Web Content Accessibility Guidelines",
+                "World Computer Application Guide",
+                "Web Content Association Guide",
+                "Wide Content Accessibility Guide"
+            ],
+            "a": 0,
+            "e": "WCAG provides standardized guidelines to make web content more accessible."
+        },
+        {
+            "q": "Which CSS property is best avoided to ensure content is accessible to screen readers?",
+            "o": [
+                "display: none",
+                "color",
+                "font-size",
+                "margin"
+            ],
+            "a": 0,
+            "e": "Using display: none removes content from the accessibility tree making it invisible to screen readers."
+        },
+        {
+            "q": "When localizing dates, which JavaScript API helps format dates according to locale?",
+            "o": [
+                "Intl.DateTimeFormat",
+                "Date.toLocaleString",
+                "Date.parse",
+                "Intl.NumberFormat"
+            ],
+            "a": 0,
+            "e": "Intl.DateTimeFormat formats dates and times based on locale and options."
+        },
+        {
+            "q": "Which of the following is NOT a best practice for internationalization?",
+            "o": [
+                "Hardcoding text inside HTML",
+                "Using Unicode (UTF-8) encoding",
+                "Externalizing strings for translation",
+                "Designing flexible layouts for text expansion"
+            ],
+            "a": 0,
+            "e": "Hardcoding text makes translation harder and reduces localization flexibility."
+        },
+        {
+            "q": "What is the main difference between localization (l10n) and internationalization (i18n)?",
+            "o": [
+                "i18n prepares the product for localization; l10n adapts it for specific locales",
+                "l10n is done before i18n",
+                "i18n focuses on translations only",
+                "l10n is about coding standards"
+            ],
+            "a": 0,
+            "e": "Internationalization is the design process preparing for localization; localization adapts for specific audiences."
+        }
+    ]
+}
