@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What does RTL stand for in web development?",
+            "o": [
+                "Right-to-Left",
+                "Run-Time Language",
+                "Real-Time Layout",
+                "Rendered Text Loop"
+            ],
+            "a": 0,
+            "e": "RTL stands for Right-to-Left, referring to languages and layouts that are read from right to left."
+        },
+        {
+            "q": "Which CSS property is used to specify text direction for RTL languages?",
+            "o": [
+                "direction",
+                "text-align",
+                "unicode-bidi",
+                "writing-mode"
+            ],
+            "a": 0,
+            "e": "The 'direction' property specifies text direction, with 'rtl' for right-to-left languages."
+        },
+        {
+            "q": "Which HTML attribute is used to specify the text direction for an element?",
+            "o": [
+                "dir",
+                "lang",
+                "direction",
+                "textdir"
+            ],
+            "a": 0,
+            "e": "The 'dir' attribute in HTML sets the text direction, e.g., <div dir=\"rtl\">."
+        },
+        {
+            "q": "Why is the use of 'unicode-bidi' CSS property important in RTL layouts?",
+            "o": [
+                "It controls the embedding and override of text direction",
+                "It changes font size automatically",
+                "It aligns images within a container",
+                "It sets the color scheme for RTL"
+            ],
+            "a": 0,
+            "e": "'unicode-bidi' controls how embedded bidirectional text is handled, important for mixing LTR and RTL."
+        },
+        {
+            "q": "How should web developers handle images in RTL layouts?",
+            "o": [
+                "Mirror them horizontally",
+                "Use the same as LTR layouts",
+                "Make them black and white",
+                "Rotate them 90 degrees"
+            ],
+            "a": 0,
+            "e": "Images that imply direction should be flipped horizontally in RTL to maintain correct semantics."
+        },
+        {
+            "q": "What role does the 'lang' attribute play in internationalization and RTL support?",
+            "o": [
+                "Specifies the language of the content for screen readers and browsers",
+                "Changes the font of the page",
+                "Overrides CSS direction property",
+                "Encrypts text on the page"
+            ],
+            "a": 0,
+            "e": "'lang' helps browsers and assistive technologies understand the language, improving accessibility and rendering."
+        },
+        {
+            "q": "Which value of the CSS 'direction' property represents left-to-right text?",
+            "o": [
+                "ltr",
+                "rtl",
+                "auto",
+                "inherit"
+            ],
+            "a": 0,
+            "e": "'ltr' sets left-to-right direction, typically used for languages like English."
+        },
+        {
+            "q": "In an RTL web page, where is the horizontal scrollbar typically positioned by default?",
+            "o": [
+                "Left side",
+                "Right side",
+                "Top",
+                "Bottom"
+            ],
+            "a": 0,
+            "e": "In RTL layouts, scrollbars appear on the left side by default to match the reading direction."
+        },
+        {
+            "q": "Which HTML tag attribute automatically adjusts the text direction based on the language?",
+            "o": [
+                "dir=\"auto\"",
+                "lang=\"auto\"",
+                "text=\"auto\"",
+                "direction=\"auto\""
+            ],
+            "a": 0,
+            "e": "Using dir=\"auto\" lets the browser detect and set the appropriate text direction based on content."
+        },
+        {
+            "q": "What is a common challenge when designing web forms for RTL languages?",
+            "o": [
+                "Aligning labels and inputs properly from right to left",
+                "Inability to submit forms",
+                "Lack of support for placeholders",
+                "Fonts not rendering"
+            ],
+            "a": 0,
+            "e": "Proper alignment of labels and input fields is essential for usability in RTL layouts."
+        }
+    ]
+}
