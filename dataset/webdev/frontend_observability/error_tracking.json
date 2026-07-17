@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the primary purpose of error tracking in frontend observability?",
+            "o": [
+                "To monitor website traffic",
+                "To detect and report client-side errors and exceptions",
+                "To improve SEO rankings",
+                "To automate UI testing"
+            ],
+            "a": 1,
+            "e": "Error tracking tools in frontend observability help detect and report client-side errors and exceptions to improve application stability."
+        },
+        {
+            "q": "Which of these is a popular JavaScript error tracking service?",
+            "o": [
+                "Sentry",
+                "Webpack",
+                "ESLint",
+                "Babel"
+            ],
+            "a": 0,
+            "e": "Sentry is widely used for real-time error tracking and monitoring in JavaScript applications."
+        },
+        {
+            "q": "What does source map enable in frontend error tracking?",
+            "o": [
+                "Compress JavaScript files",
+                "Translate minified code errors back to original source code locations",
+                "Enhance web app performance",
+                "Prevent security vulnerabilities"
+            ],
+            "a": 1,
+            "e": "Source maps map minified JS back to original source, allowing better debugging with proper line and file references."
+        },
+        {
+            "q": "Which JavaScript global object is commonly used to catch unhandled errors in the browser?",
+            "o": [
+                "window",
+                "document",
+                "console",
+                "navigator"
+            ],
+            "a": 0,
+            "e": "The global window object emits 'error' and 'unhandledrejection' events to catch runtime errors and promise rejections."
+        },
+        {
+            "q": "What is the benefit of capturing stack traces in error tracking?",
+            "o": [
+                "Improves application speed",
+                "Helps identify the execution path leading to the error",
+                "Reduces data usage",
+                "Allows multi-language support"
+            ],
+            "a": 1,
+            "e": "Stack traces provide context about function calls sequence, so developers can pinpoint the source of errors."
+        },
+        {
+            "q": "Which browser API can be used to instrument monitoring of front-end performance and errors?",
+            "o": [
+                "Fetch API",
+                "Performance API",
+                "Console API",
+                "File API"
+            ],
+            "a": 1,
+            "e": "The Performance API allows capturing metrics like page load time and resource timings relevant to observability."
+        },
+        {
+            "q": "In error tracking, what does 'breadcrumbs' refer to?",
+            "o": [
+                "Log messages that provide context leading up to an error",
+                "UI elements to navigate the app",
+                "Error codes returned by server",
+                "A debugging tool for mobile apps"
+            ],
+            "a": 0,
+            "e": "Breadcrumbs are a trail of events and actions preceding an error to provide context for debugging."
+        },
+        {
+            "q": "Which syntax is used to manually capture exceptions in Sentry's JavaScript SDK?",
+            "o": [
+                "Sentry.captureException(error)",
+                "Sentry.logError(error)",
+                "Sentry.sendError(error)",
+                "Sentry.throwError(error)"
+            ],
+            "a": 0,
+            "e": "Sentry.captureException(error) manually sends exceptions to the Sentry server."
+        },
+        {
+            "q": "What is a common integration step when adding error tracking to a React frontend?",
+            "o": [
+                "Wrapping the app in an Error Boundary component",
+                "Using Redux for state management",
+                "Enabling service workers",
+                "Applying CSS modules"
+            ],
+            "a": 0,
+            "e": "React Error Boundaries catch rendering errors and allow logging them to services like Sentry."
+        },
+        {
+            "q": "What kind of errors can frontend error tracking capture?",
+            "o": [
+                "Runtime JavaScript errors",
+                "Unhandled Promise rejections",
+                "Resource loading failures",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Frontend error tracking can capture many types including JS runtime errors, unhandled rejections, and failed resource loads."
+        }
+    ]
+}
