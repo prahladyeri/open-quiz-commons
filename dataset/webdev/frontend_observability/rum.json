@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What does RUM stand for in web observability?",
+            "o": [
+                "Real User Monitoring",
+                "Random User Metrics",
+                "Rapid Usage Measurement",
+                "Recorded User Metrics"
+            ],
+            "a": 0,
+            "e": "RUM stands for Real User Monitoring, which involves collecting data from actual user interactions on a web application."
+        },
+        {
+            "q": "Which of the following is a primary goal of Real User Monitoring (RUM)?",
+            "o": [
+                "Simulating user traffic",
+                "Capturing real user experiences in production",
+                "Monitoring server CPU only",
+                "Generating synthetic test data"
+            ],
+            "a": 1,
+            "e": "RUM captures data from actual users in production to understand real-world performance and usage."
+        },
+        {
+            "q": "Which key metric is typically captured by RUM to measure page load performance?",
+            "o": [
+                "Time to First Byte (TTFB)",
+                "Frames per Second (FPS)",
+                "Memory usage on server",
+                "Cache hit rate"
+            ],
+            "a": 0,
+            "e": "Time to First Byte (TTFB) is a common metric in RUM indicating how quickly the server responds with data."
+        },
+        {
+            "q": "Which JavaScript API is commonly used by RUM tools to capture detailed timing information about page loads?",
+            "o": [
+                "Performance API",
+                "Fetch API",
+                "WebSockets API",
+                "Notification API"
+            ],
+            "a": 0,
+            "e": "The Performance API provides detailed timing info such as navigation start, DOM content loaded, and load events."
+        },
+        {
+            "q": "What is a common way RUM collects data from real users?",
+            "o": [
+                "Embedding lightweight JavaScript in the web page",
+                "Installing server-side agents",
+                "Using browser extensions",
+                "Manual logging by users"
+            ],
+            "a": 0,
+            "e": "RUM typically uses lightweight JavaScript snippets embedded in pages to send telemetry back to servers."
+        },
+        {
+            "q": "In the context of frontend RUM, what does the 'Largest Contentful Paint' (LCP) measure?",
+            "o": [
+                "Time taken to load the largest visible element",
+                "Time taken to fully load the page",
+                "Time to first byte received",
+                "Total number of user clicks"
+            ],
+            "a": 0,
+            "e": "LCP measures how long it takes for the largest visible content element (e.g., image or text block) to render."
+        },
+        {
+            "q": "Why is Real User Monitoring preferred over synthetic monitoring for frontend observability?",
+            "o": [
+                "It captures real user experiences including network and device variations",
+                "It is cheaper to implement",
+                "It doesn't require any scripts",
+                "It only measures server health"
+            ],
+            "a": 0,
+            "e": "RUM captures performance under actual user conditions, reflecting diverse devices, networks, and user interactions."
+        },
+        {
+            "q": "Which of the following performance metrics can RUM capture on the client side?",
+            "o": [
+                "Page load time, resource load timings, user interactions timing",
+                "Backend database query times only",
+                "CPU usage on server",
+                "Server uptime"
+            ],
+            "a": 0,
+            "e": "RUM collects client-side metrics like page load and user interaction timings but not server internal stats."
+        },
+        {
+            "q": "What role does the Navigation Timing API play in Real User Monitoring?",
+            "o": [
+                "Provides timestamps related to various stages of page loading",
+                "Tracks user click positions",
+                "Measures memory usage of the application",
+                "Sends logs to the server"
+            ],
+            "a": 0,
+            "e": "The Navigation Timing API exposes detailed timing data for the page load lifecycle useful in RUM."
+        },
+        {
+            "q": "Which of these is NOT typically captured by frontend RUM?",
+            "o": [
+                "User's CPU temperature",
+                "First Input Delay (FID)",
+                "Cumulative Layout Shift (CLS)",
+                "Error events from JavaScript"
+            ],
+            "a": 0,
+            "e": "User's CPU temperature is not captured; RUM focuses on user experience metrics and error tracking."
+        }
+    ]
+}
