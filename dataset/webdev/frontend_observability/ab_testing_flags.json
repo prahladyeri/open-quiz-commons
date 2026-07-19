@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the primary purpose of using feature flags in A/B testing for frontend observability?",
+            "o": [
+                "To toggle features on or off without deploying new code",
+                "To improve CSS styling on webpages",
+                "To test backend database connectivity",
+                "To increase server uptime"
+            ],
+            "a": 0,
+            "e": "Feature flags allow teams to enable or disable frontend features dynamically, helping to run A/B tests without redeploying code."
+        },
+        {
+            "q": "Which of the following best describes an A/B testing flag?",
+            "o": [
+                "A variable that randomly assigns users to different feature variants",
+                "A flag that marks deprecated features",
+                "A debugging tool for frontend errors",
+                "A CSS class toggle"
+            ],
+            "a": 0,
+            "e": "A/B testing flags randomly assign users to different feature variants to compare user engagement or behavior."
+        },
+        {
+            "q": "How can frontend observability be enhanced through A/B testing flags?",
+            "o": [
+                "By tracking user interactions and metrics by feature variant",
+                "By reducing frontend payload sizes",
+                "By isolating server logs",
+                "By compressing images automatically"
+            ],
+            "a": 0,
+            "e": "Observability is improved by collecting detailed metrics and user interaction data linked to specific feature flag variants."
+        },
+        {
+            "q": "Which technology is commonly used to manage feature flags in a modern frontend application?",
+            "o": [
+                "LaunchDarkly",
+                "Webpack",
+                "Babel",
+                "Docker"
+            ],
+            "a": 0,
+            "e": "LaunchDarkly is a popular feature management platform that helps control feature flags in frontend and backend."
+        },
+        {
+            "q": "What is a common best practice when implementing A/B testing with feature flags on the frontend?",
+            "o": [
+                "Ensure flags are removed after experiment completion",
+                "Keep all flags permanently in code",
+                "Avoid logging any events related to flags",
+                "Serve the same variant to all users"
+            ],
+            "a": 0,
+            "e": "Removing feature flags after experiments avoids code clutter and unexpected behavior in production."
+        },
+        {
+            "q": "Which metric is most useful to evaluate success during A/B testing in frontend observability?",
+            "o": [
+                "User engagement or conversion rate",
+                "Number of CSS lines",
+                "API response latency",
+                "Database query count"
+            ],
+            "a": 0,
+            "e": "User engagement or conversion rate directly reflects the impact of frontend changes tested via A/B flags."
+        },
+        {
+            "q": "What is a feature flag 'rollout percentage'?",
+            "o": [
+                "The proportion of users exposed to a new feature variant",
+                "The amount of CPU used by the feature",
+                "The line count in feature flag definition",
+                "The percentage of bug fixes in the flagged feature"
+            ],
+            "a": 0,
+            "e": "Rollout percentage controls how many users receive the feature variant, helping gradual release or safe testing."
+        },
+        {
+            "q": "Why is it important to tie A/B test results to observability tools?",
+            "o": [
+                "To accurately correlate feature variants with user behavior and issues",
+                "To eliminate the need for backend logging",
+                "To disable all other monitoring tools",
+                "To reduce frontend code size"
+            ],
+            "a": 0,
+            "e": "Integrating observability tools helps analyze the impact of feature changes and quickly detect problems caused by variants."
+        },
+        {
+            "q": "Which of these is a risk of poorly managed feature flags in A/B testing?",
+            "o": [
+                "Increased technical debt and complexity",
+                "Improved page loading speed",
+                "Reduced network calls",
+                "More secure application"
+            ],
+            "a": 0,
+            "e": "Feature flags not cleaned up after use add complexity and cause bugs or stale code accumulation."
+        },
+        {
+            "q": "In frontend observability, which event should be emitted when a feature flag variant is served to the user?",
+            "o": [
+                "An event logging the flag key and assigned variant",
+                "A console.warn message",
+                "An automatic page refresh",
+                "An error report submission"
+            ],
+            "a": 0,
+            "e": "Logging the feature flag key and variant helps track which variant impacted user metrics or errors."
+        }
+    ]
+}
