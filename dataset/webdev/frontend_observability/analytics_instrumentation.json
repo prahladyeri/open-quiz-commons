@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the primary purpose of analytics instrumentation in frontend web development?",
+            "o": [
+                "To optimize CSS styles",
+                "To track and measure user interactions and behaviors",
+                "To compress JavaScript files",
+                "To handle form validations"
+            ],
+            "a": 1,
+            "e": "Analytics instrumentation gathers user interaction data to help analyze and improve user experience."
+        },
+        {
+            "q": "Which of the following is a common method for implementing analytics tracking on web pages?",
+            "o": [
+                "Using server-side scripting only",
+                "Embedding tracking JavaScript snippets (like Google Analytics)",
+                "Disabling browser cache",
+                "Adding inline CSS styles"
+            ],
+            "a": 1,
+            "e": "Analytics is commonly done by adding JavaScript tracking snippets that send data to analytics services."
+        },
+        {
+            "q": "What does 'event tracking' in frontend analytics typically refer to?",
+            "o": [
+                "Tracking server errors",
+                "Tracking user actions like clicks, form submissions, and page scrolls",
+                "Tracking network latency",
+                "Tracking browser memory usage"
+            ],
+            "a": 1,
+            "e": "Event tracking captures specific user interactions such as clicks or form submissions for detailed analytics."
+        },
+        {
+            "q": "Which web API can be used to measure performance and latency in frontend analytics?",
+            "o": [
+                "Fetch API",
+                "Performance API",
+                "LocalStorage API",
+                "WebRTC API"
+            ],
+            "a": 1,
+            "e": "The Performance API provides precise timing data useful for frontend performance analytics."
+        },
+        {
+            "q": "Why is it important to implement debouncing or throttling for analytics event handlers?",
+            "o": [
+                "To increase the number of sent events",
+                "To reduce excessive and redundant tracking calls for performance optimization",
+                "To improve UI responsiveness by disabling analytics",
+                "To encrypt data sent to analytics endpoints"
+            ],
+            "a": 1,
+            "e": "Debouncing/throttling limits the number of events sent to reduce performance overhead and avoid flooding analytics systems."
+        },
+        {
+            "q": "What is 'data layer' in the context of frontend analytics instrumentation?",
+            "o": [
+                "A UI framework",
+                "A JavaScript object that stores and provides event data to analytics tools",
+                "A CSS styling pattern",
+                "A backend database"
+            ],
+            "a": 1,
+            "e": "A data layer is a structured JavaScript object used to pass data from frontend to analytics platforms."
+        },
+        {
+            "q": "Which of these tools is widely used for frontend web analytics?",
+            "o": [
+                "Webpack",
+                "Google Analytics",
+                "Node.js",
+                "Sass"
+            ],
+            "a": 1,
+            "e": "Google Analytics is a popular tool for measuring frontend user activity."
+        },
+        {
+            "q": "What is the benefit of using tag management systems like Google Tag Manager in analytics instrumentation?",
+            "o": [
+                "They minify JavaScript files",
+                "They allow adding and updating analytics and tracking tags without changing source code",
+                "They improve image loading speed",
+                "They handle backend authentication"
+            ],
+            "a": 1,
+            "e": "Tag managers enable marketers and developers to manage tracking tags dynamically without redeploying code."
+        },
+        {
+            "q": "In analytics instrumentation, what does 'sampling' mean?",
+            "o": [
+                "Sending all user data to the server",
+                "Collecting and analyzing only a subset of user data to reduce load",
+                "Encrypting user data",
+                "Filtering out bots from data"
+            ],
+            "a": 1,
+            "e": "Sampling limits data collection to a portion of all users to reduce processing and cost."
+        },
+        {
+            "q": "What is the risk of instrumenting too many events in frontend analytics?",
+            "o": [
+                "Slow page load times and overwhelming data volume",
+                "Better accuracy in data",
+                "Fewer analytics reports",
+                "Reduced memory usage"
+            ],
+            "a": 0,
+            "e": "Over-instrumentation can degrade performance and create excess noise in analytics data."
+        }
+    ]
+}

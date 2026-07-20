@@ -583,7 +583,7 @@
                 {
                     "name": "Frontend Observability & Growth",
                     "slug": "frontend_observability",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Error Tracking & Session Replay",
