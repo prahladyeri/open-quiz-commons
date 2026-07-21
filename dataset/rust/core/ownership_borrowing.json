@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "In Rust, what does the ownership system primarily help with?",
+            "o": [
+                "Memory safety without a garbage collector",
+                "Allowing multiple mutable references",
+                "Automatic thread synchronization",
+                "Reducing compile times"
+            ],
+            "a": 0,
+            "e": "Rust's ownership system ensures memory safety and prevents data races without needing a garbage collector."
+        },
+        {
+            "q": "In Rust, which keyword is used to create a reference to a value without taking ownership?",
+            "o": [
+                "ref",
+                "&",
+                "let",
+                "*"
+            ],
+            "a": 1,
+            "e": "The '&' symbol is used to create an immutable reference to a value without taking ownership."
+        },
+        {
+            "q": "What happens if you try to have two mutable references to the same data simultaneously in Rust?",
+            "o": [
+                "It compiles fine",
+                "Compiler error due to borrowing rules",
+                "Undefined behavior at runtime",
+                "Data gets copied automatically"
+            ],
+            "a": 1,
+            "e": "Rust's borrowing rules prevent having two mutable references to the same data at the same time to ensure safety."
+        },
+        {
+            "q": "What does the term 'borrowing' mean in Rust?",
+            "o": [
+                "Transferring ownership permanently",
+                "Creating a reference to a value without taking ownership",
+                "Copying the data to a new variable",
+                "Cloning data using a method"
+            ],
+            "a": 1,
+            "e": "Borrowing means creating references (& or &mut) to data without transferring ownership."
+        },
+        {
+            "q": "Which of these can be mutated in Rust?",
+            "o": [
+                "An immutable reference (&T)",
+                "A mutable reference (&mut T)",
+                "The original data if only borrowed immutably",
+                "Ownership transferred to a function"
+            ],
+            "a": 1,
+            "e": "Only mutable references (&mut T) allow mutation. Immutable references (&T) do not permit mutation."
+        },
+        {
+            "q": "What does the 'move' keyword do in Rust closures?",
+            "o": [
+                "Moves ownership of captured variables into the closure",
+                "Copies captured variables",
+                "Allows borrowing multiple times",
+                "Prevents using captured variables"
+            ],
+            "a": 0,
+            "e": "'move' forces the closure to take ownership of captured variables instead of borrowing them."
+        },
+        {
+            "q": "Which trait must a type implement to be safely copied rather than moved in Rust?",
+            "o": [
+                "Copy",
+                "Clone",
+                "Drop",
+                "Default"
+            ],
+            "a": 0,
+            "e": "'Copy' types implement implicit copying instead of moving, usually for simple scalar types."
+        },
+        {
+            "q": "What is the lifetime specifier used for in Rust?",
+            "o": [
+                "Indicating duration of execution",
+                "Describing scope of references to ensure validity",
+                "Annotating ownership transfer between threads",
+                "Managing crate dependencies"
+            ],
+            "a": 1,
+            "e": "Lifetimes help the compiler check that references remain valid and prevent dangling references."
+        },
+        {
+            "q": "What does borrowing with '&mut' mean in Rust?",
+            "o": [
+                "Immutable borrow",
+                "Mutable borrow allowing modification",
+                "Moving ownership",
+                "Copying value"
+            ],
+            "a": 1,
+            "e": "'&mut' is a mutable reference that allows modifying the borrowed data."
+        },
+        {
+            "q": "Why can Rust prevent data races at compile time?",
+            "o": [
+                "Because of ownership and borrowing rules",
+                "Because it uses garbage collection",
+                "Due to runtime checks",
+                "Because all data is immutable"
+            ],
+            "a": 0,
+            "e": "Rust's ownership and borrowing rules enforced at compile time eliminate data races."
+        }
+    ]
+}
