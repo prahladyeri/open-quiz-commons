@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "In Rust, which trait is used to define behavior for types that can be compared for equality?",
+            "o": [
+                "PartialEq",
+                "Ord",
+                "Debug",
+                "Copy"
+            ],
+            "a": 0,
+            "e": "PartialEq is the trait used to allow equality comparisons using == and != operators."
+        },
+        {
+            "q": "What is the primary purpose of generics in Rust?",
+            "o": [
+                "To allow multiple ownership",
+                "To enable code reuse for multiple types",
+                "To allocate data on the heap",
+                "To restrict type inference"
+            ],
+            "a": 1,
+            "e": "Generics enable writing code that works with any data type while maintaining type safety."
+        },
+        {
+            "q": "Which syntax correctly defines a generic function in Rust?",
+            "o": [
+                "fn foo<T>(x: T) {}",
+                "fn foo(T) {}",
+                "fn foo[T](x: T) {}",
+                "fn foo<T>: x {}"
+            ],
+            "a": 0,
+            "e": "The correct syntax uses angle brackets: fn foo<T>(x: T) {}."
+        },
+        {
+            "q": "How do you constrain a generic type to only those implementing the Debug trait?",
+            "o": [
+                "fn foo<T: Debug>(x: T) {}",
+                "fn foo<T + Debug>(x: T) {}",
+                "fn foo<T where T: Debug>(x: T) {}",
+                "Both 1 and 3"
+            ],
+            "a": 3,
+            "e": "Both fn foo<T: Debug>(x: T) {} and fn foo<T> where T: Debug (x: T) {} are valid to bound a generic by Debug."
+        },
+        {
+            "q": "Which trait should a type implement to support ordering comparisons in Rust?",
+            "o": [
+                "PartialOrd",
+                "Eq",
+                "Ord",
+                "Clone"
+            ],
+            "a": 2,
+            "e": "Ord requires total ordering, allowing the use of comparison methods like cmp()."
+        },
+        {
+            "q": "What will happen if a generic function's type parameter does not satisfy the trait bounds required?",
+            "o": [
+                "Compile-time error",
+                "Runtime error",
+                "Warning but compiles",
+                "Program silently ignores the constraint"
+            ],
+            "a": 0,
+            "e": "Trait bounds are checked at compile time, so unsatisfied bounds cause compilation to fail."
+        },
+        {
+            "q": "Which of the following is true about the Rust trait 'Copy'?",
+            "o": [
+                "It allows types to be implicitly copied instead of moved",
+                "It enables dynamic dispatch",
+                "It is a marker trait for thread safety",
+                "It restricts types to be heap allocated"
+            ],
+            "a": 0,
+            "e": "'Copy' trait allows types to be duplicated simply by copying bits, avoiding moves."
+        },
+        {
+            "q": "How do you specify multiple trait bounds on a generic type in a function signature?",
+            "o": [
+                "fn foo<T: Debug + Clone>(x: T) {}",
+                "fn foo<T: Debug, Clone>(x: T) {}",
+                "fn foo<T>(x: T) where T: Debug + Clone {}",
+                "Both 1 and 3"
+            ],
+            "a": 3,
+            "e": "You can specify with + syntax in angle brackets or via a where clause."
+        },
+        {
+            "q": "What does it mean if a Rust trait has associated types?",
+            "o": [
+                "The trait defines placeholder type names to be specified by implementors",
+                "The trait can only be used with structs",
+                "The trait automatically implements all generic types",
+                "The trait enables exceptions"
+            ],
+            "a": 0,
+            "e": "Associated types allow traits to define types that the implementor must specify."
+        },
+        {
+            "q": "What Rust feature allows you to write one struct to be generic over multiple types?",
+            "o": [
+                "Generics",
+                "Traits",
+                "Macros",
+                "Enums"
+            ],
+            "a": 0,
+            "e": "Generics allow struct definitions to be parameterized with type variables."
+        }
+    ]
+}
