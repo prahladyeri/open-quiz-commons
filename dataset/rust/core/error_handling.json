@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "In Rust, which type is commonly used for error handling that can represent either success or failure?",
+            "o": [
+                "Option<T>",
+                "Result<T, E>",
+                "Error<T>",
+                "Maybe<T>"
+            ],
+            "a": 1,
+            "e": "The Result<T, E> type is used to represent either a success (Ok) or failure (Err) outcome in Rust."
+        },
+        {
+            "q": "What does the 'Ok' variant of Result<T, E> represent in Rust?",
+            "o": [
+                "An error occurred",
+                "A panic situation",
+                "A successful computation with value T",
+                "None of the above"
+            ],
+            "a": 2,
+            "e": "'Ok' indicates success and holds a value of type T."
+        },
+        {
+            "q": "What is the purpose of the 'Err' variant in Rust's Result type?",
+            "o": [
+                "Holds a successful result",
+                "Represents an error and holds error information",
+                "Indicates a panic",
+                "None of the above"
+            ],
+            "a": 1,
+            "e": "'Err' means an error occurred and holds an error value of type E."
+        },
+        {
+            "q": "Which Rust macro can be used to explicitly cause a panic with a custom message?",
+            "o": [
+                "panic!()",
+                "assert!()",
+                "unwrap!()",
+                "fail!()"
+            ],
+            "a": 0,
+            "e": "The panic!() macro triggers a panic, optionally with a custom error message."
+        },
+        {
+            "q": "What does the '?' operator do in Rust when used after a Result-returning expression?",
+            "o": [
+                "Ignores the result",
+                "Unwraps the Result and panics on Err",
+                "Returns the Err early from the function, or unwraps Ok",
+                "Converts the Result to an Option"
+            ],
+            "a": 2,
+            "e": "The '?' operator propagates the Err early or unwraps the Ok value."
+        },
+        {
+            "q": "Which trait must an error type implement to be usable with the standard Rust error handling ecosystem?",
+            "o": [
+                "Debug",
+                "Display",
+                "std::error::Error",
+                "Clone"
+            ],
+            "a": 2,
+            "e": "The std::error::Error trait indicates a type is an error and supports interoperability."
+        },
+        {
+            "q": "In Rust, which method converts an Option<T> into a Result<T, E> by supplying an error if None?",
+            "o": [
+                "unwrap()",
+                "expect()",
+                "ok_or()",
+                "is_none()"
+            ],
+            "a": 2,
+            "e": "ok_or() converts Option<T> to Result<T, E> by providing an error value for None."
+        },
+        {
+            "q": "How would you recover or transform the error value in a Result<T, E>?",
+            "o": [
+                "Using the map_err() method",
+                "Using the unwrap() method",
+                "Using the ok() method",
+                "Using the expect() method"
+            ],
+            "a": 0,
+            "e": "map_err() allows you to map or transform the error value in a Result."
+        },
+        {
+            "q": "What is the difference between unwrap() and expect() on a Result in Rust?",
+            "o": [
+                "unwrap() returns Option, expect() returns Result",
+                "unwrap() panics with default message, expect() panics with provided message",
+                "unwrap() handles errors gracefully, expect() ignores errors",
+                "There is no difference"
+            ],
+            "a": 1,
+            "e": "unwrap() panics with default message on Err; expect() panics with a custom message."
+        },
+        {
+            "q": "What is the behavior of Rust's panic! macro when invoked?",
+            "o": [
+                "Returns a Result::Err",
+                "Gracefully logs the error and continues",
+                "Terminates the current thread by unwinding or aborting",
+                "Ignores the error silently"
+            ],
+            "a": 2,
+            "e": "panic! macro causes thread termination either by unwinding stack or aborting."
+        },
+        {
+            "q": "Which approach is preferred in Rust for recoverable errors?",
+            "o": [
+                "Using panic! macro",
+                "Using Result<T, E> type",
+                "Using std::panic::catch_unwind everywhere",
+                "Ignoring errors"
+            ],
+            "a": 1,
+            "e": "Result<T, E> is preferred for recoverable errors to handle them gracefully."
+        },
+        {
+            "q": "What is the role of the 'anyhow' crate in Rust error handling?",
+            "o": [
+                "Provides a Result alias for easier error propagation",
+                "Simplifies error handling by providing a generic error type",
+                "Cause program to panic on errors",
+                "Used for asynchronous programming"
+            ],
+            "a": 1,
+            "e": "anyhow provides a convenient generic error type to simplify error management."
+        },
+        {
+            "q": "How can you chain errors to preserve context in Rust?",
+            "o": [
+                "Using the chain_err() method from custom crates",
+                "Using the ? operator only",
+                "Using unwrap() method",
+                "Using panic! macro"
+            ],
+            "a": 0,
+            "e": "Many crates provide chain_err() or context methods to add error context to Result errors."
+        },
+        {
+            "q": "What is the difference between panic and Result in Rust?",
+            "o": [
+                "panic is for recoverable errors, Result is for unrecoverable errors",
+                "panic aborts thread or program, Result handles recoverable outcomes",
+                "Both are used interchangeably",
+                "panic returns an error code"
+            ],
+            "a": 1,
+            "e": "panic leads to thread abort, Result is used for recoverable error handling."
+        },
+        {
+            "q": "Which method converts a Result<T, E> into an Option<T>, discarding the error?",
+            "o": [
+                "ok()",
+                "unwrap()",
+                "expect()",
+                "map()"
+            ],
+            "a": 0,
+            "e": "ok() converts Result to Option, yielding Some(T) if Ok or None if Err."
+        }
+    ]
+}
