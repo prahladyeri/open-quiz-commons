@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What keyword is used to define an asynchronous function in Rust?",
+            "o": [
+                "async fn",
+                "await fn",
+                "future fn",
+                "concurrent fn"
+            ],
+            "a": 0,
+            "e": "In Rust, asynchronous functions are defined using the `async fn` keyword."
+        },
+        {
+            "q": "Which trait must a type implement to be awaitable in Rust?",
+            "o": [
+                "Future",
+                "Async",
+                "Awaitable",
+                "Concurrent"
+            ],
+            "a": 0,
+            "e": "The `Future` trait represents values that are computed asynchronously and can be awaited."
+        },
+        {
+            "q": "What does the `.await` syntax do in Rust async programming?",
+            "o": [
+                "Blocks the thread until the Future finishes",
+                "Polls the Future and yields control if not ready",
+                "Runs the Future immediately",
+                "Declares a Future"
+            ],
+            "a": 1,
+            "e": "Using `.await` polls a Future, yields control to the executor if not ready, and resumes when complete."
+        },
+        {
+            "q": "Which of the following crates is commonly used as an async runtime in Rust?",
+            "o": [
+                "tokio",
+                "serde",
+                "rand",
+                "regex"
+            ],
+            "a": 0,
+            "e": "`tokio` is a widely used asynchronous runtime for Rust, providing async I/O, task scheduling, and more."
+        },
+        {
+            "q": "What is the purpose of the 'Send' trait in Rust's concurrency context?",
+            "o": [
+                "Ensures a type can be safely sent to another thread",
+                "Allows shared mutable access",
+                "Defines an async function",
+                "Prevents data races automatically"
+            ],
+            "a": 0,
+            "e": "The `Send` trait marks types that can be safely transferred ownership to another thread."
+        },
+        {
+            "q": "Which Rust feature allows multiple tasks to run concurrently without using OS threads?",
+            "o": [
+                "Async/await with futures",
+                "Thread::spawn",
+                "Mutexes",
+                "Channels"
+            ],
+            "a": 0,
+            "e": "Async/await enables lightweight tasks that the runtime multiplexes onto fewer OS threads."
+        },
+        {
+            "q": "In Rust's async model, what drives a future to completion?",
+            "o": [
+                "An executor or runtime",
+                "The CPU directly",
+                "The async keyword",
+                "The compiler"
+            ],
+            "a": 0,
+            "e": "An executor or runtime schedules and polls futures to make progress until they complete."
+        },
+        {
+            "q": "Which mechanism does Rust use for safe shared mutable state in async code?",
+            "o": [
+                "Mutex<T>",
+                "Arc<T>",
+                "RefCell<T>",
+                "UnsafeCell<T>"
+            ],
+            "a": 0,
+            "e": "`Mutex<T>` provides safe shared mutable access by allowing only one mutable borrow at a time with locking."
+        },
+        {
+            "q": "What enables multiple tasks to communicate asynchronously in Rust?",
+            "o": [
+                "Channels",
+                "Mutexes",
+                "Atomic types",
+                "Threads"
+            ],
+            "a": 0,
+            "e": "Channels are used to send values between tasks safely and asynchronously."
+        },
+        {
+            "q": "How do you spawn an asynchronous task on the Tokio runtime?",
+            "o": [
+                "tokio::spawn(async { /* code */ })",
+                "std::thread::spawn(async { /* code */ })",
+                "async fn spawn_task() { /* code */ }",
+                "spawn(async { /* code */ })"
+            ],
+            "a": 0,
+            "e": "`tokio::spawn` is used to spawn asynchronous tasks onto the Tokio runtime."
+        }
+    ]
+}

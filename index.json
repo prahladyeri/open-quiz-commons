@@ -617,7 +617,7 @@
                 {
                     "name": "Core Rust",
                     "slug": "core",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Ownership & Borrowing",
