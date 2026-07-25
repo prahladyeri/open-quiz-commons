@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is wasm-bindgen used for in Rust WebAssembly projects?",
+            "o": [
+                "To bind Rust functions to JavaScript and vice versa",
+                "To compile Rust to native binaries",
+                "To optimize WebAssembly binaries",
+                "To create web server frameworks"
+            ],
+            "a": 0,
+            "e": "wasm-bindgen facilitates communication between Rust-generated WebAssembly and JavaScript by generating bindings."
+        },
+        {
+            "q": "Which attribute do you use to expose a Rust function to JavaScript using wasm-bindgen?",
+            "o": [
+                "#[wasm_export]",
+                "#[wasm_bindgen]",
+                "#[export_to_js]",
+                "#[js_bind]"
+            ],
+            "a": 1,
+            "e": "The #[wasm_bindgen] attribute marks Rust functions or types to be exposed to JavaScript."
+        },
+        {
+            "q": "What is WasmEdge primarily designed for?",
+            "o": [
+                "A Rust web framework",
+                "A high-performance WebAssembly runtime optimized for cloud and edge computing",
+                "A debugging tool for WebAssembly",
+                "An IDE plugin for Rust"
+            ],
+            "a": 1,
+            "e": "WasmEdge is a lightweight and fast WebAssembly runtime tailored for cloud-native and edge computing scenarios."
+        },
+        {
+            "q": "Which command installs wasm-bindgen CLI globally using Cargo?",
+            "o": [
+                "cargo install wasm-bindgen",
+                "cargo install wasm-bindgen-cli",
+                "cargo add wasm-bindgen-cli",
+                "cargo build wasm-bindgen"
+            ],
+            "a": 1,
+            "e": "The package wasm-bindgen-cli is installed via `cargo install wasm-bindgen-cli` to provide command-line tools."
+        },
+        {
+            "q": "How do you enable the wasm-bindgen feature in your Cargo.toml dependencies?",
+            "o": [
+                "\"wasm-bindgen = { version = \"*\", features = [\"js\"] }\"",
+                "\"wasm-bindgen = { version = \"*\" }\"",
+                "\"wasm-bindgen = { version = \"*\", features = [\"serde\"] }\"",
+                "\"wasm-bindgen = { path = \"../wasm-bindgen\" }\""
+            ],
+            "a": 1,
+            "e": "Typically, you just specify the version for wasm-bindgen. Features like serde are optional and specific."
+        },
+        {
+            "q": "Which tool can generate JavaScript bindings after compiling Rust to Wasm?",
+            "o": [
+                "wasm-pack",
+                "cargo-web",
+                "webpack",
+                "wasm-bindgen CLI"
+            ],
+            "a": 3,
+            "e": "wasm-bindgen CLI tool processes the wasm file to generate JS bindings to interface with Rust code."
+        },
+        {
+            "q": "Which Rust attribute is used on structs or enums to expose them for use in JavaScript with wasm-bindgen?",
+            "o": [
+                "#[derive(Serialize)]",
+                "#[wasm_bindgen]",
+                "#[expose_to_js]",
+                "#[wasm_exported]"
+            ],
+            "a": 1,
+            "e": "The #[wasm_bindgen] attribute enables structs or enums to be accessible from JavaScript."
+        },
+        {
+            "q": "What is the typical output of compiling Rust to WebAssembly using wasm-bindgen?",
+            "o": [
+                "A .wasm binary and matching JavaScript glue code",
+                "A C header file",
+                "A native executable binary",
+                "An LLVM IR file"
+            ],
+            "a": 0,
+            "e": "wasm-bindgen produces a .wasm WebAssembly binary plus JavaScript glue code for interacting with it."
+        },
+        {
+            "q": "Which command compiles Rust code to WebAssembly with wasm-bindgen support?",
+            "o": [
+                "cargo build --target wasm32-unknown-unknown",
+                "cargo build --target wasm32-wasi",
+                "cargo build --target wasm32-unknown-unknown && wasm-bindgen target/wasm32-unknown-unknown/debug/your_project.wasm --out-dir pkg --target web",
+                "cargo wasm"
+            ],
+            "a": 2,
+            "e": "You compile with cargo targeting wasm32-unknown-unknown and then run wasm-bindgen on the .wasm file."
+        },
+        {
+            "q": "How does WasmEdge differ from the standard Wasmtime or Wasmer runtimes?",
+            "o": [
+                "It's slower but supports more languages",
+                "It's optimized for edge and cloud with low latency and resource use",
+                "It only runs on Windows",
+                "It's deprecated"
+            ],
+            "a": 1,
+            "e": "WasmEdge specializes in high-performance edge computing environments with optimizations for low latency."
+        }
+    ]
+}
