@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is WasmEdge primarily used for in Rust projects?",
+            "o": [
+                "A web framework",
+                "A WebAssembly runtime optimized for edge computing",
+                "A database engine",
+                "An HTTP client library"
+            ],
+            "a": 1,
+            "e": "WasmEdge is a WebAssembly runtime designed to run WebAssembly applications efficiently on edge and cloud platforms."
+        },
+        {
+            "q": "How do you add SQLite support in a Rust project using WasmEdge?",
+            "o": [
+                "By using the 'rusqlite' crate only",
+                "By integrating SQLite WebAssembly module with WasmEdge",
+                "By compiling SQLite directly into the Rust binary",
+                "SQLite is not supported in WasmEdge"
+            ],
+            "a": 1,
+            "e": "WasmEdge can run SQLite compiled to WebAssembly, enabling embedded database functionalities inside the Wasm runtime."
+        },
+        {
+            "q": "Which Rust crate can be used for binding with WasmEdge runtime?",
+            "o": [
+                "wasm_bindgen",
+                "wasmedge-sdk",
+                "tokio",
+                "serde"
+            ],
+            "a": 1,
+            "e": "The 'wasmedge-sdk' crate provides high-level bindings to interact with the WasmEdge runtime in Rust."
+        },
+        {
+            "q": "What is a key advantage of running SQLite in WasmEdge with Rust?",
+            "o": [
+                "Support for multi-threaded transactions",
+                "Cross-platform lightweight local data storage in a sandboxed environment",
+                "Using SQL over HTTP",
+                "Native GPU acceleration for queries"
+            ],
+            "a": 1,
+            "e": "Running SQLite in WasmEdge allows lightweight, sandboxed, local data storage across platforms with Rust."
+        },
+        {
+            "q": "How do you execute a SQLite query inside a Rust application running WasmEdge?",
+            "o": [
+                "Use native Rust 'rusqlite' directly",
+                "Invoke SQLite WebAssembly functions via WasmEdge SDK",
+                "Call an external database server",
+                "Use Rust's SQL macros"
+            ],
+            "a": 1,
+            "e": "You invoke the SQLite WebAssembly module APIs through WasmEdge SDK to run queries within the Wasm sandbox."
+        },
+        {
+            "q": "What command is used to compile Rust code targeting WebAssembly for WasmEdge?",
+            "o": [
+                "cargo build --release",
+                "cargo build --target wasm32-wasi",
+                "rustc --target wasm32-unknown-unknown",
+                "cargo run"
+            ],
+            "a": 1,
+            "e": "The wasm32-wasi target compiles Rust code to WebAssembly with WASI support for WasmEdge runtime."
+        },
+        {
+            "q": "What feature does WasmEdge provide to enable SQLite functionality securely?",
+            "o": [
+                "Full system call pass-through",
+                "WASI sandboxing for safe system interface calls",
+                "Direct disk access",
+                "Custom Rust macros"
+            ],
+            "a": 1,
+            "e": "WASI sandboxing restricts what WebAssembly modules can do, making SQLite execution safe inside WasmEdge."
+        },
+        {
+            "q": "Can WasmEdge run standard compiled SQLite C libraries as WebAssembly modules?",
+            "o": [
+                "No, it only supports Rust code",
+                "Yes, if they are compiled to Wasm with WASI support",
+                "No, it requires a custom SQLite interpreter",
+                "Yes, directly with no changes"
+            ],
+            "a": 1,
+            "e": "Standard SQLite can be compiled to Wasm with WASI and run inside WasmEdge."
+        },
+        {
+            "q": "What does the 'sqlite3_prepare_v2' function do when running SQLite in WasmEdge?",
+            "o": [
+                "Opens a new database connection",
+                "Prepares a SQL statement for execution",
+                "Executes the SQL query",
+                "Closes the database"
+            ],
+            "a": 1,
+            "e": "'sqlite3_prepare_v2' prepares a SQL query for execution by compiling it into a byte-code program."
+        },
+        {
+            "q": "Which of these is a typical use case for Rust + WasmEdge + SQLite combination?",
+            "o": [
+                "Real-time video rendering",
+                "Embedded edge data processing with lightweight database support",
+                "Building mobile apps using native UI toolkit",
+                "GPU compute shaders"
+            ],
+            "a": 1,
+            "e": "This combination is ideal for edge computing where lightweight database storage inside a secure Wasm runtime is needed."
+        }
+    ]
+}
