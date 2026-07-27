@@ -640,7 +640,7 @@
                 {
                     "name": "WASM & Edge",
                     "slug": "wasm_edge",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "wasm-bindgen & wasm-pack",

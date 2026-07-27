@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is wasm-edge in the context of Rust?",
+            "o": [
+                "A Rust crate for WebAssembly runtime optimized for edge computing",
+                "A new Rust parser",
+                "A macOS development framework",
+                "A Rust web framework"
+            ],
+            "a": 0,
+            "e": "wasm-edge is a lightweight WebAssembly runtime optimized for running WebAssembly modules, especially in edge computing environments."
+        },
+        {
+            "q": "Which command initializes a new Cloudflare Worker project with Rust support?",
+            "o": [
+                "wrangler init --template rust",
+                "cargo new cf-worker",
+                "wrangler generate rust-worker",
+                "cfworker init --rust"
+            ],
+            "a": 0,
+            "e": "The command `wrangler init --template rust` creates a new Cloudflare Worker project scaffolded for Rust."
+        },
+        {
+            "q": "How do you build a Rust Cloudflare Worker using wrangler?",
+            "o": [
+                "wrangler build",
+                "cargo build --release",
+                "wrangler publish",
+                "cargo run"
+            ],
+            "a": 0,
+            "e": "wrangler build runs the build pipeline, compiling the Rust code into WebAssembly ready for deployment."
+        },
+        {
+            "q": "Which Rust crate is commonly used with Cloudflare Workers to help work with HTTP requests and responses?",
+            "o": [
+                "wasm-bindgen",
+                "workers-rs",
+                "reqwest",
+                "warp"
+            ],
+            "a": 1,
+            "e": "workers-rs crate provides idiomatic Rust bindings and helpers to build Cloudflare Workers."
+        },
+        {
+            "q": "In wasm-edge, what is the primary format for running application logic?",
+            "o": [
+                "WebAssembly (WASM)",
+                "Binary executable",
+                "JavaScript",
+                "JSON"
+            ],
+            "a": 0,
+            "e": "wasm-edge executes WebAssembly bytecode, which is platform independent and efficient for edge environments."
+        },
+        {
+            "q": "Which file typically defines metadata and configuration in a Rust Cloudflare Worker project?",
+            "o": [
+                "Cargo.toml",
+                "wrangler.toml",
+                "config.json",
+                "package.json"
+            ],
+            "a": 1,
+            "e": "wrangler.toml configures the Cloudflare Worker project including account info, routes, and build settings."
+        },
+        {
+            "q": "How do you deploy a Rust-written Cloudflare Worker to your Cloudflare account?",
+            "o": [
+                "wrangler publish",
+                "curl deploy",
+                "cargo deploy",
+                "wasm-edge deploy"
+            ],
+            "a": 0,
+            "e": "`wrangler publish` builds and deploys the worker WebAssembly to your Cloudflare account."
+        },
+        {
+            "q": "Which toolchain is necessary to compile Rust code to WebAssembly for Cloudflare Workers?",
+            "o": [
+                "wasm32-unknown-unknown",
+                "x86_64-pc-windows-msvc",
+                "armv7-unknown-linux-gnueabihf",
+                "wasm64-apple-darwin"
+            ],
+            "a": 0,
+            "e": "The wasm32-unknown-unknown Rust target compiles Rust into WASM for browser and edge usage."
+        },
+        {
+            "q": "How can you invoke JavaScript APIs from Rust in a Cloudflare Worker?",
+            "o": [
+                "Using wasm-bindgen to bind and call JS APIs",
+                "Directly call JS code from Rust without tooling",
+                "Only via JSON",
+                "You cannot invoke JS APIs from Rust"
+            ],
+            "a": 0,
+            "e": "wasm-bindgen allows Rust to interact with JavaScript APIs through bindings in WASM."
+        },
+        {
+            "q": "What is the main advantage of using Rust for Cloudflare Workers?",
+            "o": [
+                "Performance and memory safety with low footprint WebAssembly",
+                "Simpler syntax than JavaScript",
+                "Built-in UI frameworks",
+                "Automatic cloud scaling"
+            ],
+            "a": 0,
+            "e": "Rust compiles to WASM and offers speed and safety, ideal for edge functions where performance matters."
+        }
+    ]
+}
