@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What file is used to define a GitHub Actions workflow?",
+            "o": [
+                "workflow.yaml inside .github/workflows/",
+                "github.yaml in project root",
+                "actions.yml inside .github/actions/",
+                "config.yaml in .github/config/"
+            ],
+            "a": 0,
+            "e": "GitHub Actions workflows are defined in YAML files stored under the .github/workflows directory."
+        },
+        {
+            "q": "Which trigger event is used to run a workflow when code is pushed to a repository?",
+            "o": [
+                "push",
+                "pull_request",
+                "release",
+                "deployment"
+            ],
+            "a": 0,
+            "e": "The 'push' event triggers workflows when commits are pushed to branches."
+        },
+        {
+            "q": "In GitHub Actions, what is the default shell used to run commands on Ubuntu runners?",
+            "o": [
+                "bash",
+                "sh",
+                "powershell",
+                "zsh"
+            ],
+            "a": 0,
+            "e": "On Ubuntu Linux runners, the default shell is bash."
+        },
+        {
+            "q": "How do you define environment variables for all steps in a GitHub Actions job?",
+            "o": [
+                "Specify 'env' at the job level",
+                "Use 'env' separately in each step",
+                "Use 'variables' section in workflow",
+                "Set secrets in GitHub repository settings"
+            ],
+            "a": 0,
+            "e": "Defining 'env' at the job level makes environment variables available to all steps within that job."
+        },
+        {
+            "q": "Which action is used to check out the repository code inside a job?",
+            "o": [
+                "actions/checkout@v3",
+                "actions/setup-node@v3",
+                "actions/upload-artifact@v3",
+                "actions/cache@v3"
+            ],
+            "a": 0,
+            "e": "actions/checkout checkout the repository code to the runner for the workflow."
+        },
+        {
+            "q": "What is the maximum runtime limit for a single GitHub Actions job on GitHub-hosted runners?",
+            "o": [
+                "6 hours",
+                "1 hour",
+                "12 hours",
+                "24 hours"
+            ],
+            "a": 0,
+            "e": "GitHub Actions jobs have a maximum runtime limit of 6 hours on hosted runners."
+        },
+        {
+            "q": "How can you reuse steps or entire jobs across multiple workflows in GitHub Actions?",
+            "o": [
+                "By creating reusable workflows",
+                "Using 'include' keyword",
+                "Copy-pasting the YAML code",
+                "Using Docker containers only"
+            ],
+            "a": 0,
+            "e": "Reusable workflows let you share common jobs or steps between workflows to avoid duplication."
+        },
+        {
+            "q": "Which syntax is correct to upload an artifact in a GitHub Actions workflow?",
+            "o": [
+                "uses: actions/upload-artifact@v3 with: name: my-artifact path: ./build",
+                "run: upload-artifact ./build",
+                "uses: actions/artifact-upload path: ./build name: artifact",
+                "action: upload-artifact path: ./build"
+            ],
+            "a": 0,
+            "e": "The 'actions/upload-artifact' action with 'name' and 'path' parameters uploads build artifacts."
+        },
+        {
+            "q": "What is the purpose of the 'needs' keyword in a GitHub Actions workflow job?",
+            "o": [
+                "Specify job dependencies to control execution order",
+                "Declare environment variables",
+                "Include external workflows",
+                "Set runner labels"
+            ],
+            "a": 0,
+            "e": "'needs' indicates which jobs must complete successfully before the current job runs."
+        },
+        {
+            "q": "How can you secure sensitive data like tokens in GitHub Actions workflows?",
+            "o": [
+                "Use GitHub Secrets and access them via ${{ secrets.NAME }}",
+                "Store credentials directly in workflow YAML",
+                "Hardcode tokens in script steps",
+                "Encrypt tokens manually and commit"
+            ],
+            "a": 0,
+            "e": "GitHub Secrets provide secure storage for sensitive values accessed safely in workflows."
+        }
+    ]
+}
