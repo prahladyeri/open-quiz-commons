@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "What command is used to build a Docker image from a Dockerfile?",
+            "o": [
+                "docker run",
+                "docker build",
+                "docker pull",
+                "docker push"
+            ],
+            "a": 1,
+            "e": "The docker build command builds a Docker image from a Dockerfile in the current directory or specified path."
+        },
+        {
+            "q": "Which file is typically used to define a continuous integration pipeline in Jenkins?",
+            "o": [
+                "Dockerfile",
+                "Jenkinsfile",
+                "pipeline.yml",
+                "ci-config.json"
+            ],
+            "a": 1,
+            "e": "A Jenkinsfile defines the build pipeline for Jenkins in a declarative pipeline syntax."
+        },
+        {
+            "q": "In Docker, what does the command 'docker run -d' do?",
+            "o": [
+                "Runs a container in detached mode (background)",
+                "Deletes a container forcefully",
+                "Displays logs of a container",
+                "Downloads an image"
+            ],
+            "a": 0,
+            "e": "'-d' flag runs the container in detached mode, meaning the container runs in the background."
+        },
+        {
+            "q": "What is the default Docker network type when you run a container?",
+            "o": [
+                "host",
+                "bridge",
+                "none",
+                "overlay"
+            ],
+            "a": 1,
+            "e": "The default Docker network is 'bridge', a private network internal to the Docker host."
+        },
+        {
+            "q": "What is the primary purpose of Continuous Integration (CI)?",
+            "o": [
+                "To deploy code directly to production",
+                "To merge code changes frequently and run automated tests",
+                "To create containers",
+                "To monitor system health"
+            ],
+            "a": 1,
+            "e": "CI aims to integrate code changes frequently and run tests automatically to detect issues early."
+        },
+        {
+            "q": "Which command is used to list currently running Docker containers?",
+            "o": [
+                "docker ps",
+                "docker images",
+                "docker ls",
+                "docker logs"
+            ],
+            "a": 0,
+            "e": "docker ps lists all currently running containers. docker images lists downloaded images."
+        },
+        {
+            "q": "What is a key benefit of using Docker in CI/CD pipelines?",
+            "o": [
+                "Avoids use of version control systems",
+                "Ensures consistent environments across development, testing, and production",
+                "Increases build times significantly",
+                "Removes need for automated testing"
+            ],
+            "a": 1,
+            "e": "Docker containers package applications and their dependencies, ensuring consistent execution environments."
+        },
+        {
+            "q": "Which Dockerfile instruction sets the base image for the build?",
+            "o": [
+                "RUN",
+                "FROM",
+                "CMD",
+                "ENTRYPOINT"
+            ],
+            "a": 1,
+            "e": "FROM specifies the base image for subsequent instructions in the Dockerfile."
+        },
+        {
+            "q": "In Jenkins, what does a pipeline stage represent?",
+            "o": [
+                "A Git repository",
+                "A defined phase or step of the build process",
+                "A Docker container",
+                "A VM instance"
+            ],
+            "a": 1,
+            "e": "A stage groups steps of the build and represents a major phase such as Build, Test or Deploy."
+        },
+        {
+            "q": "How do you push a local Docker image to Docker Hub?",
+            "o": [
+                "docker push image_name:tag",
+                "docker upload image_name",
+                "docker send image_name",
+                "docker pull image_name"
+            ],
+            "a": 0,
+            "e": "docker push followed by the image name and tag uploads the image to Docker Hub or configured registry."
+        },
+        {
+            "q": "Which of these is NOT a valid Docker container lifecycle command?",
+            "o": [
+                "docker start",
+                "docker build",
+                "docker stop",
+                "docker compile"
+            ],
+            "a": 3,
+            "e": "There is no 'docker compile' command. Building images uses docker build."
+        },
+        {
+            "q": "In a typical CI/CD workflow, what is the purpose of the CD step?",
+            "o": [
+                "Continuous deployment or delivery of built code to test or production environments",
+                "Compilation of source code",
+                "Code merging",
+                "Running unit tests"
+            ],
+            "a": 0,
+            "e": "Continuous Delivery/Deployment automates the release of code to external environments after CI builds and tests."
+        },
+        {
+            "q": "What is the function of the Docker ENTRYPOINT instruction?",
+            "o": [
+                "Specifies the working directory",
+                "Defines the command that always runs when the container starts",
+                "Exposes ports",
+                "Copies files into image"
+            ],
+            "a": 1,
+            "e": "ENTRYPOINT sets the main command for the container that is not overridden by docker run parameters."
+        },
+        {
+            "q": "Which command removes all stopped containers, unused networks, and dangling images?",
+            "o": [
+                "docker clean",
+                "docker prune",
+                "docker rm -f",
+                "docker clear"
+            ],
+            "a": 1,
+            "e": "docker system prune removes unused data including stopped containers and dangling images."
+        },
+        {
+            "q": "What file format is commonly used to declare multi-stage builds in Docker?",
+            "o": [
+                "JSON",
+                "YAML",
+                "Dockerfile",
+                "XML"
+            ],
+            "a": 2,
+            "e": "Multi-stage builds are specified inside Dockerfiles using multiple FROM instructions."
+        }
+    ]
+}
