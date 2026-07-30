@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "What is the primary purpose of Terraform in Infrastructure as Code (IaC)?",
+            "o": [
+                "Deploy containers",
+                "Manage cloud infrastructure using configuration files",
+                "Monitor application performance",
+                "Automate software testing"
+            ],
+            "a": 1,
+            "e": "Terraform allows you to define and provision data center infrastructure using declarative configuration files."
+        },
+        {
+            "q": "Which command initializes a Terraform working directory?",
+            "o": [
+                "terraform init",
+                "terraform apply",
+                "terraform plan",
+                "terraform validate"
+            ],
+            "a": 0,
+            "e": "`terraform init` sets up the working directory with the necessary plugins and modules."
+        },
+        {
+            "q": "What does the 'terraform apply' command do?",
+            "o": [
+                "Validates the configuration files",
+                "Creates or updates infrastructure based on the Terraform plan",
+                "Shows the resource changes before applying",
+                "Destroys all managed infrastructure"
+            ],
+            "a": 1,
+            "e": "`terraform apply` executes the actions proposed in the Terraform plan to create, update, or destroy infrastructure."
+        },
+        {
+            "q": "In Terraform, what is a 'provider'?",
+            "o": [
+                "A person responsible for infrastructure",
+                "A plugin that interacts with cloud platforms or services",
+                "A script to deploy applications",
+                "A graphical UI for managing resources"
+            ],
+            "a": 1,
+            "e": "Providers in Terraform are plugins that allow Terraform to manage resources on specific platforms like AWS, Azure, or GCP."
+        },
+        {
+            "q": "Which of the following is NOT a typical Continuous Integration (CI) practice?",
+            "o": [
+                "Automated testing on each commit",
+                "Merging code frequently into main branch",
+                "Manual code reviews only after deployment",
+                "Building application automatically"
+            ],
+            "a": 2,
+            "e": "Manual code reviews only after deployment are not typical; CI emphasizes automated testing and early feedback."
+        },
+        {
+            "q": "In CI/CD pipelines, what is the purpose of the 'pipeline'?",
+            "o": [
+                "Manually deploying apps to production",
+                "Automating the build, test, and deployment processes",
+                "Monitoring application metrics",
+                "Scheduling team meetings"
+            ],
+            "a": 1,
+            "e": "A pipeline automates steps like building code, running tests, and deploying to environments."
+        },
+        {
+            "q": "Which tool is often used with Terraform to manage state files remotely?",
+            "o": [
+                "GitHub Actions",
+                "Terraform Cloud or remote backends like S3",
+                "Docker",
+                "Kubernetes"
+            ],
+            "a": 1,
+            "e": "Terraform state can be stored remotely using Terraform Cloud or backend systems like AWS S3 for collaboration and locking."
+        },
+        {
+            "q": "What file extension is typically used for Terraform configuration files?",
+            "o": [
+                ".json",
+                ".tf",
+                ".yaml",
+                ".sh"
+            ],
+            "a": 1,
+            "e": "Terraform configuration is written in HashiCorp Configuration Language (HCL) typically in files with the .tf extension."
+        },
+        {
+            "q": "Which of the following best describes 'Immutable Infrastructure' in DevOps?",
+            "o": [
+                "Infrastructure that is never changed after deployment",
+                "Infrastructure managed only by GUI tools",
+                "Manual updates on production servers",
+                "Infrastructure that updates itself automatically without code"
+            ],
+            "a": 0,
+            "e": "Immutable infrastructure means that servers or components are replaced rather than changed in place to ensure consistency."
+        },
+        {
+            "q": "In a typical CI/CD process, what does 'CD' stand for?",
+            "o": [
+                "Code Deployment",
+                "Continuous Delivery or Continuous Deployment",
+                "Configuration Data",
+                "Code Documentation"
+            ],
+            "a": 1,
+            "e": "'CD' refers to Continuous Delivery or Continuous Deployment, automating release processes."
+        }
+    ]
+}

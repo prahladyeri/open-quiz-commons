@@ -667,7 +667,7 @@
                 {
                     "name": "CI/CD & Automation",
                     "slug": "ci_cd",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "GitHub Actions",
