@@ -1,0 +1,136 @@
+{
+    "data": [
+        {
+            "q": "Which command is used to publish a Cloudflare Worker from the command line using Wrangler?",
+            "o": [
+                "wrangler deploy",
+                "cloudflare workers publish",
+                "npm run deploy",
+                "cf workers upload"
+            ],
+            "a": 0,
+            "e": "The official CLI tool Wrangler uses the `wrangler deploy` command to upload and publish a Worker."
+        },
+        {
+            "q": "In a wrangler.toml file, which field defines the name of the script that will be executed for a Worker?",
+            "o": [
+                "type",
+                "name",
+                "main",
+                "script"
+            ],
+            "a": 2,
+            "e": "The `main` field points to the JavaScript/TypeScript file that contains the Worker code."
+        },
+        {
+            "q": "What is the default route pattern applied when you bind a Worker to a zone without specifying a route?",
+            "o": [
+                "/*",
+                "/api/*",
+                "/*/*",
+                "No route – the Worker must be triggered manually"
+            ],
+            "a": 0,
+            "e": "If you publish a Worker without a custom route, it defaults to the catch‑all pattern `/*` for the specified zone."
+        },
+        {
+            "q": "Which Cloudflare feature allows a Worker to access KV storage with low latency at the edge?",
+            "o": [
+                "Durable Objects",
+                "Cloudflare R2",
+                "Workers KV",
+                "Edge Cache"
+            ],
+            "a": 2,
+            "e": "Workers KV (Key‑Value) is a globally replicated, low‑latency storage solution designed for Workers."
+        },
+        {
+            "q": "When using Wrangler, which command generates a new Worker project skeleton?",
+            "o": [
+                "wrangler generate <name>",
+                "wrangler init <name>",
+                "wrangler new <name>",
+                "wrangler create <name>"
+            ],
+            "a": 0,
+            "e": "`wrangler generate <name>` scaffolds a new Worker project with a starter template."
+        },
+        {
+            "q": "How can you restrict a Worker to only run on HTTP POST requests using the request method in the script?",
+            "o": [
+                "if (request.method === \"POST\") { … }",
+                "if (request.isPost) { … }",
+                "if (request.type == \"post\") { … }",
+                "if (request.method == 1) { … }"
+            ],
+            "a": 0,
+            "e": "The HTTP method is available via `request.method`; compare it to the string \"POST\"."
+        },
+        {
+            "q": "Which of the following is NOT a supported language/runtime for Cloudflare Workers?",
+            "o": [
+                "JavaScript (V8)",
+                "Rust (via WASM)",
+                "Python",
+                "TypeScript (compiled to JS)"
+            ],
+            "a": 2,
+            "e": "Workers run on V8 and can execute WebAssembly modules (e.g., compiled from Rust). Python is not natively supported."
+        },
+        {
+            "q": "What environment variable does Wrangler automatically set to indicate the name of the current zone during deployment?",
+            "o": [
+                "CF_ZONE_ID",
+                "ZONE_NAME",
+                "CF_ZONE_NAME",
+                "CLOUDFLARE_ZONE"
+            ],
+            "a": 0,
+            "e": "Wrangler injects `CF_ZONE_ID` (the numeric ID) and `CF_ZONE_NAME` (the domain) into the Worker environment."
+        },
+        {
+            "q": "Which Cloudflare product would you pair with Workers to serve static assets with automatic edge caching?",
+            "o": [
+                "Cloudflare Images",
+                "Cloudflare Stream",
+                "Cloudflare Pages",
+                "Cloudflare R2"
+            ],
+            "a": 2,
+            "e": "Cloudflare Pages provides a static site hosting platform that integrates tightly with Workers for edge logic."
+        },
+        {
+            "q": "When deploying a Worker to a specific subdomain (e.g., api.example.com), which wrangler.toml property should you set?",
+            "o": [
+                "account_id",
+                "routes",
+                "workers_dev",
+                "zone_id"
+            ],
+            "a": 1,
+            "e": "The `routes` array defines URL patterns (including subdomains) that trigger the Worker."
+        },
+        {
+            "q": "What is the purpose of the `workers_dev` flag in wrangler.toml?",
+            "o": [
+                "Enable a custom domain for the Worker",
+                "Deploy the Worker to a preview subdomain on cloudflare.dev",
+                "Allow the Worker to run in development mode locally",
+                "Disable Cloudflare analytics for the Worker"
+            ],
+            "a": 1,
+            "e": "`workers_dev: true` tells Wrangler to publish the Worker to a workers.dev subdomain for testing."
+        },
+        {
+            "q": "Which HTTP response header can be set in a Worker to control client‑side caching?",
+            "o": [
+                "Cache-Control",
+                "Edge-Control",
+                "CF-Cache-Status",
+                "X-Cache"
+            ],
+            "a": 0,
+            "e": "`Cache-Control` is the standard header to dictate how browsers cache the response."
+        }
+    ]
+}
