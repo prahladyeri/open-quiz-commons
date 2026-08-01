@@ -1,0 +1,136 @@
+{
+    "data": [
+        {
+            "q": "Which metric is most commonly used to measure cold start latency in serverless functions?",
+            "o": [
+                "Invocation duration",
+                "Initialization duration",
+                "Memory usage",
+                "CPU usage"
+            ],
+            "a": 1,
+            "e": "The initialization duration captures the time a runtime takes to start up before the function code runs, which defines the cold‑start latency."
+        },
+        {
+            "q": "What does the acronym SLO stand for in observability?",
+            "o": [
+                "Service Level Objective",
+                "System Log Output",
+                "Synthetic Load Operation",
+                "Standard Latency Option"
+            ],
+            "a": 0,
+            "e": "SLO (Service Level Objective) defines the target performance or reliability level a service aims to meet."
+        },
+        {
+            "q": "Which AWS service provides distributed tracing for Lambda functions?",
+            "o": [
+                "AWS X-Ray",
+                "Amazon CloudWatch Logs",
+                "AWS CloudTrail",
+                "AWS GuardDuty"
+            ],
+            "a": 0,
+            "e": "AWS X-Ray instruments Lambda functions and collects trace data across services."
+        },
+        {
+            "q": "In OpenTelemetry, which component generates telemetry data (metrics, traces, logs) directly from application code?",
+            "o": [
+                "Exporter",
+                "Collector",
+                "Instrumentation library",
+                "Span processor"
+            ],
+            "a": 2,
+            "e": "Instrumentation libraries are added to the code and produce telemetry data at runtime."
+        },
+        {
+            "q": "What is the primary purpose of a health‑check endpoint in edge services?",
+            "o": [
+                "Allow load balancers to determine service availability",
+                "Provide detailed error stack traces",
+                "Expose internal configuration files",
+                "Trigger automatic scaling events"
+            ],
+            "a": 0,
+            "e": "Health‑check endpoints return a simple status that load balancers or orchestrators use to route traffic only to healthy instances."
+        },
+        {
+            "q": "Which logging format is recommended for high‑volume serverless logs to enable efficient parsing and ingestion?",
+            "o": [
+                "Plain text",
+                "JSON",
+                "CSV",
+                "XML"
+            ],
+            "a": 1,
+            "e": "JSON logs are structured, making them easy to query, filter, and ship to log‑analysis services."
+        },
+        {
+            "q": "In the \"3‑2‑1\" observability pyramid, what does the \"e\" stand for?",
+            "o": [
+                "Events",
+                "Errors",
+                "Exceptions",
+                "Envelopes"
+            ],
+            "a": 0,
+            "e": "The pyramid is often simplified as Logs, Metrics, and Events (or Traces), where \"e\" represents events."
+        },
+        {
+            "q": "Which open‑source tool can visualize distributed traces across multiple cloud providers?",
+            "o": [
+                "Jaeger",
+                "Prometheus",
+                "Grafana Loki",
+                "Splunk"
+            ],
+            "a": 0,
+            "e": "Jaeger ingests trace data from many sources and provides a UI for end‑to‑end trace visualization."
+        },
+        {
+            "q": "What is a tail‑based sampling strategy used for in observability pipelines?",
+            "o": [
+                "Reduce storage of all traces",
+                "Prioritize recent logs",
+                "Filter based on trace content after the trace completes",
+                "All of the above"
+            ],
+            "a": 2,
+            "e": "Tail‑based sampling decides whether to keep a trace after it finishes, based on its attributes (e.g., error status, latency)."
+        },
+        {
+            "q": "Which CloudWatch metric should you monitor to detect a sudden increase in Lambda memory throttling?",
+            "o": [
+                "Throttles",
+                "Duration",
+                "Invocations",
+                "Errors"
+            ],
+            "a": 0,
+            "e": "The \"Throttles\" metric increments when a function execution is blocked due to insufficient concurrency or memory limits."
+        },
+        {
+            "q": "Edge functions often need to report latency to which type of backend for real‑time dashboards?",
+            "o": [
+                "Time‑series database",
+                "Relational database",
+                "Object storage",
+                "Message queue"
+            ],
+            "a": 0,
+            "e": "Time‑series databases (e.g., InfluxDB, Prometheus) are optimized for storing and querying latency metrics over time."
+        },
+        {
+            "q": "What is the recommended approach to handle log aggregation from billions of edge devices?",
+            "o": [
+                "Ship logs directly to a central store",
+                "Use hierarchical aggregation (local → regional → central)",
+                "Disable logs on edge devices",
+                "Store logs locally only"
+            ],
+            "a": 1,
+            "e": "Hierarchical aggregation reduces bandwidth and latency by summarizing logs locally before forwarding them upstream."
+        }
+    ]
+}
