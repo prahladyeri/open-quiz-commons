@@ -686,7 +686,7 @@
                 {
                     "name": "Edge & Serverless Ops",
                     "slug": "edge_serverless_ops",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Cloudflare Workers Deployment",

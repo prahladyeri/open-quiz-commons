@@ -1,0 +1,136 @@
+{
+    "data": [
+        {
+            "q": "Which HTTP response status code is commonly used to indicate that a client has exceeded the allowed request rate?",
+            "o": [
+                "400 Bad Request",
+                "401 Unauthorized",
+                "429 Too Many Requests",
+                "503 Service Unavailable"
+            ],
+            "a": 2,
+            "e": "429 Too Many Requests explicitly signals that the client has sent too many requests in a given amount of time."
+        },
+        {
+            "q": "In AWS API Gateway, which feature enables you to throttle requests based on a quota or burst limit?",
+            "o": [
+                "Usage Plans",
+                "Lambda Authorizers",
+                "CORS Configuration",
+                "Custom Domain Names"
+            ],
+            "a": 0,
+            "e": "Usage Plans let you define request quotas and burst limits per API key, providing built‑in rate limiting."
+        },
+        {
+            "q": "Which open‑source tool can be deployed as an edge proxy to enforce token bucket rate limiting for HTTP traffic?",
+            "o": [
+                "Consul",
+                "Envoy",
+                "Kubernetes Ingress",
+                "Prometheus"
+            ],
+            "a": 1,
+            "e": "Envoy includes a token bucket filter that can be configured for per‑route rate limiting at the edge."
+        },
+        {
+            "q": "A 'leaky bucket' algorithm differs from a 'token bucket' algorithm primarily in:",
+            "o": [
+                "How it handles burst traffic",
+                "The data structure it uses",
+                "The programming language required",
+                "The type of HTTP methods it supports"
+            ],
+            "a": 0,
+            "e": "Leaky bucket smooths traffic to a constant rate, discarding excess bursts, while token bucket allows bursts up to a defined capacity."
+        },
+        {
+            "q": "When implementing rate limiting in a serverless function (e.g., AWS Lambda), which service is best suited to store counters with low latency?",
+            "o": [
+                "Amazon S3",
+                "Amazon DynamoDB",
+                "Amazon RDS",
+                "Amazon CloudWatch Logs"
+            ],
+            "a": 1,
+            "e": "DynamoDB provides fast, low‑latency reads/writes and supports atomic counters, making it ideal for distributed rate‑limit state."
+        },
+        {
+            "q": "Which Cloudflare feature can automatically return 429 responses for excessive requests to a domain?",
+            "o": [
+                "Workers KV",
+                "Rate Limiting Rules",
+                "Page Rules",
+                "Transform Rules"
+            ],
+            "a": 1,
+            "e": "Cloudflare Rate Limiting Rules let you define thresholds and automatically block or challenge clients that exceed them."
+        },
+        {
+            "q": "In Kubernetes, which resource can be annotated to enable per‑pod rate limiting via istio‑pilot?",
+            "o": [
+                "ServiceAccount",
+                "Pod",
+                "Namespace",
+                "ConfigMap"
+            ],
+            "a": 1,
+            "e": "Istio allows you to add annotations to Pods (or their containing Services) to apply Envoy‑level rate limits."
+        },
+        {
+            "q": "What is the main advantage of using a distributed rate‑limiting algorithm like Consistent Hashing over a single node limiter?",
+            "o": [
+                "Simpler code",
+                "Higher accuracy",
+                "Better scalability and fault tolerance",
+                "Reduced network traffic"
+            ],
+            "a": 2,
+            "e": "Consistent hashing spreads counters across many nodes, avoiding a single point of failure and scaling horizontally."
+        },
+        {
+            "q": "Which of the following is NOT a typical dimension used when defining a rate‑limit key?",
+            "o": [
+                "Client IP address",
+                "User ID",
+                "HTTP request method",
+                "Server CPU temperature"
+            ],
+            "a": 3,
+            "e": "Rate‑limit keys are usually derived from request attributes like IP, user ID, or method; hardware metrics like CPU temperature are irrelevant."
+        },
+        {
+            "q": "When a rate‑limited request is retried after receiving a 429 response, which HTTP header often provides the wait time?",
+            "o": [
+                "Retry-After",
+                "Rate-Limit-Reset",
+                "X-RateLimit-Remaining",
+                "Content-Length"
+            ],
+            "a": 0,
+            "e": "The Retry-After header indicates how many seconds (or a date) the client should wait before retrying."
+        },
+        {
+            "q": "Which Azure service offers built‑in rate limiting for HTTP APIs via policies?",
+            "o": [
+                "Azure Functions",
+                "Azure API Management",
+                "Azure Event Grid",
+                "Azure Kubernetes Service"
+            ],
+            "a": 1,
+            "e": "Azure API Management includes policies (e.g., check-header, rate-limit‑by‑key) that enforce request throttling."
+        },
+        {
+            "q": "In a serverless edge environment (e.g., Cloudflare Workers), which storage type is best for maintaining a short‑lived counter for rate limiting?",
+            "o": [
+                "Workers KV (global KV store)",
+                "Durable Objects",
+                "Cloudflare Images",
+                "Cloudflare Stream"
+            ],
+            "a": 1,
+            "e": "Durable Objects provide low‑latency, strongly consistent state suitable for per‑client counters, while KV is eventually consistent."
+        }
+    ]
+}
