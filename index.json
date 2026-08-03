@@ -431,6 +431,92 @@
                             "slug": "type_systems"
                         }
                     ]
+                },
+                {
+                    "name": "TypeScript",
+                    "slug": "typescript",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "Type System Basics",
+                            "slug": "type_basics",
+                            "descn": "Primitives, interfaces vs type aliases, and structural typing fundamentals."
+                        },
+                        {
+                            "name": "Generics & Utility Types",
+                            "slug": "generics_utility_types",
+                            "descn": "Generic functions/classes, and built-in utility types like Partial, Pick, and Record."
+                        },
+                        {
+                            "name": "Type Narrowing & Guards",
+                            "slug": "type_narrowing_guards",
+                            "descn": "Discriminated unions, custom type guards, and control-flow analysis."
+                        },
+                        {
+                            "name": "Advanced Types",
+                            "slug": "advanced_types",
+                            "descn": "Conditional types, mapped types, and template literal types."
+                        },
+                        {
+                            "name": "tsconfig & Project Setup",
+                            "slug": "tsconfig_setup",
+                            "descn": "Strictness flags, module resolution, and configuring TS in monorepos."
+                        }
+                    ]
+                },
+                {
+                    "name": "Testing & Quality",
+                    "slug": "testing_qa",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "Vitest / Jest Fundamentals",
+                            "slug": "vitest_jest_fundamentals",
+                            "descn": "Test runners, assertions, snapshots, and test organization."
+                        },
+                        {
+                            "name": "Mocking & Spies",
+                            "slug": "mocking_spies",
+                            "descn": "Mocking modules, timers, and network calls to isolate units under test."
+                        },
+                        {
+                            "name": "E2E Testing (Playwright/Cypress)",
+                            "slug": "e2e_testing",
+                            "descn": "Browser automation, selectors, and reliable end-to-end test strategies."
+                        },
+                        {
+                            "name": "Linting & Formatting",
+                            "slug": "linting_formatting",
+                            "descn": "ESLint rule configuration, Prettier integration, and CI enforcement."
+                        }
+                    ]
+                },
+                {
+                    "name": "Meta-frameworks & Tooling",
+                    "slug": "meta_frameworks_tooling",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "Next.js / Remix Fundamentals",
+                            "slug": "nextjs_remix_fundamentals",
+                            "descn": "File-based routing, data loading patterns, and rendering strategies (SSR/SSG/ISR)."
+                        },
+                        {
+                            "name": "Bundlers (Vite/esbuild)",
+                            "slug": "bundlers_vite_esbuild",
+                            "descn": "Dev server internals, plugin systems, and production build optimization."
+                        },
+                        {
+                            "name": "Monorepo Tooling",
+                            "slug": "monorepo_tooling",
+                            "descn": "pnpm workspaces, Turborepo pipelines, and shared package versioning."
+                        },
+                        {
+                            "name": "Module Federation",
+                            "slug": "module_federation",
+                            "descn": "Micro-frontend composition and runtime code sharing across builds."
+                        }
+                    ]
                 }
             ]
         },
@@ -653,6 +739,82 @@
                         {
                             "name": "Cloudflare Workers (Rust)",
                             "slug": "cf_workers_rust"
+                        }
+                    ]
+                },
+                {
+                    "name": "Web Backend & APIs",
+                    "slug": "web_backend",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "Axum Framework",
+                            "slug": "axum",
+                            "descn": "Routing, extractors, and middleware layering built on Tower."
+                        },
+                        {
+                            "name": "Actix-web",
+                            "slug": "actix_web",
+                            "descn": "Actor-based request handling, extractors, and high-throughput server patterns."
+                        },
+                        {
+                            "name": "Serde & Serialization",
+                            "slug": "serde_serialization",
+                            "descn": "Deriving Serialize/Deserialize, custom serializers, and working with JSON/binary formats."
+                        },
+                        {
+                            "name": "Async Runtimes Deep Dive",
+                            "slug": "async_runtimes_deep_dive",
+                            "descn": "Tokio internals, task scheduling, and choosing between async runtimes."
+                        }
+                    ]
+                },
+                {
+                    "name": "Tooling & Testing",
+                    "slug": "tooling_testing",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "Cargo & Workspaces",
+                            "slug": "cargo_workspaces",
+                            "descn": "Multi-crate workspaces, feature flags, and dependency management."
+                        },
+                        {
+                            "name": "Testing & Benchmarking",
+                            "slug": "testing_benchmarking",
+                            "descn": "Unit/integration tests, property-based testing, and Criterion benchmarks."
+                        },
+                        {
+                            "name": "Clippy & Rustfmt",
+                            "slug": "clippy_rustfmt",
+                            "descn": "Linting conventions, idiomatic fixes, and consistent formatting in CI."
+                        },
+                        {
+                            "name": "Error Crates (anyhow/thiserror)",
+                            "slug": "error_crates",
+                            "descn": "Ergonomic application errors vs structured library errors."
+                        }
+                    ]
+                },
+                {
+                    "name": "Systems & CLI",
+                    "slug": "systems_cli",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "CLI Apps (clap)",
+                            "slug": "cli_clap",
+                            "descn": "Argument parsing, subcommands, and building ergonomic command-line tools."
+                        },
+                        {
+                            "name": "Unsafe Rust & FFI",
+                            "slug": "unsafe_ffi",
+                            "descn": "Raw pointers, unsafe blocks, and calling into/from C libraries."
+                        },
+                        {
+                            "name": "Embedded Basics",
+                            "slug": "embedded_basics",
+                            "descn": "no_std environments, embedded-hal, and cross-compilation targets."
                         }
                     ]
                 }
