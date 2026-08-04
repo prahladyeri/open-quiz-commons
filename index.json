@@ -435,7 +435,7 @@
                 {
                     "name": "TypeScript",
                     "slug": "typescript",
-                    "hidden": false,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "Type System Basics",
@@ -467,7 +467,7 @@
                 {
                     "name": "Testing & Quality",
                     "slug": "testing_qa",
-                    "hidden": false,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "Vitest / Jest Fundamentals",
@@ -494,7 +494,7 @@
                 {
                     "name": "Meta-frameworks & Tooling",
                     "slug": "meta_frameworks_tooling",
-                    "hidden": false,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "Next.js / Remix Fundamentals",
@@ -745,7 +745,7 @@
                 {
                     "name": "Web Backend & APIs",
                     "slug": "web_backend",
-                    "hidden": false,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "Axum Framework",
@@ -772,7 +772,7 @@
                 {
                     "name": "Tooling & Testing",
                     "slug": "tooling_testing",
-                    "hidden": false,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "Cargo & Workspaces",
@@ -799,7 +799,7 @@
                 {
                     "name": "Systems & CLI",
                     "slug": "systems_cli",
-                    "hidden": false,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "CLI Apps (clap)",

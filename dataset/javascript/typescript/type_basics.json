@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "Which of the following is NOT a primitive type in TypeScript?",
+            "o": [
+                "string",
+                "number",
+                "boolean",
+                "object"
+            ],
+            "a": 3,
+            "e": "object is a non-primitive (reference) type. The primitive types are string, number, boolean, null, undefined, symbol, and bigint."
+        },
+        {
+            "q": "What is the correct syntax to explicitly annotate a variable as type string in TypeScript?",
+            "o": [
+                "let name = string;",
+                "let name: string;",
+                "let name :: string;",
+                "let name -> string;"
+            ],
+            "a": 1,
+            "e": "Type annotations use a colon followed by the type (e.g., `let name: string;`)."
+        },
+        {
+            "q": "What does TypeScript's type inference do?",
+            "o": [
+                "Automatically assigns the `any` type to all variables",
+                "Infers types from values assigned at declaration",
+                "Requires explicit type annotations for every variable",
+                "Only works with primitive types"
+            ],
+            "a": 1,
+            "e": "TypeScript infers types from initial values (e.g., `let x = 10` infers `number`)."
+        },
+        {
+            "q": "Which syntax represents a union type of string and number?",
+            "o": [
+                "string & number",
+                "string | number",
+                "string, number",
+                "string + number"
+            ],
+            "a": 1,
+            "e": "The pipe symbol `|` denotes a union type (e.g., `string | number`)."
+        },
+        {
+            "q": "What is the main difference between `interface` and `type` aliases in TypeScript?",
+            "o": [
+                "Interfaces can only describe objects, types can describe any type",
+                "Interfaces support declaration merging, types do not",
+                "Types can extend interfaces, but interfaces cannot extend types",
+                "There is no difference; they are interchangeable"
+            ],
+            "a": 1,
+            "e": "Interfaces support declaration merging (multiple declarations merge into one), while type aliases do not."
+        },
+        {
+            "q": "How do you mark a property as optional in an interface?",
+            "o": [
+                "name?: string",
+                "name: string?",
+                "optional name: string",
+                "name: optional string"
+            ],
+            "a": 0,
+            "e": "A question mark after the property name (e.g., `name?: string`) makes it optional."
+        },
+        {
+            "q": "What does the `readonly` modifier do on a property?",
+            "o": [
+                "Makes the property invisible outside the class",
+                "Prevents reassignment after initialization",
+                "Makes the property a constant at compile time only",
+                "Allows the property to be read but not written in derived classes"
+            ],
+            "a": 1,
+            "e": "`readonly` properties can be assigned only at declaration or in the constructor."
+        },
+        {
+            "q": "Which type guard narrows a variable of type `string | number` to `string`?",
+            "o": [
+                "typeof x === \"string\"",
+                "x instanceof String",
+                "x === \"string\"",
+                "x.type === \"string\""
+            ],
+            "a": 0,
+            "e": "`typeof x === \"string\"` is a standard type guard that narrows the type."
+        },
+        {
+            "q": "What is the difference between `any` and `unknown`?",
+            "o": [
+                "`any` disables type checking, `unknown` requires type checking before use",
+                "`unknown` is an alias for `any`",
+                "`any` is safer than `unknown`",
+                "There is no difference"
+            ],
+            "a": 0,
+            "e": "`any` opts out of type checking entirely; `unknown` forces you to narrow the type before performing operations."
+        },
+        {
+            "q": "Which type represents a value that never occurs (e.g., a function that always throws)?",
+            "o": [
+                "void",
+                "null",
+                "never",
+                "undefined"
+            ],
+            "a": 2,
+            "e": "`never` is the bottom type used for unreachable code (e.g., infinite loops, always-throwing functions)."
+        },
+        {
+            "q": "What is the correct syntax for an array of numbers?",
+            "o": [
+                "number[]",
+                "Array<number>",
+                "Both A and B",
+                "[number]"
+            ],
+            "a": 2,
+            "e": "Both `number[]` and `Array<number>` are valid array type syntaxes."
+        },
+        {
+            "q": "How do you define a tuple type with a string followed by a number?",
+            "o": [
+                "[string, number]",
+                "(string, number)",
+                "Tuple<string, number>",
+                "string | number"
+            ],
+            "a": 0,
+            "e": "Tuple types are written as `[Type1, Type2, ...]` inside square brackets."
+        },
+        {
+            "q": "Which syntax correctly annotates a function that takes a string and returns a boolean?",
+            "o": [
+                "function fn(s: string): boolean {}",
+                "function fn(s: string) -> boolean {}",
+                "function fn(s: string) => boolean {}",
+                "function fn(s: string) boolean {}"
+            ],
+            "a": 0,
+            "e": "Function type annotations use `: ReturnType` after the parameter list."
+        },
+        {
+            "q": "What does the generic type parameter `<T>` allow in a function?",
+            "o": [
+                "Accept any type without constraints",
+                "Capture the type of an argument and reuse it in the return type",
+                "Restrict the function to only primitive types",
+                "Make the function asynchronous"
+            ],
+            "a": 1,
+            "e": "Generics let you write reusable, type-safe functions where the type is determined at call time."
+        },
+        {
+            "q": "Which is a valid type assertion (casting) in TypeScript?",
+            "o": [
+                "value as string",
+                "<string>value",
+                "Both A and B",
+                "string(value)"
+            ],
+            "a": 2,
+            "e": "Both `value as string` and `<string>value` are valid type assertions (the latter is not allowed in JSX)."
+        }
+    ]
+}
