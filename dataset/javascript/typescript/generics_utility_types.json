@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which utility type makes all properties of a type optional?",
+            "o": [
+                "Required<T>",
+                "Partial<T>",
+                "Readonly<T>",
+                "Pick<T, K>"
+            ],
+            "a": 1,
+            "e": "Partial<T> constructs a type with all properties of T set to optional. Required<T> does the opposite."
+        },
+        {
+            "q": "What does the `Readonly<T>` utility type do?",
+            "o": [
+                "Makes all properties optional",
+                "Makes all properties required",
+                "Makes all properties immutable (readonly)",
+                "Removes specific properties from a type"
+            ],
+            "a": 2,
+            "e": "Readonly<T> creates a new type where all properties are marked as readonly, preventing reassignment."
+        },
+        {
+            "q": "Given `type User = { id: number; name: string; email: string; }`, which utility type creates a type containing only `id` and `name`?",
+            "o": [
+                "Omit<User, 'email'>",
+                "Pick<User, 'id' | 'name'>",
+                "Exclude<User, 'email'>",
+                "Partial<User, 'id' | 'name'>"
+            ],
+            "a": 1,
+            "e": "Pick<T, K> selects a set of properties K from type T. Omit removes properties, but Exclude works on union types, not object types directly."
+        },
+        {
+            "q": "What is the result of `Exclude<'a' | 'b' | 'c', 'a' | 'b'>`?",
+            "o": [
+                "'a' | 'b'",
+                "'c'",
+                "'a' | 'b' | 'c'",
+                "never"
+            ],
+            "a": 1,
+            "e": "Exclude<T, U> removes types from T that are assignable to U. 'a' and 'b' are removed, leaving 'c'."
+        },
+        {
+            "q": "Which utility type extracts the return type of a function type?",
+            "o": [
+                "Parameters<T>",
+                "ReturnType<T>",
+                "ConstructorParameters<T>",
+                "InstanceType<T>"
+            ],
+            "a": 1,
+            "e": "ReturnType<T> infers the return type of a function type. Parameters<T> extracts the parameter tuple type."
+        },
+        {
+            "q": "How do you constrain a generic type parameter `T` to ensure it has a `length` property?",
+            "o": [
+                "function fn<T extends { length: number }>(arg: T)",
+                "function fn<T extends length>(arg: T)",
+                "function fn<T has length>(arg: T)",
+                "function fn<T implements length>(arg: T)"
+            ],
+            "a": 0,
+            "e": "Generics are constrained using `extends` followed by the shape or interface required."
+        },
+        {
+            "q": "What does `NonNullable<T>` do?",
+            "o": [
+                "Removes `null` and `undefined` from type T",
+                "Makes all properties non-nullable",
+                "Throws an error if T is null",
+                "Wraps T in a Promise"
+            ],
+            "a": 0,
+            "e": "NonNullable<T> constructs a type by excluding `null` and `undefined` from T."
+        },
+        {
+            "q": "Which utility type constructs an object type whose property keys are Keys and whose property values are Type?",
+            "o": [
+                "Pick<Type, Keys>",
+                "Record<Keys, Type>",
+                "Partial<Type>",
+                "Omit<Type, Keys>"
+            ],
+            "a": 1,
+            "e": "Record<Keys, Type> creates a type with a set of properties K of type T. It is the inverse of Pick in terms of arguments."
+        },
+        {
+            "q": "What is the purpose of the `infer` keyword in conditional types?",
+            "o": [
+                "To declare a new generic variable",
+                "To extract a type from within another type for use in the true branch",
+                "To enforce a constraint on a generic",
+                "To perform runtime type checking"
+            ],
+            "a": 1,
+            "e": "`infer` allows capturing types from a pattern match within a conditional type (e.g., `T extends Array<infer U> ? U : T`)."
+        },
+        {
+            "q": "If `type Fn = () => Promise<string>`, what is `Awaited<Fn>`?",
+            "o": [
+                "Promise<string>",
+                "string",
+                "() => string",
+                "never"
+            ],
+            "a": 1,
+            "e": "Awaited<T> recursively unwraps Promise-like types. Note: usually applied to the return type of the function (ReturnType<Fn>), but Awaited<ReturnType<Fn>> yields string. Directly on Fn it unwraps the function return if it matches PromiseLike, resulting in string."
+        },
+        {
+            "q": "Which utility type is the opposite of `Partial<T>`?",
+            "o": [
+                "Required<T>",
+                "Readonly<T>",
+                "Complete<T>",
+                "Strict<T>"
+            ],
+            "a": 0,
+            "e": "Required<T> makes all properties of T required (non-optional)."
+        },
+        {
+            "q": "How does TypeScript perform generic type inference when calling a generic function without explicit type arguments?",
+            "o": [
+                "It defaults to `any`",
+                "It infers the type from the types of the arguments passed to the function",
+                "It requires explicit annotation always",
+                "It uses the first constraint defined"
+            ],
+            "a": 1,
+            "e": "TypeScript uses 'Best Common Type' algorithm to infer generic types from the provided argument values."
+        },
+        {
+            "q": "What does `Parameters<typeof MyClass>` return if `MyClass` is a class constructor?",
+            "o": [
+                "The instance type of MyClass",
+                "The constructor parameter types tuple",
+                "The return type of the constructor",
+                "The static side type of MyClass"
+            ],
+            "a": 1,
+            "e": "Parameters<T> extracts the parameter types of a function or constructor type as a tuple."
+        },
+        {
+            "q": "Which utility type would you use to create a type that represents the instance type of a constructor function?",
+            "o": [
+                "ConstructorParameters<T>",
+                "InstanceType<T>",
+                "ReturnType<T>",
+                "ThisType<T>"
+            ],
+            "a": 1,
+            "e": "InstanceType<T> extracts the instance type of a constructor function type."
+        },
+        {
+            "q": "What is the result of `Extract<'a' | 'b' | 'c', 'a' | 'f'>`?",
+            "o": [
+                "'a' | 'b' | 'c'",
+                "'a'",
+                "'f'",
+                "never"
+            ],
+            "a": 1,
+            "e": "Extract<T, U> extracts from T all types that are assignable to U. Only 'a' is common to both unions."
+        },
+        {
+            "q": "In the generic `function identity<T>(arg: T): T`, what happens if you call `identity(42)`?",
+            "o": [
+                "T becomes `number`",
+                "T becomes `42` (literal type)",
+                "T becomes `any`",
+                "Compilation error"
+            ],
+            "a": 0,
+            "e": "Type inference widens literal types to their primitive base type (number) unless const assertions or specific constraints are used."
+        },
+        {
+            "q": "What does `Omit<Type, Keys>` do?",
+            "o": [
+                "Picks keys from Type",
+                "Removes keys from Type",
+                "Makes keys optional",
+                "Makes keys readonly"
+            ],
+            "a": 1,
+            "e": "Omit<T, K> creates a type by picking all properties from T and then removing K."
+        }
+    ]
+}
