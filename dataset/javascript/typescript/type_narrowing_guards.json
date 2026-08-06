@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "q": "Which operator is commonly used for primitive type narrowing in TypeScript?",
+            "o": [
+                "typeof",
+                "instanceof",
+                "in",
+                "is"
+            ],
+            "a": 0,
+            "e": "The `typeof` operator narrows string, number, boolean, symbol, undefined, function, and bigint types."
+        },
+        {
+            "q": "What does the `instanceof` type guard narrow?",
+            "o": [
+                "Primitive types",
+                "Class instances and constructor functions",
+                "Object keys",
+                "Union discriminants"
+            ],
+            "a": 1,
+            "e": "`instanceof` checks the prototype chain and narrows to a specific class or constructor function type."
+        },
+        {
+            "q": "Which type guard uses the `in` operator?",
+            "o": [
+                "Primitive narrowing",
+                "Instance narrowing",
+                "Property existence narrowing",
+                "Discriminated union narrowing"
+            ],
+            "a": 2,
+            "e": "The `in` operator narrows types based on whether a property exists on an object."
+        },
+        {
+            "q": "A user-defined type guard function returns which type predicate?",
+            "o": [
+                "value is Type",
+                "Type",
+                "boolean",
+                "Type | null"
+            ],
+            "a": 0,
+            "e": "A type predicate `value is Type` tells TypeScript that if the function returns true, the argument is of `Type`."
+        },
+        {
+            "q": "What is a discriminated union in TypeScript?",
+            "o": [
+                "A union of primitive types",
+                "A union of types with a common literal property",
+                "A union of class instances",
+                "A union of function types"
+            ],
+            "a": 1,
+            "e": "Discriminated unions share a common literal property (the discriminant) that TypeScript uses to narrow the union members."
+        },
+        {
+            "q": "Which equality check narrows types in TypeScript?",
+            "o": [
+                "== and !=",
+                "=== and !==",
+                "Both ===/!== and ==/!=",
+                "Only =="
+            ],
+            "a": 1,
+            "e": "Strict equality (`===` and `!==`) narrows types; loose equality (`==` and `!=`) does not because of type coercion."
+        },
+        {
+            "q": "How does truthiness narrowing work?",
+            "o": [
+                "Removes null and undefined from a union",
+                "Removes false, 0, '', null, undefined, NaN",
+                "Only removes null",
+                "Only removes undefined"
+            ],
+            "a": 1,
+            "e": "Truthiness narrowing removes all falsy values (false, 0, '', null, undefined, NaN) from a union when used in an `if` condition."
+        },
+        {
+            "q": "What is the purpose of the `never` type in exhaustiveness checking?",
+            "o": [
+                "To represent a value that never occurs",
+                "To throw an error at runtime",
+                "To ensure all union members are handled",
+                "To disable type checking"
+            ],
+            "a": 2,
+            "e": "Assigning a narrowed value to `never` in a `default` clause causes a compile error if not all union members are handled."
+        },
+        {
+            "q": "In a switch statement on a discriminated union, what happens if a case is missing?",
+            "o": [
+                "Runtime error",
+                "TypeScript shows no error",
+                "TypeScript shows an error if the discriminant is assigned to `never` in default",
+                "The code does not compile"
+            ],
+            "a": 2,
+            "e": "With a `default` case assigning the discriminant to `never`, TypeScript will error if any union member is not handled."
+        },
+        {
+            "q": "Which of the following is a valid custom type guard for checking if a value is an array of strings?",
+            "o": [
+                "function isStringArray(val: any): val is string[] { return Array.isArray(val) && val.every(v => typeof v === 'string'); }",
+                "function isStringArray(val: any): boolean { return Array.isArray(val); }",
+                "function isStringArray(val: any): val is string[] { return typeof val === 'object'; }",
+                "function isStringArray(val: any): string[] { return val; }"
+            ],
+            "a": 0,
+            "e": "A proper type guard uses `val is string[]` and performs runtime checks to ensure the value matches the type."
+        }
+    ]
+}
