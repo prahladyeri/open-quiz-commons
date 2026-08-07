@@ -1,0 +1,147 @@
+{
+    "data": [
+        {
+            "q": "What does the `NonNullable<T>` utility type do?",
+            "o": [
+                "Removes `null` and `undefined` from `T`",
+                "Makes all properties of `T` non-nullable",
+                "Adds `null` and `undefined` to `T`",
+                "Returns `never` if `T` is nullable"
+            ],
+            "a": 0,
+            "e": "`NonNullable<T>` excludes `null` and `undefined` from the type `T`."
+        },
+        {
+            "q": "Which utility type makes all properties of an object type optional?",
+            "o": [
+                "Required<T>",
+                "Partial<T>",
+                "Readonly<T>",
+                "Pick<T, K>"
+            ],
+            "a": 1,
+            "e": "`Partial<T>` sets every property of `T` to optional."
+        },
+        {
+            "q": "What is the result of `{ a: number } & { b: string }`?",
+            "o": [
+                "{ a: number }",
+                "{ b: string }",
+                "{ a: number; b: string }",
+                "never"
+            ],
+            "a": 2,
+            "e": "Intersection types combine members of both types, resulting in an object with both properties."
+        },
+        {
+            "q": "How do you extract the return type of a function type `T`?",
+            "o": [
+                "ReturnType<T>",
+                "Parameters<T>",
+                "ConstructorParameters<T>",
+                "InstanceType<T>"
+            ],
+            "a": 0,
+            "e": "`ReturnType<T>` infers the return type of a function type `T`."
+        },
+        {
+            "q": "What is the purpose of the `infer` keyword in a conditional type?",
+            "o": [
+                "To declare a new generic type parameter",
+                "To capture and reference a type within the conditional branch",
+                "To enforce a constraint on a generic",
+                "To create a union of all possible types"
+            ],
+            "a": 1,
+            "e": "`infer` allows you to declare a type variable that captures a portion of a type for use in the true branch."
+        },
+        {
+            "q": "Which mapped type makes all properties of a type readonly?",
+            "o": [
+                "Partial<T>",
+                "Required<T>",
+                "Readonly<T>",
+                "Record<K, T>"
+            ],
+            "a": 2,
+            "e": "`Readonly<T>` sets the `readonly` modifier on every property of `T`."
+        },
+        {
+            "q": "What is a key difference between `type` aliases and `interface` declarations in TypeScript?",
+            "o": [
+                "Interfaces cannot extend other interfaces",
+                "Type aliases support declaration merging, interfaces do not",
+                "Interfaces support declaration merging, type aliases do not",
+                "Type aliases cannot represent primitive types"
+            ],
+            "a": 2,
+            "e": "Interfaces can be merged automatically when declared multiple times; type aliases cannot."
+        },
+        {
+            "q": "What does `keyof T` produce for an object type `T`?",
+            "o": [
+                "A tuple of all property values",
+                "A union of all property keys (as string literals)",
+                "An array of property names",
+                "The type of the first property"
+            ],
+            "a": 1,
+            "e": "`keyof T` yields a union of string literal types representing the keys of `T`."
+        },
+        {
+            "q": "Which utility type constructs a new type by picking a set of properties `K` from `T`?",
+            "o": [
+                "Omit<T, K>",
+                "Pick<T, K>",
+                "Exclude<T, U>",
+                "Extract<T, U>"
+            ],
+            "a": 1,
+            "e": "`Pick<T, K>` selects only the properties `K` from `T`."
+        },
+        {
+            "q": "What does the `never` type represent?",
+            "o": [
+                "A value that can be any type",
+                "A value that never occurs (e.g., function that always throws)",
+                "An empty object",
+                "A nullable type"
+            ],
+            "a": 1,
+            "e": "`never` is the type for values that never happen, such as a function that throws or never returns."
+        },
+        {
+            "q": "How can you create a type that requires at least one property from a union of object types?",
+            "o": [
+                "Use `Partial<T>` on the union",
+                "Use a discriminated union with a common required property",
+                "Use `Required<T>` on the union",
+                "Use `Pick<T, keyof T>`"
+            ],
+            "a": 1,
+            "e": "A discriminated union with a shared required property (e.g., a `type` field) ensures at least one variant is present."
+        },
+        {
+            "q": "What is the result of `type Flatten<T> = T extends any[] ? T[number] : T;` when `T` is `string[]`?",
+            "o": [
+                "string",
+                "string[]",
+                "never",
+                "any"
+            ],
+            "a": 0,
+            "e": "The conditional type checks if `T` is an array; if so, it returns the element type (`string`)."
+        },
+        {
+            "q": "Which utility type removes `readonly` and `?` modifiers from all properties of `T`?",
+            "o": [
+                "Partial<T>",
+                "Required<T>",
+                "Mutable<T>",
+                "Readonly<T>"
+            ],
+            "a": 1,
+            "e": "`Required<T>` makes all properties required and removes `readonly`."
+        }
+    ]
+}
