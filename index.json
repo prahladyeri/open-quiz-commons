@@ -435,7 +435,7 @@
                 {
                     "name": "TypeScript",
                     "slug": "typescript",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Type System Basics",

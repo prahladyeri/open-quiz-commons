@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the default filename for the TypeScript configuration file?",
+            "o": [
+                "tsconfig.json",
+                "typescript.config.js",
+                "tsconfig.yaml",
+                "config.ts"
+            ],
+            "a": 0,
+            "e": "The TypeScript compiler (tsc) automatically looks for a file named tsconfig.json in the current directory and parent directories."
+        },
+        {
+            "q": "Which compiler option specifies the root folder of input files?",
+            "o": [
+                "outDir",
+                "rootDir",
+                "baseUrl",
+                "include"
+            ],
+            "a": 1,
+            "e": "rootDir specifies the root directory of input files. It is used to control the output directory structure when combined with outDir."
+        },
+        {
+            "q": "What does the 'strict' compiler option enable?",
+            "o": [
+                "All strict type-checking options",
+                "Strict null checks only",
+                "Strict function types only",
+                "Strict mode for JavaScript output"
+            ],
+            "a": 0,
+            "e": "Enabling 'strict': true turns on a suite of strict type-checking options including noImplicitAny, strictNullChecks, strictFunctionTypes, strictBindCallApply, strictPropertyInitialization, alwaysStrict, and useUnknownInCatchVariables."
+        },
+        {
+            "q": "Which option allows importing JSON files directly as modules?",
+            "o": [
+                "resolveJsonModule",
+                "allowJsonImport",
+                "esModuleInterop",
+                "moduleResolution"
+            ],
+            "a": 0,
+            "e": "resolveJsonModule allows importing .json files. The imported JSON will be typed as 'any' unless a declaration file is provided."
+        },
+        {
+            "q": "What is the purpose of the 'outDir' option?",
+            "o": [
+                "To specify where output files are placed",
+                "To define the entry point of the application",
+                "To exclude files from compilation",
+                "To set the target ECMAScript version"
+            ],
+            "a": 0,
+            "e": "outDir redirects the output structure to a specified directory (e.g., 'dist' or 'build'), keeping source files clean."
+        },
+        {
+            "q": "Which 'moduleResolution' strategy mimics Node.js module resolution behavior?",
+            "o": [
+                "classic",
+                "node",
+                "bundler",
+                "node16"
+            ],
+            "a": 1,
+            "e": "The 'node' strategy (and its modern variants 'node16'/'nodenext') replicates Node.js require/import resolution logic, including node_modules lookups."
+        },
+        {
+            "q": "How do you exclude 'node_modules' and 'dist' folders from compilation?",
+            "o": [
+                "Using the 'exclude' array in tsconfig.json",
+                "Using the 'files' array",
+                "Using the 'include' array with negation patterns",
+                "It happens automatically, no config needed"
+            ],
+            "a": 0,
+            "e": "The 'exclude' array specifies files/patterns to skip. 'node_modules' and 'dist' are commonly excluded to avoid compiling dependencies or previous build outputs."
+        },
+        {
+            "q": "What does 'declaration': true generate?",
+            "o": [
+                ".js.map files",
+                ".d.ts declaration files",
+                ".tsbuildinfo files",
+                "Documentation HTML files"
+            ],
+            "a": 1,
+            "e": "Setting 'declaration': true emits .d.ts files which provide type information for consumers of your library without exposing source code."
+        },
+        {
+            "q": "Which option ensures that 'this' is typed as 'unknown' in catch clauses?",
+            "o": [
+                "strictNullChecks",
+                "useUnknownInCatchVariables",
+                "noImplicitThis",
+                "strictBindCallApply"
+            ],
+            "a": 1,
+            "e": "useUnknownInCatchVariables (enabled under 'strict') types catch clause variables as 'unknown' instead of 'any', forcing type narrowing."
+        },
+        {
+            "q": "What is the effect of 'noEmit': true?",
+            "o": [
+                "Stops type checking",
+                "Only performs type checking without emitting output files",
+                "Emits only declaration files",
+                "Disables source maps"
+            ],
+            "a": 1,
+            "e": "noEmit is useful when using a separate build tool (like esbuild, swc, or babel) for transpilation, while relying on tsc solely for type checking."
+        },
+        {
+            "q": "Which option allows default imports from modules with no default export (CommonJS interop)?",
+            "o": [
+                "allowSyntheticDefaultImports",
+                "esModuleInterop",
+                "moduleResolution: node",
+                "allowJs"
+            ],
+            "a": 0,
+            "e": "allowSyntheticDefaultImports allows `import React from 'react'` instead of `import * as React from 'react'` for CommonJS modules. esModuleInterop enables this and adds runtime helpers."
+        },
+        {
+            "q": "What does 'forceConsistentCasingInFileNames' enforce?",
+            "o": [
+                "Consistent casing in variable names",
+                "Consistent casing in import statements matching the file system",
+                "Consistent casing in class names",
+                "Consistent casing in type names"
+            ],
+            "a": 1,
+            "e": "It ensures that import paths match the exact casing of the file on disk (e.g., './MyFile' vs './myfile'), preventing issues on case-sensitive file systems (Linux) vs insensitive (Windows/macOS)."
+        },
+        {
+            "q": "How do you configure path aliases (e.g., '@/*' mapping to 'src/*')?",
+            "o": [
+                "Using the 'paths' property under 'compilerOptions'",
+                "Using the 'alias' property in 'tsconfig.json'",
+                "Using the 'baseUrl' property alone",
+                "Using the 'rootDirs' property"
+            ],
+            "a": 0,
+            "e": "The 'paths' object (relative to 'baseUrl') maps import aliases to physical directories. Requires 'moduleResolution' to be 'node' or similar."
+        },
+        {
+            "q": "What is the purpose of the 'include' array?",
+            "o": [
+                "To specify which files to exclude from compilation",
+                "To specify a list of files/patterns to include in compilation",
+                "To specify compiler plugins",
+                "To specify the target ECMAScript version"
+            ],
+            "a": 1,
+            "e": "'include' defines the set of files TypeScript should process. If omitted, it defaults to all .ts/.tsx files in the directory (excluding node_modules)."
+        },
+        {
+            "q": "Which 'target' value corresponds to ECMAScript 2020?",
+            "o": [
+                "ES6",
+                "ES2015",
+                "ES2020",
+                "ESNext"
+            ],
+            "a": 2,
+            "e": "Target values can be version years (ES2020, ES2021) or editions (ES6, ES3). ESNext targets the latest supported proposals."
+        },
+        {
+            "q": "What does 'skipLibCheck': true do?",
+            "o": [
+                "Skips type checking of declaration files (.d.ts)",
+                "Skips type checking of your source files",
+                "Skips checking for missing libraries",
+                "Skips the lib.d.ts inclusion"
+            ],
+            "a": 0,
+            "e": "It significantly speeds up compilation by skipping type checking of .d.ts files in node_modules, assuming they are valid."
+        }
+    ]
+}
