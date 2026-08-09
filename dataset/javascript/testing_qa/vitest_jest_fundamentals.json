@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which command initializes a new Vitest project with default configuration?",
+            "o": [
+                "npm init vitest",
+                "npm create vitest@latest",
+                "npx vitest init",
+                "vitest --init"
+            ],
+            "a": 1,
+            "e": "The recommended way to scaffold a Vitest project is `npm create vitest@latest` (or `pnpm create vitest@latest`, `yarn create vitest`)."
+        },
+        {
+            "q": "In both Vitest and Jest, which global function is used to define a test suite (a block grouping related tests)?",
+            "o": [
+                "suite()",
+                "context()",
+                "describe()",
+                "group()"
+            ],
+            "a": 2,
+            "e": "`describe(name, fn)` is the standard global API in both Jest and Vitest for organizing tests into hierarchical suites."
+        },
+        {
+            "q": "What is the primary assertion function used in Vitest and Jest to make expectations?",
+            "o": [
+                "assert()",
+                "should()",
+                "expect()",
+                "verify()"
+            ],
+            "a": 2,
+            "e": "Both libraries use the `expect(value).matcher()` API (expect-style assertions) as the primary interface."
+        },
+        {
+            "q": "Which matcher checks for strict equality (===) in Vitest/Jest?",
+            "o": [
+                "toEqual()",
+                "toBe()",
+                "toStrictEqual()",
+                "toMatch()"
+            ],
+            "a": 1,
+            "e": "`toBe()` uses `Object.is` (strict equality `===`). `toEqual()` checks for deep equality (recursive). `toStrictEqual()` is like `toEqual` but checks for undefined keys and array sparseness."
+        },
+        {
+            "q": "How do you test asynchronous code that returns a Promise in Vitest/Jest?",
+            "o": [
+                "Wrap the test in a setTimeout",
+                "Return the promise from the test function",
+                "Use the `done` callback exclusively",
+                "Mark the test function as `async` and `await` the promise (or return it)"
+            ],
+            "a": 3,
+            "e": "Modern best practice is `async/await`. Returning the promise works but `await` allows try/catch. The `done` callback is legacy."
+        },
+        {
+            "q": "In Vitest, what is the function used to create a mock function (spy)?",
+            "o": [
+                "jest.fn()",
+                "vi.fn()",
+                "mock.fn()",
+                "spyOn()"
+            ],
+            "a": 1,
+            "e": "Vitest uses `vi.fn()` (via the `vi` global namespace). Jest uses `jest.fn()`. `vi.spyOn` exists for spying on existing objects."
+        },
+        {
+            "q": "Which configuration file does Vitest look for by default?",
+            "o": [
+                "jest.config.js",
+                "vitest.config.ts",
+                "vite.config.ts",
+                "test.config.js"
+            ],
+            "a": 2,
+            "e": "Vitest reuses the Vite config file (`vite.config.ts/js`) by default, typically using the `defineConfig` helper with a `test` property."
+        },
+        {
+            "q": "What does `vi.mock('./module')` do in Vitest?",
+            "o": [
+                "Imports the real module but spies on all exports",
+                "Automatically mocks the module (hoisted), returning undefined for exports unless mocked manually",
+                "Deletes the module from the cache",
+                "Runs the module setup code only"
+            ],
+            "a": 1,
+            "e": "`vi.mock` is hoisted and auto-mocks the module. You must provide a factory function or use `vi.importActual` to get real implementations."
+        },
+        {
+            "q": "Which lifecycle hook runs once before *all* tests in a `describe` block?",
+            "o": [
+                "beforeEach",
+                "beforeAll",
+                "setup",
+                "init"
+            ],
+            "a": 1,
+            "e": "`beforeAll(fn)` runs once before all tests in the scope. `beforeEach(fn)` runs before *each* individual test."
+        },
+        {
+            "q": "How do you skip a specific test in Vitest/Jest?",
+            "o": [
+                "test.skip('name', fn)",
+                "xit('name', fn)",
+                "it.skip('name', fn)",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "All three syntaxes are valid aliases to mark a test as skipped (pending)."
+        },
+        {
+            "q": "Which matcher is used to check if a mock function was called with specific arguments?",
+            "o": [
+                "toHaveBeenCalled()",
+                "toHaveBeenCalledWith(...args)",
+                "toBeCalledWith(...args)",
+                "toMatchCalls(...args)"
+            ],
+            "a": 1,
+            "e": "`toHaveBeenCalledWith(arg1, arg2...)` asserts the mock was called at least once with those exact arguments."
+        },
+        {
+            "q": "What is the Vitest equivalent of Jest's `jest.spyOn(object, 'method')`?",
+            "o": [
+                "vi.spy(object, 'method')",
+                "vi.spyOn(object, 'method')",
+                "mock.spyOn(object, 'method')",
+                "spy.on(object, 'method')"
+            ],
+            "a": 1,
+            "e": "Vitest mirrors the Jest spy API exactly: `vi.spyOn(object, 'methodName')`."
+        },
+        {
+            "q": "How do you run tests in 'watch' mode with Vitest?",
+            "o": [
+                "vitest --watch",
+                "vitest run --watch",
+                "vitest",
+                "vitest dev"
+            ],
+            "a": 2,
+            "e": "Running `vitest` (or `npx vitest`) without `run` starts the watch mode by default. `vitest run` executes once and exits (CI mode)."
+        },
+        {
+            "q": "Which global variable provides access to Vitest's API (mocks, timers, etc.) inside test files without importing?",
+            "o": [
+                "vitest",
+                "vi",
+                "vtest",
+                "test"
+            ],
+            "a": 1,
+            "e": "Vitest exposes the `vi` global (similar to `jest` in Jest) containing `fn`, `spyOn`, `mock`, `useFakeTimers`, etc."
+        },
+        {
+            "q": "What does `vi.useFakeTimers()` enable?",
+            "o": [
+                "Mocking `Date.now()` only",
+                "Control over `setTimeout`, `setInterval`, `Date`, and `requestAnimationFrame`",
+                "Speeding up test execution by 10x",
+                "Mocking async/await resolution"
+            ],
+            "a": 1,
+            "e": "Fake timers allow synchronous control over asynchronous timing APIs via `vi.advanceTimersByTime()` or `vi.runAllTimers()`."
+        },
+        {
+            "q": "In Vitest, how do you access the actual implementation of a module that has been mocked via `vi.mock`?",
+            "o": [
+                "requireActual('./module')",
+                "vi.importActual('./module')",
+                "jest.requireActual('./module')",
+                "importOriginal('./module')"
+            ],
+            "a": 1,
+            "e": "`vi.importActual(path)` returns the real module. Useful for partial mocking: `const { realFn } = await vi.importActual('./module')`."
+        },
+        {
+            "q": "Which CLI flag updates snapshot files in Vitest (equivalent to Jest's `-u`)?",
+            "o": [
+                "--update",
+                "-u",
+                "--snap-update",
+                "Both A and B"
+            ],
+            "a": 3,
+            "e": "Vitest supports both `--update` and the shorthand `-u` to update snapshots."
+        }
+    ]
+}
