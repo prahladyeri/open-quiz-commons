@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "What is the primary purpose of a test spy in JavaScript testing?",
+            "o": [
+                "To replace a function with a fake implementation",
+                "To record information about function calls without changing behavior",
+                "To simulate asynchronous network requests",
+                "To automatically generate test cases"
+            ],
+            "a": 1,
+            "e": "A spy wraps a function to track calls, arguments, return values, and exceptions while preserving the original behavior."
+        },
+        {
+            "q": "In Jest, which method creates a mock function that can track calls and optionally replace implementation?",
+            "o": [
+                "jest.spyOn()",
+                "jest.fn()",
+                "jest.mock()",
+                "jest.replace()"
+            ],
+            "a": 1,
+            "e": "jest.fn() creates a new mock function. jest.spyOn() spies on an existing object method."
+        },
+        {
+            "q": "When using Sinon.js, what is the difference between a stub and a spy?",
+            "o": [
+                "A stub replaces behavior; a spy only observes",
+                "A spy replaces behavior; a stub only observes",
+                "They are identical",
+                "A stub is for async only; a spy is for sync only"
+            ],
+            "a": 0,
+            "e": "A stub replaces the target function's behavior with a custom one, while a spy wraps the original to record calls without altering it."
+        },
+        {
+            "q": "How do you restore a spy created with sinon.spy() or jest.spyOn() after a test?",
+            "o": [
+                "spy.restore()",
+                "spy.unmock()",
+                "spy.reset()",
+                "spy.teardown()"
+            ],
+            "a": 0,
+            "e": "Both Sinon and Jest spies provide a .restore() method to revert the original function. Call it in afterEach or cleanup."
+        },
+        {
+            "q": "Which Jest matcher checks if a mock function was called with specific arguments?",
+            "o": [
+                "expect(fn).toHaveBeenCalled()",
+                "expect(fn).toHaveBeenCalledWith(arg1, arg2)",
+                "expect(fn).toHaveBeenCalledTimes(1)",
+                "expect(fn).toHaveReturnedWith(value)"
+            ],
+            "a": 1,
+            "e": "toHaveBeenCalledWith verifies the mock was called with the exact arguments provided."
+        },
+        {
+            "q": "What does sinon.stub().resolves(value) do?",
+            "o": [
+                "Makes the stub return a Promise that resolves to value",
+                "Makes the stub throw an error",
+                "Makes the stub call the original function",
+                "Makes the stub synchronous"
+            ],
+            "a": 0,
+            "e": "resolves() is a convenience method to make a stub return a resolved Promise, useful for mocking async functions."
+        },
+        {
+            "q": "In Jest, how do you mock an entire module (e.g., axios) for a test file?",
+            "o": [
+                "jest.mock('axios')",
+                "jest.spyOn('axios')",
+                "jest.fn('axios')",
+                "jest.replaceModule('axios')"
+            ],
+            "a": 0,
+            "e": "jest.mock('module-name') automatically mocks the module and its exports, allowing you to control behavior in tests."
+        },
+        {
+            "q": "What is a common use case for mocking the system clock (e.g., using sinon.useFakeTimers or jest.useFakeTimers)?",
+            "o": [
+                "Testing code that uses setTimeout, setInterval, or Date.now",
+                "Testing network latency",
+                "Testing random number generation",
+                "Testing DOM rendering"
+            ],
+            "a": 0,
+            "e": "Fake timers allow deterministic control over time-dependent code, advancing time synchronously in tests."
+        },
+        {
+            "q": "When using jest.spyOn(object, 'method'), what happens if you don't call mockRestore()?",
+            "o": [
+                "The spy persists across tests, potentially causing side effects",
+                "The test will fail immediately",
+                "The original method is permanently deleted",
+                "Nothing; Jest cleans up automatically after each test"
+            ],
+            "a": 0,
+            "e": "Jest does not automatically restore spies created with spyOn; you must call mockRestore() (or use jest.restoreAllMocks()) to avoid leaking mocks between tests."
+        },
+        {
+            "q": "Which of the following best describes a 'mock' in the context of unit testing?",
+            "o": [
+                "A test double that replaces a real dependency with controllable behavior",
+                "A function that logs all calls to the console",
+                "A copy of the production database for testing",
+                "A tool that generates code coverage reports"
+            ],
+            "a": 0,
+            "e": "A mock is a test double that simulates a real dependency, allowing you to set expectations and control outputs."
+        },
+        {
+            "q": "In Sinon, how do you create a stub that calls a fake function on the first call and the real function on subsequent calls?",
+            "o": [
+                "stub.onFirstCall().callsFake(fake).onSecondCall().callThrough()",
+                "stub.callsFake(fake).then.callThrough()",
+                "stub.withArgs().callsFake(fake).otherwise.callThrough()",
+                "stub.onCall(0).callsFake(fake).onCall(1).callThrough()"
+            ],
+            "a": 3,
+            "e": "Sinon's onCall(n) API lets you define behavior per call index; callThrough() delegates to the original method."
+        },
+        {
+            "q": "What is the purpose of jest.clearAllMocks()?",
+            "o": [
+                "Removes all mock implementations but keeps the mock functions",
+                "Deletes all mock functions from memory",
+                "Restores all original implementations",
+                "Resets call counts and mock implementations"
+            ],
+            "a": 0,
+            "e": "clearAllMocks resets mock call info (calls, instances, results) but does not restore original implementations; use restoreAllMocks for that."
+        },
+        {
+            "q": "When testing a React component with Jest and React Testing Library, why might you mock a custom hook?",
+            "o": [
+                "To isolate the component from the hook's internal logic and side effects",
+                "To increase code coverage of the hook",
+                "To test the hook's implementation details",
+                "To make the test run slower"
+            ],
+            "a": 0,
+            "e": "Mocking a custom hook lets you control its return values and avoid side effects (e.g., API calls) in component tests."
+        },
+        {
+            "q": "Which statement about 'shallow rendering' vs 'full rendering' in enzyme (or similar) relates to mocking?",
+            "o": [
+                "Shallow rendering automatically mocks all child components",
+                "Full rendering requires manual mocking of all dependencies",
+                "Shallow rendering avoids rendering children, reducing need to mock their dependencies",
+                "Full rendering is faster because it mocks less"
+            ],
+            "a": 2,
+            "e": "Shallow rendering only renders the component itself, so you don't need to mock child components' dependencies."
+        },
+        {
+            "q": "In a test, you want to verify that a callback passed to a function was invoked exactly once with a specific argument. Which Jest assertion is most appropriate?",
+            "o": [
+                "expect(callback).toHaveBeenCalled()",
+                "expect(callback).toHaveBeenCalledTimes(1)",
+                "expect(callback).toHaveBeenCalledWith(expectedArg)",
+                "expect(callback).toHaveBeenCalledTimes(1).toHaveBeenCalledWith(expectedArg)"
+            ],
+            "a": 3,
+            "e": "Chaining toHaveBeenCalledTimes and toHaveBeenCalledWith ensures both call count and arguments match."
+        }
+    ]
+}
