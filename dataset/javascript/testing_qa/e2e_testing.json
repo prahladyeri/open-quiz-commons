@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "Which tool is primarily known for its 'Time Travel' debugging feature, allowing you to hover over commands in the Command Log to see exactly what happened at each step?",
+            "o": [
+                "Playwright",
+                "Puppeteer",
+                "Cypress",
+                "Selenium WebDriver"
+            ],
+            "a": 2,
+            "e": "Cypress provides a unique 'Time Travel' feature via its Test Runner, taking snapshots of the DOM at every command execution, allowing developers to inspect the state at each step."
+        },
+        {
+            "q": "In Playwright, which method is used to wait for a specific network request to finish before proceeding?",
+            "o": [
+                "page.waitForNavigation()",
+                "page.waitForResponse()",
+                "page.waitForRequest()",
+                "page.waitForLoadState('networkidle')"
+            ],
+            "a": 1,
+            "e": "`page.waitForResponse()` waits for a response matching a predicate (URL, status). `waitForNavigation` waits for navigation events, `waitForRequest` waits for the request to be sent, and `networkidle` waits for all network connections to close."
+        },
+        {
+            "q": "What is the default behavior of Cypress when a command fails to find an element (e.g., `cy.get('.btn')`)?",
+            "o": [
+                "Throws an error immediately",
+                "Retries the command for a default timeout (4 seconds) until the element exists",
+                "Skips the test and marks it as pending",
+                "Returns `null` and continues to the next command"
+            ],
+            "a": 1,
+            "e": "Cypress commands automatically retry their assertions and queries for the duration of the `defaultCommandTimeout` (default 4s) before failing. This handles flakiness caused by rendering delays."
+        },
+        {
+            "q": "Which locator strategy is recommended by Playwright as the most resilient for identifying elements?",
+            "o": [
+                "CSS Selectors (e.g., `page.locator('.class')`)",
+                "XPath Selectors",
+                "User-facing attributes (e.g., `page.getByRole('button', { name: 'Submit' })`)",
+                "Test IDs (e.g., `page.locator('[data-testid=submit]')`)"
+            ],
+            "a": 2,
+            "e": "Playwright recommends user-facing locators like `getByRole`, `getByLabel`, `getByText` because they reflect how users perceive the page (accessibility), making tests less brittle to implementation changes."
+        },
+        {
+            "q": "How does Puppeteer differ fundamentally from Cypress in terms of execution context?",
+            "o": [
+                "Puppeteer runs inside the browser; Cypress runs outside in Node.js",
+                "Puppeteer runs in a Node.js environment controlling a browser via DevTools Protocol; Cypress runs inside the browser event loop",
+                "Both run entirely inside the browser context",
+                "Both run entirely in Node.js via WebDriver protocol"
+            ],
+            "a": 1,
+            "e": "Puppeteer is a Node.js library controlling Chromium via the Chrome DevTools Protocol (CDP). Cypress executes test code directly inside the browser, allowing synchronous access to DOM, `window`, and `document` objects."
+        },
+        {
+            "q": "In Selenium WebDriver (JavaScript bindings), how do you handle a `StaleElementReferenceException` robustly?",
+            "o": [
+                "Refresh the page",
+                "Wrap the interaction in a retry loop or use `ExpectedConditions.refreshed` / re-locate the element",
+                "Increase the implicit wait timeout",
+                "Switch to a different browser driver"
+            ],
+            "a": 1,
+            "e": "A stale element means the DOM reference is lost (e.g., React/Vue re-rendered). The robust fix is to re-locate the element (find it again) immediately before interaction, often wrapped in a retry utility or explicit wait."
+        },
+        {
+            "q": "What is the purpose of `cy.intercept()` in Cypress?",
+            "o": [
+                "To intercept and modify browser console logs",
+                "To spy on, stub, or mock HTTP requests (XHR/Fetch) and WebSocket connections",
+                "To intercept DOM events like click or submit",
+                "To intercept keyboard input for accessibility testing"
+            ],
+            "a": 1,
+            "e": "`cy.intercept()` is Cypress's network stubbing/spying mechanism. It allows controlling network behavior (mocking responses, delaying, asserting on request bodies) without hitting the backend."
+        },
+        {
+            "q": "When running E2E tests in a CI/CD pipeline (headless mode), which Chrome flag is often required to run Puppeteer/Playwright/Selenium in a Docker container without `--privileged` mode?",
+            "o": [
+                "--disable-gpu",
+                "--no-sandbox",
+                "--headless=new",
+                "--disable-dev-shm-usage"
+            ],
+            "a": 1,
+            "e": "`--no-sandbox` is required because the Chrome sandbox relies on kernel namespaces/user namespaces which are often restricted in standard Docker containers. `--disable-dev-shm-usage` mitigates `/dev/shm` size limits but doesn't replace the sandbox flag."
+        },
+        {
+            "q": "Which Playwright API allows you to run tests in parallel across multiple machines (sharding) natively?",
+            "o": [
+                "playwright test --workers=4",
+                "playwright test --shard=1/3",
+                "playwright test --parallel",
+                "playwright test --distribute"
+            ],
+            "a": 1,
+            "e": "Playwright Test supports native sharding via `--shard=<current>/<total>` (e.g., `1/3`, `2/3`, `3/3`), distributing the test suite across multiple CI agents/machines without external tooling."
+        },
+        {
+            "q": "In Cypress, why is `cy.contains('Submit').click()` generally preferred over `cy.get('button[type=submit]').click()`?",
+            "o": [
+                "It executes faster",
+                "It uses the text content visible to the user, making the test less brittle to HTML structure changes",
+                "It automatically waits for network requests to finish",
+                "It works inside Shadow DOM without configuration"
+            ],
+            "a": 1,
+            "e": "Testing Library and Cypress best practices encourage selecting elements by visible text (accessible name) rather than implementation details like tag names, classes, or attributes, improving resilience during refactors."
+        },
+        {
+            "q": "What does the `auto-waiting` feature in Playwright do before performing an action like `locator.click()`?",
+            "o": [
+                "Waits for a fixed 500ms delay",
+                "Waits for the network to be idle",
+                "Performs a series of actionability checks (visible, stable, enabled, receives events) automatically",
+                "Waits for the element to exist in the DOM only"
+            ],
+            "a": 2,
+            "e": "Playwright's auto-waiting ensures the element is attached, visible, stable (not animating), enabled, and receives events before clicking. This eliminates the need for manual `waitFor` calls in most cases."
+        },
+        {
+            "q": "Which of the following is a valid strategy to handle flaky tests caused by animation transitions in E2E testing?",
+            "o": [
+                "Increase global timeouts to maximum",
+                "Disable animations globally in the test environment (e.g., via CSS `* { transition: none !important; }`)",
+                "Add `cy.wait(1000)` after every click",
+                "Run tests only in headed mode"
+            ],
+            "a": 1,
+            "e": "Disabling CSS animations/transitions via a test-specific stylesheet or config is the standard best practice. It removes timing variability without adding arbitrary sleeps (which slow down the suite) or relying on heavy timeouts."
+        },
+        {
+            "q": "In the context of E2E testing, what is the 'Test Pyramid' concept recommending?",
+            "o": [
+                "Many E2E tests, few Unit tests",
+                "Many Unit tests, few E2E tests, and a moderate amount of Integration tests",
+                "Equal amounts of Unit, Integration, and E2E tests",
+                "Only E2E tests because they test the real user experience"
+            ],
+            "a": 1,
+            "e": "The Test Pyramid (Mike Cohn) advocates for a broad base of fast, cheap Unit tests, a middle layer of Integration/Component tests, and a small top layer of slow, expensive, brittle E2E tests."
+        },
+        {
+            "q": "How do you authenticate a user efficiently in Cypress for the majority of tests without typing username/password via UI every time?",
+            "o": [
+                "Use `cy.login()` custom command that makes a programmatic POST request to the auth endpoint and sets the token/cookie",
+                "Use `cy.session()` to cache and restore the login state across tests",
+                "Both A and B are valid and often used together",
+                "Store credentials in `cypress.env.json` and type them in `beforeEach`"
+            ],
+            "a": 2,
+            "e": "Best practice: `cy.session()` (caching) wraps a programmatic login (API request) via a custom command. This avoids UI interaction overhead while preserving real session cookies/storage for subsequent tests."
+        },
+        {
+            "q": "What is the primary difference between `page.waitForLoadState('load')` and `page.waitForLoadState('domcontentloaded')` in Playwright?",
+            "o": [
+                "'load' waits for all resources (images, stylesheets); 'domcontentloaded' waits only for HTML parsing",
+                "'domcontentloaded' waits for all resources; 'load' waits only for HTML",
+                "They are aliases for the same event",
+                "'load' waits for JavaScript execution; 'domcontentloaded' waits for CSS"
+            ],
+            "a": 0,
+            "e": "`DOMContentLoaded` fires when the initial HTML document has been completely loaded and parsed (without waiting for stylesheets, images, and subframes). `load` fires when the whole page (all dependent resources) has loaded."
+        }
+    ]
+}
