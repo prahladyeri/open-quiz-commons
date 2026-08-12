@@ -467,7 +467,7 @@
                 {
                     "name": "Testing & Quality",
                     "slug": "testing_qa",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Vitest / Jest Fundamentals",

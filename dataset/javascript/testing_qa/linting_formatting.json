@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which tool is the de facto standard for linting JavaScript and TypeScript code?",
+            "o": [
+                "JSHint",
+                "ESLint",
+                "JSLint",
+                "StandardJS"
+            ],
+            "a": 1,
+            "e": "ESLint is the most widely used and configurable linting tool for modern JavaScript and TypeScript projects. JSHint and JSLint are older, less configurable predecessors."
+        },
+        {
+            "q": "What is the primary purpose of Prettier in a JavaScript project?",
+            "o": [
+                "Find syntax errors",
+                "Enforce code style and formatting consistently",
+                "Run unit tests",
+                "Bundle modules for production"
+            ],
+            "a": 1,
+            "e": "Prettier is an opinionated code formatter that enforces a consistent style by parsing code and re-printing it with its own rules. It does not catch bugs or run tests."
+        },
+        {
+            "q": "Which configuration file does ESLint typically use in a project root?",
+            "o": [
+                ".eslintrc.json",
+                "eslint.config.js",
+                ".eslintrc.yaml",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "ESLint supports multiple configuration file formats: JSON (.eslintrc.json), YAML (.eslintrc.yaml/.yml), JavaScript (eslint.config.js for flat config, .eslintrc.js for legacy), and package.json."
+        },
+        {
+            "q": "In ESLint, what does the 'extends' property in a config file do?",
+            "o": [
+                "Specifies which files to lint",
+                "Inherits rules from a shareable config (e.g., eslint:recommended, airbnb)",
+                "Defines custom parser options",
+                "Sets the ECMAScript version"
+            ],
+            "a": 1,
+            "e": "The 'extends' property allows you to inherit rule sets from recommended configs, plugin configs, or shareable configs like 'airbnb' or 'prettier'."
+        },
+        {
+            "q": "Which testing framework is developed by Facebook (Meta) and includes a built-in test runner, assertion library, and mocking capabilities?",
+            "o": [
+                "Mocha",
+                "Jasmine",
+                "Jest",
+                "Vitest"
+            ],
+            "a": 2,
+            "e": "Jest is a zero-config testing platform by Meta that includes a test runner, expect assertion library, and jest.mock() for mocking. Mocha requires separate assertion/mocking libraries."
+        },
+        {
+            "q": "What command initializes a new ESLint configuration interactively?",
+            "o": [
+                "eslint --init",
+                "npm init @eslint/config",
+                "npx eslint --init",
+                "Both B and C"
+            ],
+            "a": 3,
+            "e": "Modern ESLint (v9+) uses `npm init @eslint/config` (or `yarn create @eslint/config`, `pnpm create @eslint/config`). Legacy `npx eslint --init` works for older versions."
+        },
+        {
+            "q": "Which Jest function is used to mock a module dependency?",
+            "o": [
+                "jest.fn()",
+                "jest.mock()",
+                "jest.spyOn()",
+                "jest.replace()"
+            ],
+            "a": 1,
+            "e": "`jest.mock('module-name')` hoists and mocks an entire module. `jest.fn()` creates a mock function. `jest.spyOn()` watches an existing method."
+        },
+        {
+            "q": "What does the ESLint rule 'no-unused-vars' detect?",
+            "o": [
+                "Variables declared but never read",
+                "Variables used before declaration",
+                "Variables reassigned after const",
+                "Variables with unclear names"
+            ],
+            "a": 0,
+            "e": "'no-unused-vars' reports variables, functions, or function parameters that are declared but never referenced. It helps clean up dead code."
+        },
+        {
+            "q": "Which tool is specifically designed for end-to-end (E2E) browser testing?",
+            "o": [
+                "Jest",
+                "Vitest",
+                "Cypress",
+                "Mocha"
+            ],
+            "a": 2,
+            "e": "Cypress is an E2E testing framework that runs in the browser, providing real-time reloads, time-travel debugging, and network stubbing. Jest/Vitest/Mocha are primarily unit/integration runners."
+        },
+        {
+            "q": "What is the purpose of the 'testMatch' or 'testRegex' config in Jest?",
+            "o": [
+                "Define which files are treated as test files",
+                "Match snapshots against expected output",
+                "Configure code coverage thresholds",
+                "Select which test runner to use"
+            ],
+            "a": 0,
+            "e": "`testMatch` (default: **/__tests__/**/*.js?(x), **/?(*.)+(spec|test).js?(x)) determines which files Jest executes as tests."
+        },
+        {
+            "q": "How does Prettier integrate with ESLint to avoid rule conflicts?",
+            "o": [
+                "Run Prettier before ESLint automatically",
+                "Use eslint-config-prettier to disable formatting rules in ESLint",
+                "Prettier replaces ESLint entirely",
+                "They cannot work together"
+            ],
+            "a": 1,
+            "e": "`eslint-config-prettier` disables all ESLint rules that are unnecessary or might conflict with Prettier, letting Prettier handle formatting while ESLint handles code quality."
+        },
+        {
+            "q": "Which Vitest feature makes it a drop-in replacement for Jest in Vite-based projects?",
+            "o": [
+                "Same API (describe, it, expect, vi.mock)",
+                "Uses Vite's transform pipeline for instant HMR",
+                "Supports TypeScript out of the box",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Vitest mirrors Jest's API (global functions, expect, mocking via vi), leverages Vite for fast dev-server-based test runs, and supports TS/JSX natively."
+        },
+        {
+            "q": "What does the ESLint 'parserOptions.ecmaVersion' setting control?",
+            "o": [
+                "Which ECMAScript syntax version to parse (e.g., 2022, 'latest')",
+                "Which environment globals are available (browser, node)",
+                "Whether to enable JSX parsing",
+                "The indentation style for the project"
+            ],
+            "a": 0,
+            "e": "`ecmaVersion` sets the ECMAScript version for parsing. Use 'latest' for current stage-4 features or a year like 2022. `sourceType: 'module'` enables ES modules."
+        },
+        {
+            "q": "In a Jest test file, what does `expect.extend(matchers)` allow you to do?",
+            "o": [
+                "Add custom assertion matchers",
+                "Extend the timeout for async tests",
+                "Import matchers from another file",
+                "Configure snapshot serializers"
+            ],
+            "a": 0,
+            "e": "`expect.extend({ customMatcher(received, expected) { ... } })` lets you define reusable custom matchers like `toBeWithinRange()` for use in `expect().toBeWithinRange()`."
+        },
+        {
+            "q": "Which command runs Prettier in check mode (exits with error code if formatting differs) without writing changes?",
+            "o": [
+                "prettier --write .",
+                "prettier --check .",
+                "prettier --format .",
+                "prettier --lint ."
+            ],
+            "a": 1,
+            "e": "`prettier --check .` (or `-c`) validates formatting and exits non-zero if files need changes. `--write` applies fixes. Use in CI pipelines."
+        },
+        {
+            "q": "What is the purpose of a 'snapshot' test in Jest?",
+            "o": [
+                "Capture the rendered output of a component and compare against a stored baseline",
+                "Test the performance of a function over time",
+                "Record network requests for later playback",
+                "Save the state of the Redux store"
+            ],
+            "a": 0,
+            "e": "Snapshot tests serialize a component's output (e.g., React tree) to a `.snap` file. On subsequent runs, Jest compares current output to the snapshot to detect unintended changes."
+        }
+    ]
+}
