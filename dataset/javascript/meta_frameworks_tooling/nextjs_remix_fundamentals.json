@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "In Next.js App Router, which React Server Component feature allows fetching data directly inside a component using async/await without a separate getServerSideProps?",
+            "o": [
+                "Server Actions",
+                "Server Components",
+                "Client Components",
+                "Route Handlers"
+            ],
+            "a": 1,
+            "e": "React Server Components (RSC) allow components to be async, enabling direct data fetching (e.g., via fetch) during rendering on the server. Server Actions are for mutations. Client Components run in the browser. Route Handlers are for custom HTTP endpoints."
+        },
+        {
+            "q": "Which file convention in Next.js App Router is used to define UI that is shared across multiple routes (layout) and persists state during navigation?",
+            "o": [
+                "page.js",
+                "template.js",
+                "layout.js",
+                "loading.js"
+            ],
+            "a": 2,
+            "e": "layout.js defines a UI wrapper that persists across route changes and maintains state. page.js is the unique route content. template.js creates a new instance on navigation (no state persistence). loading.js shows a fallback during loading."
+        },
+        {
+            "q": "In Remix, which hook is used to access data returned from a route's loader function?",
+            "o": [
+                "useLoaderData",
+                "useActionData",
+                "useFetcher",
+                "useRouteLoaderData"
+            ],
+            "a": 0,
+            "e": "useLoaderData returns the data from the loader of the current route. useActionData returns data from the action. useFetcher is for submittable fetches not tied to navigation. useRouteLoaderData accesses loaders from parent/sibling routes."
+        },
+        {
+            "q": "What is the primary purpose of a Remix 'action' function?",
+            "o": [
+                "To fetch data for the initial page render",
+                "To handle non-GET HTTP requests (POST, PUT, DELETE, PATCH) for mutations",
+                "To define the HTML document structure",
+                "To handle client-side state management"
+            ],
+            "a": 1,
+            "e": "Actions handle form submissions and data mutations (POST, PUT, DELETE, PATCH). Loaders handle GET requests for data fetching. Root layout handles document structure. Client state is managed via React hooks."
+        },
+        {
+            "q": "In Next.js, how do you opt a specific component tree into Client Component behavior (runs in browser, enables interactivity)?",
+            "o": [
+                "Add 'use client' directive at the top of the file",
+                "Add 'use server' directive at the top of the file",
+                "Import it inside a layout.js file",
+                "Name the file with .client.jsx extension"
+            ],
+            "a": 0,
+            "e": "The 'use client' directive (as a string literal at the top) marks the boundary where the component and its children become Client Components. 'use server' marks Server Actions. File naming conventions do not dictate this boundary."
+        },
+        {
+            "q": "Which Remix API allows you to perform optimistic UI updates by accessing the pending submission data before the action completes?",
+            "o": [
+                "useNavigation",
+                "useFetcher",
+                "useActionData",
+                "useOptimisticData"
+            ],
+            "a": 0,
+            "e": "useNavigation returns the current navigation state, including formData (the submitted data) while the action is pending, enabling optimistic UI. useFetcher is for non-navigation fetches. useActionData is available *after* the action completes. useOptimisticData does not exist as a core hook."
+        },
+        {
+            "q": "In Next.js App Router, what does the 'dynamic' route segment parameter syntax look like (e.g., for a slug)?",
+            "o": [
+                "[slug]/page.js",
+                "{slug}/page.js",
+                ":slug/page.js",
+                "<slug>/page.js"
+            ],
+            "a": 0,
+            "e": "Next.js uses square brackets [param] for dynamic segments in the folder structure (App Router) and file names (Pages Router). Curly braces are used in Remix/React Router. Colons are Express style. Angle brackets are not standard."
+        },
+        {
+            "q": "How does Remix handle form submissions by default to enable progressive enhancement?",
+            "o": [
+                "Via fetch API calls in useEffect hooks",
+                "Using standard HTML <form> elements with method=\"post\" targeting route actions",
+                "Using a custom <Form> component that prevents default and uses JSON payloads only",
+                "By serializing form data to localStorage before submitting"
+            ],
+            "a": 1,
+            "e": "Remix embraces standard HTML <form method=\"post\">. It works without JavaScript (progressive enhancement). The <Form> component in Remix is a wrapper that *enhances* the native form with client-side navigation (prevents full reload), but falls back to native behavior if JS fails/loads slowly."
+        },
+        {
+            "q": "In Next.js, which caching behavior is the default for fetch requests inside Server Components in the App Router?",
+            "o": [
+                "no-store (no caching)",
+                "force-cache (cache indefinitely until revalidation)",
+                "only-if-cached",
+                "default-cache (browser heuristic)"
+            ],
+            "a": 1,
+            "e": "Next.js extends fetch with force-cache as default. Data is cached at build time or request time until revalidated (via revalidate tag or on-demand). To opt out, use { cache: 'no-store' }."
+        },
+        {
+            "q": "What is the name of the Remix convention for splitting a route's UI into a shell (layout) and a changing content area?",
+            "o": [
+                "Nested Routes",
+                "Parallel Routes",
+                "Outlet Routes",
+                "Dynamic Routes"
+            ],
+            "a": 0,
+            "e": "Remix uses Nested Routes (via <Outlet />) to compose layouts. Parent routes render the shell and an <Outlet> for children. Parallel Routes (@folder convention) render multiple pages simultaneously in the same view. Dynamic Routes refer to params."
+        },
+        {
+            "q": "Which Next.js feature allows you to update cached data on-demand (e.g., after a database write) without rebuilding the entire site?",
+            "o": [
+                "Incremental Static Regeneration (ISR) / revalidatePath",
+                "Server Actions",
+                "Middleware",
+                "Edge Functions"
+            ],
+            "a": 0,
+            "e": "ISR (via revalidatePath or revalidateTag) allows purging specific cached data on-demand. Server Actions mutate data but don't inherently invalidate Next.js cache (though often used together). Middleware runs before rendering. Edge Functions are a runtime target."
+        },
+        {
+            "q": "In Remix, what is the return type of a loader function?",
+            "o": [
+                "A React Component",
+                "A Response object or a plain value (auto-wrapped in Response)",
+                "A Promise resolving to HTML string",
+                "A JSON string"
+            ],
+            "a": 1,
+            "e": "Loaders return data (objects, arrays, primitives) or a Response. Remix automatically wraps plain values in Response with JSON headers. They do not return React components or HTML strings directly."
+        },
+        {
+            "q": "How do you define metadata (title, description, Open Graph) in a Next.js App Router route segment?",
+            "o": [
+                "Export a metadata object from page.js or layout.js",
+                "Use a <Head> component inside the page",
+                "Define it in next.config.js under headTags",
+                "Create a meta.js file in the route folder"
+            ],
+            "a": 0,
+            "e": "App Router uses a Metadata API: export const metadata = { title: '...' } from page.js/layout.js. <Head> is from Pages Router. next.config.js is for global config. meta.js is not a convention."
+        },
+        {
+            "q": "Which Remix hook provides access to the current URL search parameters (query string)?",
+            "o": [
+                "useParams",
+                "useSearchParams",
+                "useLocation",
+                "useMatches"
+            ],
+            "a": 1,
+            "e": "useSearchParams returns a [searchParams, setSearchParams] tuple (similar to React Router). useParams returns dynamic route params (e.g., :id). useLocation returns the full location object. useMatches returns data for all matched routes."
+        },
+        {
+            "q": "In Next.js, what is the purpose of the 'next/image' component?",
+            "o": [
+                "To lazy-load images, optimize sizing/format, and prevent layout shift automatically",
+                "To provide a built-in image CDN proxy",
+                "To replace the standard <img> tag purely for semantic reasons",
+                "To enable server-side image processing via Sharp at runtime only"
+            ],
+            "a": 0,
+            "e": "next/image wraps <img> adding automatic optimization (WebP/AVIF), responsive sizing, lazy loading, and CLS prevention. It uses a loader (default or custom) for optimization, not just a CDN proxy. It runs at build time (static) or request time (dynamic)."
+        },
+        {
+            "q": "What happens in Remix when a <Form method=\"post\"> is submitted and the action throws an error or returns a non-Redirect Response?",
+            "o": [
+                "The page crashes and shows a 500 error boundary",
+                "The data is available via useActionData hook for rendering validation errors inline",
+                "The browser navigates to the action's URL path",
+                "The submission is silently ignored"
+            ],
+            "a": 1,
+            "e": "Remix actions can return validation errors (e.g., return json({ errors }, { status: 400 })). This data is accessed via useActionData in the component to show inline errors without losing form state. Errors bubble to ErrorBoundary only if unhandled/thrown. Navigation only happens on Redirect."
+        }
+    ]
+}
