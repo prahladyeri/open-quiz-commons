@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is Vite's primary advantage over traditional bundlers like Webpack during development?",
+            "o": [
+                "It bundles all files into a single bundle before serving",
+                "It leverages native ES modules in the browser for instant server start",
+                "It compiles TypeScript to JavaScript ahead of time",
+                "It uses a custom module format for better caching"
+            ],
+            "a": 1,
+            "e": "Vite serves source files via native ES modules, letting the browser handle imports on demand. This eliminates the need for a full bundle step on startup, making dev server start nearly instant."
+        },
+        {
+            "q": "Which Rust-based tool does Vite use for fast dependency pre-bundling?",
+            "o": [
+                "swc",
+                "esbuild",
+                "turbopack",
+                "rolldown"
+            ],
+            "a": 1,
+            "e": "Vite uses esbuild (written in Go, not Rust) to pre-bundle dependencies written in CommonJS or UMD into ESM, and to transform TypeScript/JSX quickly during dev."
+        },
+        {
+            "q": "What is the default command to start the Vite development server?",
+            "o": [
+                "vite start",
+                "vite dev",
+                "vite serve",
+                "vite"
+            ],
+            "a": 3,
+            "e": "Running `vite` (or `npx vite`) without a subcommand starts the dev server. `vite dev` is an alias, but the canonical command is just `vite`."
+        },
+        {
+            "q": "What is esbuild's primary design goal?",
+            "o": [
+                "Maximum configurability",
+                "Extreme speed via parallelism and native code",
+                "Smallest output bundle size",
+                "Best TypeScript type checking"
+            ],
+            "a": 1,
+            "e": "esbuild is written in Go and focuses on raw speed by parallelizing work across CPU cores and avoiding expensive AST transformations. It does not do type checking."
+        },
+        {
+            "q": "How does Vite handle module resolution differently in development versus production?",
+            "o": [
+                "In dev it uses Rollup; in prod it uses esbuild",
+                "In dev it uses native ESM with on-demand compilation; in prod it bundles with Rollup",
+                "In dev it bundles everything; in prod it serves unbundled modules",
+                "There is no difference; Vite uses the same pipeline for both"
+            ],
+            "a": 1,
+            "e": "During development Vite serves unbundled ESM and transforms files on demand. For production it uses Rollup to create optimized, bundled output with code splitting and minification."
+        },
+        {
+            "q": "What is the default port for the Vite development server?",
+            "o": [
+                "3000",
+                "8080",
+                "5173",
+                "4200"
+            ],
+            "a": 2,
+            "e": "Vite defaults to port 5173. If that port is busy, it will automatically try the next available port."
+        },
+        {
+            "q": "Which plugin API does Vite extend and remain compatible with?",
+            "o": [
+                "Webpack plugin API",
+                "Rollup plugin API",
+                "esbuild plugin API",
+                "Parcel plugin API"
+            ],
+            "a": 1,
+            "e": "Vite's plugin interface extends the Rollup plugin API, adding a few Vite-specific hooks (like `configureServer`). Most Rollup plugins work in Vite with little or no modification."
+        },
+        {
+            "q": "What does esbuild's `transform` API do?",
+            "o": [
+                "Bundles multiple files into a single output file",
+                "Compiles TypeScript/JSX to JavaScript and optionally minifies, without bundling",
+                "Runs a full production build with code splitting",
+                "Performs type checking on TypeScript files"
+            ],
+            "a": 1,
+            "e": "The `transform` API takes a single source string, transpiles it (TS, JSX, modern JS) to target ES version, and can minify. It does not resolve imports or bundle."
+        },
+        {
+            "q": "How does Vite achieve fast Hot Module Replacement (HMR)?",
+            "o": [
+                "By re-bundling the entire application on every change",
+                "By invalidating only the changed module chain via native ESM and sending minimal updates over WebSocket",
+                "By restarting the dev server on each file save",
+                "By using a custom binary protocol instead of WebSocket"
+            ],
+            "a": 1,
+            "e": "Vite's HMR leverages native ESM: when a file changes, it invalidates that module and its importers, then requests the updated modules via HTTP. The browser swaps them in place without a full reload."
+        },
+        {
+            "q": "What is the purpose of `vite.config.js` (or `vite.config.ts`)?",
+            "o": [
+                "To define the entry point HTML file only",
+                "To configure Vite's behavior: plugins, server options, build options, resolve aliases, etc.",
+                "To store environment variables for the production build",
+                "To specify the TypeScript compiler options"
+            ],
+            "a": 1,
+            "e": "`vite.config.js` is the central configuration file. It exports a config object (or a function returning one) that controls plugins, dev server, build output, CSS handling, resolve aliases, and more."
+        },
+        {
+            "q": "Which file does Vite use as the default entry point for the application?",
+            "o": [
+                "src/main.js",
+                "index.html",
+                "src/App.vue",
+                "package.json"
+            ],
+            "a": 1,
+            "e": "Vite is index-html-centric. The project root must contain an `index.html` file, which serves as the entry point. Scripts are referenced via `<script type=\"module\" src=\"/src/main.js\"></script>` inside it."
+        },
+        {
+            "q": "What does esbuild's `--bundle` flag do?",
+            "o": [
+                "Enables minification of the output",
+                "Inlines all imported dependencies into a single output file",
+                "Generates source maps",
+                "Runs the TypeScript type checker"
+            ],
+            "a": 1,
+            "e": "The `--bundle` flag tells esbuild to follow import/require statements and bundle all reachable modules into the output file(s). Without it, esbuild only transforms the entry file."
+        },
+        {
+            "q": "How does Vite handle TypeScript files by default?",
+            "o": [
+                "It runs `tsc` for full type checking before serving",
+                "It uses esbuild to strip types and transpile to JavaScript, skipping type checking",
+                "It requires a separate `tsc --watch` process to compile .ts files to .js",
+                "It does not support TypeScript out of the box"
+            ],
+            "a": 1,
+            "e": "Vite uses esbuild to transpile TypeScript (and TSX) to JavaScript by simply removing type annotations. It does not perform type checking during dev for speed; you should run `tsc --noEmit` separately or in CI."
+        },
+        {
+            "q": "What is the role of Rollup in Vite's production build?",
+            "o": [
+                "It replaces esbuild for all transformations",
+                "It bundles the already esbuild-transformed modules into optimized production assets with code splitting, minification, and manifest generation",
+                "It serves the production build via a Node server",
+                "It only handles CSS extraction"
+            ],
+            "a": 1,
+            "e": "For production, Vite uses Rollup (via `@vitejs/plugin-legacy` etc.) to create highly optimized bundles: code splitting, tree shaking, asset hashing, and HTML asset injection. esbuild is still used for fast transpilation during the build."
+        },
+        {
+            "q": "Which command creates a production-ready build in a Vite project?",
+            "o": [
+                "vite build",
+                "vite prod",
+                "vite compile",
+                "vite bundle"
+            ],
+            "a": 0,
+            "e": "`vite build` (or `npm run build` which typically maps to it) runs the production build using Rollup, outputting to the `dist` directory by default."
+        },
+        {
+            "q": "What is a key difference between esbuild and traditional bundlers like Webpack regarding plugins?",
+            "o": [
+                "esbuild has a richer plugin API than Webpack",
+                "esbuild plugins are written in JavaScript and run in the same process",
+                "esbuild's plugin API is intentionally minimal and focuses on on-load/on-resolve hooks; it does not have a full compilation lifecycle like Webpack",
+                "esbuild does not support plugins at all"
+            ],
+            "a": 2,
+            "e": "esbuild's plugin API is small: mainly `onResolve` and `onLoad` hooks. It lacks the extensive lifecycle hooks (e.g., chunk optimization, asset emission) that Webpack/Rollup provide, which is why Vite uses Rollup for production."
+        }
+    ]
+}
