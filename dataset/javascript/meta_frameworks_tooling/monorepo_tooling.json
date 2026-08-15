@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which tool is a high-performance build system for JavaScript/TypeScript monorepos created by Vercel?",
+            "o": [
+                "Nx",
+                "Lerna",
+                "Turborepo",
+                "Rush"
+            ],
+            "a": 2,
+            "e": "Turborepo is a high-performance build system for JavaScript/TypeScript monorepos, created by Vercel. It uses intelligent caching and parallel execution."
+        },
+        {
+            "q": "What is the primary purpose of a monorepo tool like Nx or Turborepo?",
+            "o": [
+                "To manage multiple separate git repositories",
+                "To manage multiple packages/projects within a single repository with shared tooling and dependency management",
+                "To compile TypeScript to JavaScript",
+                "To deploy applications to the cloud"
+            ],
+            "a": 1,
+            "e": "Monorepo tools manage multiple packages/projects in a single repository, providing shared tooling, dependency management, and optimized builds."
+        },
+        {
+            "q": "Which package manager introduced native workspaces support first among the major ones?",
+            "o": [
+                "npm",
+                "Yarn",
+                "pnpm",
+                "Bun"
+            ],
+            "a": 1,
+            "e": "Yarn introduced native workspaces support (Yarn Workspaces) in 2017, before npm workspaces (added in npm 7, 2020) and pnpm workspaces."
+        },
+        {
+            "q": "In a pnpm workspace, what file defines the workspace configuration?",
+            "o": [
+                "package.json",
+                "pnpm-workspace.yaml",
+                "workspace.json",
+                "pnpm.config.js"
+            ],
+            "a": 1,
+            "e": "pnpm uses pnpm-workspace.yaml to define workspace configuration, including which directories contain packages."
+        },
+        {
+            "q": "What does Nx's 'affected' command do?",
+            "o": [
+                "Runs tests for all projects in the workspace",
+                "Determines which projects are affected by code changes and runs targets only for those projects",
+                "Installs dependencies for all packages",
+                "Creates a new Nx workspace"
+            ],
+            "a": 1,
+            "e": "Nx's affected command analyzes the code graph to determine which projects are impacted by changes, running tasks only for those projects to save time."
+        },
+        {
+            "q": "Which of the following is NOT a core feature of Turborepo?",
+            "o": [
+                "Remote caching",
+                "Parallel task execution",
+                "Built-in code generation schematics",
+                "Content-aware hashing"
+            ],
+            "a": 2,
+            "e": "Turborepo focuses on remote caching, parallel execution, and content-aware hashing. Code generation schematics are a feature of Nx, not Turborepo."
+        },
+        {
+            "q": "What is the purpose of 'npm workspaces'?",
+            "o": [
+                "To publish packages to npm registry",
+                "To manage multiple packages within a single root package.json, enabling linked dependencies and shared scripts",
+                "To create a private npm registry",
+                "To manage npm versions"
+            ],
+            "a": 1,
+            "e": "npm workspaces (introduced in npm 7) allow managing multiple packages within a single repository with automatic linking of workspace dependencies."
+        },
+        {
+            "q": "Which tool uses a 'nx.json' configuration file at the workspace root?",
+            "o": [
+                "Turborepo",
+                "Lerna",
+                "Nx",
+                "Rush"
+            ],
+            "a": 2,
+            "e": "Nx uses nx.json for workspace configuration, including target defaults, named inputs, and plugin configuration."
+        },
+        {
+            "q": "What is Lerna's primary role in modern monorepos (post v5.1)?",
+            "o": [
+                "Build orchestration and caching",
+                "Package versioning and publishing (using independent or fixed mode)",
+                "Dependency installation",
+                "Code linting"
+            ],
+            "a": 1,
+            "e": "Modern Lerna (v5.1+) delegates build orchestration to Nx or Turborepo and focuses on versioning and publishing management (independent/fixed mode)."
+        },
+        {
+            "q": "In Turborepo, what does the 'pipeline' configuration in turbo.json define?",
+            "o": [
+                "The order of package installation",
+                "Task dependencies, caching behavior, and execution constraints (outputs, dependsOn, cache)",
+                "The TypeScript compilation settings",
+                "The deployment pipeline"
+            ],
+            "a": 1,
+            "e": "The pipeline in turbo.json defines task relationships (dependsOn), which outputs to cache, environment variables, and other execution constraints."
+        },
+        {
+            "q": "Which command creates a new Nx workspace with a React preset?",
+            "o": [
+                "npx create-nx-workspace@latest --preset=react",
+                "nx new myapp --framework=react",
+                "npx nx init --react",
+                "create-nx-app react"
+            ],
+            "a": 0,
+            "e": "The standard way to create a new Nx workspace is 'npx create-nx-workspace@latest' with presets like react, next, angular, etc."
+        },
+        {
+            "q": "What is a key advantage of pnpm's disk-space efficiency in monorepos?",
+            "o": [
+                "It duplicates node_modules for each package",
+                "It uses a global content-addressable store and hard-links/symlinks, avoiding duplication",
+                "It stores all dependencies in a single package.json",
+                "It downloads packages only when needed"
+            ],
+            "a": 1,
+            "e": "pnpm uses a global store (~/.pnpm-store) and creates hard links/symlinks in each project's node_modules, saving significant disk space in monorepos."
+        },
+        {
+            "q": "Which of the following best describes 'workspace protocol' in Yarn (workspace:*)?",
+            "o": [
+                "A protocol for deploying workspaces",
+                "A version specifier that resolves to the local workspace package, enabling cross-package dependencies without publishing",
+                "A communication protocol between packages",
+                "A security protocol"
+            ],
+            "a": 1,
+            "e": "Yarn's workspace: protocol (e.g., \"workspace:*\" or \"workspace:^1.0.0\") allows depending on local workspace packages directly, linking them without publishing to a registry."
+        },
+        {
+            "q": "What does Nx's 'project graph' represent?",
+            "o": [
+                "The git commit history",
+                "The dependency relationships between projects/libraries in the workspace, derived from source code analysis",
+                "The folder structure",
+                "The CI/CD pipeline"
+            ],
+            "a": 1,
+            "e": "Nx builds a project graph by analyzing import statements (TypeScript/JavaScript) to understand project dependencies, enabling affected commands and visualization."
+        },
+        {
+            "q": "In a monorepo using Turborepo, what is the typical purpose of the 'turbo run build' command?",
+            "o": [
+                "Builds all packages sequentially",
+                "Builds all packages in parallel, respecting dependencies and using cache",
+                "Only builds the root package",
+                "Installs dependencies then builds"
+            ],
+            "a": 1,
+            "e": "turbo run build executes the 'build' script across all packages in parallel, respecting the dependsOn graph, and uses local/remote caching to skip unchanged work."
+        },
+        {
+            "q": "Which tool is Microsoft's monorepo manager, used for large-scale TypeScript projects like Office and VS Code?",
+            "o": [
+                "Rush",
+                "Nx",
+                "Turborepo",
+                "Lerna"
+            ],
+            "a": 0,
+            "e": "Rush is Microsoft's monorepo manager, designed for large-scale TypeScript projects. It emphasizes deterministic installs and project-level configuration."
+        },
+        {
+            "q": "What is a 'root package.json' in an npm/yarn/pnpm workspace used for?",
+            "o": [
+                "To define the main application entry point",
+                "To configure workspace settings (workspaces field), shared devDependencies, and root-level scripts",
+                "To publish the monorepo as a single package",
+                "To store all source code"
+            ],
+            "a": 1,
+            "e": "The root package.json defines the workspace configuration (workspaces array), shared devDependencies (like typescript, eslint), and root scripts (like 'dev', 'build:all')."
+        }
+    ]
+}
