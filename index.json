@@ -494,7 +494,7 @@
                 {
                     "name": "Meta-frameworks & Tooling",
                     "slug": "meta_frameworks_tooling",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Next.js / Remix Fundamentals",
