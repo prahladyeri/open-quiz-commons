@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is Axum?",
+            "o": [
+                "A Rust web framework built on top of hyper and tower",
+                "A JavaScript frontend framework",
+                "A database ORM for Rust",
+                "A Rust async runtime"
+            ],
+            "a": 0,
+            "e": "Axum is a web framework for Rust that uses hyper as the HTTP implementation and tower for middleware and services."
+        },
+        {
+            "q": "Which crate provides the core routing and handler traits in Axum?",
+            "o": [
+                "axum-core",
+                "axum-router",
+                "axum",
+                "axum-macros"
+            ],
+            "a": 0,
+            "e": "axum-core contains the core traits like Handler, IntoResponse, and routing primitives. The main axum crate re-exports them."
+        },
+        {
+            "q": "How do you define a simple GET route that returns a static string in Axum?",
+            "o": [
+                "Router::new().route(\"/\", get(|| async { \"Hello\" }))",
+                "Router::new().get(\"/\", || \"Hello\")",
+                "Router::new().route(\"/\", get(|| \"Hello\"))",
+                "Router::new().route(\"/\", get(async || \"Hello\"))"
+            ],
+            "a": 0,
+            "e": "Handlers in Axum are async functions or closures. The get() method takes a handler that returns a future."
+        },
+        {
+            "q": "Which extractor is used to parse JSON request bodies into a struct?",
+            "o": [
+                "Json<T>",
+                "Body<T>",
+                "Form<T>",
+                "Query<T>"
+            ],
+            "a": 0,
+            "e": "axum::extract::Json<T> deserializes the request body as JSON into type T (which must implement Deserialize)."
+        },
+        {
+            "q": "How do you access path parameters in a handler?",
+            "o": [
+                "Using the Path<T> extractor",
+                "Using the Query<T> extractor",
+                "Using the State<T> extractor",
+                "Using the HeaderMap extractor"
+            ],
+            "a": 0,
+            "e": "Path<T> extracts path parameters from the request URI. For example, Path<(String, i32)> for multiple parameters or a struct with matching field names."
+        },
+        {
+            "q": "What trait must a type implement to be returned directly from a handler?",
+            "o": [
+                "IntoResponse",
+                "Serialize",
+                "Deserialize",
+                "Debug"
+            ],
+            "a": 0,
+            "e": "Any type returned from a handler must implement IntoResponse, which converts the type into a Response. Axum provides implementations for common types like String, &str, Json<T>, StatusCode, etc."
+        },
+        {
+            "q": "How do you add middleware to an Axum router?",
+            "o": [
+                "Router::new().layer(middleware::from_fn(my_middleware))",
+                "Router::new().middleware(my_middleware)",
+                "Router::new().wrap(my_middleware)",
+                "Router::new().use(middleware::from_fn(my_middleware))"
+            ],
+            "a": 0,
+            "e": "Middleware is added via the layer() method using tower::layer::Layer. middleware::from_fn converts a function into a middleware layer."
+        },
+        {
+            "q": "Which method is used to share application state (like a database pool) with handlers?",
+            "o": [
+                "Router::new().with_state(state)",
+                "Router::new().state(state)",
+                "Router::new().data(state)",
+                "Router::new().context(state)"
+            ],
+            "a": 0,
+            "e": "with_state() attaches shared state to the router. Handlers can then access it via the State<T> extractor."
+        },
+        {
+            "q": "What does the `merge` method on Router do?",
+            "o": [
+                "Combines two routers into one, nesting the routes of the second under the first",
+                "Merges two handlers into a single handler",
+                "Merges middleware layers",
+                "Merges state from two routers"
+            ],
+            "a": 0,
+            "e": "router1.merge(router2) returns a new router that serves routes from both. Useful for modular route definitions."
+        },
+        {
+            "q": "How do you handle errors in Axum handlers that return Result<T, E>?",
+            "o": [
+                "E must implement IntoResponse",
+                "T must implement IntoResponse",
+                "Both T and E must implement IntoResponse",
+                "Errors are automatically converted to 500 responses"
+            ],
+            "a": 2,
+            "e": "When a handler returns Result<T, E>, both T and E must implement IntoResponse. On Ok, T is converted; on Err, E is converted."
+        },
+        {
+            "q": "Which extractor is used to get query string parameters?",
+            "o": [
+                "Query<T>",
+                "Path<T>",
+                "Form<T>",
+                "HeaderMap"
+            ],
+            "a": 0,
+            "e": "Query<T> deserializes the query string into a type T that implements Deserialize (e.g., a struct or HashMap)."
+        },
+        {
+            "q": "What is the purpose of the `ServiceExt` trait from tower?",
+            "o": [
+                "Provides utility methods like `call`, `ready`, and `oneshot` on Services",
+                "Allows creating new middleware",
+                "Defines the Handler trait",
+                "Implements IntoResponse for common types"
+            ],
+            "a": 0,
+            "e": "ServiceExt adds convenience methods to tower::Service, such as oneshot for calling a service once and ready for checking readiness."
+        },
+        {
+            "q": "How do you run an Axum application with a TCP listener?",
+            "o": [
+                "axum::Server::bind(&addr).serve(app.into_make_service()).await",
+                "axum::serve(listener, app).await",
+                "app.run(addr).await",
+                "hyper::Server::bind(&addr).serve(app).await"
+            ],
+            "a": 1,
+            "e": "Since Axum 0.6, the recommended way is axum::serve(listener, app).await, which takes a tokio::net::TcpListener and the router."
+        },
+        {
+            "q": "Which trait is used to convert a type into an HTTP response?",
+            "o": [
+                "IntoResponse",
+                "IntoResponseParts",
+                "IntoResponseBody",
+                "ResponseBuilder"
+            ],
+            "a": 0,
+            "e": "IntoResponse is the main trait for converting a value into a full Response. IntoResponseParts is for converting into response parts (status, headers, extensions) without a body."
+        },
+        {
+            "q": "What does the `nest` method on Router do?",
+            "o": [
+                "Mounts a router at a given path prefix",
+                "Nests middleware inside a router",
+                "Creates a nested state",
+                "Combines two routers without a prefix"
+            ],
+            "a": 0,
+            "e": "router.nest(\"/api\", api_router) mounts api_router under the /api prefix. All routes in api_router will be prefixed with /api."
+        },
+        {
+            "q": "How do you extract typed headers in a handler?",
+            "o": [
+                "Using the TypedHeader<T> extractor",
+                "Using the HeaderMap extractor and manual parsing",
+                "Using the Header<T> extractor",
+                "Using the Headers<T> extractor"
+            ],
+            "a": 0,
+            "e": "TypedHeader<T> (from axum::extract) parses headers into a typed struct T that implements the Header trait (e.g., UserAgent, ContentType, or custom types)."
+        }
+    ]
+}
