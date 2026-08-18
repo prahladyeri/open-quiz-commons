@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the primary entry point for an Actix Web application?",
+            "o": [
+                "main() function returning Result",
+                "HttpServer::new().bind().run()",
+                "App::new().service()",
+                "#[actix_web::main] attribute on main"
+            ],
+            "a": 3,
+            "e": "Actix Web uses the #[actix_web::main] attribute (or #[actix_rt::main] in older versions) to mark the async main function that starts the server."
+        },
+        {
+            "q": "How do you define a route handler that responds to GET requests at path \"/hello\"?",
+            "o": [
+                "HttpServer::new(|| App::new().route(\"/hello\", web::get().to(handler)))",
+                "App::new().service(web::resource(\"/hello\").route(web::get().to(handler)))",
+                "Both A and B are valid",
+                "Neither A nor B"
+            ],
+            "a": 2,
+            "e": "Both the route() method on App and the resource()/route() pattern are valid ways to define routes in Actix Web."
+        },
+        {
+            "q": "Which trait must a handler function return type implement to be used as a responder?",
+            "o": [
+                "Responder",
+                "Response",
+                "HttpResponse",
+                "IntoResponse"
+            ],
+            "a": 0,
+            "e": "The Responder trait is implemented by types that can be converted into an HTTP response. Handler functions must return a type implementing Responder."
+        },
+        {
+            "q": "How do you extract path parameters from a request URL like \"/users/{id}\"?",
+            "o": [
+                "Using the Path<T> extractor",
+                "Using the Query<T> extractor",
+                "Using the Json<T> extractor",
+                "Using the Data<T> extractor"
+            ],
+            "a": 0,
+            "e": "Path<T> extracts path parameters into a tuple or struct. Query extracts query strings, Json extracts JSON bodies, and Data extracts shared application state."
+        },
+        {
+            "q": "What is the purpose of the `web::Data<T>` extractor?",
+            "o": [
+                "To parse JSON request bodies",
+                "To share application state across handlers",
+                "To extract query parameters",
+                "To handle multipart form data"
+            ],
+            "a": 1,
+            "e": "web::Data<T> provides shared, thread-safe access to application state (Arc<T>) across all handlers and middleware."
+        },
+        {
+            "q": "Which middleware is built-in for logging requests in Actix Web?",
+            "o": [
+                "Logger::new()",
+                "LoggingMiddleware",
+                "RequestLogger",
+                "HttpLogger"
+            ],
+            "a": 0,
+            "e": "actix_web::middleware::Logger provides request logging. It is typically added via .wrap(middleware::Logger::default())."
+        },
+        {
+            "q": "How do you return a custom HTTP status code (e.g., 201 Created) with a JSON body?",
+            "o": [
+                "HttpResponse::Created().json(body)",
+                "HttpResponse::status(201).json(body)",
+                "HttpResponse::build(StatusCode::CREATED).json(body)",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "All three approaches work: using the status-specific method (Created()), the generic status() builder, or the build() method with StatusCode enum."
+        },
+        {
+            "q": "What does the `#[derive(Deserialize)]` attribute enable when used with `web::Json<T>`?",
+            "o": [
+                "Automatic serialization of response bodies",
+                "Automatic parsing of JSON request bodies into struct T",
+                "Validation of incoming JSON schema",
+                "Compression of JSON payloads"
+            ],
+            "a": 1,
+            "e": "web::Json<T> uses serde's Deserialize trait to automatically parse incoming JSON request bodies into the target type T."
+        },
+        {
+            "q": "How do you handle blocking operations (like DB calls) without blocking the Actix runtime?",
+            "o": [
+                "Use std::thread::spawn",
+                "Use web::block() or tokio::task::spawn_blocking()",
+                "Use async/await directly on blocking functions",
+                "Use HttpResponse::InternalServerError()"
+            ],
+            "a": 1,
+            "e": "web::block() (Actix helper) or tokio::task::spawn_blocking() offload blocking work to a separate thread pool, preventing executor starvation."
+        },
+        {
+            "q": "What is the correct way to serve static files from a directory \"./static\" at URL path \"/static\"?",
+            "o": [
+                "App::new().service(fs::Files::new(\"/static\", \"./static\").show_files_listing())",
+                "HttpServer::new(|| App::new().route(\"/static\", web::get().to(static_handler)))",
+                "App::new().service(web::resource(\"/static\").to(|| async { \"static\" }))",
+                "None of the above"
+            ],
+            "a": 0,
+            "e": "actix_files::Files (or actix_web::web::Fs in older versions) serves static files. The first argument is the URL path prefix, the second is the filesystem path."
+        },
+        {
+            "q": "Which extractor is used to access HTTP headers in a handler?",
+            "o": [
+                "Header<T>",
+                "HttpRequest",
+                "HeaderMap",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "You can use Header<T> to extract a specific header, HttpRequest to access the full request including headers(), or HeaderMap directly for all headers."
+        },
+        {
+            "q": "How do you configure a custom error response for a specific error type in Actix Web?",
+            "o": [
+                "Implement ResponseError trait for your error type",
+                "Use .app_data(JsonConfig::default().error_handler(...))",
+                "Use .wrap(ErrorHandlers::new().handler(...))",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "ResponseError trait allows custom error -> response mapping. JsonConfig error_handler handles JSON parsing errors. ErrorHandlers middleware handles HTTP status error pages."
+        },
+        {
+            "q": "What is the role of the `Scope` in Actix Web routing?",
+            "o": [
+                "To group routes under a common path prefix",
+                "To limit the scope of middleware",
+                "To define request timeouts",
+                "To handle WebSocket connections"
+            ],
+            "a": 0,
+            "e": "web::Scope groups routes under a path prefix (e.g., /api/v1) and can have its own middleware, guards, and default headers."
+        },
+        {
+            "q": "How do you test an Actix Web handler in isolation?",
+            "o": [
+                "Use actix_web::test::TestRequest and call handler directly",
+                "Use actix_web::test::call_service with a test App",
+                "Use reqwest to hit a running test server",
+                "Both A and B"
+            ],
+            "a": 3,
+            "e": "actix_web::test provides TestRequest for unit-testing handlers directly and call_service for integration-style testing with a full App."
+        },
+        {
+            "q": "Which feature flag enables TLS/HTTPS support in Actix Web's HttpServer?",
+            "o": [
+                "rustls-tls",
+                "native-tls",
+                "openssl",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Actix Web supports multiple TLS backends via feature flags: rustls-tls, native-tls, and openssl. You choose one at compile time."
+        },
+        {
+            "q": "What does the `guard` module provide in Actix Web routing?",
+            "o": [
+                "Route guards for authentication",
+                "Conditional route matching (e.g., by header, method, host)",
+                "Rate limiting middleware",
+                "CSRF protection"
+            ],
+            "a": 1,
+            "e": "actix_web::guard provides Guard types (Header, Query, Host, etc.) to conditionally match routes based on request properties beyond just path and method."
+        }
+    ]
+}
