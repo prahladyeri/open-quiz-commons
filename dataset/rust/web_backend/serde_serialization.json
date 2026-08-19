@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the primary derive macro for enabling both serialization and deserialization in serde?",
+            "o": [
+                "#[derive(Serialize)]",
+                "#[derive(Deserialize)]",
+                "#[derive(Serialize, Deserialize)]",
+                "#[derive(SerializeDeserialize)]"
+            ],
+            "a": 2,
+            "e": "Both Serialize and Deserialize are typically derived together to allow a struct to be converted to and from formats like JSON."
+        },
+        {
+            "q": "Which attribute renames a specific field during serialization and deserialization?",
+            "o": [
+                "#[serde(rename = \"name\")]",
+                "#[serde(alias = \"name\")]",
+                "#[serde(rename_all = \"camelCase\")]",
+                "#[serde(skip)]"
+            ],
+            "a": 0,
+            "e": "The rename attribute changes the field's name in the serialized output (e.g., JSON key) while keeping the Rust field name unchanged."
+        },
+        {
+            "q": "How can you skip a field during serialization but still deserialize it?",
+            "o": [
+                "#[serde(skip_serializing)]",
+                "#[serde(skip_deserializing)]",
+                "#[serde(skip)]",
+                "#[serde(default)]"
+            ],
+            "a": 0,
+            "e": "skip_serializing excludes the field only when serializing; deserialization will still populate it."
+        },
+        {
+            "q": "Which attribute specifies a custom function to use for serializing a field?",
+            "o": [
+                "#[serde(serialize_with = \"func\")]",
+                "#[serde(with = \"module\")]",
+                "#[serde(flatten)]",
+                "#[serde(borrow)]"
+            ],
+            "a": 0,
+            "e": "serialize_with points to a function that takes the field value and a serializer, allowing custom serialization logic."
+        },
+        {
+            "q": "In Actix-web, which extractor is used to parse a JSON request body into a serde-deserializable type?",
+            "o": [
+                "actix_web::web::Json<T>",
+                "actix_web::Json<T>",
+                "serde_json::from_str",
+                "actix_web::HttpRequest::json"
+            ],
+            "a": 0,
+            "e": "actix_web::web::Json<T> is the standard extractor that automatically deserializes the request payload using serde."
+        },
+        {
+            "q": "What does #[serde(rename_all = \"camelCase\")] do when applied to a struct?",
+            "o": [
+                "Renames all fields to camelCase in the serialized output",
+                "Renames the struct itself to camelCase",
+                "Renames all enum variants to camelCase",
+                "Renames all fields to snake_case"
+            ],
+            "a": 0,
+            "e": "rename_all applies a case conversion rule to every field of the struct (or enum variants) during serialization and deserialization."
+        },
+        {
+            "q": "How do you provide a default value for a field that may be missing during deserialization?",
+            "o": [
+                "#[serde(default)]",
+                "#[serde(skip_deserializing)]",
+                "#[serde(alias)]",
+                "#[serde(borrow)]"
+            ],
+            "a": 0,
+            "e": "default uses the type's Default implementation to fill in missing fields during deserialization."
+        },
+        {
+            "q": "Which attribute merges the fields of a nested struct into the parent struct during serialization/deserialization?",
+            "o": [
+                "#[serde(flatten)]",
+                "#[serde(transparent)]",
+                "#[serde(untagged)]",
+                "#[serde(inline)]"
+            ],
+            "a": 0,
+            "e": "flatten causes the nested struct's fields to appear as if they were defined directly on the parent."
+        },
+        {
+            "q": "How do you serialize a chrono::DateTime<Utc> as an RFC3339 string using serde?",
+            "o": [
+                "#[serde(with = \"chrono::serde::ts_seconds\")]",
+                "#[serde(with = \"chrono::serde::rfc3339\")]",
+                "#[serde(serialize_with = \"rfc3339\")]",
+                "#[serde(format = \"rfc3339\")]"
+            ],
+            "a": 1,
+            "e": "chrono provides a serde::rfc3339 module that implements the with attribute for RFC3339 formatting."
+        },
+        {
+            "q": "Which crate provides the derive macros for Serialize and Deserialize?",
+            "o": [
+                "serde_derive",
+                "serde_macros",
+                "serde_codegen",
+                "serde_derive_macros"
+            ],
+            "a": 0,
+            "e": "The derive macros are re-exported from serde_derive; you typically enable the \"derive\" feature in serde's Cargo.toml."
+        },
+        {
+            "q": "In Axum, which of the following can be used to extract a JSON body into a type T?",
+            "o": [
+                "axum::extract::Json<T>",
+                "axum::Json<T>",
+                "Json<T>",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Axum re-exports Json from axum::extract and also provides it at the crate root; all three forms are valid."
+        },
+        {
+            "q": "How can you serialize an enum with unit variants as a simple string (e.g., \"VariantName\") instead of an object?",
+            "o": [
+                "#[serde(untagged)]",
+                "#[serde(tag = \"type\")]",
+                "#[serde(content = \"data\")]",
+                "#[serde(rename_all = \"lowercase\")]"
+            ],
+            "a": 0,
+            "e": "untagged serializes enum variants without any tag or wrapper; for unit variants this results in a plain string."
+        },
+        {
+            "q": "What is the purpose of #[serde(borrow)] on a field?",
+            "o": [
+                "Allows zero-copy deserialization by borrowing data from the input",
+                "Skips serialization of the field",
+                "Renames the field to \"borrow\"",
+                "Flattens the field into the parent struct"
+            ],
+            "a": 0,
+            "e": "borrow enables deserializing into types that borrow from the input (e.g., &str, &[u8]) instead of owning allocated data."
+        },
+        {
+            "q": "Which trait bounds are required for a type to be used as a key in a HashMap serialized with serde?",
+            "o": [
+                "Serialize",
+                "Deserialize",
+                "Serialize + Deserialize",
+                "Eq + Hash"
+            ],
+            "a": 2,
+            "e": "serde requires map keys to implement both Serialize and Deserialize so they can be written to and read from formats like JSON."
+        },
+        {
+            "q": "How do you omit a field from JSON output when its value is None?",
+            "o": [
+                "#[serde(skip_serializing_if = \"Option::is_none\")]",
+                "#[serde(default)]",
+                "#[serde(skip)]",
+                "#[serde(flatten)]"
+            ],
+            "a": 0,
+            "e": "skip_serializing_if with Option::is_none conditionally skips serialization only when the Option is None."
+        },
+        {
+            "q": "Which attribute allows deserializing a field from multiple possible names (aliases)?",
+            "o": [
+                "#[serde(alias = \"name\")]",
+                "#[serde(rename = \"name\")]",
+                "#[serde(rename_all = \"snake_case\")]",
+                "#[serde(default)]"
+            ],
+            "a": 0,
+            "e": "alias adds an alternative name for deserialization; the primary name (or renamed name) is still used for serialization."
+        }
+    ]
+}
