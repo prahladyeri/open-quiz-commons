@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "Which async runtime is the de facto standard for building web backends in Rust?",
+            "o": [
+                "Tokio",
+                "async-std",
+                "smol",
+                "futures-executor"
+            ],
+            "a": 0,
+            "e": "Tokio is the most widely used async runtime in the Rust ecosystem, powering major web frameworks like Axum, Actix-web, and Warp."
+        },
+        {
+            "q": "What does the `#[tokio::main]` macro expand to?",
+            "o": [
+                "A function that creates a multi-threaded runtime and blocks on the async main function",
+                "A function that creates a single-threaded runtime",
+                "A function that spawns a new thread for each async task",
+                "A function that runs the async main on the current thread without a runtime"
+            ],
+            "a": 0,
+            "e": "`#[tokio::main]` sets up a multi-threaded Tokio runtime by default and calls `block_on` on the async main function."
+        },
+        {
+            "q": "Which method is used to spawn a future onto the Tokio runtime so it runs concurrently?",
+            "o": [
+                "tokio::spawn",
+                "tokio::run",
+                "tokio::execute",
+                "tokio::block_on"
+            ],
+            "a": 0,
+            "e": "`tokio::spawn` returns a `JoinHandle` and schedules the future on the runtime's thread pool."
+        },
+        {
+            "q": "What is the purpose of `tokio::task::spawn_blocking`?",
+            "o": [
+                "To run a blocking synchronous operation on a dedicated blocking thread pool",
+                "To spawn a future that blocks the current async task",
+                "To create a new OS thread for each blocking call",
+                "To block the entire runtime until the operation completes"
+            ],
+            "a": 0,
+            "e": "`spawn_blocking` offloads blocking work (like file I/O or CPU-intensive calculations) to a separate thread pool so the async executor isn't stalled."
+        },
+        {
+            "q": "Why is `Pin<&mut Future>` required when polling a future in Rust?",
+            "o": [
+                "To prevent the future from being moved in memory, which would invalidate self-referential pointers",
+                "To allow the future to be cloned across threads",
+                "To enable the future to be stored in a collection",
+                "To automatically implement the `Future` trait for the type"
+            ],
+            "a": 0,
+            "e": "Async blocks and functions can create self-referential structures; `Pin` guarantees the memory address stays stable so references remain valid."
+        },
+        {
+            "q": "Which trait must a type implement to be used with `.await`?",
+            "o": [
+                "Future",
+                "Async",
+                "Awaitable",
+                "Pollable"
+            ],
+            "a": 0,
+            "e": "The `Future` trait (from `std::future` or `futures-core`) defines the `poll` method that drives async computation."
+        },
+        {
+            "q": "What is the role of a `Waker` in Rust's async model?",
+            "o": [
+                "It notifies the executor that a task is ready to make progress and should be polled again",
+                "It wakes up the current thread from sleep",
+                "It creates a new future from a closure",
+                "It implements the `Future` trait for raw pointers"
+            ],
+            "a": 0,
+            "e": "A `Waker` is passed to `poll` via `Context`; when an async operation completes (e.g., I/O ready), the waker signals the executor to reschedule the task."
+        },
+        {
+            "q": "How does Tokio's `Mutex` differ from `std::sync::Mutex`?",
+            "o": [
+                "Tokio's Mutex is async-aware: locking yields the task instead of blocking the thread",
+                "Tokio's Mutex is faster because it uses spinlocks",
+                "Tokio's Mutex does not support poisoning",
+                "Tokio's Mutex can only be used in single-threaded runtimes"
+            ],
+            "a": 0,
+            "e": "`tokio::sync::Mutex::lock` returns a future, allowing the executor to run other tasks while waiting, whereas `std::sync::Mutex` blocks the OS thread."
+        },
+        {
+            "q": "Which runtime configuration sets the number of worker threads in Tokio?",
+            "o": [
+                "`tokio::runtime::Builder::worker_threads(n)`",
+                "`tokio::runtime::Builder::max_threads(n)`",
+                "`tokio::runtime::Builder::thread_pool_size(n)`",
+                "`tokio::runtime::Builder::concurrency(n)`"
+            ],
+            "a": 0,
+            "e": "The `worker_threads` method configures the number of threads in the multi-threaded scheduler's thread pool."
+        },
+        {
+            "q": "What does `tokio::join!` do?",
+            "o": [
+                "Runs multiple futures concurrently on the current task and waits for all to complete",
+                "Spawns each future on a separate thread",
+                "Runs futures sequentially in the order given",
+                "Returns the result of the first future that completes"
+            ],
+            "a": 0,
+            "e": "`tokio::join!` drives multiple futures to completion concurrently within a single task, returning a tuple of their outputs."
+        },
+        {
+            "q": "What is the effect of `#[tokio::main(flavor = \"current_thread\")]`?",
+            "o": [
+                "Runs the async main on a single-threaded runtime",
+                "Runs the async main on a multi-threaded runtime with one worker",
+                "Disables the runtime's timer driver",
+                "Forces all spawned tasks to run on the main thread only"
+            ],
+            "a": 0,
+            "e": "The `current_thread` flavor creates a single-threaded runtime where all tasks run on the same thread, useful for simpler applications or testing."
+        },
+        {
+            "q": "Which method on a `JoinHandle` allows you to await the result of a spawned task?",
+            "o": [
+                "`.await`",
+                "`.join()`",
+                "`.result()`",
+                "`.get()`"
+            ],
+            "a": 0,
+            "e": "`JoinHandle` implements `Future`; awaiting it yields the result of the spawned task or a `JoinError` if the task panicked."
+        },
+        {
+            "q": "What is the purpose of `tokio::select!` macro?",
+            "o": [
+                "Races multiple futures and executes the arm of the first future that completes",
+                "Selects a random future from a list to run",
+                "Creates a new runtime with a select-based scheduler",
+                "Waits for all futures to complete and returns a vector of results"
+            ],
+            "a": 0,
+            "e": "`select!` enables concurrent racing of futures, similar to `select` in Go, allowing cancellation and timeout patterns."
+        },
+        {
+            "q": "How can you run a future that does not implement `Send` on a multi-threaded Tokio runtime?",
+            "o": [
+                "Use `tokio::task::spawn_local`",
+                "Wrap the future in `Arc<Mutex<...>>`",
+                "Use `tokio::spawn` with a `!Send` bound",
+                "It is impossible; all spawned futures must be `Send`"
+            ],
+            "a": 0,
+            "e": "`spawn_local` runs a future on the current thread's local executor, avoiding the `Send` requirement needed for cross-thread work stealing."
+        },
+        {
+            "q": "What does `tokio::time::sleep` return?",
+            "o": [
+                "A future that completes after the specified duration",
+                "A `Duration` object",
+                "A `JoinHandle` that can be awaited",
+                "An `Instant` representing the wake-up time"
+            ],
+            "a": 0,
+            "e": "`sleep` returns a `Sleep` future that resolves when the deadline passes; it requires the `rt` and `time` features and a running timer driver."
+        }
+    ]
+}

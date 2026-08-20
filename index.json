@@ -745,7 +745,7 @@
                 {
                     "name": "Web Backend & APIs",
                     "slug": "web_backend",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Axum Framework",
