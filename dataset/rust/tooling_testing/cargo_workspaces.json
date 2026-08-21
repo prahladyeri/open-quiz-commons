@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is a Cargo workspace?",
+            "o": [
+                "A single crate with multiple modules",
+                "A collection of related packages that share a Cargo.lock and output directory",
+                "A virtual environment for Rust dependencies",
+                "A configuration file for cross-compilation"
+            ],
+            "a": 1,
+            "e": "A Cargo workspace allows multiple packages (crates) to share a single Cargo.lock file and target directory, enabling coordinated builds and dependency management."
+        },
+        {
+            "q": "Which key in Cargo.toml defines a workspace at the root level?",
+            "o": [
+                "package",
+                "workspace",
+                "members",
+                "dependencies"
+            ],
+            "a": 1,
+            "e": "The `[workspace]` table in the root Cargo.toml configures the workspace, including its members and shared settings."
+        },
+        {
+            "q": "How do you specify which crates are members of a workspace?",
+            "o": [
+                "List them under the `members` array in `[workspace]`",
+                "Add a `workspace = true` field in each member's Cargo.toml",
+                "Place them in a subdirectory named `workspace`",
+                "Run `cargo add-member <path>` for each crate"
+            ],
+            "a": 0,
+            "e": "The `members` field (or `exclude`) inside `[workspace]` lists glob patterns for member crate paths."
+        },
+        {
+            "q": "What is the default behavior of `cargo build` when run from a workspace root?",
+            "o": [
+                "Builds only the root package",
+                "Builds all workspace members",
+                "Builds only the first member listed",
+                "Fails unless a specific package is selected with `-p`"
+            ],
+            "a": 1,
+            "e": "By default, `cargo build` (and other commands) operate on all members of the workspace unless a specific package is targeted with `-p`."
+        },
+        {
+            "q": "Which command runs tests for all crates in a workspace?",
+            "o": [
+                "cargo test --all",
+                "cargo test --workspace",
+                "cargo test --members",
+                "cargo test"
+            ],
+            "a": 1,
+            "e": "`cargo test --workspace` runs tests for every member. `--all` is deprecated alias; plain `cargo test` also runs all members from root."
+        },
+        {
+            "q": "How do workspace members share dependencies?",
+            "o": [
+                "They automatically inherit all dependencies from the root Cargo.toml",
+                "They must declare dependencies individually, but Cargo ensures a single version via shared Cargo.lock",
+                "They cannot share dependencies; each member has its own Cargo.lock",
+                "They use a global dependency cache configured in `[workspace.dependencies]`"
+            ],
+            "a": 1,
+            "e": "Each member declares its own dependencies; Cargo resolves a unified dependency graph and writes a single Cargo.lock at the workspace root."
+        },
+        {
+            "q": "What does the `workspace.dependencies` table (available in Rust 2021+) allow?",
+            "o": [
+                "Defining dependency versions once and referencing them in members with `workspace = true`",
+                "Installing system-level libraries for all members",
+                "Overriding the crate registry for the workspace",
+                "Specifying build scripts that run for every member"
+            ],
+            "a": 0,
+            "e": "The `[workspace.dependencies]` table lets you centralize version and feature configuration; members then use `dependency = { workspace = true }`."
+        },
+        {
+            "q": "Which flag makes `cargo build` build only a specific package within a workspace?",
+            "o": [
+                "--package <name>",
+                "--member <name>",
+                "--crate <name>",
+                "--only <name>"
+            ],
+            "a": 0,
+            "e": "`cargo build -p <name>` or `--package <name>` selects a single package. `-p` is the short form."
+        },
+        {
+            "q": "What happens if a workspace member specifies a different edition than the root?",
+            "o": [
+                "The build fails; all members must share the same edition",
+                "Each member can have its own edition; Cargo compiles each crate with its declared edition",
+                "The root edition overrides all members",
+                "Cargo emits a warning but uses the member's edition"
+            ],
+            "a": 1,
+            "e": "Edition is per-crate; members can independently declare `edition = \"2021\"` or `\"2018\"` in their own Cargo.toml."
+        },
+        {
+            "q": "How can you exclude a crate from a workspace without moving its directory?",
+            "o": [
+                "Add its path to the `exclude` array in `[workspace]`",
+                "Rename its Cargo.toml to Cargo.toml.ignore",
+                "Set `workspace = false` in its Cargo.toml",
+                "Run `cargo workspace remove <path>`"
+            ],
+            "a": 0,
+            "e": "The `exclude` key in `[workspace]` takes glob patterns to omit crates that would otherwise be matched by `members`."
+        },
+        {
+            "q": "What is the purpose of a virtual manifest in a workspace?",
+            "o": [
+                "A Cargo.toml with only `[workspace]` and no `[package]` section, serving as the workspace root",
+                "A manifest that downloads dependencies without building",
+                "A manifest that defines only dev-dependencies",
+                "A manifest used for cross-compilation targets"
+            ],
+            "a": 0,
+            "e": "A virtual manifest contains only workspace configuration (no `package` table) and acts as the workspace root."
+        },
+        {
+            "q": "Which command creates a new workspace with a binary and a library crate?",
+            "o": [
+                "cargo new --workspace myws",
+                "cargo init --workspace myws",
+                "mkdir myws && cd myws && cargo new --bin app && cargo new --lib lib",
+                "cargo generate workspace"
+            ],
+            "a": 2,
+            "e": "There is no single `cargo new --workspace` command. You typically create a root Cargo.toml with `[workspace]` and then add member crates via `cargo new` in subdirectories."
+        },
+        {
+            "q": "How does `cargo publish` behave in a workspace by default?",
+            "o": [
+                "Publishes all members to crates.io sequentially",
+                "Publishes only the root package",
+                "Fails with an error unless `-p` is specified",
+                "Publishes only library crates, skipping binaries"
+            ],
+            "a": 2,
+            "e": "`cargo publish` from a workspace root requires `-p <package>` to publish a specific member; it does not publish all members automatically."
+        },
+        {
+            "q": "What is the effect of setting `resolver = \"2\"` in `[workspace]`?",
+            "o": [
+                "Enables the new feature resolver that avoids unifying features across packages",
+                "Switches to the second version of the Cargo.lock format",
+                "Forces all dependencies to use semantic versioning 2.0",
+                "Disables dependency resolution for dev-dependencies"
+            ],
+            "a": 0,
+            "e": "Resolver version 2 (default since Rust 1.51) provides per-package feature resolution, preventing unwanted feature unification across workspace members."
+        },
+        {
+            "q": "Which file is shared by all workspace members and should be committed to version control?",
+            "o": [
+                "Cargo.toml of each member",
+                "Cargo.lock at the workspace root",
+                "target/ directory",
+                ".cargo/config.toml"
+            ],
+            "a": 1,
+            "e": "The workspace root Cargo.lock records the exact dependency versions for reproducible builds and must be committed."
+        },
+        {
+            "q": "How can you run a specific binary from a workspace member without installing it?",
+            "o": [
+                "cargo run --bin <name> --manifest-path <member>/Cargo.toml",
+                "cargo run -p <package> --bin <name>",
+                "cargo execute -p <package> --bin <name>",
+                "cargo start --package <package> --bin <name>"
+            ],
+            "a": 1,
+            "e": "`cargo run -p <package> --bin <name>` runs the specified binary from the given package within the workspace."
+        }
+    ]
+}
