@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which attribute marks a function as a unit test in Rust?",
+            "o": [
+                "#[test_case]",
+                "#[test]",
+                "#[unit_test]",
+                "#[testing]"
+            ],
+            "a": 1,
+            "e": "The #[test] attribute tells Rust's test runner to treat the function as a test. It is part of the standard library's testing framework."
+        },
+        {
+            "q": "What macro is used to check that two values are equal in a test?",
+            "o": [
+                "assert_same!",
+                "assert_eq!",
+                "assert_equal!",
+                "assert_match!"
+            ],
+            "a": 1,
+            "e": "assert_eq!(left, right) panics if the two values are not equal, printing both values. assert_ne! checks for inequality."
+        },
+        {
+            "q": "How do you indicate that a test should panic with a specific message?",
+            "o": [
+                "#[should_panic(expected = \"message\")]",
+                "#[panic(expected = \"message\")]",
+                "#[test(panic = \"message\")]",
+                "#[expect_panic(\"message\")]"
+            ],
+            "a": 0,
+            "e": "#[should_panic] marks a test as passing only if it panics. The optional `expected` parameter asserts the panic message contains that substring."
+        },
+        {
+            "q": "Where are unit tests typically located in a Rust project?",
+            "o": [
+                "In a separate `tests/` directory at the crate root",
+                "Inside the same file as the code they test, under a `mod tests { #[cfg(test)] ... }` module",
+                "In `benches/` directory",
+                "In `examples/` directory"
+            ],
+            "a": 1,
+            "e": "Unit tests live alongside the code in a `#[cfg(test)]` annotated module, usually named `tests`. Integration tests go in the `tests/` directory."
+        },
+        {
+            "q": "What does the `#[cfg(test)]` attribute do?",
+            "o": [
+                "Runs the code only during `cargo bench`",
+                "Compiles the annotated item only when running tests (`cargo test`)",
+                "Marks the item as a benchmark function",
+                "Disables the item for release builds only"
+            ],
+            "a": 1,
+            "e": "`#[cfg(test)]` ensures the module or function is only compiled and included when `cargo test` runs, keeping test code out of production binaries."
+        },
+        {
+            "q": "Which command runs all tests in a Cargo project?",
+            "o": [
+                "cargo run --test",
+                "cargo check --tests",
+                "cargo test",
+                "cargo build --test"
+            ],
+            "a": 2,
+            "e": "`cargo test` compiles the crate in test mode and executes all functions annotated with #[test]. It also runs integration tests and doc tests."
+        },
+        {
+            "q": "How can you run a specific test by name?",
+            "o": [
+                "cargo test --name test_foo",
+                "cargo test test_foo",
+                "cargo test --test test_foo",
+                "cargo run test_foo"
+            ],
+            "a": 1,
+            "e": "`cargo test test_foo` filters tests whose names contain `test_foo`. You can also use `--` to pass arguments to the test binary, e.g., `cargo test -- --test-threads=1`."
+        },
+        {
+            "q": "What is the purpose of integration tests in Rust?",
+            "o": [
+                "Test private implementation details",
+                "Test the public API of a crate as an external consumer would",
+                "Benchmark performance of internal functions",
+                "Generate documentation examples"
+            ],
+            "a": 1,
+            "e": "Integration tests reside in `tests/` and only have access to the crate's public API, verifying the library works correctly from a user's perspective."
+        },
+        {
+            "q": "Which crate is the de-facto standard for micro-benchmarking in Rust?",
+            "o": [
+                "bencher",
+                "criterion",
+                "benchmark",
+                "perf"
+            ],
+            "a": 1,
+            "e": "The `criterion` crate provides statistically rigorous benchmarking, automatic outlier detection, and HTML reports. It works on stable Rust."
+        },
+        {
+            "q": "How do you define a benchmark using the `criterion` crate?",
+            "o": [
+                "fn bench_foo(b: &mut Bencher) { ... }",
+                "fn bench_foo(c: &mut Criterion) { c.bench_function(\"foo\", |b| b.iter(|| foo())); }",
+                "#[bench] fn bench_foo(b: &mut Bencher) { ... }",
+                "benchmark! { foo() }"
+            ],
+            "a": 1,
+            "e": "Criterion uses a `criterion_group!` and `criterion_main!` macro setup. Benchmarks receive a `&mut Criterion` and use `bench_function` with a closure calling `iter`."
+        },
+        {
+            "q": "What does `cargo bench` do by default on stable Rust?",
+            "o": [
+                "Runs all benchmarks defined with #[bench]",
+                "Compiles benchmarks but does not run them (benchmarks are unstable)",
+                "Runs criterion benchmarks automatically",
+                "Fails with an error"
+            ],
+            "a": 1,
+            "e": "The built-in `#[bench]` attribute and `Bencher` are unstable and require a nightly toolchain. On stable, `cargo bench` only compiles bench targets. Use `criterion` for stable benchmarking."
+        },
+        {
+            "q": "Which macro asserts that an expression returns a `Result::Err` variant?",
+            "o": [
+                "assert_err!",
+                "assert_matches!",
+                "assert_is_err!",
+                "assert_result_err!"
+            ],
+            "a": 1,
+            "e": "`assert_matches!(expr, Err(_))` from the standard library (since 1.68) or the `assert_matches` crate can pattern-match on `Result` variants. There is no dedicated `assert_err!` macro in std."
+        },
+        {
+            "q": "What is the purpose of `#[ignore]` on a test function?",
+            "o": [
+                "Marks the test as flaky",
+                "Excludes the test from default runs; run with `cargo test -- --ignored`",
+                "Runs the test only in release mode",
+                "Skips compilation of the test"
+            ],
+            "a": 1,
+            "e": "`#[ignore]` prevents the test from running during `cargo test`. Use `cargo test -- --ignored` to run only ignored tests, or `cargo test -- --include-ignored` to run all."
+        },
+        {
+            "q": "How do you run tests with multiple threads disabled (single-threaded)?",
+            "o": [
+                "cargo test --single-threaded",
+                "cargo test -- --test-threads=1",
+                "cargo test --jobs=1",
+                "cargo test --parallel=false"
+            ],
+            "a": 1,
+            "e": "Pass `--test-threads=1` to the test binary via `cargo test -- --test-threads=1`. This is useful for tests that share global state or require deterministic ordering."
+        },
+        {
+            "q": "What does `cargo test --doc` do?",
+            "o": [
+                "Generates documentation and runs examples in doc comments as tests",
+                "Tests only public API documentation",
+                "Runs benchmarks found in documentation",
+                "Validates markdown syntax in comments"
+            ],
+            "a": 0,
+            "e": "`cargo test --doc` (or just `cargo test` which includes doc tests by default) compiles and executes code blocks in documentation comments, ensuring examples stay correct."
+        },
+        {
+            "q": "Which testing approach generates random inputs to verify properties hold for a wide range of values?",
+            "o": [
+                "Unit testing",
+                "Integration testing",
+                "Property-based testing",
+                "Regression testing"
+            ],
+            "a": 2,
+            "e": "Property-based testing (e.g., with the `proptest` or `quickcheck` crates) automatically generates many random inputs to check that specified invariants always hold."
+        },
+        {
+            "q": "How can you share common setup/teardown logic across multiple tests?",
+            "o": [
+                "Using a `setup()` function called manually in each test",
+                "Implementing `Drop` on a test fixture struct and creating it in each test",
+                "Using `#[before]` and `#[after]` attributes",
+                "Defining a `test_main` function"
+            ],
+            "a": 1,
+            "e": "Rust has no built-in test fixtures. The idiomatic pattern is a struct that implements `Drop` for teardown; instantiate it at the start of each test. The `Drop` impl runs when the test ends (even on panic)."
+        }
+    ]
+}
