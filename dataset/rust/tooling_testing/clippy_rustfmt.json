@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the primary purpose of Clippy in the Rust ecosystem?",
+            "o": [
+                "Code formatting and style enforcement",
+                "Static analysis and linting to catch common mistakes and improve code quality",
+                "Dependency management and building",
+                "Running unit and integration tests"
+            ],
+            "a": 1,
+            "e": "Clippy is a collection of lints to catch common mistakes and improve your Rust code. It performs static analysis, while rustfmt handles formatting."
+        },
+        {
+            "q": "What is the primary purpose of rustfmt?",
+            "o": [
+                "Static analysis and linting",
+                "Code formatting according to community style guidelines",
+                "Generating documentation",
+                "Benchmarking code performance"
+            ],
+            "a": 1,
+            "e": "rustfmt automatically formats Rust code according to the standard style guide. It ensures consistent formatting across a codebase."
+        },
+        {
+            "q": "How do you install Clippy and rustfmt using rustup?",
+            "o": [
+                "rustup component add clippy rustfmt",
+                "cargo install clippy rustfmt",
+                "rustup install clippy rustfmt",
+                "They are installed by default with the stable toolchain"
+            ],
+            "a": 0,
+            "e": "Clippy and rustfmt are optional components installed via `rustup component add clippy rustfmt`. They are not installed by default with the minimal toolchain."
+        },
+        {
+            "q": "Which command runs Clippy lints on a Cargo project?",
+            "o": [
+                "cargo check --clippy",
+                "cargo clippy",
+                "cargo lint",
+                "clippy ."
+            ],
+            "a": 1,
+            "e": "`cargo clippy` runs Clippy lints on the current Cargo package. It accepts the same arguments as `cargo check`."
+        },
+        {
+            "q": "Which command formats a Cargo project using rustfmt?",
+            "o": [
+                "cargo format",
+                "cargo fmt",
+                "rustfmt .",
+                "cargo rustfmt"
+            ],
+            "a": 1,
+            "e": "`cargo fmt` is the Cargo subcommand provided by rustfmt to format all crates in the workspace. `rustfmt` can also be run directly on files."
+        },
+        {
+            "q": "How can you allow a specific Clippy lint (e.g., `needless_lifetimes`) for an entire crate?",
+            "o": [
+                "Add `#![allow(clippy::needless_lifetimes)]` to the crate root",
+                "Add `allow(clippy::needless_lifetimes)` to Cargo.toml",
+                "Run `cargo clippy --allow needless_lifetimes`",
+                "It is not possible to allow a lint crate-wide"
+            ],
+            "a": 0,
+            "e": "Crate-level lint attributes like `#![allow(clippy::needless_lifetimes)]` are placed in the crate root (usually `lib.rs` or `main.rs`)."
+        },
+        {
+            "q": "What does the `rustfmt.toml` or `.rustfmt.toml` file control?",
+            "o": [
+                "Which Clippy lints are enabled",
+                "Configuration options for rustfmt, such as max line width and indentation style",
+                "Cargo build profiles",
+                "Editor integration settings for VS Code"
+            ],
+            "a": 1,
+            "e": "rustfmt reads configuration from `rustfmt.toml` (or `.rustfmt.toml`) to customize formatting rules like `max_width`, `indent_style`, `use_small_heuristics`, etc."
+        },
+        {
+            "q": "Which Clippy lint group is enabled by default and includes lints for correctness, style, and complexity?",
+            "o": [
+                "clippy::all",
+                "clippy::correctness",
+                "clippy::standard",
+                "clippy::default"
+            ],
+            "a": 1,
+            "e": "The `clippy::correctness` group (often referred to as the default set) is enabled by default when running `cargo clippy`. It catches actual bugs or suspicious code. `clippy::style` and `clippy::complexity` are also enabled by default in practice, but the group name is not 'standard'."
+        },
+        {
+            "q": "How do you run rustfmt in 'check' mode to verify formatting without modifying files (useful for CI)?",
+            "o": [
+                "cargo fmt --check",
+                "cargo fmt --verify",
+                "rustfmt --check .",
+                "Both A and C are correct"
+            ],
+            "a": 3,
+            "e": "Both `cargo fmt --check` and `rustfmt --check` will exit with a non-zero status if formatting changes are needed, without writing them. This is standard for CI pipelines."
+        },
+        {
+            "q": "What is the effect of the Clippy lint `clippy::unwrap_used`?",
+            "o": [
+                "It warns when `unwrap()` is called on `Option` or `Result`, suggesting explicit error handling",
+                "It suggests using `unwrap()` for cleaner code",
+                "It automatically replaces `unwrap()` with `expect()`",
+                "It is part of the default lint set"
+            ],
+            "a": 0,
+            "e": "`clippy::unwrap_used` (from the `clippy::pedantic` group) warns against using `unwrap()` because it can panic. It encourages proper error handling with `?`, `match`, or `expect()` with a message."
+        },
+        {
+            "q": "Which command updates rustfmt to the latest version available in the current toolchain?",
+            "o": [
+                "cargo install --force rustfmt",
+                "rustup component add rustfmt",
+                "rustup update",
+                "rustfmt --update"
+            ],
+            "a": 2,
+            "e": "`rustup update` updates the entire toolchain, including the installed components like rustfmt and clippy. You don't update them individually via cargo."
+        },
+        {
+            "q": "How can you temporarily disable a Clippy lint for a specific function or block?",
+            "o": [
+                "Use `#[allow(clippy::lint_name)]` attribute on the item",
+                "Use `// clippy::disable(lint_name)` comment",
+                "Wrap code in `clippy::disable! { ... }` macro",
+                "It is not possible to disable locally"
+            ],
+            "a": 0,
+            "e": "Rust's lint attributes work on any item or statement. `#[allow(clippy::lint_name)]` placed directly above a function, block, or statement suppresses the lint for that scope."
+        },
+        {
+            "q": "What does the `clippy::pedantic` lint group contain?",
+            "o": [
+                "Only lints that are guaranteed to be correct and never produce false positives",
+                "Lints that are strict, opinionated, or may have false positives; off by default",
+                "Lints for performance optimization only",
+                "Lints that are deprecated and scheduled for removal"
+            ],
+            "a": 1,
+            "e": "The `pedantic` group contains lints that are very strict or opinionated (e.g., `unwrap_used`, `missing_docs_in_private_items`). They are not enabled by default because they may be noisy or have false positives. Enable with `#![warn(clippy::pedantic)]` or `cargo clippy -W clippy::pedantic`."
+        },
+        {
+            "q": "Which file does rustfmt ignore by default when formatting a project?",
+            "o": [
+                "Files in `target/` directory",
+                "Files matching patterns in `.gitignore`",
+                "Files listed in `.rustfmtignore` (or `.gitignore` if no `.rustfmtignore` exists)",
+                "Files with `#[rustfmt::skip]` attribute"
+            ],
+            "a": 2,
+            "e": "rustfmt respects `.rustfmtignore` files with the same syntax as `.gitignore`. If `.rustfmtignore` doesn't exist, it falls back to `.gitignore`. It always skips the `target/` directory."
+        },
+        {
+            "q": "What is the recommended way to enforce formatting and linting in a CI pipeline?",
+            "o": [
+                "Run `cargo fmt` and `cargo clippy` and fail if they produce any output",
+                "Run `cargo fmt --check` and `cargo clippy -- -D warnings`",
+                "Run `rustfmt --check` and `clippy -D warnings` directly on source files",
+                "Run `cargo test` which includes formatting and linting checks"
+            ],
+            "a": 1,
+            "e": "`cargo fmt --check` fails if formatting is needed. `cargo clippy -- -D warnings` treats all lints (including Clippy's) as errors, causing a non-zero exit code. This is the standard CI pattern."
+        },
+        {
+            "q": "How do you configure Clippy lints per-project in `Cargo.toml`?",
+            "o": [
+                "Under `[package.metadata.clippy]` table",
+                "Under `[workspace.lints.clippy]` table (Cargo 1.80+)",
+                "Under `[profile.release.clippy]` table",
+                "Clippy cannot be configured in Cargo.toml"
+            ],
+            "a": 1,
+            "e": "Since Cargo 1.80 (stabilized in 1.81), you can configure lints (including Clippy's) in `Cargo.toml` under `[workspace.lints]` or `[package.lints]` tables, e.g., `clippy::unwrap_used = \"deny\"`."
+        }
+    ]
+}
