@@ -772,7 +772,7 @@
                 {
                     "name": "Tooling & Testing",
                     "slug": "tooling_testing",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Cargo & Workspaces",

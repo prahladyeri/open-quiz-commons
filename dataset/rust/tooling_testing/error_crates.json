@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which crate is primarily designed for library authors to define structured error types with minimal boilerplate using derive macros?",
+            "o": [
+                "anyhow",
+                "eyre",
+                "thiserror",
+                "snafu"
+            ],
+            "a": 2,
+            "e": "`thiserror` provides `#[derive(Error)]` to automatically implement `std::error::Error`, `Display`, and `From` for enum variants, making it ideal for libraries."
+        },
+        {
+            "q": "What is the primary use case for the `anyhow` crate?",
+            "o": [
+                "Defining custom error enums for public APIs",
+                "Easy error handling in application code (binaries) with `anyhow::Error`",
+                "Generating structured diagnostic reports with labels",
+                "Implementing `std::error::Error` manually for `no_std` environments"
+            ],
+            "a": 1,
+            "e": "`anyhow` provides `anyhow::Error` (a trait object wrapper) and `anyhow::Result` for applications where you want easy `?` propagation and context addition without defining custom enum types."
+        },
+        {
+            "q": "In `thiserror`, which attribute is used to automatically implement `From` for a variant's inner error type, enabling transparent `?` conversion?",
+            "o": [
+                "`#[source]`",
+                "`#[from]`",
+                "`#[error]`",
+                "`#[transparent]`"
+            ],
+            "a": 1,
+            "e": "`#[from]` on a field generates `impl From<InnerError> for MyError`, allowing the `?` operator to convert the inner error automatically."
+        },
+        {
+            "q": "How does `anyhow::Context` (or `eyre::WrapErr`) improve error messages compared to standard `Result::map_err`?",
+            "o": [
+                "It captures a backtrace at the call site automatically",
+                "It allows adding static string context via `.context(\"msg\")` or dynamic via `.with_context(|| ...)`",
+                "It converts the error into a `Box<dyn Error + Send + Sync>`",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "`.context()` wraps the error in `anyhow::Error`, captures a backtrace (if enabled), and attaches the provided message for richer debugging."
+        },
+        {
+            "q": "Which crate is a fork of `anyhow` that integrates with the `tracing` ecosystem and provides `eyre::Report` with optional `color-eyre` handlers for pretty panic/error reporting?",
+            "o": [
+                "snafu",
+                "miette",
+                "eyre",
+                "error-stack"
+            ],
+            "a": 2,
+            "e": "`eyre` started as a fork of `anyhow` adding `eyre::Report`, `WrapErr` trait, and first-class `color-eyre` integration for formatted output."
+        },
+        {
+            "q": "What distinguishing feature does `snafu` offer via the `#[snafu(context)]` attribute on enum variants?",
+            "o": [
+                "Automatic `From` implementation for the source error",
+                "Generation of a helper method on a `Context` struct to construct the error with additional fields",
+                "Transparent delegation of `Display` and `source()` to the inner error",
+                "Automatic backtrace capture via `std::backtrace::Backtrace`"
+            ],
+            "a": 1,
+            "e": "`snafu` generates a `Context` struct (e.g., `IoContext`) with a `.method_name(args)` builder, allowing ergonomic construction: `IoContext { path }.open()?`."
+        },
+        {
+            "q": "Which crate focuses on \"error stacks\" — capturing multiple layered contexts (like a stack trace but for logical contexts) — and provides `Report` compatible with `std::error::Error`?",
+            "o": [
+                "thiserror",
+                "anyhow",
+                "error-stack",
+                "miette"
+            ],
+            "a": 2,
+            "e": "`error-stack` (formerly `contextual`) emphasizes attaching multiple `Context` layers to an error via `.attach()` or `.change_context()`, producing a chronological stack of contexts."
+        },
+        {
+            "q": "What is `miette` best known for in the Rust error handling landscape?",
+            "o": [
+                "Zero-cost `derive(Error)` for libraries",
+                "Application-level `Result` type alias with backtraces",
+                "Diagnostic reporting with source code snippets, labels, and severity (similar to compiler errors)",
+                "Providing `Context` selector methods for `snafu`"
+            ],
+            "a": 2,
+            "e": "`miette` implements a `Diagnostic` trait (compatible with `Error`) and a graphical `ReportHandler` that prints errors with source code highlights, labels, and help text, mimicking `rustc` output."
+        },
+        {
+            "q": "When writing a library intended for public consumption, which error handling strategy is generally recommended by the Rust community?",
+            "o": [
+                "Use `anyhow::Error` in public function signatures",
+                "Define custom error enums with `thiserror` and implement `std::error::Error`",
+                "Return `Box<dyn std::error::Error>` for all fallible functions",
+                "Use `eyre::Report` to allow downstream users to attach context"
+            ],
+            "a": 1,
+            "e": "Libraries should expose structured, typed errors (enums) so callers can match on specific failure modes. `thiserror` reduces the boilerplate of this approach."
+        },
+        {
+            "q": "In `thiserror`, what does the `#[error(transparent)]` attribute on a struct variant (newtype) achieve?",
+            "e": "It delegates `Display` and `source()` entirely to the wrapped error, making the wrapper invisible in the error chain.",
+            "o": [
+                "It prints the variant name followed by the inner error",
+                "It implements `From` for the inner type only",
+                "It delegates `Display` and `source()` entirely to the wrapped error",
+                "It suppresses the error from being printed"
+            ],
+            "a": 2
+        },
+        {
+            "q": "How do you enable backtrace capture in `anyhow` or `eyre` errors at runtime?",
+            "o": [
+                "Call `anyhow::enable_backtraces()` in `main`",
+                "Set the environment variable `RUST_BACKTRACE=1` (or `RUST_LIB_BACKTRACE=1`)",
+                "Use `#[cfg(feature = \"backtrace\")]` on the error type",
+                "Backtraces are captured by default in release mode"
+            ],
+            "a": 1,
+            "e": "Both `anyhow` and `eyre` rely on the standard library's backtrace support, controlled via `RUST_BACKTRACE` (1 for full, `full` for full). The `backtrace` feature flag in the crates enables the *storage* of the backtrace in the error struct."
+        },
+        {
+            "q": "Which trait must be implemented for a custom type to be used as the source error in `thiserror`'s `#[source]` attribute (or `#[from]`)?",
+            "o": [
+                "std::fmt::Display",
+                "std::error::Error",
+                "std::convert::From",
+                "std::fmt::Debug"
+            ],
+            "a": 1,
+            "e": "`#[source]` (and `#[from]`) requires the field type to implement `std::error::Error` (which implies `Debug` and `Display`)."
+        },
+        {
+            "q": "In testing, how can you assert that a `Result` returns a specific `thiserror` variant and inspect its fields?",
+            "o": [
+                "`assert_matches!(result, Err(MyError::Variant { field }) if field == expected)`",
+                "`result.expect_err(\"msg\").downcast_ref::<MyError::Variant>()`",
+                "`assert_eq!(result.unwrap_err().to_string(), \"expected\")`",
+                "Use `anyhow::Error::root_cause()`"
+            ],
+            "a": 0,
+            "e": "`assert_matches!` (from `assert_matches` crate or std in newer Rust) allows pattern matching on the enum variant and guards on fields directly."
+        },
+        {
+            "q": "What is the purpose of `anyhow::bail!(\"message\")` macro?",
+            "o": [
+                "To panic immediately with the message",
+                "To return `Err(anyhow::Error::msg(\"message\"))` early from a function returning `anyhow::Result`",
+                "To log an error and continue execution",
+                "To attach context to the previous error in the chain"
+            ],
+            "a": 1,
+            "e": "`bail!` is a shortcut for `return Err(anyhow!(...))`, allowing early returns with ad-hoc error messages in `anyhow::Result` functions."
+        },
+        {
+            "q": "Which crate provides the `ensure!` macro (similar to `assert!` but returning `Result`) commonly used for precondition checks in error handling flows?",
+            "o": [
+                "thiserror",
+                "anyhow",
+                "std::prelude",
+                "snafu"
+            ],
+            "a": 1,
+            "e": "`anyhow::ensure!(condition, \"message\")` returns `Err` with the message if condition is false, otherwise continues. `snafu` has `ensure!` as well, but `anyhow` popularized it for app-level code."
+        },
+        {
+            "q": "When using `error-stack`, what does the `Report::attach` method do?",
+            "o": [
+                "Replaces the current error with a new one",
+                "Adds a new context layer to the existing report, preserving the underlying error chain",
+                "Attaches a backtrace to the report if missing",
+                "Converts the report into a `Box<dyn Error>`"
+            ],
+            "a": 1,
+            "e": "`attach` pushes a new context onto the stack, creating a linked list of contexts (frames) over the original error, allowing rich multi-layer diagnostics."
+        }
+    ]
+}
