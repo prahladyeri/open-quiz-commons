@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which derive macro is used to define a CLI structure with clap v4+?",
+            "o": [
+                "#[derive(Parser)]",
+                "#[derive(Clap)]",
+                "#[derive(Args)]",
+                "#[derive(Command)]"
+            ],
+            "a": 0,
+            "e": "In clap v4+, the derive macro is `Parser` (re-exported from clap::Parser). The old `Clap` derive was used in v2/v3."
+        },
+        {
+            "q": "How do you define a positional argument using the derive API?",
+            "o": [
+                "#[arg(positional = true)]",
+                "#[arg(index = 1)]",
+                "#[arg(positional)]",
+                "Just add a field without any attribute"
+            ],
+            "a": 2,
+            "e": "`#[arg(positional)]` marks a field as a positional argument. The index is inferred from field order."
+        },
+        {
+            "q": "Which attribute sets a short flag (e.g., `-v`) for an option?",
+            "o": [
+                "#[arg(short = 'v')]",
+                "#[arg(flag = 'v')]",
+                "#[arg(short_flag = 'v')]",
+                "#[arg(short)]"
+            ],
+            "a": 0,
+            "e": "`#[arg(short = 'v')]` sets the short flag to `-v`. `#[arg(short)]` uses the field name's first letter."
+        },
+        {
+            "q": "How do you make an option required using the derive API?",
+            "o": [
+                "#[arg(required = true)]",
+                "#[arg(mandatory)]",
+                "#[arg(require = true)]",
+                "#[arg(required)]"
+            ],
+            "a": 3,
+            "e": "`#[arg(required)]` marks the argument as required. For options, it means the flag must be provided."
+        },
+        {
+            "q": "What type should you use for an option that can appear multiple times (e.g., `-v -v -v`)?",
+            "o": [
+                "bool",
+                "u8",
+                "Vec<bool>",
+                "Option<u8>"
+            ],
+            "a": 1,
+            "e": "Using an integer type (like `u8`) with `#[arg(short, action = ArgAction::Count)]` counts occurrences. `bool` is for presence/absence."
+        },
+        {
+            "q": "Which attribute specifies a long help message for the whole program?",
+            "o": [
+                "#[command(about = \"...\")]",
+                "#[command(long_about = \"...\")]",
+                "#[command(description = \"...\")]",
+                "#[command(help = \"...\")]"
+            ],
+            "a": 1,
+            "e": "`long_about` sets the long help text shown with `--help`. `about` is the short description."
+        },
+        {
+            "q": "How do you define a subcommand using the derive API?",
+            "o": [
+                "Add an enum field with #[command(subcommand)]",
+                "Add a struct field with #[command(subcommand)]",
+                "Add an enum variant with #[command(subcommand)]",
+                "Use a separate struct and #[derive(Subcommand)]"
+            ],
+            "a": 0,
+            "e": "Subcommands are defined by an enum field annotated with `#[command(subcommand)]`. The enum itself derives `Subcommand`."
+        },
+        {
+            "q": "Which method parses command-line arguments and returns the populated struct?",
+            "o": [
+                "parse()",
+                "try_parse()",
+                "get_matches()",
+                "parse_from()"
+            ],
+            "a": 0,
+            "e": "`Parser::parse()` consumes `std::env::args_os()` and exits on error. `try_parse()` returns a Result."
+        },
+        {
+            "q": "What is the default value attribute for an option?",
+            "o": [
+                "#[arg(default_value = \"...\")]",
+                "#[arg(default = \"...\")]",
+                "#[arg(init = \"...\")]",
+                "#[arg(value = \"...\")]"
+            ],
+            "a": 0,
+            "e": "`#[arg(default_value = \"...\")]` sets a default value if the argument is not provided."
+        },
+        {
+            "q": "How do you hide an argument from the help message?",
+            "o": [
+                "#[arg(hidden = true)]",
+                "#[arg(hide = true)]",
+                "#[arg(visible = false)]",
+                "#[arg(skip_help)]"
+            ],
+            "a": 0,
+            "e": "`#[arg(hidden = true)]` hides the argument from help output but still allows it to be used."
+        },
+        {
+            "q": "Which trait must a type implement to be used as a value parser for a custom type?",
+            "o": [
+                "FromStr",
+                "ValueParser",
+                "TryFrom<OsString>",
+                "ArgParser"
+            ],
+            "a": 1,
+            "e": "clap v4 uses `ValueParser` trait (or function pointers) for custom parsing. `FromStr` is used automatically for many types via `value_parser!`."
+        },
+        {
+            "q": "How do you specify that an option takes a value from an environment variable if not provided on the command line?",
+            "o": [
+                "#[arg(env = \"VAR_NAME\")]",
+                "#[arg(environment = \"VAR_NAME\")]",
+                "#[arg(from_env = \"VAR_NAME\")]",
+                "#[arg(env_var = \"VAR_NAME\")]"
+            ],
+            "a": 0,
+            "e": "`#[arg(env = \"VAR_NAME\")]` reads the value from the environment variable `VAR_NAME` as a fallback."
+        },
+        {
+            "q": "What does `#[command(flatten)]` do when applied to a field?",
+            "o": [
+                "Flattens the help output",
+                "Embeds another derive struct's arguments into the current command",
+                "Flattens nested subcommands",
+                "Removes the field from parsing"
+            ],
+            "a": 1,
+            "e": "`#[command(flatten)]` allows composing multiple `Args` structs into one command, merging their arguments."
+        },
+        {
+            "q": "Which attribute sets the version of the application (displayed with `-V`)?",
+            "o": [
+                "#[command(version = \"1.0\")]",
+                "#[command(app_version = \"1.0\")]",
+                "#[command(ver = \"1.0\")]",
+                "#[command(version)]"
+            ],
+            "a": 0,
+            "e": "`#[command(version = \"1.0\")]` sets the version string. It can also be set via `crate_version!()` macro."
+        },
+        {
+            "q": "How do you define an argument that accepts a list of values (e.g., `--files a.txt b.txt`)?",
+            "o": [
+                "Use Vec<String> with #[arg(num_args = 1..)]",
+                "Use Vec<String> with #[arg(multiple = true)]",
+                "Use Vec<String> with #[arg(action = ArgAction::Append)]",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "In clap v4, `num_args`, `action = Append`, and `multiple` (deprecated) can all achieve multiple values. `num_args = 1..` is the modern way."
+        },
+        {
+            "q": "What is the purpose of `ArgAction::SetTrue` (or `action = ArgAction::SetTrue`) on a bool field?",
+            "o": [
+                "Sets the bool to true when the flag is present",
+                "Sets the bool to false when the flag is present",
+                "Toggles the bool value",
+                "Requires the flag to be present"
+            ],
+            "a": 0,
+            "e": "`ArgAction::SetTrue` sets the flag's value to true when provided. It's the default for bool fields with `short`/`long`."
+        }
+    ]
+}
