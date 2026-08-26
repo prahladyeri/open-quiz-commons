@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What keyword is used to declare a foreign function interface in Rust?",
+            "o": [
+                "foreign",
+                "extern",
+                "ffi",
+                "import"
+            ],
+            "a": 1,
+            "e": "The `extern` keyword declares foreign functions. `extern \"C\"` specifies the C calling convention."
+        },
+        {
+            "q": "Which block is required to call unsafe foreign functions in Rust?",
+            "o": [
+                "unsafe { }",
+                "extern { }",
+                "ffi { }",
+                "raw { }"
+            ],
+            "a": 0,
+            "e": "Calling foreign functions is inherently unsafe because Rust cannot verify their behavior. The `unsafe` block acknowledges this responsibility."
+        },
+        {
+            "q": "What is the correct way to represent a C `char*` string in Rust FFI?",
+            "o": [
+                "&str",
+                "String",
+                "*const c_char",
+                "&CStr"
+            ],
+            "a": 2,
+            "e": "C strings are raw pointers (`*const c_char`). Use `CString::new()` for owned strings and `CStr::from_ptr()` for borrowed ones."
+        },
+        {
+            "q": "Which attribute ensures a Rust struct has the same memory layout as a C struct?",
+            "o": [
+                "#[repr(C)]",
+                "#[repr(packed)]",
+                "#[repr(transparent)]",
+                "#[repr(align)]"
+            ],
+            "a": 0,
+            "e": "`#[repr(C)]` guarantees C-compatible field ordering, padding, and alignment. Essential for FFI struct compatibility."
+        },
+        {
+            "q": "How do you convert a Rust `String` to a C-compatible owned string?",
+            "o": [
+                "CString::new(s).unwrap()",
+                "s.as_ptr() as *const c_char",
+                "CStr::from_ptr(s.as_ptr())",
+                "s.into_raw()"
+            ],
+            "a": 0,
+            "e": "`CString::new()` creates a NUL-terminated owned string safe for FFI. It returns a `Result` to handle embedded NUL bytes."
+        },
+        {
+            "q": "What happens if a panic unwinds across an FFI boundary into C code?",
+            "o": [
+                "Undefined behavior",
+                "The C code catches it as an exception",
+                "Rust automatically converts it to errno",
+                "The program prints a backtrace and exits cleanly"
+            ],
+            "a": 0,
+            "e": "Unwinding across FFI is undefined behavior. Use `std::panic::catch_unwind` or compile with `panic = \"abort\"` to prevent it."
+        },
+        {
+            "q": "Which type represents a raw mutable pointer in Rust?",
+            "o": [
+                "&mut T",
+                "*mut T",
+                "Box<T>",
+                "NonNull<T>"
+            ],
+            "a": 1,
+            "e": "`*mut T` is a raw mutable pointer. Unlike references, raw pointers can be null, unaligned, and require `unsafe` to dereference."
+        },
+        {
+            "q": "What is the purpose of `bindgen` in Rust FFI projects?",
+            "o": [
+                "Compile C code to WebAssembly",
+                "Generate Rust FFI bindings from C headers",
+                "Link Rust libraries into C programs",
+                "Validate memory safety of unsafe blocks"
+            ],
+            "a": 1,
+            "e": "`bindgen` parses C/C++ headers and generates Rust `extern` declarations, structs, and constants automatically."
+        },
+        {
+            "q": "When passing a callback function pointer to C, which trait bound is required for the Rust closure?",
+            "o": [
+                "Fn + Send + Sync",
+                "FnMut + 'static",
+                "extern \"C\" Fn(...)",
+                "Copy + Clone"
+            ],
+            "a": 2,
+            "e": "Callback function pointers must have the `extern \"C\"` calling convention. Use `extern \"C\" fn(...)` function pointers, not closures directly."
+        },
+        {
+            "q": "How should Rust code free memory allocated by a C library?",
+            "o": [
+                "Call `drop()` on the raw pointer",
+                "Use `Box::from_raw()` and let it drop",
+                "Call the C library's corresponding free function",
+                "Rust's allocator automatically handles it"
+            ],
+            "a": 2,
+            "e": "Memory must be freed by the same allocator that allocated it. Always use the C library's provided free/dealloc function."
+        },
+        {
+            "q": "What does `#[no_mangle]` do on a Rust function?",
+            "o": [
+                "Prevents the compiler from optimizing the function",
+                "Exports the function with its exact name for linking",
+                "Marks the function as unsafe",
+                "Disables stack overflow protection"
+            ],
+            "a": 1,
+            "e": "`#[no_mangle]` preserves the function name in the symbol table, allowing C code to link to it by name."
+        },
+        {
+            "q": "Which type should be used for a nullable function pointer in FFI signatures?",
+            "o": [
+                "Option<extern \"C\" fn()>",
+                "*mut fn()",
+                "extern \"C\" fn()",
+                "&dyn Fn()"
+            ],
+            "a": 0,
+            "e": "`Option<extern \"C\" fn()>` represents a nullable function pointer (null = None). Rust optimizes this to a single pointer."
+        },
+        {
+            "q": "What is the correct way to handle C's `errno` in Rust?",
+            "o": [
+                "Use `std::io::Error::last_os_error()` after a failing FFI call",
+                "Access the global `errno` variable directly",
+                "Check if the return value is -1 and panic",
+                "Rust automatically converts errno to Result"
+            ],
+            "a": 0,
+            "e": "Call `std::io::Error::last_os_error()` immediately after a failing FFI call to capture the platform's errno/GetLastError value."
+        },
+        {
+            "q": "Which attribute makes a Rust type transparent (same ABI as its single field) for FFI?",
+            "o": [
+                "#[repr(C)]",
+                "#[repr(transparent)]",
+                "#[repr(packed)]",
+                "#[repr(align)]"
+            ],
+            "a": 1,
+            "e": "`#[repr(transparent)]` delegates ABI to the single non-ZST field, crucial for newtype wrappers around C types."
+        },
+        {
+            "q": "What is the risk of implementing `Send`/`Sync` for a type wrapping a raw pointer from C?",
+            "o": [
+                "It may violate thread safety if the C library isn't thread-safe",
+                "It causes double-free errors",
+                "It prevents the type from being used in async code",
+                "It forces the type to be `'static`"
+            ],
+            "a": 0,
+            "e": "Implementing `Send`/`Sync` manually (via `unsafe impl`) asserts thread safety. If the underlying C library isn't thread-safe, this causes data races."
+        },
+        {
+            "q": "How do you correctly create a `CStr` reference from a raw pointer returned by C?",
+            "o": [
+                "CStr::from_ptr(ptr)",
+                "CString::from_raw(ptr)",
+                "unsafe { CStr::from_ptr(ptr) }",
+                "ptr.as_ref().unwrap()"
+            ],
+            "a": 2,
+            "e": "`CStr::from_ptr` is unsafe because it trusts the pointer is valid, NUL-terminated, and lives long enough. Must be in an `unsafe` block."
+        }
+    ]
+}
