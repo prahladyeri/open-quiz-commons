@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "What attribute indicates that a Rust program does not link the standard library?",
+            "o": [
+                "#[no_std]",
+                "#[no_main]",
+                "#[embedded]",
+                "#[bare_metal]"
+            ],
+            "a": 0,
+            "e": "#[no_std] tells the compiler to not link the standard library, which is required for most embedded targets."
+        },
+        {
+            "q": "Which crate provides a hardware abstraction layer (HAL) for STM32 microcontrollers?",
+            "o": [
+                "stm32f4xx-hal",
+                "stm32-hal",
+                "cortex-m-hal",
+                "embedded-hal"
+            ],
+            "a": 0,
+            "e": "The stm32f4xx-hal crate (and similar family-specific crates) provide HAL implementations for STM32 devices."
+        },
+        {
+            "q": "What is the typical entry point for a #[no_std] embedded program using cortex-m-rt?",
+            "o": [
+                "fn main()",
+                "#[entry] fn main() -> !",
+                "#[start] fn main()",
+                "fn _start()"
+            ],
+            "a": 1,
+            "e": "The cortex-m-rt crate provides the #[entry] attribute to mark the entry function, which must be diverging (!)."
+        },
+        {
+            "q": "Which command-line tool is commonly used to flash and debug ARM Cortex-M devices from Cargo?",
+            "o": [
+                "cargo flash",
+                "cargo embed",
+                "cargo probe-run",
+                "cargo gdb"
+            ],
+            "a": 1,
+            "e": "cargo-embed (installed via `cargo install cargo-embed`) provides flashing, debugging, and RTT logging for embedded targets."
+        },
+        {
+            "q": "What does the `cortex-m-rt` crate provide?",
+            "o": [
+                "A real-time operating system",
+                "Startup code, vector table, and the #[entry] macro",
+                "A hardware abstraction layer for Cortex-M",
+                "An async executor for embassy"
+            ],
+            "a": 1,
+            "e": "cortex-m-rt supplies the minimal runtime: reset handler, vector table, and the #[entry] macro for #[no_std] programs."
+        },
+        {
+            "q": "In embedded Rust, what is the purpose of the `#[interrupt]` attribute?",
+            "o": [
+                "To mark a function as an interrupt handler",
+                "To disable interrupts for a critical section",
+                "To declare a peripheral register block",
+                "To define a memory region"
+            ],
+            "a": 0,
+            "e": "#[interrupt] (provided by cortex-m-rt) registers a function as an interrupt handler in the vector table."
+        },
+        {
+            "q": "Which trait from `embedded-hal` represents a digital output pin?",
+            "o": [
+                "InputPin",
+                "OutputPin",
+                "ToggleableOutputPin",
+                "StatefulOutputPin"
+            ],
+            "a": 1,
+            "e": "OutputPin is the basic trait for setting a pin high or low. ToggleableOutputPin extends it with toggle()."
+        },
+        {
+            "q": "What is the typical memory map for an STM32 Cortex-M device?",
+            "o": [
+                "Flash at 0x0000_0000, RAM at 0x2000_0000",
+                "Flash at 0x0800_0000, RAM at 0x2000_0000",
+                "Flash at 0x1000_0000, RAM at 0x4000_0000",
+                "Flash at 0x0000_0000, RAM at 0x0001_0000"
+            ],
+            "a": 1,
+            "e": "Most STM32 parts map Flash at 0x0800_0000 and SRAM at 0x2000_0000. The vector table is usually at the start of Flash."
+        },
+        {
+            "q": "Which command creates a new embedded project using the cortex-m-quickstart template?",
+            "o": [
+                "cargo new --template cortex-m-quickstart",
+                "cargo generate --git https://github.com/rust-embedded/cortex-m-quickstart",
+                "cargo init --embedded",
+                "cargo embed new"
+            ],
+            "a": 1,
+            "e": "cargo-generate with the cortex-m-quickstart repository sets up a ready-to-use #[no_std] project with proper memory layout."
+        },
+        {
+            "q": "What is the role of `defmt` in embedded Rust?",
+            "o": [
+                "Provides a heap allocator",
+                "Implements a TCP/IP stack",
+                "Deferred formatting for efficient, low-overhead logging",
+                "Manages power states"
+            ],
+            "a": 2,
+            "e": "defmt serializes log arguments on the device and formats them on the host, enabling fast logging with minimal flash/RAM usage."
+        },
+        {
+            "q": "Which attribute marks a function as the panic handler in a #[no_std] program?",
+            "o": [
+                "#[panic_handler]",
+                "#[panic]",
+                "#[exception]",
+                "#[abort]"
+            ],
+            "a": 0,
+            "e": "#[panic_handler] (from core) defines the function called on panic; it must have signature fn(&PanicInfo) -> !."
+        },
+        {
+            "q": "What does the `heapless` crate provide?",
+            "o": [
+                "A global heap allocator for embedded",
+                "Data structures that operate without a heap allocator",
+                "A memory protection unit driver",
+                "An async executor"
+            ],
+            "a": 1,
+            "e": "heapless offers Vec, String, etc. backed by fixed-size arrays, avoiding the need for a heap allocator."
+        },
+        {
+            "q": "In the Embassy async framework, what is an `Executor`?",
+            "o": [
+                "A hardware timer peripheral",
+                "A task scheduler that runs async tasks",
+                "A trait for GPIO pins",
+                "A memory allocator"
+            ],
+            "a": 1,
+            "e": "The Executor polls futures and manages task state, typically driven by a hardware interrupt (e.g., SysTick)."
+        },
+        {
+            "q": "Which cargo subcommand flashes firmware when using `cargo-embed`?",
+            "o": [
+                "cargo flash",
+                "cargo run",
+                "cargo embed",
+                "cargo probe"
+            ],
+            "a": 2,
+            "e": "`cargo embed` builds the project and flashes it to the target via a debug probe, then opens an RTT console."
+        },
+        {
+            "q": "What does the `#[rtic::app]` attribute do?",
+            "o": [
+                "Defines an RTIC application with tasks, resources, and interrupts",
+                "Marks a function as real-time critical",
+                "Enables the Rust compiler's real-time optimizations",
+                "Imports the RTIC hardware abstraction layer"
+            ],
+            "a": 0,
+            "e": "#[rtic::app] is a procedural macro that generates the scaffolding for a Real-Time Interrupt-driven Concurrency (RTIC) application."
+        }
+    ]
+}

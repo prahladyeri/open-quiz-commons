@@ -799,7 +799,7 @@
                 {
                     "name": "Systems & CLI",
                     "slug": "systems_cli",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "CLI Apps (clap)",
