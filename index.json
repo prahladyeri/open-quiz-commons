@@ -1158,6 +1158,180 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "C#",
+            "slug": "csharp",
+            "icon": "fa-solid fa-code",
+            "subtopics": [
+                {
+                    "name": "Core C#",
+                    "slug": "core",
+					"hidden": true,
+                    "modules": [
+                        {
+                            "name": "Syntax & Data Types",
+                            "slug": "syntax_data_types",
+                            "descn": "Value types vs reference types, nullable types, var, dynamic, and common type conversions.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Control Flow",
+                            "slug": "control_flow",
+                            "descn": "if/else, switch expressions, pattern matching, loops, and exception-based flow control.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Methods & Parameters",
+                            "slug": "methods_parameters",
+                            "descn": "Overloading, optional/named arguments, ref/out/in, params, local functions and extension methods.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Collections & LINQ Basics",
+                            "slug": "collections_linq",
+                            "descn": "Lists, dictionaries, arrays, IEnumerable<T>, and introductory LINQ queries and lambdas.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Error Handling",
+                            "slug": "error_handling",
+                            "descn": "try/catch/finally, custom exceptions, Exception filters, and best practices for fault tolerance.",
+                            "hidden": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Object-Oriented & Advanced C#",
+                    "slug": "oop_advanced",
+					"hidden": true,
+                    "modules": [
+                        {
+                            "name": "Classes, Structs & Records",
+                            "slug": "classes_structs_records",
+                            "descn": "Constructors, properties, init-only setters, records, record structs, and value semantics.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Inheritance & Polymorphism",
+                            "slug": "inheritance_polymorphism",
+                            "descn": "Base classes, virtual/override, abstract classes, sealed types, and interface implementation.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Generics & Constraints",
+                            "slug": "generics_constraints",
+                            "descn": "Generic classes/methods, variance (in/out), type constraints, and generic collections performance.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Delegates, Events & Lambdas",
+                            "slug": "delegates_events_lambdas",
+                            "descn": "Action/Func, multicast delegates, event pattern, closures, and lambda expression pitfalls.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Async & Parallel Programming",
+                            "slug": "async_parallel",
+                            "descn": "async/await, Task and Task<T>, ValueTask, cancellation tokens, Parallel.ForEach, and PLINQ.",
+                            "hidden": true
+                        }
+                    ]
+                },
+                {
+                    "name": ".NET Platform",
+                    "slug": "dotnet_platform",
+					"hidden": true,
+                    "modules": [
+                        {
+                            "name": ".NET Runtime & GC",
+                            "slug": "runtime_gc",
+                            "descn": "CLR, JIT, garbage collection generations, IDisposable, using statements, and memory management.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "NuGet & Project System",
+                            "slug": "nuget_projects",
+                            "descn": "SDK-style projects, PackageReference, transitive dependencies, versioning, and private feeds.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "File I/O & Serialization",
+                            "slug": "file_io_serialization",
+                            "descn": "Streams, System.IO, JSON (System.Text.Json), XML, and binary serialization options.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Testing with xUnit/NUnit",
+                            "slug": "testing_xunit_nunit",
+                            "descn": "Unit testing patterns, xUnit theories, Moq/NSubstitute mocking, and test coverage strategies.",
+                            "hidden": true
+                        }
+                    ]
+                },
+                {
+                    "name": "ASP.NET & Web Development",
+                    "slug": "aspnet_web",
+					"hidden": true,
+                    "modules": [
+                        {
+                            "name": "ASP.NET Core Fundamentals",
+                            "slug": "aspnet_core_basics",
+                            "descn": "Middleware pipeline, dependency injection, configuration, logging, and hosting models.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Web API & Minimal APIs",
+                            "slug": "web_api_minimal",
+                            "descn": "Controllers vs Minimal APIs, routing, model binding, validation, and OpenAPI/Swagger generation.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Entity Framework Core",
+                            "slug": "entity_framework_core",
+                            "descn": "DbContext, DbSet, migrations, LINQ to Entities, change tracking, and performance tuning.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Authentication & Authorization",
+                            "slug": "auth_authorization",
+                            "descn": "Identity, JWT Bearer, OAuth2/OIDC, policy-based auth, roles, claims, and cookie auth.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Blazor & Razor",
+                            "slug": "blazor_razor",
+                            "descn": "Razor Pages, MVC views, Blazor Server vs WebAssembly, components, and state management.",
+                            "hidden": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Tooling & Ecosystem",
+                    "slug": "tooling_ecosystem",
+					"hidden": true,
+                    "modules": [
+                        {
+                            "name": "Visual Studio & VS Code",
+                            "slug": "vs_vscode",
+                            "descn": "Solution management, debugging, hot reload, analyzers, and editor productivity features.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "LINQ Advanced",
+                            "slug": "linq_advanced",
+                            "descn": "Deferred execution, IQueryable vs IEnumerable, custom operators, and expression trees.",
+                            "hidden": true
+                        },
+                        {
+                            "name": "Performance & Diagnostics",
+                            "slug": "performance_diagnostics",
+                            "descn": "BenchmarkDotNet, Span<T> and Memory<T>, profiling, and analyzing allocations.",
+                            "hidden": true
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
