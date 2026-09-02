@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "Which keyword is used to declare a local variable with implicit type in C#?",
+            "o": [
+                "var",
+                "dynamic",
+                "object",
+                "implicit"
+            ],
+            "a": 0,
+            "e": "The 'var' keyword allows the compiler to infer the type of the variable from the initialization expression."
+        },
+        {
+            "q": "What is the default value of an uninitialized int variable in C#?",
+            "o": [
+                "null",
+                "0",
+                "undefined",
+                "-1"
+            ],
+            "a": 1,
+            "e": "Value types like int are automatically initialized to their default values (0 for numeric types) when declared as fields. Local variables must be explicitly initialized before use."
+        },
+        {
+            "q": "Which of the following is a value type in C#?",
+            "o": [
+                "string",
+                "int",
+                "object",
+                "List<int>"
+            ],
+            "a": 1,
+            "e": "int is a value type (struct). string, object, and List<int> are reference types."
+        },
+        {
+            "q": "What is the size of a double data type in C#?",
+            "o": [
+                "4 bytes",
+                "8 bytes",
+                "2 bytes",
+                "16 bytes"
+            ],
+            "a": 1,
+            "e": "A double is a 64-bit (8-byte) floating-point type."
+        },
+        {
+            "q": "Which operator is used for null-coalescing in C#?",
+            "o": [
+                "??",
+                "?.",
+                "?:",
+                "||"
+            ],
+            "a": 0,
+            "e": "The ?? operator returns the left-hand operand if it is not null; otherwise it returns the right-hand operand."
+        },
+        {
+            "q": "What is the correct syntax for a multi-line comment in C#?",
+            "o": [
+                "// comment",
+                "# comment",
+                "/* comment */",
+                "-- comment"
+            ],
+            "a": 2,
+            "e": "Multi-line comments are enclosed between /* and */. // is for single-line comments."
+        },
+        {
+            "q": "Which of the following is a reference type in C#?",
+            "o": [
+                "struct",
+                "enum",
+                "class",
+                "byte"
+            ],
+            "a": 2,
+            "e": "class is a reference type. struct and enum are value types. byte is a value type (struct)."
+        },
+        {
+            "q": "What is the range of the byte data type in C#?",
+            "o": [
+                "-128 to 127",
+                "0 to 255",
+                "-32768 to 32767",
+                "0 to 65535"
+            ],
+            "a": 1,
+            "e": "byte is an unsigned 8-bit integer ranging from 0 to 255."
+        },
+        {
+            "q": "How do you declare a constant in C#?",
+            "o": [
+                "const int x = 10;",
+                "readonly int x = 10;",
+                "final int x = 10;",
+                "static int x = 10;"
+            ],
+            "a": 0,
+            "e": "The 'const' keyword declares a compile-time constant. 'readonly' is for runtime constants (fields only). 'final' is not a C# keyword."
+        },
+        {
+            "q": "Which of the following is NOT a C# keyword?",
+            "o": [
+                "namespace",
+                "using",
+                "package",
+                "class"
+            ],
+            "a": 2,
+            "e": "package is a Java keyword. C# uses 'namespace' for organizing code."
+        },
+        {
+            "q": "What is the result of the expression 5 / 2 when both operands are of type int?",
+            "o": [
+                "2.5",
+                "2",
+                "3",
+                "2.0"
+            ],
+            "a": 1,
+            "e": "Integer division truncates the fractional part, resulting in 2."
+        },
+        {
+            "q": "Which method is commonly used to convert a string to an integer in C#?",
+            "o": [
+                "int.Parse()",
+                "Convert.ToInt()",
+                "Integer.parseInt()",
+                "str.toInt()"
+            ],
+            "a": 0,
+            "e": "int.Parse() is the standard method. Convert.ToInt32() also works. The others are Java or invalid."
+        },
+        {
+            "q": "What is the default value of a bool variable (field) in C#?",
+            "o": [
+                "true",
+                "false",
+                "null",
+                "0"
+            ],
+            "a": 1,
+            "e": "The default value of a bool is false."
+        },
+        {
+            "q": "Which of the following declares a nullable integer in C#?",
+            "o": [
+                "int? x;",
+                "int x = null;",
+                "Nullable<int> x;",
+                "Both A and C"
+            ],
+            "a": 3,
+            "e": "int? is syntactic sugar for Nullable<int>. Both declare a nullable value type."
+        },
+        {
+            "q": "What is the correct way to define a verbatim string literal that includes backslashes and line breaks?",
+            "o": [
+                "\"C:\\\\Path\\\\File.txt\"",
+                "@\"C:\\Path\\File.txt\"",
+                "'C:\\Path\\File.txt'",
+                "\"C:/Path/File.txt\""
+            ],
+            "a": 1,
+            "e": "The @ prefix creates a verbatim string literal where escape sequences are not processed, allowing literal backslashes and newlines."
+        }
+    ]
+}
