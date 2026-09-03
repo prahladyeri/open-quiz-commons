@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which statement is used to execute a block of code if a condition is true?",
+            "o": [
+                "if",
+                "while",
+                "for",
+                "switch"
+            ],
+            "a": 0,
+            "e": "The 'if' statement executes a block of code when its boolean condition evaluates to true."
+        },
+        {
+            "q": "What is the correct syntax for an if-else statement in C#?",
+            "o": [
+                "if (condition) { } else { }",
+                "if condition then { } else { }",
+                "if (condition) then { } else { }",
+                "if condition { } else { }"
+            ],
+            "a": 0,
+            "e": "C# requires parentheses around the condition and uses curly braces for blocks. The 'then' keyword is not used."
+        },
+        {
+            "q": "Which loop guarantees that the body executes at least once?",
+            "o": [
+                "for",
+                "while",
+                "do-while",
+                "foreach"
+            ],
+            "a": 2,
+            "e": "The 'do-while' loop checks the condition after executing the body, ensuring at least one iteration."
+        },
+        {
+            "q": "What keyword is used to exit a loop or switch statement immediately?",
+            "o": [
+                "exit",
+                "break",
+                "continue",
+                "return"
+            ],
+            "a": 1,
+            "e": "'break' terminates the nearest enclosing loop or switch. 'continue' skips to the next iteration. 'return' exits the method."
+        },
+        {
+            "q": "Which statement skips the rest of the current loop iteration and continues with the next one?",
+            "o": [
+                "break",
+                "continue",
+                "goto",
+                "return"
+            ],
+            "a": 1,
+            "e": "'continue' jumps to the loop's condition check (while/do-while) or iterator (for/foreach), skipping remaining code in the block."
+        },
+        {
+            "q": "In a switch expression (C# 8+), what symbol is used for pattern matching cases?",
+            "o": [
+                "=>",
+                "->",
+                ":",
+                "=="
+            ],
+            "a": 0,
+            "e": "Switch expressions use the '=>' lambda arrow for case expressions. Example: `case 1 => \"one\"`."
+        },
+        {
+            "q": "What is the purpose of the 'default' case in a switch statement?",
+            "o": [
+                "Handles the most common value",
+                "Executes when no other case matches",
+                "Defines the starting case",
+                "Marks the end of the switch"
+            ],
+            "a": 1,
+            "e": "'default' is optional and runs when the switch value doesn't match any case label. It can appear anywhere in the switch block."
+        },
+        {
+            "q": "Which loop is designed specifically for iterating over collections like arrays or lists?",
+            "o": [
+                "for",
+                "while",
+                "foreach",
+                "do-while"
+            ],
+            "a": 2,
+            "e": "'foreach' iterates over IEnumerable collections without needing an index. It reads each element sequentially."
+        },
+        {
+            "q": "Can you use 'goto' to jump to a label inside a switch case block?",
+            "o": [
+                "Yes, to another case label",
+                "No, goto is not allowed in switch",
+                "Yes, but only to default",
+                "Only in unsafe context"
+            ],
+            "a": 0,
+            "e": "C# allows 'goto case <value>;' or 'goto default;' inside a switch to transfer control to another case label, enabling fallthrough behavior."
+        },
+        {
+            "q": "What does the following code output?\nfor (int i = 0; i < 3; i++) {\n    if (i == 1) continue;\n    Console.Write(i);\n}",
+            "o": [
+                "012",
+                "02",
+                "01",
+                "12"
+            ],
+            "a": 1,
+            "e": "When i==1, 'continue' skips Console.Write. Outputs 0 and 2 concatenated: '02'."
+        },
+        {
+            "q": "Which of the following is a valid pattern in a switch expression (C# 8+)?",
+            "o": [
+                "case int x when x > 0:",
+                "case int x if x > 0 =>",
+                "case int x when x > 0 =>",
+                "case var x > 0 =>"
+            ],
+            "a": 2,
+            "e": "Switch expressions use 'case <pattern> when <condition> => <result>'. The 'when' clause adds a guard condition."
+        },
+        {
+            "q": "What is the result of this ternary expression?\nint x = 5;\nstring result = x > 10 ? \"High\" : \"Low\";",
+            "o": [
+                "High",
+                "Low",
+                "Null",
+                "Compile error"
+            ],
+            "a": 1,
+            "e": "The conditional (ternary) operator evaluates the condition (false), so it returns the second operand: \"Low\"."
+        },
+        {
+            "q": "How do you create an infinite loop using 'for'?",
+            "o": [
+                "for (;;)",
+                "for (true)",
+                "for (null)",
+                "for (int i = 0; i < 10; i--)"
+            ],
+            "a": 0,
+            "e": "A for loop with empty initialization, condition, and iterator (for (;;)) runs indefinitely until broken."
+        },
+        {
+            "q": "Which statement allows multiple possible execution paths based on a variable's value?",
+            "o": [
+                "if-else chain",
+                "switch",
+                "try-catch",
+                "while"
+            ],
+            "a": 1,
+            "e": "'switch' selects a case block matching the expression value. It's cleaner than long if-else chains for discrete values."
+        },
+        {
+            "q": "What happens if a switch case block (non-expression) does not end with break, return, throw, or goto?",
+            "o": [
+                "Compile error: control cannot fall through",
+                "It falls through to the next case",
+                "It automatically breaks",
+                "Runtime exception"
+            ],
+            "a": 0,
+            "e": "C# requires explicit jump statements at the end of each case block to prevent accidental fallthrough. Use 'goto case' for intentional fallthrough."
+        },
+        {
+            "q": "Which of the following correctly uses the null-coalescing operator (??) in a control flow context?",
+            "o": [
+                "var name = GetName() ?? \"Unknown\";",
+                "if (name ?? \"Unknown\") { }",
+                "while (x ?? 0) { }",
+                "for (;; ??) { }"
+            ],
+            "a": 0,
+            "e": "?? returns the left operand if not null, otherwise the right. It's commonly used for default values. The other usages are invalid syntax or type mismatches."
+        }
+    ]
+}
