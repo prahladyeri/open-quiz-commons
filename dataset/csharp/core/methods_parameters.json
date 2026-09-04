@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the correct syntax for a method that takes an integer parameter and returns a string in C#?",
+            "o": [
+                "string MyMethod(int x) { return x.ToString(); }",
+                "MyMethod(int x) -> string { return x.ToString(); }",
+                "func MyMethod(int x) string { return x.ToString(); }",
+                "string MyMethod(int x) => x.ToString();"
+            ],
+            "a": 0,
+            "e": "Option A shows the standard method declaration syntax. Option D is an expression-bodied method which is also valid, but the question asks for the standard syntax (and A is the classic form)."
+        },
+        {
+            "q": "Which keyword is used to pass a parameter by reference so that the method can modify the original variable?",
+            "o": [
+                "ref",
+                "out",
+                "in",
+                "params"
+            ],
+            "a": 0,
+            "e": "The 'ref' keyword indicates that the parameter is passed by reference, allowing the method to modify the original variable's value."
+        },
+        {
+            "q": "What is the difference between 'ref' and 'out' parameters?",
+            "o": [
+                "'ref' requires the variable to be initialized before passing; 'out' does not.",
+                "'out' requires the variable to be initialized before passing; 'ref' does not.",
+                "Both require initialization, but 'out' parameters must be assigned in the method.",
+                "There is no difference; they are interchangeable."
+            ],
+            "a": 0,
+            "e": "A 'ref' parameter must be initialized before it is passed. An 'out' parameter does not need to be initialized before passing, but the method must assign a value before returning."
+        },
+        {
+            "q": "Which keyword allows a method to accept a variable number of arguments of the same type?",
+            "o": [
+                "params",
+                "varargs",
+                "optional",
+                "dynamic"
+            ],
+            "a": 0,
+            "e": "The 'params' keyword lets you specify a method parameter that takes a variable number of arguments (or an array)."
+        },
+        {
+            "q": "How do you define an optional parameter with a default value in C#?",
+            "o": [
+                "void Method(int x = 5)",
+                "void Method(optional int x = 5)",
+                "void Method(int x := 5)",
+                "void Method(int? x = 5)"
+            ],
+            "a": 0,
+            "e": "Optional parameters are defined by providing a default value in the parameter list: `int x = 5`."
+        },
+        {
+            "q": "What is the purpose of the 'in' parameter modifier?",
+            "o": [
+                "It passes the argument by reference and allows the method to modify it.",
+                "It passes the argument by reference but prevents the method from modifying it.",
+                "It passes the argument by value and creates a copy.",
+                "It is used for output parameters only."
+            ],
+            "a": 1,
+            "e": "The 'in' modifier passes the argument by reference for performance (avoiding copy) but makes it read-only within the method."
+        },
+        {
+            "q": "Which of the following is true about method overloading in C#?",
+            "o": [
+                "Methods can be overloaded only by changing the return type.",
+                "Methods can be overloaded by changing the number, type, or order of parameters.",
+                "Methods cannot be overloaded if they have the same name but different parameter names.",
+                "Method overloading is not supported in C#."
+            ],
+            "a": 1,
+            "e": "Overloading is based on the method signature: number, type, and order of parameters. Return type alone is not sufficient, and parameter names do not differentiate overloads."
+        },
+        {
+            "q": "What is an expression-bodied method?",
+            "o": [
+                "A method that contains only a single expression and uses the '=>' syntax.",
+                "A method that returns an expression tree.",
+                "A method that is defined inside another method.",
+                "A method that takes a lambda expression as a parameter."
+            ],
+            "a": 0,
+            "e": "Expression-bodied members provide a concise syntax for methods (and properties) that consist of a single expression: `returnType MethodName(parameters) => expression;`."
+        },
+        {
+            "q": "Can a 'params' parameter be combined with other parameters in a method signature?",
+            "o": [
+                "Yes, but it must be the last parameter.",
+                "No, 'params' must be the only parameter.",
+                "Yes, it can appear anywhere in the parameter list.",
+                "Only if the other parameters are also 'params'."
+            ],
+            "a": 0,
+            "e": "A method can have a 'params' parameter along with other parameters, but the 'params' parameter must be the last one in the parameter list."
+        },
+        {
+            "q": "What happens when you pass a value type (like int) to a method without any modifier?",
+            "o": [
+                "The method receives a reference to the original variable.",
+                "The method receives a copy of the value; changes do not affect the original.",
+                "The method receives a pointer to the variable.",
+                "The method cannot modify the value, but the original is passed by reference."
+            ],
+            "a": 1,
+            "e": "By default, value types are passed by value, meaning a copy is made. Changes inside the method do not affect the original variable."
+        },
+        {
+            "q": "Which of the following correctly declares a method that returns void and takes two string parameters, where the second is optional with default \"default\"?",
+            "o": [
+                "void Print(string a, string b = \"default\")",
+                "void Print(string a, optional string b = \"default\")",
+                "void Print(string a, string b := \"default\")",
+                "void Print(string a, string b = default)"
+            ],
+            "a": 0,
+            "e": "Optional parameters are declared with a default value in the parameter list. The syntax is `type name = defaultValue`."
+        },
+        {
+            "q": "What is the purpose of the 'out' keyword in a method parameter?",
+            "o": [
+                "To pass a variable by reference for input only.",
+                "To pass a variable by reference for output only (the method must assign it).",
+                "To pass a variable by value but allow modification.",
+                "To indicate the parameter is optional."
+            ],
+            "a": 1,
+            "e": "The 'out' keyword is used for output parameters. The method must assign a value to the parameter before returning, and the variable does not need to be initialized before the call."
+        },
+        {
+            "q": "How do you call a method using named arguments in C#?",
+            "o": [
+                "Method(name: value, ...)",
+                "Method(@name = value, ...)",
+                "Method(name => value, ...)",
+                "Method(name = value, ...)"
+            ],
+            "a": 0,
+            "e": "Named arguments are specified by the parameter name followed by a colon and the value: `Method(paramName: value)`."
+        },
+        {
+            "q": "Which statement about extension methods is true?",
+            "o": [
+                "Extension methods must be declared in a non-static class.",
+                "Extension methods are instance methods on the extended type.",
+                "Extension methods are static methods in a static class, with the first parameter prefixed by 'this'.",
+                "Extension methods can only extend interfaces, not classes."
+            ],
+            "a": 2,
+            "e": "Extension methods are defined as static methods in a static class. The first parameter specifies the type being extended and is prefixed with the 'this' keyword."
+        },
+        {
+            "q": "What is a local function in C#?",
+            "o": [
+                "A function declared inside another function, accessible only within that containing function.",
+                "A function that is local to a namespace.",
+                "A function that is private to a class.",
+                "A function that is defined in a local variable."
+            ],
+            "a": 0,
+            "e": "Local functions are methods declared inside another method (or constructor, property accessor, etc.). They are only visible within the scope of the containing member."
+        },
+        {
+            "q": "When should you use 'ref readonly' return type?",
+            "o": [
+                "To return a value type by reference, allowing the caller to modify it.",
+                "To return a reference to a value type without allowing the caller to modify it, avoiding copy.",
+                "To return a reference type as read-only.",
+                "To return a value type by value but with read-only semantics."
+            ],
+            "a": 1,
+            "e": "`ref readonly` returns a reference to a value type (or variable) without allowing modification, useful for performance with large structs."
+        }
+    ]
+}
