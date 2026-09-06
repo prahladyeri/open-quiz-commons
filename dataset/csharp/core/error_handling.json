@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "Which keyword is used to define a block of code that will be executed when an exception is thrown?",
+            "o": [
+                "try",
+                "catch",
+                "finally",
+                "throw"
+            ],
+            "a": 1,
+            "e": "The catch block is used to handle exceptions that occur in the associated try block."
+        },
+        {
+            "q": "What is the base class for all exceptions in .NET?",
+            "o": [
+                "SystemError",
+                "Exception",
+                "SystemException",
+                "ApplicationException"
+            ],
+            "a": 1,
+            "e": "System.Exception is the ultimate base class for all exceptions in the .NET framework."
+        },
+        {
+            "q": "Which block is guaranteed to execute regardless of whether an exception occurs or not?",
+            "o": [
+                "try",
+                "catch",
+                "finally",
+                "throw"
+            ],
+            "a": 2,
+            "e": "The finally block executes after the try and catch blocks, even if an exception is thrown and not caught, or if a return statement is encountered."
+        },
+        {
+            "q": "How do you re-throw the current exception while preserving the original stack trace?",
+            "o": [
+                "throw new Exception();",
+                "throw ex;",
+                "throw;",
+                "throw Exception;"
+            ],
+            "a": 2,
+            "e": "Using 'throw;' without an exception object re-throws the caught exception and preserves the original stack trace. 'throw ex;' resets the stack trace."
+        },
+        {
+            "q": "Which exception type is thrown when an argument passed to a method is null and the method does not accept null?",
+            "o": [
+                "ArgumentException",
+                "ArgumentNullException",
+                "NullReferenceException",
+                "InvalidOperationException"
+            ],
+            "a": 1,
+            "e": "ArgumentNullException is specifically designed for cases where a null argument is passed to a method that does not accept it."
+        },
+        {
+            "q": "What is the correct syntax to catch multiple exception types in a single catch block (C# 6.0+)?",
+            "o": [
+                "catch (Exception1, Exception2)",
+                "catch (Exception1 | Exception2)",
+                "catch (Exception1) when (Exception2)",
+                "catch (Exception1 e) when (e is Exception2)"
+            ],
+            "a": 3,
+            "e": "C# does not support multi-catch syntax like Java. To catch multiple types, you either use multiple catch blocks or use a 'when' filter with type checking (e.g., 'catch (Exception e) when (e is ArgumentException || e is NullReferenceException)')."
+        },
+        {
+            "q": "Which method is used to log an exception's details including stack trace to the standard error output?",
+            "o": [
+                "Console.Write(ex.Message)",
+                "Console.Error.WriteLine(ex.ToString())",
+                "Debug.Write(ex.StackTrace)",
+                "Trace.WriteLine(ex.Source)"
+            ],
+            "a": 1,
+            "e": "ex.ToString() returns the full exception details (type, message, stack trace). Console.Error is the standard error stream."
+        },
+        {
+            "q": "What happens if an exception is thrown inside a catch block and not caught?",
+            "o": [
+                "The original exception is lost.",
+                "The finally block will not execute.",
+                "The new exception propagates up the call stack, and the finally block still executes.",
+                "The application terminates immediately without running finally."
+            ],
+            "a": 2,
+            "e": "An unhandled exception in a catch block propagates up. The finally block associated with that try/catch will still execute before the stack unwinds further."
+        },
+        {
+            "q": "Which class should you inherit from when creating a custom exception?",
+            "o": [
+                "SystemError",
+                "ApplicationException",
+                "Exception",
+                "SystemException"
+            ],
+            "a": 2,
+            "e": "Best practice is to inherit from System.Exception (or a more specific derived class like ArgumentException). ApplicationException is discouraged by Microsoft."
+        },
+        {
+            "q": "What is the purpose of the 'when' keyword in a catch clause?",
+            "o": [
+                "To specify a time delay before catching.",
+                "To filter the exception based on a condition.",
+                "To catch exceptions only when debugging.",
+                "To declare a variable for the exception."
+            ],
+            "a": 1,
+            "e": "Exception filters ('catch (Exception e) when (condition)') allow catching an exception only if the condition evaluates to true, without unwinding the stack if false."
+        },
+        {
+            "q": "Which exception is thrown by the runtime when a null reference is accessed?",
+            "o": [
+                "ArgumentNullException",
+                "NullReferenceException",
+                "InvalidOperationException",
+                "AccessViolationException"
+            ],
+            "a": 1,
+            "e": "NullReferenceException is thrown when attempting to access members on a null object reference."
+        },
+        {
+            "q": "What is the difference between 'throw' and 'throw ex' inside a catch block?",
+            "o": [
+                "No difference.",
+                "'throw' preserves the stack trace; 'throw ex' resets it.",
+                "'throw ex' preserves the stack trace; 'throw' resets it.",
+                "'throw' creates a new exception; 'throw ex' rethrows the old one."
+            ],
+            "a": 1,
+            "e": "'throw;' re-throws the original exception preserving the stack trace. 'throw ex;' throws the same exception object but resets the stack trace origin to that line."
+        },
+        {
+            "q": "Which interface should a custom exception implement to support serialization across AppDomains or remoting?",
+            "o": [
+                "ISerializable",
+                "ICloneable",
+                "IDisposable",
+                "IComparable"
+            ],
+            "a": 0,
+            "e": "Implementing ISerializable allows the exception to be serialized properly, which is required for crossing AppDomain boundaries or remoting scenarios."
+        },
+        {
+            "q": "What does the 'ExceptionDispatchInfo.Capture' method do?",
+            "o": [
+                "Creates a copy of the exception.",
+                "Captures the exception and its stack trace to be thrown later preserving the original stack trace.",
+                "Logs the exception to the event log.",
+                "Converts the exception to a string."
+            ],
+            "a": 1,
+            "e": "ExceptionDispatchInfo.Capture preserves the stack trace and Watson bucket information, allowing the exception to be re-thrown later (e.g., in async contexts) with the original stack trace intact."
+        },
+        {
+            "q": "Which of the following is NOT a valid way to handle resource cleanup in C#?",
+            "o": [
+                "Using a 'finally' block to call Dispose().",
+                "Using a 'using' statement.",
+                "Implementing a finalizer (destructor) only.",
+                "Implementing IDisposable and using 'using'."
+            ],
+            "a": 2,
+            "e": "Relying solely on a finalizer is not recommended for deterministic cleanup because finalization is non-deterministic and adds GC pressure. IDisposable with 'using' or try/finally is the standard pattern."
+        }
+    ]
+}

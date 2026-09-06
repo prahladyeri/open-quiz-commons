@@ -1167,7 +1167,7 @@
                 {
                     "name": "Core C#",
                     "slug": "core",
-					"hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Syntax & Data Types",
@@ -1204,7 +1204,7 @@
                 {
                     "name": "Object-Oriented & Advanced C#",
                     "slug": "oop_advanced",
-					"hidden": true,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "Classes, Structs & Records",
@@ -1241,7 +1241,7 @@
                 {
                     "name": ".NET Platform",
                     "slug": "dotnet_platform",
-					"hidden": true,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": ".NET Runtime & GC",
@@ -1272,7 +1272,7 @@
                 {
                     "name": "ASP.NET & Web Development",
                     "slug": "aspnet_web",
-					"hidden": true,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "ASP.NET Core Fundamentals",
@@ -1309,7 +1309,7 @@
                 {
                     "name": "Tooling & Ecosystem",
                     "slug": "tooling_ecosystem",
-					"hidden": true,
+                    "hidden": true,
                     "modules": [
                         {
                             "name": "Visual Studio & VS Code",
