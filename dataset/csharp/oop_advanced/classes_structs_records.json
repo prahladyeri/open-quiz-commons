@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the primary difference between a C# record and a class regarding equality?",
+            "o": [
+                "Records use reference equality; classes use value equality",
+                "Records use value-based equality; classes use reference equality by default",
+                "Both use value-based equality",
+                "Both use reference equality"
+            ],
+            "a": 1,
+            "e": "Records implement value-based equality (comparing all properties), while classes use reference equality by default unless overridden."
+        },
+        {
+            "q": "Which syntax declares a positional record with two properties?",
+            "o": [
+                "record Person(string Name, int Age);",
+                "record Person { string Name; int Age; }",
+                "record Person(string Name, int Age) { }",
+                "record Person { get; set; string Name; get; set; int Age; }"
+            ],
+            "a": 0,
+            "e": "Positional records use the constructor-like syntax: `record TypeName(Param1, Param2);` which automatically creates init-only properties and a primary constructor."
+        },
+        {
+            "q": "What does the 'with' expression do on a record?",
+            "o": [
+                "Creates a new record instance with specified properties modified",
+                "Mutates the existing record instance",
+                "Compares two records for equality",
+                "Deconstructs a record into its components"
+            ],
+            "a": 0,
+            "e": "The `with` expression creates a new record instance (non-destructive mutation) copying all properties from the original and applying specified changes."
+        },
+        {
+            "q": "Can a record inherit from another record?",
+            "o": [
+                "Yes, records support inheritance from other records",
+                "No, records are implicitly sealed",
+                "Only if the base record is marked 'abstract'",
+                "Only record structs can inherit"
+            ],
+            "a": 0,
+            "e": "Records can inherit from other records (but not from classes). The derived record must include base constructor parameters."
+        },
+        {
+            "q": "What is the default behavior of a record struct regarding equality?",
+            "o": [
+                "Reference equality",
+                "Value equality comparing all fields",
+                "No equality implementation",
+                "Only compares the first field"
+            ],
+            "a": 1,
+            "e": "Record structs (and records) implement value-based equality by comparing all fields/properties automatically."
+        },
+        {
+            "q": "Which of the following is true about record immutability?",
+            "o": [
+                "Records are fully immutable by default",
+                "Positional records have init-only properties by default, but nominal records can have mutable properties",
+                "Records cannot have any setters",
+                "Only record structs are immutable"
+            ],
+            "a": 1,
+            "e": "Positional records generate init-only properties. Nominal records (with braces) allow mutable properties unless explicitly made init-only."
+        },
+        {
+            "q": "How does a record's ToString() method differ from a class's default ToString()?",
+            "o": [
+                "Records print the type name only",
+                "Records print a formatted string with property names and values",
+                "Records print the memory address",
+                "Records throw NotImplementedException"
+            ],
+            "a": 1,
+            "e": "Records override ToString() to output a formatted representation like `Person { Name = \"John\", Age = 30 }`."
+        },
+        {
+            "q": "What is the correct way to deconstruct a record?",
+            "o": [
+                "var (name, age) = person;",
+                "person.Deconstruct(out name, out age);",
+                "Both A and B work",
+                "Records cannot be deconstructed"
+            ],
+            "a": 2,
+            "e": "Records automatically generate a Deconstruct method, allowing both positional deconstruction syntax and explicit Deconstruct calls."
+        },
+        {
+            "q": "Which modifier prevents a record from being inherited?",
+            "o": [
+                "sealed",
+                "final",
+                "readonly",
+                "immutable"
+            ],
+            "a": 0,
+            "e": "The `sealed` modifier prevents inheritance of records, just like with classes."
+        },
+        {
+            "q": "What happens when you compare two record instances with == operator?",
+            "o": [
+                "Compares references",
+                "Compares all properties for value equality",
+                "Throws InvalidOperationException",
+                "Compares only the first property"
+            ],
+            "a": 1,
+            "e": "Records override == and != operators to perform value-based equality comparison of all properties."
+        },
+        {
+            "q": "Can a record implement an interface?",
+            "o": [
+                "No, records cannot implement interfaces",
+                "Yes, records can implement interfaces",
+                "Only record structs can implement interfaces",
+                "Only if the record is sealed"
+            ],
+            "a": 1,
+            "e": "Records can implement interfaces just like classes."
+        },
+        {
+            "q": "What is the difference between 'record' and 'record struct'?",
+            "o": [
+                "record is a reference type; record struct is a value type",
+                "record struct cannot have methods",
+                "record cannot have constructors",
+                "They are identical, just different syntax"
+            ],
+            "a": 0,
+            "e": "`record` declares a reference type (class-like), while `record struct` declares a value type (struct-like) with record semantics."
+        },
+        {
+            "q": "How are init-only properties different from readonly properties?",
+            "o": [
+                "init-only can be set during object initialization; readonly only in constructor",
+                "They are functionally identical",
+                "readonly allows mutation after construction",
+                "init-only requires a setter"
+            ],
+            "a": 0,
+            "e": "init-only properties can be set via object initializers and with-expressions; readonly fields can only be assigned in constructors."
+        },
+        {
+            "q": "What does the 'required' keyword on a record property enforce?",
+            "o": [
+                "The property must be initialized at creation (constructor or initializer)",
+                "The property cannot be null",
+                "The property is immutable",
+                "The property must have a default value"
+            ],
+            "a": 0,
+            "e": "Required properties (C# 11+) must be initialized either in the constructor or via object initializer, otherwise a compile-time warning/error occurs."
+        },
+        {
+            "q": "Which statement about record equality is FALSE?",
+            "o": [
+                "Two records of different types are never equal",
+                "Record equality is recursive for nested records",
+                "Record equality ignores property order",
+                "Records implement IEquatable<T>"
+            ],
+            "a": 2,
+            "e": "Record equality considers property order (matching positional parameters). Two records with same values but different property declaration order are not equal."
+        },
+        {
+            "q": "What is the performance characteristic of record struct vs record (class)?",
+            "o": [
+                "record struct avoids heap allocation; record allocates on heap",
+                "record is always faster",
+                "record struct causes more GC pressure",
+                "Both allocate on the heap"
+            ],
+            "a": 0,
+            "e": "record struct is a value type allocated on the stack (or inline in arrays), avoiding heap allocation and GC pressure. record is a reference type allocated on the heap."
+        }
+    ]
+}
