@@ -1,0 +1,235 @@
+{
+    "data": [
+        {
+            "q": "Which keyword is used to prevent a class from being inherited in C#?",
+            "o": [
+                "sealed",
+                "final",
+                "static",
+                "readonly"
+            ],
+            "a": 0,
+            "e": "The 'sealed' keyword prevents a class from being inherited. 'final' is used in Java, 'static' creates a static class (which cannot be instantiated or inherited but serves a different primary purpose), and 'readonly' is for fields."
+        },
+        {
+            "q": "What is the output of the following code?\n\nclass Base { public virtual void Print() { Console.WriteLine(\"Base\"); } }\nclass Derived : Base { public override void Print() { Console.WriteLine(\"Derived\"); } }\n\nBase b = new Derived();\nb.Print();",
+            "o": [
+                "Base",
+                "Derived",
+                "Compile-time error",
+                "Runtime error"
+            ],
+            "a": 1,
+            "e": "Polymorphism ensures the overridden method in the derived class (Derived) is called at runtime, even when referenced by a base class variable (Base)."
+        },
+        {
+            "q": "What is the difference between 'override' and 'new' (method hiding) in C#?",
+            "o": [
+                "'override' extends a base method; 'new' hides it without polymorphism.",
+                "'new' extends a base method; 'override' hides it.",
+                "They are functionally identical.",
+                "'override' is for fields; 'new' is for methods."
+            ],
+            "a": 0,
+            "e": "'override' requires the base method to be virtual/abstract/override and enables polymorphic dispatch. 'new' hides the base member; if called via a base reference, the base implementation executes (no polymorphism)."
+        },
+        {
+            "q": "Which modifier must be used on a base class method to allow it to be overridden in a derived class?",
+            "o": [
+                "static",
+                "virtual",
+                "abstract",
+                "sealed"
+            ],
+            "a": 1,
+            "e": "The 'virtual' keyword allows a method to be overridden. 'abstract' also requires overriding but implies no implementation in the base. 'static' methods cannot be overridden. 'sealed' prevents overriding."
+        },
+        {
+            "q": "Can a struct inherit from a class in C#?",
+            "o": [
+                "Yes, structs support full inheritance.",
+                "No, structs cannot inherit from classes or other structs.",
+                "Yes, but only from abstract classes.",
+                "No, but they can inherit from interfaces."
+            ],
+            "a": 3,
+            "e": "Structs are value types and do not support inheritance from classes or other structs (they implicitly inherit from System.ValueType). However, they can implement interfaces."
+        },
+        {
+            "q": "What happens when a derived class constructor does not explicitly call a base class constructor?",
+            "o": [
+                "Compile-time error.",
+                "The parameterless base constructor is called implicitly.",
+                "The base constructor is not called.",
+                "Runtime exception."
+            ],
+            "a": 1,
+            "e": "If a derived constructor doesn't use 'base(...)', the compiler inserts a call to the parameterless base constructor (base()). If the base class lacks a parameterless constructor, a compile-time error occurs."
+        },
+        {
+            "q": "What is the purpose of the 'base' keyword in a derived class?",
+            "o": [
+                "To access static members of the base class.",
+                "To access members of the base class from within a derived class (constructors, methods, properties).",
+                "To create a new instance of the base class.",
+                "To prevent inheritance."
+            ],
+            "a": 1,
+            "e": "'base' is used to call base class constructors (base()), access overridden methods (base.Method()), or access hidden base members."
+        },
+        {
+            "q": "An abstract class in C# can contain which of the following?",
+            "o": [
+                "Only abstract methods.",
+                "Abstract methods, virtual methods, and concrete (implemented) methods.",
+                "Only concrete methods.",
+                "Only fields and properties."
+            ],
+            "a": 1,
+            "e": "Abstract classes can have a mix of abstract members (must be implemented by derived classes), virtual members (can be overridden), and fully implemented concrete members."
+        },
+        {
+            "q": "If a base class method is marked 'protected internal', who can access it?",
+            "o": [
+                "Only the containing class.",
+                "Derived classes in the same assembly OR derived classes in other assemblies.",
+                "Any class in the same assembly OR derived classes in any assembly.",
+                "Only classes in the same assembly."
+            ],
+            "a": 2,
+            "e": "'protected internal' means 'protected OR internal'. Access is granted to: 1) Any type within the same assembly (internal), OR 2) Derived types in any assembly (protected)."
+        },
+        {
+            "q": "What is the result of calling a virtual method from a base class constructor when the derived class overrides that method?",
+            "o": [
+                "The base class implementation runs.",
+                "The derived class implementation runs.",
+                "Compile-time error.",
+                "Undefined behavior."
+            ],
+            "a": 1,
+            "e": "In C#, the derived object is fully initialized before the base constructor runs (conceptually), so virtual calls in the base constructor dispatch to the derived override. This can be dangerous if the override depends on derived-field initialization which hasn't happened yet."
+        },
+        {
+            "q": "Which statement about interfaces vs abstract classes is correct?",
+            "o": [
+                "A class can implement multiple interfaces but inherit only one abstract class.",
+                "A class can inherit multiple abstract classes but implement only one interface.",
+                "Interfaces can contain constructor logic; abstract classes cannot.",
+                "Abstract classes support multiple inheritance; interfaces do not."
+            ],
+            "a": 0,
+            "e": "C# supports single class inheritance (abstract or concrete) but multiple interface implementation. Interfaces cannot contain constructors (prior to C# 8.0 default interface methods, but still no instance constructors)."
+        },
+        {
+            "q": "What does the 'sealed' modifier do when applied to an 'override' method?",
+            "o": [
+                "Prevents the method from being called.",
+                "Prevents further derived classes from overriding this method.",
+                "Makes the method static.",
+                "Forces the method to be abstract."
+            ],
+            "a": 1,
+            "e": "A 'sealed override' stops the virtual chain. Further derived classes inherit the sealed implementation but cannot override it again."
+        },
+        {
+            "q": "Consider: `public class A { public virtual void M() {} } public class B : A { public override void M() {} } public class C : B { public new void M() {} }`\nIf `A a = new C(); a.M();` is executed, which method runs?",
+            "o": [
+                "A.M",
+                "B.M",
+                "C.M",
+                "Compile error"
+            ],
+            "a": 1,
+            "e": "C.M uses 'new' (hiding), not 'override'. The virtual chain stops at B. Since the reference is type A, polymorphism calls the latest override in the chain (B.M). C.M is only called if the reference is explicitly type C."
+        },
+        {
+            "q": "What is 'covariant return type' support in C# (since C# 9.0)?",
+            "o": [
+                "An override can return a more derived type than the overridden method.",
+                "An override can return a base type of the overridden method's return type.",
+                "A method can return different types based on input parameters.",
+                "Return types must be exactly identical in overrides."
+            ],
+            "a": 0,
+            "e": "Covariant return types allow an override in a derived class to return a type that is more specific (derived) than the return type declared in the base class virtual method."
+        },
+        {
+            "q": "Why would you use the 'base' keyword to call a base class constructor explicitly?",
+            "o": [
+                "To prevent the base constructor from running.",
+                "To pass arguments to a specific base class constructor overload.",
+                "To create a separate instance of the base class.",
+                "It is mandatory in every derived class constructor."
+            ],
+            "a": 1,
+            "e": "Explicit `base(...)` calls are used to invoke a specific parameterized constructor of the base class. If omitted, the parameterless constructor is called implicitly (if available)."
+        },
+        {
+            "q": "What is the 'fragile base class' problem?",
+            "o": [
+                "Base classes cannot be serialized.",
+                "Changes to a base class implementation can inadvertently break derived classes.",
+                "Derived classes cannot access base class members.",
+                "Base classes are inherently unstable in memory."
+            ],
+            "a": 1,
+            "e": "The fragile base class problem occurs when a change to the base class (e.g., adding a new virtual method, changing internal logic) breaks the behavior of a derived class that depends on specific implementation details."
+        },
+        {
+            "q": "In C#, can a derived class have a higher accessibility level than its base class?",
+            "o": [
+                "Yes, a public class can inherit from an internal class.",
+                "No, a derived class must be at least as accessible as its base class, but not more.",
+                "No, a derived class cannot be more accessible than its base class.",
+                "Yes, accessibility is unrelated."
+            ],
+            "a": 2,
+            "e": "A derived class cannot be more accessible than its base class (e.g., a public class cannot inherit from an internal class), because the derived class exposes the base class's public/protected surface area."
+        },
+        {
+            "q": "What is the output?\n\nclass Base { public virtual int Prop { get; set; } = 1; }\nclass Derived : Base { public override int Prop { get => base.Prop * 2; set => base.Prop = value; } }\n\nBase b = new Derived();\nConsole.WriteLine(b.Prop);",
+            "o": [
+                "1",
+                "2",
+                "0",
+                "Exception"
+            ],
+            "a": 1,
+            "e": "The property is virtual/override. The getter in Derived accesses `base.Prop` (which returns 1) and multiplies by 2. Polymorphism ensures the Derived getter runs."
+        },
+        {
+            "q": "Which keyword allows a derived class to implement an interface member explicitly, hiding it from the class's public interface?",
+            "o": [
+                "explicit",
+                "interface",
+                "implicit",
+                "The interface name prefix (e.g., `IInterface.Method()`)"
+            ],
+            "a": 3,
+            "e": "Explicit interface implementation is done by prefixing the member name with the interface name (e.g., `void IComparable.CompareTo(...)`). It makes the member accessible only via the interface type, not the class type."
+        },
+        {
+            "q": "What is the correct way to declare a read-only property in a base class that derived classes must initialize?",
+            "o": [
+                "public abstract int Id { get; }",
+                "public virtual int Id { get; private set; }",
+                "public int Id { get; } // initialized in base ctor",
+                "public abstract int Id { get; set; }"
+            ],
+            "a": 0,
+            "e": "An abstract read-only property (`get` only) forces derived classes to implement it (usually via a constructor or init-only setter). Abstract properties cannot have `private set` or bodies."
+        },
+        {
+            "q": "If a base class implements an interface implicitly, and a derived class re-implements the same interface explicitly, what happens when calling the method via the base class reference?",
+            "o": [
+                "The derived class explicit implementation runs.",
+                "The base class implementation runs.",
+                "Compile-time error.",
+                "Ambiguity runtime exception."
+            ],
+            "a": 1,
+            "e": "Explicit implementation in the derived class creates a new slot for the interface method. The base class implementation remains the implementation for the virtual method slot (if virtual) or the class method. Calling via Base reference uses the base implementation."
+        }
+    ]
+}
