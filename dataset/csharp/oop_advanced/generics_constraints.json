@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which constraint specifies that a type argument must be a reference type?",
+            "o": [
+                "where T : struct",
+                "where T : class",
+                "where T : new()",
+                "where T : notnull"
+            ],
+            "a": 1,
+            "e": "The `class` constraint requires the type argument to be a reference type (class, interface, delegate, or array). `struct` requires a value type."
+        },
+        {
+            "q": "What does the `where T : new()` constraint enforce?",
+            "o": [
+                "T must be a value type",
+                "T must have a public parameterless constructor",
+                "T must be a reference type",
+                "T must implement IDisposable"
+            ],
+            "a": 1,
+            "e": "The `new()` constraint requires the type argument to have a public parameterless constructor. It cannot be combined with `struct` or `unmanaged` constraints in a way that conflicts, but works with `class`."
+        },
+        {
+            "q": "Which constraint ensures the type argument is a value type (excluding Nullable)?",
+            "o": [
+                "where T : class",
+                "where T : struct",
+                "where T : notnull",
+                "where T : default"
+            ],
+            "a": 1,
+            "e": "The `struct` constraint specifies that the type argument must be a non-nullable value type (e.g., int, bool, custom structs). `Nullable<T>` is explicitly disallowed."
+        },
+        {
+            "q": "How do you constrain a type parameter to implement a specific interface, e.g., `IComparable`?",
+            "o": [
+                "where T : base IComparable",
+                "where T : interface IComparable",
+                "where T : IComparable",
+                "where T : implements IComparable"
+            ],
+            "a": 2,
+            "e": "Interface constraints are specified directly after the colon: `where T : IComparable`. Multiple interfaces are separated by commas: `where T : IComparable, IDisposable`."
+        },
+        {
+            "q": "What is the purpose of the `where T : notnull` constraint (introduced in C# 8.0)?",
+            "o": [
+                "Disallows null for reference types only",
+                "Disallows null for both value types and reference types",
+                "Allows null for value types",
+                "Requires T to be a nullable reference type"
+            ],
+            "a": 1,
+            "e": "`notnull` constrains the type argument to be non-nullable. For reference types, it requires a non-nullable reference type (e.g., `string` not `string?`). For value types, it requires a non-nullable value type (e.g., `int` not `int?`)."
+        },
+        {
+            "q": "Which constraint specifies that a type argument must inherit from a specific base class?",
+            "o": [
+                "where T : base ClassName",
+                "where T : ClassName",
+                "where T : inherit ClassName",
+                "where T : extends ClassName"
+            ],
+            "a": 1,
+            "e": "A base class constraint is specified by the class name directly: `where T : BaseClass`. It must appear before any interface constraints."
+        },
+        {
+            "q": "Can a generic type parameter have multiple constraints?",
+            "o": [
+                "No, only one constraint is allowed per type parameter",
+                "Yes, but only if they are all interface constraints",
+                "Yes, constraints are listed in a comma-separated list within a single where clause",
+                "Yes, but only one `where` clause is allowed per class"
+            ],
+            "a": 2,
+            "e": "Multiple constraints are specified in a comma-separated list: `where T : BaseClass, IInterface1, IInterface2, new()`. You can also have multiple `where` clauses for different type parameters (e.g., `where T : class where U : struct`)."
+        },
+        {
+            "q": "What does the `unmanaged` constraint (C# 7.3+) require?",
+            "o": [
+                "T must be a reference type",
+                "T must be a value type that contains no reference type fields at any level of nesting",
+                "T must be a pointer type",
+                "T must be an enum"
+            ],
+            "a": 1,
+            "e": "The `unmanaged` constraint ensures the type is an 'unmanaged type' (primitive types, enums, pointers, or structs containing only unmanaged types). This allows using `stackalloc` and working with `Span`/`Memory` safely."
+        },
+        {
+            "q": "Which constraint allows the use of the `default` literal or `default(T)` to produce a non-null value for reference types?",
+            "o": [
+                "where T : class",
+                "where T : struct",
+                "where T : notnull",
+                "where T : default"
+            ],
+            "a": 2,
+            "e": "The `notnull` constraint guarantees that `default(T)` is not null. With just `class`, `default(T)` is null. With `struct`, `default(T)` is the zero-initialized struct (non-null)."
+        },
+        {
+            "q": "What is the correct syntax to constrain a type parameter `T` to be a delegate type?",
+            "o": [
+                "where T : delegate",
+                "where T : System.Delegate",
+                "where T : Delegate",
+                "Delegate constraints are not supported directly in C#"
+            ],
+            "a": 3,
+            "e": "As of C# 12, there is no direct `delegate` constraint keyword. You constrain to `System.Delegate` or `System.MulticastDelegate` as a base class constraint (`where T : Delegate`), but the compiler treats this specially. Note: You cannot use `where T : delegate` as a keyword."
+        },
+        {
+            "q": "If a generic method has `where T : BaseClass, new()`, which of the following is true?",
+            "o": [
+                "T must be a value type",
+                "T must inherit from BaseClass and have a public parameterless constructor",
+                "T must be an interface",
+                "BaseClass must be sealed"
+            ],
+            "a": 1,
+            "e": "Combining a base class constraint (`BaseClass`) with `new()` requires the type argument to derive from `BaseClass` AND have a public parameterless constructor. The base class itself must also have a public parameterless constructor for this to be satisfiable."
+        },
+        {
+            "q": "What does the `where T : System.Enum` constraint (C# 7.3+) allow you to do?",
+            "o": [
+                "Treat T as an integer",
+                "Use Enum static methods like Enum.GetNames(typeof(T)) without reflection overhead",
+                "Constrain T to be a nullable enum",
+                "Convert T to string implicitly"
+            ],
+            "a": 1,
+            "e": "Constraining to `System.Enum` allows calling `Enum` static methods (e.g., `Enum.GetNames`, `Enum.IsDefined`, `Enum.Parse`) directly with type safety and better performance than reflection on `typeof(T)`."
+        },
+        {
+            "q": "Which constraint is implicitly applied to a type parameter used in a `foreach` iteration variable pattern (C# 9.0+ `GetEnumerator` pattern)?",
+            "o": [
+                "where T : IEnumerable",
+                "where T : IEnumerator",
+                "No specific constraint is required by the language syntax, the type must simply have a GetEnumerator method",
+                "where T : class"
+            ],
+            "a": 2,
+            "e": "C# uses duck typing for `foreach` and collection expressions. The type does not need to implement `IEnumerable` or have a specific constraint; it just needs an accessible `GetEnumerator` method returning a type with `MoveNext` and `Current`."
+        },
+        {
+            "q": "What happens if you specify `where T : BaseClass` and `BaseClass` is `sealed`?",
+            "o": [
+                "Compiler error: Cannot use sealed class as constraint",
+                "Compiler warning: Constraint effectively restricts T to BaseClass only",
+                "Runtime exception",
+                "T can be any class inheriting from BaseClass"
+            ],
+            "a": 1,
+            "e": "If the base class is `sealed`, no other class can inherit from it. The compiler emits a warning (CS0702) indicating the constraint forces `T` to be exactly `BaseClass`."
+        },
+        {
+            "q": "How do you constrain a type parameter to be a specific delegate type, e.g., `Action<int>`?",
+            "o": [
+                "where T : Action<int>",
+                "where T : delegate Action<int>",
+                "where T : Delegate",
+                "You cannot constrain to a specific constructed delegate type"
+            ],
+            "a": 3,
+            "e": "You can constrain to `System.Delegate` or `System.MulticastDelegate`, but you cannot constrain to a specific constructed delegate type like `Action<int>` or `Func<string, bool>`."
+        },
+        {
+            "q": "What is the 'naked type parameter' constraint `where T : U` used for?",
+            "o": [
+                "To specify T must be a base class of U",
+                "To specify T must be a value type",
+                "To specify T must derive from or be the same as the type argument supplied for U",
+                "To specify T and U are the same type"
+            ],
+            "a": 2,
+            "e": "The naked type parameter constraint `where T : U` means the type argument for `T` must be the same as, or derive from, the type argument supplied for `U`. Useful for relationships between multiple generic parameters."
+        },
+        {
+            "q": "Which constraint allows using the `==` and `!=` operators on a generic type parameter `T` with reference semantics (C# 7.3+)?",
+            "o": [
+                "where T : class",
+                "where T : IEquatable",
+                "where T : unmanaged",
+                "where T : System.Delegate"
+            ],
+            "a": 0,
+            "e": "With `where T : class`, the compiler knows `T` is a reference type, allowing reference equality comparison using `==` and `!=`. Without it, `T` could be a value type where operators might be overloaded or structs that don't support `==` by default."
+        }
+    ]
+}
