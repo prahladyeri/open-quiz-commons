@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is a delegate in C#?",
+            "o": [
+                "A reference type that holds a reference to a method",
+                "A keyword used to declare events",
+                "A class that encapsulates a method call",
+                "An interface with a single method"
+            ],
+            "a": 0,
+            "e": "A delegate is a type-safe function pointer that references methods with a specific signature."
+        },
+        {
+            "q": "Which keyword is used to declare a delegate type?",
+            "o": [
+                "delegate",
+                "event",
+                "lambda",
+                "func"
+            ],
+            "a": 0,
+            "e": "The 'delegate' keyword declares a delegate type. 'event' declares an event, 'lambda' is not a keyword, 'Func' is a predefined generic delegate."
+        },
+        {
+            "q": "What is a multicast delegate?",
+            "o": [
+                "A delegate that can reference multiple methods",
+                "A delegate that returns multiple values",
+                "A delegate used for asynchronous calls",
+                "A delegate that accepts multiple parameters"
+            ],
+            "a": 0,
+            "e": "A multicast delegate holds references to more than one method. When invoked, all methods in the invocation list are called sequentially."
+        },
+        {
+            "q": "What is the difference between a delegate and an event?",
+            "o": [
+                "Events can only be invoked from within the declaring class, while delegates can be invoked from anywhere",
+                "Delegates are used for callbacks, events are used for notifications",
+                "Events are a wrapper around delegates that restrict subscription and invocation",
+                "There is no difference; they are synonyms"
+            ],
+            "a": 2,
+            "e": "An event is a language construct that encapsulates a delegate, allowing only += and -= operations from outside the class, and invocation only from within."
+        },
+        {
+            "q": "Which of the following is the correct syntax for a lambda expression that takes an int and returns its square?",
+            "o": [
+                "x => x * x",
+                "delegate(int x) { return x * x; }",
+                "int x => x * x",
+                "lambda x: x * x"
+            ],
+            "a": 0,
+            "e": "Lambda syntax uses the => operator. The left side are parameters, the right side is the expression or statement block."
+        },
+        {
+            "q": "What are Func and Action in the .NET Framework?",
+            "o": [
+                "Predefined generic delegate types",
+                "Keywords for defining lambdas",
+                "Base classes for all delegates",
+                "Attributes applied to delegate declarations"
+            ],
+            "a": 0,
+            "e": "Func<TResult> and Action are predefined generic delegates in System namespace. Func returns a value, Action returns void."
+        },
+        {
+            "q": "What is the standard signature for an event handler in .NET?",
+            "o": [
+                "void Handler(object sender, EventArgs e)",
+                "void Handler(object sender, object e)",
+                "delegate void Handler(object sender, EventArgs e)",
+                "event void Handler(object sender, EventArgs e)"
+            ],
+            "a": 0,
+            "e": "The conventional event handler pattern uses object sender and EventArgs e (or a derived class)."
+        },
+        {
+            "q": "How do you subscribe to an event using a lambda expression?",
+            "o": [
+                "obj.Event += (sender, e) => { /* handler */ };",
+                "obj.Event = (sender, e) => { /* handler */ };",
+                "obj.Event += delegate(sender, e) => { /* handler */ };",
+                "obj.Event.Subscribe((sender, e) => { /* handler */ });"
+            ],
+            "a": 0,
+            "e": "Use += to add a lambda as an event handler. Assignment (=) would replace all handlers, and Subscribe is not a standard method."
+        },
+        {
+            "q": "What is a closure in the context of lambda expressions?",
+            "o": [
+                "A lambda that captures variables from its enclosing scope",
+                "A delegate that refers to a static method",
+                "An event that never unsubscribes",
+                "A delegate that returns a reference to itself"
+            ],
+            "a": 0,
+            "e": "A closure occurs when a lambda captures and retains references to variables from the surrounding lexical scope, extending their lifetime."
+        },
+        {
+            "q": "Which statement about delegate covariance and contravariance is true?",
+            "o": [
+                "Delegate return types are covariant; parameter types are contravariant",
+                "Delegate return types are contravariant; parameter types are covariant",
+                "Delegates are invariant in both return and parameter types",
+                "Only generic delegates support variance"
+            ],
+            "a": 0,
+            "e": "In C#, delegate return types are covariant (can return a more derived type) and parameter types are contravariant (can accept a less derived type)."
+        },
+        {
+            "q": "What is the purpose of the 'event' keyword when applied to a delegate field?",
+            "o": [
+                "It restricts external code to only adding or removing handlers, not invoking or clearing the delegate",
+                "It makes the delegate thread-safe",
+                "It automatically creates an EventArgs subclass",
+                "It allows the delegate to be serialized"
+            ],
+            "a": 0,
+            "e": "The event keyword encapsulates a delegate, exposing only += and -= operators to outside code, preventing direct invocation or assignment."
+        },
+        {
+            "q": "How can you safely raise an event in a thread-safe manner without a race condition?",
+            "o": [
+                "Copy the event to a local variable before checking for null and invoking",
+                "Lock the event object before invocation",
+                "Use Interlocked.CompareExchange on the event field",
+                "Events are inherently thread-safe; no extra steps needed"
+            ],
+            "a": 0,
+            "e": "The standard pattern: var handler = Event; if (handler != null) handler(this, e); This avoids a race where the last subscriber unsubscribes after the null check but before invocation."
+        },
+        {
+            "q": "What is the difference between an anonymous method and a lambda expression?",
+            "o": [
+                "Lambda expressions are more concise and can be converted to expression trees; anonymous methods use the 'delegate' keyword",
+                "Anonymous methods can capture variables, lambdas cannot",
+                "Lambdas are only for Func/Action; anonymous methods work with any delegate",
+                "There is no difference; they compile to the same IL"
+            ],
+            "a": 0,
+            "e": "Lambdas (=>) are syntactic sugar introduced in C# 3.0, more concise, and can be compiled to expression trees. Anonymous methods (delegate { }) are older syntax from C# 2.0."
+        },
+        {
+            "q": "Which of the following creates an expression tree rather than a delegate?",
+            "o": [
+                "Expression<Func<int, int>> expr = x => x * x;",
+                "Func<int, int> del = x => x * x;",
+                "Action<int> act = x => Console.WriteLine(x);",
+                "Predicate<int> pred = x => x > 0;"
+            ],
+            "a": 0,
+            "e": "Assigning a lambda to an Expression<TDelegate> creates an expression tree (data structure). Assigning to a delegate type creates a compiled delegate."
+        },
+        {
+            "q": "What happens if an event subscriber throws an exception during event invocation?",
+            "o": [
+                "The exception propagates up, and remaining subscribers are not called",
+                "The exception is caught and ignored; remaining subscribers are called",
+                "The runtime wraps exceptions in an AggregateException",
+                "The event invocation stops, but the exception is logged automatically"
+            ],
+            "a": 0,
+            "e": "When a multicast delegate is invoked, if a subscriber throws, the exception propagates immediately and subsequent subscribers in the invocation list are not executed."
+        },
+        {
+            "q": "How do you unsubscribe a lambda expression from an event?",
+            "o": [
+                "You must store the lambda in a variable first, then use -= with that variable",
+                "You can unsubscribe by writing the same lambda again: obj.Event -= (s, e) => { };",
+                "Lambdas cannot be unsubscribed; only named methods can",
+                "Use obj.Event.Remove((s, e) => { });"
+            ],
+            "a": 0,
+            "e": "Each lambda expression creates a distinct delegate instance. To unsubscribe, you must reference the exact same delegate instance, so store the lambda in a field or variable."
+        }
+    ]
+}
