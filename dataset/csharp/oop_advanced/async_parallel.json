@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the return type of an async method that does not return a value?",
+            "o": [
+                "void",
+                "Task",
+                "Task<void>",
+                "ValueTask"
+            ],
+            "a": 1,
+            "e": "Async methods that do not return a value should return Task. Returning void prevents the caller from awaiting the method and makes exception handling difficult."
+        },
+        {
+            "q": "Which method should be used to avoid capturing the current SynchronizationContext when awaiting a Task?",
+            "o": [
+                "Task.Run()",
+                "ConfigureAwait(false)",
+                "Task.Yield()",
+                "Task.Delay(0)"
+            ],
+            "a": 1,
+            "e": "ConfigureAwait(false) instructs the awaiter not to capture and marshal back to the original SynchronizationContext, improving performance and avoiding deadlocks in library code."
+        },
+        {
+            "q": "What happens to exceptions thrown in an async void method?",
+            "o": [
+                "They are caught by the nearest try/catch block.",
+                "They are stored in the returned Task.",
+                "They are raised on the SynchronizationContext or ThreadPool, potentially crashing the application.",
+                "They are silently ignored."
+            ],
+            "a": 2,
+            "e": "Exceptions in async void methods are not captured in a Task. They are posted to the SynchronizationContext (UI thread) or the ThreadPool, often resulting in an unhandled exception that terminates the process."
+        },
+        {
+            "q": "What is the primary difference between Task.Run and Task.Factory.StartNew?",
+            "o": [
+                "Task.Run is synchronous; StartNew is asynchronous.",
+                "Task.Run defaults to TaskScheduler.Default (ThreadPool); StartNew defaults to TaskScheduler.Current.",
+                "Task.Run accepts Action only; StartNew accepts Func<Task>.",
+                "There is no difference; they are aliases."
+            ],
+            "a": 1,
+            "e": "Task.Run uses TaskScheduler.Default (ThreadPool) by default, making it safer for offloading work. Task.Factory.StartNew captures TaskScheduler.Current, which can lead to unexpected behavior if called on a UI thread."
+        },
+        {
+            "q": "How does Parallel.ForEach handle the degree of parallelism by default?",
+            "o": [
+                "It uses exactly one thread.",
+                "It uses the maximum number of threads available in the ThreadPool.",
+                "It uses a heuristic based on workload and core count, adjustable via MaxDegreeOfParallelism.",
+                "It creates a new thread for every item."
+            ],
+            "a": 2,
+            "e": "Parallel.ForEach dynamically adjusts the number of threads based on the workload and system resources. MaxDegreeOfParallelism can limit this."
+        },
+        {
+            "q": "Which type is the recommended return type for an async method that returns a value in high-performance scenarios to avoid allocations?",
+            "o": [
+                "Task<TResult>",
+                "ValueTask<TResult>",
+                "Task",
+                "TResult"
+            ],
+            "a": 1,
+            "e": "ValueTask<TResult> is a struct that can avoid heap allocation when the result is available synchronously or when using pooled objects (e.g., IValueTaskSource)."
+        },
+        {
+            "q": "What is the result of awaiting Task.WhenAll if one of the provided tasks faults?",
+            "o": [
+                "It returns immediately with the first exception.",
+                "It waits for all tasks to complete, then throws an AggregateException containing all exceptions.",
+                "It throws the first exception immediately and cancels the other tasks.",
+                "It completes successfully ignoring the faulted task."
+            ],
+            "a": 1,
+            "e": "Task.WhenAll waits for all tasks to finish. If any fault, it throws an AggregateException containing all exceptions from all faulted tasks (though `await` unwraps the first one)."
+        },
+        {
+            "q": "Which interface must a class implement to support asynchronous disposal (await using)?",
+            "o": [
+                "IDisposable",
+                "IAsyncDisposable",
+                "IAsyncEnumerable",
+                "IValueTaskSource"
+            ],
+            "a": 1,
+            "e": "IAsyncDisposable provides the DisposeAsync method, allowing resource cleanup that requires asynchronous operations (e.g., flushing buffers)."
+        },
+        {
+            "q": "What does the CancellationToken.None represent?",
+            "o": [
+                "A token that is already cancelled.",
+                "A token that can never be cancelled.",
+                "A token linked to the parent operation.",
+                "A token that throws OperationCanceledException immediately."
+            ],
+            "a": 1,
+            "e": "CancellationToken.None is a default empty struct representing a token that will never be cancelled. It is used when cancellation is not supported."
+        },
+        {
+            "q": "In PLINQ (Parallel LINQ), what does AsOrdered() do?",
+            "o": [
+                "Sorts the results ascending.",
+                "Preserves the ordering of the source sequence in the output, potentially reducing performance.",
+                "Orders the execution of threads.",
+                "Throws if the source is not ordered."
+            ],
+            "a": 1,
+            "e": "AsOrdered forces PLINQ to buffer and reorder results to match the source sequence order, which adds overhead compared to unordered execution."
+        },
+        {
+            "q": "What is the behavior of 'await foreach' when iterating an IAsyncEnumerable?",
+            "o": [
+                "It blocks the thread until the entire collection is loaded.",
+                "It asynchronously waits for each element to be produced by the enumerator.",
+                "It runs the enumeration in parallel on multiple threads.",
+                "It converts the stream to a List<T> first."
+            ],
+            "a": 1,
+            "e": "await foreach consumes an IAsyncEnumerable by asynchronously awaiting each MoveNextAsync call, allowing backpressure and non-blocking iteration."
+        },
+        {
+            "q": "Why is 'async void' generally discouraged except for event handlers?",
+            "o": [
+                "It is slower than async Task.",
+                "It prevents the caller from awaiting the operation and complicates error handling.",
+                "It does not support cancellation tokens.",
+                "It cannot use the await keyword."
+            ],
+            "a": 1,
+            "e": "Async void methods cannot be awaited, exceptions escape the method context (crashing apps), and callers cannot track completion. They exist solely for event handler signatures."
+        },
+        {
+            "q": "What is the purpose of Task.Yield()?",
+            "o": [
+                "To cancel the current task.",
+                "To force the method to run synchronously.",
+                "To asynchronously yield control back to the current context/scheduler, allowing other work to run.",
+                "To create a completed task."
+            ],
+            "a": 2,
+            "e": "Task.Yield() creates an awaitable that yields control to the current SynchronizationContext or TaskScheduler, useful for keeping UI responsive or forcing async execution."
+        },
+        {
+            "q": "When using Task.WhenAny, what happens to the other tasks that are not the first to complete?",
+            "o": [
+                "They are automatically cancelled.",
+                "They continue running in the background.",
+                "They are disposed immediately.",
+                "They throw TaskCanceledException."
+            ],
+            "a": 1,
+            "e": "Task.WhenAny completes when the first task finishes. The remaining tasks continue executing; it is the developer's responsibility to await or handle them later to avoid unobserved exceptions."
+        },
+        {
+            "q": "What is the correct way to report progress from a background task to the UI thread using the standard library?",
+            "o": [
+                "Pass a UI control reference to the task.",
+                "Use Task.Run with Dispatcher.Invoke.",
+                "Use IProgress<T> / Progress<T> which captures the SynchronizationContext at construction.",
+                "Use a static ConcurrentQueue."
+            ],
+            "a": 2,
+            "e": "Progress<T> captures the SynchronizationContext (e.g., UI thread) when instantiated. Calling Report() marshals the callback to that context, making it thread-safe for UI updates."
+        },
+        {
+            "q": "Which statement about 'async' and 'await' keywords is true?",
+            "o": [
+                "'async' makes a method run on a background thread automatically.",
+                "'await' blocks the calling thread until the task completes.",
+                "'async' enables the 'await' keyword and causes the compiler to generate a state machine.",
+                "'await' can be used in any method without the 'async' modifier."
+            ],
+            "a": 2,
+            "e": "The 'async' modifier tells the compiler to rewrite the method into a state machine. It does not inherently make code run in parallel. 'await' asynchronously yields control, it does not block."
+        }
+    ]
+}

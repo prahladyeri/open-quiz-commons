@@ -1204,7 +1204,7 @@
                 {
                     "name": "Object-Oriented & Advanced C#",
                     "slug": "oop_advanced",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Classes, Structs & Records",
