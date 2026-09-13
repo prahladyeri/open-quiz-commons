@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "How many generations does the .NET Garbage Collector use by default to organize objects on the managed heap?",
+            "o": [
+                "Two (Gen 0 and Gen 1)",
+                "Three (Gen 0, Gen 1, and Gen 2)",
+                "Four (Gen 0, Gen 1, Gen 2, and Gen 3)",
+                "One (Gen 0 only)"
+            ],
+            "a": 1,
+            "e": "The .NET GC uses three generations: Generation 0 (short-lived objects), Generation 1 (short-lived objects that survived Gen 0), and Generation 2 (long-lived objects)."
+        },
+        {
+            "q": "Which generation is collected most frequently by the Garbage Collector?",
+            "o": [
+                "Generation 2",
+                "Generation 1",
+                "Generation 0",
+                "Large Object Heap (LOH)"
+            ],
+            "a": 2,
+            "e": "Generation 0 is collected most frequently because it contains newly allocated, short-lived objects (ephemeral segment)."
+        },
+        {
+            "q": "What is the size threshold (approximate) for an object to be allocated on the Large Object Heap (LOH) instead of the Small Object Heap (SOH)?",
+            "o": [
+                "16 KB",
+                "64 KB",
+                "85 KB",
+                "1 MB"
+            ],
+            "a": 2,
+            "e": "Objects that are 85,000 bytes (approx 85 KB) or larger are allocated on the Large Object Heap (LOH)."
+        },
+        {
+            "q": "Which interface should a class implement to release unmanaged resources deterministically?",
+            "o": [
+                "ICloneable",
+                "IDisposable",
+                "IComparable",
+                "IEquatable"
+            ],
+            "a": 1,
+            "e": "IDisposable provides the Dispose() method for deterministic cleanup of unmanaged resources. The GC does not call Dispose() automatically."
+        },
+        {
+            "q": "What is the purpose of the `GC.SuppressFinalize(this)` call inside a `Dispose()` method?",
+            "o": [
+                "To force an immediate garbage collection",
+                "To promote the object to Generation 2",
+                "To prevent the finalizer from running a second time",
+                "To pin the object in memory"
+            ],
+            "a": 2,
+            "e": "If Dispose() has already cleaned up unmanaged resources, calling GC.SuppressFinalize tells the GC not to call the object's finalizer (~ClassName), improving performance."
+        },
+        {
+            "q": "Which GC mode is optimized for applications with a user interface to minimize pause times?",
+            "o": [
+                "Server GC",
+                "Workstation GC (Concurrent)",
+                "Background GC (Server)",
+                "No GC"
+            ],
+            "a": 1,
+            "e": "Workstation GC with concurrent mode enabled (default for client apps) performs collections on a background thread to keep the UI responsive."
+        },
+        {
+            "q": "What happens during the 'Mark' phase of the Garbage Collection algorithm?",
+            "o": [
+                "Memory is compacted and pointers are updated",
+                "The GC identifies all objects still reachable from roots",
+                "Finalizers are queued for execution",
+                "Memory is returned to the OS"
+            ],
+            "a": 1,
+            "e": "The Mark phase traverses the object graph from GC roots (stack, statics, CPU registers) marking all reachable objects as live."
+        },
+        {
+            "q": "What is a 'GC Root'?",
+            "o": [
+                "An object allocated on the Large Object Heap",
+                "A reference held by the finalizer thread",
+                "A storage location that the GC considers a starting point for reachability analysis (e.g., local variables, static fields)",
+                "The internal data structure managing generations"
+            ],
+            "a": 2,
+            "e": "GC Roots include stack variables, static fields, CPU registers, and pinned handles. Objects reachable from roots cannot be collected."
+        },
+        {
+            "q": "Which method allows you to explicitly request a Garbage Collection (though generally discouraged)?",
+            "o": [
+                "GC.Collect()",
+                "GC.WaitForPendingFinalizers()",
+                "GC.KeepAlive()",
+                "GC.AddMemoryPressure()"
+            ],
+            "a": 0,
+            "e": "GC.Collect() forces a collection. It accepts an optional generation parameter. It is rarely needed in production code."
+        },
+        {
+            "q": "What is the primary difference between the Small Object Heap (SOH) and the Large Object Heap (LOH) regarding memory compaction?",
+            "o": [
+                "LOH is compacted every Gen 0 collection; SOH is never compacted",
+                "SOH is compacted during collections; LOH is not compacted by default (prior to .NET 4.5.1/5.0 options)",
+                "Both are compacted simultaneously",
+                "Compaction only happens on Generation 2 collections for both"
+            ],
+            "a": 1,
+            "e": "Historically, the LOH was not compacted to avoid the performance cost of moving large memory blocks. .NET 4.5.1 introduced GCSettings.LargeObjectHeapCompactionMode to opt-in. The SOH is compacted regularly."
+        },
+        {
+            "q": "What does the `GC.KeepAlive(object)` method prevent?",
+            "o": [
+                "The object from being promoted to Gen 2",
+                "The object from being allocated on the LOH",
+                "The object from being collected prematurely while a method is still using it (e.g., via an unmanaged pointer)",
+                "The finalizer from running"
+            ],
+            "a": 2,
+            "e": "GC.KeepAlive creates a reference to the object until the method call, preventing the JIT/GC from optimizing away the reference and collecting the object while it is still in use by unmanaged code."
+        },
+        {
+            "q": "In .NET Core / .NET 5+, which GC mode is the default for Server applications (e.g., ASP.NET Core)?",
+            "o": [
+                "Workstation GC (Concurrent)",
+                "Workstation GC (Non-Concurrent)",
+                "Server GC (Background)",
+                "Server GC (Non-Concurrent)"
+            ],
+            "a": 2,
+            "e": "Server GC is the default for ASP.NET Core apps. It creates a heap per logical CPU and uses Background GC by default for Gen 2 collections."
+        },
+        {
+            "q": "What is 'Memory Pressure' in the context of the GC?",
+            "o": [
+                "High CPU usage caused by the GC",
+                "A hint to the GC that unmanaged memory has been allocated, prompting it to run collections more frequently",
+                "The amount of memory used by the JIT compiler",
+                "The size of the Generation 0 budget"
+            ],
+            "a": 1,
+            "e": "GC.AddMemoryPressure informs the GC about unmanaged memory allocations (e.g., via P/Invoke) so it can schedule collections appropriately, as the GC only tracks managed memory size."
+        },
+        {
+            "q": "Which of the following statements about Finalizers (Destructors in C#) is TRUE?",
+            "o": [
+                "They run immediately when an object goes out of scope",
+                "They run on a dedicated Finalizer thread, at an indeterminate time after the object becomes unreachable",
+                "They are guaranteed to run in the order of object creation",
+                "They can safely access other managed objects that also have finalizers"
+            ],
+            "a": 1,
+            "e": "Finalizers run non-deterministically on the Finalizer thread. Accessing other finalizable objects is unsafe because they may have already been finalized."
+        },
+        {
+            "q": "What is the purpose of `GCHandleType.Pinned`?",
+            "o": [
+                "To prevent the object from being promoted to Gen 1",
+                "To prevent the GC from moving the object in memory (required for passing buffers to unmanaged code)",
+                "To pin the object in Generation 0 permanently",
+                "To mark the object as a GC Root"
+            ],
+            "a": 1,
+            "e": "Pinned handles prevent the compacting collector from relocating the object. This is essential when passing a managed array/buffer pointer to unmanaged APIs (P/Invoke). Overuse fragments the heap."
+        },
+        {
+            "q": "What does the `System.GC.GetTotalMemory(bool forceFullCollection)` method return?",
+            "o": [
+                "The total virtual memory reserved by the process",
+                "The number of bytes currently allocated on the managed heap",
+                "The size of the Large Object Heap only",
+                "The amount of free memory available to the OS"
+            ],
+            "a": 1,
+            "e": "GetTotalMemory returns the number of bytes currently thought to be allocated on the managed heap. If forceFullCollection is true, it waits for a GC to finish before returning."
+        }
+    ]
+}
