@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is NuGet?",
+            "o": [
+                "A build automation tool for .NET",
+                "A package manager for .NET libraries and tools",
+                "A testing framework for .NET applications",
+                "A compiler for C# code"
+            ],
+            "a": 1,
+            "e": "NuGet is the package manager for .NET, used to create, share, and consume reusable code libraries (packages)."
+        },
+        {
+            "q": "Which .NET CLI command installs a NuGet package into a project?",
+            "o": [
+                "dotnet add package",
+                "dotnet install package",
+                "dotnet get package",
+                "dotnet restore package"
+            ],
+            "a": 0,
+            "e": "`dotnet add package <PACKAGE_ID>` adds a package reference to the project file and restores it."
+        },
+        {
+            "q": "In modern .NET projects (SDK-style), package references are stored in which file?",
+            "o": [
+                "packages.config",
+                "project.json",
+                "The .csproj file (PackageReference)",
+                "nuget.config"
+            ],
+            "a": 2,
+            "e": "SDK-style projects use <PackageReference> elements directly in the .csproj file. packages.config is legacy."
+        },
+        {
+            "q": "Where does NuGet store downloaded packages globally on a machine (default global-packages folder)?",
+            "o": [
+                "C:\\Program Files\\NuGet\\Packages",
+                "%USERPROFILE%\\.nuget\\packages",
+                "%APPDATA%\\NuGet\\Packages",
+                "C:\\NuGetCache"
+            ],
+            "a": 1,
+            "e": "The default global packages folder is `%USERPROFILE%\\.nuget\\packages` on Windows and `~/.nuget/packages` on macOS/Linux."
+        },
+        {
+            "q": "Which command creates a NuGet package (.nupkg) from a .NET project?",
+            "o": [
+                "dotnet build",
+                "dotnet pack",
+                "dotnet publish",
+                "dotnet create package"
+            ],
+            "a": 1,
+            "e": "`dotnet pack` builds the project and creates a .nupkg file in the output directory (usually bin/Debug or bin/Release)."
+        },
+        {
+            "q": "What versioning scheme does NuGet recommend and primarily use?",
+            "o": [
+                "Calendar Versioning (CalVer)",
+                "Semantic Versioning (SemVer)",
+                "Sequential Versioning (1, 2, 3...)",
+                "Date-based Versioning (YYYY.MM.DD)"
+            ],
+            "a": 1,
+            "e": "NuGet follows Semantic Versioning (Major.Minor.Patch[-prerelease][+build]) for package versions."
+        },
+        {
+            "q": "What is the purpose of a .nuspec file?",
+            "o": [
+                "To define project build settings",
+                "To specify package metadata and contents for packing",
+                "To configure NuGet source URLs",
+                "To lock package versions for deterministic builds"
+            ],
+            "a": 1,
+            "e": "A .nuspec file is an XML manifest that describes a package's metadata (ID, version, authors, dependencies) and file contents. It can be used with `nuget pack` or referenced during `dotnet pack`."
+        },
+        {
+            "q": "Which command restores all NuGet packages for a solution or project?",
+            "o": [
+                "dotnet restore",
+                "dotnet install",
+                "dotnet update",
+                "dotnet get packages"
+            ],
+            "a": 0,
+            "e": "`dotnet restore` downloads and installs all packages listed in the project files. It runs implicitly on `dotnet build` and `dotnet run` but can be called explicitly."
+        },
+        {
+            "q": "How do you configure a private NuGet feed (e.g., Azure Artifacts, MyGet) for a solution?",
+            "o": [
+                "Add a <PackageSource> in the project .csproj",
+                "Add a packageSource entry in a nuget.config file",
+                "Set the NUGET_FEED environment variable",
+                "Use the --source flag on every dotnet add package command"
+            ],
+            "a": 1,
+            "e": "A `nuget.config` file (placed in the solution directory or user scope) defines package sources via <packageSources>. This applies to all projects in that scope."
+        },
+        {
+            "q": "What is the key difference between `packages.config` and `PackageReference`?",
+            "o": [
+                "packages.config supports transitive dependencies; PackageReference does not",
+                "PackageReference is used in .NET Framework projects only",
+                "packages.config manages packages per project with a separate file; PackageReference adds references directly in the project file",
+                "There is no difference; they are interchangeable"
+            ],
+            "a": 2,
+            "e": "`packages.config` is an XML file used in older project formats, while `PackageReference` is the modern approach where references are MSBuild items inside the .csproj/.vbproj file."
+        },
+        {
+            "q": "Which command publishes a NuGet package to a feed (like nuget.org)?",
+            "o": [
+                "dotnet publish",
+                "dotnet nuget push",
+                "dotnet deploy package",
+                "nuget push"
+            ],
+            "a": 1,
+            "e": "`dotnet nuget push <PACKAGE_PATH> --source <SOURCE_URL> --api-key <KEY>` pushes a .nupkg to a NuGet server. `nuget push` is the legacy CLI equivalent."
+        },
+        {
+            "q": "What is the official public NuGet package source URL?",
+            "o": [
+                "https://www.nuget.org/api/v2",
+                "https://api.nuget.org/v3/index.json",
+                "https://nuget.org/packages",
+                "https://pkgs.nuget.org"
+            ],
+            "a": 1,
+            "e": "The official v3 API endpoint is `https://api.nuget.org/v3/index.json`. The v2 endpoint is deprecated but still works."
+        },
+        {
+            "q": "How do you specify that a package dependency should accept any version from 1.0.0 up to but not including 2.0.0?",
+            "o": [
+                "Version=\"1.0.0 - 2.0.0\"",
+                "Version=\"[1.0.0, 2.0.0)\"",
+                "Version=\"1.0.0 || 2.0.0\"",
+                "Version=\"^1.0.0\""
+            ],
+            "a": 1,
+            "e": "NuGet uses bracket notation for version ranges: `[1.0.0, 2.0.0)` means >=1.0.0 and <2.0.0. Parentheses `()` indicate exclusive bounds."
+        },
+        {
+            "q": "What is a symbol package (.snupkg) used for?",
+            "o": [
+                "To distribute the package source code only",
+                "To provide debugging symbols (PDB files) for a package",
+                "To sign the package with a strong name",
+                "To reduce the package size by removing metadata"
+            ],
+            "a": 1,
+            "e": "A `.snupkg` contains PDB files (and optionally source) enabling debugging into package code. It is uploaded alongside the .nupkg to symbol servers."
+        },
+        {
+            "q": "Which command lists packages that have newer versions available in a project?",
+            "o": [
+                "dotnet list package --outdated",
+                "dotnet outdated",
+                "dotnet check updates",
+                "dotnet nuget list updates"
+            ],
+            "a": 0,
+            "e": "`dotnet list package --outdated` shows a table of top-level packages with newer versions available from configured sources."
+        },
+        {
+            "q": "What does the `dotnet nuget locals all --clear` command do?",
+            "o": [
+                "Removes all package references from the current project",
+                "Clears all NuGet caches (global-packages, http-cache, temp, plugins-cache)",
+                "Uninstalls NuGet from the machine",
+                "Deletes the nuget.config file"
+            ],
+            "a": 1,
+            "e": "This command clears all local NuGet caches, which can resolve issues with stale or corrupted downloaded packages."
+        }
+    ]
+}
