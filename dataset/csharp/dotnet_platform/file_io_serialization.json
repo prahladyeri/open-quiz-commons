@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which namespace contains the primary types for file I/O operations in .NET?",
+            "o": [
+                "System.IO",
+                "System.FileSystem",
+                "System.Files",
+                "System.Storage"
+            ],
+            "a": 0,
+            "e": "System.IO contains classes like File, Directory, FileStream, StreamReader, and StreamWriter for file and stream operations."
+        },
+        {
+            "q": "What is the recommended way to read all text from a file asynchronously in modern .NET?",
+            "o": [
+                "File.ReadAllTextAsync(path)",
+                "await File.ReadAllTextAsync(path)",
+                "File.OpenText(path).ReadToEndAsync()",
+                "new StreamReader(path).ReadToEndAsync()"
+            ],
+            "a": 1,
+            "e": "File.ReadAllTextAsync returns a Task<string> and must be awaited. It was added in .NET Core 2.1 / .NET Standard 2.1."
+        },
+        {
+            "q": "Which class provides a forward-only reader for UTF-8 encoded text files with high performance?",
+            "o": [
+                "StreamReader",
+                "FileStream",
+                "Utf8JsonReader",
+                "StringReader"
+            ],
+            "a": 0,
+            "e": "StreamReader is the standard text reader. Utf8JsonReader is for JSON token parsing, not general text file reading."
+        },
+        {
+            "q": "When using FileStream, which FileMode creates a new file or overwrites an existing file?",
+            "o": [
+                "FileMode.Create",
+                "FileMode.CreateNew",
+                "FileMode.OpenOrCreate",
+                "FileMode.Append"
+            ],
+            "a": 0,
+            "e": "FileMode.Create creates a new file or truncates an existing file. CreateNew throws if the file exists. OpenOrCreate opens existing or creates new without truncating."
+        },
+        {
+            "q": "Which serialization library is the built-in default for JSON in .NET Core 3.0+ and .NET 5+?",
+            "o": [
+                "Newtonsoft.Json",
+                "System.Text.Json",
+                "DataContractJsonSerializer",
+                "JavaScriptSerializer"
+            ],
+            "a": 1,
+            "e": "System.Text.Json is the high-performance, built-in JSON serializer. Newtonsoft.Json (Json.NET) is a popular third-party alternative."
+        },
+        {
+            "q": "How do you configure System.Text.Json to write indented (pretty-printed) JSON?",
+            "o": [
+                "new JsonSerializerOptions { Indented = true }",
+                "new JsonSerializerOptions { WriteIndented = true }",
+                "JsonSerializer.Serialize(obj, prettyPrint: true)",
+                "JsonSerializerOptions.Default with { PrettyPrint = true }"
+            ],
+            "a": 1,
+            "e": "The property is WriteIndented (not Indented). Pass the options instance to JsonSerializer.Serialize."
+        },
+        {
+            "q": "Which attribute marks a property to be ignored during System.Text.Json serialization?",
+            "o": [
+                "[JsonIgnore]",
+                "[IgnoreDataMember]",
+                "[NonSerialized]",
+                "[JsonProperty(Required = Required.DisallowNull)]"
+            ],
+            "a": 0,
+            "e": "[JsonIgnore] is the System.Text.Json attribute. [IgnoreDataMember] is for DataContractSerializer. [NonSerialized] is for BinaryFormatter."
+        },
+        {
+            "q": "What is the correct way to serialize an object to a JSON file asynchronously?",
+            "o": [
+                "await File.WriteAllTextAsync(path, JsonSerializer.Serialize(obj))",
+                "await using var stream = File.Create(path); await JsonSerializer.SerializeAsync(stream, obj);",
+                "JsonSerializer.SerializeAsync(File.Create(path), obj)",
+                "File.WriteAllText(path, JsonSerializer.Serialize(obj))"
+            ],
+            "a": 1,
+            "e": "SerializeAsync writes directly to a stream asynchronously. It avoids allocating the full JSON string in memory. The stream should be disposed via await using."
+        },
+        {
+            "q": "Which class is used for binary serialization in .NET (legacy, not recommended for new development)?",
+            "o": [
+                "BinaryFormatter",
+                "BinarySerializer",
+                "BinaryWriter",
+                "ObjectSerializer"
+            ],
+            "a": 0,
+            "e": "BinaryFormatter (in System.Runtime.Serialization.Formatters.Binary) is obsolete and insecure. BinaryWriter writes primitives, not object graphs."
+        },
+        {
+            "q": "How do you get the directory portion of a file path in a platform-agnostic way?",
+            "o": [
+                "Path.GetDirectoryName(path)",
+                "Directory.GetParent(path).FullName",
+                "new FileInfo(path).DirectoryName",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "All three approaches work. Path.GetDirectoryName is the most direct. FileInfo and DirectoryInfo provide additional file system metadata."
+        },
+        {
+            "q": "Which method creates a directory recursively (including parent directories) if it doesn't exist?",
+            "o": [
+                "Directory.CreateDirectory(path)",
+                "Directory.Create(path)",
+                "Directory.EnsureExists(path)",
+                "new DirectoryInfo(path).Create()"
+            ],
+            "a": 0,
+            "e": "Directory.CreateDirectory creates all directories in the path. It returns a DirectoryInfo and does not throw if the directory already exists."
+        },
+        {
+            "q": "What is the purpose of FileOptions.Asynchronous when opening a FileStream?",
+            "o": [
+                "Enables async I/O at the OS level for better scalability",
+                "Makes all operations on the stream asynchronous automatically",
+                "Allows the file to be opened by multiple processes simultaneously",
+                "Forces the file to be opened in read-only mode"
+            ],
+            "a": 0,
+            "e": "FileOptions.Asynchronous (or FileShare.ReadWrite with async) enables overlapped I/O on Windows, improving scalability for high-concurrency async file operations."
+        },
+        {
+            "q": "Which interface should a class implement to support custom serialization with System.Text.Json?",
+            "o": [
+                "ISerializable",
+                "IJsonSerializable",
+                "IJsonOnSerializing",
+                "None - use JsonConverter<T> instead"
+            ],
+            "a": 3,
+            "e": "System.Text.Json does not use interface-based serialization callbacks. Custom serialization is done via JsonConverter<T> registered in JsonSerializerOptions."
+        },
+        {
+            "q": "How do you handle circular references when serializing object graphs with System.Text.Json?",
+            "o": [
+                "Set JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve",
+                "Add [JsonIgnore] to the back-reference property",
+                "Implement ISerializable",
+                "Use Newtonsoft.Json instead"
+            ],
+            "a": 0,
+            "e": "ReferenceHandler.Preserve (added in .NET 6) emits $id/$ref metadata to preserve object identity and handle cycles. IgnoreCycles is another option to simply skip cycles."
+        },
+        {
+            "q": "What is the difference between File.Copy and File.Move when the destination file already exists?",
+            "o": [
+                "Both throw IOException by default",
+                "Copy throws; Move overwrites by default",
+                "Copy overwrites by default; Move throws",
+                "Both overwrite by default"
+            ],
+            "a": 0,
+            "e": "Both File.Copy and File.Move throw IOException if the destination exists. Use the overload with overwrite: true to replace."
+        },
+        {
+            "q": "Which method reads a file line by line with minimal memory allocation using a struct enumerator?",
+            "o": [
+                "File.ReadLines(path)",
+                "File.ReadAllLines(path)",
+                "File.OpenText(path).ReadLine() in a loop",
+                "File.OpenRead(path) with StreamReader"
+            ],
+            "a": 0,
+            "e": "File.ReadLines returns IEnumerable<string> that streams lines lazily. ReadAllLines loads all lines into a string[] array. The struct enumerator (since .NET Core 2.1) avoids allocations."
+        }
+    ]
+}
