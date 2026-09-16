@@ -1241,7 +1241,7 @@
                 {
                     "name": ".NET Platform",
                     "slug": "dotnet_platform",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": ".NET Runtime & GC",

@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which attribute marks a test method in xUnit?",
+            "o": [
+                "[Test]",
+                "[Fact]",
+                "[TestMethod]",
+                "[TestCase]"
+            ],
+            "a": 1,
+            "e": "xUnit uses [Fact] for simple test methods. [Test] is NUnit/MSTest, [TestMethod] is MSTest, [TestCase] is NUnit parameterized tests."
+        },
+        {
+            "q": "Which attribute marks a parameterized test method in xUnit?",
+            "o": [
+                "[Theory]",
+                "[Fact]",
+                "[TestCase]",
+                "[DataRow]"
+            ],
+            "a": 0,
+            "e": "xUnit uses [Theory] combined with [InlineData], [MemberData], or [ClassData] for parameterized tests. [TestCase] and [DataRow] are NUnit/MSTest."
+        },
+        {
+            "q": "In NUnit, which attribute is used to specify test case data for a parameterized test?",
+            "o": [
+                "[InlineData]",
+                "[TestCase]",
+                "[DataRow]",
+                "[TestData]"
+            ],
+            "a": 1,
+            "e": "NUnit uses [TestCase] to provide inline arguments for a test method. [InlineData] is xUnit, [DataRow] is MSTest."
+        },
+        {
+            "q": "What is the xUnit equivalent of NUnit's [SetUp] attribute?",
+            "o": [
+                "[Fact]",
+                "[SetUp]",
+                "Constructor",
+                "[Before]"
+            ],
+            "a": 2,
+            "e": "xUnit uses the test class constructor for per-test initialization (equivalent to NUnit's [SetUp]). It does not have a [SetUp] attribute."
+        },
+        {
+            "q": "What is the xUnit equivalent of NUnit's [TearDown] attribute?",
+            "o": [
+                "Dispose pattern (IDisposable)",
+                "[TearDown]",
+                "Finalizer",
+                "[After]"
+            ],
+            "a": 0,
+            "e": "xUnit uses IDisposable on the test class for cleanup (equivalent to NUnit's [TearDown]). The Dispose method runs after each test."
+        },
+        {
+            "q": "Which assertion method is used in xUnit to check equality?",
+            "o": [
+                "Assert.AreEqual",
+                "Assert.Equal",
+                "Assert.That",
+                "Assert.IsTrue"
+            ],
+            "a": 1,
+            "e": "xUnit uses Assert.Equal(expected, actual). Assert.AreEqual is MSTest/NUnit classic, Assert.That is NUnit constraint model."
+        },
+        {
+            "q": "In NUnit's constraint model, which syntax is used to assert that a value equals 5?",
+            "o": [
+                "Assert.Equal(5, value)",
+                "Assert.AreEqual(5, value)",
+                "Assert.That(value, Is.EqualTo(5))",
+                "Assert.IsTrue(value == 5)"
+            ],
+            "a": 2,
+            "e": "NUnit's constraint model uses Assert.That(actual, constraint). Is.EqualTo(5) is the constraint."
+        },
+        {
+            "q": "How do you assert that an exception is thrown in xUnit?",
+            "o": [
+                "Assert.Throws<ExceptionType>(() => ...)",
+                "Assert.Throws(() => ..., typeof(ExceptionType))",
+                "Assert.Catch<ExceptionType>(() => ...)",
+                "Assert.ExpectException<ExceptionType>(() => ...)"
+            ],
+            "a": 0,
+            "e": "xUnit uses Assert.Throws<T>(delegate) which returns the caught exception for further inspection."
+        },
+        {
+            "q": "How do you assert that an exception is thrown in NUnit (constraint model)?",
+            "o": [
+                "Assert.Throws<ExceptionType>(() => ...)",
+                "Assert.That(() => ..., Throws.TypeOf<ExceptionType>())",
+                "Assert.Catch<ExceptionType>(() => ...)",
+                "Assert.ExpectException(() => ...)"
+            ],
+            "a": 1,
+            "e": "NUnit constraint model uses Assert.That(delegate, Throws.TypeOf<T>()) or Throws.InstanceOf<T>()."
+        },
+        {
+            "q": "Which attribute in NUnit marks a method to run once before all tests in a fixture?",
+            "o": [
+                "[SetUp]",
+                "[OneTimeSetUp]",
+                "[BeforeAll]",
+                "[FixtureSetUp]"
+            ],
+            "a": 1,
+            "e": "NUnit uses [OneTimeSetUp] (formerly [TestFixtureSetUp]) for fixture-level setup. [SetUp] runs before each test."
+        },
+        {
+            "q": "Which attribute in xUnit marks a method to run once before all tests in a test class?",
+            "o": [
+                "Constructor",
+                "[BeforeAll]",
+                "IClassFixture<T>",
+                "xUnit does not support this directly; use IClassFixture or collection fixtures"
+            ],
+            "a": 3,
+            "e": "xUnit intentionally omits [BeforeAll]/[AfterAll] attributes. Shared setup uses class constructors (per test) or IClassFixture/ICollectionFixture for shared context."
+        },
+        {
+            "q": "What is the purpose of the [Trait] attribute in xUnit?",
+            "o": [
+                "To categorize tests for filtering",
+                "To mark a test as ignored",
+                "To provide test data",
+                "To define a test timeout"
+            ],
+            "a": 0,
+            "e": "[Trait(\"Category\", \"Integration\")] adds metadata to tests, enabling filtering in test runners (e.g., dotnet test --filter Category=Integration)."
+        },
+        {
+            "q": "In NUnit, which attribute is used to ignore a test temporarily?",
+            "o": [
+                "[Ignore]",
+                "[Skip]",
+                "[Fact(Skip = \"...\")]",
+                "[Explicit]"
+            ],
+            "a": 0,
+            "e": "NUnit uses [Ignore(\"reason\")] to skip a test. [Explicit] requires explicit selection to run. xUnit uses [Fact(Skip = \"...\")]."
+        },
+        {
+            "q": "Which xUnit attribute allows sharing a fixture instance across multiple test classes?",
+            "o": [
+                "[SharedFixture]",
+                "IClassFixture<T>",
+                "ICollectionFixture<T>",
+                "[Collection(\"name\")]"
+            ],
+            "a": 2,
+            "e": "ICollectionFixture<T> shares a single fixture instance across all test classes in a collection. [Collection] defines the collection; IClassFixture shares per class."
+        },
+        {
+            "q": "What is the main difference between xUnit's [Fact] and [Theory]?",
+            "o": [
+                "[Fact] runs once; [Theory] runs multiple times with data",
+                "[Fact] is for synchronous tests; [Theory] is for async",
+                "[Fact] uses Arrange-Act-Assert; [Theory] uses Given-When-Then",
+                "There is no difference"
+            ],
+            "a": 0,
+            "e": "[Fact] denotes a single test case. [Theory] denotes a parameterized test that executes once per data set (via [InlineData], etc.)."
+        },
+        {
+            "q": "Which test runner command runs only tests with a specific trait in xUnit?",
+            "o": [
+                "dotnet test --filter \"Trait=Category=Unit\"",
+                "dotnet test --filter \"Category=Unit\"",
+                "dotnet test --trait Category=Unit",
+                "dotnet test --where \"Category=Unit\""
+            ],
+            "a": 0,
+            "e": "xUnit traits are filtered via `dotnet test --filter \"Trait=Category=Unit\"`. The filter syntax uses the trait name and value."
+        }
+    ]
+}
