@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "In ASP.NET Core, which method is used to configure the HTTP request pipeline?",
+            "o": [
+                "ConfigureServices",
+                "Configure",
+                "Main",
+                "Build"
+            ],
+            "a": 1,
+            "e": "The Configure method in the Startup class (or Program.cs in minimal APIs) is where middleware components are added to the request pipeline."
+        },
+        {
+            "q": "Where are services registered for Dependency Injection in ASP.NET Core?",
+            "o": [
+                "Configure method",
+                "ConfigureServices method",
+                "Main method",
+                "appsettings.json"
+            ],
+            "a": 1,
+            "e": "The ConfigureServices method (or WebApplicationBuilder.Services in .NET 6+) is used to register services with the built-in DI container."
+        },
+        {
+            "q": "What is the default configuration file name in ASP.NET Core?",
+            "o": [
+                "config.json",
+                "settings.json",
+                "appsettings.json",
+                "web.config"
+            ],
+            "a": 2,
+            "e": "ASP.NET Core uses appsettings.json by default for configuration settings. web.config is used for IIS integration only."
+        },
+        {
+            "q": "Which middleware component serves static files (CSS, JS, images) from the wwwroot folder?",
+            "o": [
+                "UseStaticFiles()",
+                "UseDefaultFiles()",
+                "UseFileServer()",
+                "UseDirectoryBrowser()"
+            ],
+            "a": 0,
+            "e": "UseStaticFiles() enables serving static files. UseDefaultFiles() serves default documents (index.html). UseFileServer() combines both."
+        },
+        {
+            "q": "In .NET 6+, what replaces the separate Program.cs and Startup.cs files?",
+            "o": [
+                "Minimal APIs only",
+                "Top-level statements in Program.cs",
+                "Global.asax",
+                "Web.config"
+            ],
+            "a": 1,
+            "e": ".NET 6 introduced top-level statements, allowing the entry point and service/pipeline configuration to reside in a single Program.cs file."
+        },
+        {
+            "q": "Which interface represents a component that processes HTTP requests in the middleware pipeline?",
+            "o": [
+                "IApplicationBuilder",
+                "IHttpContextAccessor",
+                "IMiddleware",
+                "IServiceProvider"
+            ],
+            "a": 2,
+            "e": "IMiddleware defines a middleware component with an InvokeAsync method. It supports per-request activation via DI."
+        },
+        {
+            "q": "What is the purpose of the 'UseRouting' middleware?",
+            "o": [
+                "To serve static files",
+                "To match incoming requests to endpoints",
+                "To handle authentication",
+                "To log requests"
+            ],
+            "a": 1,
+            "e": "UseRouting adds route matching to the pipeline. It selects an endpoint based on the request URL. UseEndpoints executes the selected endpoint."
+        },
+        {
+            "q": "Which attribute designates a class as a Controller in ASP.NET Core MVC?",
+            "o": [
+                "[Controller]",
+                "[ApiController]",
+                "[Route]",
+                "All of the above"
+            ],
+            "a": 0,
+            "e": "[Controller] marks a class as a controller. [ApiController] adds API-specific behaviors. [Route] defines routing templates."
+        },
+        {
+            "q": "How do you access a configuration value (e.g., 'ConnectionStrings:Default') in a controller?",
+            "o": [
+                "Configuration.GetConnectionString(\"Default\")",
+                "Configuration[\"ConnectionStrings:Default\"]",
+                "Both A and B work",
+                "Neither works"
+            ],
+            "a": 2,
+            "e": "IConfiguration supports both the indexer syntax and the GetConnectionString extension method for connection strings."
+        },
+        {
+            "q": "What is the lifetime of a service registered with 'AddScoped'?",
+            "o": [
+                "A new instance for every request",
+                "A single instance for the application lifetime",
+                "A new instance every time it is requested",
+                "A new instance per user session"
+            ],
+            "a": 0,
+            "e": "Scoped services are created once per client request (connection). Singleton is application-wide. Transient is every time requested."
+        },
+        {
+            "q": "Which method enables Razor Pages in an ASP.NET Core application?",
+            "o": [
+                "AddRazorPages()",
+                "AddMvc()",
+                "AddControllersWithViews()",
+                "AddRazorComponents()"
+            ],
+            "a": 0,
+            "e": "AddRazorPages() adds services for Razor Pages. AddControllersWithViews() is for MVC. AddRazorComponents() is for Blazor."
+        },
+        {
+            "q": "What does the [ApiController] attribute automatically handle?",
+            "o": [
+                "Model validation (returns 400 on invalid model)",
+                "Authentication",
+                "Authorization",
+                "CORS policies"
+            ],
+            "a": 0,
+            "e": "[ApiController] enables automatic HTTP 400 responses for validation errors, binding source inference, and problem details for errors."
+        },
+        {
+            "q": "Which launchSettings.json profile is used when running 'dotnet run'?",
+            "o": [
+                "IIS Express",
+                "The profile named after the project",
+                "Docker",
+                "The first profile in the file"
+            ],
+            "a": 1,
+            "e": "By default, 'dotnet run' uses the profile matching the project name (the 'project' profile), which runs Kestrel directly."
+        },
+        {
+            "q": "How do you define a route parameter constraint (e.g., integer ID) in attribute routing?",
+            "o": [
+                "[Route(\"api/{id:int}\")]",
+                "[Route(\"api/{id?}\")]",
+                "[Route(\"api/{id:*}\")]",
+                "[Route(\"api/{id=1}\")]"
+            ],
+            "a": 0,
+            "e": "Constraints like :int, :guid, :bool, :regex are added after the parameter name separated by a colon."
+        },
+        {
+            "q": "What is the purpose of 'UseHttpsRedirection' middleware?",
+            "o": [
+                "Enforces HTTPS by redirecting HTTP requests",
+                "Generates SSL certificates",
+                "Encrypts response bodies",
+                "Validates client certificates"
+            ],
+            "a": 0,
+            "e": "It redirects HTTP requests to HTTPS. It is typically used with UseHsts for production security."
+        },
+        {
+            "q": "Which class provides access to the current HTTP request/response in a service or middleware?",
+            "o": [
+                "HttpContext",
+                "IHttpContextAccessor",
+                "HttpRequest",
+                "RequestDelegate"
+            ],
+            "a": 1,
+            "e": "IHttpContextAccessor (registered via AddHttpContextAccessor) allows injecting HttpContext into services. HttpContext itself is scoped to the request."
+        },
+        {
+            "q": "What is 'Minimal APIs' in ASP.NET Core?",
+            "o": [
+                "A lightweight framework for building HTTP APIs with less boilerplate",
+                "A legacy API framework",
+                "A tool for minifying JavaScript",
+                "A database migration tool"
+            ],
+            "a": 0,
+            "e": "Introduced in .NET 6, Minimal APIs allow defining endpoints directly in Program.cs using lambda expressions, reducing ceremony compared to Controllers."
+        }
+    ]
+}
