@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which method is used to define a GET endpoint in Minimal APIs?",
+            "o": [
+                "app.MapGet()",
+                "app.MapHttpGet()",
+                "app.Get()",
+                "app.AddGet()"
+            ],
+            "a": 0,
+            "e": "Minimal APIs use app.MapGet(), app.MapPost(), app.MapPut(), app.MapDelete(), etc. to map HTTP verbs."
+        },
+        {
+            "q": "How do you capture a route parameter named 'id' in a Minimal API endpoint?",
+            "o": [
+                "app.MapGet(\"/users/{id}\", (int id) => ...)",
+                "app.MapGet(\"/users/:id\", (int id) => ...)",
+                "app.MapGet(\"/users/[id]\", (int id) => ...)",
+                "app.MapGet(\"/users/{id}\", (string id) => ...)"
+            ],
+            "a": 0,
+            "e": "Route parameters are defined with curly braces in the route template and bound to handler parameters by name."
+        },
+        {
+            "q": "Which interface is implemented by the Results helper class to produce IResult?",
+            "o": [
+                "IResult",
+                "IEndpointResult",
+                "IHttpResult",
+                "IActionResult"
+            ],
+            "a": 0,
+            "e": "Results.* methods return IResult implementations. Minimal APIs use IResult instead of IActionResult."
+        },
+        {
+            "q": "How do you bind a request body to a parameter in a Minimal API POST endpoint?",
+            "o": [
+                "Automatically by parameter type (complex type)",
+                "Using [FromBody] attribute",
+                "Using [BindBody] attribute",
+                "Using Request.BodyAsync()"
+            ],
+            "a": 0,
+            "e": "Minimal APIs automatically infer body binding for complex types. [FromBody] is optional but supported."
+        },
+        {
+            "q": "Which method registers an endpoint filter that runs for all endpoints in a group?",
+            "o": [
+                "group.AddEndpointFilter()",
+                "group.WithFilter()",
+                "group.UseFilter()",
+                "group.Filter()"
+            ],
+            "a": 0,
+            "e": "Endpoint filters are added via AddEndpointFilter on a RouteGroupBuilder or individual endpoint."
+        },
+        {
+            "q": "What is the correct way to return a 404 Not Found with a custom object in Minimal APIs?",
+            "o": [
+                "return Results.NotFound(new { message = \"Not found\" });",
+                "return NotFound(new { message = \"Not found\" });",
+                "return Results.StatusCode(404, new { message = \"Not found\" });",
+                "return new NotFoundResult(new { message = \"Not found\" });"
+            ],
+            "a": 0,
+            "e": "Results.NotFound() accepts an optional value object to serialize as the response body."
+        },
+        {
+            "q": "Which NuGet package is required to enable OpenAPI/Swagger generation for Minimal APIs in .NET 8?",
+            "o": [
+                "Microsoft.AspNetCore.OpenApi",
+                "Swashbuckle.AspNetCore",
+                "NSwag.AspNetCore",
+                "All of the above"
+            ],
+            "a": 0,
+            "e": "Microsoft.AspNetCore.OpenApi is the official package for built-in OpenAPI support in .NET 8+. Swashbuckle/NSwag are third-party alternatives."
+        },
+        {
+            "q": "How do you apply a route prefix to a group of Minimal API endpoints?",
+            "o": [
+                "var group = app.MapGroup(\"/api/v1\");",
+                "var group = app.MapPrefix(\"/api/v1\");",
+                "var group = app.CreateGroup(\"/api/v1\");",
+                "var group = app.WithPrefix(\"/api/v1\");"
+            ],
+            "a": 0,
+            "e": "MapGroup creates a RouteGroupBuilder with a shared prefix. All endpoints mapped on the group inherit the prefix."
+        },
+        {
+            "q": "Which of the following is a valid way to add validation to a Minimal API endpoint using the built-in validation (as of .NET 8)?",
+            "o": [
+                "Use [Validate] attribute on the handler",
+                "Call endpoint.AddEndpointFilter<ValidationFilter<>>()",
+                "Use the Validate() extension on the route handler builder",
+                "Validation is not supported in Minimal APIs"
+            ],
+            "a": 2,
+            "e": "In .NET 8+, you can use builder.Validate<T>() or builder.AddEndpointFilter<ValidationFilter<T>>() for minimal validation."
+        },
+        {
+            "q": "How do you inject a scoped service (e.g., DbContext) directly into a Minimal API handler?",
+            "o": [
+                "Add parameter of the service type to the handler delegate",
+                "Use [FromServices] attribute on the parameter",
+                "Resolve via HttpContext.RequestServices",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Minimal APIs support constructor-style injection via handler parameters. [FromServices] is optional. HttpContext.RequestServices is also available."
+        },
+        {
+            "q": "What is the purpose of the TypedResults class introduced in .NET 8?",
+            "o": [
+                "To provide strongly-typed IResult implementations for better OpenAPI generation",
+                "To replace Results class entirely",
+                "To enable XML serialization",
+                "To support gRPC responses"
+            ],
+            "a": 0,
+            "e": "TypedResults returns concrete types (e.g., Ok<T>, Created<T>) that improve OpenAPI schema generation and type safety."
+        },
+        {
+            "q": "Which method is used to map a fallback endpoint that handles unmatched routes (SPA fallback)?",
+            "o": [
+                "app.MapFallback()",
+                "app.MapFallbackToFile()",
+                "app.MapWhen()",
+                "app.UseSpa()"
+            ],
+            "a": 1,
+            "e": "MapFallbackToFile serves a specific file (e.g., index.html) for unmatched routes, commonly used for SPAs."
+        },
+        {
+            "q": "How do you constrain a route parameter 'id' to integers only?",
+            "o": [
+                "app.MapGet(\"/users/{id:int}\", ...)",
+                "app.MapGet(\"/users/{id:integer}\", ...)",
+                "app.MapGet(\"/users/{id?int}\", ...)",
+                "app.MapGet(\"/users/{id}\", (int id) => ...)"
+            ],
+            "a": 0,
+            "e": "Route constraints are specified with a colon and constraint name, e.g., {id:int}, {id:guid}, {id:alpha}."
+        },
+        {
+            "q": "What is the recommended way to handle exceptions globally in Minimal APIs?",
+            "o": [
+                "Use app.UseExceptionHandler() middleware",
+                "Add try-catch in every handler",
+                "Use endpoint.AddEndpointFilter with exception handling",
+                "Both A and C"
+            ],
+            "a": 3,
+            "e": "Global exception handling middleware (UseExceptionHandler) is recommended. Endpoint filters can also handle exceptions per endpoint/group."
+        },
+        {
+            "q": "Which of the following correctly returns a 201 Created response with a Location header in Minimal APIs?",
+            "o": [
+                "return Results.Created($\"/users/{user.Id}\", user);",
+                "return Results.CreatedAtRoute(\"GetUser\", new { id = user.Id }, user);",
+                "return TypedResults.Created($\"/users/{user.Id}\", user);",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Results.Created, Results.CreatedAtRoute, and TypedResults.Created all produce 201 with Location header. TypedResults provides strong typing."
+        },
+        {
+            "q": "How do you enable rate limiting for a specific Minimal API endpoint?",
+            "o": [
+                "endpoint.RequireRateLimiting(\"policy\")",
+                "endpoint.WithRateLimiting(\"policy\")",
+                "app.UseRateLimiter() on the endpoint",
+                "app.MapRateLimited()"
+            ],
+            "a": 0,
+            "e": "RequireRateLimiting is an extension on IEndpointConventionBuilder to apply a named rate limiting policy."
+        }
+    ]
+}
