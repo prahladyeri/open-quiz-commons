@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which package is required to use Entity Framework Core with SQL Server?",
+            "o": [
+                "Microsoft.EntityFrameworkCore",
+                "Microsoft.EntityFrameworkCore.SqlServer",
+                "Microsoft.EntityFrameworkCore.Tools",
+                "Microsoft.AspNetCore.EntityFrameworkCore"
+            ],
+            "a": 1,
+            "e": "Microsoft.EntityFrameworkCore.SqlServer is the database provider package for SQL Server. The base package (Microsoft.EntityFrameworkCore) is a dependency but not sufficient alone."
+        },
+        {
+            "q": "In EF Core, which class represents a session with the database and allows you to query and save instances of your entities?",
+            "o": [
+                "DbSet",
+                "DbContext",
+                "EntityEntry",
+                "ModelBuilder"
+            ],
+            "a": 1,
+            "e": "DbContext is the primary class that coordinates EF Core functionality for a given data model. It represents a session with the database."
+        },
+        {
+            "q": "How do you register a DbContext in the dependency injection container in an ASP.NET Core application (Program.cs)?",
+            "o": [
+                "builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));",
+                "builder.Services.AddScoped<AppDbContext>();",
+                "builder.Services.AddTransient<AppDbContext>();",
+                "builder.Services.AddEntityFramework<AppDbContext>();"
+            ],
+            "a": 0,
+            "e": "AddDbContext is the specific extension method for registering DbContext types. It handles scoping (default Scoped) and configuration options like the database provider."
+        },
+        {
+            "q": "Which method is used to apply pending migrations to the database programmatically at runtime?",
+            "o": [
+                "context.Database.EnsureCreated()",
+                "context.Database.Migrate()",
+                "context.Database.ExecuteSqlRaw()",
+                "context.SaveChanges()"
+            ],
+            "a": 1,
+            "e": "Migrate() applies any pending migrations. EnsureCreated() only creates the schema if the database doesn't exist but ignores migrations."
+        },
+        {
+            "q": "What is the purpose of the `OnModelCreating` method in a DbContext derived class?",
+            "o": [
+                "To configure the database connection string",
+                "To seed initial data only",
+                "To configure the entity model using Fluent API",
+                "To handle SaveChanges exceptions"
+            ],
+            "a": 2,
+            "e": "OnModelCreating is overridden to configure the model (relationships, constraints, indexes, conversions) using the ModelBuilder Fluent API."
+        },
+        {
+            "q": "Which tracking behavior is the default for queries in EF Core?",
+            "o": [
+                "NoTracking",
+                "Tracking (Identity Resolution)",
+                "IdentityResolution only",
+                "Detached"
+            ],
+            "a": 1,
+            "e": "By default, EF Core tracks query results (Tracking). Changes to tracked entities are persisted on SaveChanges(). AsNoTracking() disables this for read-only scenarios."
+        },
+        {
+            "q": "How do you define a one-to-many relationship using Fluent API where `Blog` has many `Posts`?",
+            "o": [
+                "modelBuilder.Entity<Blog>().HasOne(b => b.Posts).WithMany(p => p.Blog);",
+                "modelBuilder.Entity<Blog>().HasMany(b => b.Posts).WithOne(p => p.Blog);",
+                "modelBuilder.Entity<Post>().HasMany(p => p.Blog).WithOne(b => b.Posts);",
+                "modelBuilder.Entity<Post>().HasOne(p => p.Blog).WithMany(b => b.Posts);"
+            ],
+            "a": 1,
+            "e": "Starting from the principal (Blog), HasMany defines the collection navigation. WithOne defines the inverse reference navigation on the dependent (Post). Option D is also valid syntax starting from the dependent entity."
+        },
+        {
+            "q": "What does the `HasData` method in `OnModelCreating` allow you to do?",
+            "o": [
+                "Insert raw SQL during migration",
+                "Seed static data for entities",
+                "Configure default values for columns",
+                "Define computed columns"
+            ],
+            "a": 1,
+            "e": "HasData is used for data seeding. EF Core manages the insertion of this data during migrations based on primary key values."
+        },
+        {
+            "q": "Which concurrency token strategy is commonly implemented by adding a `byte[]` property annotated with `[Timestamp]`?",
+            "o": [
+                "Optimistic Concurrency",
+                "Pessimistic Concurrency",
+                "Row Versioning (Optimistic)",
+                "Last Write Wins"
+            ],
+            "a": 2,
+            "e": "A byte[] property with [Timestamp] (or IsRowVersion()) configures a Row Version column (rowversion in SQL Server) used for optimistic concurrency detection."
+        },
+        {
+            "q": "What is the difference between `Include()` and `ThenInclude()` in a LINQ query?",
+            "o": [
+                "Include loads collections, ThenInclude loads references",
+                "Include starts eager loading, ThenInclude drills down into nested navigation properties",
+                "Include is for tracking, ThenInclude is for no-tracking",
+                "There is no difference; they are aliases"
+            ],
+            "a": 1,
+            "e": "Include specifies the first navigation property to load. ThenInclude is chained after a collection Include to load related data of the collection items."
+        },
+        {
+            "q": "Which command creates a new migration based on model changes in the Package Manager Console (Visual Studio)?",
+            "o": [
+                "Update-Database",
+                "Add-Migration <Name>",
+                "Script-Migration",
+                "Get-Migration"
+            ],
+            "a": 1,
+            "e": "Add-Migration scaffolds a new migration file. Update-Database applies them."
+        },
+        {
+            "q": "What happens if you call `SaveChanges()` and a concurrency conflict is detected (e.g., RowVersion mismatch)?",
+            "o": [
+                "It silently overwrites the data",
+                "It throws a DbUpdateConcurrencyException",
+                "It retries the operation automatically",
+                "It merges the changes"
+            ],
+            "a": 1,
+            "e": "EF Core throws DbUpdateConcurrencyException. The application must catch this and resolve the conflict (e.g., reload entity, merge, or accept client values)."
+        },
+        {
+            "q": "How do you configure a property as the Primary Key using Fluent API if it doesn't follow the 'Id' or '<Type>Id' convention?",
+            "o": [
+                "modelBuilder.Entity<Entity>().HasKey(e => e.CustomId);",
+                "modelBuilder.Entity<Entity>().Property(e => e.CustomId).IsPrimaryKey();",
+                "modelBuilder.Entity<Entity>().HasPrimaryKey(e => e.CustomId);",
+                "[Key] attribute is the only way"
+            ],
+            "a": 0,
+            "e": "HasKey defines the primary key for the entity type. IsPrimaryKey does not exist on PropertyBuilder."
+        },
+        {
+            "q": "What is the purpose of `AsSplitQuery()` (introduced in EF Core 5.0) when eager loading multiple collections?",
+            "o": [
+                "Splits the query into multiple SQL queries to avoid cartesian explosion",
+                "Splits the result set into pages",
+                "Splits the entity into multiple tables (TPT)",
+                "Splits the DbContext into multiple instances"
+            ],
+            "a": 0,
+            "e": "Loading multiple collections with Include in a single query creates a Cartesian product (explosion). AsSplitQuery generates separate SQL queries per collection and combines results in memory."
+        },
+        {
+            "q": "Which interface must a custom value converter implement to convert a property type to a database column type?",
+            "o": [
+                "IValueConverter",
+                "ITypeConverter",
+                "IPropertyConverter",
+                "IEntityConverter"
+            ],
+            "a": 0,
+            "e": "ValueConverter<TModel, TProvider> (implementing IValueConverter) defines conversion logic between the CLR type and the provider type."
+        },
+        {
+            "q": "In a disconnected scenario (e.g., Web API), what is the standard pattern to update an existing entity received from a client?",
+            "o": [
+                "context.Attach(entity).State = EntityState.Modified;",
+                "context.Update(entity);",
+                "context.Entry(entity).State = EntityState.Modified;",
+                "All of the above work"
+            ],
+            "a": 3,
+            "e": "All three approaches attach the entity and mark it as Modified. context.Update() is the most concise modern API (EF Core 5+). Attach + State and Entry + State are lower-level equivalents."
+        }
+    ]
+}
