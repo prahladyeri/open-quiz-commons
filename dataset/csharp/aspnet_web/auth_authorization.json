@@ -1,0 +1,158 @@
+{
+    "data": [
+        {
+            "q": "Which middleware must be added to the request pipeline to enable authentication in ASP.NET Core?",
+            "o": [
+                "app.UseAuthentication()",
+                "app.UseAuthorization()",
+                "app.UseIdentity()",
+                "app.UseSecurity()"
+            ],
+            "a": 0,
+            "e": "UseAuthentication adds the authentication middleware that processes the request's authentication schemes."
+        },
+        {
+            "q": "What is the default authentication scheme used by ASP.NET Core Identity for cookie-based authentication?",
+            "o": [
+                "Identity.Application",
+                "Bearer",
+                "Cookies",
+                "OpenIdConnect"
+            ],
+            "a": 0,
+            "e": "Identity.Application is the default scheme name for the application cookie used by ASP.NET Core Identity."
+        },
+        {
+            "q": "Which attribute is used to restrict access to a controller or action to authenticated users only?",
+            "o": [
+                "[Authorize]",
+                "[AllowAnonymous]",
+                "[RequireHttps]",
+                "[ValidateAntiForgeryToken]"
+            ],
+            "a": 0,
+            "e": "[Authorize] enforces authentication; [AllowAnonymous] bypasses it."
+        },
+        {
+            "q": "How do you specify a policy-based authorization requirement in an [Authorize] attribute?",
+            "o": [
+                "[Authorize(Policy = \"MyPolicy\")]",
+                "[Authorize(Roles = \"MyPolicy\")]",
+                "[Authorize(Claim = \"MyPolicy\")]",
+                "[Authorize(Scheme = \"MyPolicy\")]"
+            ],
+            "a": 0,
+            "e": "Policy name is passed via the Policy property of the Authorize attribute."
+        },
+        {
+            "q": "In ASP.NET Core, which class is used to represent a JWT token validation parameters?",
+            "o": [
+                "TokenValidationParameters",
+                "JwtSecurityTokenHandler",
+                "SecurityTokenDescriptor",
+                "AuthenticationOptions"
+            ],
+            "a": 0,
+            "e": "TokenValidationParameters configures how JWT tokens are validated (issuer, audience, signing key, etc.)."
+        },
+        {
+            "q": "Which method on IServiceCollection registers the default Identity services with Entity Framework Core stores?",
+            "o": [
+                "AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>()",
+                "AddAuthentication().AddIdentity()",
+                "AddIdentityCore<IdentityUser>()",
+                "AddDefaultIdentity<IdentityUser>()"
+            ],
+            "a": 0,
+            "e": "AddIdentity with AddEntityFrameworkStores sets up Identity using EF Core."
+        },
+        {
+            "q": "What is the purpose of the 'RequireAuthenticatedUser' policy in the default authorization configuration?",
+            "o": [
+                "Ensures that only authenticated users can access the resource",
+                "Requires the user to have a specific role",
+                "Requires a specific claim type",
+                "Allows anonymous access"
+            ],
+            "a": 0,
+            "e": "The built-in RequireAuthenticatedUser policy simply checks that the user is authenticated."
+        },
+        {
+            "q": "When using cookie authentication, which option sets the cookie's SameSite attribute to 'Lax'?",
+            "o": [
+                "Cookie.SameSite = SameSiteMode.Lax",
+                "Cookie.SecurePolicy = CookieSecurePolicy.Always",
+                "Cookie.HttpOnly = true",
+                "Cookie.Expiration = TimeSpan.FromDays(14)"
+            ],
+            "a": 0,
+            "e": "SameSiteMode.Lax is assigned to the SameSite property of the cookie options."
+        },
+        {
+            "q": "Which interface must a custom authorization handler implement?",
+            "o": [
+                "IAuthorizationHandler",
+                "IAuthorizationRequirement",
+                "IAuthorizationFilter",
+                "IAuthorizationPolicyProvider"
+            ],
+            "a": 0,
+            "e": "Custom handlers implement IAuthorizationHandler (or derive from AuthorizationHandler<TRequirement>)."
+        },
+        {
+            "q": "How do you configure an OpenID Connect authentication scheme in Startup.ConfigureServices?",
+            "o": [
+                "services.AddAuthentication().AddOpenIdConnect(options => { ... })",
+                "services.AddOpenIdConnect(options => { ... })",
+                "services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme).AddCookie()",
+                "services.AddIdentityServer().AddOpenIdConnect()"
+            ],
+            "a": 0,
+            "e": "AddAuthentication returns an AuthenticationBuilder on which you call AddOpenIdConnect."
+        },
+        {
+            "q": "What does the 'AddAuthorization' method allow you to do?",
+            "o": [
+                "Define named authorization policies",
+                "Add authentication schemes",
+                "Configure cookie options",
+                "Register custom user stores"
+            ],
+            "a": 0,
+            "e": "AddAuthorization provides an AuthorizationOptions instance to add policies."
+        },
+        {
+            "q": "Which claim type is commonly used to store a user's role in the ClaimsPrincipal?",
+            "o": [
+                "ClaimTypes.Role",
+                "ClaimTypes.Name",
+                "ClaimTypes.Email",
+                "ClaimTypes.NameIdentifier"
+            ],
+            "a": 0,
+            "e": "ClaimTypes.Role (\"http://schemas.microsoft.com/ws/2008/06/identity/claims/role\") holds role values."
+        },
+        {
+            "q": "In a Razor Page, how do you programmatically check if the current user satisfies a policy?",
+            "o": [
+                "await AuthorizationService.AuthorizeAsync(User, \"MyPolicy\")",
+                "User.IsInPolicy(\"MyPolicy\")",
+                "HttpContext.User.HasPolicy(\"MyPolicy\")",
+                "AuthorizationService.CheckPolicy(User, \"MyPolicy\")"
+            ],
+            "a": 0,
+            "e": "IAuthorizationService.AuthorizeAsync returns an AuthorizationResult indicating success or failure."
+        },
+        {
+            "q": "What is the effect of calling 'app.UseAuthorization()' before 'app.UseAuthentication()' in the middleware pipeline?",
+            "o": [
+                "Authorization will run before authentication, causing the user to be unauthenticated when policies are evaluated",
+                "No effect; order does not matter",
+                "Authentication will be skipped",
+                "The application will throw a startup exception"
+            ],
+            "a": 0,
+            "e": "Authentication must run first to populate the user principal; otherwise authorization sees an anonymous user."
+        }
+    ]
+}
