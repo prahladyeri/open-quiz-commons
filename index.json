@@ -1272,7 +1272,7 @@
                 {
                     "name": "ASP.NET & Web Development",
                     "slug": "aspnet_web",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "ASP.NET Core Fundamentals",

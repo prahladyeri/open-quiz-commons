@@ -1,0 +1,290 @@
+{
+    "data": [
+        {
+            "q": "What is the file extension for a Blazor component?",
+            "o": [
+                ".cs",
+                ".razor",
+                ".blazor",
+                ".component"
+            ],
+            "a": 1,
+            "e": "Blazor components use the .razor file extension, which combines Razor markup with C# code."
+        },
+        {
+            "q": "Which directive is used to specify the route for a Blazor component?",
+            "o": [
+                "@page",
+                "@route",
+                "@url",
+                "@path"
+            ],
+            "a": 0,
+            "e": "The @page directive defines the route template for a component, e.g., @page \"/counter\"."
+        },
+        {
+            "q": "How do you declare a parameter in a Blazor component?",
+            "o": [
+                "[Parameter] public string Title { get; set; }",
+                "@param Title",
+                "<Parameter>Title</Parameter>",
+                "public string Title = Parameter;"
+            ],
+            "a": 0,
+            "e": "Parameters are declared as properties decorated with the [Parameter] attribute."
+        },
+        {
+            "q": "Which lifecycle method is called after a component has finished rendering?",
+            "o": [
+                "OnInitialized",
+                "OnParametersSet",
+                "OnAfterRender",
+                "OnRender"
+            ],
+            "a": 2,
+            "e": "OnAfterRender (or OnAfterRenderAsync) is called after the component has rendered. OnInitialized runs before first render."
+        },
+        {
+            "q": "What is the purpose of the @inject directive in a Razor component?",
+            "o": [
+                "To inject JavaScript functions",
+                "To inject a service from the DI container",
+                "To inject CSS styles",
+                "To inject another component"
+            ],
+            "a": 1,
+            "e": "@inject is used to inject services registered in the dependency injection container into a component."
+        },
+        {
+            "q": "How do you handle a button click event in Blazor?",
+            "o": [
+                "onclick=\"MyMethod()\"",
+                "@onclick=\"MyMethod\"",
+                "@onclick:MyMethod",
+                "on-click=\"MyMethod\""
+            ],
+            "a": 1,
+            "e": "Event handlers in Blazor use the @on{event} syntax, e.g., @onclick=\"MyMethod\"."
+        },
+        {
+            "q": "Which component is used to define a layout in Blazor?",
+            "o": [
+                "LayoutComponentBase",
+                "MainLayout",
+                "LayoutView",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "LayoutComponentBase is the base class, MainLayout is the default layout component, and LayoutView renders the body in a layout."
+        },
+        {
+            "q": "What does the @code block contain in a .razor file?",
+            "o": [
+                "Only HTML markup",
+                "C# code for the component (fields, methods, lifecycle)",
+                "JavaScript interop code only",
+                "CSS styles"
+            ],
+            "a": 1,
+            "e": "The @code block contains the C# logic for the component, including properties, methods, and lifecycle overrides."
+        },
+        {
+            "q": "How do you enable two-way data binding on an input element?",
+            "o": [
+                "bind=\"value\"",
+                "@bind=\"value\"",
+                "bind-value=\"value\"",
+                "@bind-value=\"value\""
+            ],
+            "a": 1,
+            "e": "@bind creates two-way binding. For specific events, use @bind-value:event=\"oninput\"."
+        },
+        {
+            "q": "Which method is used to trigger a UI refresh after state changes outside of Blazor's event handling?",
+            "o": [
+                "UpdateUI()",
+                "Refresh()",
+                "StateHasChanged()",
+                "Render()"
+            ],
+            "a": 2,
+            "e": "StateHasChanged() notifies the component that its state has changed and it needs to re-render."
+        },
+        {
+            "q": "What is the purpose of RenderFragment in Blazor?",
+            "o": [
+                "To represent a segment of UI that can be rendered dynamically",
+                "To render a component to a string",
+                "To fragment the render tree for performance",
+                "To handle JavaScript rendering"
+            ],
+            "a": 0,
+            "e": "RenderFragment represents a delegate that renders a portion of UI, commonly used for child content or dynamic templates."
+        },
+        {
+            "q": "How do you define a component that accepts arbitrary child content?",
+            "o": [
+                "Use a parameter named ChildContent of type RenderFragment",
+                "Use @children directive",
+                "Use <Content> tag",
+                "Use @body"
+            ],
+            "a": 0,
+            "e": "By convention, a parameter named ChildContent of type RenderFragment receives the child content passed to the component."
+        },
+        {
+            "q": "Which attribute is used to specify a CSS class conditionally in Blazor?",
+            "o": [
+                "class=\"@myClass\"",
+                "@class=\"myClass\"",
+                "class:@myClass",
+                "@if(myCondition) { class=\"myClass\" }"
+            ],
+            "a": 0,
+            "e": "You can bind a C# string to the class attribute using class=\"@myClass\" or use classmap for complex conditions."
+        },
+        {
+            "q": "What is the difference between Blazor Server and Blazor WebAssembly?",
+            "o": [
+                "Blazor Server runs on the client; WebAssembly runs on the server",
+                "Blazor Server runs on the server via SignalR; WebAssembly runs in the browser",
+                "Blazor Server uses JavaScript; WebAssembly uses C# only",
+                "There is no difference"
+            ],
+            "a": 1,
+            "e": "Blazor Server executes on the server and communicates via SignalR. Blazor WebAssembly runs compiled C# directly in the browser via WebAssembly."
+        },
+        {
+            "q": "How do you navigate programmatically in Blazor?",
+            "o": [
+                "NavigationManager.NavigateTo(\"/url\")",
+                "Router.Navigate(\"/url\")",
+                "window.location.href = \"/url\"",
+                "Navigate(\"/url\")"
+            ],
+            "a": 0,
+            "e": "Inject NavigationManager and call NavigateTo to change the URL programmatically."
+        },
+        {
+            "q": "What is the purpose of the @key directive in a loop?",
+            "o": [
+                "To define a unique identifier for each element to preserve component state",
+                "To sort the list",
+                "To encrypt the item data",
+                "To set the CSS keyframe animation"
+            ],
+            "a": 0,
+            "e": "@key helps Blazor track items in a list efficiently, preserving component instances and DOM elements when the list changes."
+        },
+        {
+            "q": "Which interface must a component implement to participate in forms validation?",
+            "o": [
+                "IComponent",
+                "IValidate",
+                "IComponent with EditContext",
+                "No interface required; use EditForm and DataAnnotations"
+            ],
+            "a": 3,
+            "e": "Blazor forms validation uses EditForm with a model and DataAnnotations. No special interface is required on the component."
+        },
+        {
+            "q": "How do you call a JavaScript function from Blazor?",
+            "o": [
+                "JS.Invoke(\"myFunction\")",
+                "JSRuntime.InvokeAsync(\"myFunction\")",
+                "JavaScript.Call(\"myFunction\")",
+                "await jsRuntime.InvokeVoidAsync(\"myFunction\")"
+            ],
+            "a": 3,
+            "e": "Inject IJSRuntime and use InvokeVoidAsync (or InvokeAsync<T>) to call JavaScript functions from .NET."
+        },
+        {
+            "q": "What is the role of the Router component in Blazor?",
+            "o": [
+                "Handles HTTP requests on the server",
+                "Matches URLs to components and renders them",
+                "Manages WebSocket connections",
+                "Compiles Razor files"
+            ],
+            "a": 1,
+            "e": "The Router component (usually in App.razor) intercepts navigation and renders the component matching the current URL."
+        },
+        {
+            "q": "Which attribute prevents a component from being trimmed during publishing (e.g., for reflection)?",
+            "o": [
+                "[Preserve]",
+                "[Keep]",
+                "[DynamicallyAccessedMembers]",
+                "[Required]"
+            ],
+            "a": 2,
+            "e": "[DynamicallyAccessedMembers] informs the trimmer about members accessed via reflection, preventing their removal."
+        },
+        {
+            "q": "How do you pass a route parameter to a component?",
+            "o": [
+                "@page \"/product/{id}\" and [Parameter] public int Id { get; set; }",
+                "@route \"/product/:id\"",
+                "Query string only",
+                "Using @parameter directive"
+            ],
+            "a": 0,
+            "e": "Define the route template with placeholders in @page and create a matching [Parameter] property (case-insensitive)."
+        },
+        {
+            "q": "What is the purpose of the CascadingValue component?",
+            "o": [
+                "To cascade CSS styles down the component tree",
+                "To pass a value down the component tree without explicit parameters",
+                "To cascade JavaScript events",
+                "To cascade rendering priority"
+            ],
+            "a": 1,
+            "e": "CascadingValue allows a value to be available to all descendant components, which can capture it with [CascadingParameter]."
+        },
+        {
+            "q": "Which method is called when a component receives new parameters from its parent?",
+            "o": [
+                "OnInitialized",
+                "OnParametersSet",
+                "OnAfterRender",
+                "SetParameters"
+            ],
+            "a": 1,
+            "e": "OnParametersSet (or OnParametersSetAsync) is called after parameters are updated, both on initial render and subsequent updates."
+        },
+        {
+            "q": "How do you define a generic Blazor component?",
+            "o": [
+                "@typeparam TItem",
+                "@generic TItem",
+                "<TItem>",
+                "@type TItem"
+            ],
+            "a": 0,
+            "e": "Use @typeparam TItem at the top of the .razor file to declare a generic type parameter for the component."
+        },
+        {
+            "q": "What does the @attributes directive do?",
+            "o": [
+                "Applies a dictionary of attributes to an element",
+                "Defines component attributes",
+                "Imports namespaces",
+                "Sets HTML attributes statically"
+            ],
+            "a": 0,
+            "e": "@attributes=\"myDict\" splats a Dictionary<string, object> onto an element, useful for passing arbitrary attributes."
+        },
+        {
+            "q": "Which of the following is a built-in Blazor input component for forms?",
+            "o": [
+                "InputText",
+                "TextBox",
+                "HtmlInput",
+                "TextInput"
+            ],
+            "a": 0,
+            "e": "InputText, InputTextArea, InputSelect, InputNumber, etc., are built-in components in Microsoft.AspNetCore.Components.Forms."
+        }
+    ]
+}
