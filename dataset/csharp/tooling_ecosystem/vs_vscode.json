@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which Visual Studio edition is free for individual developers, open source projects, and small teams?",
+            "o": [
+                "Visual Studio Enterprise",
+                "Visual Studio Professional",
+                "Visual Studio Community",
+                "Visual Studio Code"
+            ],
+            "a": 2,
+            "e": "Visual Studio Community is free for individual developers, open source projects, academic research, education, and small professional teams (up to 5 users)."
+        },
+        {
+            "q": "What is the primary difference between Visual Studio and Visual Studio Code?",
+            "o": [
+                "VS Code is a full IDE; Visual Studio is a lightweight editor",
+                "Visual Studio is a full-featured IDE; VS Code is a lightweight, extensible code editor",
+                "They are identical but with different branding",
+                "VS Code only supports C#; Visual Studio supports all languages"
+            ],
+            "a": 1,
+            "e": "Visual Studio is a comprehensive IDE with built-in tools for debugging, profiling, designers, and ALM. VS Code is a lightweight editor that becomes powerful through extensions."
+        },
+        {
+            "q": "Which command creates a new console application in the current directory using the .NET CLI?",
+            "o": [
+                "dotnet new console",
+                "dotnet create console",
+                "dotnet init console",
+                "dotnet add console"
+            ],
+            "a": 0,
+            "e": "`dotnet new console` creates a new console project. Use `-o` or `--output` to specify a directory."
+        },
+        {
+            "q": "In Visual Studio, which window shows the hierarchical structure of your solution, projects, and files?",
+            "o": [
+                "Solution Explorer",
+                "Team Explorer",
+                "Server Explorer",
+                "Class View"
+            ],
+            "a": 0,
+            "e": "Solution Explorer displays the solution tree with projects, references, NuGet packages, and files. Class View shows code elements (classes, methods)."
+        },
+        {
+            "q": "What is the name of the C# extension for Visual Studio Code maintained by Microsoft?",
+            "o": [
+                "C# Dev Kit",
+                "C#",
+                "OmniSharp",
+                "Roslyn"
+            ],
+            "a": 1,
+            "e": "The official Microsoft extension is simply named 'C#' (published by Microsoft). C# Dev Kit is a separate extension that adds project management and testing UI. OmniSharp is the language server powering the C# extension."
+        },
+        {
+            "q": "Which file format does Visual Studio use to store solution metadata?",
+            "o": [
+                ".csproj",
+                ".sln",
+                ".vbproj",
+                ".fsproj"
+            ],
+            "a": 1,
+            "e": ".sln (solution) files organize multiple projects. .csproj is for C# projects, .vbproj for VB.NET, .fsproj for F#."
+        },
+        {
+            "q": "How do you install a NuGet package in Visual Studio Code using the .NET CLI?",
+            "o": [
+                "dotnet add package <PackageName>",
+                "nuget install <PackageName>",
+                "dotnet install package <PackageName>",
+                "npm install <PackageName>"
+            ],
+            "a": 0,
+            "e": "`dotnet add package` adds a NuGet package reference to the project file. The NuGet CLI (`nuget.exe`) is separate and not typically used in VS Code workflows."
+        },
+        {
+            "q": "Which debugging feature allows you to execute code line by line and inspect variable values at runtime?",
+            "o": [
+                "Breakpoints",
+                "Watch window",
+                "Immediate window",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "Breakpoints pause execution. Watch window monitors expressions. Immediate window evaluates expressions and executes statements. All are core debugging features in both VS and VS Code."
+        },
+        {
+            "q": "What is the purpose of the `launch.json` file in a VS Code workspace?",
+            "o": [
+                "Defines project dependencies",
+                "Configures debugging launch configurations",
+                "Stores user settings",
+                "Manages Git credentials"
+            ],
+            "a": 1,
+            "e": "launch.json defines debug configurations (e.g., .NET Core Launch, Attach to Process). It lives in the .vscode folder."
+        },
+        {
+            "q": "Which Visual Studio feature provides real-time collaborative editing and debugging with team members?",
+            "o": [
+                "Live Share",
+                "CodeLens",
+                "IntelliCode",
+                "GitHub Codespaces"
+            ],
+            "a": 0,
+            "e": "Visual Studio Live Share enables real-time collaborative editing, debugging, and terminal sharing. It works across VS and VS Code."
+        },
+        {
+            "q": "What does the `dotnet restore` command do?",
+            "o": [
+                "Compiles the project",
+                "Downloads and installs NuGet dependencies",
+                "Runs unit tests",
+                "Publishes the application"
+            ],
+            "a": 1,
+            "e": "`dotnet restore` restores NuGet packages defined in the project file. It runs implicitly on `dotnet build` and `dotnet run` but can be called explicitly."
+        },
+        {
+            "q": "In Visual Studio, which build configuration is typically used for development and debugging?",
+            "o": [
+                "Release",
+                "Debug",
+                "Publish",
+                "Profile"
+            ],
+            "a": 1,
+            "e": "Debug configuration includes full debug symbols, no optimization, and defines DEBUG constant. Release enables optimizations and defines TRACE."
+        },
+        {
+            "q": "Which testing framework is built into .NET and supported natively by Visual Studio and VS Code?",
+            "o": [
+                "NUnit",
+                "xUnit",
+                "MSTest",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "All three are supported. MSTest is Microsoft's framework; xUnit and NUnit are popular third-party frameworks with first-class tooling support."
+        },
+        {
+            "q": "What is the purpose of the `global.json` file in a .NET solution?",
+            "o": [
+                "Defines global using directives",
+                "Pins the .NET SDK version for the solution",
+                "Configures Git settings",
+                "Stores NuGet package sources"
+            ],
+            "a": 1,
+            "e": "global.json specifies the .NET SDK version to use, ensuring consistent builds across machines and CI pipelines."
+        },
+        {
+            "q": "Which Visual Studio window shows memory usage, CPU utilization, and other performance metrics during debugging?",
+            "o": [
+                "Diagnostic Tools",
+                "Output Window",
+                "Error List",
+                "Call Stack"
+            ],
+            "a": 0,
+            "e": "Diagnostic Tools (Debug > Windows > Show Diagnostic Tools) provides real-time performance profiling during debugging sessions."
+        },
+        {
+            "q": "How do you enable .NET hot reload in Visual Studio Code?",
+            "o": [
+                "Install the 'C# Hot Reload' extension",
+                "Add \"hotReload\": true to launch.json",
+                "Run `dotnet watch` in the terminal",
+                "It is not supported in VS Code"
+            ],
+            "a": 2,
+            "e": "`dotnet watch` enables hot reload for code changes during development. In VS, it's integrated via the 'Hot Reload' button; in VS Code, use the terminal."
+        },
+        {
+            "q": "What is the default terminal shell used by Visual Studio Code on Windows?",
+            "o": [
+                "Command Prompt (cmd.exe)",
+                "PowerShell",
+                "Git Bash",
+                "Windows Terminal"
+            ],
+            "a": 1,
+            "e": "VS Code defaults to PowerShell on Windows. You can change it via `terminal.integrated.defaultProfile.windows` in settings.json."
+        }
+    ]
+}
