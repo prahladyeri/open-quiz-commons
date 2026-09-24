@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which LINQ operator performs an inner join on two sequences based on matching keys?",
+            "o": [
+                "Join",
+                "GroupJoin",
+                "SelectMany",
+                "Zip"
+            ],
+            "a": 0,
+            "e": "Join performs an inner join. GroupJoin performs a left outer join (grouped). SelectMany flattens sequences. Zip merges sequences by index."
+        },
+        {
+            "q": "What is the primary difference between IQueryable<T> and IEnumerable<T> when using LINQ?",
+            "o": [
+                "IQueryable executes in-memory; IEnumerable executes on the database server",
+                "IQueryable builds an expression tree for remote execution; IEnumerable uses delegates for in-memory execution",
+                "IEnumerable supports deferred execution; IQueryable does not",
+                "IQueryable is only for XML data sources"
+            ],
+            "a": 1,
+            "e": "IQueryable<T> uses Expression<Func<T, bool>> to build expression trees translated by a provider (e.g., EF Core to SQL). IEnumerable<T> uses Func<T, bool> for immediate in-memory filtering."
+        },
+        {
+            "q": "Which method allows you to create a custom aggregation using a seed value, an accumulator function, and a result selector?",
+            "o": [
+                "Aggregate",
+                "Reduce",
+                "Fold",
+                "Scan"
+            ],
+            "a": 0,
+            "e": "Aggregate is the general aggregation operator (fold/reduce). The overload Aggregate<TSource, TAccumulate, TResult>(seed, func, resultSelector) provides full control."
+        },
+        {
+            "q": "In LINQ query syntax, what does the 'into' keyword do when used after a 'group by' or 'join' clause?",
+            "o": [
+                "Continues the query with the result of the group/join as a new range variable",
+                "Filters the grouped results",
+                "Orders the grouped results",
+                "Projects the grouped results into an anonymous type"
+            ],
+            "a": 0,
+            "e": "'into' creates a temporary identifier for the result of a group or join clause, allowing subsequent query clauses (like select, where, orderby) to operate on that result."
+        },
+        {
+            "q": "What is the behavior of the 'DefaultIfEmpty' method when called on an empty sequence?",
+            "o": [
+                "Throws an InvalidOperationException",
+                "Returns a sequence containing a single element: the default value of the element type (or a specified default)",
+                "Returns an empty sequence",
+                "Returns null"
+            ],
+            "a": 1,
+            "e": "DefaultIfEmpty is essential for Left Outer Joins in LINQ. If the source is empty, it yields a sequence with one default(T) element (or a provided default value)."
+        },
+        {
+            "q": "Which operator is used to perform a 'Left Outer Join' in LINQ method syntax?",
+            "o": [
+                "Join combined with DefaultIfEmpty on the right sequence",
+                "GroupJoin combined with SelectMany and DefaultIfEmpty on the right sequence",
+                "LeftJoin",
+                "OuterJoin"
+            ],
+            "a": 1,
+            "e": "LINQ has no 'LeftJoin' operator. A left outer join is achieved by GroupJoin (which groups right elements by left key), then SelectMany over the grouped right sequence with DefaultIfEmpty()."
+        },
+        {
+            "q": "What does the 'SelectMany' operator do?",
+            "o": [
+                "Projects each element of a sequence to an IEnumerable<T> and flattens the resulting sequences into one sequence",
+                "Selects multiple properties into an anonymous type",
+                "Filters a sequence based on multiple predicates",
+                "Groups elements by multiple keys"
+            ],
+            "a": 0,
+            "e": "SelectMany is the bind operation for the List/Sequence monad. It flattens a sequence of sequences (IEnumerable<IEnumerable<T>> -> IEnumerable<T>)."
+        },
+        {
+            "q": "How does 'AsEnumerable()' affect a LINQ query on an IQueryable source (e.g., Entity Framework)?",
+            "o": [
+                "It forces the query to execute immediately and return a List<T>",
+                "It changes the compilation of subsequent operators from Expression Trees to Delegates, forcing client-side evaluation",
+                "It enables parallel execution via PLINQ",
+                "It caches the query results in memory"
+            ],
+            "a": 1,
+            "e": "AsEnumerable() casts IQueryable<T> to IEnumerable<T>. Subsequent LINQ operators (Where, Select, etc.) bind to Enumerable extensions (Func delegates) instead of Queryable extensions (Expression trees), pulling data to client before processing."
+        },
+        {
+            "q": "What is the result of 'SequenceEqual' when comparing two sequences with the same elements in different orders?",
+            "o": [
+                "True",
+                "False",
+                "Throws ArgumentException",
+                "True only if a custom IEqualityComparer is provided"
+            ],
+            "a": 1,
+            "e": "SequenceEqual compares elements pairwise by index. Order matters. To compare unordered sets, use set operators (Intersect/Except) or sort first."
+        },
+        {
+            "q": "Which operator returns the single element of a sequence, or a default value if the sequence is empty, but throws if there is more than one element?",
+            "o": [
+                "FirstOrDefault",
+                "Single",
+                "SingleOrDefault",
+                "ElementAtOrDefault"
+            ],
+            "a": 2,
+            "e": "SingleOrDefault returns the only element or default(T). It throws InvalidOperationException if the sequence contains more than one element. FirstOrDefault returns the first regardless of count."
+        },
+        {
+            "q": "What is 'Deferred Execution' in LINQ?",
+            "o": [
+                "The query is executed immediately when defined",
+                "The query is executed only when the result is enumerated (e.g., via foreach, ToList())",
+                "The query is compiled to SQL but not sent to the server",
+                "The query runs on a background thread automatically"
+            ],
+            "a": 1,
+            "e": "Most LINQ operators use deferred execution (yield return). The query variable stores the query definition, not results. Execution happens on enumeration. Exceptions: ToList, ToArray, Count, First, Single (Immediate Execution)."
+        },
+        {
+            "q": "Which method optimizes a LINQ to Objects query by using a HashSet internally for lookups?",
+            "o": [
+                "Join",
+                "Intersect",
+                "Contains (on a HashSet)",
+                "Where with a predicate"
+            ],
+            "a": 2,
+            "e": "While Join uses a HashSet internally, manually converting a lookup source to a HashSet and using Contains inside a Where predicate (or Join) is the standard way to ensure O(1) lookups for 'IN' style filters in LINQ to Objects."
+        },
+        {
+            "q": "What does the 'Let' keyword allow in LINQ query syntax?",
+            "o": [
+                "Defines a join condition",
+                "Introduces a new range variable to store the result of a sub-expression",
+                "Groups the results",
+                "Orders the results"
+            ],
+            "a": 1,
+            "e": "'let' allows storing the result of an expression (e.g., a calculated property or sub-query) in a new range variable to avoid recalculating it or to make the query readable."
+        },
+        {
+            "q": "How do you perform a 'Group By' on multiple keys in LINQ method syntax?",
+            "o": [
+                "group by new { Key1 = x.Prop1, Key2 = x.Prop2 }",
+                "GroupBy(x => new { x.Prop1, x.Prop2 })",
+                "GroupBy(x => x.Prop1).GroupBy(x => x.Prop2)",
+                "GroupBy(x => x.Prop1, x => x.Prop2)"
+            ],
+            "a": 1,
+            "e": "GroupBy accepts a key selector function. To group by multiple keys, return an anonymous type (or Tuple/ValueTuple) containing all key properties. The compiler handles equality/hashing for anonymous types."
+        },
+        {
+            "q": "What is the purpose of the 'AsQueryable()' extension method?",
+            "o": [
+                "Converts an IEnumerable<T> to an IQueryable<T> by wrapping it in an EnumerableQuery provider",
+                "Executes the query against a database",
+                "Enables PLINQ parallel execution",
+                "Validates the query syntax"
+            ],
+            "a": 0,
+            "e": "AsQueryable() wraps an in-memory IEnumerable<T> in an IQueryable<T> using EnumerableQuery. This allows in-memory collections to be treated as queryable sources (useful for testing or uniform APIs), but it still executes via LINQ to Objects (delegates), not a remote provider."
+        },
+        {
+            "q": "Which operator partitions a sequence into two sequences based on a predicate, returning a Tuple of (matched, notMatched)?",
+            "o": [
+                "Partition",
+                "Split",
+                "GroupBy",
+                "None of the above (requires custom implementation or MoreLINQ)"
+            ],
+            "a": 3,
+            "e": "Standard LINQ does not have a 'Partition' or 'Split' operator that returns a Tuple of two sequences in one pass. GroupBy evaluates the predicate twice (or buffers). MoreLINQ provides 'Partition'."
+        },
+        {
+            "q": "In LINQ to Entities (EF Core), why might a query throw 'InvalidOperationException: The LINQ expression could not be translated'?",
+            "o": [
+                "The query uses a C# method or property that has no SQL translation",
+                "The database connection is closed",
+                "The query returns too many rows",
+                "The DbContext is disposed"
+            ],
+            "a": 0,
+            "e": "EF Core translates Expression Trees to SQL. If the query contains client-side logic (e.g., custom C# methods, ToString() overloads, complex property getters) that the provider cannot translate, it throws this exception. Fix: Use client evaluation (AsEnumerable) or rewrite using translatable constructs."
+        }
+    ]
+}
