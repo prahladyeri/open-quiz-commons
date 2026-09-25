@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which .NET CLI tool is used to collect CPU sampling traces from a running .NET application?",
+            "o": [
+                "dotnet-counters",
+                "dotnet-trace",
+                "dotnet-dump",
+                "dotnet-gcdump"
+            ],
+            "a": 1,
+            "e": "dotnet-trace collects performance traces (CPU sampling, GC events, etc.) via EventPipe. dotnet-counters is for metrics, dotnet-dump for heap dumps, dotnet-gcdump for GC heap dumps."
+        },
+        {
+            "q": "What does the `dotnet-counters monitor` command display by default?",
+            "o": [
+                "CPU usage, GC heap size, Gen 0/1/2 collections, ThreadPool queue length, and exception count",
+                "Only CPU usage and memory allocation rate",
+                "Only GC pause times",
+                "Network I/O and disk latency"
+            ],
+            "a": 0,
+            "e": "dotnet-counters monitor shows a default set of counters including CPU, GC heap size, generation collection counts, ThreadPool stats, and exceptions. You can specify custom providers with `--counters`."
+        },
+        {
+            "q": "Which tool is specifically designed to capture a snapshot of the GC heap for offline analysis of memory leaks?",
+            "o": [
+                "dotnet-trace",
+                "dotnet-counters",
+                "dotnet-gcdump",
+                "dotnet-dump"
+            ],
+            "a": 2,
+            "e": "dotnet-gcdump creates a portable GC heap dump (`.gcdump`) optimized for heap analysis (object counts, sizes, roots). dotnet-dump creates a full core dump (OS-specific)."
+        },
+        {
+            "q": "When analyzing a `dotnet-trace` file in PerfView or speedscope, what does the \"GC\" event provider primarily reveal?",
+            "o": [
+                "JIT compilation times",
+                "Garbage collection pauses, generations, heap sizes, and allocation rates",
+                "Thread synchronization contention",
+                "ASP.NET Core request latency"
+            ],
+            "a": 1,
+            "e": "The GC provider in EventPipe emits events for GC start/stop, generation, heap size before/after, allocation tick, and more — essential for diagnosing GC pressure and pause times."
+        },
+        {
+            "q": "What is the primary purpose of `dotnet-dump collect`?",
+            "o": [
+                "Collect CPU sampling profile",
+                "Capture a full process core dump (including native and managed heap) for debugging crashes or hangs",
+                "Export GC heap as a portable format",
+                "Monitor real-time performance counters"
+            ],
+            "a": 1,
+            "e": "dotnet-dump creates a full memory dump (core dump on Linux/macOS, minidump on Windows) suitable for SOS/lldb debugging of crashes, hangs, or memory issues. It is OS-specific and larger than .gcdump."
+        },
+        {
+            "q": "Which .NET tool enables attaching to a running process without stopping it to collect a trace or dump?",
+            "o": [
+                "dotnet-trace",
+                "dotnet-counters",
+                "dotnet-dump",
+                "All of the above"
+            ],
+            "a": 3,
+            "e": "All three tools (dotnet-trace, dotnet-counters, dotnet-dump) can attach to a running process by PID via `--process-id` without pausing it. dotnet-gcdump also supports this."
+        },
+        {
+            "q": "In BenchmarkDotNet, what does the `[MemoryDiagnoser]` attribute enable?",
+            "o": [
+                "Measures CPU cycles and branch mispredictions",
+                "Reports allocated bytes, Gen 0/1/2 collections, and working set per benchmark",
+                "Profiles GC pause times via ETW",
+                "Exports results to PerfView format"
+            ],
+            "a": 1,
+            "e": "[MemoryDiagnoser] uses EventPipe to report allocation rate, Gen 0/1/2 collection counts, and memory usage per iteration. It is the standard way to benchmark allocations in .NET."
+        },
+        {
+            "q": "What is `dotnet-monitor` primarily used for in production environments?",
+            "o": [
+                "Real-time CPU profiling via a web API",
+                "A sidecar/daemon that exposes REST APIs to collect traces, dumps, gcdumps, and metrics on demand",
+                "A replacement for Application Insights",
+                "A JIT compilation optimizer"
+            ],
+            "a": 1,
+            "e": "dotnet-monitor runs as a sidecar or daemon, exposing HTTP endpoints to trigger dotnet-trace, dotnet-dump, dotnet-gcdump, and dotnet-counters on running apps — ideal for Kubernetes/production diagnostics."
+        },
+        {
+            "q": "Which ETW provider name is used by the .NET runtime for GC events in EventPipe?",
+            "o": [
+                "Microsoft-Windows-DotNETRuntime",
+                "System.Runtime",
+                "Microsoft-DotNETCore-SampleProfiler",
+                "Microsoft-DotNETCore-GC"
+            ],
+            "a": 0,
+            "e": "The .NET runtime ETW provider is `Microsoft-Windows-DotNETRuntime` (GUID: e13c0d23-ccbc-4e12-931b-d9cc2eee27e4). In EventPipe, it's exposed as `Microsoft-Windows-DotNETRuntime` with keywords for GC, JIT, Threading, etc."
+        },
+        {
+            "q": "When using `dotnet-trace collect --format speedscope`, what is the output file extension and primary use case?",
+            "o": [
+                ".nettrace - view in Visual Studio only",
+                ".speedscope - view in speedscope.app for interactive flame graphs",
+                ".json - raw event data for custom parsing",
+                ".perfview - view in PerfView only"
+            ],
+            "a": 1,
+            "e": "`--format speedscope` outputs a `.speedscope.json` file compatible with speedscope.app, a web-based flame graph viewer. The default `--format nettrace` is for PerfView/Visual Studio."
+        },
+        {
+            "q": "What does the `ThreadPool` counter `Queue Length` indicate when observed via `dotnet-counters`?",
+            "o": [
+                "Number of completed work items",
+                "Number of threads currently running",
+                "Number of work items waiting for an available thread",
+                "Number of idle threads"
+            ],
+            "a": 2,
+            "e": "ThreadPool Queue Length = work items queued but not yet executing. A consistently high value indicates thread pool starvation or blocking work on ThreadPool threads."
+        },
+        {
+            "q": "Which Visual Studio Diagnostic Tool window allows you to take heap snapshots and compare them to find memory leaks during a debug session?",
+            "o": [
+                "Performance Profiler",
+                "Diagnostic Tools (Events tab)",
+                "Memory Profiler (in Performance Profiler)",
+                "CPU Usage tool"
+            ],
+            "a": 2,
+            "e": "The Memory Profiler (part of Performance Profiler, Alt+F2) lets you take snapshots of the managed heap, compare them, and view object counts/sizes/roots to identify leaks. The Diagnostic Tools window shows events and memory usage graph but not detailed heap diff."
+        },
+        {
+            "q": "What is the effect of setting the environment variable `COMPlus_GCServer=1`?",
+            "o": [
+                "Enables Workstation GC with concurrent collections",
+                "Enables Server GC (multiple heaps, one per logical CPU)",
+                "Disables GC entirely",
+                "Forces Gen 2 collections every 100ms"
+            ],
+            "a": 1,
+            "e": "COMPlus_GCServer=1 (or `<ServerGarbageCollection>true</ServerGarbageCollection>` in .csproj) enables Server GC: multiple heaps, dedicated GC threads, better throughput for server workloads. Default is Workstation GC."
+        },
+        {
+            "q": "In a `dotnet-trace` flame graph, what does a wide, flat plateau at the top typically represent?",
+            "o": [
+                "High CPU utilization in a single method",
+                "GC suspension (threads blocked at a safepoint during GC)",
+                "Thread pool starvation",
+                "Lock contention on a monitor"
+            ],
+            "a": 1,
+            "e": "A flat, wide top in a flame graph often indicates threads are stopped at a GC safepoint (GC suspension). All threads pause, so the stack is identical across threads, creating a plateau. Lock contention shows as narrow towers; CPU work shows as varied stacks."
+        },
+        {
+            "q": "Which command exports a `dotnet-trace` file to a human-readable text summary of GC stats?",
+            "o": [
+                "dotnet-trace convert --format text",
+                "dotnet-trace gcstats",
+                "dotnet-trace report",
+                "PerfView command line: `PerfView.exe /onlygcstats`"
+            ],
+            "a": 1,
+            "e": "`dotnet-trace gcstats <trace-file>` outputs a summary of GC events: pause times, generations, heap sizes, allocation rates. It's a quick way to assess GC health without opening PerfView."
+        },
+        {
+            "q": "What is the recommended way to diagnose high CPU usage in a containerized .NET 8 app running in Kubernetes?",
+            "o": [
+                "SSH into the container and run `top`",
+                "Use `dotnet-monitor` sidecar and call `/trace/start` via HTTP to collect a `dotnet-trace` profile",
+                "Add `Console.WriteLine` logging",
+                "Restart the pod with `dotnet-counters` logging to stdout"
+            ],
+            "e": "dotnet-monitor as a sidecar is the production-standard approach: it exposes REST endpoints to start/stop traces, dumps, and counters without SSH or code changes. Works in Kubernetes, Cloud Run, etc.",
+            "a": 1
+        }
+    ]
+}

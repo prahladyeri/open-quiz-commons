@@ -1309,7 +1309,7 @@
                 {
                     "name": "Tooling & Ecosystem",
                     "slug": "tooling_ecosystem",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Visual Studio & VS Code",
