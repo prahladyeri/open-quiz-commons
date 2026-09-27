@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the zero value of a pointer variable in Go?",
+            "o": [
+                "0",
+                "null",
+                "nil",
+                "undefined"
+            ],
+            "a": 2,
+            "e": "In Go, the zero value for a pointer is nil, indicating it does not point to any memory address."
+        },
+        {
+            "q": "Which syntax correctly declares a struct type named Person with fields Name (string) and Age (int)?",
+            "o": [
+                "struct Person { Name string; Age int }",
+                "type Person struct { Name string; Age int }",
+                "type Person { Name string, Age int }",
+                "Person := struct { Name string; Age int }"
+            ],
+            "a": 1,
+            "e": "Go uses the `type` keyword followed by the name, `struct`, and a brace-enclosed list of fields."
+        },
+        {
+            "q": "Given `p := &Person{Name: \"Alice\", Age: 30}`, how do you access the Name field through the pointer `p`?",
+            "o": [
+                "p->Name",
+                "(*p).Name",
+                "p.Name",
+                "p.*Name"
+            ],
+            "a": 2,
+            "e": "Go automatically dereferences pointers when accessing struct fields, so `p.Name` is valid and equivalent to `(*p).Name`."
+        },
+        {
+            "q": "What does the `new(T)` function return?",
+            "o": [
+                "A value of type T initialized to its zero value",
+                "A pointer to a newly allocated zero value of type T",
+                "A pointer to an uninitialized value of type T",
+                "An error if allocation fails"
+            ],
+            "a": 1,
+            "e": "`new(T)` allocates memory for a zeroed T and returns a pointer to it (`*T`)."
+        },
+        {
+            "q": "Which statement about method receivers is true?",
+            "o": [
+                "A method with a value receiver modifies the original struct.",
+                "A method with a pointer receiver cannot be called on a value.",
+                "A method with a pointer receiver can modify the receiver's fields.",
+                "Pointer receivers are only allowed for structs."
+            ],
+            "a": 2,
+            "e": "Pointer receivers allow the method to mutate the struct fields; value receivers operate on a copy."
+        },
+        {
+            "q": "What happens when you dereference a nil pointer in Go?",
+            "o": [
+                "Returns the zero value of the pointed type",
+                "Causes a compile-time error",
+                "Triggers a runtime panic",
+                "Returns nil"
+            ],
+            "a": 2,
+            "e": "Dereferencing a nil pointer causes a runtime panic (nil pointer dereference)."
+        },
+        {
+            "q": "How do you create a pointer to a struct literal in a single expression?",
+            "o": [
+                "&Person{\"Bob\", 25}",
+                "&Person{Name: \"Bob\", Age: 25}",
+                "new(Person{\"Bob\", 25})",
+                "*Person{Name: \"Bob\", Age: 25}"
+            ],
+            "a": 1,
+            "e": "Taking the address of a composite literal (`&Person{...}`) yields a pointer to a newly allocated struct."
+        },
+        {
+            "q": "Which of the following is a valid way to embed a struct anonymously?",
+            "o": [
+                "type Employee struct { Person }",
+                "type Employee struct { p Person }",
+                "type Employee struct { Person Person }",
+                "type Employee struct { *Person }"
+            ],
+            "a": 0,
+            "e": "Anonymous embedding is done by specifying only the type name (`Person`) inside the outer struct."
+        },
+        {
+            "q": "Can two struct values be compared with `==` in Go?",
+            "o": [
+                "Yes, always.",
+                "No, never.",
+                "Yes, if all their fields are comparable.",
+                "Only if they are pointers."
+            ],
+            "a": 2,
+            "e": "Structs are comparable if all their fields are comparable; then `==` compares each field."
+        },
+        {
+            "q": "What is the size of a pointer on a 64-bit architecture?",
+            "o": [
+                "4 bytes",
+                "8 bytes",
+                "Depends on the pointed type",
+                "16 bytes"
+            ],
+            "a": 1,
+            "e": "On 64-bit systems, a pointer is 8 bytes (64 bits) because it holds a memory address."
+        },
+        {
+            "q": "Which function is used to allocate a struct and return a pointer, but does NOT zero-initialize it?",
+            "o": [
+                "new",
+                "make",
+                "malloc",
+                "None; Go always zero-initializes"
+            ],
+            "a": 3,
+            "e": "Go always zero-initializes memory allocations; there is no standard library function to allocate uninitialized memory for a struct."
+        },
+        {
+            "q": "What is the result of `var p *int; fmt.Println(p == nil)`?",
+            "o": [
+                "true",
+                "false",
+                "compile error",
+                "panic"
+            ],
+            "a": 0,
+            "e": "An uninitialized pointer variable has the zero value nil, so the comparison yields true."
+        },
+        {
+            "q": "How do you declare a type alias for an existing type in Go?",
+            "o": [
+                "type MyInt = int",
+                "type MyInt int",
+                "alias MyInt int",
+                "typedef int MyInt"
+            ],
+            "a": 0,
+            "e": "Type aliases use `=` (e.g., `type MyInt = int`), while type definitions create a new distinct type without `=`."
+        },
+        {
+            "q": "Which statement about struct tags is correct?",
+            "o": [
+                "Struct tags are accessed at runtime via reflection.",
+                "Struct tags affect memory layout.",
+                "Struct tags are only for documentation.",
+                "Struct tags must be unique across all fields."
+            ],
+            "a": 0,
+            "e": "Struct tags are string literals associated with fields, commonly used by encoding/json and other packages via reflection."
+        },
+        {
+            "q": "Given `var a [3]int`, what is the type of `&a[0]`?",
+            "o": [
+                "*int",
+                "*[3]int",
+                "int",
+                "[3]*int"
+            ],
+            "a": 0,
+            "e": "`&a[0]` takes the address of the first element, which is an int, so the type is *int."
+        },
+        {
+            "q": "What does the following code print? `var p *int = new(int); *p = 42; fmt.Println(*p)`",
+            "o": [
+                "0",
+                "42",
+                "nil",
+                "panic"
+            ],
+            "a": 1,
+            "e": "`new(int)` allocates an int zeroed to 0, then we assign 42 via the pointer, and dereferencing prints 42."
+        }
+    ]
+}
