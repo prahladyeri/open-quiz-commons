@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which keyword is used to declare a function in Go?",
+            "o": [
+                "func",
+                "function",
+                "def",
+                "fn"
+            ],
+            "a": 0,
+            "e": "Go uses the `func` keyword to declare functions."
+        },
+        {
+            "q": "How do you declare a function that returns multiple values in Go?",
+            "o": [
+                "func foo() (int, string)",
+                "func foo() [int, string]",
+                "func foo() {int, string}",
+                "func foo() -> (int, string)"
+            ],
+            "a": 0,
+            "e": "Multiple return values are declared in parentheses after the parameter list: `func foo() (int, string)`."
+        },
+        {
+            "q": "What is a named return value in Go?",
+            "o": [
+                "A return value that must be explicitly named in the return statement",
+                "A return value declared with a name in the function signature",
+                "A return value that can only be used once",
+                "A return value that is automatically initialized to zero"
+            ],
+            "a": 1,
+            "e": "Named return values are declared in the function signature: `func foo() (x int, y string)`. They are initialized to zero values and can be used in naked returns."
+        },
+        {
+            "q": "Which syntax declares a variadic function in Go?",
+            "o": [
+                "func foo(args ...int)",
+                "func foo(args *int)",
+                "func foo(args []int)",
+                "func foo(args int...)"
+            ],
+            "a": 0,
+            "e": "Variadic functions use `...` before the type: `func foo(args ...int)`. Inside the function, `args` is a slice of int."
+        },
+        {
+            "q": "How are interfaces implemented in Go?",
+            "o": [
+                "Explicitly with an 'implements' keyword",
+                "Implicitly by implementing all methods in the interface",
+                "By extending the interface type",
+                "By registering the type with the interface"
+            ],
+            "a": 1,
+            "e": "Go interfaces are implemented implicitly. A type satisfies an interface by implementing all its methods - no explicit declaration needed."
+        },
+        {
+            "q": "What is the zero value of an interface in Go?",
+            "o": [
+                "null",
+                "nil",
+                "empty",
+                "undefined"
+            ],
+            "a": 1,
+            "e": "The zero value of an interface is `nil`. A nil interface has both its dynamic type and value as nil."
+        },
+        {
+            "q": "Which statement about the empty interface `interface{}` is correct?",
+            "o": [
+                "It can hold values of any type",
+                "It can only hold struct types",
+                "It requires explicit type assertions for all operations",
+                "It is equivalent to `any` in all Go versions"
+            ],
+            "a": 0,
+            "e": "The empty interface `interface{}` (or `any` since Go 1.18) can hold values of any type since all types implement zero methods."
+        },
+        {
+            "q": "What happens when you call a method on a nil interface?",
+            "o": [
+                "Returns zero value",
+                "Panic at runtime",
+                "Compile error",
+                "Returns nil"
+            ],
+            "a": 1,
+            "e": "Calling a method on a nil interface causes a runtime panic because there is no concrete type to dispatch to."
+        },
+        {
+            "q": "How do you perform a type assertion to get the underlying value of an interface?",
+            "o": [
+                "val := iface.(Type)",
+                "val := iface as Type",
+                "val := iface[Type]",
+                "val := Type(iface)"
+            ],
+            "a": 0,
+            "e": "Type assertions use the syntax `iface.(Type)`. This returns the underlying value and panics if the type is wrong unless using the two-value form."
+        },
+        {
+            "q": "What is the safe two-value form of type assertion?",
+            "o": [
+                "val, ok := iface.(Type)",
+                "val, err := iface.(Type)",
+                "ok, val := iface.(Type)",
+                "val := iface.(Type); ok := true"
+            ],
+            "a": 0,
+            "e": "The two-value form `val, ok := iface.(Type)` returns the value and a boolean indicating success, avoiding panic on type mismatch."
+        },
+        {
+            "q": "Which construct is used for multiple type assertions in a single statement?",
+            "o": [
+                "switch iface.(type)",
+                "case iface.(type)",
+                "select iface.(type)",
+                "match iface.(type)"
+            ],
+            "a": 0,
+            "e": "Type switches use `switch v := iface.(type)` to test multiple types. Each case can be a type or a type assertion."
+        },
+        {
+            "q": "What is the difference between a value receiver and pointer receiver method?",
+            "o": [
+                "Value receivers cannot modify the receiver; pointer receivers can",
+                "Pointer receivers are faster",
+                "Value receivers are only for structs",
+                "There is no difference"
+            ],
+            "a": 0,
+            "e": "Value receivers operate on a copy, so modifications don't persist. Pointer receivers can modify the original. Only pointer receivers satisfy interfaces if the method set requires it."
+        },
+        {
+            "q": "Which statement about function values in Go is true?",
+            "o": [
+                "Functions are first-class citizens and can be assigned to variables",
+                "Functions cannot be passed as arguments",
+                "Functions cannot be returned from other functions",
+                "Function values are not comparable"
+            ],
+            "a": 0,
+            "e": "Functions are first-class in Go: they can be assigned to variables, passed as arguments, returned from functions, and used as struct fields."
+        },
+        {
+            "q": "What is a closure in Go?",
+            "o": [
+                "A function that references variables from its enclosing scope",
+                "A function with no parameters",
+                "A function that returns itself",
+                "A function defined inside a struct"
+            ],
+            "a": 0,
+            "e": "A closure is a function value that references variables from outside its body. The function 'closes over' those variables, capturing them."
+        },
+        {
+            "q": "How do you embed one interface in another?",
+            "o": [
+                "type ReaderWriter interface { Reader; Writer }",
+                "type ReaderWriter interface { implements Reader, Writer }",
+                "type ReaderWriter interface { extends Reader, Writer }",
+                "type ReaderWriter interface { include Reader, Writer }"
+            ],
+            "a": 0,
+            "e": "Interface embedding is done by listing the embedded interface names in the new interface: `type ReaderWriter interface { Reader; Writer }`."
+        },
+        {
+            "q": "What is the method set of a type T?",
+            "o": [
+                "All methods declared with receiver T",
+                "All methods declared with receiver *T",
+                "Methods with receiver T plus methods with receiver *T if T is addressable",
+                "Only methods exported from the package"
+            ],
+            "a": 0,
+            "e": "The method set of type T consists of all methods with receiver T. The method set of *T includes methods with receiver *T and T (since *T can be dereferenced)."
+        }
+    ]
+}
