@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the type of the built-in error interface in Go?",
+            "o": [
+                "interface { Error() string }",
+                "interface { String() string }",
+                "interface { Message() string }",
+                "interface { Cause() error }"
+            ],
+            "a": 0,
+            "e": "The error interface is defined as `type error interface { Error() string }`."
+        },
+        {
+            "q": "Which function is commonly used to create a simple error with a custom message?",
+            "o": [
+                "errors.New",
+                "fmt.Errorf",
+                "makeError",
+                "error.New"
+            ],
+            "a": 0,
+            "e": "`errors.New` creates a new error with the given message. `fmt.Errorf` also works but allows formatting."
+        },
+        {
+            "q": "How do you check for a specific sentinel error (e.g., io.EOF) in Go?",
+            "o": [
+                "err == io.EOF",
+                "errors.Is(err, io.EOF)",
+                "err.Equals(io.EOF)",
+                "errors.Equals(err, io.EOF)"
+            ],
+            "a": 1,
+            "e": "`errors.Is` checks if an error matches a target error, handling wrapped errors correctly. Direct comparison works only for unwrapped sentinel errors."
+        },
+        {
+            "q": "What does `fmt.Errorf` with the `%w` verb do?",
+            "o": [
+                "Wraps the error so it can be unwrapped with errors.Unwrap",
+                "Formats the error as a warning",
+                "Creates a new error without wrapping",
+                "Prints the error to stdout"
+            ],
+            "a": 0,
+            "e": "The `%w` verb in `fmt.Errorf` wraps the provided error, allowing `errors.Is` and `errors.As` to inspect the chain."
+        },
+        {
+            "q": "Which function is used to extract a specific error type from an error chain?",
+            "o": [
+                "errors.As",
+                "errors.Is",
+                "errors.Get",
+                "errors.Type"
+            ],
+            "a": 0,
+            "e": "`errors.As` finds the first error in the chain that matches the target type and assigns it to the target pointer."
+        },
+        {
+            "q": "What is the idiomatic way to handle multiple return values where the last is an error?",
+            "o": [
+                "if err != nil { return err }",
+                "if err == nil { return err }",
+                "err.Check()",
+                "try(err)"
+            ],
+            "a": 0,
+            "e": "Go uses explicit error checking: `if err != nil { return err }` (or handle appropriately). There is no try/catch."
+        },
+        {
+            "q": "Which package provides the `errors.Is` and `errors.As` functions?",
+            "o": [
+                "errors",
+                "fmt",
+                "io",
+                "runtime"
+            ],
+            "a": 0,
+            "e": "The `errors` package (since Go 1.13) provides `Is`, `As`, `Unwrap`, and `New`."
+        },
+        {
+            "q": "What does `errors.Unwrap` return if the error does not implement an Unwrap method?",
+            "o": [
+                "nil",
+                "the error itself",
+                "a panic",
+                "an empty string"
+            ],
+            "a": 0,
+            "e": "`errors.Unwrap` returns the result of calling the error's `Unwrap` method, or `nil` if the error does not have one."
+        },
+        {
+            "q": "How can you add context to an error while preserving the original error for inspection?",
+            "o": [
+                "fmt.Errorf(\"context: %w\", err)",
+                "errors.New(err.Error() + \" context\")",
+                "err.Wrap(\"context\")",
+                "fmt.Sprintf(\"context: %v\", err)"
+            ],
+            "a": 0,
+            "e": "Using `%w` with `fmt.Errorf` wraps the original error, allowing `errors.Is` and `errors.As` to work on the chain."
+        },
+        {
+            "q": "What is the purpose of a sentinel error in Go?",
+            "o": [
+                "To signal a specific condition (e.g., io.EOF) that callers can check for",
+                "To wrap multiple errors into one",
+                "To log errors automatically",
+                "To panic the program"
+            ],
+            "a": 0,
+            "e": "Sentinel errors are predefined error values (like `io.EOF`, `sql.ErrNoRows`) that callers can compare against using `errors.Is`."
+        },
+        {
+            "q": "Which of the following is NOT a valid way to create an error in Go?",
+            "o": [
+                "errors.New(\"msg\")",
+                "fmt.Errorf(\"msg\")",
+                "panic(\"msg\")",
+                "fmt.Errorf(\"msg: %w\", err)"
+            ],
+            "a": 2,
+            "e": "`panic` is not for creating error values; it stops normal execution. The others produce `error` values."
+        },
+        {
+            "q": "What does `errors.Join` (introduced in Go 1.20) do?",
+            "o": [
+                "Combines multiple errors into a single error that wraps all of them",
+                "Joins error messages into a string",
+                "Merges two error chains into one",
+                "Returns the first non-nil error"
+            ],
+            "a": 0,
+            "e": "`errors.Join` returns an error that wraps a list of errors; `errors.Is` and `errors.As` will inspect each."
+        },
+        {
+            "q": "When defining a custom error type, which method must it implement to satisfy the error interface?",
+            "o": [
+                "Error() string",
+                "String() string",
+                "Message() string",
+                "Cause() error"
+            ],
+            "a": 0,
+            "e": "The error interface requires an `Error() string` method."
+        },
+        {
+            "q": "What is the recommended way to handle an error that may be nil?",
+            "o": [
+                "Check `if err != nil` before using it",
+                "Call `err.Error()` directly",
+                "Pass it to `fmt.Println` without checking",
+                "Ignore it"
+            ],
+            "a": 0,
+            "e": "Always check `if err != nil` because calling methods on a nil error interface will panic if the underlying concrete value is nil but the interface is not nil (though typical errors are nil interfaces)."
+        },
+        {
+            "q": "Which function can be used to get a formatted error message without wrapping?",
+            "o": [
+                "fmt.Errorf(\"msg\")",
+                "fmt.Errorf(\"msg: %w\", err)",
+                "errors.New(\"msg\")",
+                "fmt.Sprintf(\"msg\")"
+            ],
+            "a": 0,
+            "e": "`fmt.Errorf` without `%w` creates a new error that does not wrap the provided error."
+        },
+        {
+            "q": "What is the zero value of the error interface?",
+            "o": [
+                "nil",
+                "errors.New(\"\")",
+                "fmt.Errorf(\"\")",
+                "an empty struct"
+            ],
+            "a": 0,
+            "e": "The zero value of any interface type, including error, is nil."
+        }
+    ]
+}
