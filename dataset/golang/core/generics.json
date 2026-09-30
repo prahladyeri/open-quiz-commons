@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What is the syntax for declaring a generic function in Go?",
+            "o": [
+                "func MyFunc[T any](x T) T",
+                "func MyFunc(T any) T",
+                "func MyFunc[T](x T) T",
+                "func MyFunc<T any>(x T) T"
+            ],
+            "a": 0,
+            "e": "Go uses square brackets for type parameters: func MyFunc[T any](x T) T. The type parameter list appears after the function name and before the regular parameter list."
+        },
+        {
+            "q": "Which keyword is used to define a type constraint interface in Go generics?",
+            "o": [
+                "interface",
+                "constraint",
+                "type",
+                "implements"
+            ],
+            "a": 0,
+            "e": "In Go, constraints are defined using interfaces (often with the 'interface' keyword or by embedding existing interfaces). There is no separate 'constraint' keyword."
+        },
+        {
+            "q": "What does the 'any' identifier represent in a type parameter constraint?",
+            "o": [
+                "An alias for interface{}",
+                "A built-in generic type",
+                "A keyword meaning 'any type'",
+                "A placeholder for a specific type"
+            ],
+            "a": 0,
+            "e": "'any' is a predeclared identifier that is an alias for the empty interface (interface{}). It allows any type to be used as the type argument."
+        },
+        {
+            "q": "How do you specify multiple type parameters in a generic function?",
+            "o": [
+                "func Foo[T, U any](t T, u U)",
+                "func Foo[T any, U any](t T, u U)",
+                "func Foo[T, U](t T, u U)",
+                "func Foo[T any; U any](t T, u U)"
+            ],
+            "a": 0,
+            "e": "Multiple type parameters are separated by commas within the same brackets: func Foo[T, U any](t T, u U)."
+        },
+        {
+            "q": "Which of the following is a valid type constraint using the 'comparable' interface?",
+            "o": [
+                "func Min[T comparable](a, b T) T",
+                "func Min[T == comparable](a, b T) T",
+                "func Min[T implements comparable](a, b T) T",
+                "func Min[T : comparable](a, b T) T"
+            ],
+            "a": 0,
+            "e": "The 'comparable' interface is a predeclared constraint that allows types supporting == and !=. It is used directly in the type parameter list."
+        },
+        {
+            "q": "What is type inference in Go generics?",
+            "o": [
+                "The compiler deduces type arguments from function arguments",
+                "The programmer explicitly provides type arguments",
+                "The runtime determines types dynamically",
+                "The type parameters are ignored during compilation"
+            ],
+            "a": 0,
+            "e": "Go supports type inference: when calling a generic function, you can omit explicit type arguments if the compiler can infer them from the regular function arguments."
+        },
+        {
+            "q": "How do you instantiate a generic type with explicit type arguments?",
+            "o": [
+                "myVar := MyGenericType[int]{}",
+                "myVar := MyGenericType<int>{}",
+                "myVar := MyGenericType[int]",
+                "myVar := MyGenericType{int}"
+            ],
+            "a": 0,
+            "e": "To instantiate a generic type, provide the type argument in square brackets after the type name: MyGenericType[int]{}."
+        },
+        {
+            "q": "What is the purpose of a type set in a constraint interface?",
+            "o": [
+                "To list all allowed concrete types for a type parameter",
+                "To define methods that the type must implement",
+                "To specify the memory layout of the type",
+                "To declare the zero value of the type"
+            ],
+            "a": 0,
+            "e": "A constraint interface defines a type set — the set of types that satisfy the constraint. It can include method requirements and type terms (using the '|' union operator) to explicitly list allowed types."
+        },
+        {
+            "q": "Which operator is used in a constraint interface to denote a union of types?",
+            "o": [
+                "|",
+                "||",
+                ",",
+                "&"
+            ],
+            "a": 0,
+            "e": "The '|' operator in an interface used as a constraint creates a union of types (type terms). For example: interface { int | float64 }."
+        },
+        {
+            "q": "Can a generic type have methods with their own type parameters?",
+            "o": [
+                "Yes, methods can declare additional type parameters",
+                "No, methods cannot have type parameters",
+                "Only if the receiver is a pointer",
+                "Only for interface types"
+            ],
+            "a": 0,
+            "e": "Methods on generic types can have their own type parameters, independent of the receiver's type parameters. This is sometimes called 'generic methods'."
+        },
+        {
+            "q": "What is the zero value of a generic type parameter T?",
+            "o": [
+                "The zero value of the concrete type substituted for T",
+                "nil",
+                "undefined",
+                "A compile-time error"
+            ],
+            "a": 0,
+            "e": "A variable of type T takes the zero value of the concrete type argument provided at instantiation. For example, if T is int, zero is 0; if T is *string, zero is nil."
+        },
+        {
+            "q": "Which package provides commonly used constraints like 'comparable', 'Ordered', etc.?",
+            "o": [
+                "golang.org/x/exp/constraints",
+                "constraints",
+                "generic",
+                "golang.org/x/generics"
+            ],
+            "a": 0,
+            "e": "The package golang.org/x/exp/constraints (now also available as 'constraints' in the standard library since Go 1.21) provides predefined constraints such as Ordered, Signed, Unsigned, Integer, Float, and Complex."
+        },
+        {
+            "q": "What happens if you use a type argument that does not satisfy the constraint?",
+            "o": [
+                "Compile-time error",
+                "Runtime panic",
+                "Silent failure",
+                "Automatic conversion"
+            ],
+            "a": 0,
+            "e": "Go performs constraint checking at compile time. If a type argument does not satisfy the constraint, the code will not compile."
+        },
+        {
+            "q": "Can you use a generic type as a receiver in a method declaration?",
+            "o": [
+                "Yes, e.g., func (s Stack[T]) Push(v T)",
+                "No, receivers must be concrete types",
+                "Only if the type is an interface",
+                "Only with pointer receivers"
+            ],
+            "a": 0,
+            "e": "Generic types can be used as receivers. The method can also have additional type parameters."
+        },
+        {
+            "q": "What is the difference between 'any' and 'comparable' constraints?",
+            "o": [
+                "'any' allows any type; 'comparable' allows only types supporting == and !=.",
+                "'comparable' is a superset of 'any'",
+                "'any' requires types to have methods; 'comparable' does not",
+                "There is no difference"
+            ],
+            "a": 0,
+            "e": "'any' (alias for interface{}) accepts all types. 'comparable' only accepts types that are comparable with == and != (e.g., not slices, maps, functions)."
+        },
+        {
+            "q": "In Go 1.18+, which of the following is a valid generic type definition?",
+            "o": [
+                "type Pair[T, U any] struct { First T; Second U }",
+                "type Pair[T, U] struct { First T; Second U }",
+                "type Pair[T any, U any] struct { First T; Second U }",
+                "type Pair<T, U> struct { First T; Second U }"
+            ],
+            "a": 0,
+            "e": "Generic type definitions use square brackets with type parameters and optional constraints: type Pair[T, U any] struct { ... }."
+        }
+    ]
+}

@@ -1333,48 +1333,78 @@
                 }
             ]
         },
-
-
-{
-  "name": "Go",
-  "slug": "golang",
-  "icon": "fa-brands fa-golang",
-  "hidden": true,
-  "subtopics": [
-    {
-      "name": "Core Go",
-      "slug": "core",
-	  "hidden": true,
-      "modules": [
-        {"name": "Data Types, Structs & Pointers", "slug": "types_structs_pointers"},
-        {"name": "Functions & Interfaces", "slug": "functions_interfaces"},
-        {"name": "Error Handling Patterns", "slug": "error_handling"},
-        {"name": "Generics", "slug": "generics"}
-      ]
-    },
-    {
-      "name": "Concurrency",
-      "slug": "concurrency",
-	  "hidden": true,
-      "modules": [
-        {"name": "Goroutines & Channels", "slug": "goroutines_channels"},
-        {"name": "sync Package & Mutexes", "slug": "sync_package"},
-        {"name": "Context Package", "slug": "context"},
-        {"name": "Concurrency Patterns (Worker Pools, Fan-out)", "slug": "concurrency_patterns"}
-      ]
-    },
-    {
-      "name": "Standard Library & Tooling",
-      "slug": "stdlib_tooling",
-	  "hidden": true,
-      "modules": [
-        {"name": "net/http & REST APIs", "slug": "net_http"},
-        {"name": "Go Modules & Dependency Management", "slug": "modules"},
-        {"name": "Testing & Benchmarking", "slug": "testing_benchmarking"}
-      ]
-    }
-  ]
-}		
-		
+        {
+            "name": "Go",
+            "slug": "golang",
+            "icon": "fa-brands fa-golang",
+            "hidden": true,
+            "subtopics": [
+                {
+                    "name": "Core Go",
+                    "slug": "core",
+                    "hidden": false,
+                    "modules": [
+                        {
+                            "name": "Data Types, Structs & Pointers",
+                            "slug": "types_structs_pointers"
+                        },
+                        {
+                            "name": "Functions & Interfaces",
+                            "slug": "functions_interfaces"
+                        },
+                        {
+                            "name": "Error Handling Patterns",
+                            "slug": "error_handling"
+                        },
+                        {
+                            "name": "Generics",
+                            "slug": "generics"
+                        }
+                    ]
+                },
+                {
+                    "name": "Concurrency",
+                    "slug": "concurrency",
+                    "hidden": true,
+                    "modules": [
+                        {
+                            "name": "Goroutines & Channels",
+                            "slug": "goroutines_channels"
+                        },
+                        {
+                            "name": "sync Package & Mutexes",
+                            "slug": "sync_package"
+                        },
+                        {
+                            "name": "Context Package",
+                            "slug": "context"
+                        },
+                        {
+                            "name": "Concurrency Patterns (Worker Pools, Fan-out)",
+                            "slug": "concurrency_patterns"
+                        }
+                    ]
+                },
+                {
+                    "name": "Standard Library & Tooling",
+                    "slug": "stdlib_tooling",
+                    "hidden": true,
+                    "modules": [
+                        {
+                            "name": "net/http & REST APIs",
+                            "slug": "net_http"
+                        },
+                        {
+                            "name": "Go Modules & Dependency Management",
+                            "slug": "modules"
+                        },
+                        {
+                            "name": "Testing & Benchmarking",
+                            "slug": "testing_benchmarking"
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }
