@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "What keyword is used to start a new goroutine in Go?",
+            "o": [
+                "go",
+                "thread",
+                "async",
+                "spawn"
+            ],
+            "a": 0,
+            "e": "The `go` keyword launches a new goroutine. `thread`, `async`, and `spawn` are not Go keywords for this purpose."
+        },
+        {
+            "q": "Which statement correctly creates an unbuffered channel of type int?",
+            "o": [
+                "ch := make(chan int)",
+                "ch := make(chan int, 0)",
+                "ch := new(chan int)",
+                "ch := chan int{}"
+            ],
+            "a": 0,
+            "e": "`make(chan int)` creates an unbuffered channel. `make(chan int, 0)` also creates an unbuffered channel but is less idiomatic. `new` and composite literals are not used for channels."
+        },
+        {
+            "q": "What happens when you send to a nil channel?",
+            "o": [
+                "Panics immediately",
+                "Blocks forever",
+                "Returns an error",
+                "Sends zero value"
+            ],
+            "a": 1,
+            "e": "Sending to a nil channel blocks forever. The same applies to receiving from a nil channel."
+        },
+        {
+            "q": "How do you close a channel in Go?",
+            "o": [
+                "close(ch)",
+                "ch.Close()",
+                "delete(ch)",
+                "ch = nil"
+            ],
+            "a": 0,
+            "e": "The built-in `close` function closes a channel. Channels do not have a `Close` method, and `delete` is for maps."
+        },
+        {
+            "q": "What is the result of receiving from a closed channel?",
+            "o": [
+                "Panics",
+                "Returns the zero value and false",
+                "Blocks forever",
+                "Returns the last sent value and true"
+            ],
+            "a": 1,
+            "e": "Receiving from a closed channel returns the zero value of the channel's type and `false` as the second return value, indicating the channel is closed."
+        },
+        {
+            "q": "Which of the following is a valid use of the `select` statement?",
+            "o": [
+                "Waiting on multiple channel operations",
+                "Switching on channel values",
+                "Iterating over a channel",
+                "Closing multiple channels at once"
+            ],
+            "a": 0,
+            "e": "`select` lets a goroutine wait on multiple communication operations (send/receive). It is not a switch, range, or close mechanism."
+        },
+        {
+            "q": "What does a buffered channel with capacity 3 allow?",
+            "o": [
+                "Up to 3 sends without a corresponding receive",
+                "Exactly 3 goroutines to write simultaneously",
+                "3 receives before any send",
+                "Only 3 total messages over the channel's lifetime"
+            ],
+            "a": 0,
+            "e": "A buffered channel of capacity 3 can hold up to 3 values before sends block. Receives can happen anytime; the buffer does not limit total messages."
+        },
+        {
+            "q": "Which package provides synchronization primitives like WaitGroup and Mutex?",
+            "o": [
+                "sync",
+                "sync/atomic",
+                "runtime",
+                "concurrent"
+            ],
+            "a": 0,
+            "e": "The `sync` package contains `WaitGroup`, `Mutex`, `RWMutex`, `Cond`, `Once`, and `Pool`. `sync/atomic` provides low-level atomic operations."
+        },
+        {
+            "q": "What is the purpose of `sync.WaitGroup`?",
+            "o": [
+                "To wait for a collection of goroutines to finish",
+                "To protect shared memory from concurrent access",
+                "To signal between goroutines",
+                "To limit the number of concurrent goroutines"
+            ],
+            "a": 0,
+            "e": "`WaitGroup` waits for a group of goroutines to finish by calling `Add`, `Done`, and `Wait`. It does not provide mutual exclusion or signaling directly."
+        },
+        {
+            "q": "What happens if you call `wg.Add(1)` after `wg.Wait()` has been called on the same WaitGroup?",
+            "o": [
+                "Panics",
+                "Blocks until the new goroutine finishes",
+                "Adds to the counter but Wait returns immediately",
+                "Undefined behavior"
+            ],
+            "a": 0,
+            "e": "Calling `Add` with a positive value after `Wait` has returned (i.e., when the counter is zero) causes a panic. You must add before waiting."
+        },
+        {
+            "q": "Which statement about channel direction is correct?",
+            "o": [
+                "chan<- int is a send-only channel type",
+                "<-chan int is a send-only channel type",
+                "chan int is receive-only",
+                "Direction is enforced only at runtime"
+            ],
+            "a": 0,
+            "e": "`chan<- int` denotes a send-only channel, `<-chan int` denotes receive-only. Direction is part of the type and checked at compile time."
+        },
+        {
+            "q": "What is the effect of `runtime.GOMAXPROCS(1)`?",
+            "o": [
+                "Limits the program to a single OS thread for executing user-level code",
+                "Disables goroutine scheduling",
+                "Sets the maximum number of goroutines to 1",
+                "Forces all channels to be unbuffered"
+            ],
+            "a": 0,
+            "e": "`GOMAXPROCS` sets the maximum number of OS threads that can execute user-level Go code simultaneously. It does not limit goroutine count or channel buffering."
+        },
+        {
+            "q": "How can you safely read from a channel until it is closed?",
+            "o": [
+                "for v := range ch { ... }",
+                "for { v, ok := <-ch; if !ok { break } ... }",
+                "Both A and B are correct",
+                "Neither A nor B works"
+            ],
+            "a": 2,
+            "e": "Both `for v := range ch` and the manual `ok` check are idiomatic ways to read until a channel is closed. The range loop automatically handles the closed condition."
+        },
+        {
+            "q": "What does the `select` statement do when multiple cases are ready?",
+            "o": [
+                "Executes all ready cases",
+                "Chooses one at random",
+                "Executes the first case in lexical order",
+                "Blocks until only one case is ready"
+            ],
+            "a": 1,
+            "e": "If multiple cases are ready, `select` picks one pseudo-randomly. It does not execute all, nor does it prioritize lexical order."
+        },
+        {
+            "q": "Which of the following will cause a deadlock?",
+            "o": [
+                "ch := make(chan int); ch <- 1",
+                "ch := make(chan int); go func() { ch <- 1 }(); <-ch",
+                "ch := make(chan int, 1); ch <- 1; <-ch",
+                "ch := make(chan int); close(ch); <-ch"
+            ],
+            "a": 0,
+            "e": "Sending to an unbuffered channel without a concurrent receiver blocks forever, causing a deadlock. The other examples either have a receiver, a buffer, or read from a closed channel (which returns immediately)."
+        },
+        {
+            "q": "What is the zero value of a channel type?",
+            "o": [
+                "An empty buffered channel",
+                "nil",
+                "A closed channel",
+                "A channel with capacity 1"
+            ],
+            "a": 1,
+            "e": "The zero value of a channel is `nil`. A nil channel blocks on both send and receive indefinitely."
+        }
+    ]
+}
