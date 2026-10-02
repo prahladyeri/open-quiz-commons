@@ -1,0 +1,191 @@
+{
+    "data": [
+        {
+            "q": "Which type in the sync package provides a mutual exclusion lock?",
+            "o": [
+                "sync.RWMutex",
+                "sync.Mutex",
+                "sync.WaitGroup",
+                "sync.Once"
+            ],
+            "a": 1,
+            "e": "sync.Mutex is the standard mutual exclusion lock. sync.RWMutex is a reader/writer mutex."
+        },
+        {
+            "q": "What happens if you call Lock() on an already locked sync.Mutex in the same goroutine?",
+            "o": [
+                "It returns an error",
+                "It unlocks automatically",
+                "The goroutine blocks (deadlocks)",
+                "It panics immediately"
+            ],
+            "a": 2,
+            "e": "A standard sync.Mutex is not re-entrant. Locking it twice from the same goroutine causes a deadlock."
+        },
+        {
+            "q": "Which method should be used to unlock a sync.Mutex?",
+            "o": [
+                "Unlock()",
+                "Release()",
+                "Free()",
+                "Close()"
+            ],
+            "a": 0,
+            "e": "The method to release a mutex lock is Unlock(). It is a runtime error to unlock an unlocked mutex."
+        },
+        {
+            "q": "What is the primary difference between sync.Mutex and sync.RWMutex?",
+            "o": [
+                "RWMutex is faster for all operations",
+                "RWMutex allows multiple readers or a single writer",
+                "Mutex allows multiple readers",
+                "There is no difference"
+            ],
+            "a": 1,
+            "e": "sync.RWMutex allows multiple goroutines to hold a read lock (RLock) simultaneously, but only one to hold a write lock (Lock). sync.Mutex allows only one holder total."
+        },
+        {
+            "q": "Which WaitGroup method increments the counter?",
+            "o": [
+                "Done()",
+                "Wait()",
+                "Add(n)",
+                "Increment()"
+            ],
+            "a": 2,
+            "e": "Add(delta int) increments the counter by delta (usually 1). Done() decrements it. Wait() blocks until the counter is zero."
+        },
+        {
+            "q": "What is the correct pattern to use sync.WaitGroup with a goroutine?",
+            "o": [
+                "wg.Add(1); go func() { defer wg.Done(); ... }()",
+                "go func() { wg.Add(1); defer wg.Done(); ... }()",
+                "wg.Add(1); go func() { wg.Done(); ... }()",
+                "go func() { defer wg.Add(1); wg.Done(); ... }()"
+            ],
+            "a": 0,
+            "e": "Add(1) must be called before the goroutine starts to avoid a race condition where Wait() returns before Add is called. defer wg.Done() ensures the counter decrements even on panic."
+        },
+        {
+            "q": "What does sync.Once ensure?",
+            "o": [
+                "A function runs exactly once, regardless of how many times Do is called",
+                "A function runs once per goroutine",
+                "A function runs at most once, but may not run if Do is not called",
+                "Both A and C"
+            ],
+            "a": 3,
+            "e": "sync.Once guarantees the function passed to Do(f) executes exactly once (the first time Do is called). If Do is never called, f never runs."
+        },
+        {
+            "q": "If the function passed to sync.Once.Do panics, what happens on subsequent calls to Do?",
+            "o": [
+                "The function runs again",
+                "The panic is re-raised",
+                "Do returns immediately without running the function",
+                "The program exits"
+            ],
+            "a": 2,
+            "e": "If the function panics, sync.Once considers it 'executed'. Subsequent calls to Do do nothing (the function is not re-run, and the panic is not re-raised)."
+        },
+        {
+            "q": "Which type is a concurrent-safe map implementation in the sync package?",
+            "o": [
+                "sync.Map",
+                "sync.HashMap",
+                "sync.ConcurrentMap",
+                "map[string]interface{} with sync.Mutex"
+            ],
+            "a": 0,
+            "e": "sync.Map is optimized for two common use cases: entry written once but read many times, and multiple goroutines reading/writing disjoint keysets."
+        },
+        {
+            "q": "What does sync.Map.Store(key, value) do?",
+            "o": [
+                "Updates the value only if key exists",
+                "Deletes the key",
+                "Sets the value for a key",
+                "Returns the current value"
+            ],
+            "a": 2,
+            "e": "Store sets the value for a key. Load retrieves. LoadOrStore retrieves or sets if missing. Delete removes."
+        },
+        {
+            "q": "What is the purpose of sync.Pool?",
+            "o": [
+                "To manage a pool of goroutines",
+                "To cache allocated but unused objects to reduce GC pressure",
+                "To synchronize access to a shared resource",
+                "To limit the number of concurrent operations"
+            ],
+            "a": 1,
+            "e": "sync.Pool is a temporary object cache. It helps reduce garbage collection pressure by reusing allocated memory (e.g., byte slices, structs)."
+        },
+        {
+            "q": "When an object is retrieved from sync.Pool via Get(), what happens if the pool is empty?",
+            "o": [
+                "It blocks until an object is Put back",
+                "It returns nil",
+                "It calls the New function (if set) to create one",
+                "It panics"
+            ],
+            "a": 2,
+            "e": "If the pool is empty and a New function was provided during initialization, Get() calls New to create a new object. Otherwise, it returns nil."
+        },
+        {
+            "q": "Which type provides a condition variable for goroutine signaling?",
+            "o": [
+                "sync.Signal",
+                "sync.Cond",
+                "sync.Event",
+                "sync.Notify"
+            ],
+            "a": 1,
+            "e": "sync.Cond implements a condition variable, allowing goroutines to wait for a condition (Wait) and be notified (Signal/Broadcast)."
+        },
+        {
+            "q": "What must be held when calling cond.Wait()?",
+            "o": [
+                "No lock required",
+                "The condition variable's internal lock (cond.L)",
+                "A separate sync.Mutex",
+                "A sync.RWMutex write lock"
+            ],
+            "a": 1,
+            "e": "cond.Wait() atomically unlocks cond.L and suspends the goroutine. Upon resume, it re-locks cond.L before returning. The caller must hold cond.L before calling Wait."
+        },
+        {
+            "q": "What is the difference between cond.Signal() and cond.Broadcast()?",
+            "o": [
+                "Signal wakes all waiters; Broadcast wakes one",
+                "Signal wakes one waiter; Broadcast wakes all waiters",
+                "Signal is for Mutex; Broadcast is for RWMutex",
+                "There is no difference"
+            ],
+            "a": 1,
+            "e": "Signal wakes a single goroutine waiting on the condition. Broadcast wakes all goroutines waiting on the condition."
+        },
+        {
+            "q": "Is it safe to copy a sync.Mutex by value (e.g., passing struct containing it by value)?",
+            "o": [
+                "Yes, it creates a new independent lock",
+                "No, it copies the internal state leading to undefined behavior",
+                "Yes, but only if unlocked",
+                "No, the compiler prevents it"
+            ],
+            "a": 1,
+            "e": "sync.Mutex (and other sync types) must not be copied. They contain internal state (like semaphores) that must not be duplicated. Always pass pointers to structs containing mutexes."
+        },
+        {
+            "q": "Which of the following is NOT a method on sync.WaitGroup?",
+            "o": [
+                "Add",
+                "Done",
+                "Wait",
+                "Reset"
+            ],
+            "a": 3,
+            "e": "sync.WaitGroup has Add, Done, and Wait. It does not have a Reset method; a WaitGroup cannot be reused after Wait returns unless the counter is zero and no new Adds happen concurrently (effectively a new zero-value WaitGroup should be used)."
+        }
+    ]
+}
