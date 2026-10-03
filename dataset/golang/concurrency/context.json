@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which function creates a new empty Context that is never canceled, has no values, and has no deadline?",
+            "o": [
+                "context.Background()",
+                "context.TODO()",
+                "context.WithCancel(context.Background())",
+                "context.WithTimeout(context.Background(), 0)"
+            ],
+            "a": 0,
+            "e": "context.Background() returns a nil Context that is typically used as the root of a Context tree in main, init, and tests. context.TODO() is similar but signals that the choice of context is not yet decided."
+        },
+        {
+            "q": "What does context.WithCancel(parent Context) return?",
+            "o": [
+                "A new Context and a CancelFunc",
+                "A new Context and a Done channel",
+                "A new Context and an error",
+                "Only a new Context"
+            ],
+            "a": 0,
+            "e": "context.WithCancel returns a copy of the parent Context with a new Done channel, and a CancelFunc that, when called, closes the Done channel to signal cancellation."
+        },
+        {
+            "q": "How do you properly handle a Context cancellation in a long-running function?",
+            "o": [
+                "Ignore the Context and run to completion",
+                "Select on ctx.Done() and return when closed",
+                "Call ctx.Err() in a loop without blocking",
+                "Use time.Sleep and check ctx.Err() periodically"
+            ],
+            "a": 1,
+            "e": "The idiomatic pattern is to use a select statement with ctx.Done() to wait for cancellation, then return ctx.Err() which will be context.Canceled or context.DeadlineExceeded."
+        },
+        {
+            "q": "Which function creates a Context that automatically cancels after a specified duration?",
+            "o": [
+                "context.WithDeadline(parent, time.Now().Add(d))",
+                "context.WithTimeout(parent, d)",
+                "context.WithCancelCause(parent)",
+                "context.WithValue(parent, key, val)"
+            ],
+            "a": 1,
+            "e": "context.WithTimeout is a convenience wrapper around WithDeadline that uses time.Now().Add(timeout). It returns a Context and a CancelFunc."
+        },
+        {
+            "q": "What is the return type of ctx.Done()?",
+            "o": [
+                "chan bool",
+                "chan struct{}",
+                "<-chan struct{}",
+                "error"
+            ],
+            "a": 2,
+            "e": "ctx.Done() returns a read-only channel (<-chan struct{}) that is closed when the Context is canceled or times out. Receiving from this channel signals that the work should stop."
+        },
+        {
+            "q": "After a Context is canceled, what does ctx.Err() return?",
+            "o": [
+                "nil",
+                "context.Canceled",
+                "context.DeadlineExceeded",
+                "Either context.Canceled or context.DeadlineExceeded depending on the cause"
+            ],
+            "a": 3,
+            "e": "ctx.Err() returns nil if the Context is not yet done. If done, it returns context.Canceled if canceled explicitly, or context.DeadlineExceeded if the deadline passed."
+        },
+        {
+            "q": "What is the primary purpose of context.WithValue(parent Context, key, val interface{})?",
+            "o": [
+                "To store cancellation signals",
+                "To pass request-scoped data like trace IDs or authentication tokens",
+                "To set a deadline for the Context",
+                "To create a derived Context that cancels when the parent cancels"
+            ],
+            "a": 1,
+            "e": "context.WithValue is for request-scoped data that crosses API boundaries, such as trace IDs, user IDs, or auth tokens. It should not be used for optional function parameters or shared mutable state."
+        },
+        {
+            "q": "What is the recommended type for Context keys to avoid collisions?",
+            "o": [
+                "string",
+                "int",
+                "A custom unexported type (e.g., type contextKey string)",
+                "interface{}"
+            ],
+            "a": 2,
+            "e": "Using a custom unexported type (like type contextKey string) prevents key collisions across packages. The value can still be a string, but the type ensures uniqueness."
+        },
+        {
+            "q": "When should you call the CancelFunc returned by context.WithCancel, WithTimeout, or WithDeadline?",
+            "o": [
+                "Never, the garbage collector handles it",
+                "Only if an error occurs",
+                "Always, to release resources and allow the Context to be garbage collected",
+                "Only when the parent Context is canceled"
+            ],
+            "a": 2,
+            "e": "Always call the CancelFunc when the operation completes (success or failure) to avoid leaking resources like timers or goroutines waiting on the Done channel. Defer cancel() is the common pattern."
+        },
+        {
+            "q": "What happens if you call the CancelFunc multiple times?",
+            "o": [
+                "It panics",
+                "It returns an error",
+                "Subsequent calls are no-ops (safe to call multiple times)",
+                "It cancels the parent Context"
+            ],
+            "a": 2,
+            "e": "The CancelFunc is idempotent; calling it more than once has no additional effect and does not panic. This makes it safe to call in multiple cleanup paths."
+        },
+        {
+            "q": "How do you propagate a Context through an HTTP server handler chain?",
+            "o": [
+                "Store it in a global variable",
+                "Pass it as a function argument to each handler",
+                "Use r.Context() and r.WithContext(ctx) on the *http.Request",
+                "Attach it to the http.ResponseWriter"
+            ],
+            "a": 2,
+            "e": "In net/http, the request carries the Context. Use r.Context() to retrieve it and r.WithContext(newCtx) to create a new request with a derived Context for the next handler."
+        },
+        {
+            "q": "Which standard library package uses Context extensively for timeouts and cancellation?",
+            "o": [
+                "fmt",
+                "database/sql",
+                "encoding/json",
+                "strings"
+            ],
+            "a": 1,
+            "e": "database/sql uses Context for query timeouts and cancellation (e.g., QueryContext, ExecContext). Many other packages like net/http, net, and os/exec also support Context."
+        },
+        {
+            "q": "What is the difference between context.Background() and context.TODO()?",
+            "o": [
+                "Background() is cancelable, TODO() is not",
+                "TODO() has a deadline, Background() does not",
+                "They are functionally identical; TODO() signals uncertainty about which Context to use",
+                "Background() is for tests, TODO() is for production"
+            ],
+            "a": 2,
+            "e": "Both return a nil Context that is never canceled. TODO() is a semantic marker for code that should eventually pass a proper Context but hasn't been refactored yet. Static analysis tools may flag TODO() usage."
+        },
+        {
+            "q": "How do you create a Context that is canceled when either the parent is canceled OR a deadline passes?",
+            "o": [
+                "context.WithDeadline(parent, deadline)",
+                "context.WithTimeout(parent, timeout)",
+                "Both A and B achieve this",
+                "context.WithCancel(parent) then manually track time"
+            ],
+            "a": 2,
+            "e": "Both WithDeadline and WithTimeout return a Context that is canceled when the parent cancels OR the deadline/timeout expires, whichever happens first. WithTimeout is just a convenience for relative durations."
+        },
+        {
+            "q": "What is a common mistake when using context.WithValue?",
+            "o": [
+                "Using a string literal as the key",
+                "Storing optional function parameters",
+                "Not calling the CancelFunc",
+                "Passing it to database/sql"
+            ],
+            "a": 1,
+            "e": "context.WithValue should only be used for request-scoped data that crosses API boundaries (e.g., trace IDs, auth tokens). Using it for optional function parameters hides dependencies and makes code harder to test and understand."
+        },
+        {
+            "q": "In a select statement with multiple cases including ctx.Done(), what happens if ctx.Done() is ready and another case is also ready?",
+            "o": [
+                "ctx.Done() always wins",
+                "The other case always wins",
+                "Go pseudo-randomly selects one of the ready cases",
+                "It causes a panic"
+            ],
+            "a": 2,
+            "e": "When multiple cases in a select are ready, Go chooses one at random (pseudo-random uniform selection). This ensures fairness. You cannot rely on ctx.Done() being prioritized."
+        }
+    ]
+}
