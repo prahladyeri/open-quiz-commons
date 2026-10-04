@@ -1365,7 +1365,7 @@
                 {
                     "name": "Concurrency",
                     "slug": "concurrency",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "Goroutines & Channels",

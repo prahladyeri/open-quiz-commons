@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "q": "Which concurrency pattern uses a channel to signal completion of a goroutine, allowing the main function to wait for it?",
+            "o": [
+                "Worker Pool",
+                "Fan-out, Fan-in",
+                "Done Channel (Completion Signal)",
+                "Pipeline"
+            ],
+            "a": 2,
+            "e": "A 'done' channel (often of type struct{} or bool) is a common pattern to signal that a goroutine has finished its work, allowing synchronization without a WaitGroup."
+        },
+        {
+            "q": "In the 'Fan-out, Fan-in' pattern, what does 'Fan-out' refer to?",
+            "o": [
+                "Multiplexing multiple channels into a single channel",
+                "Distributing work from one channel to multiple worker goroutines",
+                "Closing a channel when all senders are done",
+                "Buffering a channel to prevent blocking"
+            ],
+            "a": 1,
+            "e": "Fan-out involves starting multiple goroutines reading from the same input channel to parallelize work processing. Fan-in is the multiplexing of multiple result channels into one."
+        },
+        {
+            "q": "What is the primary purpose of the `sync.WaitGroup` in Go concurrency patterns?",
+            "o": [
+                "To protect shared memory access (Mutual Exclusion)",
+                "To wait for a collection of goroutines to finish execution",
+                "To communicate data between goroutines via channels",
+                "To limit the number of concurrent goroutines"
+            ],
+            "a": 1,
+            "e": "WaitGroup is used to block until a counter of active goroutines reaches zero. It is distinct from Mutex (protection) or Semaphore (limiting concurrency)."
+        },
+        {
+            "q": "Which pattern is best suited for limiting the number of concurrent operations (e.g., limiting API calls to 10 at a time)?",
+            "o": [
+                "Pipeline",
+                "Worker Pool (using a buffered channel as a semaphore)",
+                "Pub/Sub",
+                "Generator"
+            ],
+            "a": 1,
+            "e": "A Worker Pool implemented with a buffered channel (semaphore) or a fixed number of workers consuming from a job queue effectively limits concurrency."
+        },
+        {
+            "q": "What characterizes a 'Pipeline' pattern in Go?",
+            "o": [
+                "Multiple stages connected by channels, where each stage is a goroutine processing data and passing to the next",
+                "A single goroutine broadcasting messages to many subscribers",
+                "A mutex protecting a shared map",
+                "A function that returns a channel and spawns a goroutine to push data"
+            ],
+            "a": 0,
+            "e": "Pipelines chain stages (functions reading from in-chan, writing to out-chan) allowing data to flow through transformation steps concurrently."
+        },
+        {
+            "q": "How does the 'Generator' pattern differ from a standard function returning a slice?",
+            "o": [
+                "It returns a channel and produces values asynchronously in a goroutine",
+                "It blocks the caller until all values are computed",
+                "It uses a Mutex to protect the returned data",
+                "It panics if the channel buffer is full"
+            ],
+            "a": 0,
+            "e": "Generators return a read-only channel (`<-chan T`) and spawn a goroutine to push data, enabling lazy evaluation and streaming, unlike slices which hold all data in memory at once."
+        },
+        {
+            "q": "What is the correct way to implement 'Fan-in' (multiplexing) safely?",
+            "o": [
+                "Have multiple goroutines write to the same channel without synchronization",
+                "Use a single goroutine to read from multiple input channels using a `select` statement",
+                "Close all input channels immediately after starting workers",
+                "Use a Mutex to lock the output channel before writing"
+            ],
+            "a": 1,
+            "e": "Fan-in is typically implemented by a dedicated goroutine that uses `select` to read from multiple input channels and write to a single output channel. Channels are thread-safe for multiple writers, but the fan-in logic usually centralizes reading."
+        },
+        {
+            "q": "In the 'Context' pattern for cancellation, what happens when `ctx.Done()` channel is closed?",
+            "o": [
+                "The program exits immediately",
+                "All goroutines listening on that context should stop work and return",
+                "The garbage collector runs",
+                "A panic is triggered in the parent goroutine"
+            ],
+            "a": 1,
+            "e": "Closing the `Done` channel is a broadcast signal. Goroutines should `select` on `ctx.Done()` and return/clean up when it fires, implementing cooperative cancellation."
+        },
+        {
+            "q": "Which pattern involves a goroutine that manages a specific piece of state (like a map or counter) and other goroutines communicate with it via channels to read/write that state?",
+            "o": [
+                "Mutex Guard",
+                "Monitor Goroutine (or Actor Pattern)",
+                "Pipeline",
+                "Worker Pool"
+            ],
+            "a": 1,
+            "e": "This is the Monitor Goroutine pattern (similar to Actor model). Instead of using Mutexes, ownership of the state is confined to a single goroutine; others send requests via channels."
+        },
+        {
+            "q": "What is the idiomatic Go way to handle a 'Producer-Consumer' scenario where the producer might be faster than the consumer?",
+            "o": [
+                "Use an unbuffered channel to force synchronization (backpressure)",
+                "Use a buffered channel to absorb bursts",
+                "Use a Mutex and a slice",
+                "Spawn unlimited goroutines for consumers"
+            ],
+            "a": 1,
+            "e": "Buffered channels decouple producer and consumer speeds up to the buffer capacity, handling bursts. Unbuffered channels enforce strict synchronization (blocking producer until consumer ready)."
+        },
+        {
+            "q": "When using `errgroup.Group`, what happens if one goroutine returns an error?",
+            "o": [
+                "The error is ignored, and all goroutines continue running",
+                "The group cancels the context (if configured), waits for others, and returns the first error",
+                "The program panics immediately",
+                "Only the failing goroutine stops; others run to completion silently"
+            ],
+            "a": 1,
+            "e": "`errgroup` (with context) cancels the derived context on first error, signals other goroutines to stop (via context cancellation), waits for all, and returns the first non-nil error."
+        },
+        {
+            "q": "What is the primary risk of reading from a closed channel in a `for range` loop vs a manual `ok` check?",
+            "o": [
+                "`for range` panics on closed channel, manual check does not",
+                "`for range` exits cleanly when channel is closed, manual check requires explicit `ok` verification to distinguish zero value from closure",
+                "Manual check is faster",
+                "There is no difference"
+            ],
+            "a": 1,
+            "e": "`for range c` automatically terminates when `c` is closed. Manual `v, ok := <-c` requires checking `ok` to know if the channel closed (returning zero value) vs a valid zero value sent."
+        },
+        {
+            "q": "Which pattern is described by: 'Do not communicate by sharing memory; instead, share memory by communicating'?",
+            "o": [
+                "Mutex/Lock Pattern",
+                "Channel/Message Passing Pattern (CSP)",
+                "Atomic Operations Pattern",
+                "Thread-Local Storage Pattern"
+            ],
+            "a": 1,
+            "e": "This is the core Go proverb advocating for CSP (Communicating Sequential Processes) using channels over traditional shared-memory locking."
+        },
+        {
+            "q": "How do you implement a 'Rate Limiter' pattern using Go concurrency primitives?",
+            "o": [
+                "Using a `time.Ticker` channel to gate operations in a loop or select statement",
+                "Using `time.Sleep` inside every goroutine",
+                "Using a global counter protected by a Mutex",
+                "Using an unbuffered channel for every request"
+            ],
+            "a": 0,
+            "e": "A `time.Ticker` provides a channel that fires at intervals. Consuming from this channel (or a buffered 'token bucket' channel refilled by a ticker) effectively limits throughput."
+        },
+        {
+            "q": "What is the purpose of the 'Or-Done' channel helper pattern?",
+            "o": [
+                "To merge two done channels into one that closes when either closes",
+                "To run two functions simultaneously",
+                "To prevent a channel from closing",
+                "To buffer a done channel"
+            ],
+            "a": 0,
+            "e": "The `orDone` pattern (often a helper function) takes a parent `done` channel and a data channel. It returns a new channel that closes if *either* the parent context is done or the data channel closes, preventing goroutine leaks in pipelines."
+        },
+        {
+            "q": "In a 'Worker Pool' pattern, why is it important to close the `jobs` channel?",
+            "o": [
+                "To prevent the workers from panic",
+                "To signal to the worker goroutines (range loops) that no more jobs will arrive, allowing them to exit gracefully",
+                "To free up the channel memory immediately",
+                "To increase the buffer size"
+            ],
+            "a": 1,
+            "e": "Workers typically use `for job := range jobs`. Closing `jobs` terminates the range loop, allowing the worker goroutine to finish and `wg.Done()` to be called. Forgetting to close causes workers to hang forever."
+        }
+    ]
+}
