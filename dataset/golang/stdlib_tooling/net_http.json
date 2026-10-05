@@ -1,0 +1,147 @@
+{
+    "data": [
+        {
+            "q": "Which type implements the http.Handler interface?",
+            "o": [
+                "func(ResponseWriter, *Request)",
+                "func(http.ResponseWriter, *http.Request) error",
+                "struct with ServeHTTP(http.ResponseWriter, *http.Request) method",
+                "func(*http.Request) http.Response"
+            ],
+            "a": 2,
+            "e": "The Handler interface requires a ServeHTTP method with signature ServeHTTP(ResponseWriter, *Request). A struct with this method satisfies the interface."
+        },
+        {
+            "q": "What does http.HandleFunc register the handler with?",
+            "o": [
+                "A new custom ServeMux",
+                "http.DefaultServeMux",
+                "The http.Server instance directly",
+                "The operating system network stack"
+            ],
+            "a": 1,
+            "e": "http.HandleFunc registers the handler function with the DefaultServeMux, the default HTTP request multiplexer."
+        },
+        {
+            "q": "Which function starts an HTTP server listening on a given address using the DefaultServeMux?",
+            "o": [
+                "http.StartServer(addr string)",
+                "http.ListenAndServe(addr string, handler Handler)",
+                "http.Serve(listener net.Listener, handler Handler)",
+                "http.Run(addr string)"
+            ],
+            "a": 1,
+            "e": "http.ListenAndServe starts a server on the given address using DefaultServeMux if handler is nil. http.Serve accepts a listener."
+        },
+        {
+            "q": "How do you create an HTTP request with an associated context for cancellation?",
+            "o": [
+                "http.NewRequest(method, url, body).WithContext(ctx)",
+                "http.NewRequestWithContext(ctx, method, url, body)",
+                "http.Request{Context: ctx, Method: method, URL: url}",
+                "ctx.HTTPRequest(method, url, body)"
+            ],
+            "a": 1,
+            "e": "http.NewRequestWithContext is the idiomatic way to create a request with a context since Go 1.13."
+        },
+        {
+            "q": "Which method on http.Client executes an HTTP request and returns a Response?",
+            "o": [
+                "Get(url string)",
+                "Post(url, contentType string, body io.Reader)",
+                "Do(req *http.Request)",
+                "Execute(req *http.Request)"
+            ],
+            "a": 2,
+            "e": "Do is the core method that sends the request and returns a Response. Get and Post are convenience wrappers."
+        },
+        {
+            "q": "What is the correct way to write an HTTP status code and headers before the response body?",
+            "o": [
+                "w.WriteHeader(code); w.Header().Set(key, value); w.Write(body)",
+                "w.Header().Set(key, value); w.WriteHeader(code); w.Write(body)",
+                "w.WriteHeader(code); w.Write(body); w.Header().Set(key, value)",
+                "w.Write(body); w.WriteHeader(code); w.Header().Set(key, value)"
+            ],
+            "a": 1,
+            "e": "Headers must be set before WriteHeader. WriteHeader sends the status line and headers; after that, headers cannot be changed."
+        },
+        {
+            "q": "Which package provides utilities for testing HTTP handlers without a network listener?",
+            "o": [
+                "net/http/test",
+                "net/http/httptest",
+                "testing/http",
+                "net/http/testing"
+            ],
+            "a": 1,
+            "e": "httptest provides NewRecorder, NewServer, and other helpers for testing HTTP code in-process."
+        },
+        {
+            "q": "How do you serve static files from a directory under a URL prefix?",
+            "o": [
+                "http.Handle(prefix, http.FileServer(http.Dir(root)))",
+                "http.Handle(prefix, http.StripPrefix(prefix, http.FileServer(http.Dir(root))))",
+                "http.ServeFiles(prefix, root)",
+                "http.FileServer(prefix, root)"
+            ],
+            "a": 1,
+            "e": "StripPrefix removes the prefix before the FileServer sees the request path, otherwise the prefix becomes part of the filesystem path."
+        },
+        {
+            "q": "Which Server fields configure timeouts to defend against slow clients?",
+            "o": [
+                "ReadTimeout, WriteTimeout, IdleTimeout",
+                "ConnectTimeout, RequestTimeout, ResponseTimeout",
+                "Timeout, KeepAliveTimeout, MaxHeaderBytes",
+                "ReadDeadline, WriteDeadline, IdleDeadline"
+            ],
+            "a": 0,
+            "e": "ReadTimeout, WriteTimeout, and IdleTimeout are the standard server timeout fields. IdleTimeout defaults to ReadTimeout if not set."
+        },
+        {
+            "q": "What status code does http.Redirect use by default if not specified?",
+            "o": [
+                "301 Moved Permanently",
+                "302 Found",
+                "303 See Other",
+                "307 Temporary Redirect"
+            ],
+            "a": 1,
+            "e": "http.Redirect defaults to 302 Found. Use http.StatusMovedPermanently (301) or http.StatusTemporaryRedirect (307) explicitly for other behaviors."
+        },
+        {
+            "q": "How do you set a cookie on an HTTP response?",
+            "o": [
+                "w.Header().Add(\"Set-Cookie\", cookie.String())",
+                "http.SetCookie(w, cookie)",
+                "w.Cookie(cookie)",
+                "w.WriteCookie(cookie)"
+            ],
+            "a": 1,
+            "e": "http.SetCookie serializes the *http.Cookie and adds the Set-Cookie header. It handles escaping and multiple cookies correctly."
+        },
+        {
+            "q": "Which method gracefully shuts down an http.Server without disrupting active connections?",
+            "o": [
+                "srv.Close()",
+                "srv.Shutdown(ctx context.Context)",
+                "srv.Stop()",
+                "srv.Terminate()"
+            ],
+            "a": 1,
+            "e": "Shutdown gracefully stops the server, waiting for idle connections and optionally active requests (via context). Close closes listeners immediately."
+        },
+        {
+            "q": "What does the http.MaxBytesReader function do?",
+            "o": [
+                "Limits the size of the response body written by the handler",
+                "Limits the size of the incoming request body",
+                "Limits the maximum header size",
+                "Limits the number of concurrent requests"
+            ],
+            "a": 1,
+            "e": "MaxBytesReader wraps the request body reader to enforce a maximum byte limit, returning an error if exceeded. Useful for preventing DoS via large uploads."
+        }
+    ]
+}
