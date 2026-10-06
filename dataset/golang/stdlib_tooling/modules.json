@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "What command initializes a new Go module in the current directory?",
+            "o": [
+                "go mod init",
+                "go init module",
+                "go create module",
+                "go mod new"
+            ],
+            "a": 0,
+            "e": "`go mod init <module-path>` creates a new go.mod file, marking the directory as a module root."
+        },
+        {
+            "q": "Which file defines the module path and its dependencies?",
+            "o": [
+                "go.mod",
+                "go.sum",
+                "vendor/modules.txt",
+                "Gopkg.toml"
+            ],
+            "a": 0,
+            "e": "go.mod contains the module path, Go version, and require directives for dependencies. go.sum holds cryptographic hashes."
+        },
+        {
+            "q": "What is the purpose of go.sum?",
+            "o": [
+                "Stores module source code",
+                "Records expected cryptographic hashes of dependencies",
+                "Lists transitive dependencies only",
+                "Defines module version"
+            ],
+            "a": 1,
+            "e": "go.sum ensures reproducible builds by recording the SHA-256 hashes of each dependency's .zip and .mod files."
+        },
+        {
+            "q": "Which command downloads and adds missing dependencies and removes unused ones?",
+            "o": [
+                "go mod download",
+                "go mod tidy",
+                "go mod vendor",
+                "go mod verify"
+            ],
+            "a": 1,
+            "e": "`go mod tidy` syncs the module: adds missing imports, removes unused ones, and updates go.sum accordingly."
+        },
+        {
+            "q": "How do you upgrade a specific dependency to its latest version?",
+            "o": [
+                "go get module@latest",
+                "go mod upgrade module",
+                "go update module",
+                "go mod get module@latest"
+            ],
+            "a": 0,
+            "e": "`go get example.com/mod@latest` fetches the latest tagged version and updates go.mod and go.sum."
+        },
+        {
+            "q": "What does the \"replace\" directive in go.mod do?",
+            "o": [
+                "Replaces the module with a fork on GitHub",
+                "Redirects a module to a different location (e.g., local fork)",
+                "Replaces the module's version with a pseudo-version",
+                "Removes the module from the build"
+            ],
+            "a": 1,
+            "e": "The `replace` directive redirects a module import path to another location, commonly used for local forks or during development."
+        },
+        {
+            "q": "Which command verifies that downloaded modules match entries in go.sum?",
+            "o": [
+                "go mod verify",
+                "go mod check",
+                "go mod validate",
+                "go mod audit"
+            ],
+            "a": 0,
+            "e": "`go mod verify` checks that the cached module zip files match the hashes recorded in go.sum."
+        },
+        {
+            "q": "What is a \"pseudo-version\" in Go modules?",
+            "o": [
+                "A version for pre-release tags",
+                "A version generated for commits without tags (e.g., v0.0.0-20230101123456-abcdef123456)",
+                "A version used for replace directives",
+                "A version that indicates a breaking change"
+            ],
+            "a": 1,
+            "e": "Pseudo-versions are generated for untagged commits, encoding the timestamp and commit hash to provide a sortable version."
+        },
+        {
+            "q": "Which command prints the module dependency graph?",
+            "o": [
+                "go mod graph",
+                "go list -m all",
+                "go mod deps",
+                "go mod tree"
+            ],
+            "a": 0,
+            "e": "`go mod graph` outputs the full dependency graph in a format suitable for tools like `go mod graph | grep module`."
+        },
+        {
+            "q": "What does \"go mod vendor\" do?",
+            "o": [
+                "Creates a vendor directory with copies of all dependencies",
+                "Removes the vendor directory",
+                "Updates go.sum with vendor hashes",
+                "Downloads modules to cache only"
+            ],
+            "a": 0,
+            "e": "`go mod vendor` creates a vendor/ directory containing the source of all dependencies for offline or hermetic builds."
+        },
+        {
+            "q": "How can you run a specific version of a tool (e.g., golangci-lint) using Go modules?",
+            "o": [
+                "go run golangci-lint@latest",
+                "go install golangci-lint@latest",
+                "go tool golangci-lint@latest",
+                "go mod tool golangci-lint@latest"
+            ],
+            "a": 0,
+            "e": "`go run example.com/tool@version` executes the tool at the given version without installing it permanently."
+        },
+        {
+            "q": "What is the minimum Go version required for module support (enabled by default)?",
+            "o": [
+                "Go 1.11",
+                "Go 1.13",
+                "Go 1.16",
+                "Go 1.18"
+            ],
+            "a": 1,
+            "e": "Go 1.13 enabled modules by default (GO111MODULE=auto). Go 1.11 introduced experimental support behind a flag."
+        },
+        {
+            "q": "Which environment variable controls module behavior (on, off, auto)?",
+            "o": [
+                "GO111MODULE",
+                "GOMODULES",
+                "GO_MODULES",
+                "GOMOD"
+            ],
+            "a": 0,
+            "e": "GO111MODULE=on|off|auto controls whether the go command uses module-aware mode."
+        },
+        {
+            "q": "What does \"go list -m -versions module@latest\" show?",
+            "o": [
+                "All available versions of a module",
+                "Only the latest version",
+                "The module's go.mod content",
+                "The module's checksum"
+            ],
+            "a": 0,
+            "e": "The `-versions` flag lists all known tagged versions for the given module path."
+        },
+        {
+            "q": "In a go.mod file, what does \"require\" specify?",
+            "o": [
+                "The module's own path",
+                "Minimum versions of dependencies",
+                "Build tags for the module",
+                "Replace directives"
+            ],
+            "a": 1,
+            "e": "The `require` directive lists the minimum versions of direct dependencies needed to build the module."
+        }
+    ]
+}
