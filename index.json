@@ -1388,7 +1388,7 @@
                 {
                     "name": "Standard Library & Tooling",
                     "slug": "stdlib_tooling",
-                    "hidden": true,
+                    "hidden": false,
                     "modules": [
                         {
                             "name": "net/http & REST APIs",

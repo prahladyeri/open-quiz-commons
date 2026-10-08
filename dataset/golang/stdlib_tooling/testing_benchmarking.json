@@ -1,0 +1,235 @@
+{
+    "data": [
+        {
+            "q": "What is the correct signature for a benchmark function in Go's testing package?",
+            "o": [
+                "func BenchmarkXxx(t *testing.T)",
+                "func BenchmarkXxx(b *testing.B)",
+                "func TestBenchmarkXxx(b *testing.B)",
+                "func Benchmark(x *testing.B)"
+            ],
+            "a": 1,
+            "e": "Benchmark functions must start with 'Benchmark' and accept a pointer to testing.B. The testing.B type provides methods like RunParallel, ResetTimer, and N for iteration control."
+        },
+        {
+            "q": "Which command runs all benchmarks in a package and reports memory allocation statistics?",
+            "o": [
+                "go test -bench=. -benchmem",
+                "go test -bench=all -mem",
+                "go test -bench . -alloc",
+                "go test -run=Bench -memstats"
+            ],
+            "a": 0,
+            "e": "The flag -bench=. matches all benchmarks. -benchmem enables memory allocation statistics (allocs/op, bytes/op) in the output."
+        },
+        {
+            "q": "In a benchmark function, what does b.N represent?",
+            "o": [
+                "The number of CPU cores available",
+                "The number of times the benchmark loop should run",
+                "The number of bytes allocated per operation",
+                "The number of goroutines to spawn"
+            ],
+            "a": 1,
+            "e": "b.N is set by the testing framework and indicates how many iterations the benchmark loop must execute. The framework increases N until the benchmark runs long enough for a stable measurement."
+        },
+        {
+            "q": "How do you run a specific subtest named 'CaseA' inside a test function 'TestFoo' from the command line?",
+            "o": [
+                "go test -run TestFoo/CaseA",
+                "go test -subtest CaseA",
+                "go test -test.run TestFoo.CaseA",
+                "go test -run 'TestFoo/CaseA$'"
+            ],
+            "a": 0,
+            "e": "The -run flag takes a regex matching the full test path. Subtests are separated by a slash. 'TestFoo/CaseA' matches the subtest CaseA inside TestFoo."
+        },
+        {
+            "q": "Which method on testing.T marks the current test as failed but continues execution?",
+            "o": [
+                "t.Fatal()",
+                "t.Fail()",
+                "t.Error()",
+                "t.FailNow()"
+            ],
+            "a": 2,
+            "e": "t.Error() logs the error and marks the test as failed but continues execution. t.Fatal() and t.FailNow() stop the test immediately (via runtime.Goexit). t.Fail() marks failed but logs nothing."
+        },
+        {
+            "q": "What is the purpose of t.Helper() in a test helper function?",
+            "o": [
+                "It marks the function as a test helper so file/line numbers in errors point to the caller",
+                "It runs the helper function in a separate goroutine",
+                "It automatically calls t.Fail() if the helper returns an error",
+                "It registers the helper for cleanup after the test"
+            ],
+            "a": 0,
+            "e": "t.Helper() marks the calling function as a test helper. When the helper calls t.Error/Fatal, the reported file/line number will be the call site in the test function, not inside the helper."
+        },
+        {
+            "q": "Which flag enables the race detector during testing?",
+            "o": [
+                "go test -race",
+                "go test -detectrace",
+                "go test --race-detector",
+                "go test -race=on"
+            ],
+            "a": 0,
+            "e": "The -race flag instruments the code to detect data races at runtime. It is supported on linux/amd64, freebsd/amd64, darwin/amd64, windows/amd64."
+        },
+        {
+            "q": "How do you benchmark a function that runs in parallel using testing.B?",
+            "o": [
+                "b.RunParallel(func(pb *testing.PB) { for pb.Next() { ... } })",
+                "b.Run(parallel, func(b *testing.B) { ... })",
+                "b.SetParallelism(true); for i := 0; i < b.N; i++ { ... }",
+                "b.Parallel(func() { for i := 0; i < b.N; i++ { ... } })"
+            ],
+            "a": 0,
+            "e": "b.RunParallel creates multiple goroutines and distributes b.N iterations among them. The closure receives a *testing.PB; pb.Next() returns true until the goroutine's share of iterations is exhausted."
+        },
+        {
+            "q": "What does b.ResetTimer() do in a benchmark?",
+            "o": [
+                "Resets the benchmark iteration count (b.N) to zero",
+                "Zeros the elapsed time and memory allocation counters, excluding setup code from measurements",
+                "Restarts the benchmark from the beginning with a new b.N",
+                "Resets the system clock for the benchmark process"
+            ],
+            "a": 1,
+            "e": "b.ResetTimer() zeros the elapsed time and memory allocation metrics. It is typically called after expensive setup code so only the target operation is measured."
+        },
+        {
+            "q": "Which function runs once before all tests in a package for setup, and once after for teardown?",
+            "o": [
+                "func TestMain(m *testing.M)",
+                "func InitTest()",
+                "func SetupTest()",
+                "func PackageInit()"
+            ],
+            "a": 0,
+            "e": "TestMain(m *testing.M) is the entry point for package-level setup/teardown. Call m.Run() to execute the tests. Return value of m.Run() should be passed to os.Exit."
+        },
+        {
+            "q": "What is the effect of calling t.Parallel() in a test function?",
+            "o": [
+                "Runs the test function concurrently with other tests marked Parallel",
+                "Runs the test function in a separate process",
+                "Splits the test function into multiple goroutines automatically",
+                "Enables parallel execution of subtests only"
+            ],
+            "a": 0,
+            "e": "t.Parallel() signals that this test can run in parallel with other tests that also call t.Parallel(). The test will pause until all non-parallel tests complete, then run concurrently with other parallel tests."
+        },
+        {
+            "q": "How do you measure throughput (bytes processed per second) in a benchmark?",
+            "o": [
+                "b.SetBytes(n) where n is the number of bytes processed per iteration",
+                "b.ReportMetric(float64(n), \"B/s\")",
+                "b.SetThroughput(n)",
+                "b.N * bytesPerOp"
+            ],
+            "a": 0,
+            "e": "b.SetBytes(n) records the number of bytes processed in each iteration. The framework then reports throughput in MB/s (or GB/s) alongside ns/op."
+        },
+        {
+            "q": "Which method creates a temporary directory that is automatically cleaned up when the test finishes?",
+            "o": [
+                "t.TempDir()",
+                "t.MkdirTemp()",
+                "os.MkdirTemp()",
+                "t.CleanupDir()"
+            ],
+            "a": 0,
+            "e": "t.TempDir() (added in Go 1.15) returns a path to a new temporary directory. It registers a cleanup function via t.Cleanup to remove the directory when the test and all its subtests complete."
+        },
+        {
+            "q": "What is the purpose of the -count flag in 'go test'?",
+            "o": [
+                "Specifies the number of CPU cores to use",
+                "Runs the tests/benchmarks N times (useful for flaky tests or benchmark stability)",
+                "Limits the number of test functions executed",
+                "Sets the number of iterations for benchmarks (overrides b.N)"
+            ],
+            "a": 1,
+            "e": "-count=N runs the test suite N times. For benchmarks, it runs each benchmark N times, reporting each result separately. Useful for detecting flaky tests or observing benchmark variance."
+        },
+        {
+            "q": "How do you skip a test conditionally (e.g., short mode) in Go?",
+            "o": [
+                "if testing.Short() { t.Skip(\"skipping in short mode\") }",
+                "if shortMode { t.Ignore() }",
+                "t.SkipIf(testing.Short(), \"msg\")",
+                "t.SkipNow() inside an if block"
+            ],
+            "a": 0,
+            "e": "testing.Short() returns true when -test.short flag is set. t.Skip() marks the test as skipped (not failed) and stops execution via runtime.Goexit. t.SkipNow() is the low-level equivalent but t.Skip() allows a message."
+        },
+        {
+            "q": "Which interface do both *testing.T and *testing.B implement, allowing shared helper functions?",
+            "o": [
+                "testing.TB",
+                "testing.Tester",
+                "testing.Benchmarker",
+                "testing.Runner"
+            ],
+            "a": 0,
+            "e": "testing.TB is the common interface implemented by *testing.T, *testing.B, and *testing.F (fuzzing). It includes methods like Error, Fatal, Log, Helper, Cleanup, TempDir, Context."
+        },
+        {
+            "q": "What does the -cover flag do when running 'go test'?",
+            "o": [
+                "Runs tests with code coverage analysis and prints a summary",
+                "Covers all test files in the module",
+                "Enables race detection coverage",
+                "Generates an HTML coverage report automatically"
+            ],
+            "a": 0,
+            "e": "-cover enables coverage analysis. It instruments the code to track which statements are executed during tests and prints a summary (e.g., 'coverage: 85.2% of statements'). Use -coverprofile=out to save details."
+        },
+        {
+            "q": "In a fuzz test (Go 1.18+), what is the correct signature for the fuzz target function?",
+            "o": [
+                "func FuzzXxx(f *testing.F)",
+                "func FuzzXxx(t *testing.T)",
+                "func FuzzXxx(b *testing.B)",
+                "func TestFuzzXxx(f *testing.F)"
+            ],
+            "a": 0,
+            "e": "Fuzz tests start with 'Fuzz' and accept *testing.F. The *testing.F type provides methods like Add (for seed corpus) and Fuzz (for the fuzzing function)."
+        },
+        {
+            "q": "How do you run only benchmarks matching a specific pattern, e.g., 'BenchmarkSort'?",
+            "o": [
+                "go test -bench=BenchmarkSort",
+                "go test -run=BenchmarkSort",
+                "go test -benchmark Sort",
+                "go test -bench BenchmarkSort"
+            ],
+            "a": 0,
+            "e": "-bench takes a regular expression to match benchmark names. -run matches test functions. The regex 'BenchmarkSort' matches any benchmark with that substring."
+        },
+        {
+            "q": "What is the correct way to stop the timer temporarily during a benchmark to exclude expensive setup?",
+            "o": [
+                "b.StopTimer(); setup(); b.StartTimer()",
+                "b.PauseTimer(); setup(); b.ResumeTimer()",
+                "b.HaltTimer(); setup(); b.ContinueTimer()",
+                "b.ResetTimer(); setup(); b.ResetTimer()"
+            ],
+            "a": 0,
+            "e": "b.StopTimer() pauses the timer; b.StartTimer() resumes it. This excludes the setup code duration from the benchmark measurement. ResetTimer zeros the counters entirely."
+        },
+        {
+            "q": "Which method registers a function to be called when the test (and its subtests) completes?",
+            "o": [
+                "t.Cleanup(func())",
+                "t.Defer(func())",
+                "t.OnExit(func())",
+                "t.After(func())"
+            ],
+            "a": 0,
+            "e": "t.Cleanup(f) registers f to be called after the test and all its subtests finish. Cleanups run in LIFO order. It is the modern replacement for defer in tests, works correctly with t.Parallel and subtests."
+        }
+    ]
+}
