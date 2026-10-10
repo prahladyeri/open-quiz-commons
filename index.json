@@ -824,7 +824,6 @@
             "name": "DevOps & Cloud Infrastructure",
             "slug": "devops_cloud",
             "icon": "fa-solid fa-server",
-            "hidden": true,
             "subtopics": [
                 {
                     "name": "CI/CD & Automation",
@@ -1173,31 +1172,26 @@
                             "name": "Syntax & Data Types",
                             "slug": "syntax_data_types",
                             "descn": "Value types vs reference types, nullable types, var, dynamic, and common type conversions.",
-                            "hidden": true
                         },
                         {
                             "name": "Control Flow",
                             "slug": "control_flow",
                             "descn": "if/else, switch expressions, pattern matching, loops, and exception-based flow control.",
-                            "hidden": true
                         },
                         {
                             "name": "Methods & Parameters",
                             "slug": "methods_parameters",
                             "descn": "Overloading, optional/named arguments, ref/out/in, params, local functions and extension methods.",
-                            "hidden": true
                         },
                         {
                             "name": "Collections & LINQ Basics",
                             "slug": "collections_linq",
                             "descn": "Lists, dictionaries, arrays, IEnumerable<T>, and introductory LINQ queries and lambdas.",
-                            "hidden": true
                         },
                         {
                             "name": "Error Handling",
                             "slug": "error_handling",
                             "descn": "try/catch/finally, custom exceptions, Exception filters, and best practices for fault tolerance.",
-                            "hidden": true
                         }
                     ]
                 },
