@@ -1171,27 +1171,27 @@
                         {
                             "name": "Syntax & Data Types",
                             "slug": "syntax_data_types",
-                            "descn": "Value types vs reference types, nullable types, var, dynamic, and common type conversions.",
+                            "descn": "Value types vs reference types, nullable types, var, dynamic, and common type conversions."
                         },
                         {
                             "name": "Control Flow",
                             "slug": "control_flow",
-                            "descn": "if/else, switch expressions, pattern matching, loops, and exception-based flow control.",
+                            "descn": "if/else, switch expressions, pattern matching, loops, and exception-based flow control."
                         },
                         {
                             "name": "Methods & Parameters",
                             "slug": "methods_parameters",
-                            "descn": "Overloading, optional/named arguments, ref/out/in, params, local functions and extension methods.",
+                            "descn": "Overloading, optional/named arguments, ref/out/in, params, local functions and extension methods."
                         },
                         {
                             "name": "Collections & LINQ Basics",
                             "slug": "collections_linq",
-                            "descn": "Lists, dictionaries, arrays, IEnumerable<T>, and introductory LINQ queries and lambdas.",
+                            "descn": "Lists, dictionaries, arrays, IEnumerable<T>, and introductory LINQ queries and lambdas."
                         },
                         {
                             "name": "Error Handling",
                             "slug": "error_handling",
-                            "descn": "try/catch/finally, custom exceptions, Exception filters, and best practices for fault tolerance.",
+                            "descn": "try/catch/finally, custom exceptions, Exception filters, and best practices for fault tolerance."
                         }
                     ]
                 },
@@ -1331,7 +1331,6 @@
             "name": "Go",
             "slug": "golang",
             "icon": "fa-brands fa-golang",
-            "hidden": true,
             "subtopics": [
                 {
                     "name": "Core Go",
