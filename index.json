@@ -1203,32 +1203,27 @@
                         {
                             "name": "Classes, Structs & Records",
                             "slug": "classes_structs_records",
-                            "descn": "Constructors, properties, init-only setters, records, record structs, and value semantics.",
-                            "hidden": true
+                            "descn": "Constructors, properties, init-only setters, records, record structs, and value semantics."
                         },
                         {
                             "name": "Inheritance & Polymorphism",
                             "slug": "inheritance_polymorphism",
-                            "descn": "Base classes, virtual/override, abstract classes, sealed types, and interface implementation.",
-                            "hidden": true
+                            "descn": "Base classes, virtual/override, abstract classes, sealed types, and interface implementation."
                         },
                         {
                             "name": "Generics & Constraints",
                             "slug": "generics_constraints",
-                            "descn": "Generic classes/methods, variance (in/out), type constraints, and generic collections performance.",
-                            "hidden": true
+                            "descn": "Generic classes/methods, variance (in/out), type constraints, and generic collections performance."
                         },
                         {
                             "name": "Delegates, Events & Lambdas",
                             "slug": "delegates_events_lambdas",
-                            "descn": "Action/Func, multicast delegates, event pattern, closures, and lambda expression pitfalls.",
-                            "hidden": true
+                            "descn": "Action/Func, multicast delegates, event pattern, closures, and lambda expression pitfalls."
                         },
                         {
                             "name": "Async & Parallel Programming",
                             "slug": "async_parallel",
-                            "descn": "async/await, Task and Task<T>, ValueTask, cancellation tokens, Parallel.ForEach, and PLINQ.",
-                            "hidden": true
+                            "descn": "async/await, Task and Task<T>, ValueTask, cancellation tokens, Parallel.ForEach, and PLINQ."
                         }
                     ]
                 },
@@ -1240,26 +1235,22 @@
                         {
                             "name": ".NET Runtime & GC",
                             "slug": "runtime_gc",
-                            "descn": "CLR, JIT, garbage collection generations, IDisposable, using statements, and memory management.",
-                            "hidden": true
+                            "descn": "CLR, JIT, garbage collection generations, IDisposable, using statements, and memory management."
                         },
                         {
                             "name": "NuGet & Project System",
                             "slug": "nuget_projects",
-                            "descn": "SDK-style projects, PackageReference, transitive dependencies, versioning, and private feeds.",
-                            "hidden": true
+                            "descn": "SDK-style projects, PackageReference, transitive dependencies, versioning, and private feeds."
                         },
                         {
                             "name": "File I/O & Serialization",
                             "slug": "file_io_serialization",
-                            "descn": "Streams, System.IO, JSON (System.Text.Json), XML, and binary serialization options.",
-                            "hidden": true
+                            "descn": "Streams, System.IO, JSON (System.Text.Json), XML, and binary serialization options."
                         },
                         {
                             "name": "Testing with xUnit/NUnit",
                             "slug": "testing_xunit_nunit",
-                            "descn": "Unit testing patterns, xUnit theories, Moq/NSubstitute mocking, and test coverage strategies.",
-                            "hidden": true
+                            "descn": "Unit testing patterns, xUnit theories, Moq/NSubstitute mocking, and test coverage strategies."
                         }
                     ]
                 },
@@ -1271,32 +1262,27 @@
                         {
                             "name": "ASP.NET Core Fundamentals",
                             "slug": "aspnet_core_basics",
-                            "descn": "Middleware pipeline, dependency injection, configuration, logging, and hosting models.",
-                            "hidden": true
+                            "descn": "Middleware pipeline, dependency injection, configuration, logging, and hosting models."
                         },
                         {
                             "name": "Web API & Minimal APIs",
                             "slug": "web_api_minimal",
-                            "descn": "Controllers vs Minimal APIs, routing, model binding, validation, and OpenAPI/Swagger generation.",
-                            "hidden": true
+                            "descn": "Controllers vs Minimal APIs, routing, model binding, validation, and OpenAPI/Swagger generation."
                         },
                         {
                             "name": "Entity Framework Core",
                             "slug": "entity_framework_core",
-                            "descn": "DbContext, DbSet, migrations, LINQ to Entities, change tracking, and performance tuning.",
-                            "hidden": true
+                            "descn": "DbContext, DbSet, migrations, LINQ to Entities, change tracking, and performance tuning."
                         },
                         {
                             "name": "Authentication & Authorization",
                             "slug": "auth_authorization",
-                            "descn": "Identity, JWT Bearer, OAuth2/OIDC, policy-based auth, roles, claims, and cookie auth.",
-                            "hidden": true
+                            "descn": "Identity, JWT Bearer, OAuth2/OIDC, policy-based auth, roles, claims, and cookie auth."
                         },
                         {
                             "name": "Blazor & Razor",
                             "slug": "blazor_razor",
-                            "descn": "Razor Pages, MVC views, Blazor Server vs WebAssembly, components, and state management.",
-                            "hidden": true
+                            "descn": "Razor Pages, MVC views, Blazor Server vs WebAssembly, components, and state management."
                         }
                     ]
                 },
@@ -1308,20 +1294,17 @@
                         {
                             "name": "Visual Studio & VS Code",
                             "slug": "vs_vscode",
-                            "descn": "Solution management, debugging, hot reload, analyzers, and editor productivity features.",
-                            "hidden": true
+                            "descn": "Solution management, debugging, hot reload, analyzers, and editor productivity features."
                         },
                         {
                             "name": "LINQ Advanced",
                             "slug": "linq_advanced",
-                            "descn": "Deferred execution, IQueryable vs IEnumerable, custom operators, and expression trees.",
-                            "hidden": true
+                            "descn": "Deferred execution, IQueryable vs IEnumerable, custom operators, and expression trees."
                         },
                         {
                             "name": "Performance & Diagnostics",
                             "slug": "performance_diagnostics",
-                            "descn": "BenchmarkDotNet, Span<T> and Memory<T>, profiling, and analyzing allocations.",
-                            "hidden": true
+                            "descn": "BenchmarkDotNet, Span<T> and Memory<T>, profiling, and analyzing allocations."
                         }
                     ]
                 }
