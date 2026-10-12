@@ -1381,6 +1381,779 @@
                     ]
                 }
             ]
-        }
+        },
+		{
+			"name": "SQL & Databases",
+			"slug": "sql",
+			"icon": "fa-solid fa-database",
+			"hidden": true,
+			"subtopics": [
+				{
+					"name": "Core SQL",
+					"slug": "core",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "SELECT, Filtering & Sorting",
+							"slug": "select_filter_sort",
+							"descn": "WHERE, ORDER BY, LIMIT/OFFSET, DISTINCT, and the logical order in which clauses are evaluated."
+						},
+						{
+							"name": "Joins",
+							"slug": "joins",
+							"descn": "INNER, LEFT, RIGHT, FULL and CROSS joins, join conditions vs filters, and self-joins."
+						},
+						{
+							"name": "Aggregation & Grouping",
+							"slug": "aggregation_grouping",
+							"descn": "GROUP BY, HAVING, aggregate functions, and common mistakes with non-aggregated columns."
+						},
+						{
+							"name": "Subqueries & CTEs",
+							"slug": "subqueries_ctes",
+							"descn": "Correlated vs uncorrelated subqueries, EXISTS vs IN, and structuring queries with WITH clauses."
+						},
+						{
+							"name": "NULL Semantics",
+							"slug": "null_semantics",
+							"descn": "Three-valued logic, NULL in comparisons, COALESCE/NULLIF, and NULL behaviour in aggregates and unique constraints."
+						},
+						{
+							"name": "Set Operations",
+							"slug": "set_operations",
+							"descn": "UNION vs UNION ALL, INTERSECT, EXCEPT, and column compatibility rules."
+						}
+					]
+				},
+				{
+					"name": "Advanced Querying",
+					"slug": "advanced_querying",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Window Functions",
+							"slug": "window_functions",
+							"descn": "OVER, PARTITION BY, ranking functions, LAG/LEAD, and running totals with frame clauses."
+						},
+						{
+							"name": "Recursive CTEs",
+							"slug": "recursive_ctes",
+							"descn": "Hierarchies, tree traversal, graph walks, and termination conditions."
+						},
+						{
+							"name": "JSON & Full-Text Search",
+							"slug": "json_fulltext",
+							"descn": "Querying JSON columns, JSON functions across dialects, and FTS basics (FTS5, tsvector)."
+						},
+						{
+							"name": "Common Query Patterns",
+							"slug": "query_patterns",
+							"descn": "Top-N per group, keyset vs offset pagination, upserts, deduplication, and gap-and-island problems."
+						}
+					]
+				},
+				{
+					"name": "Schema Design",
+					"slug": "schema_design",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Normalization",
+							"slug": "normalization",
+							"descn": "1NF to BCNF, anomalies, and when denormalization is a deliberate choice."
+						},
+						{
+							"name": "Keys & Constraints",
+							"slug": "keys_constraints",
+							"descn": "Primary, foreign, unique and check constraints, surrogate vs natural keys, and cascade rules."
+						},
+						{
+							"name": "Data Types & Modeling",
+							"slug": "data_types_modeling",
+							"descn": "Choosing types for money, dates and time zones, enums, and storing IDs; many-to-many and polymorphic modeling."
+						},
+						{
+							"name": "Schema Evolution",
+							"slug": "schema_evolution",
+							"descn": "Safe migrations, adding columns and indexes without downtime, and backfilling data."
+						}
+					]
+				},
+				{
+					"name": "Performance & Internals",
+					"slug": "performance_internals",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Indexes",
+							"slug": "indexes",
+							"descn": "B-tree internals, composite index column order, covering and partial indexes, and when indexes hurt."
+						},
+						{
+							"name": "Query Plans & EXPLAIN",
+							"slug": "query_plans",
+							"descn": "Reading EXPLAIN output, scan types, join algorithms, and spotting N+1 and full-table scans."
+						},
+						{
+							"name": "Transactions & Isolation",
+							"slug": "transactions_isolation",
+							"descn": "ACID, isolation levels, dirty/non-repeatable/phantom reads, and MVCC."
+						},
+						{
+							"name": "Locking & Concurrency",
+							"slug": "locking_concurrency",
+							"descn": "Row vs table locks, deadlocks, optimistic vs pessimistic concurrency, and SELECT FOR UPDATE."
+						}
+					]
+				},
+				{
+					"name": "Dialects & Engines",
+					"slug": "dialects_engines",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "SQLite",
+							"slug": "sqlite",
+							"descn": "Type affinity, WAL mode, PRAGMAs, single-writer behaviour, and limitations vs server databases."
+						},
+						{
+							"name": "PostgreSQL",
+							"slug": "postgresql",
+							"descn": "Rich types (arrays, JSONB), extensions, partial indexes, and Postgres-specific syntax."
+						},
+						{
+							"name": "MySQL & MariaDB",
+							"slug": "mysql_mariadb",
+							"descn": "Storage engines, InnoDB behaviour, collations and charsets, and common dialect differences."
+						},
+						{
+							"name": "Redis & Key-Value Stores",
+							"slug": "redis_kv",
+							"descn": "Core data structures, expiry and eviction, persistence options, and caching patterns."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Git & Version Control",
+			"slug": "git",
+			"icon": "fa-brands fa-git-alt",
+			"hidden": true,
+			"subtopics": [
+				{
+					"name": "Fundamentals",
+					"slug": "core",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Object Model",
+							"slug": "object_model",
+							"descn": "Blobs, trees, commits and refs; how content-addressing and SHA hashes work."
+						},
+						{
+							"name": "Staging & Working Tree",
+							"slug": "staging_working_tree",
+							"descn": "The three areas, git add -p, status/diff variants, and .gitignore behaviour."
+						},
+						{
+							"name": "Branching & Merging",
+							"slug": "branching_merging",
+							"descn": "Branches as pointers, fast-forward vs three-way merges, and HEAD and detached HEAD."
+						},
+						{
+							"name": "Remotes & Tracking",
+							"slug": "remotes_tracking",
+							"descn": "fetch vs pull, upstream branches, push semantics, and force-with-lease."
+						}
+					]
+				},
+				{
+					"name": "History & Collaboration",
+					"slug": "history_collab",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Rebase vs Merge",
+							"slug": "rebase_vs_merge",
+							"descn": "How each rewrites or preserves history, and the golden rule of not rebasing shared branches."
+						},
+						{
+							"name": "Interactive Rebase",
+							"slug": "interactive_rebase",
+							"descn": "Squash, fixup, reword and reorder; cleaning history before review."
+						},
+						{
+							"name": "Cherry-pick & Revert",
+							"slug": "cherry_pick_revert",
+							"descn": "Applying and undoing individual commits, including reverting merge commits."
+						},
+						{
+							"name": "Resolving Conflicts",
+							"slug": "conflict_resolution",
+							"descn": "Conflict markers, merge tools, rerere, and strategies like ours/theirs."
+						},
+						{
+							"name": "Pull Request Workflows",
+							"slug": "pr_workflows",
+							"descn": "Fork vs branch workflows, squash vs merge commits, and commit message conventions."
+						}
+					]
+				},
+				{
+					"name": "Recovery & Debugging",
+					"slug": "recovery_debugging",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Reflog & Recovery",
+							"slug": "reflog_recovery",
+							"descn": "Finding lost commits, recovering deleted branches, and what garbage collection removes."
+						},
+						{
+							"name": "reset, restore & checkout",
+							"slug": "reset_restore_checkout",
+							"descn": "Soft, mixed and hard reset, restore vs checkout, and undoing changes safely."
+						},
+						{
+							"name": "bisect & blame",
+							"slug": "bisect_blame",
+							"descn": "Binary-searching for regressions and tracing line history with blame and log -S/-G."
+						},
+						{
+							"name": "Stash",
+							"slug": "stash",
+							"descn": "Stashing tracked and untracked changes, applying vs popping, and stash branches."
+						}
+					]
+				},
+				{
+					"name": "Advanced & Workflows",
+					"slug": "advanced_workflows",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Hooks",
+							"slug": "hooks",
+							"descn": "Client-side and server-side hooks, pre-commit checks, and sharing hooks across a team."
+						},
+						{
+							"name": "Submodules & Subtrees",
+							"slug": "submodules_subtrees",
+							"descn": "Embedding repos, pinning versions, and the trade-offs between the two approaches."
+						},
+						{
+							"name": "Worktrees",
+							"slug": "worktrees",
+							"descn": "Multiple working directories from one repository and typical use cases."
+						},
+						{
+							"name": "Branching Strategies",
+							"slug": "branching_strategies",
+							"descn": "Trunk-based development, GitFlow, release branches, and feature flags."
+						},
+						{
+							"name": "Large Repos & Config",
+							"slug": "large_repos_config",
+							"descn": "LFS, sparse checkout, shallow clones, signed commits, .gitattributes, and aliases."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Linux & Shell",
+			"slug": "linux_shell",
+			"icon": "fa-brands fa-linux",
+			"hidden": true,
+			"subtopics": [
+				{
+					"name": "Shell Fundamentals",
+					"slug": "fundamentals",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Files & Navigation",
+							"slug": "files_navigation",
+							"descn": "Filesystem hierarchy, paths, ls/cp/mv/rm, links (hard vs symbolic), and file types."
+						},
+						{
+							"name": "Pipes & Redirection",
+							"slug": "pipes_redirection",
+							"descn": "stdin/stdout/stderr, file descriptors, >, >>, 2>&1, here-docs, and process substitution."
+						},
+						{
+							"name": "Quoting, Globbing & Expansion",
+							"slug": "quoting_expansion",
+							"descn": "Single vs double quotes, brace/parameter/command expansion, and word splitting pitfalls."
+						},
+						{
+							"name": "Variables & Environment",
+							"slug": "variables_environment",
+							"descn": "Shell vs environment variables, export, PATH resolution, and dotfiles load order."
+						}
+					]
+				},
+				{
+					"name": "Bash Scripting",
+					"slug": "bash_scripting",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Control Flow & Functions",
+							"slug": "control_flow_functions",
+							"descn": "if/case/loops, test operators ([ ] vs [[ ]]), functions, and return values."
+						},
+						{
+							"name": "Arguments & Exit Codes",
+							"slug": "args_exit_codes",
+							"descn": "Positional parameters, getopts, exit status, and && / || chaining."
+						},
+						{
+							"name": "Safer Scripts",
+							"slug": "safer_scripts",
+							"descn": "set -euo pipefail, trap, quoting discipline, temp files, and ShellCheck."
+						},
+						{
+							"name": "POSIX sh vs Bash",
+							"slug": "posix_vs_bash",
+							"descn": "Portability concerns, bashisms, and choosing the right shebang."
+						}
+					]
+				},
+				{
+					"name": "Text Processing",
+					"slug": "text_processing",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "grep & Regular Expressions",
+							"slug": "grep_regex",
+							"descn": "Basic vs extended regex, grep flags, and ripgrep-style searching."
+						},
+						{
+							"name": "sed",
+							"slug": "sed",
+							"descn": "Substitution, addresses, in-place editing, and portability between GNU and BSD sed."
+						},
+						{
+							"name": "awk",
+							"slug": "awk",
+							"descn": "Fields, patterns, built-in variables, and one-liner reports."
+						},
+						{
+							"name": "Core Utilities",
+							"slug": "core_utilities",
+							"descn": "find, xargs, sort, uniq, cut, tr, tee, and building pipelines."
+						},
+						{
+							"name": "jq & Structured Data",
+							"slug": "jq_structured",
+							"descn": "Filtering JSON on the command line and handling CSV and YAML."
+						}
+					]
+				},
+				{
+					"name": "System Administration",
+					"slug": "sysadmin",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Users & Permissions",
+							"slug": "users_permissions",
+							"descn": "chmod/chown, octal and symbolic modes, setuid/sticky bits, umask, and sudo."
+						},
+						{
+							"name": "Processes & Signals",
+							"slug": "processes_signals",
+							"descn": "ps/top, foreground/background jobs, kill and signals, nohup, and zombie processes."
+						},
+						{
+							"name": "systemd & Services",
+							"slug": "systemd_services",
+							"descn": "Unit files, systemctl, targets, and journald basics."
+						},
+						{
+							"name": "cron & Timers",
+							"slug": "cron_timers",
+							"descn": "Crontab syntax, environment gotchas, and systemd timers vs cron."
+						},
+						{
+							"name": "Disks & Filesystems",
+							"slug": "disks_filesystems",
+							"descn": "df/du, mounts, fstab, inodes, and LVM basics."
+						},
+						{
+							"name": "Package Management",
+							"slug": "package_management",
+							"descn": "apt/dnf basics, repositories, and verifying package signatures."
+						}
+					]
+				},
+				{
+					"name": "Networking & Remote Work",
+					"slug": "networking_remote",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "SSH & Keys",
+							"slug": "ssh_keys",
+							"descn": "Key-based auth, ssh config, agent forwarding, port forwarding, and hardening sshd."
+						},
+						{
+							"name": "curl & HTTP Debugging",
+							"slug": "curl_http",
+							"descn": "Headers, methods, auth, following redirects, and timing requests."
+						},
+						{
+							"name": "Ports, Sockets & Firewalls",
+							"slug": "ports_sockets_firewalls",
+							"descn": "ss/lsof, listening vs established connections, and ufw/iptables basics."
+						},
+						{
+							"name": "File Transfer & Sync",
+							"slug": "file_transfer",
+							"descn": "rsync flags, scp vs sftp, and safe deployment-style syncing."
+						}
+					]
+				},
+				{
+					"name": "Logs & Troubleshooting",
+					"slug": "logs_troubleshooting",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Logs & journalctl",
+							"slug": "logs_journalctl",
+							"descn": "/var/log layout, journalctl filters, logrotate, and tailing logs."
+						},
+						{
+							"name": "Resource Monitoring",
+							"slug": "resource_monitoring",
+							"descn": "CPU, memory and I/O tools, load average, OOM killer, and swap."
+						},
+						{
+							"name": "Diagnosing Problems",
+							"slug": "diagnosing_problems",
+							"descn": "strace/lsof, checking disk full and port conflicts, and a systematic troubleshooting approach."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Security & Cryptography",
+			"slug": "security",
+			"icon": "fa-solid fa-shield-halved",
+			"hidden": true,
+			"subtopics": [
+				{
+					"name": "Security Fundamentals",
+					"slug": "fundamentals",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Threat Modeling & Principles",
+							"slug": "threat_modeling",
+							"descn": "CIA triad, STRIDE, attack surface, least privilege, and defense in depth."
+						},
+						{
+							"name": "Hashing, Encryption & Encoding",
+							"slug": "hash_encrypt_encode",
+							"descn": "What each is for, why Base64 is not security, and choosing the right primitive."
+						},
+						{
+							"name": "Randomness & Key Management",
+							"slug": "randomness_keys",
+							"descn": "CSPRNGs vs ordinary RNGs, key lifecycle, rotation, and storage."
+						},
+						{
+							"name": "Common Vulnerability Classes",
+							"slug": "vulnerability_classes",
+							"descn": "CVE/CWE basics, severity scoring, and how vulnerabilities are disclosed."
+						}
+					]
+				},
+				{
+					"name": "Web Application Security",
+					"slug": "web_app_security",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "OWASP Top 10",
+							"slug": "owasp_top10",
+							"descn": "The main risk categories and what each looks like in real applications."
+						},
+						{
+							"name": "XSS & Content Security Policy",
+							"slug": "xss_csp",
+							"descn": "Reflected, stored and DOM XSS, output encoding, and CSP directives."
+						},
+						{
+							"name": "CSRF & Cookie Security",
+							"slug": "csrf_cookies",
+							"descn": "CSRF tokens, SameSite, HttpOnly, Secure flags, and cookie scoping."
+						},
+						{
+							"name": "Injection (SQL, Command, Template)",
+							"slug": "injection",
+							"descn": "How injection works and parameterized queries and safe APIs as the fix."
+						},
+						{
+							"name": "SSRF, Path Traversal & Uploads",
+							"slug": "ssrf_traversal_uploads",
+							"descn": "Server-side request forgery, directory traversal, and safe file upload handling."
+						},
+						{
+							"name": "CORS & Security Headers",
+							"slug": "cors_headers",
+							"descn": "Same-origin policy, CORS misconfigurations, HSTS, and other response headers."
+						}
+					]
+				},
+				{
+					"name": "Authentication & Authorization",
+					"slug": "authn_authz",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Password Storage",
+							"slug": "password_storage",
+							"descn": "Salting, bcrypt/scrypt/argon2, work factors, and credential stuffing defenses."
+						},
+						{
+							"name": "Sessions vs Tokens",
+							"slug": "sessions_tokens",
+							"descn": "Server-side sessions, bearer tokens, revocation, and storage trade-offs."
+						},
+						{
+							"name": "JWT Pitfalls",
+							"slug": "jwt_pitfalls",
+							"descn": "alg confusion, none algorithm, expiry and rotation, and when not to use JWTs."
+						},
+						{
+							"name": "OAuth2 & OIDC",
+							"slug": "oauth_oidc",
+							"descn": "Grant types, PKCE, scopes, ID tokens vs access tokens, and common misconfigurations."
+						},
+						{
+							"name": "MFA, OTP & Passkeys",
+							"slug": "mfa_otp_passkeys",
+							"descn": "TOTP, SMS OTP weaknesses, brute-force and replay protection, and WebAuthn basics."
+						},
+						{
+							"name": "Access Control Models",
+							"slug": "access_control",
+							"descn": "RBAC, ABAC, IDOR/BOLA, and enforcing authorization on the server."
+						}
+					]
+				},
+				{
+					"name": "Cryptography & Transport",
+					"slug": "crypto_transport",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Symmetric & Asymmetric Crypto",
+							"slug": "symmetric_asymmetric",
+							"descn": "AES modes, RSA vs elliptic curves, key exchange, and misuse of ECB or reused nonces."
+						},
+						{
+							"name": "TLS & Certificates",
+							"slug": "tls_certificates",
+							"descn": "Handshake overview, certificate chains, Let's Encrypt, and pinning."
+						},
+						{
+							"name": "Signatures & MACs",
+							"slug": "signatures_macs",
+							"descn": "HMAC, digital signatures, webhook signature verification, and timing-safe comparison."
+						}
+					]
+				},
+				{
+					"name": "Operational Security",
+					"slug": "operational_security",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Dependency & Supply-Chain Security",
+							"slug": "supply_chain",
+							"descn": "Lockfiles, audit tooling, typosquatting, and SBOM basics."
+						},
+						{
+							"name": "Secrets Management",
+							"slug": "secrets_management",
+							"descn": "Env vars vs secret stores, leaked keys in repos, and rotation after exposure."
+						},
+						{
+							"name": "Server & Shared-Hosting Hardening",
+							"slug": "server_hardening",
+							"descn": "Patching, file permissions, disabling dangerous functions, and minimizing exposed services."
+						},
+						{
+							"name": "Rate Limiting & Abuse Prevention",
+							"slug": "rate_limiting_abuse",
+							"descn": "Throttling, CAPTCHA, bot detection, and protecting login and OTP endpoints."
+						},
+						{
+							"name": "Logging & Incident Response",
+							"slug": "logging_incident_response",
+							"descn": "What to log safely, detecting compromise, and a basic response playbook."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Data Structures & Algorithms",
+			"slug": "dsa",
+			"icon": "fa-solid fa-sitemap",
+			"hidden": true,
+			"subtopics": [
+				{
+					"name": "Foundations",
+					"slug": "foundations",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Big-O & Complexity Analysis",
+							"slug": "big_o",
+							"descn": "Time and space complexity, best/average/worst case, and comparing growth rates."
+						},
+						{
+							"name": "Amortized Analysis",
+							"slug": "amortized_analysis",
+							"descn": "Dynamic array growth, hash table resizing, and why amortized differs from average case."
+						},
+						{
+							"name": "Recursion & the Call Stack",
+							"slug": "recursion",
+							"descn": "Base cases, stack depth, tail recursion, and converting recursion to iteration."
+						},
+						{
+							"name": "Bit Manipulation",
+							"slug": "bit_manipulation",
+							"descn": "Bitwise operators, masks, common tricks, and sets as bitfields."
+						}
+					]
+				},
+				{
+					"name": "Linear Structures",
+					"slug": "linear_structures",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Arrays & Strings",
+							"slug": "arrays_strings",
+							"descn": "Contiguous memory, dynamic arrays, in-place operations, and string immutability costs."
+						},
+						{
+							"name": "Linked Lists",
+							"slug": "linked_lists",
+							"descn": "Singly vs doubly linked, pointer manipulation, cycle detection, and trade-offs vs arrays."
+						},
+						{
+							"name": "Stacks & Queues",
+							"slug": "stacks_queues",
+							"descn": "LIFO/FIFO, deques, monotonic stacks, and typical applications."
+						},
+						{
+							"name": "Hash Tables",
+							"slug": "hash_tables",
+							"descn": "Hash functions, collision handling, load factor, and sets vs maps."
+						}
+					]
+				},
+				{
+					"name": "Trees & Graphs",
+					"slug": "trees_graphs",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Binary Trees & BSTs",
+							"slug": "binary_trees_bst",
+							"descn": "Traversals (pre/in/post/level order), BST invariants, and operation complexity."
+						},
+						{
+							"name": "Balanced Trees & B-Trees",
+							"slug": "balanced_trees",
+							"descn": "AVL and red-black rotations, B-trees, and why databases use them."
+						},
+						{
+							"name": "Heaps & Priority Queues",
+							"slug": "heaps",
+							"descn": "Binary heap operations, heap sort, top-K problems, and heapify."
+						},
+						{
+							"name": "Tries",
+							"slug": "tries",
+							"descn": "Prefix trees, autocomplete use cases, and space trade-offs."
+						},
+						{
+							"name": "Graph Representations",
+							"slug": "graph_representations",
+							"descn": "Adjacency list vs matrix, directed vs undirected, weighted graphs, and density trade-offs."
+						},
+						{
+							"name": "BFS & DFS",
+							"slug": "bfs_dfs",
+							"descn": "Traversal strategies, connected components, and cycle detection."
+						},
+						{
+							"name": "Shortest Paths & Spanning Trees",
+							"slug": "shortest_paths_mst",
+							"descn": "Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal and Prim."
+						},
+						{
+							"name": "Topological Sort & Union-Find",
+							"slug": "toposort_union_find",
+							"descn": "Dependency ordering, disjoint sets, path compression, and union by rank."
+						}
+					]
+				},
+				{
+					"name": "Algorithmic Paradigms",
+					"slug": "paradigms",
+					"hidden": true,
+					"modules": [
+						{
+							"name": "Sorting",
+							"slug": "sorting",
+							"descn": "Comparison sorts vs linear-time sorts, stability, in-place sorting, and choosing an algorithm."
+						},
+						{
+							"name": "Binary Search & Variants",
+							"slug": "binary_search",
+							"descn": "Boundary conditions, searching on answer space, and rotated arrays."
+						},
+						{
+							"name": "Two Pointers & Sliding Window",
+							"slug": "two_pointers_window",
+							"descn": "Patterns for subarray, substring and pair problems in linear time."
+						},
+						{
+							"name": "Divide & Conquer",
+							"slug": "divide_conquer",
+							"descn": "Merge sort, quickselect, recurrence relations, and the master theorem."
+						},
+						{
+							"name": "Greedy Algorithms",
+							"slug": "greedy",
+							"descn": "Exchange arguments, interval scheduling, Huffman coding, and when greedy fails."
+						},
+						{
+							"name": "Dynamic Programming",
+							"slug": "dynamic_programming",
+							"descn": "Overlapping subproblems, memoization vs tabulation, knapsack, LCS, and state design."
+						},
+						{
+							"name": "Backtracking",
+							"slug": "backtracking",
+							"descn": "Permutations, subsets, N-Queens, pruning, and constraint satisfaction."
+						}
+					]
+				}
+			]
+		}
     ]
 }
