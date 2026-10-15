@@ -1,0 +1,158 @@
+{
+    "data": [
+        {
+            "q": "Which SQL statement is used to retrieve data from a database?",
+            "o": [
+                "GET",
+                "SELECT",
+                "RETRIEVE",
+                "FETCH"
+            ],
+            "a": 1,
+            "e": "SELECT is the standard SQL command to query data from one or more tables."
+        },
+        {
+            "q": "How do you select all columns from a table named 'customers'?",
+            "o": [
+                "SELECT * FROM customers;",
+                "SELECT ALL FROM customers;",
+                "SELECT columns FROM customers;",
+                "SELECT customers.*;"
+            ],
+            "a": 0,
+            "e": "The asterisk (*) wildcard selects all columns."
+        },
+        {
+            "q": "Which clause is used to filter records based on a specified condition?",
+            "o": [
+                "ORDER BY",
+                "GROUP BY",
+                "WHERE",
+                "HAVING"
+            ],
+            "a": 2,
+            "e": "WHERE filters rows before any grouping or sorting."
+        },
+        {
+            "q": "What is the correct syntax to select customers from 'USA'?",
+            "o": [
+                "SELECT * FROM customers WHERE country = 'USA';",
+                "SELECT * FROM customers IF country = 'USA';",
+                "SELECT * FROM customers FILTER country = 'USA';",
+                "SELECT * FROM customers HAVING country = 'USA';"
+            ],
+            "a": 0,
+            "e": "WHERE with equality operator (=) filters rows matching the value."
+        },
+        {
+            "q": "Which operator is used to combine multiple conditions where all must be true?",
+            "o": [
+                "OR",
+                "AND",
+                "NOT",
+                "XOR"
+            ],
+            "a": 1,
+            "e": "AND requires all conditions to be true; OR requires at least one."
+        },
+        {
+            "q": "How do you sort the result set in descending order by the 'price' column?",
+            "o": [
+                "ORDER BY price ASC",
+                "SORT BY price DESC",
+                "ORDER BY price DESC",
+                "ORDER price DESC"
+            ],
+            "a": 2,
+            "e": "ORDER BY column DESC sorts descending; ASC is default ascending."
+        },
+        {
+            "q": "Which keyword limits the number of rows returned in MySQL/PostgreSQL?",
+            "o": [
+                "TOP",
+                "LIMIT",
+                "ROWNUM",
+                "FETCH FIRST"
+            ],
+            "a": 1,
+            "e": "LIMIT is used in MySQL, PostgreSQL, SQLite. TOP is SQL Server; FETCH FIRST is standard SQL:2008."
+        },
+        {
+            "q": "What does the DISTINCT keyword do?",
+            "o": [
+                "Removes duplicate rows from the result set",
+                "Selects only unique columns",
+                "Orders the result set",
+                "Filters NULL values"
+            ],
+            "a": 0,
+            "e": "DISTINCT eliminates duplicate rows in the output."
+        },
+        {
+            "q": "Which operator selects values within a given range (inclusive)?",
+            "o": [
+                "IN",
+                "BETWEEN",
+                "LIKE",
+                "RANGE"
+            ],
+            "a": 1,
+            "e": "BETWEEN lower AND upper includes both boundaries."
+        },
+        {
+            "q": "How do you check for NULL values in a column?",
+            "o": [
+                "WHERE column = NULL",
+                "WHERE column IS NULL",
+                "WHERE column == NULL",
+                "WHERE column NULL"
+            ],
+            "a": 1,
+            "e": "NULL cannot be compared with =; use IS NULL or IS NOT NULL."
+        },
+        {
+            "q": "Which wildcard character represents zero or more characters in a LIKE pattern?",
+            "o": [
+                "_",
+                "%",
+                "*",
+                "?"
+            ],
+            "a": 1,
+            "e": "% matches any sequence of characters; _ matches exactly one character."
+        },
+        {
+            "q": "What is the purpose of the IN operator?",
+            "o": [
+                "To specify multiple possible values for a column",
+                "To check if a value exists in a subquery",
+                "Both of the above",
+                "To join tables"
+            ],
+            "a": 2,
+            "e": "IN allows a list of values or a subquery result."
+        },
+        {
+            "q": "Which clause is used to assign an alias to a column in the result set?",
+            "o": [
+                "AS",
+                "ALIAS",
+                "RENAME",
+                "NAME"
+            ],
+            "a": 0,
+            "e": "AS keyword (optional in some dialects) gives a column a temporary name."
+        },
+        {
+            "q": "What is the correct order of clauses in a SELECT statement?",
+            "o": [
+                "SELECT, FROM, WHERE, ORDER BY, LIMIT",
+                "SELECT, WHERE, FROM, ORDER BY, LIMIT",
+                "FROM, SELECT, WHERE, ORDER BY, LIMIT",
+                "SELECT, FROM, ORDER BY, WHERE, LIMIT"
+            ],
+            "a": 0,
+            "e": "Standard order: SELECT -> FROM -> WHERE -> GROUP BY -> HAVING -> ORDER BY -> LIMIT/OFFSET."
+        }
+    ]
+}
