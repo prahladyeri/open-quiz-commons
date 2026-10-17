@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "What does an INNER JOIN return?",
+            "o": [
+                "All rows from both tables",
+                "Only rows with matching values in both tables",
+                "All rows from the left table and matched rows from the right",
+                "All rows from the right table and matched rows from the left"
+            ],
+            "a": 1,
+            "e": "INNER JOIN returns only the rows where there is a match in both tables based on the join condition."
+        },
+        {
+            "q": "Which join returns all rows from the left table and the matched rows from the right table, with NULLs for non-matching right columns?",
+            "o": [
+                "INNER JOIN",
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "FULL OUTER JOIN"
+            ],
+            "a": 1,
+            "e": "LEFT JOIN (or LEFT OUTER JOIN) preserves all rows from the left table, filling right table columns with NULL where no match exists."
+        },
+        {
+            "q": "What is the result of a CROSS JOIN between table A (5 rows) and table B (3 rows)?",
+            "o": [
+                "5 rows",
+                "3 rows",
+                "15 rows",
+                "8 rows"
+            ],
+            "a": 2,
+            "e": "CROSS JOIN produces a Cartesian product: every row from table A combined with every row from table B (5 * 3 = 15)."
+        },
+        {
+            "q": "In a LEFT JOIN, if there is no match in the right table, what values appear for the right table's columns?",
+            "o": [
+                "Default values defined in the schema",
+                "NULL",
+                "Empty strings",
+                "The values from the left table"
+            ],
+            "a": 1,
+            "e": "When a LEFT JOIN finds no matching row in the right table, the columns from the right table are set to NULL in the result set."
+        },
+        {
+            "q": "Which join type returns all rows from both tables, matching rows where possible and placing NULLs where no match exists?",
+            "o": [
+                "INNER JOIN",
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "FULL OUTER JOIN"
+            ],
+            "a": 3,
+            "e": "FULL OUTER JOIN combines the results of LEFT JOIN and RIGHT JOIN, returning all rows from both tables with NULLs for non-matching sides."
+        },
+        {
+            "q": "What is a SELF JOIN?",
+            "o": [
+                "Joining a table to itself",
+                "Joining two identical tables",
+                "A join that uses the same column name in both tables",
+                "A join that returns only distinct rows"
+            ],
+            "a": 0,
+            "e": "A SELF JOIN is a regular join where a table is joined to itself, typically using table aliases to differentiate the instances."
+        },
+        {
+            "q": "Which join returns only rows that have matching values in both tables, excluding non-matching rows?",
+            "o": [
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "INNER JOIN",
+                "FULL OUTER JOIN"
+            ],
+            "a": 2,
+            "e": "INNER JOIN filters out rows that do not satisfy the join condition in both tables."
+        },
+        {
+            "q": "What is the difference between the ON clause and the WHERE clause in a LEFT JOIN?",
+            "o": [
+                "No difference; they are interchangeable",
+                "ON filters before the join, WHERE filters after the join",
+                "WHERE filters before the join, ON filters after the join",
+                "ON is used for INNER JOIN only"
+            ],
+            "a": 1,
+            "e": "In a LEFT JOIN, conditions in the ON clause determine how tables are matched (preserving left rows), while WHERE filters the final result, potentially turning the LEFT JOIN into an INNER JOIN if it references right-table columns."
+        },
+        {
+            "q": "Which join can be used to find rows in table A that have no corresponding match in table B?",
+            "o": [
+                "INNER JOIN",
+                "LEFT JOIN with WHERE B.id IS NULL",
+                "RIGHT JOIN",
+                "CROSS JOIN"
+            ],
+            "a": 1,
+            "e": "A LEFT JOIN from A to B combined with a WHERE clause checking for NULL on B's primary key identifies rows in A without a match in B."
+        },
+        {
+            "q": "What does the USING clause do in a JOIN statement?",
+            "o": [
+                "Specifies the join condition using a list of column names that exist in both tables",
+                "Allows joining on columns with different names",
+                "Replaces the ON keyword entirely",
+                "Enforces a FULL OUTER JOIN"
+            ],
+            "a": 0,
+            "e": "USING(column_list) is shorthand for ON table1.column = table2.column when the column names are identical in both tables."
+        },
+        {
+            "q": "If you write SELECT * FROM table1 JOIN table2 ON table1.id = table2.id, what type of join is performed by default?",
+            "o": [
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "INNER JOIN",
+                "FULL OUTER JOIN"
+            ],
+            "a": 2,
+            "e": "In SQL, JOIN by itself defaults to INNER JOIN."
+        },
+        {
+            "q": "Which join returns all rows from the right table and matched rows from the left table?",
+            "o": [
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "INNER JOIN",
+                "CROSS JOIN"
+            ],
+            "a": 1,
+            "e": "RIGHT JOIN (or RIGHT OUTER JOIN) preserves all rows from the right table, with NULLs for non-matching left columns."
+        },
+        {
+            "q": "What happens if you join two tables without any join condition (e.g., SELECT * FROM a, b)?",
+            "o": [
+                "Syntax error",
+                "INNER JOIN on primary keys",
+                "CROSS JOIN (Cartesian product)",
+                "LEFT JOIN on first column"
+            ],
+            "a": 2,
+            "e": "A comma-separated list of tables in the FROM clause without a WHERE condition results in a CROSS JOIN."
+        },
+        {
+            "q": "Which of the following is NOT a standard SQL join type?",
+            "o": [
+                "INNER JOIN",
+                "LEFT JOIN",
+                "OUTER JOIN",
+                "PARALLEL JOIN"
+            ],
+            "a": 3,
+            "e": "PARALLEL JOIN is not a standard SQL join type. Standard types include INNER, LEFT, RIGHT, FULL OUTER, and CROSS."
+        },
+        {
+            "q": "When using a NATURAL JOIN, how is the join condition determined?",
+            "o": [
+                "Based on all columns with the same name in both tables",
+                "Based on primary key columns only",
+                "Based on foreign key relationships",
+                "Must be specified with ON clause"
+            ],
+            "a": 0,
+            "e": "NATURAL JOIN automatically joins tables on all columns that share the same name and compatible data types."
+        }
+    ]
+}
