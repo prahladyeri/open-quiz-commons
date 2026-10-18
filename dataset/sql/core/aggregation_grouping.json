@@ -1,0 +1,169 @@
+{
+    "data": [
+        {
+            "q": "Which SQL clause is used to group rows that have the same values in specified columns into summary rows?",
+            "o": [
+                "ORDER BY",
+                "WHERE",
+                "GROUP BY",
+                "HAVING"
+            ],
+            "a": 2,
+            "e": "GROUP BY groups rows sharing the same values in the listed columns, allowing aggregate functions to be applied per group."
+        },
+        {
+            "q": "Which aggregate function returns the number of rows in a group, including rows with NULL values?",
+            "o": [
+                "COUNT(column)",
+                "COUNT(*)",
+                "SUM(1)",
+                "COUNT(DISTINCT column)"
+            ],
+            "a": 1,
+            "e": "COUNT(*) counts all rows in the group, regardless of NULLs. COUNT(column) counts only non-NULL values of that column."
+        },
+        {
+            "q": "What is the primary difference between the WHERE and HAVING clauses?",
+            "o": [
+                "WHERE filters groups, HAVING filters rows",
+                "WHERE filters rows before grouping, HAVING filters groups after grouping",
+                "WHERE works with aggregate functions, HAVING does not",
+                "There is no difference; they are interchangeable"
+            ],
+            "a": 1,
+            "e": "WHERE filters individual rows before any grouping occurs. HAVING filters groups after GROUP BY has been applied and can use aggregate functions."
+        },
+        {
+            "q": "Which aggregate function calculates the average value of a numeric column?",
+            "o": [
+                "MEAN()",
+                "AVERAGE()",
+                "AVG()",
+                "SUM() / COUNT(*)"
+            ],
+            "a": 2,
+            "e": "AVG() is the standard SQL aggregate function for computing the arithmetic mean. It ignores NULL values."
+        },
+        {
+            "q": "Can you use an aggregate function like SUM() directly in a WHERE clause?",
+            "o": [
+                "Yes, always",
+                "No, aggregate functions are not allowed in WHERE; use HAVING instead",
+                "Only in MySQL",
+                "Only if you also use GROUP BY"
+            ],
+            "a": 1,
+            "e": "Aggregate functions cannot be used in WHERE because WHERE evaluates before grouping. Use HAVING to filter based on aggregates."
+        },
+        {
+            "q": "What does COUNT(DISTINCT department_id) return?",
+            "o": [
+                "Total number of rows in the table",
+                "Number of non-NULL department_id values",
+                "Number of unique non-NULL department_id values",
+                "Number of NULL department_id values"
+            ],
+            "a": 2,
+            "e": "COUNT(DISTINCT column) counts the number of distinct (unique) non-NULL values in that column."
+        },
+        {
+            "q": "If a SELECT statement includes a column that is not in the GROUP BY clause and not inside an aggregate function, what happens in standard SQL?",
+            "o": [
+                "Returns the first value encountered",
+                "Returns NULL for that column",
+                "Throws an error",
+                "Automatically adds the column to GROUP BY"
+            ],
+            "a": 2,
+            "e": "Standard SQL requires every non-aggregated column in the SELECT list to appear in the GROUP BY clause. Otherwise, it's ambiguous which value to return for the group."
+        },
+        {
+            "q": "Which clause is used to filter groups based on a condition involving an aggregate function?",
+            "o": [
+                "WHERE",
+                "GROUP BY",
+                "HAVING",
+                "FILTER"
+            ],
+            "a": 2,
+            "e": "HAVING is specifically designed to filter groups after aggregation. It can reference aggregate functions like SUM, COUNT, AVG, etc."
+        },
+        {
+            "q": "How does the SUM() aggregate function handle NULL values in the column?",
+            "o": [
+                "Treats NULL as 0",
+                "Ignores NULL values",
+                "Returns NULL for the entire sum",
+                "Throws an error"
+            ],
+            "a": 1,
+            "e": "SUM() ignores NULL values. If all values are NULL or there are no rows, SUM() returns NULL."
+        },
+        {
+            "q": "What is the result of the following query? SELECT department_id, AVG(salary) FROM employees GROUP BY department_id HAVING AVG(salary) > 50000;",
+            "o": [
+                "All departments with their average salary",
+                "Only departments where the average salary exceeds 50000",
+                "Error: HAVING cannot use AVG",
+                "Only employees with salary > 50000"
+            ],
+            "a": 1,
+            "e": "The query groups by department, computes average salary per department, and then HAVING filters to keep only those groups where the average exceeds 50000."
+        },
+        {
+            "q": "Which aggregate function returns the smallest value in a column?",
+            "o": [
+                "MIN()",
+                "LOWEST()",
+                "SMALLEST()",
+                "FIRST()"
+            ],
+            "a": 0,
+            "e": "MIN() returns the minimum (smallest) value of the expression. It ignores NULL values."
+        },
+        {
+            "q": "What does COUNT(column) count?",
+            "o": [
+                "All rows in the table",
+                "Non-NULL values of that column",
+                "Distinct values of that column",
+                "NULL values of that column"
+            ],
+            "a": 1,
+            "e": "COUNT(column) counts the number of rows where the column is not NULL. It does not count NULLs."
+        },
+        {
+            "q": "In a query with GROUP BY, can you refer to a column alias defined in the SELECT list within the GROUP BY clause?",
+            "o": [
+                "Yes, in all SQL dialects",
+                "No, standard SQL does not allow it; you must repeat the expression or use column position",
+                "Only in PostgreSQL",
+                "Only if the alias is quoted"
+            ],
+            "a": 1,
+            "e": "Standard SQL does not permit column aliases in GROUP BY. Some databases (e.g., MySQL, PostgreSQL) allow it as an extension, but it's not portable."
+        },
+        {
+            "q": "What is the purpose of the GROUPING SETS, ROLLUP, and CUBE extensions?",
+            "o": [
+                "To sort groups in a specific order",
+                "To generate multiple grouping levels (subtotals and grand totals) in a single query",
+                "To filter groups more efficiently",
+                "To join aggregated results with detail rows"
+            ],
+            "a": 1,
+            "e": "GROUPING SETS, ROLLUP, and CUBE are advanced GROUP BY extensions that produce super-aggregate rows (subtotals, grand totals) for multidimensional analysis."
+        },
+        {
+            "q": "Which statement about the HAVING clause is true?",
+            "o": [
+                "HAVING can only be used with GROUP BY",
+                "HAVING can be used without GROUP BY to filter aggregated results over the whole table",
+                "HAVING must appear before GROUP BY",
+                "HAVING cannot use column aliases"
+            ],
+            "a": 1,
+            "e": "HAVING can be used without GROUP BY; in that case, the entire table is treated as a single group, and the HAVING condition applies to the aggregate over all rows."
+        }
+    ]
+}
