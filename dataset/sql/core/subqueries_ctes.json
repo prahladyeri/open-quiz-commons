@@ -1,0 +1,158 @@
+{
+    "data": [
+        {
+            "q": "What is a subquery in SQL?",
+            "o": [
+                "A query nested inside another query",
+                "A query that runs after the main query finishes",
+                "A query that only selects from system tables",
+                "A query used to create indexes"
+            ],
+            "a": 0,
+            "e": "A subquery (or inner query) is a SELECT statement embedded within another SQL statement such as SELECT, INSERT, UPDATE, or DELETE."
+        },
+        {
+            "q": "Which clause can a subquery NOT appear in?",
+            "o": [
+                "SELECT",
+                "FROM",
+                "WHERE",
+                "GROUP BY"
+            ],
+            "a": 3,
+            "e": "Subqueries can appear in SELECT, FROM, WHERE, HAVING, and even ORDER BY clauses, but not directly in GROUP BY."
+        },
+        {
+            "q": "What distinguishes a correlated subquery from a non-correlated subquery?",
+            "o": [
+                "A correlated subquery references columns from the outer query",
+                "A correlated subquery always returns multiple rows",
+                "A correlated subquery cannot use the IN operator",
+                "A correlated subquery is executed only once"
+            ],
+            "a": 0,
+            "e": "A correlated subquery depends on the outer query for its values and is conceptually re-evaluated for each row processed by the outer query."
+        },
+        {
+            "q": "What does a scalar subquery return?",
+            "o": [
+                "Exactly one row and one column (a single value)",
+                "Multiple rows and one column",
+                "One row and multiple columns",
+                "A result set that can be used in a FROM clause"
+            ],
+            "a": 0,
+            "e": "A scalar subquery returns a single value; it can be used anywhere a scalar expression is allowed, such as in the SELECT list or WHERE clause."
+        },
+        {
+            "q": "When using a subquery with the IN operator, what happens if the subquery returns NULL values?",
+            "o": [
+                "The IN predicate evaluates to UNKNOWN for rows where the outer value is not in the non-NULL results",
+                "NULL values are ignored and the query proceeds normally",
+                "The query throws an error",
+                "The IN predicate automatically converts to EXISTS"
+            ],
+            "a": 0,
+            "e": "If the subquery returns NULL, the IN predicate evaluates to UNKNOWN (not TRUE) for non-matching outer rows, which can filter out rows unexpectedly. Use EXISTS for safer NULL handling."
+        },
+        {
+            "q": "What is the basic syntax for a Common Table Expression (CTE)?",
+            "o": [
+                "WITH cte_name AS (SELECT ...) SELECT * FROM cte_name;",
+                "CTE cte_name AS (SELECT ...) SELECT * FROM cte_name;",
+                "DEFINE cte_name AS (SELECT ...) SELECT * FROM cte_name;",
+                "CREATE CTE cte_name AS (SELECT ...) SELECT * FROM cte_name;"
+            ],
+            "a": 0,
+            "e": "A CTE starts with the WITH keyword, followed by the CTE name, optional column list, AS, and the defining query in parentheses."
+        },
+        {
+            "q": "How do you define multiple CTEs in a single WITH clause?",
+            "o": [
+                "Separate each CTE definition with a comma",
+                "Use multiple WITH keywords",
+                "Nest CTEs inside each other",
+                "Use a semicolon between CTE definitions"
+            ],
+            "a": 0,
+            "e": "Multiple CTEs are defined in one WITH clause by separating each cte_name AS (...) with commas."
+        },
+        {
+            "q": "Which two parts make up a recursive CTE?",
+            "o": [
+                "Anchor member and recursive member",
+                "Base case and iterative case",
+                "Seed query and loop query",
+                "Initial SELECT and UNION ALL SELECT"
+            ],
+            "a": 0,
+            "e": "A recursive CTE consists of an anchor member (initial result set) and a recursive member that references the CTE itself, combined with UNION ALL."
+        },
+        {
+            "q": "What is a key difference between a CTE and a temporary table?",
+            "o": [
+                "A CTE exists only for the duration of a single statement, while a temporary table persists for the session",
+                "A CTE can be indexed, but a temporary table cannot",
+                "A temporary table is always stored in memory, while a CTE is always on disk",
+                "A CTE can be referenced by other sessions, but a temporary table cannot"
+            ],
+            "a": 0,
+            "e": "CTEs are transient, inline view-like constructs scoped to the statement; temporary tables are physical objects that persist until dropped or the session ends."
+        },
+        {
+            "q": "In a recursive CTE, what is the purpose of the UNION ALL operator between the anchor and recursive members?",
+            "o": [
+                "To combine the results of each recursion level without removing duplicates",
+                "To ensure duplicate rows are eliminated at each step",
+                "To join the anchor member with the recursive member horizontally",
+                "To terminate the recursion when no new rows are produced"
+            ],
+            "a": 0,
+            "e": "UNION ALL accumulates rows from each recursion iteration. Termination occurs when the recursive member returns an empty result set."
+        },
+        {
+            "q": "Which statement about CTEs is FALSE?",
+            "o": [
+                "A CTE can reference itself (recursive CTE)",
+                "A CTE can be referenced multiple times in the main query",
+                "A CTE must always be followed by a SELECT statement",
+                "A CTE can be used with INSERT, UPDATE, DELETE, or MERGE statements"
+            ],
+            "a": 2,
+            "e": "A CTE can precede INSERT, UPDATE, DELETE, or MERGE statements, not only SELECT."
+        },
+        {
+            "q": "What is the main advantage of using a CTE over a derived table (subquery in FROM clause)?",
+            "o": [
+                "Better readability and ability to reference the same result set multiple times",
+                "Faster execution because CTEs are materialized automatically",
+                "CTEs support indexes while derived tables do not",
+                "CTEs can be used in the WHERE clause but derived tables cannot"
+            ],
+            "a": 0,
+            "e": "CTEs improve modularity and readability; they can be referenced multiple times in the main query without repeating the subquery logic."
+        },
+        {
+            "q": "Consider a correlated subquery in the SELECT list. How many times is it executed?",
+            "o": [
+                "Once for each row returned by the outer query",
+                "Only once, before the outer query runs",
+                "Once for each distinct value in the correlated column",
+                "It depends on the optimizer; may be transformed to a join"
+            ],
+            "a": 0,
+            "e": "Conceptually, a correlated subquery in the SELECT list is evaluated once per outer row. Optimizers may rewrite it as a join for performance."
+        },
+        {
+            "q": "When should you prefer EXISTS over IN with a subquery?",
+            "o": [
+                "When the subquery returns a large result set or contains NULLs",
+                "When the subquery returns a single column",
+                "When you need to compare multiple columns",
+                "When the outer table is very small"
+            ],
+            "a": 0,
+            "e": "EXISTS stops at the first match and handles NULLs more intuitively, often performing better with large subquery results."
+        }
+    ]
+}
